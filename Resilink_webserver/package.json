@@ -1,0 +1,25 @@
+{
+  "name": "mid_plateform_resilink",
+  "version": "1.0.0",
+  "description": "mid-platform intermediary between the Resilink mobile application and the Orange ODEP API",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "Axel Cazaux",
+  "license": "UPPA",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "express": "^4.18.2",
+    "mongodb": "^6.1.0",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.7.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-parser": "^10.0.3",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

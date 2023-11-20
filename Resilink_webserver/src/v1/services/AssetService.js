@@ -63,13 +63,16 @@ const getOneAsset = async (url, id, token) => {
 };
 
 const createAsset = async (url, body, token) => {
+  console.log(body);
   const response = JSON.parse(await Utils.executeCurl(
       'POST',
       url, 
       headers = {'accept': 'application/json',
+      'Content-Type': 'application/json',
       'Authorization': token},
       body
   ));
+  console.log(response);
   return response;
 };
 

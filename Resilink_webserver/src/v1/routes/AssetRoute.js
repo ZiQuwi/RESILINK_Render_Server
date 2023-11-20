@@ -79,12 +79,14 @@ const router = express.Router();
  *                regulator:
  *                  type: string
  *                specificAttributes:
- *                  type: object
- *                  properties:
- *                     attributeName:
- *                         type: string
- *                     value:
- *                         type: string
+ *                  type: array
+ *                  items:
+ *                     type: object
+ *                     properties:
+    *                     attributeName:
+    *                         type: string
+    *                     value:
+    *                         type: string
  *     responses:
  *       200:
  *         description: Token of the user.

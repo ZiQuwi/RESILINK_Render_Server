@@ -45,7 +45,7 @@ const swaggerDocs = (app, port) => {
     options.definition.servers = [
         {
           //TODO NE PAS OUBLIER DE LA CHANGER EN PERMANENCE POUR LA RENDRE ACCESSIBLE SUR INTERNET 
-            url: `https://resilink-api.onrender.com:${port}`, 
+            url: `http://35.157.117.28:${port}`, 
         },
     ];
 

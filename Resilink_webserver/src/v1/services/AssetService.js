@@ -43,13 +43,14 @@ const getOwnerAsset = async (url, id, token) => {
 };
 
 const getAllAsset = async (url, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
-      'GET',
-      url + "all", 
-      headers = {'accept': 'application/json',
-      'Authorization': token},
-  ));
-  return response;
+  const response = await Utils.fetchJSONData(
+    'GET',
+    url + "all", 
+    headers = {'accept': 'application/json',
+    'Authorization': token}
+  )
+  const data = await Utils.streamToJSON(response.body)
+  return [data, response.status];
 };
 
 const getOneAsset = async (url, id, token) => {

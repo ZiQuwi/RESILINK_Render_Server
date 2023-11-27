@@ -6,29 +6,28 @@ const Asset = require("./AssetService.js");
 const getAllOfferForResilinkCustom = async (url, token) => {
     const allAssetTypesResilink = await AssetTypes.getAllAssetTypeVue();
     const allAssetResilink = await Asset.getAllAssetResilink(allAssetTypesResilink, token);
-    const allOffer = JSON.parse(await Utils.executeCurl(
+    const allOffer = await Utils.fetchJSONData(
         'GET',
         url + "all", 
         headers = {'accept': 'application/json',
-        'Authorization': token}));
-    console.log(allOffer);
+        'Authorization': token});
     var allOfferResilink = {};
-    for (const key in allOffer) {
-        if (allOffer.hasOwnProperty(key)) {
-          const element = allOffer[key];
+    const data = await Utils.streamToJSON(allOffer.body)
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          const element = data[key];
           
           if (new Date(element['validityLimit']) > new Date() && allAssetResilink[element['assetId'].toString()] !== null) {
             allOfferResilink[element['offerId'].toString()] = element;
           }
         }
-      }
-      
-    console.log(allOfferResilink);
-    return allOfferResilink; 
+    }
+    return [allOfferResilink, allOffer.status];
 };
 
+//TODO copier le filtre actuel de l'app 
 const getAllOfferFilteredCustom = async (url, filter, token) => {    
-    const allOffer = await getAllOfferForResilinkCustom(url, token);
+    const allOffer = await getAllOffer(url, token);
     const allAssetTypes = await AssetTypes.getAllAssetTypeVue();
     const allAsset = await Asset.getAllAssetResilink(allAssetTypes, token);
 
@@ -111,74 +110,79 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
 
 const getAllOfferOwnerCustom = async (url, Username, token) => {
   var allOfferOwner = {};
-  const allOffer = JSON.parse(await Utils.executeCurl(
+  const allOffer = await Utils.fetchJSONData(
     'GET',
     url + "all", 
     headers = {'accept': 'application/json',
     'Authorization': token}
-  ));
-  for (const key in allOffer) {
-    if (allOffer.hasOwnProperty(key)) {
-      const offer = allOffer[key];
+  );
+  const data = await Utils.streamToJSON(allOffer.body)
+  for (const key in data) {
+    if (data.hasOwnProperty(key)) {
+      const offer = data[key];
       if (offer["offerer"] === Username) {
         allOfferOwner[offer["offerId"].toString()] = offer;
       }
     }
   }
-  console.log(allOfferOwner);
-  return allOfferOwner;
+  return [data, allOffer.status];
 };
 
 const createOffer = async (url, body, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
       'POST',
       url, 
       headers = {'accept': 'application/json',
       'Content-Type': 'application/json',
       'Authorization': token},
-      body));
-  return response;
+      body);
+    const data = await Utils.streamToJSON(response.body)
+    return [data, response.status];
 };
 
 const getAllOffer = async (url, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
       'GET',
       url + "all", 
       headers = {'accept': 'application/json',
       'Authorization': token}
-  ));
-  return response;
+  );
+  const data = await Utils.streamToJSON(response.body)
+  return [data, response.status];
 };
 
 const getOneOffer = async (url, id, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
       'GET',
       url + id, 
       headers = {'accept': 'application/json',
       'Authorization': token}
-  ));
-  return response;
+  );
+  const data = await Utils.streamToJSON(response.body)
+  return [data, response.status];
 };
 
 const putOffer = async (url, body, id, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
       'PUT',
       url + id, 
       headers = {'accept': 'application/json',
       'Content-Type': 'application/json',
       'Authorization': token},
-      body));
-  return response;
+      body);
+    const data = await Utils.streamToJSON(response.body)
+    return [data, response.status];
 };
 
 const deleteOffer = async (url, id, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
       'DELETE',
       url + id, 
       headers = {'accept': 'application/json',
       'Authorization': token}
-  ));
-  return response;
+  );
+  const data = await Utils.streamToJSON(response.body)
+  return [data, response.status];
 };
 
 module.exports = {

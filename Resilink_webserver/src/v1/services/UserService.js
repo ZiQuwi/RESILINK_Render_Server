@@ -5,16 +5,16 @@ const urlSignIn = 'http://90.84.194.104:4000/oauth/api/v1.0.0/auth/sign_in';
 const urlCreateUser = 'http://90.84.194.104:4000/oauth/api/v1.0.0/users?provider=http%3A%2F%2Flocalhost%3A';
 const localhost = "22004";
 
-//Récupère le token de l'administrateur
+//Récupère les données de l'utilisateur
 const functionGetTokenUser = async (body) => {
-  console.log("activation de la fonction token");
-    const tokenUser = JSON.parse(await Utils.executeCurl(
+    const response = await Utils.fetchJSONData(
             "POST",
             urlSignIn,  
             headers = { 'Content-Type': 'application/json', 'accept': 'application/json'},
             body
-        ));
-    return tokenUser;
+        );
+    const data = await Utils.streamToJSON(response.body)
+    return [data, response.status];
 };
 
 //Crée un nouvel user
@@ -25,19 +25,18 @@ const createUser = async (newUserRequest, token) => {
     phoneNumber = newUserRequest.whatsApp;
     delete newUserRequest.whatsApp;
   }
-  const creationUser = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
     "POST",
     urlCreateUser + localhost,  
     headers = {'Content-Type': 'application/json', 'Authorization': token.replace(/^Bearer /, ''), 'accept': 'application/json'},
     newUserRequest
-  ));
+  );
+  const data = await Utils.streamToJSON(response.body)
   if (phoneNumber != undefined) {
-    creationUser.whatsApp = phoneNumber;
+    data.whatsApp = phoneNumber;
   }
-  console.log(creationUser);
-  User.newUser(creationUser, newUserRequest.password);
-  console.log("sort de create user");
-  return creationUser;
+  User.newUser(data, newUserRequest.password);
+  return [data, response.status];
 }
 
 module.exports = {

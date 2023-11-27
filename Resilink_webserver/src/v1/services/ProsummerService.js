@@ -3,37 +3,34 @@ const userService = require("./UserService.js");
 const Utils = require("./Utils.js");
 
 const createProsummer = async (url, body, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
     "POST",
     url, 
     headers = {'accept': 'application/json',
      'Content-Type': 'application/json',
      'Authorization': token},
      body
-  ));
-  return response;
+  );
+  const data = await Utils.streamToJSON(response.body);
+  return [data, response.status];
 };
 
 const getAllProsummer = async (url, token) => {
-  console.log("Dans le prosummer service getAll");
-  console.log(url + "all");
-  console.log('AuthorizationBearer + ' + token);
-
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
     "GET",
     url + "all", 
     headers = {'accept': 'application/json',
      'Authorization': token}
-     ));
-  console.log(response);
-  return response;
+     );
+  const data = await Utils.streamToJSON(response.body);
+  return [data, response.status];
 };
 
 const createProsumerCustom = async(url, body, token) => {
   const user = await userService.createUser(body);
   console.log("SORTI DE LA CREATION USER");
   console.log(user.userName);
-  const newProsumer = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
     "POST",
     url, 
     headers = {'accept': 'application/json',
@@ -42,69 +39,74 @@ const createProsumerCustom = async(url, body, token) => {
     body = {'id': user.userName,
     'sharingAccount': 100, 
     "balance": 0}
-  ));
-  console.log("newprosumer) = " + newProsumer);
-  ProsummerDB.newProsumer(user.userName, body.phone?? null);
-  return newProsumer
+  );
+  const data = await Utils.streamToJSON(response.body);
+  //TODO insert un utilisateur avec son nom comme id et son numéro de tel s'il existe
+  //ProsummerDB.newProsumer(user.userName, body.phone?? null);
+  return [data, response.status];
 };
 
 const getAllProsummerCustom = async (url, token) => {
-  const allProsummer = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
     "GET",
     url, 
     headers = 
       {'accept': 'application/json',
       'Authorization': token}
-  ));
-  console.log(allProsummer);
-  const allProsummerMongo = ProsummerDB.getAllProsummer();
-  console.log(allProsummerMongo);
-  return allProsummer; 
+  );
+  const data = await Utils.streamToJSON(response.body);
+  //TODO importer le numéro de tel depuis notre base de données via la fonction getAllProsummer
+  //const allProsummerMongo = ProsummerDB.getAllProsummer();
+  //console.log(allProsummerMongo);
+  return [data, response.status];
 };
 
 const getOneProsummer = async (url, id, token) => {
-  const allProsummer = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
     "GET",
     url + id, 
     headers = {'accept': 'application/json',
      'Authorization': token},
-  ));
-  return allProsummer;
+  );
+  const data = await Utils.streamToJSON(response.body);
+  return [data, response.status];
 };
 
 const deleteOneProsummer = async (url, id, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
     "DELETE",
     url + id, 
     headers = {'accept': 'application/json',
      'Authorization': token},
-  ));
-  return response;
+  );
+  const data = await Utils.streamToJSON(response.body);
+  return [data, response.status];
 };
 
 const patchBalanceProsummer = async (url, body, id, token) => {
-  console.log("dabns le patch");
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
     "PATCH",
     url + id + "/balance", 
     headers = {'accept': 'application/json',
      'Content-Type': 'application/json',
      'Authorization': token},
     body
-  ));
-  return response;
+  );
+  const data = await Utils.streamToJSON(response.body);
+  return [data, response.status];
 };
 
 const patchSharingProsummer = async (url, body, id, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
     "PATCH",
     url + id + "/sharingAccount", 
     headers = {'accept': 'application/json',
      'Content-Type': 'application/json',
      'Authorization': token},
-     body = body
-  ));
-  return response;
+     body
+  );
+  const data = await Utils.streamToJSON(response.body);
+  return [data, response.status];
 };
 
 module.exports = {

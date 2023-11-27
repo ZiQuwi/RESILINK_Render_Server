@@ -4,7 +4,7 @@ const _pathProsumerODEP = 'http://90.84.194.104:10010/prosumers/';
 const createProsumer = async (req, res) => { 
   try {
     const response = await prosummerService.createProsummer(_pathProsumerODEP, req.body, req.header('Authorization'));
-    res.send(response);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
@@ -14,7 +14,7 @@ const createProsumer = async (req, res) => {
 const getAllProsummer = async (req, res) => { 
   try {
     const response = await prosummerService.getAllProsummer(_pathProsumerODEP, req.header('Authorization'));
-    res.send(response);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
@@ -24,7 +24,7 @@ const getAllProsummer = async (req, res) => {
 const createProsumerCustom = async (req, res) => {
   try {
     const prosumer = await prosummerService.createProsumerCustom(_pathProsumerODEP, req.body, req.header('Authorization'));
-    res.send(prosumer);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la création du prosumer');
@@ -34,7 +34,7 @@ const createProsumerCustom = async (req, res) => {
 const getAllProsummerCustom = async (req, res) => { 
   try {
     const response = await prosummerService.getAllProsummerCustom(_pathProsumerODEP, req.header('Authorization'));
-    res.send(response);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
@@ -44,7 +44,7 @@ const getAllProsummerCustom = async (req, res) => {
 const getOneProsumer = async (req, res) => {
   try {
     const oneProsummer = await prosummerService.getOneProsummer(_pathProsumerODEP, req.params.id, req.header('Authorization'));
-    res.send(oneProsummer);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération du prosummer');
@@ -52,14 +52,19 @@ const getOneProsumer = async (req, res) => {
 };
   
 const deleteOneProsummer = async (req, res) => {
+  try {
     const deleteProsummer = await prosummerService.deleteOneProsummer(_pathProsumerODEP, req.params.id, req.header('Authorization'));
-    res.send(deleteProsummer);
-  };
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    console.error('Erreur lors de l\'exécution de CURL :', error);
+    res.status(500).send('Erreur lors de la récupération du prosummer');
+  }
+};
 
 const patchBalanceProsumer = async (req, res) => {
   try {
     const balanceProsummer = await prosummerService.patchBalanceProsummer(_pathProsumerODEP, req.body, req.params.id, req.header('Authorization'));
-    res.send(balanceProsummer);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération du prosummer');
@@ -69,7 +74,7 @@ const patchBalanceProsumer = async (req, res) => {
 const patchSharingProsumer = async (req, res) => {
   try {
     const sharingProsummer = await prosummerService.patchSharingProsummer(_pathProsumerODEP, req.body, req.params.id, req.header('Authorization'));
-    res.send(sharingProsummer);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération du prosummer');

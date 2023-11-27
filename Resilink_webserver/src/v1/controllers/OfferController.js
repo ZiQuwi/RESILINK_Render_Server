@@ -4,7 +4,7 @@ const _pathofferODEP = 'http://90.84.194.104:10010/offers/';
 const getAllOfferResilinkCustom = async (req, res) => { 
     try {
       const response = await OfferService.getAllOfferForResilinkCustom(_pathofferODEP, req.header('Authorization'));
-      res.send(response);
+      res.status(response[1]).send(response[0]);
     } catch (error) {
       console.error('Erreur lors de l\'exécution de CURL :', error);
       res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
@@ -15,7 +15,7 @@ const getAllOfferResilinkCustom = async (req, res) => {
 const createOfferNoPrice = async (req, res) => {
   try {
     const response = await OfferService.getAllOfferForResilinkCustom(_pathofferODEP, req.body, req.header('Authorization'));
-    res.send(response);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la création d"une offre pour négociation');
@@ -25,7 +25,7 @@ const createOfferNoPrice = async (req, res) => {
 const getOfferFiltered = async (req, res) => {
   try {
     const response = await OfferService.getAllOfferFiltered(_pathofferODEP, req.params.id, req.header('Authorization'));
-    res.send(response);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
@@ -35,7 +35,7 @@ const getOfferFiltered = async (req, res) => {
 const getOfferOwner = async (req, res) => {
   try {
     const response = await OfferService.getAllOfferOwnerCustom(_pathofferODEP, req.params.id, req.header('Authorization'));
-    res.send(response);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
@@ -45,7 +45,7 @@ const getOfferOwner = async (req, res) => {
 const createOffer = async (req, res) => {
   try {
     const response = await OfferService.createOffer(_pathofferODEP, req.body, req.header('Authorization'));
-    res.send(response);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
@@ -55,7 +55,7 @@ const createOffer = async (req, res) => {
 const getAllOffer = async (req, res) => {
   try {
     const response = await OfferService.getAllOffer(_pathofferODEP, req.header('Authorization'));
-    res.send(response);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
@@ -65,7 +65,7 @@ const getAllOffer = async (req, res) => {
 const getOneOffer = async (req, res) => {
   try {
     const response = await OfferService.getOneOffer(_pathofferODEP, req.params.id, req.header('Authorization'));
-    res.send(response);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
@@ -75,7 +75,7 @@ const getOneOffer = async (req, res) => {
 const putOffer = async (req, res) => {
   try {
     const response = await OfferService.putOffer(_pathofferODEP, req.body, req.params.id, req.header('Authorization'));
-    res.send(response);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
@@ -85,7 +85,7 @@ const putOffer = async (req, res) => {
 const deleteOffer = async (req, res) => {
   try {
     const response = await OfferService.deleteOffer(_pathofferODEP, req.params.id, req.header('Authorization'));
-    res.send(response);
+    res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
     res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');

@@ -5,43 +5,43 @@ const AssetTypes = require("../services/AssetTypeService.js");
 
 const urlGetALlAsset = "http://90.84.194.104:10010/assets/all";
 
-const getAllAssetVue = async () => {
-    const token = await User.functionGetTokenUser("admin", "admin123");
+//TODO SEUL FONCTION DE ASSET PAS ENCRE MIS A JOUR AVEC FETCHDATA ET FAIRE TOUS LE RESTE SEUL ASSET FAIT DÉBILE
+const getAllAssetVue = async (token) => {
     const allAssetTypesResilink = await AssetTypes.getAllAssetTypesResilink(token);
     const allAsset = await getAllAssetResilink(allAssetTypesResilink, token);
     return allAsset;
 }
 
 const getAllAssetResilink = async (assetTypeMap, token) => {
-    const allAsset = JSON.parse(await Utils.executeCurl(
+    const allAsset = await Utils.fetchJSONData(
         'GET',
         urlGetALlAsset, 
         headers = {'accept': 'application/json',
-        'Authorization': "Bearer " + token}));
+        'Authorization': "Bearer " + token});
     var assetMapResilink = {};
-    for (const key in allAsset) {
-        if (allAsset.hasOwnProperty(key)) {
-          const element = allAsset[key];
-          
-          if (assetTypeMap[element['id']] == null) {
+    const data = await Utils.streamToJSON(allAsset.body)
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          const element = data[key];
+          if (assetTypeMap[0][element['id']] == null) {
             assetMapResilink[element['id'].toString()] = element;
           }
         }
-      }
-    return assetMapResilink;
+    }
+    return [assetMapResilink, allAsset.status];
 };
 
 const getOwnerAsset = async (url, id, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
       'GET',
       url + "owner?idOwner=" + id, 
       headers = {'accept': 'application/json',
       'Authorization': token},
-  ));
-
-  return response;
+  );
+  const data = await Utils.streamToJSON(response.body)
+  return [data, response.status];
 };
-
+ 
 const getAllAsset = async (url, token) => {
   const response = await Utils.fetchJSONData(
     'GET',

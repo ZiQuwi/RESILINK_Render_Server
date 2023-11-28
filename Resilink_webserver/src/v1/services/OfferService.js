@@ -16,7 +16,7 @@ const getAllOfferForResilinkCustom = async (url, token) => {
         if (data.hasOwnProperty(key)) {
           const element = data[key];
           
-          if (new Date(element['validityLimit']) > new Date() && allAssetResilink[element['assetId'].toString()] !== null) {
+          if (new Date(element['validityLimit']) > new Date() && allAssetResilink[element['assetId'].toString()] !== null && (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true) ) {
             allOfferResilink[element['offerId'].toString()] = element;
           }
         }

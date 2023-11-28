@@ -3,7 +3,7 @@ const User = require("./UserService.js");
 const AssetTypes = require("../services/AssetTypeService.js");
 
 
-const urlGetALlAsset = "http://90.84.194.104:10010/assets/all";
+const _urlGetALlAsset = "http://90.84.194.104:10010/assets/all";
 
 //TODO SEUL FONCTION DE ASSET PAS ENCRE MIS A JOUR AVEC FETCHDATA ET FAIRE TOUS LE RESTE SEUL ASSET FAIT DÉBILE
 const getAllAssetVue = async (token) => {
@@ -15,7 +15,7 @@ const getAllAssetVue = async (token) => {
 const getAllAssetResilink = async (assetTypeMap, token) => {
     const allAsset = await Utils.fetchJSONData(
         'GET',
-        urlGetALlAsset, 
+        _urlGetALlAsset, 
         headers = {'accept': 'application/json',
         'Authorization': "Bearer " + token});
     var assetMapResilink = {};

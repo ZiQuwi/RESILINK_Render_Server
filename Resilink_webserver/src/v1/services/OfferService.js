@@ -4,8 +4,7 @@ const AssetTypes = require("./AssetTypeService.js");
 const Asset = require("./AssetService.js");
 
 const getAllOfferForResilinkCustom = async (url, token) => {
-    const allAssetTypesResilink = await AssetTypes.getAllAssetTypeVue();
-    const allAssetResilink = await Asset.getAllAssetResilink(allAssetTypesResilink, token);
+    const allAssetResilink = await Asset.getAllAsset('http://90.84.194.104:10010/assets/', token);
     const allOffer = await Utils.fetchJSONData(
         'GET',
         url + "all", 

@@ -78,6 +78,8 @@ const router = express.Router();
  *                  type: string
  *                regulator:
  *                  type: string
+ *                image:
+ *                  type: string
  *                specificAttributes:
  *                  type: array
  *                  items:
@@ -197,6 +199,33 @@ router.get('/assets/:id/', assetController.getOneAsset);
  */
 
 router.get('/Asset/allAssetCustom/', assetController.getAllAssetResilink);
+
+/**
+ * @swagger
+ * /v1/assets/assetImg/{id}:
+ *   get: 
+ *     summary: update an asset attributes
+ *     tags: [Asset]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: the asset id
+ *     responses:
+ *       200:
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: json
+ *       400:
+ *         description: Invalid asset data.
+ *       500:
+ *         description: Some server error.
+ */
+
+router.get('/assets/assetImg/:id/', assetController.getOneAssetIdimage);
 
 /**
  * @swagger

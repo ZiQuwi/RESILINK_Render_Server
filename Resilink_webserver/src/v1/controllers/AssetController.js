@@ -7,7 +7,7 @@ const getAllAssetResilink = async (req, res) => {
     res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
-    res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+    res.status(500).send('Redirection error in the platform ');
   }
 };
 
@@ -17,7 +17,7 @@ const createAsset = async (req, res) => {
       res.status(response[1]).send(response[0]);
     } catch (error) {
       console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+      res.status(500).send('Redirection error in the platform ');
     }
 };
 
@@ -28,7 +28,7 @@ const getOwnerAsset = async (req, res) => {
       res.status(response[1]).send(response[0]);
     } catch (error) {
       console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+      res.status(500).send('Redirection error in the platform ');
     }
 };
 
@@ -38,7 +38,7 @@ const getAllAsset = async (req, res) => {
       res.status(response[1]).send(response[0]);
     } catch (error) {
       console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+      res.status(500).send('Redirection error in the platform ');
     }
 };
 
@@ -48,7 +48,17 @@ const getOneAsset = async (req, res) => {
       res.status(response[1]).send(response[0]);
     } catch (error) {
       console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+      res.status(500).send('Redirection error in the platform ');
+    }
+};
+
+const getOneAssetIdimage = async (req, res) => { 
+  try {
+      const response = await assetService.getOneAssetImg(req.params.id);
+      res.status(response[1]).send(response[0]);
+    } catch (error) {
+      console.error('Erreur lors de l\'exécution de CURL :', error);
+      res.status(500).send('Redirection error in the platform ');
     }
 };
 
@@ -58,7 +68,7 @@ const putAsset = async (req, res) => {
       res.status(response[1]).send(response[0]);
     } catch (error) {
       console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+      res.status(500).send('Redirection error in the platform ');
     }
 };
 
@@ -68,7 +78,7 @@ const deleteAsset = async (req, res) => {
       res.status(response[1]).send(response[0]);
     } catch (error) {
       console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+      res.status(500).send('Redirection error in the platform ');
     }
 };
 
@@ -78,7 +88,7 @@ const patchAsset = async (req, res) => {
       res.status(response[1]).send(response[0]);
     } catch (error) {
       console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+      res.status(500).send('Redirection error in the platform ');
     }
 };
 
@@ -87,6 +97,7 @@ module.exports = {
   createAsset,
   getAllAsset,
   getOneAsset,
+  getOneAssetIdimage,
   getOwnerAsset,
   putAsset,
   deleteAsset,

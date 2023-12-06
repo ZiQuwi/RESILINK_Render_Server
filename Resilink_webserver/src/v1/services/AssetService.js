@@ -1,6 +1,7 @@
 const Utils = require("./Utils.js");
 const User = require("./UserService.js");
 const AssetTypes = require("../services/AssetTypeService.js");
+const AssetDB = require("../database/AssetDB.js");
 
 
 const _urlGetALlAsset = "http://90.84.194.104:10010/assets/all";
@@ -50,69 +51,87 @@ const getAllAsset = async (url, token) => {
     'Authorization': token}
   )
   const data = await Utils.streamToJSON(response.body)
-  return [data, response.status];
+  const dataFinal = await AssetDB.getImageforAssets(data);
+  return [dataFinal, response.status];
 };
 
 const getOneAsset = async (url, id, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
       'GET',
       url + id, 
       headers = {'accept': 'application/json',
       'Authorization': token},
-  ));
-  return response;
+  );
+  const data = await Utils.streamToJSON(response.body)
+  return [data, response.status];
+};
+
+const getOneAssetImg = async (assetId) => {
+  try {
+    const data = await AssetDB.getOneAssetDBimage(assetId);
+    return [data, 200];
+  } catch(e) {
+    throw(e);
+  }
+  
 };
 
 const createAsset = async (url, body, token) => {
-  console.log(body);
-  const response = JSON.parse(await Utils.executeCurl(
+  const imgBase64 = body['image'];
+  delete body['image'];
+  const response = await Utils.fetchJSONData(
       'POST',
       url, 
       headers = {'accept': 'application/json',
       'Content-Type': 'application/json',
       'Authorization': token},
       body
-  ));
-  console.log(response);
-  return response;
+  );
+  const data = await Utils.streamToJSON(response.body);
+  const inDB = await AssetDB.newAssetDB(data['assetId'], imgBase64, body['owner']);
+  return [data, response.status];
 };
 
 const putAsset = async (url, body, id,token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
       'PUT',
       url + id, 
       headers = {'accept': 'application/json',
       'Authorization': token},
       body
-  ));
-  return response;
+  );
+  const data = await Utils.streamToJSON(response.body)
+  return [data, response.status];
 };
 
 const deleteAsset = async (url, id, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
       'DELETE',
       url + id, 
       headers = {'accept': 'application/json',
       'Authorization': token},
-  ));
-  return response;
+  );
+  const data = await Utils.streamToJSON(response.body)
+  return [data, response.status];
 };
 
 const patchAsset = async (url, body, id, token) => {
-  const response = JSON.parse(await Utils.executeCurl(
+  const response = await Utils.fetchJSONData(
       'PATCH',
       url + id, 
       headers = {'accept': 'application/json',
       'Authorization': token},
       body
-  ));
-  return response;
+  );
+  const data = await Utils.streamToJSON(response.body)
+  return [data, response.status];
 };
 
 module.exports = {
     getAllAssetResilink,
     getAllAssetVue,
     getAllAsset,
+    getOneAssetImg,
     getOneAsset,
     getOwnerAsset,
     createAsset,

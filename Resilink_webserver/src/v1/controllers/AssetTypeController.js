@@ -1,5 +1,6 @@
 const assettypeService = require("../services/AssetTypeService.js");
 const _pathassetTypesODEP = 'http://90.84.194.104:10010/assetTypes/'; 
+const userService = require("../services/UserService.js");
 
 const getAllAssetResilink = async (req, res) => { 
   try {
@@ -14,6 +15,19 @@ const getAllAssetResilink = async (req, res) => {
 const createAssetTypes = async (req, res) => { 
   try {
       const response = await assettypeService.createAssetTypes(_pathassetTypesODEP, req.body, req.header('Authorization'));
+      res.status(response[1]).send(response[0]);
+    } catch (error) {
+      console.error('Erreur lors de l\'exécution de CURL :', error);
+      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+    }
+};
+
+const createAssetTypesCustom = async (req, res) => { 
+  try {
+      const response = await assettypeService.createAssetTypes(_pathassetTypesODEP, req.body, req.header('Authorization') ?? userService.functionGetTokenUser({
+        "userName": "admin",
+        "password": "admin123"
+      }));
       res.status(response[1]).send(response[0]);
     } catch (error) {
       console.error('Erreur lors de l\'exécution de CURL :', error);

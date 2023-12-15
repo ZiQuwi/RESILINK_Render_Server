@@ -49,7 +49,6 @@ const getOneAssetDBimage = async (assetId) => {
     }
     console.log("Data retrieved:", result);
 
-    // Retourner le résultat ou faire d'autres opérations avec les données récupérées
     return result;
 
   } finally {
@@ -76,7 +75,6 @@ const getAllAssetDBimage = async () => {
     }
     console.log("Data retrieved:", result);
 
-    // Retourner le résultat ou faire d'autres opérations avec les données récupérées
     return result;
 
   } finally {
@@ -107,10 +105,64 @@ const getImageforAssets = async (ListAsset) => {
   }
 };
 
+const deleteAssetImgById = async (assetId) => {
+  try {
+    await client.connect();
+    console.log('Connecté à la base de données');
 
+    const _database = client.db('Resilink');
+    const _collection = _database.collection('imgAsset');
+
+    const numericAssetId = parseInt(assetId);
+    console.log(numericAssetId);
+    const result = await _collection.deleteOne({ id: numericAssetId });
+
+    if (result.deletedCount === 1) {
+      console.log(`Document with ID ${assetId} successfully deleted`);
+    } else {
+      console.log(`Failed to delete document with ID ${assetId}/Image was non-existant`);
+    }
+  } finally {
+    await client.close();
+    console.log('Disconnected from database');
+  }
+}
+
+const updateAssetImgById = async (assetId, assetImg) => {
+  try {
+    await client.connect();
+    console.log('Connecté à la base de données');
+    console.log(typeof assetImg);
+    const _database = client.db('Resilink');
+    const _collection = _database.collection('imgAsset');
+
+    const numericAssetId = parseInt(assetId);
+
+    const result = await _collection.updateOne(
+      { id: numericAssetId },
+      { $set: { img: assetImg } }
+    );
+
+    if (result.matchedCount === 1) {
+      if (result.modifiedCount === 1) {
+        console.log(`Document with ID ${assetId} successfully updated`);
+      } else {
+        console.log(`Document with ID ${assetId} found but value equal so not changed`);
+      }
+    } else {
+      console.log(`Failed to find document with ID ${assetId}`);
+    }
+  } finally {
+    await client.close();
+    console.log('Disconnected from database');
+  }
+}
+ 
   module.exports = {
     newAssetDB,
     getOneAssetDBimage,
     getAllAssetDBimage,
     getImageforAssets,
+    deleteAssetImgById,
+    updateAssetImgById
 }

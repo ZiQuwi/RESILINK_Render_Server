@@ -106,6 +106,65 @@ router.post('/assets/', assetController.createAsset);
 
 /**
  * @swagger
+ * /v1/assets/assetTypesNew:
+ *   post: 
+ *     summary: Create a new asset and a new assetTypes 
+ *     tags: [Asset]
+ *     requestBody:
+ *       description: The assetType's data.
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *                name:
+ *                  type: string
+ *                description:
+ *                  type: string
+ *                assetType:
+ *                  type: string
+ *                owner:
+ *                  type: string
+ *                transactionType:
+ *                  type: string
+ *                  enum:
+ *                    - sale/purchase
+ *                    - rent
+ *                  description: "La description de votre transactionType"
+ *                totalQuantity:
+ *                  type: number
+ *                regulatedId:
+ *                  type: string
+ *                regulator:
+ *                  type: string
+ *                image:
+ *                  type: string
+ *                specificAttributes:
+ *                  type: array
+ *                  items:
+ *                     type: object
+ *                     properties:
+    *                     attributeName:
+    *                         type: string
+    *                     value:
+    *                         type: string
+ *     responses:
+ *       200:
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: json
+ *       400:
+ *         description: Invalid asset data.
+ *       500:
+ *         description: Some server error.
+ */
+
+router.post('/assets/assetTypesNew', assetController.createAssetCustom);
+
+/**
+ * @swagger
  * /v1/assets/owner:
  *   get:
  *     summary: Get assets by owner

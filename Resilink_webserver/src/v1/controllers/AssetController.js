@@ -21,6 +21,16 @@ const createAsset = async (req, res) => {
     }
 };
 
+const createAssetCustom = async (req, res) => { 
+  try {
+      const response = await assetService.createAssetCustom(_pathAssetODEP, req.body, req.header('Authorization'));
+      res.status(response[1]).send(response[0]);
+    } catch (error) {
+      console.error('Erreur lors de l\'exécution de CURL :', error);
+      res.status(500).send('Redirection error in the platform ');
+    }
+};
+
 const getOwnerAsset = async (req, res) => { 
   try {
     console.log(req.query.id);
@@ -95,6 +105,7 @@ const patchAsset = async (req, res) => {
 module.exports = {
   getAllAssetResilink,
   createAsset,
+  createAssetCustom,
   getAllAsset,
   getOneAsset,
   getOneAssetIdimage,

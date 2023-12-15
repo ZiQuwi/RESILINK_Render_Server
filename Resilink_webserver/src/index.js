@@ -13,16 +13,18 @@ const PORT = process.env.PORT || 9990;
 
 // Start Express.js && socket.io
 const app = express(); 
-//const server = http.createServer(app);
-//const io = socketIO(server);
+
+//change request size limit for taking images
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({ limit: '5mb', extended: true , parameterLimit: 10000000}));
+
+app.use(express.json());
 
 
 // Start morgan.js (only for dev)
 const morgan = require('morgan');
 app.use(morgan('dev'));
 
-app.use(express.json());
-app.use(bodyParser.json());
 // ------------------------------------------------
 
 // Middleware CORS pour autoriser l'accès depuis n'importe quelle origine

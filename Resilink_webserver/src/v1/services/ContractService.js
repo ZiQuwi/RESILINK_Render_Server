@@ -8,7 +8,7 @@ const createContract = async (url, body, token) => {
         'Content-Type': 'application/json',
         'Authorization': token},
         body);
-    const data = await Utils.streamToJSON(response.body)
+    const data = await Utils.streamToJSON(response.body);
     return [data, response.status];
 }
 
@@ -17,9 +17,11 @@ const getAllContract = async (url, token) => {
         'GET',
         url + "all/", 
         headers = {'accept': 'application/json',
-        'Authorization': token});
-    const data = await Utils.streamToJSON(response.body)
+        'Authorization': token}
+    );
+    const data = await Utils.streamToJSON(response.body);
     return [data, response.status];
+
 }
 
 const getOneContract = async (url, id, token) => {
@@ -28,7 +30,7 @@ const getOneContract = async (url, id, token) => {
         url + id + "/", 
         headers = {'accept': 'application/json',
         'Authorization': token});
-    const data = await Utils.streamToJSON(response.body)
+    const data = await Utils.streamToJSON(response.body);
     return [data, response.status];
 }
 
@@ -38,8 +40,32 @@ const getContractFromOwner = async (url, id, token) => {
         url + "owner/" + id + "/", 
         headers = {'accept': 'application/json',
         'Authorization': token});
-    const data = await Utils.streamToJSON(response.body)
+    const data = await Utils.streamToJSON(response.body);
     return [data, response.status];
+}
+
+const getOwnerContractOngoing = async (url, id, token) => {
+    console.log(url + "owner/" + id + "/");
+    const response = await Utils.fetchJSONData(
+        'GET',
+        url + "owner/" + id + "/", 
+        headers = {'accept': 'application/json',
+        'Authorization': token}
+    );
+    const data = await Utils.streamToJSON(response.body);
+    if (response.status != 200) {
+        return [data, response.status];
+    } else {
+        const filteredData = data.filter(obj => {
+          const nameValue = obj["state"];
+
+          return (nameValue !== 'endOfConsumption' && /* end states of an immaterial purchase contract */
+                  nameValue !== "assetReceivedByTheRequestor" && nameValue !== "assetNotReceivedByTheRequestor" && /* end states of an material purchase contract */
+                  nameValue !== "assetNotReturnedToTheOfferer" && nameValue !== "assetReceivedByTheRequestor" && nameValue !== "assetReceivedByTheRequestor" /* end states of an material rent contract */
+                  );
+        });
+        return [filteredData, response.status];
+    }  
 }
 
 const patchContractImmaterial = async (url, body, id, token) => {
@@ -50,7 +76,7 @@ const patchContractImmaterial = async (url, body, id, token) => {
         'Content-Type': 'application/json',
         'Authorization': token},
         body);
-    const data = await Utils.streamToJSON(response.body)
+    const data = await Utils.streamToJSON(response.body);
     return [data, response.status];
 }
 
@@ -62,7 +88,7 @@ const patchContractMaterialPurchase = async (url, body, id, token) => {
         'Content-Type': 'application/json',
         'Authorization': token},
         body);
-    const data = await Utils.streamToJSON(response.body)
+    const data = await Utils.streamToJSON(response.body);
     return [data, response.status];
 }
 
@@ -74,7 +100,7 @@ const patchContractMaterialRent = async (url, body, id, token) => {
         'Content-Type': 'application/json',
         'Authorization': token},
         body);
-    const data = await Utils.streamToJSON(response.body)
+    const data = await Utils.streamToJSON(response.body);
     return [data, response.status];}
 
 const patchContractCancel = async (url, body, id, token) => {
@@ -85,13 +111,14 @@ const patchContractCancel = async (url, body, id, token) => {
         'Content-Type': 'application/json',
         'Authorization': token},
         body);
-    const data = await Utils.streamToJSON(response.body)
+    const data = await Utils.streamToJSON(response.body);
     return [data, response.status];
 }
 
 module.exports = {
     createContract,
     getAllContract,
+    getOwnerContractOngoing,
     getOneContract,
     getContractFromOwner,
     patchContractImmaterial,

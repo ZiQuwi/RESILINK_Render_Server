@@ -20,14 +20,10 @@ const getAllAssetTypesResilink = async (token) => {
     for (const key in data) {
         if (data.hasOwnProperty(key)) {
           const element = data[key];
-
-          if (element['description'] !== null && element['description'].split(',').pop().toUpperCase() === 'RESILINK') {
-            allAssetTypesResilink[element['name'].toString()] = element;
-          }
+          allAssetTypesResilink[element['name']] = element;
         }
     }
-    console.log("tableau des types d'asset pour resilink" + allAssetTypesResilink);
-    return [allAssetTypesResilink, data];
+    return [allAssetTypesResilink, allAssetTypes.status];
 };
 
 const createAssetTypes = async (url, body, token) => {
@@ -83,6 +79,7 @@ const getAllAssetTypes = async (url, token) => {
   if (response.status != 200) {
     return [data, response.status];
   } else {
+    /*
     const filteredData = data.filter(obj => {
       const nameValue = obj["name"];
   
@@ -91,6 +88,9 @@ const getAllAssetTypes = async (url, token) => {
     });
     
     return [filteredData, response.status];
+    */
+    return [data, response.status];
+
   }  
 };
 
@@ -132,6 +132,7 @@ module.exports = {
     getAllAssetTypeVue,
     createAssetTypes,
     createAssetTypesCustom,
+    getAllAssetTypesResilink,
     getAllAssetTypes,
     getOneAssetTypes,
     putAssetTypes,

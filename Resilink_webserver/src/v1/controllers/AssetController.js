@@ -33,8 +33,8 @@ const createAssetCustom = async (req, res) => {
 
 const getOwnerAsset = async (req, res) => { 
   try {
-    console.log(req.query.id);
-      const response = await assetService.getOwnerAsset(_pathAssetODEP, req.query.id, req.header('Authorization'));
+    console.log(req.query.idOwner);
+      const response = await assetService.getOwnerAsset(_pathAssetODEP, req.query.idOwner, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
       console.error('Erreur lors de l\'exécution de CURL :', error);

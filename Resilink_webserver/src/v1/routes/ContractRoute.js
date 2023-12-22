@@ -65,9 +65,36 @@ router.get('/contracts/all', contractController.getAllContract);
 
 /**
  * @swagger
+ * /v1/contracts/owner/ongoing/{id}:
+ *   get: 
+ *     summary: Get contracts by owner
+ *     tags: [Contracts]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Token of the user.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: json
+ *       400:
+ *         description: Invalid asset data.
+ *       500:
+ *         description: Some server error.
+ */
+
+router.get('/contracts/owner/ongoing/:id/', contractController.getOwnerContractOngoing);
+
+/**
+ * @swagger
  * /v1/contracts/owner/{id}:
  *   get: 
- *     summary: Get contracts  by owner
+ *     summary: Get contracts by owner
  *     tags: [Contracts]
  *     parameters:
  *       - in: path

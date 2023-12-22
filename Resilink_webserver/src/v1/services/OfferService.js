@@ -4,7 +4,10 @@ const AssetTypes = require("./AssetTypeService.js");
 const Asset = require("./AssetService.js");
 
 const getAllOfferForResilinkCustom = async (url, token) => {
-    const allAssetResilink = await Asset.getAllAsset('http://90.84.194.104:10010/assets/', token);
+    const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
+    const allAssetResilink = await Asset.getAllAssetResilink(token);
+    console.log(allAssetType);
+    console.log(allAssetResilink);
     const allOffer = await Utils.fetchJSONData(
         'GET',
         url + "all", 
@@ -15,7 +18,14 @@ const getAllOfferForResilinkCustom = async (url, token) => {
     for (const key in data) {
         if (data.hasOwnProperty(key)) {
           const element = data[key];
-          if (new Date(element['validityLimit']) > new Date() && allAssetResilink[element['assetId'].toString()] !== null && (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true)) {
+          if (
+            new Date(element['validityLimit']) > new Date() && 
+            ( allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] !== null ?  
+              (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
+              (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true) : true) : false
+            ) 
+          ) 
+          {
             allOfferResilink[element['offerId'].toString()] = element;
           }
         }

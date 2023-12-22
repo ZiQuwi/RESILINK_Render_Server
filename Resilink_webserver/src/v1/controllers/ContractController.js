@@ -22,6 +22,16 @@ const getAllContract = async (req, res) => {
     }
 }
 
+const getOwnerContractOngoing = async (req, res) => {
+  try {
+    const response = await ContractService.getOwnerContractOngoing(_pathContractODEP, req.params.id, req.header('Authorization'));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    console.error('Erreur lors de l\'exécution de CURL :', error);
+    res.status(500).send('Error retrieving all contracts');
+  }
+};
+
 const getOneContract = async (req, res) => {
     try {
       const response = await ContractService.getOneContract(_pathContractODEP, req.params.id, req.header('Authorization'));
@@ -86,6 +96,7 @@ module.exports = {
     createContract,
     getOneContract,
     getAllContract,
+    getOwnerContractOngoing,
     getContractFromOwner,
     patchContractImmaterial,
     patchContractMaterialPurchase,

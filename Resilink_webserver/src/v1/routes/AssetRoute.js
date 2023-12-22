@@ -188,7 +188,7 @@ router.post('/assets/assetTypesNew', assetController.createAssetCustom);
  *         description: Some server error.
  */
 
-router.get('/assets/owner/', assetController.getOwnerAsset);
+router.get('/assets/owner', assetController.getOwnerAsset);
 
 /**
  * @swagger

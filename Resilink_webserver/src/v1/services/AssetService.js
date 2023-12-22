@@ -4,9 +4,6 @@ const AssetTypes = require("../services/AssetTypeService.js");
 const AssetDB = require("../database/AssetDB.js");
 const util = require('util');
 
-
-const _urlGetALlAsset = "http://90.84.194.104:10010/assets/all";
-
 //TODO SEUL FONCTION DE ASSET PAS ENCRE MIS A JOUR AVEC FETCHDATA ET FAIRE TOUS LE RESTE SEUL ASSET FAIT DÉBILE
 const getAllAssetVue = async (token) => {
     const allAssetTypesResilink = await AssetTypes.getAllAssetTypesResilink(token);
@@ -14,20 +11,18 @@ const getAllAssetVue = async (token) => {
     return allAsset;
 }
 
-const getAllAssetResilink = async (assetTypeMap, token) => {
+const getAllAssetResilink = async (token) => {
     const allAsset = await Utils.fetchJSONData(
         'GET',
-        _urlGetALlAsset, 
+        "http://90.84.194.104:10010/assets/all", 
         headers = {'accept': 'application/json',
-        'Authorization': "Bearer " + token});
+        'Authorization': token});
     var assetMapResilink = {};
-    const data = await Utils.streamToJSON(allAsset.body)
+    const data = await Utils.streamToJSON(allAsset.body);
     for (const key in data) {
         if (data.hasOwnProperty(key)) {
           const element = data[key];
-          if (assetTypeMap[0][element['id']] == null) {
-            assetMapResilink[element['id'].toString()] = element;
-          }
+          assetMapResilink[element['id'].toString()] = element;
         }
     }
     return [assetMapResilink, allAsset.status];
@@ -41,7 +36,9 @@ const getOwnerAsset = async (url, id, token) => {
       'Authorization': token},
   );
   const data = await Utils.streamToJSON(response.body)
-  return [data, response.status];
+  console.log(data);
+  const dataFinal = await AssetDB.getImageforAssets(data);
+  return [dataFinal, response.status];
 };
  
 const getAllAsset = async (url, token) => {

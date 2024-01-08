@@ -23,7 +23,7 @@ const getAllProsummer = async (req, res) => {
 
 const createProsumerCustom = async (req, res) => {
   try {
-    const prosumer = await prosummerService.createProsumerCustom(_pathProsumerODEP, req.body, req.header('Authorization'));
+    const response = await prosummerService.createProsumerCustom(_pathProsumerODEP, req.body, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
@@ -43,7 +43,7 @@ const getAllProsummerCustom = async (req, res) => {
   
 const getOneProsumer = async (req, res) => {
   try {
-    const oneProsummer = await prosummerService.getOneProsummer(_pathProsumerODEP, req.params.id, req.header('Authorization'));
+    const response = await prosummerService.getOneProsummer(_pathProsumerODEP, req.params.id, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
@@ -53,7 +53,7 @@ const getOneProsumer = async (req, res) => {
   
 const deleteOneProsummer = async (req, res) => {
   try {
-    const deleteProsummer = await prosummerService.deleteOneProsummer(_pathProsumerODEP, req.params.id, req.header('Authorization'));
+    const response = await prosummerService.deleteOneProsummer(_pathProsumerODEP, req.params.id, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
@@ -63,7 +63,7 @@ const deleteOneProsummer = async (req, res) => {
 
 const patchBalanceProsumer = async (req, res) => {
   try {
-    const balanceProsummer = await prosummerService.patchBalanceProsummer(_pathProsumerODEP, req.body, req.params.id, req.header('Authorization'));
+    const response = await prosummerService.patchBalanceProsummer(_pathProsumerODEP, req.body, req.params.id, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);
@@ -73,7 +73,7 @@ const patchBalanceProsumer = async (req, res) => {
 
 const patchSharingProsumer = async (req, res) => {
   try {
-    const sharingProsummer = await prosummerService.patchSharingProsummer(_pathProsumerODEP, req.body, req.params.id, req.header('Authorization'));
+    const response = await prosummerService.patchSharingProsummer(_pathProsumerODEP, req.body, req.params.id, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);

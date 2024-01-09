@@ -65,9 +65,6 @@ const getAllAssetDBimage = async () => {
     const _database = client.db('Resilink');
     const _collection = _database.collection('imgAsset');
 
-    const numericAssetId = parseInt(assetId);
-
-    console.log(numericAssetId);
     const result = await _collection.find({}).toArray();
 
     if (result == null || result.length === 0) {

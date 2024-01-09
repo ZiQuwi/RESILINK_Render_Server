@@ -59,10 +59,12 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
           };
           if (notFound) {
             isCompatible = false;
+            continue;
           };
         } else {
           if (allAsset[allOffer[key]["assetId"]]["assetType"] != filter["assetType"]) {
             isCompatible = false;
+            continue;
           }
         }
       };
@@ -74,10 +76,12 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
             console.log("condition du if pour compatible : " + filter["Properties"].every(attr2 => allAsset[allOffer[key]["assetId"]]["specificAttributes"].some(attr1 => attr1.attributeName.toUpperCase() == attr2.attributeName.toUpperCase() && attr1.value.toUpperCase() == attr2.value.toUpperCase())));
             if (filter["Properties"].every(attr2 => allAsset[allOffer[key]["assetId"]]["specificAttributes"].some(attr1 => attr1.attributeName.toUpperCase() == attr2.attributeName.toUpperCase() && attr1.value.toUpperCase() == attr2.value.toUpperCase())) == false) {
               isCompatible = false;
+              continue;
             }
           } else {
             console.log("dans le else");
             isCompatible = false;
+            continue;
           }
           
       };
@@ -85,24 +89,28 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
       if(filter.hasOwnProperty("priceMin")){
         if (allOffer[key]["price"] < filter["priceMin"]) {
           isCompatible = false;
+          continue;
         }
       };
 
       if(filter.hasOwnProperty("priceMax")){
         if (allOffer[key]["price"] > filter["priceMax"]) {
           isCompatible = false;
+          continue;
         }
       };
   
       if(filter.hasOwnProperty("dateMin")){
         if (allOffer[key]["validityLimit"] > filter["dateMin"]) {
           isCompatible = false;
+          continue;
         }
       };
 
       if(filter.hasOwnProperty("dateMax")){
         if (allOffer[key]["validityLimit"] < filter["dateMax"]) {
           isCompatible = false;
+          continue;
         }
       };
 

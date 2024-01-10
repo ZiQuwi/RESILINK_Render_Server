@@ -61,6 +61,9 @@ app.use("/v1/", v1RequestRouter);
 const v1ContractRoute = require("./v1/routes/ContractRoute.js");
 app.use("/v1/", v1ContractRoute);
 
+const v1ArticleRoute = require("./v1/routes/ArticleRoute.js");
+app.use("/v1/", v1ArticleRoute);
+
 // Gestion des connexions
 /*io.on('connection', (socket) => {
   console.log('Nouvelle connexion:', socket.id);

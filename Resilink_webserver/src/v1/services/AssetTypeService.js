@@ -3,7 +3,11 @@ const User = require("./UserService.js");
 const AssetTypeDB = require("../database/AssetTypeDB.js");
 
 const getAllAssetTypeVue = async () => {
-  const token = await User.functionGetTokenUser("acazaux", "123456");
+  console.log("dansgetAllAssetTypeVue");
+  const token = await User.functionGetTokenUser({
+    "userName": "acazaux",
+    "password": "123456"
+  });
   const allAssetType = await getAllAssetTypesResilink(token);
   return allAssetType;
 };

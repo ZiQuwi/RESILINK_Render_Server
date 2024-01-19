@@ -1,8 +1,10 @@
 const { exec } = require('child_process');
 const { Readable } = require('stream');
 
-//Fonction pour lancer une commande Curl directement dans le serveur
-//Si la variable headers et body ne sont pas définies, alors elles prendront respectivement la valeur d'un objet vide et null
+/*
+  Function to run a Curl command directly in the server
+  If the headers and body variables are not defined, they will take the value of an empty object and null respectively.
+*/
 const executeCurl = (type, url, headers = {}, body = null) =>{
     return new Promise((resolve, reject) => {
       let command = 'curl -X ';
@@ -60,7 +62,7 @@ const fetchJSONData = async (method, url, header, body = null) => {
 
   if (body !== null) {
     params.body = JSON.stringify(body);
-  }
+  };
 
   return fetch(url, params)
   .then(response => {
@@ -68,10 +70,37 @@ const fetchJSONData = async (method, url, header, body = null) => {
   });
 }
 
+/*
+  this function uses the haversine distance formula to calculate the distance between 2 geographical points.
+  R represents the Earth's radius in kilometers and 
+  distance is in kilometers
+*/
+const haversine = (lat1, lon1, lat2, lon2) => {
+  const R = 6371;
+
+  const dLat = (lat2 - lat1) * (Math.PI / 180);
+  const dLon = (lon2 - lon1) * (Math.PI / 180);
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  const distance = R * c; 
+
+  return distance;
+}
+
+/*
+  checks whether the distance between 2 geographical points is too far apart
+*/
+const isInPerimeter = (lat1, lon1, lat2, lon2, perimeterRadius) => {
+  const distance = haversine(lat1, lon1, lat2, lon2);
+
+  return distance <= perimeterRadius;
+}
+
 
 module.exports = {
   executeCurl,
   streamToJSON,
-  fetchJSONData
+  fetchJSONData,
+  isInPerimeter,
 }
 

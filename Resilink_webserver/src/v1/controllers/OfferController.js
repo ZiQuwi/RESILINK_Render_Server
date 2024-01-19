@@ -24,7 +24,7 @@ const createOfferNoPrice = async (req, res) => {
 
 const getOfferFiltered = async (req, res) => {
   try {
-    const response = await OfferService.getAllOfferFiltered(_pathofferODEP, req.params.id, req.header('Authorization'));
+    const response = await OfferService.getAllOfferFilteredCustom(_pathofferODEP, req.body, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     console.error('Erreur lors de l\'exécution de CURL :', error);

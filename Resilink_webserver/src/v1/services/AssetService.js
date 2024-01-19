@@ -22,7 +22,7 @@ const getAllAssetResilink = async (token) => {
     for (const key in data) {
         if (data.hasOwnProperty(key)) {
           const element = data[key];
-          assetMapResilink[element['id'].toString()] = element;
+          assetMapResilink[element['id']] = element;
         }
     }
     return [assetMapResilink, allAsset.status];

@@ -42,7 +42,6 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
     var isCompatible = true;
     console.log("--------------------------------------------------------");
     console.log(filter);
-    console.log(filter.hasOwnProperty("assetType"));
     for (const key in allOffer) {
       console.log("Début d'un cycle");
       isCompatible = true;
@@ -88,11 +87,27 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
             
         };
 
-        if(filter.hasOwnProperty("GPS")){
-            console.log("dans GPS");
-            if(Utils.isInPerimeter(filter["GPS"]["latitude"], filter["GPS"]["longitude"])) {
-
+        if(filter.hasOwnProperty("latitude")){
+            if(allAsset[allOffer[key]["assetId"]]["specificAttributes"] !== undefined) {
+              const gpsAttribute = allAsset[allOffer[key]["assetId"]]["specificAttributes"].find(attribute => attribute.attributeName === "Gps");
+              if (gpsAttribute !== undefined) {
+                const regex = /<(-?\d+\.\d+),(-?\d+\.\d+)>/;
+                const match = gpsAttribute["value"].match(regex);
+                var pointInCircle = Utils.isInPerimeter(filter["latitude"], filter["longitude"], parseFloat(match[1]), parseFloat(match[2]), filter["distance"]);
+                if(match === undefined && !pointInCircle) {
+                  isCompatible = false;
+                  continue;
+                }
+              } else {
+                isCompatible = false;
+                continue;
+              }
+            } else {
+              isCompatible = false;
+              continue;
             }
+            
+            
         }
     
         if(filter.hasOwnProperty("priceMin")){

@@ -387,6 +387,103 @@ router.put('/offers/:id/', offerController.putOffer);
 
 /**
  * @swagger
+ * /v1/offers/createOfferAsset:
+ *   post: 
+ *     summary: create a new offer, his asset and his assetType is needed
+ *     tags: [Offer]
+ *     requestBody:
+ *       description: offer's data.
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               asset : 
+ *                 type: object
+ *                 properties:
+ *                   name:
+ *                   type: string
+ *                 description:
+ *                   type: string
+ *                 assetType:
+ *                   type: string
+ *                 owner:
+ *                   type: string
+ *                 transactionType:
+ *                   type: string
+ *                   enum:
+ *                     - sale/purchase
+ *                     - rent
+ *                   description: ""
+ *                 totalQuantity:
+ *                   type: number
+ *                 regulatedId:
+ *                   type: string
+ *                 regulator:
+ *                   type: string
+ *                 image:
+ *                   type: string
+ *                 specificAttributes:
+ *                   type: array
+ *                   items:
+ *                      type: object
+ *                      properties:
+ *                      attributeName:
+ *                        type: string
+ *                      value:
+ *                        type: string
+ *               offer :
+ *                 type: object
+ *                 properties:
+ *                   offerer:
+ *                      type: string
+ *                   assetId:
+ *                     type: integer
+ *                   beginTimeSlot: 
+ *                     type: string
+ *                     format: date-time
+ *                   endTimeSlot: 
+ *                     type: string
+ *                     format: date-time
+ *                   validityLimit: 
+ *                     type: string
+ *                     format: date-time
+ *                   offeredQuantity:
+ *                     type: number
+ *                   price:
+ *                     type: number
+ *                   deposit:
+ *                     type: number
+ *                   cancellationFee:
+ *                     type: number
+ *                   rentInformation:
+ *                     type: object
+ *                     properties:
+ *                       delayMargin:
+ *                         type: number
+ *                       lateRestitutionPenalty:
+ *                         type: number
+ *                       deteriorationPenalty:
+ *                         type: number
+ *                       nonRestitutionPenalty:
+ *                         type: number
+ *     responses:
+ *       200:
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: json
+ *       400:
+ *         description: Invalid offer data.
+ *       500:
+ *         description: Some server error.
+ */
+
+router.post('/offers/createOfferAsset/', offerController.createOfferAsset);
+
+/**
+ * @swagger
  * /v1/offers/{id}/:
  *   delete: 
  *     summary: delete an offer

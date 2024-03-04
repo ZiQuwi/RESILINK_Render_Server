@@ -1,3 +1,8 @@
+require('../loggers.js');
+const winston = require('winston');
+
+const getDataLogger = winston.loggers.get('GetDataLogger');
+
 const ArticleService = require("../services/ArticleService.js");
 
 const getAllArticles = async (req, res) => { 
@@ -5,8 +10,8 @@ const getAllArticles = async (req, res) => {
       const response = await ArticleService.getAllArticle();
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les articles');
+      getDataLogger.error('Error accessing Resilink Database', { from: 'getAllArticles', data: error});
+      res.status(500).send('Error accessing Resilink Database');
     }
 };
 
@@ -15,8 +20,8 @@ const getLastFourArticles = async (req, res) => {
     const response = await ArticleService.getLastFourArticles();
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    console.error('Erreur lors de l\'exécution de CURL :', error);
-    res.status(500).send('Erreur lors de la récupération de tous les articles');
+    getDataLogger.error('Error accessing Resilink Database', { from: 'getLastFourArticles', data: error});
+      res.status(500).send('Error accessing Resilink Database');
   }
 };
 

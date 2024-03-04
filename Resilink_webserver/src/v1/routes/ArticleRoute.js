@@ -49,4 +49,5 @@ router.get('/articles/all', articleController.getAllArticles);
  */
 
 router.get('/articles/LastFour', articleController.getLastFourArticles);
+
 module.exports = router;

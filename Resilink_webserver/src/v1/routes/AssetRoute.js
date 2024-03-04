@@ -171,7 +171,7 @@ router.post('/assets/assetTypesNew', assetController.createAssetCustom);
  *     tags: [Asset]
  *     parameters:
  *       - in: query
- *         name: id
+ *         name: idOwner
  *         schema:
  *           type: string 
  *         required: true
@@ -240,7 +240,7 @@ router.get('/assets/:id/', assetController.getOneAsset);
 
 /**
  * @swagger
- * /v1/Asset/allAssetCustom:
+ * /v1/asset/allAssetCustom:
  *   get:
  *     summary: Retrieve all assets from Resilink
  *     tags: [Asset]
@@ -257,7 +257,7 @@ router.get('/assets/:id/', assetController.getOneAsset);
  *         description: Some server error.
  */
 
-router.get('/Asset/allAssetCustom/', assetController.getAllAssetResilink);
+router.get('/asset/allAssetCustom/', assetController.getAllAssetResilink);
 
 /**
  * @swagger

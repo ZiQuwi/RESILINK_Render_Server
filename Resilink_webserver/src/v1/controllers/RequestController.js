@@ -1,3 +1,10 @@
+require('../loggers.js');
+const winston = require('winston');
+
+const getDataLogger = winston.loggers.get('GetDataLogger');
+const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
+const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
+
 const RequestService = require("../services/RequestService.js");
 
 const _pathRequestODEP = 'http://90.84.194.104:10010/requests/';
@@ -7,8 +14,8 @@ const createRequest = async (req, res) => {
       const response = await RequestService.createRequest(_pathRequestODEP, req.body, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+      updateDataODEP.error('Catched error', { from: 'createRequest', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      res.status(500).send('Catched error');
     }
 }
 
@@ -17,8 +24,8 @@ const getOneRequest = async (req, res) => {
       const response = await RequestService.getOneRequest(_pathRequestODEP, req.params.id, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+      getDataLogger.error('Catched error', { from: 'getOneRequest', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      res.status(500).send('Catched error');
     }
 }
 
@@ -27,8 +34,8 @@ const getAllRequest = async (req, res) => {
       const response = await RequestService.getAllRequest(_pathRequestODEP, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+      getDataLogger.error('Catched error', { from: 'getAllRequest', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      res.status(500).send('Catched error');
     }
 }
 
@@ -37,8 +44,8 @@ const putRequest = async (req, res) => {
       const response = await RequestService.putRequest(_pathRequestODEP, req.body, req.params.id, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+      updateDataODEP.error('Catched error', { from: 'putRequest', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      res.status(500).send('Catched error');
     }
 }
 
@@ -47,8 +54,8 @@ const deleteRequest = async (req, res) => {
       const response = await RequestService.deleteRequest(_pathRequestODEP, req.params.id,req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      console.error('Erreur lors de l\'exécution de CURL :', error);
-      res.status(500).send('Erreur lors de la récupération de tous les utilisateurs');
+      deleteDataODEP.error('Catched error', { from: 'deleteRequest', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      res.status(500).send('Catched error');
     }
 }
 

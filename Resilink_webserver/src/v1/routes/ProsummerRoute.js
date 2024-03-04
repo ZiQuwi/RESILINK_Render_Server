@@ -283,4 +283,42 @@ router.patch('/prosumers/:id/balance', prosumerController.patchBalanceProsumer);
 
 router.patch('/prosumers/:id/sharingAccount', prosumerController.patchSharingProsumer);
 
+/**
+ * @swagger
+ * /v1/prosumers/{id}/bookmarkAccount:
+ *   patch: 
+ *     summary: add an id to the bookmark list of the prosumer
+ *     tags: [Prosumer]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: the Prosumer id
+ *     requestBody:
+ *       description: The bookmark's id.
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               bookmarkId:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Token of the user.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: json
+ *       400:
+ *         description: Invalid prosumer data.
+ *       500:
+ *         description: Some server error.
+ */
+
+router.patch('/prosumers/:id/bookmarkAccount', prosumerController.patchBookmarkProsumer);
+
 module.exports = router;

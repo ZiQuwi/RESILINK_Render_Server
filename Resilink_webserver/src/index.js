@@ -1,12 +1,12 @@
 // In src/index.js 
+
 const express = require("express"); 
 const bodyParser = require("body-parser");
-//const http = require('http');
-//const socketIO = require("socket.io");
+const cors = require('cors');
 
 const { swaggerDocs: V1SwaggerDocs } = require("./v1/swaggerV1.js");
 
-const PORT = process.env.PORT || 9990;
+const PORT = 9990; //process.env.PORT || 
 
 
 // ---------------------------------------------------
@@ -15,28 +15,24 @@ const PORT = process.env.PORT || 9990;
 const app = express(); 
 
 //change request size limit for taking images
-app.use(bodyParser.json({limit: '5mb'}));
-app.use(bodyParser.urlencoded({ limit: '5mb', extended: true , parameterLimit: 10000000}));
+app.use(bodyParser.json({limit: '4mb'}));
+app.use(bodyParser.urlencoded({ limit: '4mb', extended: true , parameterLimit: 10000000}));
 
 app.use(express.json());
-
 
 // Start morgan.js (only for dev)
 const morgan = require('morgan');
 app.use(morgan('dev'));
 
-// ------------------------------------------------
+// Ajoutez le middleware CORS à votre application Express
+app.use(cors());
 
-// Middleware CORS pour autoriser l'accès depuis n'importe quelle origine
-/*app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://resilink-api.onrender.com/');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});*/
+// Permit certbot brom Letsencrypt to read a-string file and start challenging the server
+//app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 
 // --------------------------------------------------
 
+// 
 const v1ProsummerRouter = require("./v1/routes/ProsummerRoute.js");
 app.use("/v1/", v1ProsummerRouter);
 
@@ -64,30 +60,8 @@ app.use("/v1/", v1ContractRoute);
 const v1ArticleRoute = require("./v1/routes/ArticleRoute.js");
 app.use("/v1/", v1ArticleRoute);
 
-// Gestion des connexions
-/*io.on('connection', (socket) => {
-  console.log('Nouvelle connexion:', socket.id);
-
-  // Gestion des déconnexions
-  socket.on('disconnect', () => {
-    console.log('Déconnexion:', socket.id);
-  });
-
-  // Écoute des messages du client
-  socket.on('broadcast-message', (message) => {
-    console.log(`Message reçu de ${socket.id}: ${message}`);
-    // Diffuser le message à tous les clients
-    io.emit('broadcast', { sender: socket.id, message });
-  });
-
-  // Écoute des messages privés du client
-  socket.on('private-message', ({ recipient, message }) => {
-    console.log(`Message privé de ${socket.id} à ${recipient}: ${message}`);
-    // Envoyer le message privé à un utilisateur spécifique
-    io.to(recipient).emit('private-message', { sender: socket.id, message });
-  });
-});
-*/
+const v1NewsRoute = require("./v1/routes/NewsRoute.js");
+app.use("/v1/", v1NewsRoute);
 
 //start application Express.js (pour notre les requêtes)
 app.listen(PORT, '0.0.0.0', () => { 

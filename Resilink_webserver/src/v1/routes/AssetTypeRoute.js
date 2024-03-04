@@ -104,27 +104,6 @@ router.post('/assetTypes/', assetTypeController.createAssetTypes);
 
 /**
  * @swagger
- * /v1/assetTypes/CustomAllAssetType:
- *   get:
- *     summary: Retrieve all asset types with RESILINK label
- *     tags: [AssetType]
- *     responses:
- *       200:
- *         description: datas of the asset type.
- *         content:
- *           application/json:
- *             schema:
- *               type: json
- *       400:
- *         description: Some server error.
- *       500:
- *         description: Some server error.
- */
-
-router.get('/assetTypes/CustomAllAssetType/', assetTypeController.getAllAssetResilink);
-
-/**
- * @swagger
  * /v1/assetTypes/all:
  *   get:
  *     summary: Retrieve all asset types from Resilink

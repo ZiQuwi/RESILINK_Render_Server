@@ -11,13 +11,16 @@
   "license": "UPPA",
   "dependencies": {
     "child_process": "^1.0.2",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
+    "express-winston": "^4.2.0",
     "mongodb": "^6.1.0",
     "morgan": "^1.10.0",
     "socket.io": "^4.7.2",
     "swagger-jsdoc": "^6.2.8",
     "swagger-parser": "^10.0.3",
-    "swagger-ui-express": "^5.0.0"
+    "swagger-ui-express": "^5.0.0",
+    "winston": "^3.11.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

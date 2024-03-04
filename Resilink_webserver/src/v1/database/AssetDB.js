@@ -1,56 +1,83 @@
-const { MongoClient, ObjectId } = require('mongodb');
+const { MongoClient} = require('mongodb');
+const { getDBError, InsertDBError, DeleteDBError, UpdateDBError } = require('../errors.js');
+
+require('../loggers.js');
+const winston = require('winston');
+
+const getDataLogger = winston.loggers.get('GetDataLogger');
+const updateData = winston.loggers.get('UpdateDataResilinkLogger');
+const deleteData = winston.loggers.get('DeleteDataResilinkLogger');
+const connectDB = winston.loggers.get('ConnectDBResilinkLogger');
 
 //account and key to mongodb 
 const _username = "axelcazaux1";
 const _password = "ysf72odys0D340w6";
 
-// MongoDB Atlas cluster connection URL
-const url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
-const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+// MongoDB Atlas cluster connection _url
+const _url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
+const client = new MongoClient(_url);
 
 const newAssetDB = async (assetId, imgBase64, owner) => {
     try {
-      console.log("try to connect to database");
       await client.connect();
-      console.log("connection succesfull")
-  
+      connectDB.info('succes connecting to DB', { from: 'newAssetDB'});
+
       const _database = client.db('Resilink');
       const _collection = _database.collection('imgAsset');
   
+      updateData.warn('before inserting data', { from: 'newAssetDB', data: {assetId: assetId, imgBase64: imgBase64, owner: owner}});
+
   // Insert an asset with is imgpath. Can be empty if default image from mobile app selected
-      console.log("before insertOne");
-      await _collection.insertOne({
+      const asset = await _collection.insertOne({
         "id": assetId,
         "owner": owner,
         "img": imgBase64
       });
-      console.log("Document inséré avec succès!");
+
+      if (asset == null) {
+        throw new InsertDBError("asset not created in local DB")
+      }  
+
+      updateData.info('succes creating an asset in Resilink DB', { from: 'newAssetDB'});
+      
+    } catch (e) {
+      if (e instanceof InsertDBError) {
+        updateData.error('error creating an asset in Resilink DB', { from: 'newAssetDB'});
+      } else {
+        connectDB.error('error connecting to DB', { from: 'newAssetDB', error: e});
+      }
+      throw (e);
     } finally {
       await client.close();
     }
 };
 
-const getOneAssetDBimage = async (assetId) => {
+const getOneAssetDBimage = async (asset) => {
   try {
-    console.log("try to connect to database");
+
     await client.connect();
-    console.log("connection succesfull")
+    connectDB.info('succes connecting to DB', { from: 'getOneAssetDBimage'});
 
     const _database = client.db('Resilink');
     const _collection = _database.collection('imgAsset');
+    const numericAssetId = parseInt(asset["id"]);
 
-    const numericAssetId = parseInt(assetId);
-
-    console.log(numericAssetId);
     const result = await _collection.findOne({ id: numericAssetId });
 
     if (result == null) {
-      throw("image didn't find in the ")
+      throw new getDBError("asset didn't find in the Resilink DB");
+    } else {
+      getDataLogger.info('succes retrieving an asset in Resilink DB', { from: 'getOneAssetDBimage'});
     }
-    console.log("Data retrieved:", result);
 
-    return result;
+    asset["img"] = result["img"];
 
+  } catch (e) {
+    if (e instanceof getDBError) {
+      getDataLogger.error('error retrieving an asset in Resilink DB', { from: 'getOneAssetDBimage'});
+    } else {
+      connectDB.error('error connecting to DB', { from: 'getOneAssetDBimage',  error: e});
+    }
   } finally {
     await client.close();
   }
@@ -58,9 +85,8 @@ const getOneAssetDBimage = async (assetId) => {
 
 const getAllAssetDBimage = async () => {
   try {
-    console.log("try to connect to database");
     await client.connect();
-    console.log("connection succesfull")
+    connectDB.info('succes connecting to DB', { from: 'getAllAssetDBimage'});
 
     const _database = client.db('Resilink');
     const _collection = _database.collection('imgAsset');
@@ -68,12 +94,19 @@ const getAllAssetDBimage = async () => {
     const result = await _collection.find({}).toArray();
 
     if (result == null || result.length === 0) {
-      throw("Images not found")
+      throw new getDBError("assets didn't find in the Resilink DB");
+    } else {
+      getDataLogger.info('succes retrieving all assets in Resilink DB', { from: 'getAllAssetDBimage'});
     }
-    console.log("Data retrieved:", result);
 
     return result;
-
+  } catch (e) {
+    if (e instanceof getDBError) {
+      getDataLogger.error('error retrieving all assets in Resilink DB', { from: 'getAllAssetDBimage'});
+    } else {
+      connectDB.error('error connecting to DB', { from: 'getAllAssetDBimage',  error: e});
+    }
+    throw (e);
   } finally {
     await client.close();
   }
@@ -82,9 +115,8 @@ const getAllAssetDBimage = async () => {
 //takes a list of assets as a parameter, retrieves the images linked to the assets if they exist, incorporates them into the asset and returns this list of assets
 const getImageforAssets = async (ListAsset) => {
   try {
-    console.log("Try to connect to the database");
     await client.connect();
-    console.log("Connection successful");
+    connectDB.info('succes connecting to DB', { from: 'getImageforAssets'});
 
     const _database = client.db('Resilink');
     const _collection = _database.collection('imgAsset');
@@ -95,8 +127,20 @@ const getImageforAssets = async (ListAsset) => {
       asset['image'] = result == null ? "" : result.img;
     }
 
-    return ListAsset;
+    if (ListAsset == null) {
+      console.log("listasset: " + ListAsset);
+      throw new getDBError("assets didn't find / in the Resilink DB");
+    } else {
+      getDataLogger.info('succes retrieving/processing all assets in Resilink DB', { from: 'getImageforAssets'});
+    }
 
+    return ListAsset;
+  } catch (e) {
+    if (e instanceof getDBError) {
+      getDataLogger.error('error retrieving/processing all assets in Resilink DB', { from: 'getImageforAssets'});
+    } else {
+      connectDB.error('error connecting to DB', { from: 'getImageforAssets', error: e});
+    }
   } finally {
     await client.close();
   }
@@ -105,31 +149,36 @@ const getImageforAssets = async (ListAsset) => {
 const deleteAssetImgById = async (assetId) => {
   try {
     await client.connect();
-    console.log('Connecté à la base de données');
+    connectDB.info('succes connecting to DB', { from: 'deleteAssetImgById'});
 
     const _database = client.db('Resilink');
     const _collection = _database.collection('imgAsset');
 
     const numericAssetId = parseInt(assetId);
-    console.log(numericAssetId);
     const result = await _collection.deleteOne({ id: numericAssetId });
 
     if (result.deletedCount === 1) {
-      console.log(`Document with ID ${assetId} successfully deleted`);
+      deleteData.info(`Document with ID ${assetId} successfully deleted`, { from: 'deleteAssetImgById'});
     } else {
-      console.log(`Failed to delete document with ID ${assetId}/Image was non-existant`);
+      deleteData.error('error retrieving/processing all assets in Resilink DB', { from: 'deleteAssetImgById'});
+      throw new DeleteDBError('error retrieving/processing all assets in Resilink DB');
+    }
+  } catch (e) {
+    if (e instanceof DeleteDBError) {
+      deleteData.error('error retrieving/processing all assets in Resilink DB', { from: 'deleteAssetImgById'});
+    } else {
+      connectDB.error('error connecting to DB', { from: 'deleteAssetImgById', error: e});
     }
   } finally {
     await client.close();
-    console.log('Disconnected from database');
   }
 }
 
 const updateAssetImgById = async (assetId, assetImg) => {
   try {
     await client.connect();
-    console.log('Connecté à la base de données');
-    console.log(typeof assetImg);
+    connectDB.info('succes connecting to DB', { from: 'updateAssetImgById'});
+
     const _database = client.db('Resilink');
     const _collection = _database.collection('imgAsset');
 
@@ -142,16 +191,21 @@ const updateAssetImgById = async (assetId, assetImg) => {
 
     if (result.matchedCount === 1) {
       if (result.modifiedCount === 1) {
-        console.log(`Document with ID ${assetId} successfully updated`);
+        updateData.info(`Document with ID ${assetId} successfully updated`, { from: 'updateAssetImgById'});
       } else {
-        console.log(`Document with ID ${assetId} found but value equal so not changed`);
+        updateData.info(`Document with ID ${assetId} found but value equal so not changed`, { from: 'updateAssetImgById'});
       }
     } else {
-      console.log(`Failed to find document with ID ${assetId}`);
+      throw new UpdateDBError(`Failed to find document with ID ${assetId}`);
+    }
+  } catch (e) {
+    if (e instanceof UpdateDBError) {
+      updateData.error('error retrieving/processing all assets in Resilink DB', { from: 'updateAssetImgById'});
+    } else {
+      connectDB.error('error connecting to DB', { from: 'updateAssetImgById', error: e});
     }
   } finally {
     await client.close();
-    console.log('Disconnected from database');
   }
 }
  

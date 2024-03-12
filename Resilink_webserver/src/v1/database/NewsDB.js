@@ -23,7 +23,7 @@ const getNewsfromCountry = async (country) => {
         const _database = client.db('Resilink');
         const _collection = _database.collection('News');
   
-        const result = await _collection.find({ Country: country.charAt(0).toUpperCase() + country.slice(1).toLowerCase() }).toArray();
+        const result = await _collection.find({ country: country.charAt(0).toUpperCase() + country.slice(1).toLowerCase() }).toArray();
     
         if (result == null) {
           throw new getDBError("no News in DB")

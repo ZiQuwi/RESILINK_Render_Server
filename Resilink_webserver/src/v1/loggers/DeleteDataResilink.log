@@ -1,0 +1,21 @@
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'info',
+  message: 'Document with ID 41 successfully deleted',
+  timestamp: '2024-03-06T14:34:45.110Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'info',
+  message: 'Document with ID 42 successfully deleted',
+  timestamp: '2024-03-06T15:22:29.268Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'info',
+  message: 'Document with ID 43 successfully deleted',
+  timestamp: '2024-03-08T13:23:04.892Z'
+}

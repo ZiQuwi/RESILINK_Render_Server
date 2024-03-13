@@ -4,12 +4,13 @@ const winston = require('winston');
 const getDataLogger = winston.loggers.get('GetDataLogger');
 
 const NewsDB = require("../database/NewsDB.js");
+const ProsumerDB = require("../database/ProsummerDB.js");
 
 const getNewsfromCountry = async (Country) => {
     try {
         const dataFinal = await NewsDB.getNewsfromCountry(Country);
         getDataLogger.info("success retrieving all news from a country", {from: 'getNewsfromCountry'});
-        return [dataFinal, 200];
+        return [{NewsList: dataFinal}, 200];
     } catch (e) {
         getDataLogger.error("error retrieving all news from a country", {from: 'getNewsfromCountry', dataReceiver: e});
         throw e;
@@ -20,9 +21,21 @@ const getNewsfromIdList = async (ids) => {
     try {
         const dataFinal = await NewsDB.getNewsfromIdList(ids);
         getDataLogger.info("success retrieving all news from a country", {from: 'getNewsfromIdList'});
-        return [dataFinal, 200];
+        return [{NewsList: dataFinal}, 200];
     } catch (e) {
         getDataLogger.error("error retrieving all news from a country", {from: 'getNewsfromIdList', dataReceiver: e});
+        throw e;
+    }
+};
+
+const getNewsfromOwner = async (owner, token) => {
+    try {
+        const prosumer = await ProsumerDB.getOneProsummer(owner);
+        const dataFinal = await NewsDB.getNewsfromIdList(prosumer.bookMarked);
+        getDataLogger.info("success retrieving all news from an owner", {from: 'getNewsfromOwner'});
+        return [{NewsList: dataFinal}, 200];
+    } catch (e) {
+        getDataLogger.error("error retrieving all news from an owner", {from: 'getNewsfromOwner', dataReceiver: e});
         throw e;
     }
 };
@@ -30,4 +43,5 @@ const getNewsfromIdList = async (ids) => {
 module.exports = {
     getNewsfromCountry,
     getNewsfromIdList,
+    getNewsfromOwner
 };

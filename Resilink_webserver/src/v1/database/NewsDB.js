@@ -45,6 +45,39 @@ const getNewsfromCountry = async (country) => {
       } 
 };
 
+const getNewsfromCountryWithoutUserNews = async (country, IdList) => {
+  try {
+      await client.connect();
+      connectDB.info('succes connecting to DB', { from: 'getNewsfromCountryWithoutUserNews'});
+
+      const _database = client.db('Resilink');
+      const _collection = _database.collection('News');
+
+      const result = await _collection.find({ 
+        country: country.charAt(0).toUpperCase() + country.slice(1).toLowerCase(),
+        _id: { $nin: IdList } 
+      }).toArray();
+  
+      if (result == null) {
+        throw new getDBError("no News in DB")
+      }
+      
+      getDataLogger.info('succes retrieving all news from in Resilink DB', { from: 'getNewsfromCountryWithoutUserNews'});
+
+      return result;
+  
+    } catch (e) {
+      if (e instanceof getDBError) {
+        getDataLogger.error('error retrieving all news in Resilink DB', { from: 'getNewsfromCountryWithoutUserNews'});
+      } else {
+        connectDB.error('error connecting to DB', { from: 'getNewsfromCountryWithoutUserNews',  error: e});
+      }
+      throw(e);
+    } finally {
+      await client.close();
+    } 
+};
+
 const getNewsfromIdList = async (IdList) => {
   try {
       await client.connect();
@@ -81,4 +114,5 @@ const getNewsfromIdList = async (IdList) => {
 module.exports = {
   getNewsfromCountry,
   getNewsfromIdList,
+  getNewsfromCountryWithoutUserNews,
 }

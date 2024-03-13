@@ -124,47 +124,4 @@ router.post('/User/token', userController.getTokenUser);
 
 router.post('/User/new', userController.createUser);
 
-/**
- * @swagger
- * /v1/User/newCustom:
- *   post: 
- *     summary: Create a new User
- *     tags: [User]
- *     requestBody:
- *       description: The prosumer username and password.
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               userName:
- *                 type: string
- *               firstName:
- *                 type: string
- *               lastName:
- *                 type: string
- *               roleOfUser:
- *                 type: string
- *               whatsApp:
- *                 type: string
- *               email:
- *                 type: string
- *               password:
- *                 type: string 
- *     responses:
- *       200:
- *         description: Token of the user.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *       400:
- *         description: Invalid prosumer data.
- *       500:
- *         description: Some server error.
- */
-
-router.post('/User/newCustom', userController.createUser);
-
 module.exports = router;

@@ -33,9 +33,10 @@ const getAllAssetResilink = async (token) => {
       getDataLogger.error('error retrieving all assets', { from: 'getAllAssetResilink', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return [data, allAsset.status];
     } 
-    for (const key in data) {
-        if (data.hasOwnProperty(key)) {
-          const element = data[key];
+    const dataFinal = await AssetDB.getImageforAssets(data);
+    for (const key in dataFinal) {
+        if (dataFinal.hasOwnProperty(key)) {
+          const element = dataFinal[key];
           assetMapResilink[element['id']] = element;
         }
     }
@@ -106,13 +107,13 @@ const getOneAsset = async (url, id, token) => {
 
 const getOneAssetImg = async (assetId, token) => {
   try {
-    if (token != null && token.contains("Bearer ")) {
+    if (token == null ) {
       getDataLogger.error('error: Unauthorize', { from: 'getOneAssetImg', tokenUsed: token == null ? "Token not given" : token});
       return [{message: 'Token is not given'}, 401];
     } else {
-      const data = await AssetDB.getOneAssetDBimage(assetId);
+      const data = await AssetDB.getOneDBimageById(assetId);
       getDataLogger.info('success retrieving one image from an asset', { from: 'getOneAssetImg', tokenUsed: token.replace(/^Bearer\s+/i, '')});
-      return [data, 200];
+      return [{img: data}, 200];
     }
   } catch(e) {
     getDataLogger.error('error retrieving one image from an asset', { from: 'getOneAssetImg', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
@@ -144,7 +145,9 @@ const createAsset = async (url, body, token) => {
 };
 
 const createAssetCustom = async (url, body, token) => {
+  console.log("entrez dans createAssetCustom");
   const resultCreateAssetType = await AssetTypes.createAssetTypesCustom(body['assetType'], token);
+  console.log("fin de createAssetTypesCustom, reprise de createASsetCustom");
   if (resultCreateAssetType[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createAssetCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
     return [resultCreateAssetType[0], resultCreateAssetType[1]];

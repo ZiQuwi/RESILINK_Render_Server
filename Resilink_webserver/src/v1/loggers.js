@@ -9,7 +9,7 @@ winston.loggers.add('GetDataLogger', {
     ),
     transports: [
         //new winston.transports.Console(),
-        new winston.transports.File({filename: 'getDataODEP.log'})
+        new winston.transports.File({filename: 'src/v1/loggers/getDataODEP.log'})
     ],
     defaultMeta: {service: 'getDataODEPService'}
 })
@@ -22,7 +22,7 @@ winston.loggers.add('UpdateDataODEPLogger', {
     ),    
     transports: [
         //new winston.transports.Console(),
-        new winston.transports.File({filename: 'UpdateDataODEP.log'})
+        new winston.transports.File({filename: 'src/v1/loggers/UpdateDataODEP.log'})
     ],
     defaultMeta: {service: 'UpdateDataODEPService'}
 })
@@ -35,7 +35,7 @@ winston.loggers.add('UpdateDataResilinkLogger', {
     ),
     transports: [
         //new winston.transports.Console(),
-        new winston.transports.File({filename: 'UpdateDataResilink.log'})
+        new winston.transports.File({filename: 'src/v1/loggers/UpdateDataResilink.log'})
     ],
     defaultMeta: {service: 'UpdateDataResilinkService'}
 })
@@ -48,7 +48,7 @@ winston.loggers.add('DeleteDataODEPLogger', {
     ),
     transports: [
         //new winston.transports.Console(),
-        new winston.transports.File({filename: 'DeleteDataODEP.log'})
+        new winston.transports.File({filename: 'src/v1/loggers/DeleteDataODEP.log'})
     ],
     defaultMeta: {service: 'DeleteDataODEPService'}
 })
@@ -61,7 +61,7 @@ winston.loggers.add('DeleteDataResilinkLogger', {
     ),
     transports: [
         //new winston.transports.Console(),
-        new winston.transports.File({filename: 'DeleteDataResilink.log'})
+        new winston.transports.File({filename: 'src/v1/loggers/DeleteDataResilink.log'})
     ],
     defaultMeta: {service: 'DeleteDataResilinkService'}
 })
@@ -74,7 +74,7 @@ winston.loggers.add('ConnectDBResilinkLogger', {
     ),
     transports: [
         //new winston.transports.Console(),
-        new winston.transports.File({filename: 'ConnectDBResilink.log'})
+        new winston.transports.File({filename: 'src/v1/loggers/ConnectDBResilink.log'})
     ],
     defaultMeta: {service: 'ConnectDBResilinkService'}
 })
@@ -87,7 +87,7 @@ winston.loggers.add('PatchDataODEPLogger', {
     ),
     transports: [
         //new winston.transports.Console(),
-        new winston.transports.File({filename: 'PatchDataODEP.log'})
+        new winston.transports.File({filename: 'src/v1/loggers/PatchDataODEP.log'})
     ],
     defaultMeta: {service: 'PatchDataODEPService'}
 })

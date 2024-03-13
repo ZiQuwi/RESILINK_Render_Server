@@ -106,7 +106,7 @@ const router = express.Router();
  */
 
 //TODO Add this later  
-router.post('/offersNoPriceCustom/', offerController.createOfferNoPrice);
+//router.post('/offersNoPriceCustom/', offerController.createOfferNoPrice);
 
 /**
  * @swagger

@@ -1,0 +1,464 @@
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: 'Machinery10',
+    description: 'RESILINK',
+    nature: 'material',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Brand',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Year',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Usage',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Condition',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'true',
+        valueList: 'new, very good, good, fair, old'
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzI4MDUsImV4cCI6MTcwOTc0MDAwNX0.g0GK9ToRo5R8iSJiTDOru5h5kk3XzKGR42C9adxtxBA',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-06T14:28:24.054Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createAssetTypesCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/AssetTypeService.js:99:20)
+      at async Object.createAssetCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/AssetService.js:148:33)
+      at async createAssetCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/AssetController.js:34:24),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzI4MDUsImV4cCI6MTcwOTc0MDAwNX0.g0GK9ToRo5R8iSJiTDOru5h5kk3XzKGR42C9adxtxBA',
+  level: 'error',
+  message: 'error creating one assetType or connecting with ODEP or localDB',
+  timestamp: '2024-03-06T14:28:24.081Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  data: 'error creating one assetType or connecting with ODEP or localDB',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzI4MDUsImV4cCI6MTcwOTc0MDAwNX0.g0GK9ToRo5R8iSJiTDOru5h5kk3XzKGR42C9adxtxBA',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-06T14:28:24.082Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: 'Machinery11',
+    description: 'RESILINK',
+    nature: 'material',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Brand',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Year',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Usage',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Condition',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'true',
+        valueList: 'new, very good, good, fair, old'
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzI4MDUsImV4cCI6MTcwOTc0MDAwNX0.g0GK9ToRo5R8iSJiTDOru5h5kk3XzKGR42C9adxtxBA',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-06T14:29:06.381Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: { message: 'AssetType successfully created' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzI4MDUsImV4cCI6MTcwOTc0MDAwNX0.g0GK9ToRo5R8iSJiTDOru5h5kk3XzKGR42C9adxtxBA',
+  level: 'info',
+  message: 'success creating one assetType in ODEP or localDB',
+  timestamp: '2024-03-06T14:29:08.408Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzI4MDUsImV4cCI6MTcwOTc0MDAwNX0.g0GK9ToRo5R8iSJiTDOru5h5kk3XzKGR42C9adxtxBA',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-03-06T14:29:08.408Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Brand', value: '' },
+      { attributeName: 'Year', value: '' },
+      { attributeName: 'Usage', value: '' },
+      { attributeName: 'Condition', value: 'new' },
+      { attributeName: 'Gps', value: '' },
+      { attributeName: 'City/Village', value: '' }
+    ],
+    name: 'machineToDelete',
+    description: '',
+    assetType: 'Machinery11',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzI4MDUsImV4cCI6MTcwOTc0MDAwNX0.g0GK9ToRo5R8iSJiTDOru5h5kk3XzKGR42C9adxtxBA',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-06T14:29:08.408Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzI4MDUsImV4cCI6MTcwOTc0MDAwNX0.g0GK9ToRo5R8iSJiTDOru5h5kk3XzKGR42C9adxtxBA',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-03-06T14:29:13.481Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: 'Machinery12',
+    description: 'RESILINK',
+    nature: 'material',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Brand',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Year',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Usage',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Condition',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'true',
+        valueList: 'new, very good, good, fair, old'
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzgxNzUsImV4cCI6MTcwOTc0NTM3NX0.gziATRFlcTcUwWkjPKubAt24-YRVpEKNBu26kNRDTSE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-06T15:18:05.694Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: { message: 'AssetType successfully created' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzgxNzUsImV4cCI6MTcwOTc0NTM3NX0.gziATRFlcTcUwWkjPKubAt24-YRVpEKNBu26kNRDTSE',
+  level: 'info',
+  message: 'success creating one assetType in ODEP or localDB',
+  timestamp: '2024-03-06T15:18:07.760Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzgxNzUsImV4cCI6MTcwOTc0NTM3NX0.gziATRFlcTcUwWkjPKubAt24-YRVpEKNBu26kNRDTSE',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-03-06T15:18:07.760Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Brand', value: '' },
+      { attributeName: 'Year', value: '' },
+      { attributeName: 'Usage', value: '' },
+      { attributeName: 'Condition', value: 'new' },
+      { attributeName: 'Gps', value: '' },
+      { attributeName: 'City/Village', value: '' }
+    ],
+    name: 'machineryRent',
+    description: '',
+    assetType: 'Machinery12',
+    owner: 'acazaux',
+    transactionType: 'rent'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzgxNzUsImV4cCI6MTcwOTc0NTM3NX0.gziATRFlcTcUwWkjPKubAt24-YRVpEKNBu26kNRDTSE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-06T15:18:07.760Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzgxNzUsImV4cCI6MTcwOTc0NTM3NX0.gziATRFlcTcUwWkjPKubAt24-YRVpEKNBu26kNRDTSE',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-03-06T15:18:12.824Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 42,
+    beginTimeSlot: '2024-03-06T16:19:14.586Z',
+    validityLimit: '2024-03-13T16:19:14.588Z',
+    publicationDate: '2024-03-06T16:19:14.589Z',
+    endTimeSlot: '2024-03-13T16:19:14.589Z',
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0,
+    rentInformation: {
+      delayMargin: 0,
+      lateRestitutionPenality: 0,
+      deteriorationPenality: 0,
+      nonRestitutionPenality: 0
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzgxNzUsImV4cCI6MTcwOTc0NTM3NX0.gziATRFlcTcUwWkjPKubAt24-YRVpEKNBu26kNRDTSE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-06T15:19:16.144Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk3MzgxNzUsImV4cCI6MTcwOTc0NTM3NX0.gziATRFlcTcUwWkjPKubAt24-YRVpEKNBu26kNRDTSE',
+  level: 'info',
+  message: 'success creating an offer',
+  timestamp: '2024-03-06T15:19:18.145Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: 'Fruits10',
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: true,
+    specificAttributesModel: [
+      {
+        name: 'Color',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'true',
+        valueList: 'green,blue,yellow,purple,red'
+      },
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk5MDQwMzMsImV4cCI6MTcwOTkxMTIzM30.PKjtFOvqcUubTgKDBAhZqAfDsCnMtUgcY_4Da9eylHQ',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-08T13:22:43.589Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: { message: 'AssetType successfully created' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk5MDQwMzMsImV4cCI6MTcwOTkxMTIzM30.PKjtFOvqcUubTgKDBAhZqAfDsCnMtUgcY_4Da9eylHQ',
+  level: 'info',
+  message: 'success creating one assetType in ODEP or localDB',
+  timestamp: '2024-03-08T13:22:45.702Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk5MDQwMzMsImV4cCI6MTcwOTkxMTIzM30.PKjtFOvqcUubTgKDBAhZqAfDsCnMtUgcY_4Da9eylHQ',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-03-08T13:22:45.702Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    specificAttributes: [
+      { attributeName: 'Color', value: 'green' },
+      { attributeName: 'Type', value: 'Apple' }
+    ],
+    name: 'apple',
+    description: '',
+    assetType: 'Fruits10',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 100
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk5MDQwMzMsImV4cCI6MTcwOTkxMTIzM30.PKjtFOvqcUubTgKDBAhZqAfDsCnMtUgcY_4Da9eylHQ',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-08T13:22:45.702Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MDk5MDQwMzMsImV4cCI6MTcwOTkxMTIzM30.PKjtFOvqcUubTgKDBAhZqAfDsCnMtUgcY_4Da9eylHQ',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-03-08T13:22:49.798Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 35,
+    beginTimeSlot: '2024-03-12T16:14:20.700Z',
+    validityLimit: '2024-04-12T00:00:00.000Z',
+    publicationDate: '2024-03-12T16:14:20.701Z',
+    endTimeSlot: '2024-04-12T00:00:00.000Z',
+    offeredQuantity: 1,
+    remainingQuantity: 1,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTAyNTQwODYsImV4cCI6MTcxMDI2MTI4Nn0.ddcLA8lq5MzBoIyf5vA191B33mpGda6Id7REBWxBdFo',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-12T15:14:22.237Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTAyNTQwODYsImV4cCI6MTcxMDI2MTI4Nn0.ddcLA8lq5MzBoIyf5vA191B33mpGda6Id7REBWxBdFo',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-03-12T15:14:26.290Z'
+}

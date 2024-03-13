@@ -66,4 +66,32 @@ router.get('/news/country', newsController.getNewsfromCountry);
 
 router.get('/news/ids', newsController.getNewsfromIdList);
 
+/**
+ * @swagger
+ * /v1/news/owner/{id}:
+ *   get:
+ *     summary: Get all news from a prosumer
+ *     tags: [News]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: the prosummer id
+ *     responses:
+ *       200:
+ *         description: prosumer's bookmarked news.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: json
+ *       400:
+ *         description: Some server error.
+ *       500:
+ *         description: Some server error.
+ */
+
+router.get('/news/owner/:id/', newsController.getNewsfromOwner);
+
 module.exports = router;

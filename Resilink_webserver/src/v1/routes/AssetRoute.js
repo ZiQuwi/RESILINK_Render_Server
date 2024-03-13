@@ -263,7 +263,7 @@ router.get('/asset/allAssetCustom/', assetController.getAllAssetResilink);
  * @swagger
  * /v1/assets/assetImg/{id}:
  *   get: 
- *     summary: update an asset attributes
+ *     summary: get an img of an asset by id
  *     tags: [Asset]
  *     parameters:
  *       - in: path

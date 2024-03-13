@@ -54,7 +54,7 @@ const getOneProsummer = async (id) => {
         const _database = client.db('Resilink');
         const _collection = _database.collection('prosumer');
     
-        const prosumer = await _collection.findOne({ _id: new ObjectId(id) });
+        const prosumer = await _collection.findOne({ _id: id });
 
         if (prosumer == null || prosumer.length === 0) {
           throw new getDBError("prosummer not found in DB")

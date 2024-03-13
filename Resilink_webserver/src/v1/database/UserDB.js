@@ -18,36 +18,6 @@ const _password = "ysf72odys0D340w6";
 const url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
 const client = new MongoClient(url);
 
-const getAllProsummer = async () => {
-    try {
-        await client.connect();
-        connectDB.info('succes connecting to DB', { from: 'getAllProsummer'});
-    
-        const _database = client.db('Resilink');
-        const _collection = _database.collection('prosummer');
-    
-        const prosumers = await _collection.find().toArray();
-
-        if (result == null || result.length === 0) {
-          throw new getDBError("no prosummer in DB found")
-        }
-        
-        getDataLogger.info('succes retrieving all prosummers in Resilink DB', { from: 'getAllProsummer'});        
-        
-        return prosumers;
-    } catch (e) {
-      if (e instanceof getDBError) {
-        getDataLogger.error('error retrieving all prosummers in Resilink DB', { from: 'getAllProsummer'});
-      } else {
-        connectDB.error('error connecting to DB', { from: 'getAllProsummer',  error: e});
-      }
-      throw(e);
-    }
-    finally {
-        await client.close();
-    }
-};
-
 // Function to insert a document in the "prosumer" collection
 const newUser = async (user, password) => {
     try {
@@ -120,7 +90,6 @@ const newUser = async (user, password) => {
   }
 
   module.exports = {
-    getAllProsummer,
     newUser,
     deleteUser
   }

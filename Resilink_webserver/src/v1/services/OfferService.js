@@ -11,7 +11,7 @@ const Asset = require("./AssetService.js");
 
 const getAllOfferForResilinkCustom = async (url, token) => {
     const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
-    const allAssetResilink = await Asset.getAllAssetResilink(token) ;
+    const allAssetResilink = await Asset.getAllAssetResilink(token);
     const allOffer = await Utils.fetchJSONData(
         'GET',
         url + "all", 

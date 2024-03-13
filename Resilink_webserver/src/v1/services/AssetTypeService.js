@@ -26,7 +26,6 @@ const getAllAssetTypesResilink = async (token) => {
       getDataLogger.warn('error retrieving all assetTypes', { from: 'getAllAssetTypesResilink', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return[data, allAssetTypes.status];
     }
-    console.log(data);
     for (const key in data) {
         if (data.hasOwnProperty(key)) {
           const element = data[key];
@@ -68,11 +67,13 @@ const createAssetTypes = async (url, body, token) => {
 */
 const createAssetTypesCustom = async (assetType, token) => {
   try {
+    console.log("entrez dans createAssetTypesCustom")
     const adminToken = await User.functionGetTokenUser({
       "userName": "admin",
       "password": "admin123"
     })
     const resultassetType = await getOneAssetTypes("http://90.84.194.104:10010/assetTypes/", assetType, token);
+    console.log("dans createAssetTypesCustom, apres getOneAssetTypes");
     if (resultassetType[1] == 401) {
       getDataLogger.error('error: Unauthorize', { from: 'createAssetTypesCustom', dataReceived: resultassetType[0], tokenUsed: token == null ? "Token not given" : token});
       return [resultassetType[0], resultassetType[1]];
@@ -82,7 +83,10 @@ const createAssetTypesCustom = async (assetType, token) => {
       return [resultassetType[0], resultassetType[1]];
     } else {
       const resultDB = await AssetTypeDB.newAssetTypeDB(assetType);
+      console.log("dans createAssetTypesCustom, apres newAssetTypeDB");
+      console.log(resultDB);
       resultassetType[0]["name"] = resultDB;
+      console.log(resultassetType[0]);
       updateDataODEP.warn('data to send to ODEP', { from: 'createAssetTypesCustom', dataToSend: resultassetType[0], tokenUsed: token == null ? "Token not given" : token});
       const response = await Utils.fetchJSONData(
         'POST',

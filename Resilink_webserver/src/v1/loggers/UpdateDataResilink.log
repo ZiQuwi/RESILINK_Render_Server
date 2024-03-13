@@ -1,0 +1,105 @@
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Machinery',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-03-06T14:28:24.018Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  level: 'info',
+  message: 'succes updating counter of an assetType in Resilink DB',
+  timestamp: '2024-03-06T14:28:24.051Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Machinery',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-03-06T14:29:06.349Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  level: 'info',
+  message: 'succes updating counter of an assetType in Resilink DB',
+  timestamp: '2024-03-06T14:29:06.378Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetDB',
+  data: { assetId: 41, imgBase64: '', owner: 'acazaux' },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-03-06T14:29:13.754Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetDB',
+  level: 'info',
+  message: 'succes creating an asset in Resilink DB',
+  timestamp: '2024-03-06T14:29:13.793Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Machinery',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-03-06T15:18:05.652Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  level: 'info',
+  message: 'succes updating counter of an assetType in Resilink DB',
+  timestamp: '2024-03-06T15:18:05.693Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetDB',
+  data: { assetId: 42, imgBase64: '', owner: 'acazaux' },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-03-06T15:18:13.110Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetDB',
+  level: 'info',
+  message: 'succes creating an asset in Resilink DB',
+  timestamp: '2024-03-06T15:18:13.146Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Fruits',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-03-08T13:22:43.547Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  level: 'info',
+  message: 'succes updating counter of an assetType in Resilink DB',
+  timestamp: '2024-03-08T13:22:43.585Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetDB',
+  data: { assetId: 43, imgBase64: '', owner: 'acazaux' },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-03-08T13:22:50.096Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetDB',
+  level: 'info',
+  message: 'succes creating an asset in Resilink DB',
+  timestamp: '2024-03-08T13:22:50.140Z'
+}

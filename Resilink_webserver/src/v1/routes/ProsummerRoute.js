@@ -38,19 +38,53 @@ const router = express.Router();
  * @swagger
  * /v1/prosumers/all:
  *   get:
- *     summary: Retrieve prosumers from the ODEP database
+ *     summary: Get all prosumers (from ODEP)
  *     tags: [Prosumer]
  *     requestBody:
  *       required: false
  *     responses:
  *       200:
- *         description: Correctly retrieved all the Prosumer
+ *         description: Transaction successfully executed
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       400:
+ *         description: Bad Request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not Found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 router.get('/prosumers/all', prosumerController.getAllProsummer); 
 
@@ -58,19 +92,67 @@ router.get('/prosumers/all', prosumerController.getAllProsummer);
  * @swagger
  * /v1/prosumers/allCustom:
  *   get:
- *     summary: Retrieve prosumers from the Resilink database
+ *     summary: Get all prosumers (from ODEP & RESILINK)
  *     tags: [Prosumer]
  *     requestBody:
  *       required: false
  *     responses:
  *       200:
- *         description: Correctly retrieved all the Prosumer
+ *         description: Transaction successfully executed
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      id:
+ *                          type: string
+ *                      sharingAccount:
+ *                          type: number
+ *                      balance:
+ *                          type: number
+ *                      bookMarked:
+ *                          type: array
+ *                          items:
+ *                              type: string
+ *       400:
+ *         description: Bad Request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
+ *       404:
+ *         description: Not Found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
  *       500:
- *         description: Some server error.
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      message:
+ *                          type: string
  */
 router.get('/prosumers/allCustom', prosumerController.getAllProsummerCustom); 
 
@@ -78,7 +160,7 @@ router.get('/prosumers/allCustom', prosumerController.getAllProsummerCustom);
  * @swagger
  * /v1/prosumers/{id}:
  *   get:
- *     summary: Retrieve data from one the Prosumer
+ *     summary: Get a prosumer by id (from ODEP)
  *     tags: [Prosumer]
  *     parameters:
  *       - in: path
@@ -86,30 +168,135 @@ router.get('/prosumers/allCustom', prosumerController.getAllProsummerCustom);
  *         schema:
  *           type: string 
  *         required: true
- *         description: the Prosumer id
  *     responses:
  *       200:
- *         description: data of the Prosumer.
+ *         description: Ok
  *         content:
  *           application/json:
  *             schema:
- *               type: string
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: string
+ *                 sharingAccount:
+ *                   type: number
+ *                 balance:
+ *                   type: number
  *       400:
- *         description: Invalid Prosumer id.
+ *         description: Bad Request 
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
+ *       404:
+ *         description: Not Found 
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.get('/prosumers/:id/', prosumerController.getOneProsumer);
 
 /**
  * @swagger
+ * /v1/prosumers/custom/{id}:
+ *   get:
+ *     summary: Get a prosumer by id (from ODEP & RESILINK)
+ *     tags: [Prosumer]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Ok
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: string
+ *                 sharingAccount:
+ *                   type: number
+ *                 balance:
+ *                   type: number
+ *                 bookMarked:
+ *                   type: array
+ *                   items:
+ *                      type: string
+ *       400:
+ *         description: Bad Request 
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
+ *       404:
+ *         description: Not Found 
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.get('/prosumers/custom/:id/', prosumerController.getOneProsummerCustom);
+
+/**
+ * @swagger
  * /v1/prosumers/new:
  *   post: 
- *     summary: Create a new Prosumer
+ *     summary: Create a new Prosumer (from ODEP)
  *     tags: [Prosumer]
  *     requestBody:
- *       description: The prosumer's informations.
  *       required: true
  *       content:
  *         application/json:
@@ -128,11 +315,32 @@ router.get('/prosumers/:id/', prosumerController.getOneProsumer);
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *                  properties:
+ *                      message:
+ *                          type: string
  *       400:
- *         description: Invalid prosumer data.
+ *         description: Bad Request 
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.post('/prosumers/new/', prosumerController.createProsumer);
@@ -141,10 +349,10 @@ router.post('/prosumers/new/', prosumerController.createProsumer);
  * @swagger
  * /v1/prosumers/newCustom:
  *   post: 
- *     summary: Create a new user and put create his prosumer profil
+ *     summary: Create a new user and his prosumer profil (from ODEP & RESILINK)
  *     tags: [Prosumer]
  *     requestBody:
- *       description: The prosumer's informations.
+ *       description: The user's informations.
  *       required: true
  *       content:
  *         application/json:
@@ -161,21 +369,64 @@ router.post('/prosumers/new/', prosumerController.createProsumer);
  *                 type: string
  *               email: 
  *                 type: string
- *               phone:
- *                 type: string
  *               password:
  *                 type: string 
+ *               phoneNumber:
+ *                 type: string
  *     responses:
  *       200:
  *         description: Token of the user.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                      user:
+ *                          type: object
+ *                          properties:
+ *                              userName:
+ *                                 type: string
+ *                              firstName:
+ *                                 type: string
+ *                              lastName:
+ *                                 type: string
+ *                              roleOfUser:
+ *                                 type: string
+ *                              email: 
+ *                                 type: string
+ *                              password:
+ *                                 type: string 
+ *                              phoneNumber:
+ *                                 type: string
+ *                      prosumer:
+ *                          type: object
+ *                          properties:
+ *                              message:
+ *                                 type: string
  *       400:
- *         description: Invalid prosumer data.
+ *         description: Bad Request 
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
+ *       401:
+ *         description: unhautorized 
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.post('/prosumers/newCustom/', prosumerController.createProsumerCustom);
@@ -184,7 +435,7 @@ router.post('/prosumers/newCustom/', prosumerController.createProsumerCustom);
  * @swagger
  * /v1/prosumers/{id}/:
  *   delete: 
- *     summary: delete prosumer profil
+ *     summary: delete a prosumer (from ODEP)
  *     tags: [Prosumer]
  *     parameters:
  *       - in: path
@@ -192,18 +443,51 @@ router.post('/prosumers/newCustom/', prosumerController.createProsumerCustom);
  *         schema:
  *           type: string 
  *         required: true
- *         description: the Prosumer id
  *     responses:
  *       200:
- *         description: Token of the user.
+ *         description: Prosumer successfully deleted
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
  *       400:
- *         description: Invalid prosumer data.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
+ *       404:
+ *         description: Prosumer not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.delete('/prosumers/:id', prosumerController.deleteOneProsummer);
@@ -212,7 +496,7 @@ router.delete('/prosumers/:id', prosumerController.deleteOneProsummer);
  * @swagger
  * /v1/prosumers/{id}/balance:
  *   patch: 
- *     summary: Edit the balance of the prosumer
+ *     summary: credit a prosumer balance (from ODEP)
  *     tags: [Prosumer]
  *     parameters:
  *       - in: path
@@ -220,7 +504,6 @@ router.delete('/prosumers/:id', prosumerController.deleteOneProsummer);
  *         schema:
  *           type: string 
  *         required: true
- *         description: the Prosumer id
  *     requestBody:
  *       required: true
  *       content:
@@ -232,15 +515,40 @@ router.delete('/prosumers/:id', prosumerController.deleteOneProsummer);
  *                 type: number
  *     responses:
  *       200:
- *         description: Token of the user.
+ *         description: Prosumer balance successfully credited.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
  *       400:
- *         description: Invalid prosumer data.
- *       500:
- *         description: Some server error.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
+ *       404:
+ *         description: Prosumer not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
  */
 
 router.patch('/prosumers/:id/balance', prosumerController.patchBalanceProsumer);
@@ -249,7 +557,7 @@ router.patch('/prosumers/:id/balance', prosumerController.patchBalanceProsumer);
  * @swagger
  * /v1/prosumers/{id}/sharingAccount:
  *   patch: 
- *     summary: Edit the sharing value of the prosumer
+ *     summary: credit a prosumer sharing account (from ODEP)
  *     tags: [Prosumer]
  *     parameters:
  *       - in: path
@@ -270,15 +578,40 @@ router.patch('/prosumers/:id/balance', prosumerController.patchBalanceProsumer);
  *                 type: number
  *     responses:
  *       200:
- *         description: Token of the user.
+ *         description: Prosumer sharing account successfully credited.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
  *       400:
- *         description: Invalid prosumer data.
- *       500:
- *         description: Some server error.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
+ *       404:
+ *         description: Prosumer not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      code:
+ *                          type: number
+ *                      message:
+ *                          type: string
  */
 
 router.patch('/prosumers/:id/sharingAccount', prosumerController.patchSharingProsumer);
@@ -287,7 +620,7 @@ router.patch('/prosumers/:id/sharingAccount', prosumerController.patchSharingPro
  * @swagger
  * /v1/prosumers/{id}/bookmarkAccount:
  *   patch: 
- *     summary: add an id to the bookmark list of the prosumer
+ *     summary: add an id to the bookmark list of the prosumer (from RESILINK)
  *     tags: [Prosumer]
  *     parameters:
  *       - in: path
@@ -295,9 +628,7 @@ router.patch('/prosumers/:id/sharingAccount', prosumerController.patchSharingPro
  *         schema:
  *           type: string 
  *         required: true
- *         description: the Prosumer id
  *     requestBody:
- *       description: The bookmark's id.
  *       required: true
  *       content:
  *         application/json:
@@ -308,17 +639,125 @@ router.patch('/prosumers/:id/sharingAccount', prosumerController.patchSharingPro
  *                 type: string
  *     responses:
  *       200:
- *         description: Token of the user.
+ *         description: Prosumer bookmarked list succesfully updated.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
- *       400:
- *         description: Invalid prosumer data.
+ *                type: object
+ *                properties:
+ *                    message:
+ *                        type: string
  *       500:
- *         description: Some server error.
+ *         description: Server error.
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    message:
+ *                        type: string
  */
 
 router.patch('/prosumers/:id/bookmarkAccount', prosumerController.patchBookmarkProsumer);
+
+/**
+ * @swagger
+ * /v1/prosumers/bookmarkAccount/id:
+ *   delete: 
+ *     summary: delete an id in bookmarked list (from RESILINK)
+ *     tags: [Prosumer]
+  *     parameters:
+ *       - in: query
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: The news id
+ *       - in: query
+ *         name: owner
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: The owner username
+ *     responses:
+ *       200:
+ *         description: id correctly removed from prosumer bookmarked list.
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    message:
+ *                        type: string
+ *       500:
+ *         description: Server error.
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    message:
+ *                        type: string
+ */
+
+router.delete('/prosumers/bookmarkAccount/id', prosumerController.deleteIdBookmarkedList);
+
+/**
+ * @swagger
+ * /v1/prosumers/custom/{id}/:
+ *   delete: 
+ *     summary: delete a prosumer in ODEP and RESILINK DB (from ODEP & RESILINK)
+ *     tags: [Prosumer]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: the Prosumer id
+ *     responses:
+ *       200:
+ *         description: Prosumer successfully deleted in ODEP & RESILINK
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
+ *       400:
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
+ *       404:
+ *         description: Prosumer not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
+ */
+
+router.delete('/prosumers/custom/:id', prosumerController.deleteProsumerODEPRESILINK);
 
 module.exports = router;

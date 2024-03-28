@@ -6,7 +6,6 @@ const router = express.Router();
  * @swagger
  * tags:
  *   name: AssetType
- *   description: AssetType from Resilink
  */
 
 /**
@@ -24,7 +23,7 @@ const router = express.Router();
  *             - material
  *             - immaterial
  *             - immaterialNotQuantified
- *           description: "La description de votre nature"
+ *           description: "The description of your nature"
  *         unit:
  *           type: string
  *         regulated:
@@ -39,10 +38,9 @@ const router = express.Router();
  * @swagger
  * /v1/assetTypes:
  *   post: 
- *     summary: Create a new assetType
+ *     summary: Create a new assetType (from ODEP)
  *     tags: [AssetType]
  *     requestBody:
- *       description: The assetType's data.
  *       required: true
  *       content:
  *         application/json:
@@ -89,15 +87,43 @@ const router = express.Router();
  *                              type: string
  *     responses:
  *       200:
- *         description: Token of the user.
+ *         description: AssetType successfully created.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
  *       400:
- *         description: Invalid regulator data.
+ *         description: Bad Request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
  */
 
 router.post('/assetTypes/', assetTypeController.createAssetTypes);
@@ -106,19 +132,85 @@ router.post('/assetTypes/', assetTypeController.createAssetTypes);
  * @swagger
  * /v1/assetTypes/all:
  *   get:
- *     summary: Retrieve all asset types from Resilink
+ *     summary: Get all asset types (from ODEP)
  *     tags: [AssetType]
  *     responses:
  *       200:
- *         description: datas of the asset type.
+ *         description: Transaction successfully executed
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      name:
+ *                        type: string
+ *                      description:
+ *                        type: string
+ *                      nature:
+ *                        type: string
+ *                        enum:
+ *                          - material
+ *                          - immaterial
+ *                      unit:
+ *                        type: string
+ *                      regulated:
+ *                        type: boolean
+ *                      regulator:
+ *                        type: string
+ *                      sharingIncentive:
+ *                        type: boolean
+ *                      specificAttributesModel:
+ *                        type: array
+ *                        items:
+ *                            type: object
+ *                            properties:
+ *                                name:
+ *                                    type: string
+ *                                type:
+ *                                    type: string
+ *                                mandatory:
+ *                                    type: string
+ *                                    enum:
+ *                                      - true
+ *                                      - false
+ *                                hasValueList:
+ *                                    type: string
+ *                                    enum:
+ *                                      - true
+ *                                      - false
+ *                                valueList:
+ *                                    type: string
  *       400:
- *         description: Some server error.
+ *         description: Bad Request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
  */
 
 router.get('/assetTypes/all/', assetTypeController.getAllAssetTypes);
@@ -127,7 +219,7 @@ router.get('/assetTypes/all/', assetTypeController.getAllAssetTypes);
  * @swagger
  * /v1/assetTypes/{id}:
  *   get:
- *     summary: Retrieve an assetTypes from Resilink
+ *     summary: Get an asset type by id (from ODEP)
  *     tags: [AssetType]
  *     parameters:
  *       - in: path
@@ -138,15 +230,79 @@ router.get('/assetTypes/all/', assetTypeController.getAllAssetTypes);
  *         description: the assetType id
  *     responses:
  *       200:
- *         description: datas of the asset type.
+ *         description: Ok
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                 name: 
+ *                    type: string
+ *                 description:
+ *                    type: string
+ *                 nature : 
+ *                    type: string
+ *                    enum:
+ *                     - material
+ *                     - immaterial
+ *                 unit:
+ *                    type: string
+ *                 regulated:
+ *                    type: boolean
+ *                 regulator:
+ *                    type: string
+ *                 sharingIncentive:
+ *                    type: boolean
+ *                 specificAttributesModel: 
+ *                    type: array
+ *                    items:
+ *                        type: object
+ *                        properties:
+ *                            name:
+ *                                type: string
+ *                            type:
+ *                                type: string
+ *                            mandatory:
+ *                                type: string
+ *                                enum:
+ *                                    - true
+ *                                    - false
+ *                            hasValueList:
+ *                                type: string
+ *                                enum:
+ *                                    - true
+ *                                    - false
+ *                            valueList:
+ *                                type: string
  *       400:
- *         description: Some server error.
+ *         description: Bad Request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
  */
 
 router.get('/assetTypes/:id/', assetTypeController.getOneAssetTypes);
@@ -155,7 +311,7 @@ router.get('/assetTypes/:id/', assetTypeController.getOneAssetTypes);
  * @swagger
  * /v1/assetTypes/{id}:
  *   put:
- *     summary: update assetType attributes
+ *     summary: update asset type attributes (from ODEP)
  *     tags: [AssetType]
  *     parameters:
  *       - in: path
@@ -163,7 +319,6 @@ router.get('/assetTypes/:id/', assetTypeController.getOneAssetTypes);
  *         schema:
  *           type: string 
  *         required: true
- *         description: the assetType id
  *     requestBody:
  *       description: The prosumer's informations.
  *       required: true
@@ -210,15 +365,43 @@ router.get('/assetTypes/:id/', assetTypeController.getOneAssetTypes);
  *                              type: string
  *     responses:
  *       200:
- *         description: datas of the asset type.
+ *         description: AssetType successfully updated.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
  *       400:
- *         description: Some server error.
+ *         description: Bad Request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
  */
 
 router.put('/assetTypes/:id/', assetTypeController.putAssetTypes);
@@ -227,7 +410,7 @@ router.put('/assetTypes/:id/', assetTypeController.putAssetTypes);
  * @swagger
  * /v1/assetTypes/{id}/:
  *   delete: 
- *     summary: delete an assetType 
+ *     summary: delete an asset type (from ODEP)
  *     tags: [AssetType]
  *     parameters:
  *       - in: path
@@ -235,21 +418,189 @@ router.put('/assetTypes/:id/', assetTypeController.putAssetTypes);
  *         schema:
  *           type: string 
  *         required: true
- *         description: the assetType id
  *     responses:
  *       200:
- *         description: Token of the user.
+ *         description: AssetType successfully deleted.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
  *       400:
- *         description: Invalid prosumer data.
+ *         description: Bad Request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
  */
 
 router.delete('/assetTypes/:id/', assetTypeController.deleteAssetTypes);
 
+/**
+ * @swagger
+ * /v1/assetTypes/all/custom/:
+ *   get:
+ *     summary: Get all asset types but with the asset type as a key with his value associate (from ODEP & RESILINK)
+ *     tags: [AssetType]
+ *     responses:
+ *       200:
+ *         description: Transaction successfully executed
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      name:
+ *                        type: string
+ *                      description:
+ *                        type: string
+ *                      nature:
+ *                        type: string
+ *                        enum:
+ *                          - material
+ *                          - immaterial
+ *                      unit:
+ *                        type: string
+ *                      regulated:
+ *                        type: boolean
+ *                      regulator:
+ *                        type: string
+ *                      sharingIncentive:
+ *                        type: boolean
+ *                      specificAttributesModel:
+ *                        type: array
+ *                        items:
+ *                            type: object
+ *                            properties:
+ *                                name:
+ *                                    type: string
+ *                                type:
+ *                                    type: string
+ *                                mandatory:
+ *                                    type: string
+ *                                    enum:
+ *                                      - true
+ *                                      - false
+ *                                hasValueList:
+ *                                    type: string
+ *                                    enum:
+ *                                      - true
+ *                                      - false
+ *                                valueList:
+ *                                    type: string
+ *       400:
+ *         description: Bad Request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
+ */
+
+router.get('/assetTypes/all/custom', assetTypeController.getAllAssetTypesResilink)
+
+/**
+ * @swagger
+ * /v1/assetTypes/custom/{assetType}:
+ *   post: 
+ *     summary: Create a clone of an existing assetType (from ODEP & RESILINK)
+ *     tags: [AssetType]
+ *     parameters:
+ *       - in: path
+ *         name: assetType
+ *         schema:
+ *           type: string 
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: AssetType successfully created.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
+ *       400:
+ *         description: Bad Request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
+ */
+
+router.post('/assetTypes/custom/:assetType', assetTypeController.createAssetTypesCustom);
 
 module.exports = router;

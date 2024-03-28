@@ -31,6 +31,9 @@ const getNewsfromIdList = async (ids) => {
 const getNewsfromOwner = async (owner, token) => {
     try {
         const prosumer = await ProsumerDB.getOneProsummer(owner);
+        if (prosumer.bookMarked.length === 0) {
+            return [{NewsList: []}, 200];
+        }
         const dataFinal = await NewsDB.getNewsfromIdList(prosumer.bookMarked);
         getDataLogger.info("success retrieving all news from an owner", {from: 'getNewsfromOwner'});
         return [{NewsList: dataFinal}, 200];
@@ -40,8 +43,28 @@ const getNewsfromOwner = async (owner, token) => {
     }
 };
 
+const getNewsfromCountryWithoutUserNews = async (owner, country, token) => {
+    try {
+        const prosumer = await ProsumerDB.getOneProsummer(owner);
+        var dataFinal;
+        if (prosumer.bookMarked.length === 0) {
+            dataFinal = await NewsDB.getNewsfromCountry(country);
+        } else {
+            console.log("dans le else");
+            dataFinal = await NewsDB.getNewsfromCountryWithoutUserNews(country, prosumer.bookMarked);
+            console.log("apres reuete datafinal")
+        }
+        getDataLogger.info("success retrieving all news from an owner", {from: 'getNewsfromOwner'});
+        return [{NewsList: dataFinal}, 200];
+    } catch (e) {
+        getDataLogger.error("error retrieving all news from an owner", {from: 'getNewsfromOwner', dataReceiver: e});
+        throw e;
+    }
+}
+
 module.exports = {
     getNewsfromCountry,
     getNewsfromIdList,
-    getNewsfromOwner
+    getNewsfromOwner,
+    getNewsfromCountryWithoutUserNews
 };

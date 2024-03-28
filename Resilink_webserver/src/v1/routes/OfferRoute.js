@@ -48,7 +48,7 @@ const router = express.Router();
  */
 
 /**
- * @swagger
+ * swagger // add @ before swagger to show this route
  * /v1/offersNoPriceCustom:
  *   post: 
  *     summary: post a new offer without price
@@ -112,7 +112,7 @@ const router = express.Router();
  * @swagger
  * /v1/offers:
  *   post: 
- *     summary: create a new offer
+ *     summary: create a new offer (from ODEP)
  *     tags: [Offer]
  *     requestBody:
  *       description: offer's data.
@@ -156,14 +156,50 @@ const router = express.Router();
  *                     type: number
  *     responses:
  *       200:
+ *         description: Offer successfully created
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: object
+ *                   properties:
+ *                      offerId:
+ *                          type: number
+ *                      message:
+ *                          type: string
  *       400:
- *         description: Invalid offer data.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.post('/offers/', offerController.createOffer);
@@ -172,19 +208,82 @@ router.post('/offers/', offerController.createOffer);
  * @swagger
  * /v1/offers/AllOfferResilinkCustom:
  *   get:
- *     summary: Retrieve all the offer from Resilink database
+ *     summary: Get valid offers in RESILINK perspective (from ODEP & RESILINK)
+ *     description: 
  *     tags: [Offer]
  *     responses:
  *       200:
- *         description: datas of the offers.
+ *         description: successful transaction
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *             type: array
+ *             items:
+ *               type: object
+ *               properties:
+ *                 offerer:
+ *                    type: string
+ *                 assetId:
+ *                   type: integer
+ *                 beginTimeSlot: 
+ *                   type: string
+ *                   format: date-time
+ *                 endTimeSlot: 
+ *                   type: string
+ *                   format: date-time
+ *                 validityLimit: 
+ *                   type: string
+ *                   format: date-time
+ *                 offeredQuantity:
+ *                   type: number
+ *                 price:
+ *                   type: number
+ *                 deposit:
+ *                   type: number
+ *                 cancellationFee:
+ *                   type: number
+ *                 rentInformation:
+ *                   type: object
+ *                   properties:
+ *                     delayMargin:
+ *                       type: number
+ *                     lateRestitutionPenalty:
+ *                       type: number
+ *                     deteriorationPenalty:
+ *                       type: number
+ *                     nonRestitutionPenalty:
+ *                       type: number
  *       400:
- *         description: Some server error.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.get('/offers/AllOfferResilinkCustom/', offerController.getAllOfferResilinkCustom);
@@ -193,7 +292,7 @@ router.get('/offers/AllOfferResilinkCustom/', offerController.getAllOfferResilin
  * @swagger
  * /v1/offers/AllOfferFilteredCustom:
  *   post: 
- *     summary: Returns the list of offers after custom sorting 
+ *     summary: Returns the list of offers after custom sorting (from ODEP & RESILINK)
  *     tags: [Offer]
  *     requestBody:
  *       description: prerequisites for the offer.
@@ -228,15 +327,84 @@ router.get('/offers/AllOfferResilinkCustom/', offerController.getAllOfferResilin
  *                       type: string
  *     responses:
  *       200:
- *         description: filtered offers.
+ *         description: successful transaction
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *             type: array
+ *             items:
+ *               type: object
+ *               properties:
+ *                 offerId:
+ *                   type: number
+ *                 publicationDate:
+ *                   type: string
+ *                   format: date-time
+ *                 remainingQuantity:
+ *                   type: number
+ *                 offerer:
+ *                   type: string
+ *                 assetId:
+ *                   type: integer
+ *                 beginTimeSlot: 
+ *                   type: string
+ *                   format: date-time
+ *                 endTimeSlot: 
+ *                   type: string
+ *                   format: date-time
+ *                 validityLimit: 
+ *                   type: string
+ *                   format: date-time
+ *                 offeredQuantity:
+ *                   type: number
+ *                 price:
+ *                   type: number
+ *                 deposit:
+ *                   type: number
+ *                 cancellationFee:
+ *                   type: number
+ *                 rentInformation:
+ *                   type: object
+ *                   properties:
+ *                     delayMargin:
+ *                       type: number
+ *                     lateRestitutionPenalty:
+ *                       type: number
+ *                     deteriorationPenalty:
+ *                       type: number
+ *                     nonRestitutionPenalty:
+ *                       type: number
  *       400:
- *         description: Invalid filter data.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.post('/offers/AllOfferFilteredCustom/', offerController.getOfferFiltered);
@@ -245,7 +413,7 @@ router.post('/offers/AllOfferFilteredCustom/', offerController.getOfferFiltered)
  * @swagger
  * /v1/offers/AllOfferOwnerCustom/{id}:
  *   get:
- *     summary: Get all offers from a prosumer
+ *     summary: Get all offers from a prosumer (from ODEP & RESILINK)
  *     tags: [Offer]
  *     parameters:
  *       - in: path
@@ -256,15 +424,84 @@ router.post('/offers/AllOfferFilteredCustom/', offerController.getOfferFiltered)
  *         description: the prosummer id
  *     responses:
  *       200:
- *         description: prosumer's offer.
+ *         description: Ok
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *             type: array
+ *             items:
+ *               type: object
+ *               properties:
+ *                 offerId:
+ *                   type: number
+ *                 publicationDate:
+ *                   type: string
+ *                   format: date-time
+ *                 remainingQuantity:
+ *                   type: number
+ *                 offerer:
+ *                   type: string
+ *                 assetId:
+ *                   type: integer
+ *                 beginTimeSlot: 
+ *                   type: string
+ *                   format: date-time
+ *                 endTimeSlot: 
+ *                   type: string
+ *                   format: date-time
+ *                 validityLimit: 
+ *                   type: string
+ *                   format: date-time
+ *                 offeredQuantity:
+ *                   type: number
+ *                 price:
+ *                   type: number
+ *                 deposit:
+ *                   type: number
+ *                 cancellationFee:
+ *                   type: number
+ *                 rentInformation:
+ *                   type: object
+ *                   properties:
+ *                     delayMargin:
+ *                       type: number
+ *                     lateRestitutionPenalty:
+ *                       type: number
+ *                     deteriorationPenalty:
+ *                       type: number
+ *                     nonRestitutionPenalty:
+ *                       type: number
  *       400:
- *         description: Some server error.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.get('/offers/AllOfferOwnerCustom/:id/', offerController.getOfferOwner);
@@ -273,18 +510,88 @@ router.get('/offers/AllOfferOwnerCustom/:id/', offerController.getOfferOwner);
  * @swagger
  * /v1/offers/all:
  *   get:
- *     summary: Get all offers 
+ *     summary: Get all offers (from ODEP)
  *     tags: [Offer]
  *     responses:
  *       200:
+ *         description: Ok
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *             type: array
+ *             items:
+ *               type: object
+ *               properties:
+ *                 offerId:
+ *                   type: number
+ *                 publicationDate:
+ *                   type: string
+ *                   format: date-time
+ *                 remainingQuantity:
+ *                   type: number
+ *                 offerer:
+ *                   type: string
+ *                 assetId:
+ *                   type: integer
+ *                 beginTimeSlot: 
+ *                   type: string
+ *                   format: date-time
+ *                 endTimeSlot: 
+ *                   type: string
+ *                   format: date-time
+ *                 validityLimit: 
+ *                   type: string
+ *                   format: date-time
+ *                 offeredQuantity:
+ *                   type: number
+ *                 price:
+ *                   type: number
+ *                 deposit:
+ *                   type: number
+ *                 cancellationFee:
+ *                   type: number
+ *                 rentInformation:
+ *                   type: object
+ *                   properties:
+ *                     delayMargin:
+ *                       type: number
+ *                     lateRestitutionPenalty:
+ *                       type: number
+ *                     deteriorationPenalty:
+ *                       type: number
+ *                     nonRestitutionPenalty:
+ *                       type: number
  *       400:
- *         description: Some server error.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.get('/offers/all/', offerController.getAllOffer);
@@ -293,7 +600,7 @@ router.get('/offers/all/', offerController.getAllOffer);
  * @swagger
  * /v1/offers/{id}:
  *   get:
- *     summary: Get an offers by id
+ *     summary: Get an offers by id (from ODEP)
  *     tags: [Offer]
  *     parameters:
  *       - in: path
@@ -308,11 +615,78 @@ router.get('/offers/all/', offerController.getAllOffer);
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                 offerId:
+ *                   type: number
+ *                 publicationDate:
+ *                   type: string
+ *                   format: date-time
+ *                 remainingQuantity:
+ *                   type: number
+ *                 offerer:
+ *                   type: string
+ *                 assetId:
+ *                   type: integer
+ *                 beginTimeSlot: 
+ *                   type: string
+ *                   format: date-time
+ *                 endTimeSlot: 
+ *                   type: string
+ *                   format: date-time
+ *                 validityLimit: 
+ *                   type: string
+ *                   format: date-time
+ *                 offeredQuantity:
+ *                   type: number
+ *                 price:
+ *                   type: number
+ *                 deposit:
+ *                   type: number
+ *                 cancellationFee:
+ *                   type: number
+ *                 rentInformation:
+ *                   type: object
+ *                   properties:
+ *                     delayMargin:
+ *                       type: number
+ *                     lateRestitutionPenalty:
+ *                       type: number
+ *                     deteriorationPenalty:
+ *                       type: number
+ *                     nonRestitutionPenalty:
+ *                       type: number
  *       400:
- *         description: Some server error.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.get('/offers/:id/', offerController.getOneOffer);
@@ -321,7 +695,7 @@ router.get('/offers/:id/', offerController.getOneOffer);
  * @swagger
  * /v1/offers/{id}:
  *   put: 
- *     summary: update an offer attributes
+ *     summary: update an offer attributes (from ODEP)
  *     tags: [Offer]
  *     parameters:
  *       - in: path
@@ -372,15 +746,48 @@ router.get('/offers/:id/', offerController.getOneOffer);
  *                     type: number
  *     responses:
  *       200:
- *         description: Token of the user.
+ *         description: Offer successfully updated
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: object
+ *                   properties:
+ *                      message:
+ *                          type: string
  *       400:
- *         description: Invalid asset data.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.put('/offers/:id/', offerController.putOffer);
@@ -389,10 +796,9 @@ router.put('/offers/:id/', offerController.putOffer);
  * @swagger
  * /v1/offers/createOfferAsset:
  *   post: 
- *     summary: create a new offer, his asset and his assetType is needed
+ *     summary: create a new offer, his asset and his assetType needed (from ODEP & RESILINK)
  *     tags: [Offer]
  *     requestBody:
- *       description: offer's data.
  *       required: true
  *       content:
  *         application/json:
@@ -415,7 +821,6 @@ router.put('/offers/:id/', offerController.putOffer);
  *                   enum:
  *                     - sale/purchase
  *                     - rent
- *                   description: ""
  *                 totalQuantity:
  *                   type: number
  *                 regulatedId:
@@ -473,7 +878,18 @@ router.put('/offers/:id/', offerController.putOffer);
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                  asset:
+ *                      type: object
+ *                      properties:
+ *                          message:
+ *                              type: string
+ *                  offer:
+ *                      type: object
+ *                      properties:
+ *                          message:
+ *                              type: string
  *       400:
  *         description: Invalid offer data.
  *       500:
@@ -486,7 +902,7 @@ router.post('/offers/createOfferAsset/', offerController.createOfferAsset);
  * @swagger
  * /v1/offers/{id}/:
  *   delete: 
- *     summary: delete an offer
+ *     summary: delete an offer (from ODEP)
  *     tags: [Offer]
  *     parameters:
  *       - in: path
@@ -494,18 +910,50 @@ router.post('/offers/createOfferAsset/', offerController.createOfferAsset);
  *         schema:
  *           type: string 
  *         required: true
- *         description: the offer id
  *     responses:
  *       200:
- *         description: Token of the user.
+ *         description: Offer successfully deleted
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: object
+ *                   properties:
+ *                      message:
+ *                          type: string
  *       400:
- *         description: Invalid prosumer data.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.delete('/offers/:id/', offerController.deleteOffer);

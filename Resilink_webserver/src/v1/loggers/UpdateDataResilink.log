@@ -103,3 +103,384 @@
   message: 'succes creating an asset in Resilink DB',
   timestamp: '2024-03-08T13:22:50.140Z'
 }
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  _id: undefined,
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-03-14T15:12:15.890Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-03-14T15:12:15.922Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  _id: undefined,
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-03-14T15:49:09.563Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-03-14T15:49:09.600Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  _id: undefined,
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-03-14T15:51:14.454Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-03-14T15:51:14.489Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  _id: undefined,
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-03-14T15:54:41.235Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-03-14T15:54:41.267Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  _id: undefined,
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-03-14T15:55:29.937Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-03-14T15:55:29.964Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  _id: 'axelc',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-03-14T15:56:27.167Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-03-14T15:56:27.198Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  _id: 'UserD',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-03-15T13:55:38.367Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-03-15T13:55:38.401Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-03-18T13:19:08.930Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-03-18T13:21:18.835Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'error',
+  message: 'error creating one prosummer in Resilink DB',
+  timestamp: '2024-03-19T15:27:21.342Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'error',
+  message: 'error creating one prosummer in Resilink DB',
+  timestamp: '2024-03-19T15:28:54.570Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'error',
+  message: 'error creating one prosummer in Resilink DB',
+  timestamp: '2024-03-19T15:33:12.663Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'error',
+  message: 'error creating one prosummer in Resilink DB',
+  timestamp: '2024-03-19T15:33:23.580Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'error',
+  message: 'error creating one prosummer in Resilink DB',
+  timestamp: '2024-03-19T15:33:55.549Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'error',
+  message: 'error creating one prosummer in Resilink DB',
+  timestamp: '2024-03-19T15:33:59.693Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'error',
+  message: 'error creating one prosummer in Resilink DB',
+  timestamp: '2024-03-19T15:40:26.199Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-03-19T15:52:24.743Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-03-20T08:41:59.524Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-03-20T08:44:06.998Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-03-20T08:44:18.158Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-03-20T08:44:19.817Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-03-20T08:44:22.432Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addbookmarked',
+  level: 'error',
+  message: 'id already exist in bookmarklist',
+  timestamp: '2024-03-20T09:21:14.314Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addbookmarked',
+  level: 'error',
+  message: 'id already exist in bookmarklist',
+  timestamp: '2024-03-20T09:21:27.766Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addbookmarked',
+  level: 'error',
+  message: 'id already exist in bookmarklist',
+  timestamp: '2024-03-20T09:31:44.755Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addbookmarked',
+  level: 'error',
+  message: 'id already exist in bookmarklist',
+  timestamp: '2024-03-20T09:32:42.106Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-03-20T12:59:05.771Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  _id: 'UserD',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-03-26T09:20:25.695Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-03-26T09:20:25.729Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  _id: 'UserD',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-03-26T09:36:29.075Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-03-26T09:36:29.110Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  _id: 'UserD',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-03-26T10:11:34.541Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-03-26T10:11:34.574Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  _id: 'USerD',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-03-26T12:59:32.691Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-03-26T12:59:32.722Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  data: {
+    user: {
+      _id: '6602d2cf60c4c70987e7c96a',
+      userName: 'UserD',
+      firstName: 'UserD',
+      lastName: 'UserD',
+      roleOfUser: 'prosumer',
+      email: 'ssefs@gdrgd.fr',
+      provider: 'http://localhost:22004',
+      account: '0x03Aca4C6024e2D18C536F63cA5770b119913260F',
+      createdAt: '2024-03-26T13:51:11.810Z',
+      updatedAt: '2024-03-26T13:51:11.810Z',
+      phoneNumber: '000000000'
+    },
+    password: '123456',
+    phoneNumber: '000000000'
+  },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-03-26T13:51:12.484Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  level: 'info',
+  message: 'succes creating a user in Resilink DB',
+  timestamp: '2024-03-26T13:51:12.523Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  _id: 'UserD',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-03-26T13:51:16.816Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-03-26T13:51:16.841Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Fruits',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-03-27T10:33:28.198Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  level: 'info',
+  message: 'succes updating counter of an assetType in Resilink DB',
+  timestamp: '2024-03-27T10:33:28.239Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetDB',
+  data: { assetId: 44, imgBase64: '', owner: 'acazaux' },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-03-27T10:33:36.618Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetDB',
+  level: 'info',
+  message: 'succes creating an asset in Resilink DB',
+  timestamp: '2024-03-27T10:33:36.662Z'
+}

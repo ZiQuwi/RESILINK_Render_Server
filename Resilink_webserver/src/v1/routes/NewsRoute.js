@@ -12,14 +12,13 @@ const newsController = require("../controllers/NewsController.js");
  * @swagger
  * /v1/news/country:
  *   get: 
- *     summary: Get all news from a country.
+ *     summary: Get all the news from a country (from RESILINK).
  *     tags: [News]
  *     parameters:
  *       - in: query
  *         name: country
  *         schema:
  *           type: string
- *         description: Country of the news.
  *         required: true
  *     responses:
  *       200:
@@ -27,11 +26,27 @@ const newsController = require("../controllers/NewsController.js");
  *         content:
  *           application/json:
  *             schema:
- *               type: json
- *       400:
- *         description: Invalid asset data.
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      _id:
+ *                          type: string
+ *                      url: 
+ *                          type: string
+ *                      country: 
+ *                          type: string
+ *                      institute: 
+ *                          type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.get('/news/country', newsController.getNewsfromCountry);
@@ -40,7 +55,7 @@ router.get('/news/country', newsController.getNewsfromCountry);
  * @swagger
  * /v1/news/ids:
  *   get: 
- *     summary: Get news from id list.
+ *     summary: Get news from id list (from RESILINK)
  *     tags: [News]
  *     parameters:
  *       - in: query
@@ -53,15 +68,31 @@ router.get('/news/country', newsController.getNewsfromCountry);
  *             type: integer
  *     responses:
  *       200:
- *         description: News from a country.
+ *         description: Ok.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
- *       400:
- *         description: Invalid asset data.
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      _id:
+ *                          type: string
+ *                      url: 
+ *                          type: string
+ *                      country: 
+ *                          type: string
+ *                      institute: 
+ *                          type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.get('/news/ids', newsController.getNewsfromIdList);
@@ -70,7 +101,7 @@ router.get('/news/ids', newsController.getNewsfromIdList);
  * @swagger
  * /v1/news/owner/{id}:
  *   get:
- *     summary: Get all news from a prosumer
+ *     summary: Get all news from a prosumer (from RESILINK)
  *     tags: [News]
  *     parameters:
  *       - in: path
@@ -81,17 +112,81 @@ router.get('/news/ids', newsController.getNewsfromIdList);
  *         description: the prosummer id
  *     responses:
  *       200:
- *         description: prosumer's bookmarked news.
+ *         description: Ok.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
- *       400:
- *         description: Some server error.
+ *               type: object
+ *               properties:
+ *                  _id:
+ *                      type: string
+ *                  url:
+ *                      type: string
+ *                  country:
+ *                      type: string
+ *                  institute:
+ *                      type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.get('/news/owner/:id/', newsController.getNewsfromOwner);
+
+/**
+ * @swagger
+ * /v1/news/countryOwner:
+ *   get:
+ *     summary: Get all news within a country without user's subcribed news (from RESILINK)
+ *     tags: [News]
+ *     parameters:
+ *       - in: query
+ *         name: country
+ *         schema:
+ *           type: string 
+ *         required: false
+ *         description: The country name
+ *       - in: query
+ *         name: owner
+ *         schema:
+ *           type: string 
+ *         required: false
+ *         description: The owner name
+ *     responses:
+ *       200:
+ *         description: Ok.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      _id:
+ *                          type: string
+ *                      url: 
+ *                          type: string
+ *                      country: 
+ *                          type: string
+ *                      institute: 
+ *                          type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.get('/news/countryOwner', newsController.getNewsfromCountryWithoutUserNews);
 
 module.exports = router;

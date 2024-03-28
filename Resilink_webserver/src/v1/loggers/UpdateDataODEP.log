@@ -462,3 +462,1656 @@
   message: 'success updating an offer',
   timestamp: '2024-03-12T15:14:26.290Z'
 }
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'delete',
+    firstName: 'UserToDelete',
+    lastName: 'us',
+    roleOfUser: 'prosumer',
+    email: 'gete@lkej.gt',
+    password: '123456',
+    phoneNumber: '06000000'
+  },
+  tokenUsed: 'Token not given',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-14T14:45:23.981Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: TypeError: Cannot read properties of undefined (reading 'replace')
+      at Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:65:127)
+      at Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:54:34)
+      at createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:34:45)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:144:13)
+      at Route.dispatch (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:114:3)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:346:12)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:280:10),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0Mjc1MjMsImV4cCI6MTcxMDQzNDcyM30.QTdKCJlztNdFHiRYNTNUX1jOVeqOZbe2Fid0BrgrkHw',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-14T14:45:23.982Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'delete',
+    firstName: 'UserToDelete',
+    lastName: 'us',
+    roleOfUser: 'prosumer',
+    email: 'gete@lkej.gt',
+    password: '123456',
+    phoneNumber: '06000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0Mjg1MzEsImV4cCI6MTcxMDQzNTczMX0.CFx0ZKuBnN6aWLbVt8m4uoRAHhfd8f8oOGXa7erIvDQ',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-14T15:02:11.177Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '65f3117360c4c70987e7c956',
+    userName: 'delete',
+    firstName: 'UserToDelete',
+    lastName: 'us',
+    roleOfUser: 'prosumer',
+    email: 'gete@lkej.gt',
+    provider: 'http://localhost:22004',
+    account: '0xD1dCedC45cC0D43DC864D5928240c197DF203bA9',
+    createdAt: '2024-03-14T15:02:11.270Z',
+    updatedAt: '2024-03-14T15:02:11.270Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0Mjg1MzEsImV4cCI6MTcxMDQzNTczMX0.CFx0ZKuBnN6aWLbVt8m4uoRAHhfd8f8oOGXa7erIvDQ',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-14T15:02:11.403Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0Mjg1MzAsImV4cCI6MTcxMDQzNTczMH0.E-QpL0G1-Il7VH3ElxxGHa6fSGZ29JQfHMEFHW4XmbQ',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-03-14T15:02:11.403Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0Mjg1MzAsImV4cCI6MTcxMDQzNTczMH0.E-QpL0G1-Il7VH3ElxxGHa6fSGZ29JQfHMEFHW4XmbQ',
+  level: 'info',
+  message: 'success creating an user',
+  timestamp: '2024-03-14T15:02:11.403Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: { code: 401, message: 'Token is not given' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0Mjg1MzAsImV4cCI6MTcxMDQzNTczMH0.E-QpL0G1-Il7VH3ElxxGHa6fSGZ29JQfHMEFHW4XmbQ',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-03-14T15:02:11.444Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    password: '123456',
+    phoneNumber: '06201111'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MjkxMzQsImV4cCI6MTcxMDQzNjMzNH0.2Q0mhsDOy8pJB7jidn-6GlWWfzcyHpd0L7y7uM_akig',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-14T15:12:14.970Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '65f313cf60c4c70987e7c957',
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    provider: 'http://localhost:22004',
+    account: '0x03Aca4C6024e2D18C536F63cA5770b119913260F',
+    createdAt: '2024-03-14T15:12:15.019Z',
+    updatedAt: '2024-03-14T15:12:15.019Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MjkxMzQsImV4cCI6MTcxMDQzNjMzNH0.2Q0mhsDOy8pJB7jidn-6GlWWfzcyHpd0L7y7uM_akig',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-14T15:12:15.128Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MjkxMzQsImV4cCI6MTcxMDQzNjMzNH0.2Q0mhsDOy8pJB7jidn-6GlWWfzcyHpd0L7y7uM_akig',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-03-14T15:12:15.128Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MjkxMzQsImV4cCI6MTcxMDQzNjMzNH0.2Q0mhsDOy8pJB7jidn-6GlWWfzcyHpd0L7y7uM_akig',
+  level: 'info',
+  message: 'success creating an user',
+  timestamp: '2024-03-14T15:12:15.128Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: { code: 401, message: 'Token is not given' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MjkxMzQsImV4cCI6MTcxMDQzNjMzNH0.2Q0mhsDOy8pJB7jidn-6GlWWfzcyHpd0L7y7uM_akig',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-03-14T15:12:15.177Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: token is not defined
+      at Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:53:122)
+      at createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:34:45)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:144:13)
+      at Route.dispatch (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:114:3)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:346:12)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:175:3),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-14T15:27:25.031Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: token is not defined
+      at Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:53:122)
+      at createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:34:45)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:144:13)
+      at Route.dispatch (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:114:3)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:346:12)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:175:3),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-14T15:37:33.290Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: token is not defined
+      at Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:53:122)
+      at createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:35:45)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:144:13)
+      at Route.dispatch (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:114:3)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:346:12)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:175:3),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-14T15:38:57.823Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: token is not defined
+      at Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:53:122)
+      at createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:35:45)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:144:13)
+      at Route.dispatch (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:114:3)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:346:12)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:175:3),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-14T15:40:43.160Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: token is not defined
+      at Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:53:122)
+      at createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:36:45)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:144:13)
+      at Route.dispatch (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:114:3)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:346:12)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:175:3),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-14T15:43:16.968Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    password: '123456',
+    phoneNumber: '06201111'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzEwNzAsImV4cCI6MTcxMDQzODI3MH0.49Hrxj8zn4oyMSgQrXHTcPyTayZCEBnh2_oOHxNfIZA',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-14T15:44:30.135Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '65f31b5e60c4c70987e7c958',
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    provider: 'http://localhost:22004',
+    account: '0xD1dCedC45cC0D43DC864D5928240c197DF203bA9',
+    createdAt: '2024-03-14T15:44:30.192Z',
+    updatedAt: '2024-03-14T15:44:30.192Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzEwNzAsImV4cCI6MTcxMDQzODI3MH0.49Hrxj8zn4oyMSgQrXHTcPyTayZCEBnh2_oOHxNfIZA',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-14T15:44:30.306Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: token is not defined
+      at Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:66:101)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:35:22),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-14T15:44:30.306Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    password: '123456',
+    phoneNumber: '06201111'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzEzNDgsImV4cCI6MTcxMDQzODU0OH0.IR4JQCELdF5LMTyQ3jliX3Q6Z8cjKiwssUAV2UGGhto',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-14T15:49:08.672Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '65f31c7460c4c70987e7c959',
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    provider: 'http://localhost:22004',
+    account: '0xD1dCedC45cC0D43DC864D5928240c197DF203bA9',
+    createdAt: '2024-03-14T15:49:08.715Z',
+    updatedAt: '2024-03-14T15:49:08.715Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzEzNDgsImV4cCI6MTcxMDQzODU0OH0.IR4JQCELdF5LMTyQ3jliX3Q6Z8cjKiwssUAV2UGGhto',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-14T15:49:08.828Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzEzNDgsImV4cCI6MTcxMDQzODU0OH0.IR4JQCELdF5LMTyQ3jliX3Q6Z8cjKiwssUAV2UGGhto',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-03-14T15:49:08.829Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: { code: 401, message: 'Token is not given' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzEzNDgsImV4cCI6MTcxMDQzODU0OH0.IR4JQCELdF5LMTyQ3jliX3Q6Z8cjKiwssUAV2UGGhto',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-03-14T15:49:08.877Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzEzNDgsImV4cCI6MTcxMDQzODU0OH0.IR4JQCELdF5LMTyQ3jliX3Q6Z8cjKiwssUAV2UGGhto',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-03-14T15:49:08.877Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    password: '123456',
+    phoneNumber: '06201111'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE0NzMsImV4cCI6MTcxMDQzODY3M30.edDOyFP2bE2H1DrzUOb6zCaJ8ktDtqjUDm6ps72ERS8',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-14T15:51:13.687Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '65f31cf160c4c70987e7c95a',
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    provider: 'http://localhost:22004',
+    account: '0xD1dCedC45cC0D43DC864D5928240c197DF203bA9',
+    createdAt: '2024-03-14T15:51:13.730Z',
+    updatedAt: '2024-03-14T15:51:13.730Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE0NzMsImV4cCI6MTcxMDQzODY3M30.edDOyFP2bE2H1DrzUOb6zCaJ8ktDtqjUDm6ps72ERS8',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-14T15:51:13.853Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE0NzMsImV4cCI6MTcxMDQzODY3M30.edDOyFP2bE2H1DrzUOb6zCaJ8ktDtqjUDm6ps72ERS8',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-03-14T15:51:13.854Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: { code: 401, message: 'Token is not given' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE0NzMsImV4cCI6MTcxMDQzODY3M30.edDOyFP2bE2H1DrzUOb6zCaJ8ktDtqjUDm6ps72ERS8',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-03-14T15:51:13.905Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE0NzMsImV4cCI6MTcxMDQzODY3M30.edDOyFP2bE2H1DrzUOb6zCaJ8ktDtqjUDm6ps72ERS8',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-03-14T15:51:13.906Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    password: '123456',
+    phoneNumber: '06201111'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE2ODAsImV4cCI6MTcxMDQzODg4MH0.6rfiQ8WNxx-WqN7ve8ImuJkxUcsW4KEXUVHnbbPw2q8',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-14T15:54:40.547Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '65f31dc060c4c70987e7c95b',
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    provider: 'http://localhost:22004',
+    account: '0xD1dCedC45cC0D43DC864D5928240c197DF203bA9',
+    createdAt: '2024-03-14T15:54:40.598Z',
+    updatedAt: '2024-03-14T15:54:40.598Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE2ODAsImV4cCI6MTcxMDQzODg4MH0.6rfiQ8WNxx-WqN7ve8ImuJkxUcsW4KEXUVHnbbPw2q8',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-14T15:54:40.718Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE2ODAsImV4cCI6MTcxMDQzODg4MH0.6rfiQ8WNxx-WqN7ve8ImuJkxUcsW4KEXUVHnbbPw2q8',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-03-14T15:54:40.718Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: { code: 401, message: 'Token is not given' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE2ODAsImV4cCI6MTcxMDQzODg4MH0.6rfiQ8WNxx-WqN7ve8ImuJkxUcsW4KEXUVHnbbPw2q8',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-03-14T15:54:40.760Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE2ODAsImV4cCI6MTcxMDQzODg4MH0.6rfiQ8WNxx-WqN7ve8ImuJkxUcsW4KEXUVHnbbPw2q8',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-03-14T15:54:40.761Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    password: '123456',
+    phoneNumber: '06201111'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE3MjksImV4cCI6MTcxMDQzODkyOX0.5VpnbKZQEHoymVAGc5W0wNdE4X5tdlv_oHIJbVFJRus',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-14T15:55:29.454Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '65f31df160c4c70987e7c95c',
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    provider: 'http://localhost:22004',
+    account: '0xD1dCedC45cC0D43DC864D5928240c197DF203bA9',
+    createdAt: '2024-03-14T15:55:29.495Z',
+    updatedAt: '2024-03-14T15:55:29.495Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE3MjksImV4cCI6MTcxMDQzODkyOX0.5VpnbKZQEHoymVAGc5W0wNdE4X5tdlv_oHIJbVFJRus',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-14T15:55:29.608Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE3MjksImV4cCI6MTcxMDQzODkyOX0.5VpnbKZQEHoymVAGc5W0wNdE4X5tdlv_oHIJbVFJRus',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-03-14T15:55:29.609Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'id' ],
+          message: 'Missing required property: id',
+          path: '#/'
+        }
+      ],
+      content: { sharingAccount: 100, balance: 0 }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE3MjksImV4cCI6MTcxMDQzODkyOX0.5VpnbKZQEHoymVAGc5W0wNdE4X5tdlv_oHIJbVFJRus',
+  level: 'error',
+  message: 'error creating one user but not his prosummer status',
+  timestamp: '2024-03-14T15:55:29.657Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE3MjksImV4cCI6MTcxMDQzODkyOX0.5VpnbKZQEHoymVAGc5W0wNdE4X5tdlv_oHIJbVFJRus',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-03-14T15:55:29.658Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    password: '123456',
+    phoneNumber: '06201111'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE3ODMsImV4cCI6MTcxMDQzODk4M30.CLsJH9fV3M-gy2LRBC1sW1nm5EtPsdpRw1A5mOEpXqQ',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-14T15:56:23.493Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '65f31e2760c4c70987e7c95d',
+    userName: 'axelc',
+    firstName: 'axel',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'eeee@hfr.fr',
+    provider: 'http://localhost:22004',
+    account: '0xD1dCedC45cC0D43DC864D5928240c197DF203bA9',
+    createdAt: '2024-03-14T15:56:23.534Z',
+    updatedAt: '2024-03-14T15:56:23.534Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE3ODMsImV4cCI6MTcxMDQzODk4M30.CLsJH9fV3M-gy2LRBC1sW1nm5EtPsdpRw1A5mOEpXqQ',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-14T15:56:23.648Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE3ODMsImV4cCI6MTcxMDQzODk4M30.CLsJH9fV3M-gy2LRBC1sW1nm5EtPsdpRw1A5mOEpXqQ',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-03-14T15:56:23.648Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE3ODMsImV4cCI6MTcxMDQzODk4M30.CLsJH9fV3M-gy2LRBC1sW1nm5EtPsdpRw1A5mOEpXqQ',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-03-14T15:56:26.681Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA0MzE3ODMsImV4cCI6MTcxMDQzODk4M30.CLsJH9fV3M-gy2LRBC1sW1nm5EtPsdpRw1A5mOEpXqQ',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-03-14T15:56:26.682Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'UserD',
+    firstName: 'User',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'sefsf@test.fr',
+    password: '123456',
+    phoneNumber: '063333333'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA1MTA5MzUsImV4cCI6MTcxMDUxODEzNX0.G1c4MIDDwm1CbWqxFYtl6wpzZ34MIEdWipme7c2IuVY',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-15T13:55:35.512Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '65f4535760c4c70987e7c95e',
+    userName: 'UserD',
+    firstName: 'User',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'sefsf@test.fr',
+    provider: 'http://localhost:22004',
+    account: '0x03Aca4C6024e2D18C536F63cA5770b119913260F',
+    createdAt: '2024-03-15T13:55:35.561Z',
+    updatedAt: '2024-03-15T13:55:35.561Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA1MTA5MzUsImV4cCI6MTcxMDUxODEzNX0.G1c4MIDDwm1CbWqxFYtl6wpzZ34MIEdWipme7c2IuVY',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-15T13:55:35.673Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA1MTA5MzUsImV4cCI6MTcxMDUxODEzNX0.G1c4MIDDwm1CbWqxFYtl6wpzZ34MIEdWipme7c2IuVY',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-03-15T13:55:35.673Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA1MTA5MzUsImV4cCI6MTcxMDUxODEzNX0.G1c4MIDDwm1CbWqxFYtl6wpzZ34MIEdWipme7c2IuVY',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-03-15T13:55:37.869Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTA1MTA5MzUsImV4cCI6MTcxMDUxODEzNX0.G1c4MIDDwm1CbWqxFYtl6wpzZ34MIEdWipme7c2IuVY',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-03-15T13:55:37.869Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:146:18)
+      at async Object.getUserByIdCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:294:22)
+      at async getUserbyIdCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTEzNzQxNDMsImV4cCI6MTcxMTM4MTM0M30.gblh2vl5F9QlDZ-ZTHDHIkAFbSoGk_Cdh-ah7rf_PB8',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-25T13:42:52.986Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:146:18)
+      at async Object.getUserByIdCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:294:22)
+      at async getUserbyIdCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTEzNzQxNDMsImV4cCI6MTcxMTM4MTM0M30.gblh2vl5F9QlDZ-ZTHDHIkAFbSoGk_Cdh-ah7rf_PB8',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-25T13:43:39.249Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:146:18)
+      at async Object.getUserByIdCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:294:22)
+      at async getUserbyIdCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTEzNzQxNDMsImV4cCI6MTcxMTM4MTM0M30.gblh2vl5F9QlDZ-ZTHDHIkAFbSoGk_Cdh-ah7rf_PB8',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-25T13:44:03.337Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:146:18)
+      at async Object.getUserByIdCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:294:22)
+      at async getUserbyIdCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTEzNzQyNTIsImV4cCI6MTcxMTM4MTQ1Mn0.MiFfKEo8LMPPbcdIxgkRS4rQXXeDFBGfK5vBPsIo-yo',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-25T13:44:23.494Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:146:18)
+      at async Object.getUserByIdCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:294:22)
+      at async getUserbyIdCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTEzNzQyNTIsImV4cCI6MTcxMTM4MTQ1Mn0.MiFfKEo8LMPPbcdIxgkRS4rQXXeDFBGfK5vBPsIo-yo',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-25T13:47:41.500Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: ReferenceError: deleteOneProsummer is not defined
+      at Object.deleteUserODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:123:25)
+      at getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:64:40)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:144:13)
+      at Route.dispatch (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:114:3)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:284:15
+      at param (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:365:14)
+      at param (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:376:14)
+      at Function.process_params (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:421:3),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTEzNzQ0OTQsImV4cCI6MTcxMTM4MTY5NH0.ojA9HnGZY1sVZ1JcVaL5wpeFM9mGzheVb4YzlB6LlC4',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-25T13:48:33.578Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:146:18)
+      at async getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:64:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTEzNzQ0OTQsImV4cCI6MTcxMTM4MTY5NH0.ojA9HnGZY1sVZ1JcVaL5wpeFM9mGzheVb4YzlB6LlC4',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-25T13:50:41.771Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:147:18)
+      at async getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:64:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTEzNzQ3MTgsImV4cCI6MTcxMTM4MTkxOH0.l2sNKTj8a8OwNwT9Avgg87VZ8Beq8b7C2JC9xDrQzy4',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-25T13:52:18.217Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:146:18)
+      at async getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:63:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTEzNzUwMDIsImV4cCI6MTcxMTM4MjIwMn0.OybeZi2DXbBgYNrlB43b93Wf2bIOEPAKc-Ru69nZLyY',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-25T13:57:06.286Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:146:18)
+      at async getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:63:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTEzNzUwMDIsImV4cCI6MTcxMTM4MjIwMn0.OybeZi2DXbBgYNrlB43b93Wf2bIOEPAKc-Ru69nZLyY',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-25T13:58:27.549Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token U in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:146:18)
+      at async getUserById (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:63:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTEzNzUwMDIsImV4cCI6MTcxMTM4MjIwMn0.OybeZi2DXbBgYNrlB43b93Wf2bIOEPAKc-Ru69nZLyY',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-25T13:58:40.832Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token U in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getAllUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:170:18)
+      at async getAllUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:73:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTEzNzUwMDIsImV4cCI6MTcxMTM4MjIwMn0.OybeZi2DXbBgYNrlB43b93Wf2bIOEPAKc-Ru69nZLyY',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-25T14:34:55.983Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'UserD',
+    firstName: 'User',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'efsf@dtgd.gf',
+    phone: '000000000',
+    password: 'UserD123',
+    phoneNumber: '000000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDM5MTMsImV4cCI6MTcxMTQ1MTExM30.52tpuQILJiiAI0Kvk-50Cleu9cyCkAbD9ryZOEE2CXk',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-26T09:05:13.675Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: { error: 'Internal Server Error' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDM5MTMsImV4cCI6MTcxMTQ1MTExM30.52tpuQILJiiAI0Kvk-50Cleu9cyCkAbD9ryZOEE2CXk',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-26T09:05:13.958Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: { error: 'Internal Server Error' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDM5MTMsImV4cCI6MTcxMTQ1MTExM30.52tpuQILJiiAI0Kvk-50Cleu9cyCkAbD9ryZOEE2CXk',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-26T09:05:13.958Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'UserD',
+    firstName: 'User',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'sef@fgrt.gt',
+    password: '123456',
+    phoneNumber: '000000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDQ4MjIsImV4cCI6MTcxMTQ1MjAyMn0.lqHq_WcAp6BhV-MsilxIepgxLKRMNNba9GYPoAr7aJI',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-26T09:20:22.934Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '6602935660c4c70987e7c961',
+    userName: 'UserD',
+    firstName: 'User',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'sef@fgrt.gt',
+    provider: 'http://localhost:22004',
+    account: '0x03Aca4C6024e2D18C536F63cA5770b119913260F',
+    createdAt: '2024-03-26T09:20:22.971Z',
+    updatedAt: '2024-03-26T09:20:22.971Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDQ4MjIsImV4cCI6MTcxMTQ1MjAyMn0.lqHq_WcAp6BhV-MsilxIepgxLKRMNNba9GYPoAr7aJI',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-26T09:20:23.089Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDQ4MjIsImV4cCI6MTcxMTQ1MjAyMn0.lqHq_WcAp6BhV-MsilxIepgxLKRMNNba9GYPoAr7aJI',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-03-26T09:20:23.090Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDQ4MjIsImV4cCI6MTcxMTQ1MjAyMn0.lqHq_WcAp6BhV-MsilxIepgxLKRMNNba9GYPoAr7aJI',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-03-26T09:20:25.136Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDQ4MjIsImV4cCI6MTcxMTQ1MjAyMn0.lqHq_WcAp6BhV-MsilxIepgxLKRMNNba9GYPoAr7aJI',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-03-26T09:20:25.137Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:106:18)
+      at async deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:44:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T09:33:51.210Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'UserD',
+    firstName: 'User',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'efs@rdg.fr',
+    password: '123456',
+    phoneNumber: '000000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDU3ODQsImV4cCI6MTcxMTQ1Mjk4NH0.XBgbrpsjLVZeFDYlgir_lxrDoTX_0gevjHfwCaPSp2g',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-26T09:36:24.428Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '6602971860c4c70987e7c962',
+    userName: 'UserD',
+    firstName: 'User',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'efs@rdg.fr',
+    provider: 'http://localhost:22004',
+    account: '0x03Aca4C6024e2D18C536F63cA5770b119913260F',
+    createdAt: '2024-03-26T09:36:24.476Z',
+    updatedAt: '2024-03-26T09:36:24.476Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDU3ODQsImV4cCI6MTcxMTQ1Mjk4NH0.XBgbrpsjLVZeFDYlgir_lxrDoTX_0gevjHfwCaPSp2g',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-26T09:36:24.593Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDU3ODQsImV4cCI6MTcxMTQ1Mjk4NH0.XBgbrpsjLVZeFDYlgir_lxrDoTX_0gevjHfwCaPSp2g',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-03-26T09:36:24.593Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDU3ODQsImV4cCI6MTcxMTQ1Mjk4NH0.XBgbrpsjLVZeFDYlgir_lxrDoTX_0gevjHfwCaPSp2g',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-03-26T09:36:28.619Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDU3ODQsImV4cCI6MTcxMTQ1Mjk4NH0.XBgbrpsjLVZeFDYlgir_lxrDoTX_0gevjHfwCaPSp2g',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-03-26T09:36:28.619Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:106:18)
+      at async deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:44:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T09:38:47.499Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  error: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:82:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'error creating user in ODEP or local Resilink DB',
+  timestamp: '2024-03-26T09:39:53.981Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:82:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T09:39:53.982Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  error: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:86:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'error creating user in ODEP or local Resilink DB',
+  timestamp: '2024-03-26T09:41:46.430Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:86:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T09:41:46.431Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  error: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:86:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'error creating user in ODEP or local Resilink DB',
+  timestamp: '2024-03-26T09:42:40.709Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:86:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T09:42:40.709Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  error: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:87:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'error creating user in ODEP or local Resilink DB',
+  timestamp: '2024-03-26T09:42:45.731Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:87:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T09:42:45.733Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  error: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:87:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'error creating user in ODEP or local Resilink DB',
+  timestamp: '2024-03-26T09:43:09.843Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:87:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T09:43:09.844Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  error: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:87:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'error creating user in ODEP or local Resilink DB',
+  timestamp: '2024-03-26T09:43:38.500Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:87:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T09:43:38.501Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  error: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:89:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'error creating user in ODEP or local Resilink DB',
+  timestamp: '2024-03-26T09:44:10.281Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected token < in JSON at position 0
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:89:18)
+      at async createUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:23:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T09:44:10.282Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'UserD',
+    firstName: 'User',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'efs@rdg.fr',
+    password: '123456',
+    phoneNumber: '000000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDc4OTAsImV4cCI6MTcxMTQ1NTA5MH0.ESbV0gvihHdyBUg6CYhAWKF1Iz-3q1yr7bYBRZ0GeUw',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-26T10:11:30.850Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '66029f5260c4c70987e7c964',
+    userName: 'UserD',
+    firstName: 'User',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'efs@rdg.fr',
+    provider: 'http://localhost:22004',
+    account: '0x03Aca4C6024e2D18C536F63cA5770b119913260F',
+    createdAt: '2024-03-26T10:11:30.886Z',
+    updatedAt: '2024-03-26T10:11:30.886Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDc4OTAsImV4cCI6MTcxMTQ1NTA5MH0.ESbV0gvihHdyBUg6CYhAWKF1Iz-3q1yr7bYBRZ0GeUw',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-26T10:11:31.002Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDc4OTAsImV4cCI6MTcxMTQ1NTA5MH0.ESbV0gvihHdyBUg6CYhAWKF1Iz-3q1yr7bYBRZ0GeUw',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-03-26T10:11:31.002Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDc4OTAsImV4cCI6MTcxMTQ1NTA5MH0.ESbV0gvihHdyBUg6CYhAWKF1Iz-3q1yr7bYBRZ0GeUw',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-03-26T10:11:34.055Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDc4OTAsImV4cCI6MTcxMTQ1NTA5MH0.ESbV0gvihHdyBUg6CYhAWKF1Iz-3q1yr7bYBRZ0GeUw',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-03-26T10:11:34.056Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:113:18)
+      at async deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:44:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NDI3MDksImV4cCI6MTcxMTQ0OTkwOX0.65qau0-SBQnNtrQbXgIqO0vEn78vZYceEtU3mgDF10U',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T10:29:31.240Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'USerD',
+    firstName: 'USer',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'sef@rgd.fr',
+    password: '123456',
+    phoneNumber: '0000000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NTc5NjksImV4cCI6MTcxMTQ2NTE2OX0.QzebhtnqiXvnZ83JHGE5m5VyzoSDLoN_dmZqWcGj7T8',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-26T12:59:30.001Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '6602c6b260c4c70987e7c965',
+    userName: 'USerD',
+    firstName: 'USer',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'sef@rgd.fr',
+    provider: 'http://localhost:22004',
+    account: '0x03Aca4C6024e2D18C536F63cA5770b119913260F',
+    createdAt: '2024-03-26T12:59:30.037Z',
+    updatedAt: '2024-03-26T12:59:30.037Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NTc5NjksImV4cCI6MTcxMTQ2NTE2OX0.QzebhtnqiXvnZ83JHGE5m5VyzoSDLoN_dmZqWcGj7T8',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-26T12:59:30.148Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NTc5NjksImV4cCI6MTcxMTQ2NTE2OX0.QzebhtnqiXvnZ83JHGE5m5VyzoSDLoN_dmZqWcGj7T8',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-03-26T12:59:30.148Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NTc5NjksImV4cCI6MTcxMTQ2NTE2OX0.QzebhtnqiXvnZ83JHGE5m5VyzoSDLoN_dmZqWcGj7T8',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-03-26T12:59:32.179Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NTc5NjksImV4cCI6MTcxMTQ2NTE2OX0.QzebhtnqiXvnZ83JHGE5m5VyzoSDLoN_dmZqWcGj7T8',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-03-26T12:59:32.180Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:114:18)
+      at async deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:44:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NTc4OTUsImV4cCI6MTcxMTQ2NTA5NX0.fOizAB7xGv2rutkJgtASoSfWQYUEXxKwnxdlkMzzzQM',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T13:03:44.037Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '6602c8e760c4c70987e7c966',
+    userName: 'UserD',
+    firstName: 'USer',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'esfs@es.fr',
+    provider: 'http://localhost:22004',
+    account: '0x03Aca4C6024e2D18C536F63cA5770b119913260F',
+    createdAt: '2024-03-26T13:08:55.474Z',
+    updatedAt: '2024-03-26T13:08:55.474Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NTc4OTUsImV4cCI6MTcxMTQ2NTA5NX0.fOizAB7xGv2rutkJgtASoSfWQYUEXxKwnxdlkMzzzQM',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-26T13:08:55.591Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:114:18)
+      at async deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:44:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NTc4OTUsImV4cCI6MTcxMTQ2NTA5NX0.fOizAB7xGv2rutkJgtASoSfWQYUEXxKwnxdlkMzzzQM',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T13:09:12.698Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '6602c92b60c4c70987e7c967',
+    userName: 'UserD',
+    firstName: 'USer',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'esfs@es.fr',
+    provider: 'http://localhost:22004',
+    account: '0x03Aca4C6024e2D18C536F63cA5770b119913260F',
+    createdAt: '2024-03-26T13:10:03.676Z',
+    updatedAt: '2024-03-26T13:10:03.676Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NTc4OTUsImV4cCI6MTcxMTQ2NTA5NX0.fOizAB7xGv2rutkJgtASoSfWQYUEXxKwnxdlkMzzzQM',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-26T13:10:03.791Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/Utils.js:51:53
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:114:18)
+      at async deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:44:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NTc4OTUsImV4cCI6MTcxMTQ2NTA5NX0.fOizAB7xGv2rutkJgtASoSfWQYUEXxKwnxdlkMzzzQM',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T13:10:20.335Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: {
+    _id: '6602c96a60c4c70987e7c968',
+    userName: 'UserD',
+    firstName: 'USer',
+    lastName: 'D',
+    roleOfUser: 'prosumer',
+    email: 'esfs@es.fr',
+    provider: 'http://localhost:22004',
+    account: '0x03Aca4C6024e2D18C536F63cA5770b119913260F',
+    createdAt: '2024-03-26T13:11:06.959Z',
+    updatedAt: '2024-03-26T13:11:06.959Z'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NTc4OTUsImV4cCI6MTcxMTQ2NTA5NX0.fOizAB7xGv2rutkJgtASoSfWQYUEXxKwnxdlkMzzzQM',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-03-26T13:11:07.077Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: œ is not defined
+      at Object.functionGetTokenUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:32:6)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:56:17)
+      at async createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:35:22),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T13:46:23.259Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: œ is not defined
+      at Object.functionGetTokenUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:32:6)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:56:17)
+      at async createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:35:22),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T13:48:27.717Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: œ is not defined
+      at Object.functionGetTokenUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:32:6)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:56:17)
+      at async createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:37:22),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T13:49:00.850Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: œ is not defined
+      at Object.functionGetTokenUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:32:6)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:57:17)
+      at async createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:35:22),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-03-26T13:50:23.462Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'UserD',
+    firstName: 'UserD',
+    lastName: 'UserD',
+    roleOfUser: 'prosumer',
+    email: 'ssefs@gdrgd.fr',
+    password: '123456',
+    phoneNumber: '000000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NjEwNzEsImV4cCI6MTcxMTQ2ODI3MX0.AgBI-VjkdQeCaPi1YHD24COWWVtDe8mXLcDTo3ALH-s',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-26T13:51:11.762Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NjEwNzEsImV4cCI6MTcxMTQ2ODI3MX0.AgBI-VjkdQeCaPi1YHD24COWWVtDe8mXLcDTo3ALH-s',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-03-26T13:51:11.920Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NjEwNzEsImV4cCI6MTcxMTQ2ODI3MX0.AgBI-VjkdQeCaPi1YHD24COWWVtDe8mXLcDTo3ALH-s',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-03-26T13:51:12.525Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NjEwNzEsImV4cCI6MTcxMTQ2ODI3MX0.AgBI-VjkdQeCaPi1YHD24COWWVtDe8mXLcDTo3ALH-s',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-03-26T13:51:16.568Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTE0NjEwNzEsImV4cCI6MTcxMTQ2ODI3MX0.AgBI-VjkdQeCaPi1YHD24COWWVtDe8mXLcDTo3ALH-s',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-03-26T13:51:16.569Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: 'Fruits11',
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: true,
+    specificAttributesModel: [
+      {
+        name: 'Color',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'true',
+        valueList: 'green,blue,yellow,purple,red'
+      },
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTE1MzU1MDAsImV4cCI6MTcxMTU0MjcwMH0.S7OfNuZsC7pyi9w-2BYnj4WGznqe-xneT1hPf5msK2o',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-27T10:33:28.241Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: { message: 'AssetType successfully created' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTE1MzU1MDAsImV4cCI6MTcxMTU0MjcwMH0.S7OfNuZsC7pyi9w-2BYnj4WGznqe-xneT1hPf5msK2o',
+  level: 'info',
+  message: 'success creating one assetType in ODEP or localDB',
+  timestamp: '2024-03-27T10:33:32.302Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTE1MzU1MDAsImV4cCI6MTcxMTU0MjcwMH0.S7OfNuZsC7pyi9w-2BYnj4WGznqe-xneT1hPf5msK2o',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-03-27T10:33:32.302Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    name: 'fruitTest',
+    description: '',
+    assetType: 'Fruits11',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 10,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: []
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTE1MzU1MDAsImV4cCI6MTcxMTU0MjcwMH0.S7OfNuZsC7pyi9w-2BYnj4WGznqe-xneT1hPf5msK2o',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-03-27T10:33:32.303Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTE1MzU1MDAsImV4cCI6MTcxMTU0MjcwMH0.S7OfNuZsC7pyi9w-2BYnj4WGznqe-xneT1hPf5msK2o',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-03-27T10:33:36.348Z'
+}

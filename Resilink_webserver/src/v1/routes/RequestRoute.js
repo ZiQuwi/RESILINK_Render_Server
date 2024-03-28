@@ -80,7 +80,7 @@ const RequestController = require("../controllers/RequestController.js");
  * @swagger
  * /v1/requests:
  *   post:
- *     summary: Get all requests
+ *     summary: post a new request (from ODEP)
  *     tags: [Requests]
  *     requestBody:
  *       description: offer's data.
@@ -148,16 +148,54 @@ const RequestController = require("../controllers/RequestController.js");
  *                               - in(circle)
  *                               - in(rectangle)
  *     responses:
- *       200:
- *         description: datas of the requests.
+ *       201:
+ *         description: Request successfully created returning available offers.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                  requestId:
+ *                      type: number
+ *                  message: 
+ *                      type: string
+ *                  availableOffersCount:
+ *                      type: number
+ *                  availableOffersIds:
+ *                      type: array
+ *                      items:
+ *                          type: number
  *       400:
- *         description: Some server error.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    code:
+ *                        type: number
+ *                    message:
+ *                        type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    code:
+ *                        type: number
+ *                    message:
+ *                        type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    message:
+ *                        type: string
  */
 
 router.post('/requests/', RequestController.createRequest);
@@ -166,28 +204,118 @@ router.post('/requests/', RequestController.createRequest);
  * @swagger
  * /v1/requests/all:
  *   get:
- *     summary: Get all requests
+ *     summary: Get all requests (from ODEP)
  *     tags: [Requests]
  *     responses:
  *       200:
- *         description: datas of the requests.
+ *         description: Ok.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   requestor:
+ *                     type: string
+ *                   beginTimeSlot:
+ *                     type: string
+ *                     format: date-time
+ *                   endTimeSlot:
+ *                     type: string
+ *                     format: date-time
+ *                   validityLimit:
+ *                     type: string
+ *                     format: date-time
+ *                   transactionType:
+ *                     type: string
+ *                     enum:
+ *                       - sale/purchase
+ *                       - rent
+ *                   offerIds:
+ *                     type: array
+ *                     items:
+ *                       type: number
+ *                   assetTypes:
+ *                     type: array
+ *                     items:
+ *                       type: object
+ *                       properties:
+ *                         assetTypeName:
+ *                           type: string
+ *                         maximumPrice:
+ *                           type: number
+ *                         maximumDeposit:
+ *                           type: number
+ *                         requestedQuantity:
+ *                           type: number
+ *                         requestedSpecificAttributes:
+ *                           type: array
+ *                           items:
+ *                             type: object
+ *                             properties:
+ *                               attributeName:
+ *                                 type: string
+ *                               value:
+ *                                 type: string
+ *                               comparisonType:
+ *                                 type: string
+ *                                 enum:
+ *                                   - contains
+ *                                   - ==
+ *                                   - <
+ *                                   - <=
+ *                                   - >
+ *                                   - >=
+ *                                   - between
+ *                                   - in
+ *                                   - conj
+ *                                   - disj
+ *                                   - in(circle)
+ *                                   - in(rectangle)
+ *                   requestId:
+ *                     type: number
  *       400:
- *         description: Some server error.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
-router.get('/requests/all/', RequestController.getAllRequest);
+
+router.get('/requests/all', RequestController.getAllRequest);
 
 /**
  * @swagger
  * /v1/requests/{id}:
  *   get:
- *     summary: Get a request by id
+ *     summary: Get a request by id (from ODEP)
  *     tags: [Requests]
  *     parameters:
  *       - in: path
@@ -198,15 +326,102 @@ router.get('/requests/all/', RequestController.getAllRequest);
  *         description: the request id
  *     responses:
  *       200:
- *         description: datas of the requests.
+ *         description: Ok.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                 requestor:
+ *                   type: string
+ *                 beginTimeSlot:
+ *                   type: string
+ *                   format: date-time
+ *                 endTimeSlot:
+ *                   type: string
+ *                   format: date-time
+ *                 validityLimit:
+ *                   type: string
+ *                   format: date-time
+ *                 transactionType:
+ *                   type: string
+ *                   enum:
+ *                     - sale/purchase
+ *                     - rent
+ *                 offerIds:
+ *                   type: array
+ *                   items:
+ *                     type: number
+ *                 assetTypes:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       assetTypeName:
+ *                         type: string
+ *                       maximumPrice:
+ *                         type: number
+ *                       maximumDeposit:
+ *                         type: number
+ *                       requestedQuantity:
+ *                         type: number
+ *                       requestedSpecificAttributes:
+ *                         type: array
+ *                         items:
+ *                           type: object
+ *                           properties:
+ *                             attributeName:
+ *                               type: string
+ *                             value:
+ *                               type: string
+ *                             comparisonType:
+ *                               type: string
+ *                               enum:
+ *                                 - contains
+ *                                 - ==
+ *                                 - <
+ *                                 - <=
+ *                                 - >
+ *                                 - >=
+ *                                 - between
+ *                                 - in
+ *                                 - conj
+ *                                 - disj
+ *                                 - in(circle)
+ *                                 - in(rectangle)
+ *                 requestId:
+ *                   type: number
  *       400:
- *         description: Some server error.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.get('/requests/:id/', RequestController.getOneRequest);
@@ -215,7 +430,7 @@ router.get('/requests/:id/', RequestController.getOneRequest);
  * @swagger
  * /v1/requests/{id}:
  *   put:
- *     summary: update a request attributes
+ *     summary: update a request attributes (from ODEP)
  *     tags: [Requests]
  *     parameters:
  *       - in: path
@@ -291,15 +506,45 @@ router.get('/requests/:id/', RequestController.getOneRequest);
  *                               - in(rectangle)
  *     responses:
  *       200:
- *         description: datas of the requests.
+ *         description: Request successfully updated returning available offers.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  *       400:
- *         description: Some server error.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.put('/requests/:id/', RequestController.putRequest);
@@ -308,7 +553,7 @@ router.put('/requests/:id/', RequestController.putRequest);
  * @swagger
  * /v1/requests/{id}/:
  *   delete: 
- *     summary: delete a request
+ *     summary: delete a request (from ODEP)
  *     tags: [Requests]
  *     parameters:
  *       - in: path
@@ -319,15 +564,45 @@ router.put('/requests/:id/', RequestController.putRequest);
  *         description: the offer id
  *     responses:
  *       200:
- *         description: Token of the user.
+ *         description: Request successfully deleted
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  *       400:
- *         description: Invalid prosumer data.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 

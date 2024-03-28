@@ -194,6 +194,7 @@ const deleteAssetImgById = async (assetId) => {
       deleteData.error('error retrieving/processing all assets in Resilink DB', { from: 'deleteAssetImgById'});
       throw new DeleteDBError('error retrieving/processing all assets in Resilink DB');
     }
+
   } catch (e) {
     if (e instanceof DeleteDBError) {
       deleteData.error('error retrieving/processing all assets in Resilink DB', { from: 'deleteAssetImgById'});
@@ -205,7 +206,7 @@ const deleteAssetImgById = async (assetId) => {
   }
 }
 
-const updateAssetImgById = async (assetId, assetImg) => {
+const updateAssetImgById = async (assetId, assetImg, asset) => {
   try {
     await client.connect();
     connectDB.info('succes connecting to DB', { from: 'updateAssetImgById'});
@@ -226,6 +227,7 @@ const updateAssetImgById = async (assetId, assetImg) => {
       } else {
         updateData.info(`Document with ID ${assetId} found but value equal so not changed`, { from: 'updateAssetImgById'});
       }
+      asset.image = result.img;
     } else {
       throw new UpdateDBError(`Failed to find document with ID ${assetId}`);
     }

@@ -15,7 +15,7 @@ const createRequest = async (req, res) => {
       res.status(response[1]).send(response[0]);
     } catch (error) {
       updateDataODEP.error('Catched error', { from: 'createRequest', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
-      res.status(500).send('Catched error');
+      res.status(500).send({message: error.message})
     }
 }
 
@@ -25,7 +25,7 @@ const getOneRequest = async (req, res) => {
       res.status(response[1]).send(response[0]);
     } catch (error) {
       getDataLogger.error('Catched error', { from: 'getOneRequest', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
-      res.status(500).send('Catched error');
+      res.status(500).send({message: error.message})
     }
 }
 
@@ -35,7 +35,7 @@ const getAllRequest = async (req, res) => {
       res.status(response[1]).send(response[0]);
     } catch (error) {
       getDataLogger.error('Catched error', { from: 'getAllRequest', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
-      res.status(500).send('Catched error');
+      res.status(500).send({message: error.message})
     }
 }
 
@@ -45,7 +45,7 @@ const putRequest = async (req, res) => {
       res.status(response[1]).send(response[0]);
     } catch (error) {
       updateDataODEP.error('Catched error', { from: 'putRequest', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
-      res.status(500).send('Catched error');
+      res.status(500).send({message: error.message})
     }
 }
 
@@ -55,7 +55,7 @@ const deleteRequest = async (req, res) => {
       res.status(response[1]).send(response[0]);
     } catch (error) {
       deleteDataODEP.error('Catched error', { from: 'deleteRequest', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
-      res.status(500).send('Catched error');
+      res.status(500).send({message: error.message})
     }
 }
 

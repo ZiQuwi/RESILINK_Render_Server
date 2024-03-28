@@ -51,7 +51,24 @@ const getOwnerAsset = async (url, id, token) => {
       headers = {'accept': 'application/json',
       'Authorization': token},
   );
-  console.log(response.status);
+  const data = await Utils.streamToJSON(response.body)
+  if (response.status == 401) {
+    getDataLogger.error('error: Unauthorize', { from: 'getOwnerAsset', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+  } else if(response.status != 200) {
+    getDataLogger.error('error retrieving assets owner', { from: 'getOwnerAsset', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  } else {
+    getDataLogger.info('success retrieving assets owner & image for each assets', { from: 'getOwnerAsset', tokenUsed: token.replace(/^Bearer\s+/i, '') });
+  }
+  return [data, response.status];
+};
+
+const getOwnerAssetCustom = async (url, id, token) => {
+  const response = await Utils.fetchJSONData(
+      'GET',
+      url + "owner?idOwner=" + id, 
+      headers = {'accept': 'application/json',
+      'Authorization': token},
+  );
   const data = await Utils.streamToJSON(response.body)
   if (response.status == 401) {
     getDataLogger.error('error: Unauthorize', { from: 'getOwnerAsset', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
@@ -86,6 +103,24 @@ const getAllAsset = async (url, token) => {
 };
 
 const getOneAsset = async (url, id, token) => {
+  const response = await Utils.fetchJSONData(
+      'GET',
+      url + id, 
+      headers = {'accept': 'application/json',
+      'Authorization': token},
+  );
+  const data = await Utils.streamToJSON(response.body);
+  if (response.status == 401) {
+    getDataLogger.error('error: Unauthorize', { from: 'getOneAsset', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+  } else if(response.status != 200) {
+    getDataLogger.error('error retrieving one asset', { from: 'getOneAsset', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  } else {
+    getDataLogger.info('success retrieving one asset', { from: 'getOneAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  }
+  return [data, response.status];
+};
+
+const getOneAssetCustom = async (url, id, token) => {
   const response = await Utils.fetchJSONData(
       'GET',
       url + id, 
@@ -145,9 +180,35 @@ const createAsset = async (url, body, token) => {
 };
 
 const createAssetCustom = async (url, body, token) => {
-  console.log("entrez dans createAssetCustom");
+
+  const imgBase64 = body['image'];
+  delete body['image'];
+
+  updateDataODEP.warn('data to send to ODEP', { from: 'createAsset', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
+  const response = await Utils.fetchJSONData(
+    'POST',
+    url, 
+    headers = {'accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Authorization': token},
+    body
+  );
+  const data = await Utils.streamToJSON(response.body);
+  if (response.status == 401) {
+    getDataLogger.error('error: Unauthorize', { from: 'createAsset', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+    return [data, response.status];
+
+  } else if(response.status != 200) {
+    updateDataODEP.error('error creating one asset', { from: 'createAsset', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  } else {
+    updateDataODEP.info('success creating one asset', { from: 'createAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    await AssetDB.newAssetDB(data['assetId'], imgBase64, body['owner']);
+  };
+  return [data, response.status];
+};
+
+const createAssetWithAssetTypeCustom = async (url, body, token) => {
   const resultCreateAssetType = await AssetTypes.createAssetTypesCustom(body['assetType'], token);
-  console.log("fin de createAssetTypesCustom, reprise de createASsetCustom");
   if (resultCreateAssetType[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createAssetCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
     return [resultCreateAssetType[0], resultCreateAssetType[1]];
@@ -177,13 +238,34 @@ const createAssetCustom = async (url, body, token) => {
       updateDataODEP.info('error creating one asset', { from: 'createAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     } else {
       updateDataODEP.info('success creating one asset', { from: 'createAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
-      const inDB = await AssetDB.newAssetDB(data['assetId'], imgBase64, body['owner']);
+      await AssetDB.newAssetDB(data['assetId'], imgBase64, body['owner']);
     }
     return [data, response.status];
   }
 }
 
-const putAsset = async (url, body, id,token) => {
+const putAsset = async (url, body, id, token) => {
+  updateDataODEP.warn('data to send to ODEP', { from: 'putAsset', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
+  const response = await Utils.fetchJSONData(
+      'PUT',
+      url + id, 
+      headers = {'accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': token},
+      body
+  );
+  const data = await Utils.streamToJSON(response.body)
+  if (response.status == 401) {
+    updateDataODEP.error('error: Unauthorize', { from: 'putAsset', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+  } else if(response.status != 200) {
+    updateDataODEP.error('error updating one asset', { from: 'putAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  } else {
+    updateDataODEP.info('success updating one asset', { from: 'putAsset', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  }
+  return [data, response.status];
+};
+
+const putAssetCustom = async (url, body, id, token) => {
   const imgBase64 = body['image'];
   delete body['image'];
   updateDataODEP.warn('data to send to ODEP', { from: 'putAsset', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
@@ -199,11 +281,11 @@ const putAsset = async (url, body, id,token) => {
   if (response.status == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'putAsset', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
     return [data, response.status];
-  } else if(response.status == 200) {
-    const inDB = await AssetDB.updateAssetImgById(id, imgBase64);
-    updateDataODEP.info('success updating one asset', { from: 'putAsset', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
-  } else {
+  } else if(response.status != 200) {
     updateDataODEP.error('error updating one asset', { from: 'putAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  } else {
+    updateDataODEP.info('success updating one asset', { from: 'putAsset', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    await AssetDB.updateAssetImgById(id, imgBase64, data);
   }
   return [data, response.status];
 };
@@ -219,12 +301,33 @@ const deleteAsset = async (url, id, token) => {
   const data = await Utils.streamToJSON(response.body)
   if (response.status == 401) {
     getDataLogger.error('error: Unauthorize', { from: 'deleteAsset', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
-    deleteDataODEP [data, response.status];
   } else if(response.status != 200) {
     deleteDataODEP.error('error deleting one asset', { from: 'deleteAsset', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
   } else {
-    const delDB = await AssetDB.deleteAssetImgById(id);
     deleteDataODEP.info('success deleting one asset', { from: 'deleteAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  }
+  return [data, response.status];
+  } catch (e) {
+    throw(e)
+  }
+};
+
+const deleteAssetCustom = async (url, id, token) => {
+  try {
+    const response = await Utils.fetchJSONData(
+      'DELETE',
+      url + id, 
+      headers = {'accept': 'application/json',
+      'Authorization': token},
+  );
+  const data = await Utils.streamToJSON(response.body)
+  if (response.status == 401) {
+    getDataLogger.error('error: Unauthorize', { from: 'deleteAsset', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+  } else if(response.status != 200) {
+    deleteDataODEP.error('error deleting one asset', { from: 'deleteAsset', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  } else {
+    deleteDataODEP.info('success deleting one asset', { from: 'deleteAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    await AssetDB.deleteAssetImgById(id);
   }
   return [data, response.status];
   } catch (e) {
@@ -259,10 +362,15 @@ module.exports = {
     getAllAsset,
     getOneAssetImg,
     getOneAsset,
+    getOneAssetCustom,
     getOwnerAsset,
+    getOwnerAssetCustom,
     createAsset,
     createAssetCustom,
+    createAssetWithAssetTypeCustom,
     putAsset,
+    putAssetCustom,
     patchAsset,
     deleteAsset,
+    deleteAssetCustom
 }

@@ -37,10 +37,9 @@ const router = express.Router();
  * @swagger
  * /v1/regulators:
  *   post: 
- *     summary: Create a new Regulator and is user's state
+ *     summary: Create a new Regulator (from ODEP)
  *     tags: [Regulator]
  *     requestBody:
- *       description: The prosumer's informations.
  *       required: true
  *       content:
  *         application/json:
@@ -56,16 +55,46 @@ const router = express.Router();
  *                  items:
  *                    type: string
  *     responses:
- *       200:
- *         description: Token of the user.
+ *       201:
+ *         description: Regulator successfully created
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
  *       400:
- *         description: Invalid regulator data.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
  */
 router.post('/regulators', regulatorController.createRegulator);
 
@@ -73,19 +102,57 @@ router.post('/regulators', regulatorController.createRegulator);
  * @swagger
  * /v1/regulators/all:
  *   get:
- *     summary: Retrieve data from all the regulators
+ *     summary: get all regulators (from ODEP)
  *     tags: [Regulator]
- *     requestBody:
- *       required: false
  *     responses:
  *       200:
- *         description: Correctly retrieved all the regulators
+ *         description: Ok
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                     id: 
+ *                       type: string
+ *                     account:
+ *                       type: string
+ *                     assetTypes : 
+ *                       type: array
+ *                       items:
+ *                         type: string
+ *       400:
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
  */
 router.get('/regulators/all', regulatorController.getAllRegulator);
 
@@ -93,7 +160,7 @@ router.get('/regulators/all', regulatorController.getAllRegulator);
  * @swagger
  * /v1/regulators/{id}:
  *   get:
- *     summary: Retrieve data from one regulator
+ *     summary: Get a regulator by id (from ODEP)
  *     tags: [Regulator]
  *     parameters:
  *       - in: path
@@ -101,16 +168,53 @@ router.get('/regulators/all', regulatorController.getAllRegulator);
  *         schema:
  *           type: string 
  *         required: true
- *         description: the Prosumer id
  *     responses:
  *       200:
- *         description: Correctly retrieved all the regulators
+ *         description: Ok
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                  id: 
+ *                    type: string
+ *                  account:
+ *                    type: string
+ *                  assetTypes : 
+ *                    type: array
+ *                    items:
+ *                      type: string
+ *       400:
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
  */
 router.get('/regulators/:id', regulatorController.getOneRegulator);
 
@@ -118,7 +222,7 @@ router.get('/regulators/:id', regulatorController.getOneRegulator);
  * @swagger
  * /v1/regulators/{id}:
  *   patch: 
- *     summary: Regulator assetType
+ *     summary: update regulator liste of asset types he is accountable on (from ODEP)
  *     tags: [Regulator]
  *     parameters:
  *       - in: path
@@ -126,9 +230,7 @@ router.get('/regulators/:id', regulatorController.getOneRegulator);
  *         schema:
  *           type: string 
  *         required: true
- *         description: the Prosumer id
  *     requestBody:
- *       description: The prosumer's informations.
  *       required: true
  *       content:
  *         application/json:
@@ -141,15 +243,45 @@ router.get('/regulators/:id', regulatorController.getOneRegulator);
  *                      type: string
  *     responses:
  *       200:
- *         description: Token of the user.
+ *         description: Regulator successfully updated
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
  *       400:
- *         description: Invalid regulator's id or body.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
  */
 router.patch('/regulators/:id', regulatorController.patchOneRegulator);
 
@@ -157,7 +289,7 @@ router.patch('/regulators/:id', regulatorController.patchOneRegulator);
  * @swagger
  * /v1/regulators/{id}/:
  *   delete: 
- *     summary: delete regulator profil
+ *     summary: delete a regulator (from ODEP)
  *     tags: [Regulator]
  *     parameters:
  *       - in: path
@@ -165,18 +297,47 @@ router.patch('/regulators/:id', regulatorController.patchOneRegulator);
  *         schema:
  *           type: string 
  *         required: true
- *         description: the Regulator id
  *     responses:
  *       200:
- *         description: Token of the user.
+ *         description: Regulator successfully deleted
  *         content:
  *           application/json:
  *             schema:
- *               type: json
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
  *       400:
- *         description: Invalid prosumer data.
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
  */
 router.delete('/regulators/:id', regulatorController.deleteRegulator);
 

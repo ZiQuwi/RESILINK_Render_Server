@@ -37,8 +37,8 @@ const getAllAssetTypes = async (req, res) => {
       const response = await assettypeService.getAllAssetTypes(_pathassetTypesODEP, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      getDataLogger.error('Error accessing ODEP', { from: 'getAllAssetTypes', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
-      res.status(500).send('Error accessing ODEP');
+      getDataLogger.error('Error accessing ODEP', { from: 'getAllAssetTypes', data: error.message, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      res.status(500).send({message: error.message});
     }
 };
 
@@ -47,8 +47,8 @@ const getOneAssetTypes = async (req, res) => {
       const response = await assettypeService.getOneAssetTypes(_pathassetTypesODEP, req.params.id, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      getDataLogger.error('Error accessing ODEP', { from: 'getOneAssetTypes', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
-      res.status(500).send('Error accessing ODEP');
+      getDataLogger.error('Error accessing ODEP', { from: 'getOneAssetTypes', data: error.message, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      res.status(500).send({message: error.message});
     }
 };
 
@@ -57,8 +57,8 @@ const putAssetTypes = async (req, res) => {
       const response = await assettypeService.putAssetTypes(_pathassetTypesODEP, req.body, req.params.id, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      updateDataODEP.error('Error accessing ODEP', { from: 'putAssetTypes', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
-      res.status(500).send('Error accessing ODEP');
+      updateDataODEP.error('Error accessing ODEP', { from: 'putAssetTypes', data: error.message, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      res.status(500).send({message: error.message});
     }
 };
 
@@ -67,8 +67,28 @@ const deleteAssetTypes = async (req, res) => {
       const response = await assettypeService.deleteAssetTypes(_pathassetTypesODEP, req.params.id, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      deleteDataODEP.error('Error accessing ODEP', { from: 'deleteAssetTypes', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
-      res.status(500).send('Error accessing ODEP');
+      deleteDataODEP.error('Error accessing ODEP', { from: 'deleteAssetTypes', data: error.message, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      res.status(500).send({message: error.message});
+    }
+};
+
+const getAllAssetTypesResilink = async (req, res) => { 
+  try {
+      const response = await assettypeService.getAllAssetTypesResilink(req.header('Authorization'));
+      res.status(response[1]).send(response[0]);
+    } catch (error) {
+      deleteDataODEP.error('Error accessing ODEP', { from: 'deleteAssetTypes', data: error.message, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      res.status(500).send({message: error.message});
+    }
+};
+
+const createAssetTypesCustom = async (req, res) => { 
+  try {
+      const response = await assettypeService.getAllAssetTypesResilink(req.params.assetType, req.header('Authorization'));
+      res.status(response[1]).send(response[0]);
+    } catch (error) {
+      deleteDataODEP.error('Error accessing ODEP', { from: 'deleteAssetTypes', data: error.message, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      res.status(500).send({message: error.message});
     }
 };
 
@@ -78,4 +98,6 @@ module.exports = {
     getOneAssetTypes,
     putAssetTypes,
     deleteAssetTypes,
+    getAllAssetTypesResilink,
+    createAssetTypesCustom
 }

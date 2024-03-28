@@ -242,11 +242,8 @@ const createOffer = async (url, body, token) => {
 };
 
 const createOfferAsset = async (url, body, token) => {
-  console.log("dans createOfferAsset");
   updateDataODEP.warn('data to send to ODEP', { from: 'createOfferAsset', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
   const newsAsset = await Asset.createAssetCustom("http://90.84.194.104:10010/assets/", body['asset'], token);
-  console.log("apres le else");
-  console.log(newsAsset[1]);
   if (newsAsset[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createOfferAsset', dataReceived: newsAsset[0], tokenUsed: token == null ? "Token not given" : token});
     return [newsAsset[0], newsAsset[1]];
@@ -254,9 +251,7 @@ const createOfferAsset = async (url, body, token) => {
     updateDataODEP.error('error creating one assetType', { from: 'createOfferAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [newsAsset[0], newsAsset[1]];
   } else {
-    console.log("apres le else");
     body['offer']['assetId'] = newsAsset[0]['assetId']; 
-    console.log(body['offer']);
     const newOffer = await createOffer(url, body['offer'], token);
     if (newOffer[1] == 401) {
       updateDataODEP.error('error: Unauthorize', { from: 'createOfferAsset', dataReceived: newOffer[0], tokenUsed: token == null ? "Token not given" : token});
@@ -268,7 +263,7 @@ const createOfferAsset = async (url, body, token) => {
       return [{'asset': newsAsset[0], 'offer': newOffer[0]}, 200];
     }
   }
-}
+};
 
 const getAllOffer = async (url, token) => {
   const response = await Utils.fetchJSONData(

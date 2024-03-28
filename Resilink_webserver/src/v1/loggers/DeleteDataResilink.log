@@ -19,3 +19,93 @@
   message: 'Document with ID 43 successfully deleted',
   timestamp: '2024-03-08T13:23:04.892Z'
 }
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteUserODEPRESILINK',
+  dataReceiver: 'deleteOneProsummer is not defined',
+  level: 'error',
+  message: 'error deleting a user account in RESILINK and ODEP DB',
+  timestamp: '2024-03-25T13:48:33.577Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  error: ReferenceError: id is not defined
+      at Object.deleteProsumerODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:201:88)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.deleteProsumerODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:248:5)
+      at async deleteProsumerODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:115:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-26T08:51:13.938Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  dataReceiver: 'id is not defined',
+  level: 'error',
+  message: 'error deleting a prosumer account in RESILINK and ODEP DB',
+  timestamp: '2024-03-26T08:51:13.940Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  error: ReferenceError: result is not defined
+      at Object.deleteProsumerODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:202:5)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.deleteProsumerODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:248:5)
+      at async deleteProsumerODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:115:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-26T09:27:53.441Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  dataReceiver: 'result is not defined',
+  level: 'error',
+  message: 'error deleting a prosumer account in RESILINK and ODEP DB',
+  timestamp: '2024-03-26T09:27:53.444Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: 'Document with ID UserD successfully deleted',
+  timestamp: '2024-03-26T09:38:09.660Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: "success deleting a news from an owner's bookmarked list",
+  timestamp: '2024-03-26T09:38:09.662Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: 'Document with ID UserD successfully deleted',
+  timestamp: '2024-03-26T10:29:10.985Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: "success deleting a news from an owner's bookmarked list",
+  timestamp: '2024-03-26T10:29:10.987Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: 'Document with ID USerD successfully deleted',
+  timestamp: '2024-03-26T13:03:01.485Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: "success deleting a news from an owner's bookmarked list",
+  timestamp: '2024-03-26T13:03:01.486Z'
+}

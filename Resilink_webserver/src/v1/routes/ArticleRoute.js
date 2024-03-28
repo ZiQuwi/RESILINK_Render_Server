@@ -6,13 +6,14 @@ const articleController = require("../controllers/ArticleController.js");
  * @swagger
  * tags:
  *   name: Article
+ *   description: Temporary (can be removed at any time)
  */
 
 /**
  * @swagger
  * /v1/articles/all:
  *   get: 
- *     summary: Get all articles.
+ *     summary: Get all articles from (RESILINK).
  *     tags: [Article]
  *     responses:
  *       200:
@@ -20,11 +21,29 @@ const articleController = require("../controllers/ArticleController.js");
  *         content:
  *           application/json:
  *             schema:
- *               type: json
- *       400:
- *         description: Invalid asset data.
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      _id:
+ *                          type: string
+ *                      title:
+ *                          type: string
+ *                      body:
+ *                          type: string
+ *                      link:
+ *                          type: string
+ *                      img:
+ *                          type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.get('/articles/all', articleController.getAllArticles);
@@ -33,19 +52,37 @@ router.get('/articles/all', articleController.getAllArticles);
  * @swagger
  * /v1/articles/LastFour:
  *   get: 
- *     summary: Get last 4 articles.
+ *     summary: Get last 4 articles (from RESILINK).
  *     tags: [Article]
  *     responses:
  *       200:
- *         description: last 4 articles.
+ *         description: Ok.
  *         content:
  *           application/json:
  *             schema:
- *               type: json
- *       400:
- *         description: Invalid asset data.
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      _id:
+ *                          type: string
+ *                      title:
+ *                          type: string
+ *                      body:
+ *                          type: string
+ *                      link:
+ *                          type: string
+ *                      img:
+ *                          type: string
  *       500:
- *         description: Some server error.
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 
 router.get('/articles/LastFour', articleController.getLastFourArticles);

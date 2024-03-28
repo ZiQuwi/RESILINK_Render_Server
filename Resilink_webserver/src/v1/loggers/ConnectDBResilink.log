@@ -1524,3 +1524,2581 @@
   message: 'succes connecting to DB',
   timestamp: '2024-03-13T15:11:14.632Z'
 }
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-14T15:02:12.118Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-14T15:12:15.889Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-14T15:49:09.562Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-14T15:51:14.453Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-14T15:54:41.234Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-14T15:55:29.936Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-14T15:56:27.167Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T13:46:44.505Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T13:46:44.531Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T13:46:45.471Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T13:54:08.793Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T13:54:11.340Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T13:54:12.103Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T13:55:38.366Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T13:58:03.917Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T13:58:04.821Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T13:58:06.733Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T13:58:07.143Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T13:58:07.481Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:04:24.360Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:04:25.224Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:04:26.578Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:04:26.998Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:04:59.767Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:05:01.036Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:05:01.459Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:26:25.478Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:26:26.341Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:26:33.378Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:26:33.790Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:30:09.050Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:30:09.451Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:47:14.278Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:47:14.697Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:47:41.671Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:47:42.073Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:47:48.057Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:47:48.519Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:51:03.521Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T14:51:03.946Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T15:42:03.569Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T15:42:04.455Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T15:42:11.258Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T15:42:14.682Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T15:48:48.869Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T15:48:49.775Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T15:48:52.707Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T15:51:18.032Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T15:51:38.256Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T15:51:39.036Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-15T15:51:41.242Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T09:55:25.674Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T09:55:26.788Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T09:56:17.157Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T09:56:18.251Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T09:56:18.576Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T10:08:53.222Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T10:50:40.361Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T10:50:41.438Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T10:50:41.726Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T11:14:49.324Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T11:14:50.379Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T11:14:50.703Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T11:17:25.439Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T11:17:26.398Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T11:17:26.675Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T11:17:30.077Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T13:18:52.480Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T13:18:53.559Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T13:19:07.432Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T13:19:08.899Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T13:19:15.117Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T13:21:18.799Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:38:53.241Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:38:53.517Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  error: TypeError: country.charAt is not a function
+      at Object.getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/NewsDB.js:57:26)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/NewsService.js:53:25)
+      at async getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/NewsController.js:41:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-18T14:38:53.517Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:40:27.564Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:40:27.847Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  error: TypeError: country.charAt is not a function
+      at Object.getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/NewsDB.js:57:26)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/NewsService.js:55:25)
+      at async getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/NewsController.js:41:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-18T14:40:27.848Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:40:42.525Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:40:42.828Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  error: TypeError: country.charAt is not a function
+      at Object.getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/NewsDB.js:57:26)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/NewsService.js:56:25)
+      at async getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/NewsController.js:41:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-18T14:40:42.829Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:52:42.247Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:52:42.558Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  error: TypeError: country.charAt is not a function
+      at Object.getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/NewsDB.js:57:26)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/NewsService.js:57:25)
+      at async getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/NewsController.js:41:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-18T14:52:42.559Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:54:42.887Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:54:43.212Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  error: TypeError: country.charAt is not a function
+      at Object.getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/NewsDB.js:58:26)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/NewsService.js:57:25)
+      at async getNewsfromCountryWithoutUserNews (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/NewsController.js:41:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-18T14:54:43.212Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:55:04.175Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:55:04.476Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:57:36.466Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:57:36.795Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:58:46.099Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T14:58:46.413Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T15:07:58.169Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T15:07:59.228Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T15:19:36.035Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-18T15:19:36.328Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:02:27.501Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:02:28.389Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:02:46.952Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:02:47.331Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:02:50.960Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:02:51.724Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:15:05.844Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:15:06.148Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:31:55.118Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:31:55.466Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:52:03.014Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:52:03.403Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:54:31.415Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T09:54:32.162Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:07:49.056Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:07:49.424Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:07:50.761Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:07:51.055Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:07:53.920Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:07:54.238Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:08:21.821Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:08:22.522Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:08:25.478Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:08:25.819Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:08:27.456Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:09:15.852Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:09:16.206Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:09:18.383Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:14:12.368Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:14:13.179Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:14:15.279Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:14:15.638Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:14:24.250Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:17:43.180Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:17:43.269Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:17:43.646Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:17:50.954Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:19:54.400Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:19:54.502Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T10:19:54.874Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T11:05:28.311Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T11:05:28.370Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T11:05:28.780Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T11:05:39.953Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T11:05:40.648Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T11:06:01.932Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T11:06:02.923Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T11:06:10.462Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T11:06:11.293Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T11:06:11.590Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T11:06:18.948Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T11:06:19.261Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T15:02:36.061Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T15:02:36.380Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T15:27:21.310Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T15:28:54.548Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T15:33:12.631Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T15:33:23.553Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T15:33:55.526Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T15:33:59.669Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T15:40:26.170Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-19T15:52:24.712Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T08:41:59.484Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T08:44:06.944Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T08:44:18.131Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T08:44:19.786Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T08:44:22.407Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T08:50:30.679Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: ReferenceError: id is not defined
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:39)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T08:50:30.707Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T08:59:03.995Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: ReferenceError: id is not defined
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:39)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T08:59:04.022Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T08:59:30.389Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: ReferenceError: id is not defined
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:39)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T08:59:30.415Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:00:00.986Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: IDNotFoundError: ID 1 already does exist in prosumer's bookMarked field
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T09:00:01.007Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:05:59.518Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: IDNotFoundError: ID 1 already does exist in prosumer's bookMarked field
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T09:05:59.539Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:06:20.478Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: IDNotFoundError: ID 1 already does exist in prosumer's bookMarked field
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T09:06:20.503Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:07:08.065Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: IDNotFoundError: ID 1 already does exist in prosumer's bookMarked field
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T09:07:08.087Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:07:35.783Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: IDNotFoundError: ID 1 already does exist in prosumer's bookMarked field
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T09:07:35.812Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:07:47.941Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: IDNotFoundError: ID 1 already does exist in prosumer's bookMarked field
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T09:07:47.968Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:08:47.870Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: IDNotFoundError: ID 1 already does exist in prosumer's bookMarked field
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T09:08:47.893Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:09:30.968Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: IDNotFoundError: ID 1 already does exist in prosumer's bookMarked field
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T09:09:30.993Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:09:40.922Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: IDNotFoundError: ID 1 already does exist in prosumer's bookMarked field
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T09:09:40.950Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:17:18.533Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: IDNotFoundError: ID 1 already does exist in prosumer's bookMarked field
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T09:17:18.558Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:17:35.139Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  error: IDNotFoundError: ID 1 already does exist in prosumer's bookMarked field
+      at Object.addbookmarked (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:124:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.patchBookmarkProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:205:18)
+      at async patchBookmarkProsumer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:95:22),
+  level: 'error',
+  message: 'error connecting to DB ',
+  timestamp: '2024-03-20T09:17:35.166Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:21:14.289Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:21:27.742Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:31:44.735Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T09:32:42.079Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T11:04:51.230Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T11:04:52.377Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T11:04:56.022Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T11:04:56.963Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T11:04:57.242Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:40:47.349Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:40:48.326Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:41:04.145Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:41:05.036Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:41:05.356Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:41:06.526Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:41:06.795Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:49:02.814Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:49:03.695Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:49:03.997Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:52:52.127Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:52:53.136Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:53:07.032Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:53:07.933Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:53:08.254Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:53:10.353Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:53:10.664Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:58:58.440Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:58:59.395Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:58:59.712Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:59:05.711Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:59:12.664Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:59:13.795Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:59:14.135Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:59:15.664Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T12:59:15.942Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:20:30.286Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:20:31.315Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:20:37.429Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:20:39.570Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:20:40.556Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:20:40.934Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:21:41.137Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:21:42.103Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:43:31.087Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:43:32.056Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:53:43.712Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:53:44.655Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:53:44.957Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:53:48.747Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:53:50.094Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:56:49.425Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:57:35.323Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:57:36.376Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:58:49.551Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:58:49.826Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:58:55.999Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:58:56.916Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T13:58:57.205Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T14:14:22.987Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T14:17:45.020Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T14:17:46.133Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T14:18:02.992Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T14:18:03.929Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T14:18:04.257Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T15:41:11.794Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T15:54:45.550Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T15:56:09.611Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-20T15:57:34.361Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T08:31:32.656Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T08:31:33.770Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T08:34:52.059Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  error: TypeError: prosumerList.forEach is not a function
+      at Object.getAllProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:28:22)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getAllProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:113:3)
+      at async getAllProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:45:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-21T08:34:52.060Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T08:40:41.410Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  error: TypeError: Cannot read properties of undefined (reading 'id')
+      at Object.getAllProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:28:37)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getAllProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:113:3)
+      at async getAllProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:45:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-21T08:40:41.411Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T08:41:12.862Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T08:41:34.136Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T08:42:52.146Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T08:50:46.095Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T08:52:04.799Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T08:54:54.868Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T08:56:28.373Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T08:56:53.003Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T09:06:27.644Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T09:07:47.508Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T09:10:53.713Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T09:21:36.758Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T09:21:47.406Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  error: ReferenceError: print is not defined
+      at Object.getAllProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:33:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getAllProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:113:3)
+      at async getAllProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:45:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-21T09:21:47.510Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T09:24:44.099Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  error: ReferenceError: print is not defined
+      at Object.getAllProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:33:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getAllProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:113:3)
+      at async getAllProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:45:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-21T09:24:44.210Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T09:27:28.000Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  error: ReferenceError: print is not defined
+      at Object.getAllProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:33:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getAllProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:113:3)
+      at async getAllProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:45:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-21T09:27:28.086Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T09:28:23.439Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  error: ReferenceError: print is not defined
+      at Object.getAllProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:33:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getAllProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:113:3)
+      at async getAllProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:45:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-21T09:28:23.516Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-21T09:28:39.072Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-22T15:12:56.465Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-22T15:12:57.639Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-22T15:13:04.989Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-22T15:13:05.885Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-22T15:13:06.235Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:44:14.505Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:44:15.596Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:44:17.567Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:44:18.447Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:44:18.882Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:44:24.900Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:44:25.614Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:45:50.828Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:45:51.536Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:45:53.045Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:45:53.430Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:46:01.033Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:46:02.386Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:46:02.768Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:46:06.899Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:46:14.185Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:48:28.471Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:48:28.876Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:48:35.578Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:48:35.933Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:48:39.006Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:48:39.399Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T08:51:13.937Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T09:20:25.694Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T09:27:53.409Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T09:36:29.074Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T09:38:09.628Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T10:11:34.541Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T10:29:10.957Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T12:59:32.690Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T13:03:01.458Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'newUser',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T13:51:12.483Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T13:51:16.816Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T14:18:58.894Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getAllArticle',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-26T14:34:30.281Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'newAssetTypeDB',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T10:33:28.168Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'newAssetDB',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T10:33:36.618Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T13:42:57.303Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T13:43:13.806Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T15:49:02.430Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T15:49:14.214Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T15:49:14.614Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T15:49:27.500Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T15:49:27.870Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T15:49:35.974Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T15:49:46.310Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T15:55:01.557Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-27T15:55:02.599Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-28T09:18:58.644Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-28T09:30:13.007Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-28T09:32:22.606Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  error: ReferenceError: id is not defined
+      at Object.getOneProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:53:60)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getOneProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:153:3)
+      at async getOneProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:66:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-28T09:32:22.607Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-28T09:50:45.412Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  error: ReferenceError: id is not defined
+      at Object.getOneProsummer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:53:60)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.getOneProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:151:5)
+      at async getOneProsummerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:66:22),
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-03-28T09:50:45.413Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-28T09:58:03.492Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneProsummer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-03-28T09:59:47.169Z'
+}

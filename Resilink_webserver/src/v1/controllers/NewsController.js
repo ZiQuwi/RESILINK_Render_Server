@@ -32,12 +32,23 @@ const getNewsfromOwner = async (req, res) => {
     res.status(response[1]).send(response[0]);
   } catch (error) {
     getDataLogger.error('Error accessing Resilink Database', { from: 'getNewsfromIdList', data: error});
-    res.status(500).send({error: error});
+    res.status(500).send({message: error.message});
+  }
+};
+
+const getNewsfromCountryWithoutUserNews = async (req, res) => { 
+  try {
+    const response = await NewsService.getNewsfromCountryWithoutUserNews(req.query.owner, req.query.country, req.header('Authorization'));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    getDataLogger.error('Error accessing Resilink Database', { from: 'getNewsfromIdList', data: error});
+    res.status(500).send({message: error.message});
   }
 };
 
 module.exports = {
     getNewsfromCountry,
     getNewsfromIdList,
-    getNewsfromOwner
+    getNewsfromOwner,
+    getNewsfromCountryWithoutUserNews,
 };

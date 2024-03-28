@@ -76,7 +76,7 @@ const swaggerDocs = (app, port) => {
         swaggerUi.setup(swaggerSpec, { explorer: true })
         );
 
-    console.log(`Docs are available on https://10.0.13.38:${port}/v1/api-docs [Version 1]`);
+    console.log(`Docs are available on https://resilink-api.onrender.com/v1/api-docs/ [Version 1]`);
 };  
 
 // ---------------------------------------------------

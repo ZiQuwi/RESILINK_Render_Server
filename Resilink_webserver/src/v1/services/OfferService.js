@@ -9,7 +9,11 @@ const Utils = require("./Utils.js");
 const AssetTypes = require("./AssetTypeService.js");
 const Asset = require("./AssetService.js");
 
+
+//Retrieves all valid offers for sale or lease in ODEP for RESILINK
 const getAllOfferForResilinkCustom = async (url, token) => {
+
+  //Retrieves all data needed to confirm the offers validity
     const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
     const allAssetResilink = await Asset.getAllAssetResilink(token);
     const allOffer = await Utils.fetchJSONData(
@@ -20,6 +24,7 @@ const getAllOfferForResilinkCustom = async (url, token) => {
     var allOfferResilink = {};
     const data = await Utils.streamToJSON(allOffer.body);
 
+    //Checks that none of the functions are error returns by ODEP
     if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
       getDataLogger.error('error: Unauthorize', { from: 'getAllOfferForResilinkCustom', tokenUsed: token == null ? "Token not given" : token});
       return [allAssetType[1] == 401 ? allAssetType[0] : allAssetResilink[1] == 401 ? allAssetResilink[0] : data, 401];
@@ -28,6 +33,7 @@ const getAllOfferForResilinkCustom = async (url, token) => {
       return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
     };
 
+    //For each offer, checks if its validity date has not passed and if there is a quantity above 0 if it is an immaterial offer.
     for (const key in data) {
         if (data.hasOwnProperty(key)) {
           const element = data[key];
@@ -47,9 +53,11 @@ const getAllOfferForResilinkCustom = async (url, token) => {
     return [allOfferResilink, allOffer.status];
 };
 
-//TODO copier le filtre actuel de l'app 
+//Filters valid ODEP offers with filter parameters set
 const getAllOfferFilteredCustom = async (url, filter, token) => {    
   try {
+
+    //Retrieves all data required to check values.
     const offerResilink = await getAllOfferForResilinkCustom(url, token);
     const allOffer = offerResilink[0];
     if (offerResilink[1] == 401) {
@@ -62,6 +70,8 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
       getDataLogger.error('error: Unauthorize', { from: 'getAllOfferFilteredCustom', dataReceived: allAsset, tokenUsed: token == null ? "Token not given" : token});
       return [allAsset, assetResilink[1]];
     }
+
+    //Checks for each offer whether it does not meet one of the conditions expressed in the filter map.
     const allOfferFiltered = [];
     var isCompatible = true;
     for (const key in allOffer) {
@@ -91,16 +101,12 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
         };
 
         if(filter.hasOwnProperty("Properties")){
-          console.log("Dans Properties");
           if(allAsset[allOffer[key]["assetId"]].hasOwnProperty("specificAttributes")) {
-            console.log("dans le if");
-            console.log("condition du if pour compatible : " + filter["Properties"].every(attr2 => allAsset[allOffer[key]["assetId"]]["specificAttributes"].some(attr1 => attr1.attributeName.toUpperCase() == attr2.attributeName.toUpperCase() && attr1.value.toUpperCase() == attr2.value.toUpperCase())));
             if (Object.keys(filter["Properties"]).length > 0 && filter["Properties"].every(attr2 => allAsset[allOffer[key]["assetId"]]["specificAttributes"].some(attr1 => attr1.attributeName.toUpperCase() == attr2.attributeName.toUpperCase() && attr1.value.toUpperCase() == attr2.value.toUpperCase())) == false) {
               isCompatible = false;
               continue;
             }
           } else {
-            console.log("dans le else");
             isCompatible = false;
             continue;
           }
@@ -192,8 +198,11 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
   }
 };
 
+//Retrieves all offers from a user in ODEP.
 const getAllOfferOwnerCustom = async (url, Username, token) => {
   var allOfferOwner = {};
+
+  //Retrives all offer in ODEP
   const allOffer = await Utils.fetchJSONData(
     'GET',
     url + "all", 
@@ -209,6 +218,8 @@ const getAllOfferOwnerCustom = async (url, Username, token) => {
     getDataLogger.error("error retrieving data", { from: 'getAllOfferOwnerCustom', data: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [data, allOffer.status];
   }; 
+
+  //Checks if the creator is the user in parameter
   for (const key in data) {
     if (data.hasOwnProperty(key)) {
       const offer = data[key];
@@ -221,6 +232,7 @@ const getAllOfferOwnerCustom = async (url, Username, token) => {
   return [allOfferOwner, allOffer.status];
 };
 
+//Creates an offer in ODEP
 const createOffer = async (url, body, token) => {
   updateDataODEP.warn('data to send to ODEP', { from: 'createOffer', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
   const response = await Utils.fetchJSONData(
@@ -241,7 +253,10 @@ const createOffer = async (url, body, token) => {
   return [data, response.status];
 };
 
+//Creates an offer, his asset and asset type associated 
 const createOfferAsset = async (url, body, token) => {
+
+  //Calls the function to create an asset and his asset type
   updateDataODEP.warn('data to send to ODEP', { from: 'createOfferAsset', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
   const newsAsset = await Asset.createAssetCustom("http://90.84.194.104:10010/assets/", body['asset'], token);
   if (newsAsset[1] == 401) {
@@ -251,6 +266,8 @@ const createOfferAsset = async (url, body, token) => {
     updateDataODEP.error('error creating one assetType', { from: 'createOfferAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [newsAsset[0], newsAsset[1]];
   } else {
+
+    //Associates the assetId just created with the map containing the offer data 
     body['offer']['assetId'] = newsAsset[0]['assetId']; 
     const newOffer = await createOffer(url, body['offer'], token);
     if (newOffer[1] == 401) {
@@ -265,6 +282,7 @@ const createOfferAsset = async (url, body, token) => {
   }
 };
 
+//Retrieves all offer in ODEP
 const getAllOffer = async (url, token) => {
   const response = await Utils.fetchJSONData(
       'GET',
@@ -283,6 +301,7 @@ const getAllOffer = async (url, token) => {
   return [data, response.status];
 };
 
+//Retrieves an offer by id in ODEP
 const getOneOffer = async (url, id, token) => {
   const response = await Utils.fetchJSONData(
       'GET',
@@ -301,6 +320,7 @@ const getOneOffer = async (url, id, token) => {
   return [data, response.status];
 };
 
+//Updates the offer by id in ODEP
 const putOffer = async (url, body, id, token) => {
   updateDataODEP.warn('data to send to ODEP', { from: 'putOffer', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
   const response = await Utils.fetchJSONData(
@@ -322,6 +342,7 @@ const putOffer = async (url, body, id, token) => {
   return [data, response.status];
 };
 
+//Deletes an offer by id in ODEP
 const deleteOffer = async (url, id, token) => {
   deleteDataODEP.warn('id to used in ODEP', { from: 'deleteOffer', offerId: id, tokenUsed: token.replace(/^Bearer\s+/i, '')});
   const response = await Utils.fetchJSONData(

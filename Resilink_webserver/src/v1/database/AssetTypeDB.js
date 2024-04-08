@@ -15,9 +15,9 @@ const _password = "ysf72odys0D340w6";
 const url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
 const client = new MongoClient(url);
 
+// If the assetType does not exist, creates its entity in the database, otherwise updates the assetType counter.
 const newAssetTypeDB = async (assetType) => {
     try {
-        console.log("newAssetTypeDB");
       await client.connect();
       connectDB.info('succes connecting to DB', { from: 'newAssetTypeDB'});
   
@@ -27,7 +27,6 @@ const newAssetTypeDB = async (assetType) => {
       const existingDocument = await _collection.findOne({ assetType: assetType });
       
       updateData.warn('before inserting data', { from: 'newAssetTypeDB', data: assetType});
-      console.log(assetType);
 
         if (existingDocument === null) {
             const assetType = await _collection.insertOne({
@@ -40,18 +39,17 @@ const newAssetTypeDB = async (assetType) => {
             updateData.info('succes creating an assetType in Resilink DB', { from: 'newAssetTypeDB'});
             return `${assetType}1`;
         } else {
-            // Mettre à jour le document en incrémentant le compteur
+            // Update the document by incrementing the counter
             const updatedDocument = await _collection.findOneAndUpdate(
                 { assetType: assetType },
-                { $inc: { count: 1 } }, // Incrémenter la valeur de "count" de 1
-                { returnDocument: 'after' } // Renvoyer le document mis à jour
+                { $inc: { count: 1 } }, 
+                { returnDocument: 'after' } // Resend the updated document
             );
             if (updatedDocument == null) {
                 throw new InsertDBError("assetType not created in local DB")
             };
             updateData.info('succes updating counter of an assetType in Resilink DB', { from: 'newAssetTypeDB'});
 
-            //const newCount = updatedDocument;
             return `${assetType}${updatedDocument["count"]}`; 
         }
 

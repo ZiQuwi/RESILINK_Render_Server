@@ -7,8 +7,7 @@ const NewsService = require("../services/NewsService.js");
 
 const getNewsfromCountry = async (req, res) => { 
     try {
-      console.log("dans getNewsfromCountry");
-      const response = await NewsService.getNewsfromCountry(req.query.country);
+      const response = await NewsService.getNewsfromCountry(req.query.country, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
       getDataLogger.error('Error accessing Resilink Database', { from: 'getNewsfromCountry', data: error});
@@ -18,7 +17,7 @@ const getNewsfromCountry = async (req, res) => {
 
 const getNewsfromIdList = async (req, res) => { 
   try {
-    const response = await NewsService.getNewsfromIdList(req.query.ids);
+    const response = await NewsService.getNewsfromIdList(req.query.ids, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     getDataLogger.error('Error accessing Resilink Database', { from: 'getNewsfromIdList', data: error});

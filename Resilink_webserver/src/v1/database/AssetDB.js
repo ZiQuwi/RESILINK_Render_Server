@@ -17,6 +17,8 @@ const _password = "ysf72odys0D340w6";
 const _url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
 const client = new MongoClient(_url);
 
+
+//Creates an asset in RESILINK DB 
 const newAssetDB = async (assetId, imgBase64, owner) => {
     try {
       await client.connect();
@@ -52,6 +54,7 @@ const newAssetDB = async (assetId, imgBase64, owner) => {
     }
 };
 
+//Retrieves an asset with its ODEP id in RESLINK DB
 const getOneAssetDBimage = async (asset) => {
   try {
 
@@ -82,7 +85,7 @@ const getOneAssetDBimage = async (asset) => {
     await client.close();
   }
 };
-
+//Retrieves an img with its asset id in RESILINK DB
 const getOneDBimageById = async (id) => {
   try {
 
@@ -114,6 +117,7 @@ const getOneDBimageById = async (id) => {
   }
 };
 
+//Retrieves all asset in RESILINK DB
 const getAllAssetDBimage = async () => {
   try {
     await client.connect();
@@ -159,7 +163,6 @@ const getImageforAssets = async (ListAsset) => {
     }
 
     if (ListAsset == null) {
-      console.log("listasset: " + ListAsset);
       throw new getDBError("assets didn't find / in the Resilink DB");
     } else {
       getDataLogger.info('succes retrieving/processing all assets in Resilink DB', { from: 'getImageforAssets'});
@@ -177,6 +180,7 @@ const getImageforAssets = async (ListAsset) => {
   }
 };
 
+//Deletes an asset by id in RESILINK DB
 const deleteAssetImgById = async (assetId) => {
   try {
     await client.connect();
@@ -206,6 +210,7 @@ const deleteAssetImgById = async (assetId) => {
   }
 }
 
+//Update an asset by id in RESILINK DB
 const updateAssetImgById = async (assetId, assetImg, asset) => {
   try {
     await client.connect();

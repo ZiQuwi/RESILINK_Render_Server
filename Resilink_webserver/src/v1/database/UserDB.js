@@ -18,10 +18,9 @@ const _password = "ysf72odys0D340w6";
 const url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
 const client = new MongoClient(url);
 
-// Function to insert a document in the "prosumer" collection
+// Creates a user in RESILINK DB
 const newUser = async (user, password) => {
     try {
-      console.log("ayo");
       await client.connect();
       connectDB.info('succes connecting to DB', { from: 'newUser'});
   
@@ -29,10 +28,8 @@ const newUser = async (user, password) => {
       const _collection = _database.collection('user');
   
       updateData.warn('before inserting data', { from: 'newUser', data: {user: user, password: password, phoneNumber: user["phoneNumber"] ?? ""}});
-
-      console.log(user["_id"] + " " + user["phoneNumber"] + " " + password);
       
-  // Insert a document with a unique identifier and a telephone number
+  // Inserts a document with a unique identifier and a telephone number
       const userCtreated = await _collection.insertOne({
         "_id": user["_id"],
         "phoneNumber": user["phoneNumber"] ?? "",
@@ -57,94 +54,129 @@ const newUser = async (user, password) => {
     }
   };
 
-  const deleteUser = async (userId) => {
-    try {
-      await client.connect();
-      connectDB.info('succes connecting to DB', { from: 'deleteUser'});
+// Deletes a user by id in RESILINK DB
+const deleteUser = async (userId) => {
+  try {
+    await client.connect();
+    connectDB.info('succes connecting to DB', { from: 'deleteUser'});
 
-      const _database = client.db('Resilink');
-      const _collection = _database.collection('user');
+    const _database = client.db('Resilink');
+    const _collection = _database.collection('user');
 
-      const result = await _collection.deleteOne({ _id: userId });
+    const result = await _collection.deleteOne({ _id: userId });
 
-      if (result.deletedCount === 1) {
-        deleteData.info(`Document with ID ${userId} successfully deleted`, { from: 'deleteUser'});
-      } else {
-        throw new DeleteDBError();
-      }
-    } catch (e) {
-      if (e instanceof DeleteDBError) {
-        deleteData.error('error delete user in Resilink DB', { from: 'deleteUser', error: e.message});
-      } else {
-        connectDB.error('error connecting to DB', { from: 'deleteUser', error: e.message});
-      }
-    } finally {
-      await client.close();
+    if (result.deletedCount === 1) {
+      deleteData.info(`Document with ID ${userId} successfully deleted`, { from: 'deleteUser'});
+    } else {
+      throw new DeleteDBError();
     }
-  }
-
-  const updateUser = async (id, body) => {
-    try {
-      await client.connect();
-      connectDB.info('succes connecting to DB', { from: 'updateUser'});
-
-      const _database = client.db('Resilink');
-      const _collection = _database.collection('user');
-
-      updateData.warn('before updating data', { from: 'updateUser', data: {user: user, password: body.password, phoneNumber: body.phoneNumber ?? ""}});
-
-      const result = await _collection.updateOne(
-        { _id: id },
-        { $set: { password: body.password, phoneNumber: body.phoneNumber ?? "" } }
-      );
-
-      if (result.modifiedCount === 1) {
-        updateData.info(`Document with ID ${userId} successfully updated`, { from: 'updateUser'});
-      } else {
-        throw new UpdateDBError();
-      }
-    } catch (e) {
-      if (e instanceof UpdateDBError) {
-        updateData.error('error updating user in Resilink DB', { from: 'updateUser', error: e.message});
-      } else {
-        connectDB.error('error connecting to DB', { from: 'updateUser', error: e.message});
-      }
-    } finally {
-      await client.close();
+  } catch (e) {
+    if (e instanceof DeleteDBError) {
+      deleteData.error('error delete user in Resilink DB', { from: 'deleteUser', error: e.message});
+    } else {
+      connectDB.error('error connecting to DB', { from: 'deleteUser', error: e.message});
     }
+  } finally {
+    await client.close();
   }
+}
 
-  const getUser = async (id, body) => {
-    try {
-      await client.connect();
-      connectDB.info('succes connecting to DB', { from: 'getUser'});
+// Updates a user by id in RESILINK DB
+const updateUser = async (id, body) => {
+  try {
+    await client.connect();
+    connectDB.info('succes connecting to DB', { from: 'updateUser'});
 
-      const _database = client.db('Resilink');
-      const _collection = _database.collection('user');
+    const _database = client.db('Resilink');
+    const _collection = _database.collection('user');
 
-      var user = await _collection.findOne({ _id: id });
+    updateData.warn('before updating data', { from: 'updateUser', data: {user: user, password: body.password, phoneNumber: body.phoneNumber ?? ""}});
+
+    const result = await _collection.updateOne(
+      { _id: id },
+      { $set: { password: body.password, phoneNumber: body.phoneNumber ?? "" } }
+    );
+
+    if (result.modifiedCount === 1) {
+      updateData.info(`Document with ID ${userId} successfully updated`, { from: 'updateUser'});
+    } else {
+      throw new UpdateDBError();
+    }
+  } catch (e) {
+    if (e instanceof UpdateDBError) {
+      updateData.error('error updating user in Resilink DB', { from: 'updateUser', error: e.message});
+    } else {
+      connectDB.error('error connecting to DB', { from: 'updateUser', error: e.message});
+    }
+  } finally {
+    await client.close();
+  }
+}
+
+// Retrieves a user by id in RESILINK DB
+const getUser = async (id, body) => {
+  try {
+    await client.connect();
+    connectDB.info('succes connecting to DB', { from: 'getUser'});
+
+    const _database = client.db('Resilink');
+    const _collection = _database.collection('user');
+
+    var user = await _collection.findOne({ _id: id });
+    if (user != null) {
+      body[i].phoneNumber = user.phoneNumber;
+    } else {
+      throw new getDBError();
+    }
+
+    getDataLogger.info('succes retrieving an user in Resilink DB', { from: 'getUser'});
+
+  } catch (e) {
+    if (e instanceof getDBError) {
+      updateData.error('error retrieving user in Resilink DB', { from: 'getUser', error: e.message});
+    } else {
+      connectDB.error('error connecting to DB', { from: 'getUser', error: e.message});
+    }
+  } finally {
+    await client.close();
+  }
+}
+
+// Retrieves all users in RESILINK DB
+const getAllUser = async (userList) => {
+  try {
+    await client.connect();
+    connectDB.info('succes connecting to DB', { from: 'getAllUser'});
+
+    const _database = client.db('Resilink');
+    const _collection = _database.collection('user');
+
+    for (var i = 0; i < userList.length; i++) {
+      var user = await _collection.findOne({ _id : userList[i]._id });
       if (user != null) {
-        body[i].phoneNumber = user.phoneNumber;
+        userList[i].phoneNumber = user.phoneNumber;
       } else {
-        throw new getDBError();
+        userList[i].phoneNumber = "";
       }
-
-      getDataLogger.info('succes retrieving an user in Resilink DB', { from: 'getUser'});
-
-    } catch (e) {
-      if (e instanceof getDBError) {
-        updateData.error('error retrieving user in Resilink DB', { from: 'getUser', error: e.message});
-      } else {
-        connectDB.error('error connecting to DB', { from: 'getUser', error: e.message});
-      }
-    } finally {
-      await client.close();
     }
-  }
 
-  module.exports = {
-    newUser,
-    deleteUser,
-    updateUser,
-    getUser
+    getDataLogger.info('succes retrieving all user in Resilink DB', { from: 'getAllUser'});
+
+  } catch (e) {
+    if (e instanceof getDBError) {
+      updateData.error('error retrieving user in Resilink DB', { from: 'getAllUser', error: e.message});
+    } else {
+      connectDB.error('error connecting to DB', { from: 'getAllUser', error: e.message});
+    }
+  } finally {
+    await client.close();
   }
+}
+
+module.exports = {
+  newUser,
+  deleteUser,
+  updateUser,
+  getUser,
+  getAllUser
+}

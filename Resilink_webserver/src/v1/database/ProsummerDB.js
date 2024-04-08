@@ -17,6 +17,7 @@ const _password = "ysf72odys0D340w6";
 const url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
 const client = new MongoClient(url);
 
+//Retrieves all prosumers in RESILINK DB
 const getAllProsummer = async (prosumerList) => {
     try {
         await client.connect();
@@ -42,6 +43,7 @@ const getAllProsummer = async (prosumerList) => {
     }
 };
 
+//Retrieves one prosumer by its id
 const getOneProsummer = async (prosumer) => {
     try {
         await client.connect();
@@ -61,9 +63,8 @@ const getOneProsummer = async (prosumer) => {
         } else {
           prosumer.bookMarked = prosumers.bookMarked;
         }
-        
         getDataLogger.info('succes retrieving one prosummer in Resilink DB', { from: 'getOneProsummer'});
-        return prosumer;
+        return prosumers;
     } catch (e) {
       if (e instanceof getDBError) {
         getDataLogger.error('error retrieving one prosummer in Resilink DB', { from: 'getOneProsummer'});
@@ -76,17 +77,50 @@ const getOneProsummer = async (prosumer) => {
     }
 }
 
-// Function to insert a document in the "prosumer" collection
+//Retrieves one prosumer by its id
+const getOneProsummerWithUsername = async (prosumerName) => {
+  try {
+      await client.connect();
+      connectDB.info('succes connecting to DB', { from: 'getBookmarkedProsumer'});
+  
+      const _database = client.db('Resilink');
+      const _collection = _database.collection('prosumer');
+  
+      const prosumers = await _collection.findOne({ _id: prosumerName });
+
+      var bookMarkedList = [];
+      if (prosumers == null || prosumers.length === 0) {
+        /*
+         * not exception possible for the moment, since not all the users had been registered in RESISILINK DB
+        */
+        //throw new getDBError("prosummer not found in DB")
+      } else {
+        bookMarkedList = [...prosumers.bookMarked];
+      }
+      getDataLogger.info('succes retrieving one prosummer in Resilink DB', { from: 'getBookmarkedProsumer'});
+      return prosumers;
+  } catch (e) {
+    if (e instanceof getDBError) {
+      getDataLogger.error('error retrieving one prosummer in Resilink DB', { from: 'getBookmarkedProsumer'});
+    } else {
+      connectDB.error('error connecting to DB', { from: 'getBookmarkedProsumer',  error: e});
+    }
+    throw(e);
+  }finally {
+      await client.close();
+  }
+}
+
+// Creates a prosumer in RESILINK DB
 const newProsumer = async (id) => {
   try {
     await client.connect();
-    connectDB.info('succes connecting to DB', { from: 'getOneProsummer'});
+    connectDB.info('succes connecting to DB', { from: 'newProsumer'});
 
     const _database = client.db('Resilink');
     const _collection = _database.collection('prosumer');
 
-// Insert a document with a unique identifier
-    updateData.info('data to insert', { from: 'getOneProsummer', _id: id});
+    updateData.info('data to insert', { from: 'newProsumer', _id: id});
     const prosumer = await _collection.insertOne({
       "_id": id,
       "bookMarked": []
@@ -96,13 +130,13 @@ const newProsumer = async (id) => {
       throw new InsertDBError("prosummer not created in local DB")
     }
     
-    updateData.info('succes creating one prosummer in Resilink DB', { from: 'getOneProsummer'});
+    updateData.info('succes creating one prosummer in Resilink DB', { from: 'newProsumer'});
 
   } catch (e){
     if (e instanceof InsertDBError) {
-      updateData.error('error creating one prosummer in Resilink DB', { from: 'getOneProsummer'});
+      updateData.error('error creating one prosummer in Resilink DB', { from: 'newProsumer'});
     } else {
-      connectDB.error('error connecting to DB ', { from: 'getOneProsummer',  error: e});
+      connectDB.error('error connecting to DB ', { from: 'newProsumer',  error: e});
     }
     throw(e);
   } finally {
@@ -110,7 +144,7 @@ const newProsumer = async (id) => {
   }
 };
 
-// Function to insert a document in the "prosumer" collection
+// Update the bookMarked list from a prosumer to add a news id
 const addbookmarked  = async (prosumerId, newId) => {
   try {
     await client.connect();
@@ -119,7 +153,7 @@ const addbookmarked  = async (prosumerId, newId) => {
     const _database = client.db('Resilink');
     const _collection = _database.collection('prosumer');
 
-    // Vérifier si l'ID existe dans la liste bookMarked
+    // Check if the ID exists in the bookMarked list
     const prosumer = await _collection.findOne({ "_id": prosumerId, "bookMarked": { $in: [newId] } });
     if (prosumer) {
       throw new IDNotFoundError(`ID ${newId} already does exist in prosumer's bookMarked field`);
@@ -145,14 +179,13 @@ const addbookmarked  = async (prosumerId, newId) => {
     } else {
       connectDB.error('error connecting to DB ', { from: 'addbookmarked',  error: e});
     }
-    console.log(e.message);
     throw(e);
   } finally {
     await client.close();
   }
 };
 
-// Function to insert a document in the "prosumer" collection
+// Update the bookMarked list from a prosumer to delete a news id
 const deleteBookmarkedId  = async (id, owner) => {
   try {
     await client.connect();
@@ -161,7 +194,7 @@ const deleteBookmarkedId  = async (id, owner) => {
     const _database = client.db('Resilink');
     const _collection = _database.collection('prosumer');
 
-    // Vérifier si l'ID existe dans la liste bookMarked
+    // Check if the ID exists in the bookMarked list
     const prosumer = await _collection.findOne({ "_id": owner, "bookMarked": { $in: [id] } });
     if (!prosumer) {
       throw new IDNotFoundError(`ID ${id} does not exist in prosumer's bookMarked field`);
@@ -193,7 +226,7 @@ const deleteBookmarkedId  = async (id, owner) => {
   }
 };
 
-// Function to insert a document in the "prosumer" collection
+// Delete a prosumer in RESILINK DB
 const deleteProsumerODEPRESILINK  = async (owner) => {
   try {
     await client.connect();
@@ -222,10 +255,13 @@ const deleteProsumerODEPRESILINK  = async (owner) => {
   }
 };
 
+
+
 module.exports = {
     getAllProsummer,
     newProsumer,
     getOneProsummer,
+    getOneProsummerWithUsername,
     addbookmarked,
     deleteBookmarkedId,
     deleteProsumerODEPRESILINK

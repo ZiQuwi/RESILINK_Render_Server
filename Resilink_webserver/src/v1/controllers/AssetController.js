@@ -79,6 +79,16 @@ const getAllAsset = async (req, res) => {
     }
 };
 
+const getAllAssetCustom = async (req, res) => { 
+  try {
+      const response = await assetService.getAllAssetCustom(_pathAssetODEP, req.header('Authorization'));
+      res.status(response[1]).send(response[0]);
+    } catch (error) {
+      getDataLogger.error('Catched error', { from: 'getAllAsset', data: error.message, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : 'token not found'});
+      res.status(500).send({message: error.message});
+    }
+};
+
 const getOneAsset = async (req, res) => { 
   try {
       const response = await assetService.getOneAsset(_pathAssetODEP, req.params.id, req.header('Authorization'));
@@ -165,6 +175,7 @@ module.exports = {
   createAssetCustom,
   createAssetWithAssetTypeCustom,
   getAllAsset,
+  getAllAssetCustom,
   getOneAsset,
   getOneAssetCustom,
   getOneAssetIdimage,

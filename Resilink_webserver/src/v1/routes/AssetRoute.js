@@ -580,6 +580,91 @@ router.get('/assets/all/', assetController.getAllAsset);
 
 /**
  * @swagger
+ * /v1/assets/all/custom:
+ *   get:
+ *     summary: get all assets with image (from ODEP & RESILINK)
+ *     tags: [Asset]
+ *     responses:
+ *       200:
+ *         description: Ok
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: number
+ *                   availableQuantity:
+ *                     type: number
+ *                   name:
+ *                     type: string
+ *                   description:
+ *                     type: string
+ *                   assetType:
+ *                     type: string
+ *                   owner:
+ *                     type: string
+ *                   transactionType:
+ *                     type: string
+ *                   enum:
+ *                     - sale/purchase
+ *                     - rent
+ *                   totalQuantity:
+ *                     type: number
+ *                   regulatedId:
+ *                     type: string
+ *                   regulator:
+ *                     type: string
+ *                   image:
+ *                     type: string
+ *                   specificAttributes:
+ *                     type: array
+ *                     items:
+ *                       type: object
+ *                       properties:
+ *                          attributeName:
+ *                            type: string
+ *                          value:
+ *                            type: string
+ *       400:
+ *         description: Bad Request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string 
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
+ */
+
+router.get('/assets/all/custom', assetController.getAllAssetCustom);
+
+/**
+ * @swagger
  * /v1/assets/{id}:
  *   get:
  *     summary: Get an asset by id (from ODEP)
@@ -758,7 +843,7 @@ router.get('/assets/custom/:id/', assetController.getOneAssetCustom);
  * @swagger
  * /v1/asset/allAssetCustom:
  *   get:
- *     summary: get all assets with image (from RESILINK & ODEP)
+ *     summary: get all assets with image in map form(from RESILINK & ODEP)
  *     tags: [Asset]
  *     responses:
  *       200:
@@ -766,44 +851,45 @@ router.get('/assets/custom/:id/', assetController.getOneAssetCustom);
  *         content:
  *           application/json:
  *             schema:
- *               type: array
- *               items:
- *                 type: object
- *                 properties:
- *                   id:
- *                     type: number
- *                   availableQuantity:
- *                     type: number
- *                   name:
- *                     type: string
- *                   description:
- *                     type: string
- *                   assetType:
- *                     type: string
- *                   owner:
- *                     type: string
- *                   transactionType:
- *                     type: string
- *                   enum:
- *                     - sale/purchase
- *                     - rent
- *                   totalQuantity:
- *                     type: number
- *                   regulatedId:
- *                     type: string
- *                   regulator:
- *                     type: string
- *                   image:
- *                     type: string
- *                   specificAttributes:
- *                     type: array
- *                     items:
- *                       type: object
- *                       properties:
- *                          attributeName:
- *                            type: string
- *                          value:
- *                            type: string
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: number
+ *                     availableQuantity:
+ *                       type: number
+ *                     name:
+ *                       type: string
+ *                     description:
+ *                       type: string
+ *                     assetType:
+ *                       type: string
+ *                     owner:
+ *                       type: string
+ *                     transactionType:
+ *                       type: string
+ *                     enum:
+ *                       - sale/purchase
+ *                       - rent
+ *                     totalQuantity:
+ *                       type: number
+ *                     regulatedId:
+ *                       type: string
+ *                     regulator:
+ *                       type: string
+ *                     image:
+ *                       type: string
+ *                     specificAttributes:
+ *                       type: array
+ *                       items:
+ *                         type: object
+ *                         properties:
+ *                            attributeName:
+ *                              type: string
+ *                            value:
+ *                              type: string
  *       400:
  *         description: Bad Request.
  *         content:

@@ -9,20 +9,17 @@ const executeCurl = (type, url, headers = {}, body = null) =>{
     return new Promise((resolve, reject) => {
       let command = 'curl -X ';
       command += type + " " + url;
-      //Ajouter les en_têtes s'ils sont définis
+
       for (const key in headers) {
         if (headers.hasOwnProperty(key)) {
           command += ` -H "${key}:${headers[key]}"`;
         }
       }
   
-      // Ajouter le corps de la requête s'il est défini
       if (body !== null) {
         command += ` -d '${JSON.stringify(body)}'`;
       }
   
-      console.log(command);
-
       exec(command, (error, stdout, stderr) => {
         if (error) {
           reject(error);
@@ -33,6 +30,7 @@ const executeCurl = (type, url, headers = {}, body = null) =>{
     });
 };
 
+//Converts a stream into a character string.
 function streamToString(stream) {
   const readablestream = Readable.from(stream)
   const chunks = [];
@@ -47,12 +45,14 @@ function streamToString(stream) {
   });
 }
 
+//Converts a stream into a JSON object.
 const streamToJSON = async (stream) => {
   return streamToString(stream).then((data) => JSON.parse(data)).then((result) => {
     return result;
   });
 }
 
+//Makes an HTTP request with the specified method, URL, headers and body, and returns the response.
 const fetchJSONData = async (method, url, header, body = null) => {
 
   const params = {
@@ -71,10 +71,9 @@ const fetchJSONData = async (method, url, header, body = null) => {
 }
 
 /*
-  this function uses the haversine distance formula to calculate the distance between 2 geographical points.
-  R represents the Earth's radius in kilometers and 
-  distance is in kilometers
-*/
+ * Calculates the distance in kilometers between two geographical points specified by their latitudes and longitudes.
+ * R represents the Earth's radius in kilometers and distance is in kilometers
+ */
 const haversine = (lat1, lon1, lat2, lon2) => {
   const R = 6371;
   const dLat = (lat2 - lat1) * (Math.PI / 180);

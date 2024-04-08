@@ -40,6 +40,7 @@ const getAllAssetTypesResilink = async (token) => {
   }
 };
 
+//Creates an asset type in ODEP
 const createAssetTypes = async (url, body, token) => {
   updateDataODEP.warn('data to send to ODEP', { from: 'createAssetTypes', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
   const response = await Utils.fetchJSONData(
@@ -62,27 +63,30 @@ const createAssetTypes = async (url, body, token) => {
 };
 
 /* Create a child assetType for an existing assetType.
-*Look in odep to see if the assetType exists, 
-*if not, returns the error given by ODEP, 
-*if yes, create the child assetType in the local Resilink DB.
+* Look in ODEP to see if the assetType exists, 
+* If not, returns the error given by ODEP, 
+* If yes, creates the child assetType in the local Resilink DB.
 */
 const createAssetTypesCustom = async (assetType, token) => {
   try {
-    const adminToken = await User.functionGetTokenUser({
-      "userName": "admin",
-      "password": "admin123"
-    })
+
+    //Checks if the asset type exists and increments the asset type counter in RESILINK
     const resultassetType = await getOneAssetTypes("http://90.84.194.104:10010/assetTypes/", assetType, token);
     if (resultassetType[1] == 401) {
       getDataLogger.error('error: Unauthorize', { from: 'createAssetTypesCustom', dataReceived: resultassetType[0], tokenUsed: token == null ? "Token not given" : token});
       return [resultassetType[0], resultassetType[1]];
     } else if (resultassetType[1] != 200) {
-      //assetType doesn't exist or problem inside ODEP
       getDataLogger.error('error retrieving an assetType', { from: 'createAssetTypesCustom', dataReceived: resultassetType[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return [resultassetType[0], resultassetType[1]];
     } else {
       const resultDB = await AssetTypeDB.newAssetTypeDB(assetType);
+
+      //Change the name of the asset type to the new name, which is the counter at the end of the asset type and creates the new asset type 
       resultassetType[0]["name"] = resultDB;
+      const adminToken = await User.functionGetTokenUser({
+        "userName": "admin",
+        "password": "admin123"
+      })
       updateDataODEP.warn('data to send to ODEP', { from: 'createAssetTypesCustom', dataToSend: resultassetType[0], tokenUsed: token == null ? "Token not given" : token});
       const response = await Utils.fetchJSONData(
         'POST',
@@ -101,7 +105,6 @@ const createAssetTypesCustom = async (assetType, token) => {
       } else {
         updateDataODEP.info('success creating one assetType in ODEP or localDB', { from: 'createAssetTypesCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
       }
-      console.log("4");
       data['assetType'] = resultDB;
       return [data, response.status];
     }
@@ -111,6 +114,7 @@ const createAssetTypesCustom = async (assetType, token) => {
   }
 };
 
+//Retrieves all asset types in ODEP
 const getAllAssetTypes = async (url, token) => {
   const response = await Utils.fetchJSONData(
       'GET',
@@ -126,18 +130,12 @@ const getAllAssetTypes = async (url, token) => {
     getDataLogger.error('error retrieving/processing all assetTypes', { from: 'getAllAssetTypes', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [data, response.status];
   } else {
-    /*const filteredData = data.filter(obj => {
-      const nameValue = obj["name"];
-  
-      // Utiliser une expression régulière pour vérifier si nameValue ne contient pas de nombres
-      return !/\d/.test(nameValue);
-    });
-    */
     getDataLogger.info('success retrieving/processing all assetTypes', { from: 'getAllAssetTypes', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [data, response.status];
   }  
 };
 
+//Retrieves an asset type by id in ODEP
 const getOneAssetTypes = async (url, id, token) => {
   const response = await Utils.fetchJSONData(
       'GET',
@@ -157,6 +155,7 @@ const getOneAssetTypes = async (url, id, token) => {
   return [data, response.status];
 };
 
+//Updates an asset type by id in ODEP
 const putAssetTypes = async (url, body, id, token) => {
   updateDataODEP.warn('data to send to ODEP', { from: 'putAssetTypes', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
   const response = await Utils.fetchJSONData(
@@ -178,6 +177,7 @@ const putAssetTypes = async (url, body, id, token) => {
       return [data, response.status];
 };
 
+//Delete an asset type by id in ODEP
 const deleteAssetTypes = async (url, id, token) => {
   updateDataODEP.warn('data to send to ODEP', { from: 'deleteAssetTypes', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
   const response = await Utils.fetchJSONData(

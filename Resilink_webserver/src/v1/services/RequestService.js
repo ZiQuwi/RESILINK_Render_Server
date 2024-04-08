@@ -8,6 +8,7 @@ const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const Utils = require("./Utils.js");
 
+//Creates a request in ODEP
 const createRequest = async (url, body, token) => {
   updateDataODEP.warn('data to send to ODEP', { from: 'createRequest', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
@@ -29,6 +30,7 @@ const createRequest = async (url, body, token) => {
     return [data, response.status];
 };
 
+//Retrieves a request by id in ODEP
 const getOneRequest = async (url, id, token) => {
     const response = await Utils.fetchJSONData(
         'GET',
@@ -46,6 +48,7 @@ const getOneRequest = async (url, id, token) => {
     return [data, response.status];
 };
 
+//Retrieves all requests in ODEP
 const getAllRequest = async (url, token) => {
     const response = await Utils.fetchJSONData(
         'GET',
@@ -63,6 +66,7 @@ const getAllRequest = async (url, token) => {
     return [data, response.status];
 };
 
+//Updates a request by id in ODEP
 const putRequest = async (url, body, id, token) => {
   updateDataODEP.warn('data to send to ODEP', { from: 'putRequest', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
@@ -84,6 +88,7 @@ const putRequest = async (url, body, id, token) => {
     return [data, response.status];
 };
 
+//Deletes a request by id in ODEP
 const deleteRequest = async (url, id, token) => {
   deleteDataODEP.warn('id to send to ODEP', { from: 'deleteRequest', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(

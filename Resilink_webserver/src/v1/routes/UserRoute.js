@@ -327,6 +327,61 @@ router.get('/users/', userController.getAllUser);
 
 /**
  * @swagger
+ * /v1/users/all/custom:
+ *   get:
+ *     summary: Return list of users (from ODEP & RESILINK)
+ *     tags: [users]
+ *     responses:
+ *       200:
+ *         description: successful operation
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items: 
+ *                 type: object
+ *                 properties:
+ *                   _id:
+ *                     type: string
+ *                   userName:
+ *                     type: string
+ *                   firstName:
+ *                     type: string
+ *                   lastName:
+ *                     type: string
+ *                   roleOfUser:
+ *                     type: string
+ *                   email:
+ *                     type: string
+ *                   password:
+ *                     type: string 
+ *                   provider:
+ *                     type: string
+ *                   account:
+ *                     type: string
+ *                   createdAt:
+ *                     type: string
+ *                   updatedAt:
+ *                     type: string
+ *                   phoneNumber:
+ *                     type: string
+ *       401:
+ *         description: Unauthorized
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    message:
+ *                        type: string
+ */
+
+router.get('/users/all/custom', userController.getAllUserCustom);
+
+/**
+ * @swagger
  * /v1/users/{userId}/:
  *   get: 
  *     summary: Find user by ID (from ODEP)

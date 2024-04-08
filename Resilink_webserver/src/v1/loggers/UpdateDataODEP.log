@@ -2115,3 +2115,214 @@
   message: 'success creating one asset',
   timestamp: '2024-03-27T10:33:36.348Z'
 }
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 26,
+    beginTimeSlot: '2024-04-03T15:43:19.548Z',
+    validityLimit: '2024-04-10T15:43:19.551Z',
+    publicationDate: '2024-04-03T15:43:19.551Z',
+    endTimeSlot: '2024-04-10T15:43:19.552Z',
+    offeredQuantity: 5,
+    remainingQuantity: 5,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTIxNTE2OTksImV4cCI6MTcxMjE1ODg5OX0.u-ONWWARCft6Q5ou1CuLTq7FnXF1cCzT0IlIVnpjTec',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-03T13:43:19.842Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  data: TypeError: fetch failed
+      at Object.fetch (node:internal/deps/undici/undici:11576:11)
+      at async Object.createOffer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/OfferService.js:238:20)
+      at async createOffer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/OfferController.js:54:22) {
+    cause: HeadersTimeoutError: Headers Timeout Error
+        at Timeout.onParserTimeout [as callback] (node:internal/deps/undici/undici:9748:32)
+        at Timeout.onTimeout [as _onTimeout] (node:internal/deps/undici/undici:8047:17)
+        at listOnTimeout (node:internal/timers:569:17)
+        at process.processTimers (node:internal/timers:512:7) {
+      code: 'UND_ERR_HEADERS_TIMEOUT'
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTIxNTE2OTksImV4cCI6MTcxMjE1ODg5OX0.u-ONWWARCft6Q5ou1CuLTq7FnXF1cCzT0IlIVnpjTec',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-04-03T13:48:21.159Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 26,
+    beginTimeSlot: '2024-04-03T15:59:05.554Z',
+    validityLimit: '2024-05-03T00:00:00.000Z',
+    publicationDate: '2024-04-03T15:59:05.555Z',
+    endTimeSlot: '2024-05-03T00:00:00.000Z',
+    offeredQuantity: 10,
+    remainingQuantity: 10,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTIxNTI2NDYsImV4cCI6MTcxMjE1OTg0Nn0._DMPwFyO1CiyNPbrfcq8iAngIMDcE307rCHcxyFPNRk',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-03T13:59:05.842Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  data: TypeError: fetch failed
+      at Object.fetch (node:internal/deps/undici/undici:11576:11)
+      at async Object.createOffer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/OfferService.js:238:20)
+      at async createOffer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/OfferController.js:54:22) {
+    cause: HeadersTimeoutError: Headers Timeout Error
+        at Timeout.onParserTimeout [as callback] (node:internal/deps/undici/undici:9748:32)
+        at Timeout.onTimeout [as _onTimeout] (node:internal/deps/undici/undici:8047:17)
+        at listOnTimeout (node:internal/timers:569:17)
+        at process.processTimers (node:internal/timers:512:7) {
+      code: 'UND_ERR_HEADERS_TIMEOUT'
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTIxNTI2NDYsImV4cCI6MTcxMjE1OTg0Nn0._DMPwFyO1CiyNPbrfcq8iAngIMDcE307rCHcxyFPNRk',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-04-03T14:04:07.161Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 26,
+    beginTimeSlot: '2024-04-05T14:37:33.314Z',
+    validityLimit: '2024-04-12T14:37:33.315Z',
+    publicationDate: '2024-04-05T14:37:33.315Z',
+    endTimeSlot: '2024-04-12T14:37:33.316Z',
+    offeredQuantity: 10,
+    remainingQuantity: 10,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTIzMTk5MzMsImV4cCI6MTcxMjMyNzEzM30.3n6f4hExy-6SkvWf0-Uyg8_FpYNEouj_S10BiNgdGkg',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-05T12:37:34.518Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataReceived: { code: 400, message: 'No sufficient quantity is available' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTIzMTk5MzMsImV4cCI6MTcxMjMyNzEzM30.3n6f4hExy-6SkvWf0-Uyg8_FpYNEouj_S10BiNgdGkg',
+  level: 'error',
+  message: 'error creating an offer',
+  timestamp: '2024-04-05T12:37:36.678Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 26,
+    beginTimeSlot: '2024-04-05T14:37:49.608Z',
+    validityLimit: '2024-04-12T14:37:49.608Z',
+    publicationDate: '2024-04-05T14:37:49.608Z',
+    endTimeSlot: '2024-04-12T14:37:49.609Z',
+    offeredQuantity: 5,
+    remainingQuantity: 5,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTIzMTk5MzMsImV4cCI6MTcxMjMyNzEzM30.3n6f4hExy-6SkvWf0-Uyg8_FpYNEouj_S10BiNgdGkg',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-05T12:37:50.810Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTIzMTk5MzMsImV4cCI6MTcxMjMyNzEzM30.3n6f4hExy-6SkvWf0-Uyg8_FpYNEouj_S10BiNgdGkg',
+  level: 'info',
+  message: 'success creating an offer',
+  timestamp: '2024-04-05T12:37:53.983Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    offerer: 'testResilink',
+    assetId: 40,
+    beginTimeSlot: '2024-04-05T15:23:45.782Z',
+    validityLimit: '2024-04-12T15:23:45.783Z',
+    publicationDate: '2024-04-05T15:23:45.783Z',
+    endTimeSlot: '2024-04-12T15:23:45.784Z',
+    offeredQuantity: 10,
+    remainingQuantity: 10,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWRlZmZkYjYwYzRjNzA5ODdlN2M5NTUiLCJpYXQiOjE3MTIzMjA5MjcsImV4cCI6MTcxMjMyODEyN30.sG1ksmuI2sxOcDknXrjKBs5nZ8tSOSDEaNoh9bkk5gM',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-05T13:23:46.992Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWRlZmZkYjYwYzRjNzA5ODdlN2M5NTUiLCJpYXQiOjE3MTIzMjA5MjcsImV4cCI6MTcxMjMyODEyN30.sG1ksmuI2sxOcDknXrjKBs5nZ8tSOSDEaNoh9bkk5gM',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-04-05T13:23:50.128Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataToSend: {
+    requestor: 'acazaux',
+    beginTimeSlot: '2024-04-05T15:55:36.102Z',
+    endTimeSlot: '2024-04-12T15:23:45.000Z',
+    validityLimit: '2024-04-12T15:23:45.000Z',
+    transactionType: 'sale/purchase',
+    offerIds: [ 17 ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTIzMjQ5ODQsImV4cCI6MTcxMjMzMjE4NH0.KGmB9y-5_2ek0UHh4cyH4_1LjL4bP7h1Ngw8BWDmaXo',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-05T13:55:37.313Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTIzMjQ5ODQsImV4cCI6MTcxMjMzMjE4NH0.KGmB9y-5_2ek0UHh4cyH4_1LjL4bP7h1Ngw8BWDmaXo',
+  level: 'info',
+  message: 'success creating one request',
+  timestamp: '2024-04-05T13:55:39.414Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: { offerId: 17, requestId: 7 },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTIzMjQ5ODQsImV4cCI6MTcxMjMzMjE4NH0.KGmB9y-5_2ek0UHh4cyH4_1LjL4bP7h1Ngw8BWDmaXo',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-05T13:55:39.418Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createContract',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTIzMjQ5ODQsImV4cCI6MTcxMjMzMjE4NH0.KGmB9y-5_2ek0UHh4cyH4_1LjL4bP7h1Ngw8BWDmaXo',
+  level: 'info',
+  message: 'success creationg a contract',
+  timestamp: '2024-04-05T13:55:44.534Z'
+}

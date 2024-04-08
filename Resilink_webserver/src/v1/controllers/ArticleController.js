@@ -7,7 +7,7 @@ const ArticleService = require("../services/ArticleService.js");
 
 const getAllArticles = async (req, res) => { 
   try {
-    const response = await ArticleService.getAllArticle();
+    const response = await ArticleService.getAllArticle(req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     getDataLogger.error(error.message, { from: 'getAllArticles', data: error.message});
@@ -17,7 +17,7 @@ const getAllArticles = async (req, res) => {
 
 const getLastFourArticles = async (req, res) => { 
   try {
-    const response = await ArticleService.getLastFourArticles();
+    const response = await ArticleService.getLastFourArticles(req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     getDataLogger.error(error.message, { from: 'getLastFourArticles', data: error.message});

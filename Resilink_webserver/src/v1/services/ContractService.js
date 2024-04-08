@@ -7,6 +7,7 @@ const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const Utils = require("./Utils.js");
 
+//Creates a contract in ODEP
 const createContract = async (url, body, token) => {
     updateDataODEP.warn('data to send to ODEP', { from: 'createAssetTypes', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
@@ -27,6 +28,7 @@ const createContract = async (url, body, token) => {
     return [data, response.status];
 }
 
+//Retrieves all contracts in ODEP
 const getAllContract = async (url, token) => {
     const response = await Utils.fetchJSONData(
         'GET',
@@ -45,6 +47,7 @@ const getAllContract = async (url, token) => {
     return [data, response.status];
 }
 
+//Retrieves a contract by id in ODEP
 const getOneContract = async (url, id, token) => {
     const response = await Utils.fetchJSONData(
         'GET',
@@ -62,6 +65,7 @@ const getOneContract = async (url, id, token) => {
     return [data, response.status];
 }
 
+//Retrieves all contracts created by user with the user's id
 const getContractFromOwner = async (url, id, token) => {
     const response = await Utils.fetchJSONData(
         'GET',
@@ -108,6 +112,7 @@ const getOwnerContractOngoing = async (url, id, token) => {
     }  
 }
 
+//Patches a immaterial sale contract in ODEP
 const patchContractImmaterial = async (url, body, id, token) => {
   patchDataODEP.warn('data & id to send to ODEP', { from: 'patchOneRegulator', dataToSend: body, id: id, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
@@ -128,6 +133,7 @@ const patchContractImmaterial = async (url, body, id, token) => {
     return [data, response.status];
 }
 
+//Patches a material sale contract in ODEP
 const patchContractMaterialPurchase = async (url, body, id, token) => {
   patchDataODEP.warn('data & id to send to ODEP', { from: 'patchOneRegulator', dataToSend: body, id: id, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
@@ -148,6 +154,7 @@ const patchContractMaterialPurchase = async (url, body, id, token) => {
     return [data, response.status];
 }
 
+//Patches a material rent contract in ODEP
 const patchContractMaterialRent = async (url, body, id, token) => {
   patchDataODEP.warn('data & id to send to ODEP', { from: 'patchOneRegulator', dataToSend: body, id: id, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.executeCurl(
@@ -168,6 +175,7 @@ const patchContractMaterialRent = async (url, body, id, token) => {
     return [data, response.status];
 }
 
+//Patches a contract in putting of cancel state
 const patchContractCancel = async (url, body, id, token) => {
   patchDataODEP.warn('data & id to send to ODEP', { from: 'patchOneRegulator', dataToSend: body, id: id, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(

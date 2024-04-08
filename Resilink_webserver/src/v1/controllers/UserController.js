@@ -79,6 +79,16 @@ const getAllUser = async (req, res) => {
   }
 }
 
+const getAllUserCustom = async (req, res) => {
+  try {
+    const response = await userService.getAllUserCustom(_pathUserODEP, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    updateDataODEP.error('Catched error', { from: 'getAllUserCustom', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    res.status(500).send({message: error.message})
+  }
+}
+
 
 const getUserByEmail = async (req, res) => {
   try {
@@ -139,6 +149,7 @@ const getUserbyIdCustom = async (req, res) => {
     deleteUserODEPRESILINK,
     getUserById,
     getAllUser,
+    getAllUserCustom,
     getUserByEmail,
     getUserByUsername,
     updateUser,

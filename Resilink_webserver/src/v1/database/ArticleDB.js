@@ -15,6 +15,7 @@ const _password = "ysf72odys0D340w6";
 const url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
 const client = new MongoClient(url);
 
+//Retrieves all articles in RESILINK DB
 const getAllArticle = async () => {
     try {
         await client.connect();
@@ -45,6 +46,7 @@ const getAllArticle = async () => {
       } 
 };
 
+//Retrieves the last 4 registered articles
 const getLastFourArticles = async () => {
   try {
       await client.connect();

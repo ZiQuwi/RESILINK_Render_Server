@@ -484,3 +484,10 @@
   message: 'succes creating an asset in Resilink DB',
   timestamp: '2024-03-27T10:33:36.662Z'
 }
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-03T09:03:16.750Z'
+}

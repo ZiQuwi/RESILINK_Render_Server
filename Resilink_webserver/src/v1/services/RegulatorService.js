@@ -8,6 +8,7 @@ const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const Utils = require("./Utils.js");
 
+//Creates a regulator in ODEP
 const createRegulator = async (url, body, token) => {
   updateDataODEP.warn('data to send to ODEP', { from: 'createRegulator', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
@@ -28,6 +29,7 @@ const createRegulator = async (url, body, token) => {
     return [data, response.status];
 };
 
+//Retrieves all regulators in ODEP
 const getAllRegulator = async (url, token) => {
     const response = await Utils.fetchJSONData(
         "GET",
@@ -45,6 +47,7 @@ const getAllRegulator = async (url, token) => {
     return [data, response.status];
 }
 
+//Retrieves a regulator by id in ODEP
 const getOneRegulator = async (url, body, id, token) => {
     const response = await Utils.fetchJSONData(
         "GET",
@@ -63,6 +66,7 @@ const getOneRegulator = async (url, body, id, token) => {
     return [data, response.status];
 }
 
+//Patches a regulator by id in ODEP
 const patchOneRegulator = async (url, body, id, token) => {
   patchDataODEP.warn('data & id to send to ODEP', { from: 'patchOneRegulator', dataToSend: body, id: id, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
@@ -83,6 +87,7 @@ const patchOneRegulator = async (url, body, id, token) => {
     return [data, response.status];
 }
 
+//Deletes a regulator by id in ODEP
 const deleteRegulator = async (url, id, token) => {
   deleteDataODEP.warn('id to send to ODEP', { from: 'deleteRegulator', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(

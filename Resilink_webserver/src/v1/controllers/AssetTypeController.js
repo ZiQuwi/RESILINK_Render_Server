@@ -18,20 +18,7 @@ const createAssetTypes = async (req, res) => {
       res.status(500).send('Error accessing ODEP');
     }
 };
-/*
-const createAssetTypesCustom = async (req, res) => { 
-  try {
-      const response = await assettypeService.createAssetTypes(_pathassetTypesODEP, req.body, req.header('Authorization') ?? userService.functionGetTokenUser({
-        "userName": "admin",
-        "password": "admin123"
-      }));
-      res.status(response[1]).send(response[0]);
-    } catch (error) {
-      updateDataODEP.error('Error accessing ODEP', { from: 'createAssetTypesCustom', data: error});
-      res.status(500).send('Error accessing ODEP');
-    }
-};
-*/
+
 const getAllAssetTypes = async (req, res) => { 
   try {
       const response = await assettypeService.getAllAssetTypes(_pathassetTypesODEP, req.header('Authorization'));

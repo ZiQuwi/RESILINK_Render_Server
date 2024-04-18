@@ -6,6 +6,8 @@ const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
 const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const Utils = require("./Utils.js");
+const Assets = require("./AssetService.js");
+const AssetTypes = require("./AssetTypeService.js");
 
 //Creates a contract in ODEP
 const createContract = async (url, body, token) => {
@@ -83,7 +85,7 @@ const getContractFromOwner = async (url, id, token) => {
     return [data, response.status];
 }
 
-//Recovers all a user's contracts and keeps only those that are not finished
+//Recovers all a user's contracts and keeps only those that are not finished witj adding theirs asset types
 const getOwnerContractOngoing = async (url, id, token) => {
     const response = await Utils.fetchJSONData(
         'GET',
@@ -99,16 +101,33 @@ const getOwnerContractOngoing = async (url, id, token) => {
         getDataLogger.error('error retrieving owner\'scontracts', { from: 'getOwnerContractOngoing', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
         return [data, response.status];
     } else {
+
+      //Retrieves all assets and asset types to obtain the nature of the asset type linked to the contract
+      const allAsset = await Assets.getAllAssetResilink(token);
+      const allAssetTypes = await AssetTypes.getAllAssetTypesResilink(token);
+      if (allAsset[1] != 200) {
+        getDataLogger.warn('error retrieving all assets', { from: 'getOwnerContractOngoing', dataReceived: allAsset[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+        return[{contracts: {code: response.status, message: "Successful retrieval"}, assets: allAsset[0], AssetTypes: {code: "", message: "not started"}}, allAsset[1]];
+      } else if (allAssetTypes[1] != 200) {
+        getDataLogger.warn('error retrieving all assetTypes', { from: 'getOwnerContractOngoing', dataReceived: allAssetTypes[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+        return[{contracts: {code: response.status, message: "Successful retrieval"}, assets: {code: allAsset[1], message: "Successful retrieval"}, assetTypes: {code: allAssetTypes[1], message: allAssetTypes[0]}}, allAssetTypes[1]];
+      } else {
         const filteredData = data.filter(obj => {
           const nameValue = obj["state"];
-
-          return (nameValue !== 'endOfConsumption' && /* end states of an immaterial purchase contract */
-                  nameValue !== "assetReceivedByTheRequestor" && nameValue !== "assetNotReceivedByTheRequestor" && /* end states of an material purchase contract */
-                  nameValue !== "assetNotReturnedToTheOfferer" && nameValue !== "assetReceivedByTheRequestor" && nameValue !== "assetReceivedByTheRequestor" /* end states of an material rent contract */
-                  );
+          if (nameValue !== "cancelled" && /* contract cancelled before ending of the deal */ //Need yo be deleted after, just needed for the account acazaux in RESILINK 
+              nameValue !== 'endOfConsumption' && /* end states of an immaterial purchase contract */
+              nameValue !== "assetReceivedByTheRequestor" && nameValue !== "assetNotReceivedByTheRequestor" && /* end states of an material purchase contract */
+              nameValue !== "assetNotReturnedToTheOfferer" && nameValue !== "assetReceivedByTheRequestor" && nameValue !== "assetReceivedByTheRequestor" /* end states of an material rent contract */
+             ) {
+              obj['nature'] = allAssetTypes[0][allAsset[0][obj['asset'].toString()]['assetType']]['nature'];
+              return true
+          } else { 
+            return false
+          }
         });
         getDataLogger.info('success retrieving owner\'scontracts ongoing', { from: 'getOwnerContractOngoing', tokenUsed: token.replace(/^Bearer\s+/i, '')});
         return [filteredData, response.status];
+      }
     }  
 }
 

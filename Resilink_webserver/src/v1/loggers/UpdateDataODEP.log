@@ -2326,3 +2326,442 @@
   message: 'success creationg a contract',
   timestamp: '2024-04-05T13:55:44.534Z'
 }
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 26,
+    beginTimeSlot: '2024-04-15T10:53:02.437Z',
+    validityLimit: '2024-05-15T00:00:00.000Z',
+    publicationDate: '2024-04-15T10:53:02.438Z',
+    endTimeSlot: '2024-05-15T00:00:00.000Z',
+    offeredQuantity: 5,
+    remainingQuantity: 5,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMxNjk5MzcsImV4cCI6MTcxMzE3NzEzN30.ELUGaqDZHyAsXZkL3SiXGNrnNpWkNlpCzwW_-15trqc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-15T08:53:02.979Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMxNjk5MzcsImV4cCI6MTcxMzE3NzEzN30.ELUGaqDZHyAsXZkL3SiXGNrnNpWkNlpCzwW_-15trqc',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-04-15T08:53:07.032Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataToSend: {
+    requestor: 'acazaux',
+    beginTimeSlot: '2024-04-15T11:02:10.274Z',
+    endTimeSlot: '2024-05-15T00:00:00.000Z',
+    validityLimit: '2024-05-15T00:00:00.000Z',
+    transactionType: 'sale/purchase',
+    offerIds: [ 19 ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMxNjk5MzcsImV4cCI6MTcxMzE3NzEzN30.ELUGaqDZHyAsXZkL3SiXGNrnNpWkNlpCzwW_-15trqc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-15T09:02:10.836Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMxNjk5MzcsImV4cCI6MTcxMzE3NzEzN30.ELUGaqDZHyAsXZkL3SiXGNrnNpWkNlpCzwW_-15trqc',
+  level: 'info',
+  message: 'success creating one request',
+  timestamp: '2024-04-15T09:02:15.003Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: { offerId: 19, requestId: 8 },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMxNjk5MzcsImV4cCI6MTcxMzE3NzEzN30.ELUGaqDZHyAsXZkL3SiXGNrnNpWkNlpCzwW_-15trqc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-15T09:02:15.010Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createContract',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMxNjk5MzcsImV4cCI6MTcxMzE3NzEzN30.ELUGaqDZHyAsXZkL3SiXGNrnNpWkNlpCzwW_-15trqc',
+  level: 'info',
+  message: 'success creationg a contract',
+  timestamp: '2024-04-15T09:02:20.041Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataToSend: {
+    requestor: 'acazaux',
+    beginTimeSlot: '2024-04-15T11:02:10.274Z',
+    endTimeSlot: '2024-05-15T00:00:00.000Z',
+    validityLimit: '2024-05-15T00:00:00.000Z',
+    transactionType: 'sale/purchase',
+    offerIds: [ 19 ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMxNjk5MzcsImV4cCI6MTcxMzE3NzEzN30.ELUGaqDZHyAsXZkL3SiXGNrnNpWkNlpCzwW_-15trqc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-15T09:15:19.237Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMxNjk5MzcsImV4cCI6MTcxMzE3NzEzN30.ELUGaqDZHyAsXZkL3SiXGNrnNpWkNlpCzwW_-15trqc',
+  level: 'info',
+  message: 'success creating one request',
+  timestamp: '2024-04-15T09:15:21.275Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: { offerId: 19, requestId: 9 },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMxNjk5MzcsImV4cCI6MTcxMzE3NzEzN30.ELUGaqDZHyAsXZkL3SiXGNrnNpWkNlpCzwW_-15trqc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-15T09:15:21.283Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createContract',
+  dataReceived: { code: 400, message: 'This offer has been already purchased' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMxNjk5MzcsImV4cCI6MTcxMzE3NzEzN30.ELUGaqDZHyAsXZkL3SiXGNrnNpWkNlpCzwW_-15trqc',
+  level: 'error',
+  message: 'error creationg a contract',
+  timestamp: '2024-04-15T09:15:25.295Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 12,
+    beginTimeSlot: '2024-04-15T11:59:16.424Z',
+    validityLimit: '2024-04-22T11:59:16.424Z',
+    publicationDate: '2024-04-15T11:59:16.425Z',
+    endTimeSlot: '2024-04-22T11:59:16.425Z',
+    offeredQuantity: 4,
+    remainingQuantity: 4,
+    price: 0,
+    deposit: 0,
+    cancellationFee: 0
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMxNzQ5ODAsImV4cCI6MTcxMzE4MjE4MH0.YMxDlD98tMcY0V1XdyNODU4XNIXKV81qjxZNyU4QKlU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-15T09:59:16.958Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMxNzQ5ODAsImV4cCI6MTcxMzE4MjE4MH0.YMxDlD98tMcY0V1XdyNODU4XNIXKV81qjxZNyU4QKlU',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-04-15T09:59:20.020Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: true,
+    specificAttributesModel: [
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTMxODg5OTgsImV4cCI6MTcxMzE5NjE5OH0.up-Ws0jWCKxTOj7VaDIrGfaq0cvh74EAV7zwWTfqGEI',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-15T14:24:52.608Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataReceived: {
+    code: 400,
+    message: 'this AssetType is instance of other asset(s) and could not be updated'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTMxODg5OTgsImV4cCI6MTcxMzE5NjE5OH0.up-Ws0jWCKxTOj7VaDIrGfaq0cvh74EAV7zwWTfqGEI',
+  level: 'error',
+  message: 'error updating one assetType',
+  timestamp: '2024-04-15T14:24:55.628Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: true,
+    specificAttributesModel: [
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTMxODg5OTgsImV4cCI6MTcxMzE5NjE5OH0.up-Ws0jWCKxTOj7VaDIrGfaq0cvh74EAV7zwWTfqGEI',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-15T14:50:56.236Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataReceived: {
+    code: 400,
+    message: 'this AssetType is instance of other asset(s) and could not be updated'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTMxODg5OTgsImV4cCI6MTcxMzE5NjE5OH0.up-Ws0jWCKxTOj7VaDIrGfaq0cvh74EAV7zwWTfqGEI',
+  level: 'error',
+  message: 'error updating one assetType',
+  timestamp: '2024-04-15T14:50:59.263Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: true,
+    specificAttributesModel: [
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTMxODg5OTgsImV4cCI6MTcxMzE5NjE5OH0.up-Ws0jWCKxTOj7VaDIrGfaq0cvh74EAV7zwWTfqGEI',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-15T14:59:44.263Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataReceived: {
+    code: 400,
+    message: 'this AssetType is instance of other asset(s) and could not be updated'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTMxODg5OTgsImV4cCI6MTcxMzE5NjE5OH0.up-Ws0jWCKxTOj7VaDIrGfaq0cvh74EAV7zwWTfqGEI',
+  level: 'error',
+  message: 'error updating one assetType',
+  timestamp: '2024-04-15T14:59:47.312Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: true,
+    specificAttributesModel: [
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTMxODg5OTgsImV4cCI6MTcxMzE5NjE5OH0.up-Ws0jWCKxTOj7VaDIrGfaq0cvh74EAV7zwWTfqGEI',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-15T15:02:05.561Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTMxODg5OTgsImV4cCI6MTcxMzE5NjE5OH0.up-Ws0jWCKxTOj7VaDIrGfaq0cvh74EAV7zwWTfqGEI',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-04-15T15:02:18.609Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 35,
+    beginTimeSlot: '2024-04-16T14:36:50.221Z',
+    validityLimit: '2024-05-16T00:00:00.000Z',
+    publicationDate: '2024-04-16T14:36:50.223Z',
+    endTimeSlot: '2024-05-16T00:00:00.000Z',
+    offeredQuantity: 1,
+    remainingQuantity: 1,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMyNzA3ODksImV4cCI6MTcxMzI3Nzk4OX0.71HVm4aMbyz_W-0GqwSRD31qiElysq0CUVV6R8djSm4',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-16T12:36:50.647Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMyNzA3ODksImV4cCI6MTcxMzI3Nzk4OX0.71HVm4aMbyz_W-0GqwSRD31qiElysq0CUVV6R8djSm4',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-04-16T12:36:54.707Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataToSend: {
+    requestor: 'acazaux',
+    beginTimeSlot: '2024-04-16T14:37:15.376Z',
+    endTimeSlot: '2024-05-16T00:00:00.000Z',
+    validityLimit: '2024-05-16T00:00:00.000Z',
+    transactionType: 'sale/purchase',
+    offerIds: [ 16 ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMyNzA3ODksImV4cCI6MTcxMzI3Nzk4OX0.71HVm4aMbyz_W-0GqwSRD31qiElysq0CUVV6R8djSm4',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-16T12:37:15.782Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMyNzA3ODksImV4cCI6MTcxMzI3Nzk4OX0.71HVm4aMbyz_W-0GqwSRD31qiElysq0CUVV6R8djSm4',
+  level: 'info',
+  message: 'success creating one request',
+  timestamp: '2024-04-16T12:37:18.819Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: { offerId: 16, requestId: 10 },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMyNzA3ODksImV4cCI6MTcxMzI3Nzk4OX0.71HVm4aMbyz_W-0GqwSRD31qiElysq0CUVV6R8djSm4',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-16T12:37:18.838Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createContract',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTMyNzA3ODksImV4cCI6MTcxMzI3Nzk4OX0.71HVm4aMbyz_W-0GqwSRD31qiElysq0CUVV6R8djSm4',
+  level: 'info',
+  message: 'success creationg a contract',
+  timestamp: '2024-04-16T12:37:23.855Z'
+}

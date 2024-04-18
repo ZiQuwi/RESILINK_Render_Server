@@ -6488,3 +6488,6048 @@
   message: 'succes connecting to DB',
   timestamp: '2024-04-05T14:27:18.682Z'
 }
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:14:58.871Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:15:52.492Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:16:10.857Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:16:35.223Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:17:33.249Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:18:16.014Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:18:57.221Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:31:58.682Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:33:06.520Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:39:23.108Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:46:37.746Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:47:02.786Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:52:51.256Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:56:41.398Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:56:59.127Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T08:59:18.386Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T09:00:37.954Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T13:40:53.285Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T13:43:37.700Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T13:51:02.171Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T13:51:40.531Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T13:58:05.175Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T13:58:06.436Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:00:05.952Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:00:07.140Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:00:15.837Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:00:24.909Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:00:26.041Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:00:27.153Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:00:27.434Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:01:42.072Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:01:43.199Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:01:44.224Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:01:44.539Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:05:27.444Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:05:28.520Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:05:29.453Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:05:29.747Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:10:41.686Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:10:42.766Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:10:43.810Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:10:44.131Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:16:40.373Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:16:41.411Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:16:44.203Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:16:45.493Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:16:46.594Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:16:46.892Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:24:15.886Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:24:16.905Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:24:39.823Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:24:40.919Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:24:43.489Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:24:43.911Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:24:44.801Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:24:54.430Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:24:55.391Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:24:57.409Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:24:57.843Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:24:58.722Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:25:38.887Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:25:39.902Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:25:55.589Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:25:56.805Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:26:00.183Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:26:01.201Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:26:02.244Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:26:02.550Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:26:39.838Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:26:41.034Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:26:43.439Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:26:44.628Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:26:45.588Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:26:45.889Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:30:33.755Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:30:34.814Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:30:36.467Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:30:37.589Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:30:38.662Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:30:38.988Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:07.910Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:09.007Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:11.318Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:12.307Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:13.312Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:13.778Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:14.843Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:15.137Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:18.353Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:18.990Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:18.990Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  error: MongoNotConnectedError: Client must be connected before running operations
+      at executeOperationAsync (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/operations/execute_operation.js:23:19)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/operations/execute_operation.js:12:45
+      at maybeCallback (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/utils.js:295:21)
+      at executeOperation (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/operations/execute_operation.js:12:38)
+      at FindCursor._initialize (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/cursor/find_cursor.js:55:73)
+      at [kInit] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/cursor/abstract_cursor.js:450:38)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/cursor/abstract_cursor.js:510:32)
+      at FindCursor.next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/cursor/abstract_cursor.js:226:16)
+      at Collection.findOne (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/collection.js:267:66)
+      at Object.getImageforAssets (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/AssetDB.js:161:40) {
+    [Symbol(errorLabels)]: Set(0) {}
+  },
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-04-09T14:31:19.688Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:20.261Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:21.319Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:22.461Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:23.518Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:24.405Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:24.708Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:37.164Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:38.351Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:38.445Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  error: MongoNotConnectedError: Client must be connected before running operations
+      at executeOperationAsync (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/operations/execute_operation.js:23:19)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/operations/execute_operation.js:12:45
+      at maybeCallback (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/utils.js:295:21)
+      at executeOperation (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/operations/execute_operation.js:12:38)
+      at FindCursor._initialize (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/cursor/find_cursor.js:55:73)
+      at [kInit] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/cursor/abstract_cursor.js:450:38)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/cursor/abstract_cursor.js:510:32)
+      at FindCursor.next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/cursor/abstract_cursor.js:226:16)
+      at Collection.findOne (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/collection.js:267:66)
+      at Object.getImageforAssets (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/AssetDB.js:161:40) {
+    [Symbol(errorLabels)]: Set(0) {}
+  },
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-04-09T14:31:38.858Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:46.459Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:47.116Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:48.100Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:49.127Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:49.439Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:54.056Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:55.153Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:31:59.442Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:32:00.422Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:32:01.495Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-09T14:32:01.810Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:20:51.457Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:20:52.613Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:24:30.202Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:24:31.363Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:24:33.790Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:24:34.986Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:24:36.046Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:24:36.350Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:37:10.168Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:37:11.401Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:40:12.975Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:40:13.295Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:40:34.022Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:40:35.085Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:42:42.897Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:42:43.870Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:42:46.361Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:42:47.420Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:42:48.437Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T06:42:48.748Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:26:59.041Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:27:00.169Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:38:23.560Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:38:24.887Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:58:26.279Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:58:29.268Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:58:38.976Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:58:40.014Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:58:40.936Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:58:41.208Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:59:03.000Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:59:11.696Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T08:59:12.717Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:02:47.112Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:02:47.385Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:11:52.753Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:11:53.041Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:12:17.748Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:12:18.806Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:12:19.761Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:12:20.036Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:33:58.870Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:33:59.915Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:34:00.990Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:34:01.316Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:39:25.987Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:39:26.902Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:39:27.098Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:39:28.414Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:39:29.537Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:39:30.543Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:39:30.849Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:39:34.222Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:39:34.541Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:47:24.033Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:47:24.336Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:48:24.898Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:48:25.918Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:48:30.571Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:48:31.605Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:48:32.764Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:48:33.172Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:48:39.388Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:48:40.325Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:49:08.198Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:49:09.364Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:49:10.331Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:49:10.613Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:49:58.352Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:49:59.293Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:50:15.714Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:50:16.741Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:50:20.317Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:50:20.795Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:50:21.717Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:51:37.346Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:51:38.253Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:51:43.824Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:51:44.287Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:51:45.198Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:52:00.582Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:52:01.577Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:52:03.172Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:52:03.571Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:52:04.445Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:52:06.012Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:52:06.403Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T09:52:07.370Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:17:45.350Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:17:46.770Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:17:49.463Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:25:17.267Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:25:18.289Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:25:22.817Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:25:23.250Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:25:24.058Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:30:26.709Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:30:27.150Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:30:27.954Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:36:51.879Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:36:52.923Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:37:02.522Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:37:07.452Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:37:08.428Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:37:10.333Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:37:27.050Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:44:22.593Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:44:23.602Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:44:26.812Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:47:10.633Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:47:11.788Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:52:48.279Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:52:49.244Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:53:02.985Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T10:53:03.972Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:37:49.681Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:37:50.759Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:41:49.566Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:41:50.591Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:41:59.343Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:43:58.196Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:43:59.147Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:44:13.756Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:44:14.760Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:44:18.508Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:44:19.472Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:45:33.102Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:45:34.094Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:47:36.580Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:47:37.615Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:50:59.910Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:51:00.884Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:51:13.742Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:51:49.524Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T12:51:50.478Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:02:15.453Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:02:16.505Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:03:29.424Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:03:30.443Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:04:19.002Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:04:19.466Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:04:20.333Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:04:25.222Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:04:26.140Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:15:09.356Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:23:55.790Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:23:56.101Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:24:03.926Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:28:45.200Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:28:45.468Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:28:56.820Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:28:57.103Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:29:23.062Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:29:23.359Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:31:01.919Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:31:02.377Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:31:03.167Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:32:29.563Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:32:30.482Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:32:52.551Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:32:53.623Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:32:57.261Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:32:58.606Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:32:59.574Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:32:59.876Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:34:10.555Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:34:10.876Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:35:05.563Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:35:18.375Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:35:19.340Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:35:20.237Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:35:20.516Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:35:29.015Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:35:29.330Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:35:50.713Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:35:51.736Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:35:54.230Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:35:57.009Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:37:00.905Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:37:02.118Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:37:03.260Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:37:03.556Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:38:19.048Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:38:20.183Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:38:50.630Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:38:51.616Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:38:53.844Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:38:58.756Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:39:14.335Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:39:15.463Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:39:18.302Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:39:19.482Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:39:20.520Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:39:20.805Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:58:24.470Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-10T13:58:25.533Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T07:54:05.362Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T07:54:06.429Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:02:09.669Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:02:10.725Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:02:15.703Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:02:15.989Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:06:19.514Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:06:20.614Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:06:31.476Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:16:40.337Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:16:41.293Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:26:16.506Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:26:17.524Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:31:35.104Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:31:36.184Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:32:57.543Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:32:58.659Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:33:01.680Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:33:49.116Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:33:50.324Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:33:54.801Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:33:55.084Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:33:57.360Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:33:58.482Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:33:59.399Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:33:59.692Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:34:01.990Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-11T08:34:02.279Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:22:44.132Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:22:45.210Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:28:07.439Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:28:13.506Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:28:40.414Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:28:41.421Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:28:47.229Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:28:48.277Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:28:49.331Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:28:49.651Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:29:48.231Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:29:49.318Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:29:50.251Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:29:50.579Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:29:55.358Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:29:55.634Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:30:12.947Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:30:43.685Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:30:44.815Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:30:45.883Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:30:46.150Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:32:13.429Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:32:14.617Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:32:15.533Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:32:15.835Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:33:52.520Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:33:53.752Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:33:54.746Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:33:55.054Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:34:35.676Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:34:36.731Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:34:37.801Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:34:38.097Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:34:45.972Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:34:47.071Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:34:48.120Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:34:48.461Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:34:56.356Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:34:57.512Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:34:58.459Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:34:58.729Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:35:31.850Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:35:32.113Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:35:33.855Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:45:51.603Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:45:52.757Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:45:53.758Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:45:54.073Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:46:21.981Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:46:22.298Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:46:23.930Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:47:45.951Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:47:46.227Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:47:47.516Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:47:50.286Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:47:53.987Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:47:55.006Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:47:56.279Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:47:56.571Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:47:59.568Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T07:47:59.883Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:16.670Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:17.794Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:18.745Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:19.013Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:19.930Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:20.220Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:24.397Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:25.577Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:26.648Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:26.947Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:28.600Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:28.892Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:25:30.358Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:26:04.898Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:26:05.180Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:26:06.472Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:26:08.859Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:26:09.975Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:26:11.005Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:26:11.306Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:31:28.805Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:31:29.109Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:31:31.709Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:32:18.348Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:32:19.527Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:33:20.947Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:33:22.038Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:33:23.091Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:33:23.368Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:33:24.699Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:33:24.988Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:33:26.248Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:34:42.485Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:34:43.581Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:34:44.473Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:34:49.238Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:34:59.118Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:34:59.414Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:35:01.841Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:35:02.463Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:35:06.703Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:35:07.729Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:35:08.622Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:35:08.915Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:35:43.436Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:35:43.748Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:35:46.159Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:03.052Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:05.269Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:06.279Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:06.279Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  error: MongoServerClosedError: Server is closed
+      at Server.command (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/sdam/server.js:159:22)
+      at Server.<anonymous> (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/sdam/server.js:33:27)
+      at node:internal/util:375:7
+      at new Promise (<anonymous>)
+      at Server.commandAsync (node:internal/util:361:12)
+      at FindOperation.execute (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/operations/find.js:30:23)
+      at retryOperation (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/operations/execute_operation.js:155:32)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async executeOperationAsync (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/operations/execute_operation.js:110:20)
+      at async FindCursor._initialize (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/cursor/find_cursor.js:55:26) {
+    [Symbol(errorLabels)]: Set(0) {}
+  },
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-04-15T08:38:06.305Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:07.109Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:10.772Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:13.865Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:14.975Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:16.158Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:16.581Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:26.688Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:27.016Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:38:27.996Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:40:45.174Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:40:45.470Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:40:47.608Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:48:24.937Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:48:26.103Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:48:27.149Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:48:29.381Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:48:29.694Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:48:31.012Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:48:31.763Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:48:33.794Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:48:34.873Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:48:35.828Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:48:36.098Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:53:08.644Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:53:09.742Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:53:11.856Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:53:13.010Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:53:13.937Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:53:14.224Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:54:27.968Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:54:28.962Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T08:55:31.272Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:15:19.931Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:15:21.030Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:18:38.960Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:18:40.046Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:18:40.881Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:18:41.151Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:18:44.171Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:18:45.087Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:18:46.081Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:18:46.369Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:19:11.717Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:19:12.757Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:19:13.851Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:19:14.155Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:19:27.696Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:19:28.673Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:19:29.607Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:19:29.927Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:19:50.246Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:19:51.361Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:20:09.923Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:20:11.138Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:20:12.214Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:20:12.531Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:29:50.720Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:29:51.800Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:29:52.846Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:29:53.116Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:36:03.610Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:36:04.794Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:36:08.649Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:36:09.660Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:36:10.777Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:36:11.098Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:56:21.904Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:56:22.969Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:58:45.965Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:58:47.038Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:58:48.119Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:58:48.408Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:58:59.223Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:59:00.195Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:59:01.796Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:59:02.845Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:59:03.711Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:59:03.990Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:59:21.681Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T09:59:22.798Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:00:38.148Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:00:39.254Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:00:40.175Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:00:40.436Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:00:53.880Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:00:54.874Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:00:56.999Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:00:58.124Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:00:59.064Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:00:59.338Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:01:17.146Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:01:18.274Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:01:19.150Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T10:01:19.448Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:32:16.634Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:32:17.623Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:32:18.615Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:32:18.910Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:32:26.031Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:32:27.118Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:32:28.074Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:32:28.365Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:34:22.248Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:34:23.489Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:34:41.983Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:34:43.003Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:34:44.074Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:34:44.353Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:34:52.346Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:34:53.367Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:34:54.303Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:34:54.618Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:34:59.412Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:35:00.454Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:35:01.459Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:35:01.731Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:38:27.657Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:38:28.647Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:42:42.063Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:42:43.121Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:42:44.219Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:42:44.496Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:42:48.203Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:42:49.315Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:42:51.591Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:51:25.972Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:51:27.117Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:51:28.131Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:51:28.449Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:58:55.407Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:58:56.419Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:58:58.406Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:58:59.566Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:59:00.583Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T11:59:00.881Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:00:09.141Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:00:10.266Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:00:12.913Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:00:13.892Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:00:14.790Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:00:15.097Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:25:53.811Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:25:54.951Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:25:56.088Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:25:56.344Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:26:06.261Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:26:07.298Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:26:08.340Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T12:26:08.657Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getLastFourArticles',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T13:00:07.417Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T13:13:07.373Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T13:13:08.329Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T13:13:11.272Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T13:13:12.318Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T13:13:13.319Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T13:13:13.592Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:30:07.900Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:30:08.853Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:30:09.653Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:30:09.971Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:30:29.528Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:30:30.471Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:30:32.375Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:30:33.289Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:30:34.099Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:30:34.422Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:51:48.546Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:51:48.821Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:51:50.293Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:51:56.579Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:51:56.845Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:51:58.153Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:52:00.555Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:52:01.619Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:52:02.376Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:52:02.652Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:52:04.969Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:52:05.240Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:52:06.336Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:00.438Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:01.353Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:02.214Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:02.500Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:02.734Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:34.244Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:34.549Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:35.721Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:36.317Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:39.691Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:40.772Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:41.709Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-15T14:53:42.023Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T08:40:39.652Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T08:40:45.467Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T08:48:37.223Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T08:48:37.732Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T09:59:06.401Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T09:59:07.112Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T09:59:28.718Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T09:59:29.207Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T09:59:32.054Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T09:59:32.685Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T09:59:35.338Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T09:59:35.778Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:18:37.772Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:18:38.529Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:18:40.061Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:18:40.532Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:33:10.866Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:33:11.608Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:33:17.407Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:33:17.903Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:33:18.419Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:33:18.712Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:35:54.643Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:35:55.325Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:35:57.457Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:35:58.026Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:35:58.612Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:35:58.889Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:36:56.885Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:36:57.580Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getOneAssetDBimage',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:36:59.718Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:37:40.099Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:37:40.756Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:37:43.515Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:37:43.996Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:37:44.605Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:37:44.890Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:41:39.499Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:41:39.499Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  error: PoolClosedError [MongoPoolClosedError]: Attempted to check out a connection from closed connection pool
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/cmap/connection_pool.js:443:40
+      at performInitialHandshake.then.connection.destroy.force (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/mongodb/lib/cmap/connect.js:42:65)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+    address: 'ac-5g1oki0-shard-00-02.pvcejia.mongodb.net:27017',
+    [Symbol(errorLabels)]: Set(0) {}
+  },
+  level: 'error',
+  message: 'error connecting to DB',
+  timestamp: '2024-04-16T12:41:39.630Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:41:40.153Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:54:53.968Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:54:54.624Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:54:57.552Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:54:58.045Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:54:58.601Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:54:58.877Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:55:14.379Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:55:14.860Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:55:15.413Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:55:15.702Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:56:08.835Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:56:09.349Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:56:09.936Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T12:56:10.239Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:07:41.058Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:07:41.751Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:07:43.147Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:07:43.631Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:07:44.189Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:07:44.470Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:07:44.990Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:07:45.622Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:07:47.470Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:07:47.930Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:07:48.471Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:07:48.784Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:11:17.388Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:11:17.839Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:11:18.374Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:11:18.664Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:31:33.073Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:31:33.540Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:31:34.052Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:31:34.365Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:32:08.642Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:32:09.146Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:32:09.677Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:32:09.993Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:36:01.164Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:36:01.677Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:36:02.268Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:36:02.556Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:36:04.575Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:36:05.069Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:36:05.646Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:36:05.911Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:37:19.030Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:37:19.526Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:37:20.112Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:37:20.402Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:37:31.642Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:37:32.125Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:37:32.700Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:37:32.989Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:59:21.298Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:59:21.802Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:59:22.371Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T13:59:22.686Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:00:02.231Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:00:02.767Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:00:03.400Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:00:03.684Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:01:06.319Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:01:06.855Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:01:07.487Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:01:07.777Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:04:06.767Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:04:07.252Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:04:07.790Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:04:08.055Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:08:05.895Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:08:06.428Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:08:07.053Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:08:07.376Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:43:17.773Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:43:18.282Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:43:18.834Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:43:19.099Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:46:20.891Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:46:21.381Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:46:21.951Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:46:22.273Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:46:41.898Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:46:42.378Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:46:42.898Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:46:43.160Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:50:34.036Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:50:34.714Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:50:37.755Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:50:38.252Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:50:38.803Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:50:39.081Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:51:21.448Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-16T14:51:22.145Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:41.507Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:41.993Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:42.563Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:42.861Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:52.195Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:52.871Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:54.699Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:55.195Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:55.781Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:56.102Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:58.055Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:58.351Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:27:59.684Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:34:01.662Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:34:02.237Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:34:02.801Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:34:03.106Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:34:04.773Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountryWithoutUserNews',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:34:05.061Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:34:06.547Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:34:09.370Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:34:09.676Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:34:12.092Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:38:34.616Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:38:35.091Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:38:35.643Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:38:35.931Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:38:40.638Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:38:40.918Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:38:42.001Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:39:49.719Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:39:50.220Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:39:50.783Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:12.173Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:12.697Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:13.256Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:23.787Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:24.304Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:24.883Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:28.931Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:29.208Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:30.739Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:33.865Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:34.377Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:34.981Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:35.265Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:37.097Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:37.402Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:40:38.216Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:17.440Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:17.945Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:18.509Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:19.227Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:19.532Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:20.841Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:21.889Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:25.298Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:25.791Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:26.345Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:26.700Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:41.411Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:41.684Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:41:45.380Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:51:53.727Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:53:39.951Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:53:40.493Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:53:41.087Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:53:45.689Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:53:45.978Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:54:01.575Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromCountry',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:54:01.878Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:54:32.762Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'addbookmarked',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:54:33.863Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:54:36.020Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getImageforAssets',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:54:36.493Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:54:37.196Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:54:37.500Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getBookmarkedProsumer',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:54:38.757Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'getNewsfromIdList',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:54:39.061Z'
+}
+{
+  service: 'ConnectDBResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: 'succes connecting to DB',
+  timestamp: '2024-04-17T07:54:40.213Z'
+}

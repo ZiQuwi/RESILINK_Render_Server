@@ -109,3 +109,31 @@
   message: "success deleting a news from an owner's bookmarked list",
   timestamp: '2024-03-26T13:03:01.486Z'
 }
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'info',
+  message: 'Document with ID 34 successfully deleted',
+  timestamp: '2024-04-09T14:31:38.601Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'error',
+  message: 'error retrieving/processing all assets in Resilink DB',
+  timestamp: '2024-04-16T08:40:39.683Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'error',
+  message: 'error retrieving/processing all assets in Resilink DB',
+  timestamp: '2024-04-16T08:40:39.684Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'info',
+  message: 'Document with ID 26 successfully deleted',
+  timestamp: '2024-04-16T08:40:45.503Z'
+}

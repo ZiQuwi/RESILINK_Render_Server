@@ -741,6 +741,6 @@ router.patch('/contracts/rentMaterialContract/:id/', contractController.patchCon
  *                       type: string
  */
 
-router.patch('/contracts/rentMaterialContract/:id/', contractController.patchContractCancel);
+router.patch('/contracts/cancelContract/:id/', contractController.patchContractCancel);
 
 module.exports = router;

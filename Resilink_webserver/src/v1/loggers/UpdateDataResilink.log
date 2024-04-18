@@ -491,3 +491,255 @@
   message: "Success adding new ID to prosumer's bookMarked field",
   timestamp: '2024-04-03T09:03:16.750Z'
 }
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T07:30:13.014Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T07:35:33.904Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T07:46:23.990Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T07:47:47.567Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T07:47:50.329Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T08:25:30.413Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T08:26:06.519Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T08:31:31.754Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T08:33:26.289Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T08:35:01.901Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T08:35:02.510Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T08:35:46.213Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T08:38:10.880Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T08:38:28.043Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T08:40:47.668Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T08:48:31.063Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T08:48:31.811Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T14:51:50.345Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T14:51:58.209Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T14:52:06.387Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T14:53:02.781Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T14:53:35.768Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-15T14:53:36.371Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:27:59.733Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:34:06.600Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:34:12.139Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:38:42.051Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:40:30.794Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:40:38.261Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:41:20.890Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:41:21.935Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:41:45.423Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:51:53.772Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:54:32.820Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'addBookmarked',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:54:33.910Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'deleteBookmarkedId',
+  level: 'info',
+  message: "Success adding new ID to prosumer's bookMarked field",
+  timestamp: '2024-04-17T07:54:40.261Z'
+}

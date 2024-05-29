@@ -46,7 +46,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /v1/assets:
+ * /v1/ODEP/assets:
  *   post: 
  *     summary: Create a new asset (from ODEP)
  *     tags: [Asset]
@@ -131,11 +131,11 @@ const router = express.Router();
  *                       type: string
  */
 
-router.post('/assets/', assetController.createAsset);
+router.post('/ODEP/assets/', assetController.createAsset);
 
 /**
  * @swagger
- * /v1/assets/custom:
+ * /v1/assets:
  *   post: 
  *     summary: Create a new asset with image in RESILINK & ODEP (from RESILINK & ODEP)
  *     tags: [Asset]
@@ -222,11 +222,11 @@ router.post('/assets/', assetController.createAsset);
  *                       type: string
  */
 
-router.post('/assets/custom', assetController.createAssetCustom);
+router.post('/assets/', assetController.createAssetCustom);
 
 /**
  * @swagger
- * /v1/assets/assetTypesNew:
+ * /v1/assets/withAssetType:
  *   post: 
  *     summary: Create a new asset and a new assetTypes (from ODEP & RESILINK)
  *     tags: [Asset]
@@ -313,11 +313,11 @@ router.post('/assets/custom', assetController.createAssetCustom);
  *                       type: string
  */
 
-router.post('/assets/assetTypesNew', assetController.createAssetWithAssetTypeCustom);
+router.post('/assets/withAssetType', assetController.createAssetWithAssetTypeCustom);
 
 /**
  * @swagger
- * /v1/assets/owner:
+ * /v1/ODEP/assets/owner:
  *   get:
  *     summary: Get assets by owner (from ODEP)
  *     tags: [Asset]
@@ -402,11 +402,11 @@ router.post('/assets/assetTypesNew', assetController.createAssetWithAssetTypeCus
  *                       type: string
  */
 
-router.get('/assets/owner', assetController.getOwnerAsset);
+router.get('/ODEP/assets/owner', assetController.getOwnerAsset);
 
 /**
  * @swagger
- * /v1/assets/custom/owner:
+ * /v1/assets/owner:
  *   get:
  *     summary: Get assets with image by owner (from ODEP & RESILINK)
  *     tags: [Asset]
@@ -493,11 +493,11 @@ router.get('/assets/owner', assetController.getOwnerAsset);
  *                       type: string
  */
 
-router.get('/assets/custom/owner', assetController.getOwnerAssetCustom);
+router.get('/assets/owner', assetController.getOwnerAssetCustom);
 
 /**
  * @swagger
- * /v1/assets/all:
+ * /v1/ODEP/assets/all:
  *   get:
  *     summary: Get accessible assets in the exchange place (from ODEP)
  *     tags: [Asset]
@@ -576,11 +576,11 @@ router.get('/assets/custom/owner', assetController.getOwnerAssetCustom);
  *                       type: string
  */
 
-router.get('/assets/all/', assetController.getAllAsset);
+router.get('/ODEP/assets/all/', assetController.getAllAsset);
 
 /**
  * @swagger
- * /v1/assets/all/custom:
+ * /v1/assets/all:
  *   get:
  *     summary: get all assets with image (from ODEP & RESILINK)
  *     tags: [Asset]
@@ -661,11 +661,11 @@ router.get('/assets/all/', assetController.getAllAsset);
  *                       type: string
  */
 
-router.get('/assets/all/custom', assetController.getAllAssetCustom);
+router.get('/assets/all', assetController.getAllAssetCustom);
 
 /**
  * @swagger
- * /v1/assets/{id}:
+ * /v1/ODEP/assets/{id}:
  *   get:
  *     summary: Get an asset by id (from ODEP)
  *     tags: [Asset]
@@ -748,11 +748,11 @@ router.get('/assets/all/custom', assetController.getAllAssetCustom);
  *                       type: string
  */
 
-router.get('/assets/:id/', assetController.getOneAsset);
+router.get('/ODEP/assets/:id/', assetController.getOneAsset);
 
 /**
  * @swagger
- * /v1/assets/custom/{id}:
+ * /v1/assets/{id}:
  *   get:
  *     summary: Get an asset with image by id (from ODEP & RESILINK)
  *     tags: [Asset]
@@ -837,11 +837,11 @@ router.get('/assets/:id/', assetController.getOneAsset);
  *                       type: string
  */
 
-router.get('/assets/custom/:id/', assetController.getOneAssetCustom);
+router.get('/assets/:id/', assetController.getOneAssetCustom);
 
 /**
  * @swagger
- * /v1/asset/allAssetCustom:
+ * /v1/asset/allAssetMapped:
  *   get:
  *     summary: get all assets with image in map form(from RESILINK & ODEP)
  *     tags: [Asset]
@@ -923,7 +923,7 @@ router.get('/assets/custom/:id/', assetController.getOneAssetCustom);
  *                       type: string
  */
 
-router.get('/asset/allAssetCustom/', assetController.getAllAssetResilink);
+router.get('/asset/allAssetMapped/', assetController.getAllAssetResilink);
 
 /**
  * @swagger
@@ -963,7 +963,7 @@ router.get('/assets/assetImg/:id/', assetController.getOneAssetIdimage);
 
 /**
  * @swagger
- * /v1/assets/{id}:
+ * /v1/ODEP/assets/{id}:
  *   put: 
  *     summary: update an asset attributes (from ODEP)
  *     tags: [Asset]
@@ -1052,11 +1052,11 @@ router.get('/assets/assetImg/:id/', assetController.getOneAssetIdimage);
  *                       type: string
  */
 
-router.put('/assets/:id/', assetController.putAsset);
+router.put('/ODEP/assets/:id/', assetController.putAsset);
 
 /**
  * @swagger
- * /v1/assets/custom/{id}:
+ * /v1/assets/{id}:
  *   put: 
  *     summary: update an asset attributes (from ODEP & RESILINK)
  *     tags: [Asset]
@@ -1145,11 +1145,11 @@ router.put('/assets/:id/', assetController.putAsset);
  *                       type: string
  */
 
-router.put('/assets/custom/:id/', assetController.putAssetCustom);
+router.put('/assets/:id/', assetController.putAssetCustom);
 
 /**
  * @swagger
- * /v1/assets/{id}/:
+ * /v1/ODEP/assets/{id}/:
  *   delete: 
  *     summary: delete an asset (from ODEP)
  *     tags: [Asset]
@@ -1203,11 +1203,11 @@ router.put('/assets/custom/:id/', assetController.putAssetCustom);
  *                       type: string
  */
 
-router.delete('/assets/:id/', assetController.deleteAsset);
+router.delete('/ODEP/assets/:id/', assetController.deleteAsset);
 
 /**
  * @swagger
- * /v1/assets/custom/{id}/:
+ * /v1/assets/{id}/:
  *   delete: 
  *     summary: delete an asset (from ODEP & RESILINK)
  *     tags: [Asset]
@@ -1261,11 +1261,11 @@ router.delete('/assets/:id/', assetController.deleteAsset);
  *                       type: string
  */
 
-router.delete('/assets/custom/:id/', assetController.deleteAssetCustom);
+router.delete('/assets/:id/', assetController.deleteAssetCustom);
 
 /**
  * @swagger
- * /v1/assets/{id}/regulatedId:
+ * /v1/ODEP/assets/{id}/regulatedId:
  *   patch: 
  *     summary: Regulate an Asset (from ODEP)
  *     tags: [Asset]
@@ -1328,6 +1328,6 @@ router.delete('/assets/custom/:id/', assetController.deleteAssetCustom);
  *                   message:
  *                       type: string
  */
-router.patch('/assets/:id/regulatedId', assetController.patchAsset);
+router.patch('/ODEP/assets/:id/regulatedId', assetController.patchAsset);
 
 module.exports = router;

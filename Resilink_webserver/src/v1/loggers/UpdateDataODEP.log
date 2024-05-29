@@ -2765,3 +2765,5483 @@
   message: 'success creationg a contract',
   timestamp: '2024-04-16T12:37:23.855Z'
 }
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataToSend: {
+    userName: 'testunit',
+    firstName: 'test',
+    lastName: 'unit',
+    roleOfUser: 'prosumer',
+    email: 'testunit@grg.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDEyODMsImV4cCI6MTcxMzkwODQ4M30.kto-bbrZyv0PqLeCryR6HIJgryNOJmdWp0g0tMyPP-c',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-23T19:41:23.211Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  dataReceived: 'There is no available accounts for this provider',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDEyODMsImV4cCI6MTcxMzkwODQ4M30.kto-bbrZyv0PqLeCryR6HIJgryNOJmdWp0g0tMyPP-c',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-04-23T19:41:23.305Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: 'There is no available accounts for this provider',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDEyODMsImV4cCI6MTcxMzkwODQ4M30.kto-bbrZyv0PqLeCryR6HIJgryNOJmdWp0g0tMyPP-c',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-04-23T19:41:23.306Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'testunit',
+    firstName: 'test',
+    lastName: 'unit',
+    roleOfUser: 'prosumer',
+    email: 'testunit@grg.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDEzODIsImV4cCI6MTcxMzkwODU4Mn0.0jGnM0NGljc_1Q0YK883Dl6DhkJN9KDOsRTYXO4wMtk',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-23T19:43:02.743Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataReceived: 'There is no available accounts for this provider',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDEzODIsImV4cCI6MTcxMzkwODU4Mn0.0jGnM0NGljc_1Q0YK883Dl6DhkJN9KDOsRTYXO4wMtk',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-04-23T19:43:02.819Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: 'There is no available accounts for this provider',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDEzODIsImV4cCI6MTcxMzkwODU4Mn0.0jGnM0NGljc_1Q0YK883Dl6DhkJN9KDOsRTYXO4wMtk',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-04-23T19:43:02.820Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'testunit',
+    firstName: 'test',
+    lastName: 'unit',
+    roleOfUser: 'prosumer',
+    email: 'testunit@grg.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDE0OTYsImV4cCI6MTcxMzkwODY5Nn0.M_0172IAZxYj-r7qxA6yWN1pY36MHlKrngk0_LaDUDE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-23T19:44:57.026Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataReceived: 'There is no available accounts for this provider',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDE0OTYsImV4cCI6MTcxMzkwODY5Nn0.M_0172IAZxYj-r7qxA6yWN1pY36MHlKrngk0_LaDUDE',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-04-23T19:44:57.103Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: 'There is no available accounts for this provider',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDE0OTYsImV4cCI6MTcxMzkwODY5Nn0.M_0172IAZxYj-r7qxA6yWN1pY36MHlKrngk0_LaDUDE',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-04-23T19:44:57.104Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'testU',
+    firstName: 'test',
+    lastName: 'User',
+    roleOfUser: 'prosumer',
+    email: 'testU@gkg.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDY3MjYsImV4cCI6MTcxMzkxMzkyNn0.XvwKf9pAVsP7S3ih_s4p8zfq1GEtCbsj16bAc2rCuvs',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-23T21:12:06.740Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataReceived: 'There is no available accounts for this provider',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDY3MjYsImV4cCI6MTcxMzkxMzkyNn0.XvwKf9pAVsP7S3ih_s4p8zfq1GEtCbsj16bAc2rCuvs',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-04-23T21:12:06.819Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: 'There is no available accounts for this provider',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDY3MjYsImV4cCI6MTcxMzkxMzkyNn0.XvwKf9pAVsP7S3ih_s4p8zfq1GEtCbsj16bAc2rCuvs',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-04-23T21:12:06.820Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'testU',
+    firstName: 'test',
+    lastName: 'User',
+    roleOfUser: 'prosumer',
+    email: 'testU@gkg.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDY4NjAsImV4cCI6MTcxMzkxNDA2MH0.uNh7MezeCMBwO-BmHzXTOASjGo1akjca8m1ITziXriw',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-04-23T21:14:20.634Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataReceived: 'There is no available accounts for this provider',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDY4NjAsImV4cCI6MTcxMzkxNDA2MH0.uNh7MezeCMBwO-BmHzXTOASjGo1akjca8m1ITziXriw',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-04-23T21:14:20.749Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: 'There is no available accounts for this provider',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDY4NjAsImV4cCI6MTcxMzkxNDA2MH0.uNh7MezeCMBwO-BmHzXTOASjGo1akjca8m1ITziXriw',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-04-23T21:14:20.750Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAsset',
+  dataToSend: {
+    image: '',
+    specificAttributes: [
+      { attributeName: 'Type of work', value: '' },
+      { attributeName: 'Other', value: '' },
+      { attributeName: 'City/Village', value: '' }
+    ],
+    name: 'ploughing wheat',
+    description: '',
+    assetType: 'Labor1',
+    owner: 'acazaux',
+    transactionType: 'rent'
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-13T09:26:34.029Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAsset',
+  dataReceived: { message: 'Asset successfully updated' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'info',
+  message: 'success updating one asset',
+  timestamp: '2024-05-13T09:26:38.489Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAsset',
+  dataToSend: {
+    image: '',
+    specificAttributes: [
+      { attributeName: 'Type', value: 'cucumber' },
+      { attributeName: 'Variety', value: 'Murano F1' },
+      { attributeName: 'Gps', value: '' },
+      { attributeName: 'City/Village', value: '' }
+    ],
+    name: 'cucumber',
+    description: '',
+    assetType: 'Vegetable',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 10
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-13T09:26:51.402Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAsset',
+  dataReceived: { message: 'Asset successfully updated' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'info',
+  message: 'success updating one asset',
+  timestamp: '2024-05-13T09:26:55.679Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 47,
+    beginTimeSlot: '2024-05-13T11:38:23.028Z',
+    validityLimit: '2024-05-20T11:38:23.028Z',
+    publicationDate: '2024-05-13T11:38:23.029Z',
+    endTimeSlot: '2024-05-20T11:38:23.030Z',
+    offeredQuantity: 10,
+    remainingQuantity: 10,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-13T09:38:23.336Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataReceived: { code: 400, message: 'No sufficient quantity is available' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'error',
+  message: 'error creating an offer',
+  timestamp: '2024-05-13T09:38:25.510Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 47,
+    beginTimeSlot: '2024-05-13T11:38:33.385Z',
+    validityLimit: '2024-05-20T11:38:33.385Z',
+    publicationDate: '2024-05-13T11:38:33.385Z',
+    endTimeSlot: '2024-05-20T11:38:33.386Z',
+    offeredQuantity: 9,
+    remainingQuantity: 9,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-13T09:38:33.690Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'info',
+  message: 'success creating an offer',
+  timestamp: '2024-05-13T09:38:37.938Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    asset: {
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Brand', value: '' },
+        { attributeName: 'Year', value: '' },
+        { attributeName: 'Usage', value: '' },
+        { attributeName: 'Condition', value: 'new' },
+        { attributeName: 'Gps', value: '' },
+        { attributeName: 'City/Village', value: '' }
+      ],
+      name: 'tractors',
+      description: '',
+      assetType: 'Machinery',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 0,
+      image: ''
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: null,
+      beginTimeSlot: '2024-05-13T11:42:47.137Z',
+      validityLimit: '2024-05-20T11:42:47.137Z',
+      publicationDate: '2024-05-13T11:42:47.138Z',
+      price: 10,
+      deposit: 10,
+      cancellationFee: 0
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-13T09:42:47.453Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Brand', value: '' },
+      { attributeName: 'Year', value: '' },
+      { attributeName: 'Usage', value: '' },
+      { attributeName: 'Condition', value: 'new' },
+      { attributeName: 'Gps', value: '' },
+      { attributeName: 'City/Village', value: '' }
+    ],
+    name: 'tractors',
+    description: '',
+    assetType: 'Machinery',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 0
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-13T09:42:47.453Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-05-13T09:42:49.602Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 51,
+    beginTimeSlot: '2024-05-13T11:42:47.137Z',
+    validityLimit: '2024-05-20T11:42:47.137Z',
+    publicationDate: '2024-05-13T11:42:47.138Z',
+    price: 10,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-13T09:42:50.131Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'info',
+  message: 'success creating an offer',
+  timestamp: '2024-05-13T09:42:54.335Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    asset: {
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Other', value: '' },
+        { attributeName: 'Usage', value: '' },
+        { attributeName: 'Gps', value: '' },
+        { attributeName: 'City/Village', value: '' }
+      ],
+      name: 'wheat crop',
+      description: '',
+      assetType: 'Crop',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 100,
+      image: ''
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: null,
+      beginTimeSlot: '2024-05-13T11:49:10.645Z',
+      validityLimit: '2024-05-20T11:49:10.645Z',
+      publicationDate: '2024-05-13T11:49:10.646Z',
+      endTimeSlot: '2024-05-20T11:49:10.646Z',
+      offeredQuantity: 50,
+      remainingQuantity: 50,
+      price: 0,
+      deposit: 10,
+      cancellationFee: 0
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-13T09:49:10.951Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Other', value: '' },
+      { attributeName: 'Usage', value: '' },
+      { attributeName: 'Gps', value: '' },
+      { attributeName: 'City/Village', value: '' }
+    ],
+    name: 'wheat crop',
+    description: '',
+    assetType: 'Crop',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 100
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-13T09:49:10.951Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-05-13T09:49:13.160Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 52,
+    beginTimeSlot: '2024-05-13T11:49:10.645Z',
+    validityLimit: '2024-05-20T11:49:10.645Z',
+    publicationDate: '2024-05-13T11:49:10.646Z',
+    endTimeSlot: '2024-05-20T11:49:10.646Z',
+    offeredQuantity: 50,
+    remainingQuantity: 50,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-13T09:49:13.630Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'info',
+  message: 'success creating an offer',
+  timestamp: '2024-05-13T09:49:17.836Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 52,
+    beginTimeSlot: '2024-05-13T11:52:41.199Z',
+    validityLimit: '2024-06-13T00:00:00.000Z',
+    publicationDate: '2024-05-13T11:52:41.199Z',
+    endTimeSlot: '2024-06-13T00:00:00.000Z',
+    offeredQuantity: 50,
+    remainingQuantity: 50,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-13T09:52:41.504Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-05-13T09:52:43.650Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 52,
+    beginTimeSlot: '2024-05-13T11:53:15.935Z',
+    validityLimit: '2024-05-20T11:53:15.935Z',
+    publicationDate: '2024-05-13T11:53:15.937Z',
+    endTimeSlot: '2024-05-20T11:53:15.937Z',
+    offeredQuantity: 50,
+    remainingQuantity: 50,
+    price: 20,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-13T09:53:16.249Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-05-13T09:53:19.484Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: TypeError: Request with GET/HEAD method cannot have body.
+      at Object.fetch (node:internal/deps/undici/undici:11576:11)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async updateUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:271:22)
+      at async Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:307:22)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:127:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDE2ODYsImV4cCI6MTcxNjMwODg4Nn0.3ng9oHgqNZ5NHDnkiI5u8oEM9VgR10cxYNFaK-W292o',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-21T14:28:06.576Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: TypeError: Request with GET/HEAD method cannot have body.
+      at Object.fetch (node:internal/deps/undici/undici:11576:11)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async updateUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:271:22)
+      at async Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:309:22)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDIwMTAsImV4cCI6MTcxNjMwOTIxMH0.xYhnFJFOOdk69IRna_iThLYuHtvdgsoRR9Jwnh7insI',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-21T14:33:30.419Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: TypeError: Request with GET/HEAD method cannot have body.
+      at Object.fetch (node:internal/deps/undici/undici:11576:11)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async updateUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:271:22)
+      at async Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:309:22)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDMxOTAsImV4cCI6MTcxNjMxMDM5MH0.Wtfnmge35XPEr4uEzzgIB0_r1fubDgmRGp_iHjTz5bU',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-21T14:53:10.839Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: ReferenceError: response is not defined
+      at Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:327:19)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDMyMDgsImV4cCI6MTcxNjMxMDQwOH0.P9D1qxCPse8f-TyW9ooCyEjl6Ph7JI-TKKq4vXNr39U',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-21T14:53:29.150Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDUwOTQsImV4cCI6MTcxNjMxMjI5NH0.DpAPfk6Jopz3KRK42bYIhnYHXf6kM9q2sekcaFob7nI',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-21T15:24:54.417Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: ReferenceError: response is not defined
+      at Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:329:19)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDUwOTQsImV4cCI6MTcxNjMxMjI5NH0.DpAPfk6Jopz3KRK42bYIhnYHXf6kM9q2sekcaFob7nI',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-21T15:24:54.979Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDU3MjQsImV4cCI6MTcxNjMxMjkyNH0.vHjt90cld9vVy2LBE3rbF-3b1HtiiIukj9qCRDBFl2Y',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-21T15:35:24.977Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDU3MzgsImV4cCI6MTcxNjMxMjkzOH0.3AyGP9GCFrUmPZdLNwls_hCnJAzm9coa_j72g56AHDI',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-21T15:35:38.705Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDcwMDIsImV4cCI6MTcxNjMxNDIwMn0.FOCrWkKm8UDi0dsimpUtE3uF_NRDufQtOjG13hsFYd8',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-21T15:56:42.546Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDcwOTYsImV4cCI6MTcxNjMxNDI5Nn0.O6j2T4HHJ1vv-v70IpjtDpB_lcBeouNNKUk1bVelj_I',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-21T15:58:17.303Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDcxNDMsImV4cCI6MTcxNjMxNDM0M30.bc0a3CyDmr1nWDAaHdhWVWmqK2TtTaJ_TjcDdUBVaOU',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-21T15:59:04.045Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDcyNjQsImV4cCI6MTcxNjMxNDQ2NH0.NpwDsT08qofPFMN05tg_p6i5mBFOjbXzN5UH5EGQTgc',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-21T16:01:05.108Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTYzMDczMzksImV4cCI6MTcxNjMxNDUzOX0.2A6nWnrwOQHDK1NRBAFRTyn3mL7iWtQFlgi6evrnbwE',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-21T16:02:19.611Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 47,
+    beginTimeSlot: '2024-05-22T09:35:15.932Z',
+    validityLimit: '2024-06-22T00:00:00.000Z',
+    publicationDate: '2024-05-22T09:35:15.934Z',
+    endTimeSlot: '2024-06-22T00:00:00.000Z',
+    offeredQuantity: 9,
+    remainingQuantity: 9,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzNjMyODMsImV4cCI6MTcxNjM3MDQ4M30.poIYi231G9R11mxLLA34ncV2kuzXjyXcstlv8XF3nsc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T07:35:15.998Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 47,
+    beginTimeSlot: '2024-05-22T09:36:54.878Z',
+    validityLimit: '2024-05-29T09:36:54.879Z',
+    publicationDate: '2024-05-22T09:36:54.879Z',
+    endTimeSlot: '2024-05-29T09:36:54.879Z',
+    offeredQuantity: 9,
+    remainingQuantity: 9,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzNjMyODMsImV4cCI6MTcxNjM3MDQ4M30.poIYi231G9R11mxLLA34ncV2kuzXjyXcstlv8XF3nsc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T07:36:54.925Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAsset',
+  dataToSend: {
+    image: '',
+    specificAttributes: [
+      { attributeName: 'Type', value: 'cucumber' },
+      { attributeName: 'Variety', value: 'Murano F1' },
+      { attributeName: 'Gps', value: '' },
+      { attributeName: 'City/Village', value: '' }
+    ],
+    name: 'cucumber',
+    description: '',
+    assetType: 'Vegetable',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 20
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzNjMyODMsImV4cCI6MTcxNjM3MDQ4M30.poIYi231G9R11mxLLA34ncV2kuzXjyXcstlv8XF3nsc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T07:37:28.636Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  data: TypeError: fetch failed
+      at Object.fetch (node:internal/deps/undici/undici:11576:11)
+      at async Object.putOffer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/OfferService.js:365:20)
+      at async putOffer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/OfferController.js:94:22) {
+    cause: HeadersTimeoutError: Headers Timeout Error
+        at Timeout.onParserTimeout [as callback] (node:internal/deps/undici/undici:9748:32)
+        at Timeout.onTimeout [as _onTimeout] (node:internal/deps/undici/undici:8047:17)
+        at listOnTimeout (node:internal/timers:569:17)
+        at process.processTimers (node:internal/timers:512:7) {
+      code: 'UND_ERR_HEADERS_TIMEOUT'
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzNjMyODMsImV4cCI6MTcxNjM3MDQ4M30.poIYi231G9R11mxLLA34ncV2kuzXjyXcstlv8XF3nsc',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-22T07:40:16.871Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  data: TypeError: fetch failed
+      at Object.fetch (node:internal/deps/undici/undici:11576:11)
+      at async Object.putOffer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/OfferService.js:365:20)
+      at async putOffer (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/OfferController.js:94:22) {
+    cause: HeadersTimeoutError: Headers Timeout Error
+        at Timeout.onParserTimeout [as callback] (node:internal/deps/undici/undici:9748:32)
+        at Timeout.onTimeout [as _onTimeout] (node:internal/deps/undici/undici:8047:17)
+        at listOnTimeout (node:internal/timers:569:17)
+        at process.processTimers (node:internal/timers:512:7) {
+      code: 'UND_ERR_HEADERS_TIMEOUT'
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzNjMyODMsImV4cCI6MTcxNjM3MDQ4M30.poIYi231G9R11mxLLA34ncV2kuzXjyXcstlv8XF3nsc',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-22T07:41:55.969Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAsset',
+  data: 'fetch failed',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzNjMyODMsImV4cCI6MTcxNjM3MDQ4M30.poIYi231G9R11mxLLA34ncV2kuzXjyXcstlv8XF3nsc',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-22T07:42:29.000Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T12:44:31.375Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T12:44:31.408Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T12:44:31.408Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T12:53:31.907Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T12:53:31.940Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T12:53:31.940Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T12:58:15.776Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T12:58:15.805Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T12:58:15.805Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T12:58:22.861Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T12:58:22.890Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T12:58:22.891Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T12:58:53.018Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T12:58:53.050Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T12:58:53.051Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T12:59:11.587Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T12:59:11.616Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T12:59:11.617Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T13:00:09.116Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T13:00:09.151Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T13:00:09.151Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T13:17:04.244Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T13:17:04.272Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T13:17:04.272Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T13:18:00.373Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T13:18:00.400Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T13:18:00.400Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T13:27:09.258Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T13:27:09.290Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T13:27:09.290Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T13:27:39.448Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T13:27:39.484Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T13:27:39.484Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T13:28:38.552Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T13:28:38.584Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T13:28:38.585Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T13:30:31.653Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T13:30:31.682Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T13:30:31.682Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T13:34:52.290Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T13:34:52.318Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T13:34:52.319Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: undefined,
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T13:35:26.587Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'name' ],
+          message: 'Missing required property: name',
+          path: '#/'
+        }
+      ],
+      content: {
+        description: 'Resilink',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Gps',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType in ODEP or localDB',
+  timestamp: '2024-05-22T13:35:26.622Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-22T13:35:26.622Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: 'Vegetable1',
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Gps',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-22T13:36:29.358Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: TypeError: fetch failed
+      at Object.fetch (node:internal/deps/undici/undici:11576:11)
+      at async Object.createAssetTypesCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/AssetTypeService.js:94:24)
+      at async Object.createAssetWithAssetTypeCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/AssetService.js:258:33)
+      at async createAssetWithAssetTypeCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/AssetController.js:44:24) {
+    cause: HeadersTimeoutError: Headers Timeout Error
+        at Timeout.onParserTimeout [as callback] (node:internal/deps/undici/undici:9748:32)
+        at Timeout.onTimeout [as _onTimeout] (node:internal/deps/undici/undici:8047:17)
+        at listOnTimeout (node:internal/timers:569:17)
+        at process.processTimers (node:internal/timers:512:7) {
+      code: 'UND_ERR_HEADERS_TIMEOUT'
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'error creating one assetType or connecting with ODEP or localDB',
+  timestamp: '2024-05-22T13:41:30.576Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  data: undefined,
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTYzODA2MjUsImV4cCI6MTcxNjM4NzgyNX0.z0xxJ1g3XueZAL22Qi6lRCkDd_xTawHTMwU-wA7Z5A0',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-22T13:41:30.577Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'resilink-test',
+    firstName: 'resilink',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'resilink.test@gmail.com',
+    password: '123456',
+    phoneNumber: '000000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTQ3NzYsImV4cCI6MTcxNjU2MTk3Nn0.iOvPdOrAs0gdE92hrti3BR2Pv3zF5J1UAN4XenB_K48',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T12:46:16.599Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTQ3NzYsImV4cCI6MTcxNjU2MTk3Nn0.iOvPdOrAs0gdE92hrti3BR2Pv3zF5J1UAN4XenB_K48',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-05-24T12:46:16.827Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTQ3NzYsImV4cCI6MTcxNjU2MTk3Nn0.iOvPdOrAs0gdE92hrti3BR2Pv3zF5J1UAN4XenB_K48',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-05-24T12:46:17.173Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTQ3NzYsImV4cCI6MTcxNjU2MTk3Nn0.iOvPdOrAs0gdE92hrti3BR2Pv3zF5J1UAN4XenB_K48',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-05-24T12:46:20.412Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTQ3NzYsImV4cCI6MTcxNjU2MTk3Nn0.iOvPdOrAs0gdE92hrti3BR2Pv3zF5J1UAN4XenB_K48',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-05-24T12:46:20.412Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'resilink-test',
+    firstName: 'resilink',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'resilink.test@gmail.com',
+    password: '123456',
+    phoneNumber: '000000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTcyMjAsImV4cCI6MTcxNjU2NDQyMH0.EKthjcafBZj6BdeY368_NGn4c4dHf_L6aNp6-xniHNA',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T13:27:01.045Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataReceived: { error: 'Internal Server Error' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTcyMjAsImV4cCI6MTcxNjU2NDQyMH0.EKthjcafBZj6BdeY368_NGn4c4dHf_L6aNp6-xniHNA',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-05-24T13:27:01.252Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: { error: 'Internal Server Error' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTcyMjAsImV4cCI6MTcxNjU2NDQyMH0.EKthjcafBZj6BdeY368_NGn4c4dHf_L6aNp6-xniHNA',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-05-24T13:27:01.253Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'resilinkTes',
+    firstName: 'resilink',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'resilink.test@gmail.com',
+    password: '123456',
+    phoneNumber: '000000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTcyNTUsImV4cCI6MTcxNjU2NDQ1NX0.sUdduDuj2a9wcVOFKBbzequqwgESlmkkSSlg1-TAJzc',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T13:27:36.299Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataReceived: { error: 'Internal Server Error' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTcyNTUsImV4cCI6MTcxNjU2NDQ1NX0.sUdduDuj2a9wcVOFKBbzequqwgESlmkkSSlg1-TAJzc',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-05-24T13:27:36.474Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: { error: 'Internal Server Error' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTcyNTUsImV4cCI6MTcxNjU2NDQ1NX0.sUdduDuj2a9wcVOFKBbzequqwgESlmkkSSlg1-TAJzc',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-05-24T13:27:36.475Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'ac',
+    firstName: 'a',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'rand@efs.de',
+    password: '123456',
+    phoneNumber: '00000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTc1MzIsImV4cCI6MTcxNjU2NDczMn0.-k9DIBCZuNLuouLNt5KeErn0Qri9igOG7n8LVQJBcTI',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T13:32:13.011Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTc1MzIsImV4cCI6MTcxNjU2NDczMn0.-k9DIBCZuNLuouLNt5KeErn0Qri9igOG7n8LVQJBcTI',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-05-24T13:32:13.274Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTc1MzIsImV4cCI6MTcxNjU2NDczMn0.-k9DIBCZuNLuouLNt5KeErn0Qri9igOG7n8LVQJBcTI',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-05-24T13:32:13.658Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTc1MzIsImV4cCI6MTcxNjU2NDczMn0.-k9DIBCZuNLuouLNt5KeErn0Qri9igOG7n8LVQJBcTI',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-05-24T13:32:17.879Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTc1MzIsImV4cCI6MTcxNjU2NDczMn0.-k9DIBCZuNLuouLNt5KeErn0Qri9igOG7n8LVQJBcTI',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-05-24T13:32:17.880Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'a',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'rand@efs.de',
+    password: '123456',
+    phoneNumber: '00000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTk2NTksImV4cCI6MTcxNjU2Njg1OX0.VlEIVj4KFd8OdlwUbYLcSpW2K0ecjIO27QCTN9vRAw4',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T14:07:40.599Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataReceived: { error: 'Internal Server Error' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTk2NTksImV4cCI6MTcxNjU2Njg1OX0.VlEIVj4KFd8OdlwUbYLcSpW2K0ecjIO27QCTN9vRAw4',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-05-24T14:07:40.812Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: { error: 'Internal Server Error' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTk2NTksImV4cCI6MTcxNjU2Njg1OX0.VlEIVj4KFd8OdlwUbYLcSpW2K0ecjIO27QCTN9vRAw4',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-05-24T14:07:40.812Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'a',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'sefs@sefs.fe',
+    password: '123456',
+    phoneNumber: '00000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTk3NzIsImV4cCI6MTcxNjU2Njk3Mn0.iJqEqhWQEr2T3ij7ZTgWUf1mSX9v_4ZnMrHPisMHifM',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T14:09:32.966Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTk3NzIsImV4cCI6MTcxNjU2Njk3Mn0.iJqEqhWQEr2T3ij7ZTgWUf1mSX9v_4ZnMrHPisMHifM',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-05-24T14:09:33.211Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  error: ReferenceError: password is not defined
+      at Object.newUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/UserDB.js:30:96)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUserResilink (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:67:7)
+      at async Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:68:16)
+      at async createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:35:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTk3NzIsImV4cCI6MTcxNjU2Njk3Mn0.iJqEqhWQEr2T3ij7ZTgWUf1mSX9v_4ZnMrHPisMHifM',
+  level: 'error',
+  message: 'error creating user in ODEP or local Resilink DB',
+  timestamp: '2024-05-24T14:09:33.540Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: password is not defined
+      at Object.newUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/UserDB.js:30:96)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUserResilink (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:67:7)
+      at async Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:68:16)
+      at async createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:35:22),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-24T14:09:33.541Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'a',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'sefs@sefs.fe',
+    password: '123456',
+    phoneNumber: '00000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjAxNzAsImV4cCI6MTcxNjU2NzM3MH0.QYxpKbm9sEFqtFqkSHzhRDHxa_jO6Gyra7NrVDIFbBY',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T14:16:10.628Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataReceived: { error: 'Internal Server Error' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjAxNzAsImV4cCI6MTcxNjU2NzM3MH0.QYxpKbm9sEFqtFqkSHzhRDHxa_jO6Gyra7NrVDIFbBY',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-05-24T14:16:10.840Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  dataReceived: { error: 'Internal Server Error' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjAxNzAsImV4cCI6MTcxNjU2NzM3MH0.QYxpKbm9sEFqtFqkSHzhRDHxa_jO6Gyra7NrVDIFbBY',
+  level: 'error',
+  message: 'error creating user in ODEP',
+  timestamp: '2024-05-24T14:16:10.841Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'a',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'sefs@sefs.fe',
+    password: '123456',
+    phoneNumber: '00000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjA0NjIsImV4cCI6MTcxNjU2NzY2Mn0.W3WaeTNw2PJULZ-N9Znu99YBi4qHF-3F6sOTvvX-6UM',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T14:21:03.325Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjA0NjIsImV4cCI6MTcxNjU2NzY2Mn0.W3WaeTNw2PJULZ-N9Znu99YBi4qHF-3F6sOTvvX-6UM',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-05-24T14:21:03.608Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  error: ReferenceError: password is not defined
+      at Object.newUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/UserDB.js:30:96)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUserResilink (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:67:7)
+      at async Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:69:16)
+      at async createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:35:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjA0NjIsImV4cCI6MTcxNjU2NzY2Mn0.W3WaeTNw2PJULZ-N9Znu99YBi4qHF-3F6sOTvvX-6UM',
+  level: 'error',
+  message: 'error creating user in ODEP or local Resilink DB',
+  timestamp: '2024-05-24T14:21:03.914Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: password is not defined
+      at Object.newUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/UserDB.js:30:96)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUserResilink (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:67:7)
+      at async Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:69:16)
+      at async createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:35:22),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-24T14:21:03.915Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'a',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'sefs@sefs.fe',
+    password: '123456',
+    phoneNumber: '00000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjIwNjgsImV4cCI6MTcxNjU2OTI2OH0.LjeZUxqm4l8uiLWD9PUrGwbPpq_kaqf-XQOWlAq4zkA',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T14:47:49.320Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjIwNjgsImV4cCI6MTcxNjU2OTI2OH0.LjeZUxqm4l8uiLWD9PUrGwbPpq_kaqf-XQOWlAq4zkA',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-05-24T14:47:49.578Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  error: ReferenceError: password is not defined
+      at Object.newUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/UserDB.js:30:96)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUserResilink (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:71:7)
+      at async Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:72:16)
+      at async createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:35:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjIwNjgsImV4cCI6MTcxNjU2OTI2OH0.LjeZUxqm4l8uiLWD9PUrGwbPpq_kaqf-XQOWlAq4zkA',
+  level: 'error',
+  message: 'error creating user in ODEP or local Resilink DB',
+  timestamp: '2024-05-24T14:47:49.911Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  data: ReferenceError: password is not defined
+      at Object.newUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/UserDB.js:30:96)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.createUserResilink (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:71:7)
+      at async Object.createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/ProsummerService.js:72:16)
+      at async createProsumerCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/ProsummerController.js:35:22),
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-24T14:47:49.912Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'ac',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'dsef@sefs.fr',
+    password: '123456',
+    phoneNumber: '0000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjI0ODUsImV4cCI6MTcxNjU2OTY4NX0.R98bo1-dtJalzqwsnaihDksmJ7KKiE6ja7ptpLE5S3Y',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T14:54:46.305Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjI0ODUsImV4cCI6MTcxNjU2OTY4NX0.R98bo1-dtJalzqwsnaihDksmJ7KKiE6ja7ptpLE5S3Y',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-05-24T14:54:46.870Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjI0ODUsImV4cCI6MTcxNjU2OTY4NX0.R98bo1-dtJalzqwsnaihDksmJ7KKiE6ja7ptpLE5S3Y',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-05-24T14:54:47.255Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjI0ODUsImV4cCI6MTcxNjU2OTY4NX0.R98bo1-dtJalzqwsnaihDksmJ7KKiE6ja7ptpLE5S3Y',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-05-24T14:54:51.403Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjI0ODUsImV4cCI6MTcxNjU2OTY4NX0.R98bo1-dtJalzqwsnaihDksmJ7KKiE6ja7ptpLE5S3Y',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-05-24T14:54:51.404Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'ac',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'sefs@sef.fr',
+    password: '123456',
+    phoneNumber: '00000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjM4NjYsImV4cCI6MTcxNjU3MTA2Nn0.MJ_QH20PEEoFQtTluW8DWkGIkfl0P0oBXFY_rJTx8js',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T15:17:47.502Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjM4NjYsImV4cCI6MTcxNjU3MTA2Nn0.MJ_QH20PEEoFQtTluW8DWkGIkfl0P0oBXFY_rJTx8js',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-05-24T15:17:47.689Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjM4NjYsImV4cCI6MTcxNjU3MTA2Nn0.MJ_QH20PEEoFQtTluW8DWkGIkfl0P0oBXFY_rJTx8js',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-05-24T15:17:48.086Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjM4NjYsImV4cCI6MTcxNjU3MTA2Nn0.MJ_QH20PEEoFQtTluW8DWkGIkfl0P0oBXFY_rJTx8js',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-05-24T15:17:50.217Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjM4NjYsImV4cCI6MTcxNjU3MTA2Nn0.MJ_QH20PEEoFQtTluW8DWkGIkfl0P0oBXFY_rJTx8js',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-05-24T15:17:50.217Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'ac',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'sefs@sef.fr',
+    password: '123456',
+    phoneNumber: '00000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQwNDAsImV4cCI6MTcxNjU3MTI0MH0.pGssoxsHDf3mqEVGyRNrqlj1EUUx-Aryh0JE6evoRP0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T15:20:40.770Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQwNDAsImV4cCI6MTcxNjU3MTI0MH0.pGssoxsHDf3mqEVGyRNrqlj1EUUx-Aryh0JE6evoRP0',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-05-24T15:20:41.326Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQwNDAsImV4cCI6MTcxNjU3MTI0MH0.pGssoxsHDf3mqEVGyRNrqlj1EUUx-Aryh0JE6evoRP0',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-05-24T15:20:41.838Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQwNDAsImV4cCI6MTcxNjU3MTI0MH0.pGssoxsHDf3mqEVGyRNrqlj1EUUx-Aryh0JE6evoRP0',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-05-24T15:20:44.091Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQwNDAsImV4cCI6MTcxNjU3MTI0MH0.pGssoxsHDf3mqEVGyRNrqlj1EUUx-Aryh0JE6evoRP0',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-05-24T15:20:44.091Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'ac',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'qefsef@esf.fr',
+    password: '123456',
+    phoneNumber: '0000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQzNTMsImV4cCI6MTcxNjU3MTU1M30.8CT1fIjlCpR5gIm2ZmzuoKWc8a85FzgL7PV03zsbIk4',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T15:25:54.115Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQzNTMsImV4cCI6MTcxNjU3MTU1M30.8CT1fIjlCpR5gIm2ZmzuoKWc8a85FzgL7PV03zsbIk4',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-05-24T15:25:54.291Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQzNTMsImV4cCI6MTcxNjU3MTU1M30.8CT1fIjlCpR5gIm2ZmzuoKWc8a85FzgL7PV03zsbIk4',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-05-24T15:25:54.658Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQzNTMsImV4cCI6MTcxNjU3MTU1M30.8CT1fIjlCpR5gIm2ZmzuoKWc8a85FzgL7PV03zsbIk4',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-05-24T15:25:58.872Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQzNTMsImV4cCI6MTcxNjU3MTU1M30.8CT1fIjlCpR5gIm2ZmzuoKWc8a85FzgL7PV03zsbIk4',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-05-24T15:25:58.873Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'ac',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'qzdq@gdrg.fr',
+    password: '123456',
+    phoneNumber: '0000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQ3NzgsImV4cCI6MTcxNjU3MTk3OH0.9ewUm3D81fy_1FMdgcnHGH-3Fo50i32Oje6itmgMKf0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T15:32:58.543Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQ3NzgsImV4cCI6MTcxNjU3MTk3OH0.9ewUm3D81fy_1FMdgcnHGH-3Fo50i32Oje6itmgMKf0',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-05-24T15:32:58.825Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQ3NzgsImV4cCI6MTcxNjU3MTk3OH0.9ewUm3D81fy_1FMdgcnHGH-3Fo50i32Oje6itmgMKf0',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-05-24T15:32:59.210Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQ3NzgsImV4cCI6MTcxNjU3MTk3OH0.9ewUm3D81fy_1FMdgcnHGH-3Fo50i32Oje6itmgMKf0',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-05-24T15:33:01.384Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQ3NzgsImV4cCI6MTcxNjU3MTk3OH0.9ewUm3D81fy_1FMdgcnHGH-3Fo50i32Oje6itmgMKf0',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-05-24T15:33:01.384Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'ac',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'qzdq@gdrg.fr',
+    password: '123456',
+    phoneNumber: '0000000'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQ4NjAsImV4cCI6MTcxNjU3MjA2MH0.mzViWQ4tCnFFvj4zerZ66RD-j3CBcbnH1KthJY46n3E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T15:34:20.848Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQ4NjAsImV4cCI6MTcxNjU3MjA2MH0.mzViWQ4tCnFFvj4zerZ66RD-j3CBcbnH1KthJY46n3E',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-05-24T15:34:21.053Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQ4NjAsImV4cCI6MTcxNjU3MjA2MH0.mzViWQ4tCnFFvj4zerZ66RD-j3CBcbnH1KthJY46n3E',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-05-24T15:34:21.431Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQ4NjAsImV4cCI6MTcxNjU3MjA2MH0.mzViWQ4tCnFFvj4zerZ66RD-j3CBcbnH1KthJY46n3E',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-05-24T15:34:25.607Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQ4NjAsImV4cCI6MTcxNjU3MjA2MH0.mzViWQ4tCnFFvj4zerZ66RD-j3CBcbnH1KthJY46n3E',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-05-24T15:34:25.608Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    asset: {
+      name: 'concombre',
+      description: '',
+      unit: 'kg',
+      assetType: 'Vegetest',
+      owner: 'actest',
+      transactionType: 'sale/purchase',
+      totalQuantity: 10,
+      image: ''
+    },
+    offer: {
+      offerer: 'actest',
+      assetId: null,
+      beginTimeSlot: '2024-05-24T17:41:02.370Z',
+      validityLimit: '2024-05-31T17:41:02.370Z',
+      publicationDate: '2024-05-24T17:41:02.371Z',
+      endTimeSlot: '2024-05-31T17:41:02.371Z',
+      offeredQuantity: 10,
+      remainingQuantity: 10,
+      price: 5,
+      deposit: 10,
+      cancellationFee: 0
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwYjM3Y2MyYzM4NTFlMmY5M2U2ZWYiLCJpYXQiOjE3MTY1NjQ4NjUsImV4cCI6MTcxNjU3MjA2NX0.eTZo0Tfw3BskoVnuHJks8Yw7M6iLPDBDV7Cnxw14HeQ',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T15:41:03.579Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    name: 'concombre',
+    description: '',
+    assetType: 'Vegetest',
+    owner: 'actest',
+    transactionType: 'sale/purchase',
+    totalQuantity: 10
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwYjM3Y2MyYzM4NTFlMmY5M2U2ZWYiLCJpYXQiOjE3MTY1NjQ4NjUsImV4cCI6MTcxNjU3MjA2NX0.eTZo0Tfw3BskoVnuHJks8Yw7M6iLPDBDV7Cnxw14HeQ',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T15:41:03.579Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwYjM3Y2MyYzM4NTFlMmY5M2U2ZWYiLCJpYXQiOjE3MTY1NjQ4NjUsImV4cCI6MTcxNjU3MjA2NX0.eTZo0Tfw3BskoVnuHJks8Yw7M6iLPDBDV7Cnxw14HeQ',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-05-24T15:41:06.874Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'actest',
+    assetId: 21,
+    beginTimeSlot: '2024-05-24T17:41:02.370Z',
+    validityLimit: '2024-05-31T17:41:02.370Z',
+    publicationDate: '2024-05-24T17:41:02.371Z',
+    endTimeSlot: '2024-05-31T17:41:02.371Z',
+    offeredQuantity: 10,
+    remainingQuantity: 10,
+    price: 5,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwYjM3Y2MyYzM4NTFlMmY5M2U2ZWYiLCJpYXQiOjE3MTY1NjQ4NjUsImV4cCI6MTcxNjU3MjA2NX0.eTZo0Tfw3BskoVnuHJks8Yw7M6iLPDBDV7Cnxw14HeQ',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-24T15:41:07.254Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataReceived: { code: 400, message: 'No sufficient quantity is available' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwYjM3Y2MyYzM4NTFlMmY5M2U2ZWYiLCJpYXQiOjE3MTY1NjQ4NjUsImV4cCI6MTcxNjU3MjA2NX0.eTZo0Tfw3BskoVnuHJks8Yw7M6iLPDBDV7Cnxw14HeQ',
+  level: 'error',
+  message: 'error creating an offer',
+  timestamp: '2024-05-24T15:41:11.480Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwYjM3Y2MyYzM4NTFlMmY5M2U2ZWYiLCJpYXQiOjE3MTY1NjQ4NjUsImV4cCI6MTcxNjU3MjA2NX0.eTZo0Tfw3BskoVnuHJks8Yw7M6iLPDBDV7Cnxw14HeQ',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-24T15:41:11.480Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY3OTk1MTAsImV4cCI6MTcxNjgwNjcxMH0.Wh_1U9U_NHMwFgE5C1pLZ7skHu1l2oTuw90pf83cEaE',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-27T08:45:10.999Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTM2OTUsImV4cCI6MTcxNjgyMDg5NX0.x1K9-CeCgIZqVw3BG7T2_DBLI1L_64u2QdGzdRCxvIo',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-27T12:41:36.350Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTM4MTAsImV4cCI6MTcxNjgyMTAxMH0.vKihrZ4k0xSjAGC-9nnlN2JMlGGnonPkMjs1O1j8Dkw',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-27T12:43:31.650Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTQyNzYsImV4cCI6MTcxNjgyMTQ3Nn0.PV_HBfocVII1Wdczrd2dP8dYw9WNKTNtNFjfm7P_U74',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-27T12:51:16.808Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: UpdateDBError: Failed to update prosumer's job field
+      at Object.updateJob (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:197:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:336:5)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTQyNzYsImV4cCI6MTcxNjgyMTQ3Nn0.PV_HBfocVII1Wdczrd2dP8dYw9WNKTNtNFjfm7P_U74',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-27T12:51:17.383Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTQzMjQsImV4cCI6MTcxNjgyMTUyNH0.F1TsbWDAn9s2cHdSAkOIoAR0hF1CNHY-rc9gE0q_w2U',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-27T12:52:04.853Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: UpdateDBError: Failed to update prosumer's job field
+      at Object.updateJob (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:197:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:336:5)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTQzMjQsImV4cCI6MTcxNjgyMTUyNH0.F1TsbWDAn9s2cHdSAkOIoAR0hF1CNHY-rc9gE0q_w2U',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-05-27T12:52:05.397Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTQzMzMsImV4cCI6MTcxNjgyMTUzM30.Xj4Nq2kRvkeZUQuoqPmjfHDaoac3j7kTf-fjCiAF_o4',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-05-27T12:52:14.257Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Fruit',
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: false,
+        hasValueList: false,
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: false,
+        hasValueList: false,
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: false,
+        hasValueList: false,
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'string',
+        mandatory: false,
+        hasValueList: false,
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: false,
+        hasValueList: false,
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTUwNDcsImV4cCI6MTcxNjgyMjI0N30.fiJUqsxDred98ZGtghn5xm804c2sDmF-gKbgOAMqvfQ',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:08:07.203Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'string', 'boolean' ],
+          message: 'Expected type string but found type boolean',
+          path: '#/specificAttributesModel/4/hasValueList',
+          description: 'indicates if this attribute has a value list'
+        },
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ false ],
+          message: 'No enum match for: false',
+          path: '#/specificAttributesModel/4/hasValueList',
+          description: 'indicates if this attribute has a value list'
+        },
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'string', 'boolean' ],
+          message: 'Expected type string but found type boolean',
+          path: '#/specificAttributesModel/4/mandatory',
+          description: 'indicates if this attribute is mandatory'
+        },
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ false ],
+          message: 'No enum match for: false',
+          path: '#/specificAttributesModel/4/mandatory',
+          description: 'indicates if this attribute is mandatory'
+        },
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'string', 'boolean' ],
+          message: 'Expected type string but found type boolean',
+          path: '#/specificAttributesModel/3/hasValueList',
+          description: 'indicates if this attribute has a value list'
+        },
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ false ],
+          message: 'No enum match for: false',
+          path: '#/specificAttributesModel/3/hasValueList',
+          description: 'indicates if this attribute has a value list'
+        },
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'string', 'boolean' ],
+          message: 'Expected type string but found type boolean',
+          path: '#/specificAttributesModel/3/mandatory',
+          description: 'indicates if this attribute is mandatory'
+        },
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ false ],
+          message: 'No enum match for: false',
+          path: '#/specificAttributesModel/3/mandatory',
+          description: 'indicates if this attribute is mandatory'
+        },
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'string', 'boolean' ],
+          message: 'Expected type string but found type boolean',
+          path: '#/specificAttributesModel/2/hasValueList',
+          description: 'indicates if this attribute has a value list'
+        },
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ false ],
+          message: 'No enum match for: false',
+          path: '#/specificAttributesModel/2/hasValueList',
+          description: 'indicates if this attribute has a value list'
+        },
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'string', 'boolean' ],
+          message: 'Expected type string but found type boolean',
+          path: '#/specificAttributesModel/2/mandatory',
+          description: 'indicates if this attribute is mandatory'
+        },
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ false ],
+          message: 'No enum match for: false',
+          path: '#/specificAttributesModel/2/mandatory',
+          description: 'indicates if this attribute is mandatory'
+        },
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'string', 'boolean' ],
+          message: 'Expected type string but found type boolean',
+          path: '#/specificAttributesModel/1/hasValueList',
+          description: 'indicates if this attribute has a value list'
+        },
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ false ],
+          message: 'No enum match for: false',
+          path: '#/specificAttributesModel/1/hasValueList',
+          description: 'indicates if this attribute has a value list'
+        },
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'string', 'boolean' ],
+          message: 'Expected type string but found type boolean',
+          path: '#/specificAttributesModel/1/mandatory',
+          description: 'indicates if this attribute is mandatory'
+        },
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ false ],
+          message: 'No enum match for: false',
+          path: '#/specificAttributesModel/1/mandatory',
+          description: 'indicates if this attribute is mandatory'
+        },
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'string', 'boolean' ],
+          message: 'Expected type string but found type boolean',
+          path: '#/specificAttributesModel/0/hasValueList',
+          description: 'indicates if this attribute has a value list'
+        },
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ false ],
+          message: 'No enum match for: false',
+          path: '#/specificAttributesModel/0/hasValueList',
+          description: 'indicates if this attribute has a value list'
+        },
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'string', 'boolean' ],
+          message: 'Expected type string but found type boolean',
+          path: '#/specificAttributesModel/0/mandatory',
+          description: 'indicates if this attribute is mandatory'
+        },
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ false ],
+          message: 'No enum match for: false',
+          path: '#/specificAttributesModel/0/mandatory',
+          description: 'indicates if this attribute is mandatory'
+        }
+      ],
+      content: {
+        name: 'Fruit',
+        description: 'RESILINK',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: false,
+            hasValueList: false,
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: false,
+            hasValueList: false,
+            valueList: ''
+          },
+          {
+            name: 'Remark',
+            type: 'string',
+            mandatory: false,
+            hasValueList: false,
+            valueList: ''
+          },
+          {
+            name: 'GPS',
+            type: 'string',
+            mandatory: false,
+            hasValueList: false,
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: false,
+            hasValueList: false,
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTUwNDcsImV4cCI6MTcxNjgyMjI0N30.fiJUqsxDred98ZGtghn5xm804c2sDmF-gKbgOAMqvfQ',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-27T13:08:07.253Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Fruit',
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'string',
+        mandatory: false,
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTUwNDcsImV4cCI6MTcxNjgyMjI0N30.fiJUqsxDred98ZGtghn5xm804c2sDmF-gKbgOAMqvfQ',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:09:12.776Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'string', 'boolean' ],
+          message: 'Expected type string but found type boolean',
+          path: '#/specificAttributesModel/3/mandatory',
+          description: 'indicates if this attribute is mandatory'
+        },
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ false ],
+          message: 'No enum match for: false',
+          path: '#/specificAttributesModel/3/mandatory',
+          description: 'indicates if this attribute is mandatory'
+        }
+      ],
+      content: {
+        name: 'Fruit',
+        description: 'RESILINK',
+        nature: 'immaterial',
+        unit: 'kg',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Variety',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Remark',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'GPS',
+            type: 'string',
+            mandatory: false,
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTUwNDcsImV4cCI6MTcxNjgyMjI0N30.fiJUqsxDred98ZGtghn5xm804c2sDmF-gKbgOAMqvfQ',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-27T13:09:12.822Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Fruit',
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTUwNDcsImV4cCI6MTcxNjgyMjI0N30.fiJUqsxDred98ZGtghn5xm804c2sDmF-gKbgOAMqvfQ',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:09:35.058Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataReceived: {
+    code: 401,
+    message: 'unauthorized. Transaction restricted only for admin'
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTUwNDcsImV4cCI6MTcxNjgyMjI0N30.fiJUqsxDred98ZGtghn5xm804c2sDmF-gKbgOAMqvfQ',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-05-27T13:09:35.108Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Fruit',
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:10:02.152Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-05-27T13:10:04.250Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Vegetable',
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:10:21.062Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-05-27T13:10:25.140Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Crop',
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:11:05.775Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-05-27T13:11:07.864Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Machinery',
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'U',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Brand',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Model',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Year',
+        type: 'numeric',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Usage',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Condition',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'yes',
+        valueList: 'new,very good,good,fair,old'
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:20:51.513Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ 'yes' ],
+          message: 'No enum match for: yes',
+          path: '#/specificAttributesModel/5/hasValueList',
+          description: 'indicates if this attribute has a value list'
+        }
+      ],
+      content: {
+        name: 'Machinery',
+        description: 'RESILINK',
+        nature: 'immaterial',
+        unit: 'U',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Brand',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Model',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Year',
+            type: 'numeric',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Usage',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Condition',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'yes',
+            valueList: 'new,very good,good,fair,old'
+          },
+          {
+            name: 'Remark',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'GPS',
+            type: 'geographicPoint',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'City/Village',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-27T13:20:51.563Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Machinery',
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'U',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Brand',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Model',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Year',
+        type: 'numeric',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Usage',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Condition',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'true',
+        valueList: 'new,very good,good,fair,old'
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:21:13.953Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-05-27T13:21:16.076Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Transport',
+    description: 'RESILINK',
+    nature: 'materiel',
+    unit: '',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'From',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'To',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:22:38.482Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'ENUM_MISMATCH',
+          params: [ 'materiel' ],
+          message: 'No enum match for: materiel',
+          path: '#/nature'
+        }
+      ],
+      content: {
+        name: 'Transport',
+        description: 'RESILINK',
+        nature: 'materiel',
+        unit: '',
+        regulated: false,
+        regulator: '',
+        sharingIncentive: false,
+        specificAttributesModel: [
+          {
+            name: 'Type',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'Remark',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'From',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          },
+          {
+            name: 'To',
+            type: 'string',
+            mandatory: 'false',
+            hasValueList: 'false',
+            valueList: ''
+          }
+        ]
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-27T13:22:38.532Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Transport',
+    description: 'RESILINK',
+    nature: 'material',
+    unit: '',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'From',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'To',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:22:48.625Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-05-27T13:22:52.698Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Inputs',
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'U',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Brand',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:28:38.544Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-05-27T13:28:40.625Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Storage',
+    description: 'RESILINK',
+    nature: 'material',
+    unit: '',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Usage',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:29:20.582Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-05-27T13:29:22.688Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Labor',
+    description: 'RESILINK',
+    nature: 'material',
+    unit: '',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:32:23.910Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-05-27T13:32:27.984Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Labor',
+    description: 'RESILINK',
+    nature: 'material',
+    unit: '',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:32:58.802Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataReceived: { code: 400, message: 'AssetType already exists' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-27T13:33:00.941Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: {
+    name: 'Other services',
+    description: 'RESILINK',
+    nature: 'material',
+    unit: '',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:33:18.566Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-05-27T13:33:21.660Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:36:03.777Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-05-27T13:36:06.851Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:36:57.977Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-05-27T13:37:01.048Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:37:34.034Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-05-27T13:37:37.106Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:37:59.552Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-05-27T13:38:03.569Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:38:07.468Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY4MTUzOTAsImV4cCI6MTcxNjgyMjU5MH0.FN0bOCxgBjOzVNBi0UR36N-2FxKb5tSvl2vaipS3itU',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-05-27T13:38:09.462Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    asset: {
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: '' },
+        { attributeName: 'Remark', value: '' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ],
+      name: 'apple',
+      description: '',
+      unit: 'kg',
+      assetType: 'Fruit',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 10,
+      image: ''
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: null,
+      beginTimeSlot: '2024-05-27T15:53:03.526Z',
+      validityLimit: '2024-06-03T15:53:03.527Z',
+      publicationDate: '2024-05-27T15:53:03.527Z',
+      endTimeSlot: '2024-06-03T15:53:03.527Z',
+      offeredQuantity: 9,
+      remainingQuantity: 9,
+      price: 2,
+      deposit: 10,
+      cancellationFee: 0
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTc1NzMsImV4cCI6MTcxNjgyNDc3M30.dy9usGieq042bqmlM6UXkU75Pb3tka5IICW9WX0ejCE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:53:04.223Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: '' },
+      { attributeName: 'Remark', value: '' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+      { attributeName: 'City/Village', value: '' }
+    ],
+    name: 'apple',
+    description: '',
+    assetType: 'Fruit',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 10
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTc1NzMsImV4cCI6MTcxNjgyNDc3M30.dy9usGieq042bqmlM6UXkU75Pb3tka5IICW9WX0ejCE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:53:04.224Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTc1NzMsImV4cCI6MTcxNjgyNDc3M30.dy9usGieq042bqmlM6UXkU75Pb3tka5IICW9WX0ejCE',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-05-27T13:53:06.299Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 22,
+    beginTimeSlot: '2024-05-27T15:53:03.526Z',
+    validityLimit: '2024-06-03T15:53:03.527Z',
+    publicationDate: '2024-05-27T15:53:03.527Z',
+    endTimeSlot: '2024-06-03T15:53:03.527Z',
+    offeredQuantity: 9,
+    remainingQuantity: 9,
+    price: 2,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTc1NzMsImV4cCI6MTcxNjgyNDc3M30.dy9usGieq042bqmlM6UXkU75Pb3tka5IICW9WX0ejCE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T13:53:06.737Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTc1NzMsImV4cCI6MTcxNjgyNDc3M30.dy9usGieq042bqmlM6UXkU75Pb3tka5IICW9WX0ejCE',
+  level: 'info',
+  message: 'success creating an offer',
+  timestamp: '2024-05-27T13:53:11.860Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    asset: {
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: '' },
+        { attributeName: 'Remark', value: '' },
+        { attributeName: 'GPS', value: '' },
+        { attributeName: 'City/Village', value: '' }
+      ],
+      name: 'carrot',
+      description: '',
+      unit: 'T',
+      assetType: 'Vegetable',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 5,
+      image: ''
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: null,
+      beginTimeSlot: '2024-05-27T17:07:16.861Z',
+      validityLimit: '2024-06-03T17:07:16.862Z',
+      publicationDate: '2024-05-27T17:07:16.862Z',
+      endTimeSlot: '2024-06-03T17:07:16.862Z',
+      offeredQuantity: 10,
+      remainingQuantity: 10,
+      price: 0,
+      deposit: 10,
+      cancellationFee: 0
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T15:07:17.306Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: '' },
+      { attributeName: 'Remark', value: '' },
+      { attributeName: 'GPS', value: '' },
+      { attributeName: 'City/Village', value: '' }
+    ],
+    name: 'carrot',
+    description: '',
+    assetType: 'Vegetable',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 5
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T15:07:17.306Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-05-27T15:07:20.398Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 23,
+    beginTimeSlot: '2024-05-27T17:07:16.861Z',
+    validityLimit: '2024-06-03T17:07:16.862Z',
+    publicationDate: '2024-05-27T17:07:16.862Z',
+    endTimeSlot: '2024-06-03T17:07:16.862Z',
+    offeredQuantity: 10,
+    remainingQuantity: 10,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T15:07:20.725Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataReceived: { code: 400, message: 'No sufficient quantity is available' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'error',
+  message: 'error creating an offer',
+  timestamp: '2024-05-27T15:07:25.798Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-05-27T15:07:25.798Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    asset: {
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: '' },
+        { attributeName: 'Remark', value: '' },
+        { attributeName: 'GPS', value: '' },
+        { attributeName: 'City/Village', value: '' }
+      ],
+      name: 'carrot',
+      description: '',
+      unit: 'T',
+      assetType: 'Vegetable',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 5,
+      image: ''
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: null,
+      beginTimeSlot: '2024-05-27T17:16:52.278Z',
+      validityLimit: '2024-06-03T17:16:52.279Z',
+      publicationDate: '2024-05-27T17:16:52.279Z',
+      endTimeSlot: '2024-06-03T17:16:52.279Z',
+      offeredQuantity: 1,
+      remainingQuantity: 1,
+      price: 0,
+      deposit: 10,
+      cancellationFee: 0
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T15:16:52.685Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: '' },
+      { attributeName: 'Remark', value: '' },
+      { attributeName: 'GPS', value: '' },
+      { attributeName: 'City/Village', value: '' }
+    ],
+    name: 'carrot',
+    description: '',
+    assetType: 'Vegetable',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 5
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T15:16:52.685Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-05-27T15:16:54.775Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 24,
+    beginTimeSlot: '2024-05-27T17:16:52.278Z',
+    validityLimit: '2024-06-03T17:16:52.279Z',
+    publicationDate: '2024-05-27T17:16:52.279Z',
+    endTimeSlot: '2024-06-03T17:16:52.279Z',
+    offeredQuantity: 1,
+    remainingQuantity: 1,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T15:16:55.257Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'info',
+  message: 'success creating an offer',
+  timestamp: '2024-05-27T15:16:59.313Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    asset: {
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: '' },
+        { attributeName: 'Remark', value: '' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ],
+      name: 'wheat',
+      description: '',
+      unit: 'kg',
+      assetType: 'Crop',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 66,
+      image: ''
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: null,
+      beginTimeSlot: '2024-05-27T17:26:02.092Z',
+      validityLimit: '2024-06-03T17:26:02.092Z',
+      publicationDate: '2024-05-27T17:26:02.092Z',
+      endTimeSlot: '2024-06-03T17:26:02.092Z',
+      offeredQuantity: 10,
+      remainingQuantity: 10,
+      price: 0,
+      deposit: 10,
+      cancellationFee: 0
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T15:26:02.467Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: '' },
+      { attributeName: 'Remark', value: '' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+      { attributeName: 'City/Village', value: '' }
+    ],
+    name: 'wheat',
+    description: '',
+    assetType: 'Crop',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 66
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T15:26:02.467Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-05-27T15:26:05.551Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 25,
+    beginTimeSlot: '2024-05-27T17:26:02.092Z',
+    validityLimit: '2024-06-03T17:26:02.092Z',
+    publicationDate: '2024-05-27T17:26:02.092Z',
+    endTimeSlot: '2024-06-03T17:26:02.092Z',
+    offeredQuantity: 10,
+    remainingQuantity: 10,
+    price: 0,
+    deposit: 10,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-05-27T15:26:05.868Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'info',
+  message: 'success creating an offer',
+  timestamp: '2024-05-27T15:26:10.944Z'
+}

@@ -6,7 +6,7 @@ const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
 const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 
 const assettypeService = require("../services/AssetTypeService.js");
-const _pathassetTypesODEP = 'http://90.84.194.104:10010/assetTypes/'; 
+const _pathassetTypesODEP = 'http://90.84.174.128:10010/assetTypes/'; 
 const userService = require("../services/UserService.js");
 
 const createAssetTypes = async (req, res) => { 
@@ -22,6 +22,16 @@ const createAssetTypes = async (req, res) => {
 const getAllAssetTypes = async (req, res) => { 
   try {
       const response = await assettypeService.getAllAssetTypes(_pathassetTypesODEP, req.header('Authorization'));
+      res.status(response[1]).send(response[0]);
+    } catch (error) {
+      getDataLogger.error('Error accessing ODEP', { from: 'getAllAssetTypes', data: error.message, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      res.status(500).send({message: error.message});
+    }
+};
+
+const getAllAssetTypesDev = async (req, res) => { 
+  try {
+      const response = await assettypeService.getAllAssetTypesDev(_pathassetTypesODEP, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
       getDataLogger.error('Error accessing ODEP', { from: 'getAllAssetTypes', data: error.message, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
@@ -61,6 +71,7 @@ const deleteAssetTypes = async (req, res) => {
 
 const getAllAssetTypesResilink = async (req, res) => { 
   try {
+    console.log('2')
       const response = await assettypeService.getAllAssetTypesResilink(req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
@@ -82,6 +93,7 @@ const createAssetTypesCustom = async (req, res) => {
 module.exports = {
     createAssetTypes,
     getAllAssetTypes,
+    getAllAssetTypesDev,
     getOneAssetTypes,
     putAssetTypes,
     deleteAssetTypes,

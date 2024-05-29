@@ -62,8 +62,10 @@ const createProsumerCustom = async(url, body) => {
   //Calls the functions to get admin token then calls the function to create a user in ODEP & RESILINK
   const admin = await userService.functionGetTokenUser({userName: "admin", password: "admin123"});
   patchDataODEP.warn('data to send to Resilink DB & ODEP', { from: 'createProsumerCustom', dataToSend: body, tokenUsed: admin[0]["accessToken"]});
-  const user = await userService.createUserResilink(body, admin[0]["accessToken"]);
 
+  const job = body["job"];
+  delete body["job"];
+  const user = await userService.createUserResilink(body, admin[0]["accessToken"]);
   if(user[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createProsumerCustom', dataReceived: user[0], tokenUsed: admin[0]["accessToken"].replace(/^Bearer\s+/i, '')});
     return user;
@@ -97,8 +99,11 @@ const createProsumerCustom = async(url, body) => {
   } else {
     updateDataODEP.info('success creating one user and his prosummer status in ODEP', { from: 'createProsumerCustom', tokenUsed: admin[0]["accessToken"].replace(/^Bearer\s+/i, '')});
   }
-  ProsummerDB.newProsumer(user[0].userName);
+
+  ProsummerDB.newProsumer(user[0].userName, job);
   updateDataODEP.info('success creating one user and his prosummer status in ODEP and Resilink DB', { from: 'createProsumerCustom', tokenUsed: admin[0]["accessToken"].replace(/^Bearer\s+/i, '')});
+  data['job'] = job;
+
   return [{user: user[0], prosumer: data}, response.status];
 };
 
@@ -213,6 +218,24 @@ const patchBalanceProsummer = async (url, body, id, token) => {
   return [data, response.status];
 };
 
+//Patches a prosumer job in RESILINK
+//Need to fin a way to check the token wihtout the user username and password
+const patchJobProsummer = async (body, id) => {
+  try {
+    patchDataODEP.warn('data & id to send to local DB', { from: 'patchJobProsummer', dataToSend: body, id: id});
+    const data = await ProsummerDB.updateJob(id, body['job']);
+    patchDataODEP.info('success patching prosummer\'s bookmark list', { from: 'patchJobProsummer', /*tokenUsed: token.replace(/^Bearer\s+/i, '')*/});
+    return [{message: "Prosumer job successfully changed"}, 200];
+  } catch (e) {
+    if (e instanceof notValidBody) {
+      patchDataODEP.error('body is not valid', { from: 'patchJobProsummer', dataReceived: body, /*tokenUsed: token.replace(/^Bearer\s+/i, '')*/});
+    } else {
+      patchDataODEP.error('error patching prosummer\'s job', { from: 'patchJobProsummer', dataReceived: body, /*tokenUsed: token.replace(/^Bearer\s+/i, '')*/});
+    }
+    throw(e);
+  }
+};
+
 //Patches a prosumer sharing score in ODEP
 const patchSharingProsummer = async (url, body, id, token) => {
   patchDataODEP.warn('data & id to send to ODEP', { from: 'patchSharingProsummer', dataToSend: body, id: id, tokenUsed: token == null ? "Token not given" : token});
@@ -307,6 +330,7 @@ module.exports = {
     patchBalanceProsummer,
     patchSharingProsummer,
     patchBookmarkProsummer,
+    patchJobProsummer,
     deleteIdBookmarkedList,
     deleteProsumerODEPRESILINK
 }

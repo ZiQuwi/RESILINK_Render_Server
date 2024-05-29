@@ -527,3 +527,150 @@
   message: 'success deleting one asset',
   timestamp: '2024-04-16T08:40:45.186Z'
 }
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  offerId: '16',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTQ0ODE5ODUsImV4cCI6MTcxNDQ4OTE4NX0.c6qTtYpN8iObdDXfLjh1UVo6OaLhP5tfqME7qw6spUs',
+  level: 'warn',
+  message: 'id to used in ODEP',
+  timestamp: '2024-04-30T13:53:12.110Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTQ0ODE5ODUsImV4cCI6MTcxNDQ4OTE4NX0.c6qTtYpN8iObdDXfLjh1UVo6OaLhP5tfqME7qw6spUs',
+  level: 'info',
+  message: 'success deleting an offer',
+  timestamp: '2024-04-30T13:53:14.229Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  dataReceived: {
+    code: 404,
+    message: 'This asset is subject of payment contract(s) and could not be deleted'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTQ0ODE5ODUsImV4cCI6MTcxNDQ4OTE4NX0.c6qTtYpN8iObdDXfLjh1UVo6OaLhP5tfqME7qw6spUs',
+  level: 'error',
+  message: 'error deleting one asset',
+  timestamp: '2024-04-30T13:53:32.196Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  offerId: '22',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWRlZmZkYjYwYzRjNzA5ODdlN2M5NTUiLCJpYXQiOjE3MTQ0ODUyMzYsImV4cCI6MTcxNDQ5MjQzNn0.YQ5C7bejvtTbG2UtB9l4HtVhuTC_vfhdkkrvbbz8i7U',
+  level: 'warn',
+  message: 'id to used in ODEP',
+  timestamp: '2024-04-30T13:54:06.097Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWRlZmZkYjYwYzRjNzA5ODdlN2M5NTUiLCJpYXQiOjE3MTQ0ODUyMzYsImV4cCI6MTcxNDQ5MjQzNn0.YQ5C7bejvtTbG2UtB9l4HtVhuTC_vfhdkkrvbbz8i7U',
+  level: 'info',
+  message: 'success deleting an offer',
+  timestamp: '2024-04-30T13:54:08.281Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWRlZmZkYjYwYzRjNzA5ODdlN2M5NTUiLCJpYXQiOjE3MTQ0ODUyMzYsImV4cCI6MTcxNDQ5MjQzNn0.YQ5C7bejvtTbG2UtB9l4HtVhuTC_vfhdkkrvbbz8i7U',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-04-30T13:54:16.972Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  dataReceived: {
+    code: 404,
+    message: 'This asset is subject of payment contract(s) and could not be deleted'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTQ0ODUzOTksImV4cCI6MTcxNDQ5MjU5OX0.D7sbuvQbIySSA7jBnGDd-npz-XXp3llL3_TA03G7mkA',
+  level: 'error',
+  message: 'error deleting one asset',
+  timestamp: '2024-04-30T13:57:59.456Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  dataReceived: {
+    code: 404,
+    message: 'This asset is subject of payment contract(s) and could not be deleted'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTQ0ODUzOTksImV4cCI6MTcxNDQ5MjU5OX0.D7sbuvQbIySSA7jBnGDd-npz-XXp3llL3_TA03G7mkA',
+  level: 'error',
+  message: 'error deleting one asset',
+  timestamp: '2024-04-30T13:58:14.208Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  dataReceived: {
+    code: 404,
+    message: 'This asset is subject of payment contract(s) and could not be deleted'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTQ0ODUzOTksImV4cCI6MTcxNDQ5MjU5OX0.D7sbuvQbIySSA7jBnGDd-npz-XXp3llL3_TA03G7mkA',
+  level: 'error',
+  message: 'error deleting one asset',
+  timestamp: '2024-04-30T14:12:26.066Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTQ0ODUzOTksImV4cCI6MTcxNDQ5MjU5OX0.D7sbuvQbIySSA7jBnGDd-npz-XXp3llL3_TA03G7mkA',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-04-30T14:13:22.766Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTQ0ODc3MDIsImV4cCI6MTcxNDQ5NDkwMn0.5a81s7ykkeo404_HzdcQKX0Ofz6n-BHgESplcJPcy9Q',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-04-30T14:42:57.435Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  offerId: '20',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTQ0ODc3MDIsImV4cCI6MTcxNDQ5NDkwMn0.5a81s7ykkeo404_HzdcQKX0Ofz6n-BHgESplcJPcy9Q',
+  level: 'warn',
+  message: 'id to used in ODEP',
+  timestamp: '2024-04-30T14:43:03.548Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTQ0ODc3MDIsImV4cCI6MTcxNDQ5NDkwMn0.5a81s7ykkeo404_HzdcQKX0Ofz6n-BHgESplcJPcy9Q',
+  level: 'info',
+  message: 'success deleting an offer',
+  timestamp: '2024-04-30T14:43:06.578Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTU1ODg2NTUsImV4cCI6MTcxNTU5NTg1NX0.OFixN4i0O7GZNvYW3fERu4pyiDQSCL9byZ51OLybQEc',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-05-13T09:28:16.102Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwYjM3Y2MyYzM4NTFlMmY5M2U2ZWYiLCJpYXQiOjE3MTY1NjQ4NjUsImV4cCI6MTcxNjU3MjA2NX0.eTZo0Tfw3BskoVnuHJks8Yw7M6iLPDBDV7Cnxw14HeQ',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-05-24T15:51:44.857Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTY4MTg1MjAsImV4cCI6MTcxNjgyNTcyMH0.Gvg1RyY4ldwqfT9FJiJEa_-jcB3wcpQfp9__wBxtKLo',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-05-27T15:15:30.637Z'
+}

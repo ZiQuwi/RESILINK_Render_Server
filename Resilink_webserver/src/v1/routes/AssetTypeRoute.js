@@ -36,7 +36,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /v1/assetTypes:
+ * /v1/ODEP/assetTypes:
  *   post: 
  *     summary: Create a new assetType (from ODEP)
  *     tags: [AssetType]
@@ -126,11 +126,98 @@ const router = express.Router();
  *                       type: string
  */
 
-router.post('/assetTypes/', assetTypeController.createAssetTypes);
+router.post('/ODEP/assetTypes/', assetTypeController.createAssetTypes);
 
 /**
  * @swagger
  * /v1/assetTypes/all:
+ *   get:
+ *     summary: Get all asset types from RESILINK (from ODEP)
+ *     tags: [AssetType]
+ *     responses:
+ *       200:
+ *         description: Transaction successfully executed
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      name:
+ *                        type: string
+ *                      description:
+ *                        type: string
+ *                      nature:
+ *                        type: string
+ *                        enum:
+ *                          - material
+ *                          - immaterial
+ *                      unit:
+ *                        type: string
+ *                      regulated:
+ *                        type: boolean
+ *                      regulator:
+ *                        type: string
+ *                      sharingIncentive:
+ *                        type: boolean
+ *                      specificAttributesModel:
+ *                        type: array
+ *                        items:
+ *                            type: object
+ *                            properties:
+ *                                name:
+ *                                    type: string
+ *                                type:
+ *                                    type: string
+ *                                mandatory:
+ *                                    type: string
+ *                                    enum:
+ *                                      - true
+ *                                      - false
+ *                                hasValueList:
+ *                                    type: string
+ *                                    enum:
+ *                                      - true
+ *                                      - false
+ *                                valueList:
+ *                                    type: string
+ *       400:
+ *         description: Bad Request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
+ */
+
+router.get('/assetTypes/all', assetTypeController.getAllAssetTypes);
+
+/**
+ * @swagger
+ * /v1/ODEP/assetTypes/all/:
  *   get:
  *     summary: Get all asset types (from ODEP)
  *     tags: [AssetType]
@@ -213,7 +300,7 @@ router.post('/assetTypes/', assetTypeController.createAssetTypes);
  *                       type: string
  */
 
-router.get('/assetTypes/all/', assetTypeController.getAllAssetTypes);
+router.get('/ODEP/assetTypes/all/', assetTypeController.getAllAssetTypesDev);
 
 /**
  * @swagger
@@ -463,7 +550,7 @@ router.delete('/assetTypes/:id/', assetTypeController.deleteAssetTypes);
 
 /**
  * @swagger
- * /v1/assetTypes/all/custom/:
+ * /v1/assetTypes/all/mapped/:
  *   get:
  *     summary: Get all asset types but with the asset type as a key with his value associate (from ODEP & RESILINK)
  *     tags: [AssetType]
@@ -546,13 +633,13 @@ router.delete('/assetTypes/:id/', assetTypeController.deleteAssetTypes);
  *                       type: string
  */
 
-router.get('/assetTypes/all/custom', assetTypeController.getAllAssetTypesResilink)
+router.get('/assetTypes/all/mapFormat', assetTypeController.getAllAssetTypesResilink)
 
 /**
  * @swagger
- * /v1/assetTypes/custom/{assetType}:
+ * /v1/assetTypes/{assetType}:
  *   post: 
- *     summary: Create a clone of an existing assetType (from ODEP & RESILINK)
+ *     summary: Create an assetType or a clone of an existing assetType (from ODEP & RESILINK)
  *     tags: [AssetType]
  *     parameters:
  *       - in: path
@@ -601,6 +688,6 @@ router.get('/assetTypes/all/custom', assetTypeController.getAllAssetTypesResilin
  *                       type: string
  */
 
-router.post('/assetTypes/custom/:assetType', assetTypeController.createAssetTypesCustom);
+router.post('/assetTypes/:assetType', assetTypeController.createAssetTypesCustom);
 
 module.exports = router;

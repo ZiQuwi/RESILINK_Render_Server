@@ -45,7 +45,7 @@ const getOwnerAssetCustom = async (url, id, token) => {
     getDataLogger.error('error retrieving assets owner', { from: 'getOwnerAssetCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [data, response.status];
   };
-  const dataFinal = await AssetDB.getImageforAssets(data);
+  const dataFinal = await AssetDB.getAndCompleteAssetWithImgByAssets(data);
   getDataLogger.info('success retrieving assets owner & image for each assets', { from: 'getOwnerAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '') });
   return [dataFinal, response.status];
 };
@@ -85,7 +85,7 @@ const getAllAssetCustom = async (url, token) => {
     getDataLogger.error('error retrieving all assets', { from: 'getAllAssetCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [data, response.status];
   };
-  const dataFinal = await AssetDB.getImageforAssets(data);
+  const dataFinal = await AssetDB.getAndCompleteAssetWithImgByAssets(data);
   getDataLogger.info('success retrieving all assets & image for each assets', { from: 'getAllAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '') });
   return [dataFinal, response.status];
 };
@@ -103,7 +103,7 @@ const getAllAssetVue = async (token) => {
 const getAllAssetResilink = async (token) => {
     const allAsset = await Utils.fetchJSONData(
         'GET',
-        "http://90.84.194.104:10010/assets/all", 
+        "http://90.84.174.128:10010/assets/all", 
         headers = {'accept': 'application/json',
         'Authorization': token});
     var assetMapResilink = {};
@@ -115,7 +115,7 @@ const getAllAssetResilink = async (token) => {
       getDataLogger.error('error retrieving all assets', { from: 'getAllAssetResilink', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return [data, allAsset.status];
     } 
-    const dataFinal = await AssetDB.getImageforAssets(data);
+    const dataFinal = await AssetDB.getAndCompleteAssetWithImgByAssets(data);
     for (const key in dataFinal) {
         if (dataFinal.hasOwnProperty(key)) {
           const element = dataFinal[key];
@@ -161,7 +161,7 @@ const getOneAssetCustom = async (url, id, token) => {
     getDataLogger.error('error retrieving one asset', { from: 'getOneAssetCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [data, response.status];
   };
-  await AssetDB.getOneAssetDBimage(data);
+  await AssetDB.getAndCompleteOneAssetByAsset(data);
   getDataLogger.info('success retrieving one asset', { from: 'getOneAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
   return [data, response.status];
 };
@@ -173,7 +173,7 @@ const getOneAssetImg = async (assetId, token) => {
       getDataLogger.error('error: Unauthorize', { from: 'getOneAssetImg', tokenUsed: token == null ? "Token not given" : token});
       return [{message: 'Token is not given'}, 401];
     } else {
-      const data = await AssetDB.getOneDBimageById(assetId);
+      const data = await AssetDB.getOneAssetImageById(assetId);
       getDataLogger.info('success retrieving one image from an asset', { from: 'getOneAssetImg', tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return [{img: data}, 200];
     }
@@ -210,9 +210,13 @@ const createAsset = async (url, body, token) => {
 //Creates an asset in ODEP and RESILINK
 const createAssetCustom = async (url, body, token) => {
 
+  console.log("in createAssetCustom")
   const imgBase64 = body['image'];
+  const unit = body['unit'];
   delete body['image'];
+  delete body['unit'];
 
+  console.log('pass1');
   updateDataODEP.warn('data to send to ODEP', { from: 'createAssetCustom', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
   const response = await Utils.fetchJSONData(
     'POST',
@@ -222,16 +226,18 @@ const createAssetCustom = async (url, body, token) => {
     'Authorization': token},
     body
   );
+  console.log('pass2');
   const data = await Utils.streamToJSON(response.body);
+  console.log('pass3');
   if (response.status == 401) {
-    getDataLogger.error('error: Unauthorize', { from: 'createAssetCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+    getDataLogger.error('error: Unauthorize', {from: 'createAssetCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
     return [data, response.status];
-
-  } else if(response.status != 200) {
-    updateDataODEP.error('error creating one asset', { from: 'createAssetCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  } else if (response.status != 200) {
+    updateDataODEP.error('error creating one asset', {from: 'createAssetCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
   } else {
-    updateDataODEP.info('success creating one asset', { from: 'createAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
-    await AssetDB.newAssetDB(data['assetId'], imgBase64, body['owner']);
+    updateDataODEP.info('success creating one asset', {from: 'createAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    await AssetDB.newAsset(data['assetId'], imgBase64, body['owner'], unit);
+    console.log('pass4');
   };
   return [data, response.status];
 };
@@ -250,6 +256,7 @@ const createAssetWithAssetTypeCustom = async (url, body, token) => {
    * Checks the value of the response status code 
    */
   const resultCreateAssetType = await AssetTypes.createAssetTypesCustom(body['assetType'], token);
+  console.log("dans createAssetWithAssetTypeCustom");
   if (resultCreateAssetType[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createAssetWithAssetTypeCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
     return [{assetType: resultCreateAssetType[0], asset: "no attempt executed"}, resultCreateAssetType[1]];
@@ -262,6 +269,7 @@ const createAssetWithAssetTypeCustom = async (url, body, token) => {
      * If the status code is valid, calls the createAssetTypesCustom function to create and/or update assetType counter in ODEP and RESILINK
      * Checks the value of the response status code 
    */
+  console.log("création assetType ODEP et RES fini, continuation");
     updateDataODEP.info('success creating one assetType', { from: 'createAssetWithAssetTypeCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     body["assetType"] = resultCreateAssetType[0]["assetType"];
     const resultCreateAsset = await createAssetCustom(url, body, token);
@@ -270,6 +278,7 @@ const createAssetWithAssetTypeCustom = async (url, body, token) => {
     } else if(resultCreateAsset[1] != 200) {
       updateDataODEP.info('error creating one asset', { from: 'createAssetWithAssetTypeCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     } else {
+      console.log("création asset fini ODEP et RES, continuation");
       updateDataODEP.info('success creating one asset', { from: 'createAssetWithAssetTypeCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     }
     return [{assetType: resultCreateAssetType[0], asset: resultCreateAsset[0]}, resultCreateAsset[1]];
@@ -319,7 +328,7 @@ const putAssetCustom = async (url, body, id, token) => {
     updateDataODEP.error('error updating one asset', { from: 'putAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
   } else {
     updateDataODEP.info('success updating one asset', { from: 'putAssetCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
-    await AssetDB.updateAssetImgById(id, imgBase64, data);
+    await AssetDB.updateAssetById(id, imgBase64, data);
   }
   return [data, response.status];
 };
@@ -363,7 +372,7 @@ const deleteAssetCustom = async (url, id, token) => {
     deleteDataODEP.error('error deleting one asset', { from: 'deleteAssetCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
   } else {
     deleteDataODEP.info('success deleting one asset', { from: 'deleteAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
-    await AssetDB.deleteAssetImgById(id);
+    await AssetDB.deleteAssetById(id);
   }
   return [data, response.status];
   } catch (e) {

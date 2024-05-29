@@ -137,3 +137,45 @@
   message: 'Document with ID 26 successfully deleted',
   timestamp: '2024-04-16T08:40:45.503Z'
 }
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'info',
+  message: 'Document with ID 50 successfully deleted',
+  timestamp: '2024-04-30T13:54:17.332Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'info',
+  message: 'Document with ID 35 successfully deleted',
+  timestamp: '2024-04-30T14:13:23.156Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'error',
+  message: 'error retrieving/processing all assets in Resilink DB',
+  timestamp: '2024-04-30T14:42:57.777Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetImgById',
+  level: 'error',
+  message: 'error retrieving/processing all assets in Resilink DB',
+  timestamp: '2024-04-30T14:42:57.777Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetById',
+  level: 'info',
+  message: 'Document with ID 21 successfully deleted',
+  timestamp: '2024-05-24T15:51:45.202Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetById',
+  level: 'info',
+  message: 'Document with ID 23 successfully deleted',
+  timestamp: '2024-05-27T15:15:30.929Z'
+}

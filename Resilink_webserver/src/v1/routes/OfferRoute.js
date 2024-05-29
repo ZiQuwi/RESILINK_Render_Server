@@ -48,67 +48,6 @@ const router = express.Router();
  */
 
 /**
- * swagger // add @ before swagger to show this route
- * /v1/offersNoPriceCustom:
- *   post: 
- *     summary: post a new offer without price
- *     tags: [Offer]
- *     requestBody:
- *       description: offer's data.
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               offerer:
- *                  type: string
- *               assetId:
- *                 type: integer
- *               beginTimeSlot: 
- *                 type: string
- *                 format: date-time
- *               endTimeSlot: 
- *                 type: string
- *                 format: date-time
- *               validityLimit: 
- *                 type: string
- *                 format: date-time
- *               offeredQuantity:
- *                 type: number
- *               price:
- *                 type: number
- *               deposit:
- *                 type: number
- *               cancellationFee:
- *                 type: number
- *               rentInformation:
- *                 type: object
- *                 properties:
- *                   delayMargin:
- *                     type: number
- *                   lateRestitutionPenalty:
- *                     type: number
- *                   deteriorationPenalty:
- *                     type: number
- *                   nonRestitutionPenalty:
- *                     type: number
- *     responses:
- *       200:
- *         content:
- *           application/json:
- *             schema:
- *               type: json
- *       400:
- *         description: Invalid offer data.
- *       500:
- *         description: Some server error.
- */
-
-//TODO Add this later  
-//router.post('/offersNoPriceCustom/', offerController.createOfferNoPrice);
-
-/**
  * @swagger
  * /v1/offers:
  *   post: 
@@ -206,7 +145,7 @@ router.post('/offers/', offerController.createOffer);
 
 /**
  * @swagger
- * /v1/offers/AllOfferResilinkCustom:
+ * /v1/offers/all:
  *   get:
  *     summary: Get valid offers in RESILINK perspective (from ODEP & RESILINK)
  *     description: 
@@ -286,11 +225,11 @@ router.post('/offers/', offerController.createOffer);
  *                   type: string
  */
 
-router.get('/offers/AllOfferResilinkCustom/', offerController.getAllOfferResilinkCustom);
+router.get('/offers/all/', offerController.getAllOfferResilinkCustom);
 
 /**
  * @swagger
- * /v1/offers/AllOfferFilteredCustom:
+ * /v1/offers/all/resilink/filtered:
  *   post: 
  *     summary: Returns the list of offers after custom sorting (from ODEP & RESILINK)
  *     tags: [Offer]
@@ -407,11 +346,11 @@ router.get('/offers/AllOfferResilinkCustom/', offerController.getAllOfferResilin
  *                   type: string
  */
 
-router.post('/offers/AllOfferFilteredCustom/', offerController.getOfferFiltered);
+router.post('/offers/all/resilink/filtered/', offerController.getOfferFiltered);
 
 /**
  * @swagger
- * /v1/offers/AllOfferOwnerCustom/{id}:
+ * /v1/offers/owner/{id}:
  *   get:
  *     summary: Get all offers from a prosumer (from ODEP & RESILINK)
  *     tags: [Offer]
@@ -504,11 +443,11 @@ router.post('/offers/AllOfferFilteredCustom/', offerController.getOfferFiltered)
  *                   type: string
  */
 
-router.get('/offers/AllOfferOwnerCustom/:id/', offerController.getOfferOwner);
+router.get('/offers/owner/:id/', offerController.getOfferOwner);
 
 /**
  * @swagger
- * /v1/offers/all:
+ * /v1/ODEP/offers/all:
  *   get:
  *     summary: Get all offers (from ODEP)
  *     tags: [Offer]
@@ -594,7 +533,7 @@ router.get('/offers/AllOfferOwnerCustom/:id/', offerController.getOfferOwner);
  *                   type: string
  */
 
-router.get('/offers/all/', offerController.getAllOffer);
+router.get('/ODEP/offers/all/', offerController.getAllOffer);
 
 /**
  * @swagger

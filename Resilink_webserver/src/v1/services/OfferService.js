@@ -74,9 +74,14 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
     //Checks for each offer whether it does not meet one of the conditions expressed in the filter map.
     const allOfferFiltered = [];
     var isCompatible = true;
+    console.log(filter);
+
     for (const key in allOffer) {
       isCompatible = true;
+      //If filter is is not existant then all offers are pushed
       if (filter !== null) {
+
+        //Checks if the filter has an “assetType” property and if so, checks if the offer's asset is identical 
         if(filter.hasOwnProperty("assetType")){
           if (typeof filter["assetType"] !== "string") {
             var i = 0;
@@ -100,9 +105,18 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
           }
         };
 
-        if(filter.hasOwnProperty("Properties")){
+        /*
+         * Checks if the filter has a “properties” property
+         * properties is a list of objects that are specifications of an assetType
+         * Checks if the offer's assetType has the same specification
+         */
+        if(filter.hasOwnProperty("properties")){
           if(allAsset[allOffer[key]["assetId"]].hasOwnProperty("specificAttributes")) {
-            if (Object.keys(filter["Properties"]).length > 0 && filter["Properties"].every(attr2 => allAsset[allOffer[key]["assetId"]]["specificAttributes"].some(attr1 => attr1.attributeName.toUpperCase() == attr2.attributeName.toUpperCase() && attr1.value.toUpperCase() == attr2.value.toUpperCase())) == false) {
+            if (Object.keys(filter["properties"]).length > 0 && 
+                filter["properties"].every(
+                  attr2 => allAsset[allOffer[key]["assetId"]]["specificAttributes"].some(attr1 => attr1.attributeName.toUpperCase() == attr2.attributeName.toUpperCase() && 
+                  attr1.value.toUpperCase() == attr2.value.toUpperCase())
+                ) == false) {
               isCompatible = false;
               continue;
             }
@@ -110,17 +124,25 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
             isCompatible = false;
             continue;
           }
-            
         };
 
+        /*
+         * Checks if the Filter map has the key latitude, if so, then it is associated with longitude and distance and 
+         * Checks whether offers are within the perimeter given by the filter.
+         */
         if(filter.hasOwnProperty("latitude")){
             if(allAsset[allOffer[key]["assetId"]]["specificAttributes"] !== undefined) {
-              const gpsAttribute = allAsset[allOffer[key]["assetId"]]["specificAttributes"].find(attribute => attribute.attributeName === "Gps");
+              const gpsAttribute = allAsset[allOffer[key]["assetId"]]["specificAttributes"].find(attribute => attribute.attributeName === "GPS");
               if (gpsAttribute !== undefined) {
                 const regex = /<(-?\d+\.\d+),(-?\d+\.\d+)>/;
                 const match = gpsAttribute["value"].match(regex);
-                var pointInCircle = Utils.isInPerimeter(filter["latitude"], filter["longitude"], parseFloat(match[1]), parseFloat(match[2]), filter["distance"]);
-                if(match === undefined && !pointInCircle) {
+                if(match !== undefined && match !== null) {
+                  var pointInCircle = Utils.isInPerimeter(filter["latitude"], filter["longitude"], parseFloat(match[1]), parseFloat(match[2]), filter["distance"]);
+                  if(!pointInCircle) {
+                    isCompatible = false;
+                    continue;
+                  }
+                } else {
                   isCompatible = false;
                   continue;
                 }
@@ -133,56 +155,72 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
               continue;
             }
         }
-    
-        if(filter.hasOwnProperty("priceMin")){
-          if (allOffer[key]["price"] < filter["priceMin"]) {
+
+        //Checks if the filter has a “name” property, if so checks if its value is included in the asset name or description
+        if(filter.hasOwnProperty("name")){
+          if (!(allAsset[allOffer[key]["assetId"]]["name"].includes(filter["name"]) || allAsset[allOffer[key]["assetId"]]["description"].includes(filter["name"]))) {
             isCompatible = false;
             continue;
           }
         };
 
-        if(filter.hasOwnProperty("priceMax")){
-          if (allOffer[key]["price"] > filter["priceMax"]) {
+        //Checks if the filter has a “minPrice” property, if so checks that its value is lower than the offer price
+        if(filter.hasOwnProperty("minPrice")){
+          if (allOffer[key]["price"] < filter["minPrice"]) {
             isCompatible = false;
             continue;
           }
         };
 
-        if(filter.hasOwnProperty("MaxQuantity")){
-          if (allOffer[key]["remainingQuantity"] < filter["MaxQuantity"]) {
+        //Checks if the filter has a “maxPrice” property, if so checks that its value is greater than the offer price
+        if(filter.hasOwnProperty("maxPrice")){
+          if (allOffer[key]["price"] > filter["maxPrice"]) {
+            isCompatible = false;
+            continue;
+          }
+        };
+
+        //Checks if the filter has a “maxQuantity” property, if so checks that its value is greater than the quantity remaining in an offer.
+        if(filter.hasOwnProperty("maxQuantity")){
+          if (allOffer[key]["remainingQuantity"] < filter["maxQuantity"]) {
             isCompatible = false;
             continue;
           }
         }
 
-        if(filter.hasOwnProperty("MinQuantity")){
-          if (allOffer[key]["remainingQuantity"] < filter["MinQuantity"]) {
+        //Checks if the filter has a “minQuantity” property, if so checks that its value is less than the quantity remaining in an offer.
+        if(filter.hasOwnProperty("minQuantity")){
+          if (allOffer[key]["remainingQuantity"] < filter["minQuantity"]) {
             isCompatible = false;
             continue;
           }
         }
     
-        if(filter.hasOwnProperty("dateMin")){
-          if (allOffer[key]["validityLimit"] < filter["dateMin"]) {
+        //Check if the filter has a “minDate” property, if so check that its value is less than the offer start date.
+        if(filter.hasOwnProperty("minDate")){
+          if (allOffer[key]["validityLimit"] < filter["minDate"]) {
             isCompatible = false;
             continue;
           }
         };
 
-        if(filter.hasOwnProperty("dateMax")){
-          if (allOffer[key]["validityLimit"] > filter["dateMax"]) {
+        //Check if the filter has a “maxDate” property, if so check that its value is less than the offer end date.
+        if(filter.hasOwnProperty("maxDate")){
+          if (allOffer[key]["validityLimit"] > filter["maxDate"]) {
             isCompatible = false;
             continue;
           }
         };
 
-        if(filter.hasOwnProperty("TransactionType")){
-          if (allAsset[allOffer[key]["assetId"]]["transactionType"] != filter["TransactionType"]) {
+        //Checks if the filter has a “transactionType” property, if so checks that its value is equal to the offer's transaction type
+        if(filter.hasOwnProperty("transactionType")){
+          if (allAsset[allOffer[key]["assetId"]]["transactionType"] != filter["transactionType"]) {
             isCompatible = false;
             continue;
           }
         };
 
+        //If the offer values match what the filter requests, push the offer to the response list 
         if(isCompatible) {
           allOfferFiltered.push(allOffer[key]); 
         };
@@ -258,7 +296,7 @@ const createOfferAsset = async (url, body, token) => {
 
   //Calls the function to create an asset and his asset type
   updateDataODEP.warn('data to send to ODEP', { from: 'createOfferAsset', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
-  const newsAsset = await Asset.createAssetCustom("http://90.84.194.104:10010/assets/", body['asset'], token);
+  const newsAsset = await Asset.createAssetCustom("http://90.84.174.128:10010/assets/", body['asset'], token);
   if (newsAsset[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createOfferAsset', dataReceived: newsAsset[0], tokenUsed: token == null ? "Token not given" : token});
     return [newsAsset[0], newsAsset[1]];

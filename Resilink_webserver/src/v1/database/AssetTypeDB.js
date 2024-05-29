@@ -23,17 +23,17 @@ const newAssetTypeDB = async (assetType) => {
   
       const _database = client.db('Resilink');
       const _collection = _database.collection('AssetTypeCounter');
-  
+
       const existingDocument = await _collection.findOne({ assetType: assetType });
-      
       updateData.warn('before inserting data', { from: 'newAssetTypeDB', data: assetType});
 
         if (existingDocument === null) {
-            const assetType = await _collection.insertOne({
+            // Create a new document with the assetType
+            const ResultassetType = await _collection.insertOne({
                 "assetType": assetType,
                 "count": 1
             });
-            if (assetType == null) {
+            if (ResultassetType == null) {
                 throw InsertDBError("assetType not created in local DB")
             }  
             updateData.info('succes creating an assetType in Resilink DB', { from: 'newAssetTypeDB'});

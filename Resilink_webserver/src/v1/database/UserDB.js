@@ -19,7 +19,7 @@ const url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcej
 const client = new MongoClient(url);
 
 // Creates a user in RESILINK DB
-const newUser = async (user, password) => {
+const newUser = async (user) => {
     try {
       await client.connect();
       connectDB.info('succes connecting to DB', { from: 'newUser'});
@@ -27,24 +27,31 @@ const newUser = async (user, password) => {
       const _database = client.db('Resilink');
       const _collection = _database.collection('user');
   
-      updateData.warn('before inserting data', { from: 'newUser', data: {user: user, password: password, phoneNumber: user["phoneNumber"] ?? ""}});
+      updateData.warn('before inserting data', { from: 'newUser', data: {user: user, phoneNumber: user["phoneNumber"] ?? ""}});
       
-  // Inserts a document with a unique identifier and a telephone number
+      // Checks if a user having the same id exists
+      const existingUser = await _collection.findOne({ _id: user["_id"] });
+      if (existingUser) {
+        throw new InsertDBError(`User with _id: ${user["_id"]} already exists`);
+      }
+      
+      // Inserts a document with a unique identifier and a telephone number
       const userCtreated = await _collection.insertOne({
         "_id": user["_id"],
         "phoneNumber": user["phoneNumber"] ?? "",
-        "userName": user["userName"],
-        "password": password,
+        "userName": user["userName"]
       });
 
       if (userCtreated == null) {
-        throw new InsertDBError("user not created in local DB")
+        throw new InsertDBError(`user with _id: ${user["_id"]}not created in local DB`)
       }  
+
+      console.log("bonne création de l'utilisateur");
       updateData.info('succes creating a user in Resilink DB', { from: 'newUser'});
 
     } catch (e) {
       if (e instanceof InsertDBError) {
-        updateData.error('error creating an asset in Resilink DB', { from: 'newAssetDB'});
+        updateData.error('error creating a user in Resilink DB', { from: 'newAssetDB', error: e.message});
       } else {
         connectDB.error('error connecting to DB', { from: 'newAssetDB', error: e.message});
       }
@@ -90,15 +97,16 @@ const updateUser = async (id, body) => {
     const _database = client.db('Resilink');
     const _collection = _database.collection('user');
 
-    updateData.warn('before updating data', { from: 'updateUser', data: {user: user, password: body.password, phoneNumber: body.phoneNumber ?? ""}});
+    updateData.warn('before updating data', { from: 'updateUser', data: {phoneNumber: body.phoneNumber ?? ""}});
 
     const result = await _collection.updateOne(
       { _id: id },
-      { $set: { password: body.password, phoneNumber: body.phoneNumber ?? "" } }
+      { $set: {phoneNumber: body.phoneNumber ?? "" } }
     );
 
     if (result.modifiedCount === 1) {
-      updateData.info(`Document with ID ${userId} successfully updated`, { from: 'updateUser'});
+
+      updateData.info(`Document with ID ${id} successfully updated`, { from: 'updateUser'});
     } else {
       throw new UpdateDBError();
     }

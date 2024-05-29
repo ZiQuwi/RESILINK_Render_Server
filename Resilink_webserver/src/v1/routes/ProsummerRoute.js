@@ -36,7 +36,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /v1/prosumers/all:
+ * /v1/ODEP/prosumers/all:
  *   get:
  *     summary: Get all prosumers (from ODEP)
  *     tags: [Prosumer]
@@ -86,11 +86,11 @@ const router = express.Router();
  *                 message:
  *                   type: string
  */
-router.get('/prosumers/all', prosumerController.getAllProsummer); 
+router.get('/ODEP/prosumers/all', prosumerController.getAllProsummer); 
 
 /**
  * @swagger
- * /v1/prosumers/allCustom:
+ * /v1/prosumers/all:
  *   get:
  *     summary: Get all prosumers (from ODEP & RESILINK)
  *     tags: [Prosumer]
@@ -154,11 +154,11 @@ router.get('/prosumers/all', prosumerController.getAllProsummer);
  *                      message:
  *                          type: string
  */
-router.get('/prosumers/allCustom', prosumerController.getAllProsummerCustom); 
+router.get('/prosumers/all', prosumerController.getAllProsummerCustom); 
 
 /**
  * @swagger
- * /v1/prosumers/{id}:
+ * /v1/ODEP/prosumers/{id}:
  *   get:
  *     summary: Get a prosumer by id (from ODEP)
  *     tags: [Prosumer]
@@ -219,11 +219,11 @@ router.get('/prosumers/allCustom', prosumerController.getAllProsummerCustom);
  *                   type: string
  */
 
-router.get('/prosumers/:id/', prosumerController.getOneProsumer);
+router.get('/ODEP/prosumers/:id/', prosumerController.getOneProsumer);
 
 /**
  * @swagger
- * /v1/prosumers/custom/{id}:
+ * /v1/prosumers/{id}:
  *   get:
  *     summary: Get a prosumer by id (from ODEP & RESILINK)
  *     tags: [Prosumer]
@@ -288,11 +288,11 @@ router.get('/prosumers/:id/', prosumerController.getOneProsumer);
  *                   type: string
  */
 
-router.get('/prosumers/custom/:id/', prosumerController.getOneProsummerCustom);
+router.get('/prosumers/:id/', prosumerController.getOneProsummerCustom);
 
 /**
  * @swagger
- * /v1/prosumers/new:
+ * /v1/ODEP/prosumers/new:
  *   post: 
  *     summary: Create a new Prosumer (from ODEP)
  *     tags: [Prosumer]
@@ -343,11 +343,11 @@ router.get('/prosumers/custom/:id/', prosumerController.getOneProsummerCustom);
  *                   type: string
  */
 
-router.post('/prosumers/new/', prosumerController.createProsumer);
+router.post('/ODEP/prosumers/new/', prosumerController.createProsumer);
 
 /**
  * @swagger
- * /v1/prosumers/newCustom:
+ * /v1/prosumers/new:
  *   post: 
  *     summary: Create a new user and his prosumer profil (from ODEP & RESILINK)
  *     tags: [Prosumer]
@@ -429,11 +429,11 @@ router.post('/prosumers/new/', prosumerController.createProsumer);
  *                   type: string
  */
 
-router.post('/prosumers/newCustom/', prosumerController.createProsumerCustom);
+router.post('/prosumers/new/', prosumerController.createProsumerCustom);
 
 /**
  * @swagger
- * /v1/prosumers/{id}/:
+ * /v1/ODEP/prosumers/{id}/:
  *   delete: 
  *     summary: delete a prosumer (from ODEP)
  *     tags: [Prosumer]
@@ -490,11 +490,11 @@ router.post('/prosumers/newCustom/', prosumerController.createProsumerCustom);
  *                   type: string
  */
 
-router.delete('/prosumers/:id', prosumerController.deleteOneProsummer);
+router.delete('/ODEP/prosumers/:id', prosumerController.deleteOneProsummer);
 
 /**
  * @swagger
- * /v1/prosumers/{id}/balance:
+ * /v1/ODEP/prosumers/{id}/balance:
  *   patch: 
  *     summary: credit a prosumer balance (from ODEP)
  *     tags: [Prosumer]
@@ -551,11 +551,55 @@ router.delete('/prosumers/:id', prosumerController.deleteOneProsummer);
  *                          type: string
  */
 
-router.patch('/prosumers/:id/balance', prosumerController.patchBalanceProsumer);
+router.patch('/ODEP/prosumers/:id/balance', prosumerController.patchBalanceProsumer);
 
 /**
  * @swagger
- * /v1/prosumers/{id}/sharingAccount:
+ * /v1/prosumers/{id}/job:
+ *   patch: 
+ *     summary: upte a prosumer job (from Resilink)
+ *     tags: [Prosumer]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               job:
+ *                 type: String
+ *     responses:
+ *       200:
+ *         description: Prosumer balance successfully credited.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                  message:
+ *                      type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.patch('/prosumers/:id/job', prosumerController.patchJobProsummer);
+
+/**
+ * @swagger
+ * /v1/ODEP/prosumers/{id}/sharingAccount:
  *   patch: 
  *     summary: credit a prosumer sharing account (from ODEP)
  *     tags: [Prosumer]
@@ -614,11 +658,11 @@ router.patch('/prosumers/:id/balance', prosumerController.patchBalanceProsumer);
  *                          type: string
  */
 
-router.patch('/prosumers/:id/sharingAccount', prosumerController.patchSharingProsumer);
+router.patch('/ODEP/prosumers/:id/sharingAccount', prosumerController.patchSharingProsumer);
 
 /**
  * @swagger
- * /v1/prosumers/{id}/bookmarkAccount:
+ * /v1/prosumers/{id}/addBookmark:
  *   patch: 
  *     summary: add an id to the bookmark list of the prosumer (from RESILINK)
  *     tags: [Prosumer]
@@ -658,11 +702,11 @@ router.patch('/prosumers/:id/sharingAccount', prosumerController.patchSharingPro
  *                        type: string
  */
 
-router.patch('/prosumers/:id/bookmarkAccount', prosumerController.patchBookmarkProsumer);
+router.patch('/prosumers/:id/addBookmark', prosumerController.patchBookmarkProsumer);
 
 /**
  * @swagger
- * /v1/prosumers/bookmarkAccount/id:
+ * /v1/prosumers/delBookmark/id:
  *   delete: 
  *     summary: delete an id in bookmarked list (from RESILINK)
  *     tags: [Prosumer]
@@ -700,11 +744,11 @@ router.patch('/prosumers/:id/bookmarkAccount', prosumerController.patchBookmarkP
  *                        type: string
  */
 
-router.delete('/prosumers/bookmarkAccount/id', prosumerController.deleteIdBookmarkedList);
+router.delete('/prosumers/delBookmark/id/', prosumerController.deleteIdBookmarkedList);
 
 /**
  * @swagger
- * /v1/prosumers/custom/{id}/:
+ * /v1/prosumers/{id}/:
  *   delete: 
  *     summary: delete a prosumer in ODEP and RESILINK DB (from ODEP & RESILINK)
  *     tags: [Prosumer]
@@ -758,6 +802,6 @@ router.delete('/prosumers/bookmarkAccount/id', prosumerController.deleteIdBookma
  *                       type: string
  */
 
-router.delete('/prosumers/custom/:id', prosumerController.deleteProsumerODEPRESILINK);
+router.delete('/prosumers/:id', prosumerController.deleteProsumerODEPRESILINK);
 
 module.exports = router;

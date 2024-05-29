@@ -7,7 +7,7 @@ const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const ContractService = require("../services/ContractService.js");
 
-const _pathContractODEP = 'http://90.84.194.104:10010/contracts/';
+const _pathContractODEP = 'http://90.84.174.128:10010/contracts/';
 
 const createContract = async (req, res) => {
     try {

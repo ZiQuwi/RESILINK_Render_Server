@@ -743,3 +743,1543 @@
   message: "Success adding new ID to prosumer's bookMarked field",
   timestamp: '2024-04-17T07:54:40.261Z'
 }
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  data: { assetId: 51, imgBase64: '', owner: 'acazaux' },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-13T09:42:50.093Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  level: 'info',
+  message: 'succes creating an asset in Resilink DB',
+  timestamp: '2024-05-13T09:42:50.130Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  data: { assetId: 52, imgBase64: '', owner: 'acazaux' },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-13T09:49:13.591Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  level: 'info',
+  message: 'succes creating an asset in Resilink DB',
+  timestamp: '2024-05-13T09:49:13.629Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-21T15:56:10.618Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-21T15:56:42.515Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-21T15:58:17.269Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-21T15:59:04.012Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-21T16:01:05.072Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-21T16:02:19.576Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  data: { phoneNumber: '123456' },
+  level: 'warn',
+  message: 'before updating data',
+  timestamp: '2024-05-21T16:02:19.925Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  level: 'info',
+  message: 'Document with ID 651c13f6dfe4599159c7659b successfully updated',
+  timestamp: '2024-05-21T16:02:19.964Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T07:17:25.064Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T07:23:08.418Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T07:34:32.351Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T12:44:30.888Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T12:44:31.374Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T12:53:31.454Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T12:53:31.906Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T12:58:15.298Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T12:58:15.775Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T12:58:22.385Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T12:58:22.860Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T12:58:52.533Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T12:58:53.016Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T12:59:11.054Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T12:59:11.586Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T13:00:08.643Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T13:00:09.115Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T13:17:03.750Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T13:17:04.242Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T13:17:59.882Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T13:18:00.372Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T13:27:08.790Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T13:27:09.257Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T13:27:38.986Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T13:27:39.447Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T13:28:38.550Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T13:30:31.172Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T13:30:31.652Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T13:34:51.815Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T13:34:52.288Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T13:35:26.106Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T13:35:26.585Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  data: 'Vegetable',
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-22T13:36:28.792Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAssetTypeDB',
+  level: 'info',
+  message: 'succes creating an assetType in Resilink DB',
+  timestamp: '2024-05-22T13:36:28.841Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T13:36:29.357Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-22T15:19:23.054Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-23T07:38:06.399Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T12:42:28.730Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T12:46:16.596Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  data: {
+    user: {
+      _id: '66508c19c2c3851e2f93e6e0',
+      userName: 'resilink-test',
+      firstName: 'resilink',
+      lastName: 'test',
+      roleOfUser: 'prosumer',
+      email: 'resilink.test@gmail.com',
+      provider: 'http://localhost:22003',
+      account: '0x5cA8C69262e01C3242515d83b62DD466F0027906',
+      createdAt: '2024-05-24T12:46:17.359Z',
+      updatedAt: '2024-05-24T12:46:17.359Z',
+      phoneNumber: '000000000'
+    },
+    password: '123456',
+    phoneNumber: '000000000'
+  },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-24T12:46:17.138Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  level: 'info',
+  message: 'succes creating a user in Resilink DB',
+  timestamp: '2024-05-24T12:46:17.172Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  _id: 'resilink-test',
+  job: 'farmer',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-05-24T12:46:20.723Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T13:27:01.042Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T13:27:36.297Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T13:29:21.697Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T13:32:13.009Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  data: {
+    user: {
+      _id: '665096ddc2c3851e2f93e6e3',
+      userName: 'ac',
+      firstName: 'a',
+      lastName: 'c',
+      roleOfUser: 'prosumer',
+      email: 'rand@efs.de',
+      provider: 'http://localhost:22003',
+      account: '0x24Ed932771d5f6ab50A42d487f4D23db2B370961',
+      createdAt: '2024-05-24T13:32:13.072Z',
+      updatedAt: '2024-05-24T13:32:13.072Z',
+      phoneNumber: '00000000'
+    },
+    password: '123456',
+    phoneNumber: '00000000'
+  },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-24T13:32:13.603Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  level: 'info',
+  message: 'succes creating a user in Resilink DB',
+  timestamp: '2024-05-24T13:32:13.657Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  _id: 'ac',
+  job: 'farmer',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-05-24T13:32:18.216Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-05-24T13:32:18.248Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T14:07:40.597Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T14:08:03.454Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T14:09:32.963Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T14:16:10.623Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T14:21:03.323Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T14:47:49.309Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T14:54:11.912Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T14:54:46.301Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  data: {
+    user: {
+      _id: '6650aa36c2c3851e2f93e6ea',
+      userName: 'actest',
+      firstName: 'ac',
+      lastName: 'test',
+      roleOfUser: 'prosumer',
+      email: 'dsef@sefs.fr',
+      provider: 'http://localhost:22003',
+      account: '0x5cA8C69262e01C3242515d83b62DD466F0027906',
+      createdAt: '2024-05-24T14:54:46.636Z',
+      updatedAt: '2024-05-24T14:54:46.636Z',
+      phoneNumber: '0000000'
+    },
+    phoneNumber: '0000000'
+  },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-24T14:54:47.201Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  level: 'info',
+  message: 'succes creating a user in Resilink DB',
+  timestamp: '2024-05-24T14:54:47.253Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  _id: 'actest',
+  job: 'farmer',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-05-24T14:54:51.722Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-05-24T14:54:51.753Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T15:10:55.270Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T15:16:08.171Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T15:17:47.500Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  data: {
+    user: {
+      _id: '6650af9bc2c3851e2f93e6eb',
+      userName: 'actest',
+      firstName: 'ac',
+      lastName: 'test',
+      roleOfUser: 'prosumer',
+      email: 'sefs@sef.fr',
+      provider: 'http://localhost:22003',
+      account: '0x5cA8C69262e01C3242515d83b62DD466F0027906',
+      createdAt: '2024-05-24T15:17:47.564Z',
+      updatedAt: '2024-05-24T15:17:47.564Z',
+      phoneNumber: '00000000'
+    },
+    phoneNumber: '00000000'
+  },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-24T15:17:48.025Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  level: 'info',
+  message: 'succes creating a user in Resilink DB',
+  timestamp: '2024-05-24T15:17:48.083Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  _id: 'actest',
+  job: 'farmer',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-05-24T15:17:50.551Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-05-24T15:17:50.580Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T15:20:40.769Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  data: {
+    user: {
+      _id: '6650b049c2c3851e2f93e6ec',
+      userName: 'actest',
+      firstName: 'ac',
+      lastName: 'test',
+      roleOfUser: 'prosumer',
+      email: 'sefs@sef.fr',
+      provider: 'http://localhost:22003',
+      account: '0x5cA8C69262e01C3242515d83b62DD466F0027906',
+      createdAt: '2024-05-24T15:20:41.106Z',
+      updatedAt: '2024-05-24T15:20:41.106Z',
+      phoneNumber: '00000000'
+    },
+    phoneNumber: '00000000'
+  },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-24T15:20:41.738Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  level: 'info',
+  message: 'succes creating a user in Resilink DB',
+  timestamp: '2024-05-24T15:20:41.837Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  _id: 'actest',
+  job: 'farmer',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-05-24T15:20:44.446Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-05-24T15:20:44.474Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T15:25:16.180Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T15:25:54.113Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  data: {
+    user: {
+      _id: '6650b182c2c3851e2f93e6ed',
+      userName: 'actest',
+      firstName: 'ac',
+      lastName: 'test',
+      roleOfUser: 'prosumer',
+      email: 'qefsef@esf.fr',
+      provider: 'http://localhost:22003',
+      account: '0x5cA8C69262e01C3242515d83b62DD466F0027906',
+      createdAt: '2024-05-24T15:25:54.174Z',
+      updatedAt: '2024-05-24T15:25:54.174Z',
+      phoneNumber: '0000000'
+    },
+    phoneNumber: '0000000'
+  },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-24T15:25:54.602Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  level: 'info',
+  message: 'succes creating a user in Resilink DB',
+  timestamp: '2024-05-24T15:25:54.656Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  _id: 'actest',
+  job: 'farmer',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-05-24T15:25:59.213Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-05-24T15:25:59.238Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T15:31:26.516Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T15:32:34.904Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T15:32:58.541Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  data: {
+    user: {
+      _id: '6650b32ac2c3851e2f93e6ee',
+      userName: 'actest',
+      firstName: 'ac',
+      lastName: 'test',
+      roleOfUser: 'prosumer',
+      email: 'qzdq@gdrg.fr',
+      provider: 'http://localhost:22003',
+      account: '0x5cA8C69262e01C3242515d83b62DD466F0027906',
+      createdAt: '2024-05-24T15:32:58.603Z',
+      updatedAt: '2024-05-24T15:32:58.603Z',
+      phoneNumber: '0000000'
+    },
+    phoneNumber: '0000000'
+  },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-24T15:32:59.153Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  level: 'info',
+  message: 'succes creating a user in Resilink DB',
+  timestamp: '2024-05-24T15:32:59.208Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  _id: 'actest',
+  job: 'farmer',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-05-24T15:33:01.719Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-05-24T15:33:01.750Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-24T15:34:20.843Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  data: {
+    user: {
+      _id: '6650b37cc2c3851e2f93e6ef',
+      userName: 'actest',
+      firstName: 'ac',
+      lastName: 'test',
+      roleOfUser: 'prosumer',
+      email: 'qzdq@gdrg.fr',
+      provider: 'http://localhost:22003',
+      account: '0x5cA8C69262e01C3242515d83b62DD466F0027906',
+      createdAt: '2024-05-24T15:34:20.907Z',
+      updatedAt: '2024-05-24T15:34:20.907Z',
+      phoneNumber: '0000000'
+    },
+    phoneNumber: '0000000'
+  },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-24T15:34:21.373Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newUser',
+  level: 'info',
+  message: 'succes creating a user in Resilink DB',
+  timestamp: '2024-05-24T15:34:21.428Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  _id: 'actest',
+  job: 'farmer',
+  level: 'info',
+  message: 'data to insert',
+  timestamp: '2024-05-24T15:34:25.933Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newProsumer',
+  level: 'info',
+  message: 'succes creating one prosummer in Resilink DB',
+  timestamp: '2024-05-24T15:34:25.965Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  data: { assetId: 21, imgBase64: '', owner: 'actest' },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-24T15:41:07.214Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  level: 'info',
+  message: 'succes creating an asset in Resilink DB',
+  timestamp: '2024-05-24T15:41:07.251Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T08:45:10.958Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  data: { phoneNumber: '' },
+  level: 'warn',
+  message: 'before updating data',
+  timestamp: '2024-05-27T08:45:11.295Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  level: 'info',
+  message: 'Document with ID 6650b37cc2c3851e2f93e6ef successfully updated',
+  timestamp: '2024-05-27T08:45:11.331Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T10:18:37.805Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-27T10:18:38.097Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T10:19:57.245Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-27T10:19:57.519Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T10:21:07.056Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-27T10:21:07.366Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T10:21:45.018Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-27T10:21:45.356Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T10:23:41.896Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T11:26:18.492Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-27T11:26:18.844Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T11:26:30.609Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T11:26:57.694Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T11:27:28.971Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T11:31:06.656Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T11:38:07.189Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T11:39:37.560Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T12:15:32.960Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T12:40:44.678Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T12:41:35.995Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-27T12:41:36.316Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  data: { phoneNumber: '' },
+  level: 'warn',
+  message: 'before updating data',
+  timestamp: '2024-05-27T12:41:36.632Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  error: undefined,
+  level: 'error',
+  message: 'error updating user in Resilink DB',
+  timestamp: '2024-05-27T12:41:36.659Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateJob',
+  level: 'info',
+  message: "Success updating prosumer's job field",
+  timestamp: '2024-05-27T12:41:36.926Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T12:43:31.320Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-27T12:43:31.613Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  data: { phoneNumber: '' },
+  level: 'warn',
+  message: 'before updating data',
+  timestamp: '2024-05-27T12:43:31.945Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  error: undefined,
+  level: 'error',
+  message: 'error updating user in Resilink DB',
+  timestamp: '2024-05-27T12:43:31.971Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateJob',
+  level: 'info',
+  message: "Success updating prosumer's job field",
+  timestamp: '2024-05-27T12:43:32.292Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T12:51:16.488Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-27T12:51:16.763Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  data: { phoneNumber: '' },
+  level: 'warn',
+  message: 'before updating data',
+  timestamp: '2024-05-27T12:51:17.063Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  error: undefined,
+  level: 'error',
+  message: 'error updating user in Resilink DB',
+  timestamp: '2024-05-27T12:51:17.087Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateJob',
+  level: 'error',
+  message: 'error updating job field in Resilink DB',
+  timestamp: '2024-05-27T12:51:17.382Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T12:52:04.510Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-27T12:52:04.812Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  data: { phoneNumber: '' },
+  level: 'warn',
+  message: 'before updating data',
+  timestamp: '2024-05-27T12:52:05.107Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  error: undefined,
+  level: 'error',
+  message: 'error updating user in Resilink DB',
+  timestamp: '2024-05-27T12:52:05.127Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateJob',
+  level: 'error',
+  message: 'error updating job field in Resilink DB',
+  timestamp: '2024-05-27T12:52:05.396Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T12:52:13.892Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-27T12:52:14.209Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  data: { phoneNumber: '' },
+  level: 'warn',
+  message: 'before updating data',
+  timestamp: '2024-05-27T12:52:14.550Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateUser',
+  error: undefined,
+  level: 'error',
+  message: 'error updating user in Resilink DB',
+  timestamp: '2024-05-27T12:52:14.575Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'updateJob',
+  level: 'info',
+  message: "Success updating prosumer's job field",
+  timestamp: '2024-05-27T12:52:14.899Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T13:46:00.610Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-27T13:46:00.880Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T13:46:13.714Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  data: { assetId: 22, imgBase64: '', owner: 'acazaux' },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-27T13:53:06.702Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  level: 'info',
+  message: 'succes creating an asset in Resilink DB',
+  timestamp: '2024-05-27T13:53:06.735Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T14:01:52.386Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-27T14:01:52.693Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T14:02:01.274Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  data: { assetId: 23, imgBase64: '', owner: 'acazaux' },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-27T15:07:20.690Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  level: 'info',
+  message: 'succes creating an asset in Resilink DB',
+  timestamp: '2024-05-27T15:07:20.723Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  data: { assetId: 24, imgBase64: '', owner: 'acazaux' },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-27T15:16:55.222Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  level: 'info',
+  message: 'succes creating an asset in Resilink DB',
+  timestamp: '2024-05-27T15:16:55.256Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  data: { assetId: 25, imgBase64: '', owner: 'acazaux' },
+  level: 'warn',
+  message: 'before inserting data',
+  timestamp: '2024-05-27T15:26:05.837Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'newAsset',
+  level: 'info',
+  message: 'succes creating an asset in Resilink DB',
+  timestamp: '2024-05-27T15:26:05.867Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-27T15:29:08.898Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-28T07:08:31.003Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-28T07:08:31.306Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-28T07:11:01.595Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-28T07:11:01.908Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-28T07:11:14.848Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-28T07:11:15.153Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-28T07:11:36.380Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-28T07:11:36.661Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-28T07:12:02.913Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-28T09:47:47.138Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getJobProsummer',
+  error: undefined,
+  level: 'error',
+  message: "error retrieving prosummer's job in Resilink DB",
+  timestamp: '2024-05-28T09:47:47.815Z'
+}
+{
+  service: 'UpdateDataResilinkService',
+  from: 'getUser',
+  error: undefined,
+  level: 'error',
+  message: 'error retrieving user in Resilink DB',
+  timestamp: '2024-05-28T09:49:00.564Z'
+}

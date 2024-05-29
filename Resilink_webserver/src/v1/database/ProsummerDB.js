@@ -30,6 +30,7 @@ const getAllProsummer = async (prosumerList) => {
           var prosumers = await _collection.findOne({ _id : prosumerList[i].id });
           if (prosumers != null) {
             prosumerList[i].bookMarked = prosumers.bookMarked;
+            prosumerList[i].job = prosumers.job;
           }
         }
 
@@ -43,7 +44,7 @@ const getAllProsummer = async (prosumerList) => {
     }
 };
 
-//Retrieves one prosumer by its id
+//Retrieves one prosumer by the entity prosummer
 const getOneProsummer = async (prosumer) => {
     try {
         await client.connect();
@@ -62,6 +63,7 @@ const getOneProsummer = async (prosumer) => {
           prosumer.bookMarked = [];
         } else {
           prosumer.bookMarked = prosumers.bookMarked;
+          prosumer.job = prosumers.job;
         }
         getDataLogger.info('succes retrieving one prosummer in Resilink DB', { from: 'getOneProsummer'});
         return prosumers;
@@ -77,7 +79,7 @@ const getOneProsummer = async (prosumer) => {
     }
 }
 
-//Retrieves one prosumer by its id
+//Retrieves one prosumer by its username (id)
 const getOneProsummerWithUsername = async (prosumerName) => {
   try {
       await client.connect();
@@ -111,8 +113,39 @@ const getOneProsummerWithUsername = async (prosumerName) => {
   }
 }
 
+// Retrieves a user by id in RESILINK DB
+const getJobProsummer = async (id) => {
+  try {
+    await client.connect();
+    connectDB.info('succes connecting to DB', { from: 'getJobProsummer'});
+
+    const _database = client.db('Resilink');
+    const _collection = _database.collection('prosumer');
+
+    var job;
+    var prosummer = await _collection.findOne({ _id: id });
+    if (prosummer != null) {
+      job = prosummer.job;
+    } else {
+      throw new getDBError();
+    }
+
+    getDataLogger.info('succes retrieving prosummer\'s job in Resilink DB', { from: 'getJobProsummer'});
+    return job;
+
+  } catch (e) {
+    if (e instanceof getDBError) {
+      updateData.error('error retrieving prosummer\'s job in Resilink DB', { from: 'getJobProsummer', error: e.message});
+    } else {
+      connectDB.error('error connecting to DB', { from: 'getJobProsummer', error: e.message});
+    }
+  } finally {
+    await client.close();
+  }
+}
+
 // Creates a prosumer in RESILINK DB
-const newProsumer = async (id) => {
+const newProsumer = async (id, job) => {
   try {
     await client.connect();
     connectDB.info('succes connecting to DB', { from: 'newProsumer'});
@@ -120,10 +153,11 @@ const newProsumer = async (id) => {
     const _database = client.db('Resilink');
     const _collection = _database.collection('prosumer');
 
-    updateData.info('data to insert', { from: 'newProsumer', _id: id});
+    updateData.info('data to insert', { from: 'newProsumer', _id: id, job: job});
     const prosumer = await _collection.insertOne({
       "_id": id,
-      "bookMarked": []
+      "bookMarked": [],
+      "job": job
     });
 
     if (prosumer == null) {
@@ -137,6 +171,39 @@ const newProsumer = async (id) => {
       updateData.error('error creating one prosummer in Resilink DB', { from: 'newProsumer'});
     } else {
       connectDB.error('error connecting to DB ', { from: 'newProsumer',  error: e});
+    }
+    throw(e);
+  } finally {
+    await client.close();
+  }
+};
+
+// Update the job from a prosumer
+const updateJob  = async (prosumerId, job) => {
+  try {
+    await client.connect();
+    connectDB.info('succes connecting to DB', { from: 'updateJob'});
+
+    const _database = client.db('Resilink');
+    const _collection = _database.collection('prosumer');
+
+    // Update the document to update the job
+    const result = await _collection.updateOne(
+      { "_id": prosumerId },
+      { $set: { "job": job } }
+    );
+
+    if (result.modifiedCount !== 1) {
+      throw new UpdateDBError("Failed to update prosumer's job field");
+    }
+
+    updateData.info('Success updating prosumer\'s job field', { from: 'updateJob' });
+
+  } catch (e){
+    if (e instanceof UpdateDBError) {
+      updateData.error('error updating job field in Resilink DB', { from: 'updateJob'});
+    } else {
+      connectDB.error('error connecting to DB ', { from: 'updateJob',  error: e});
     }
     throw(e);
   } finally {
@@ -262,6 +329,8 @@ module.exports = {
     newProsumer,
     getOneProsummer,
     getOneProsummerWithUsername,
+    updateJob,
+    getJobProsummer,
     addbookmarked,
     deleteBookmarkedId,
     deleteProsumerODEPRESILINK

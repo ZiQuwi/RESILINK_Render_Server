@@ -7,12 +7,13 @@ const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 const deleteDataResilink = winston.loggers.get('DeleteDataResilinkLogger');
 
 const User = require("../database/UserDB.js");
+const Prosumer = require("../database/ProsummerDB.js");
 const Utils = require("./Utils.js");
 
-const _ipAdress = 'http://90.84.194.104:4000/oauth/api/v1.0.0/';
+const _ipAdress = 'http://90.84.174.128:4000/oauth/api/v1.0.0/';
 const _urlSignIn = 'auth/sign_in';
 const _urlCreateUser = 'users?provider=http%3A%2F%2Flocalhost%3A';
-const _localhost = "22004";
+const _localhost = "22003";
 
 //Retrieves user data (token is associated with "accesToken" key)
 const functionGetTokenUser = async (body) => {
@@ -30,13 +31,15 @@ const functionGetTokenUser = async (body) => {
     } else {
       getDataLogger.info('success retrieving user\'s token', { from: 'functionGetTokenUser'});
     }
+    await User.getUser(data._id, data);
+    data['job'] = await Prosumer.getJobProsummer(data.userName);
     return [data, response.status];
 };
 
 //Creates an ODEP user and a Resilink user with the id of the ODEP user
 const createUserResilink = async (newUserRequest, token) => {
   try {
-    updateDataODEP.warn('data to send to ODEP', { from: 'createUser', dataToSend: newUserRequest, tokenUsed: token == null ? "Token not given" : token});
+    updateDataODEP.warn('data to send to ODEP', { from: 'createUserResilink', dataToSend: newUserRequest, tokenUsed: token == null ? "Token not given" : token});
 
     //Deletes data not relevant to ODEP to create a user in ODEP
     var phoneNumber;
@@ -44,29 +47,32 @@ const createUserResilink = async (newUserRequest, token) => {
       phoneNumber = newUserRequest['phoneNumber'];
       delete newUserRequest['phoneNumber'];
     }
+
     const response = await Utils.fetchJSONData(
       "POST",
       _ipAdress + _urlCreateUser + _localhost,  
       headers = {'Content-Type': 'application/json', 'Authorization': token.replace(/^Bearer /, ''), 'accept': 'application/json'},
       newUserRequest
     );
-
+    
+    console.log("dans createUserResilink, APRES requete CURL")
     //Calls the function to create a user in RESILINK DB if no errors caught
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      updateDataODEP.error('error: Unauthorize', { from: 'createUser', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     } else if(response.status != 200 && response.status != 201) {
-      updateDataODEP.error('error creating user in ODEP', { from: 'createUser', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error creating user in ODEP', { from: 'createUserResilink', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     } else {
-      updateDataODEP.info('success creating user in ODEP', { from: 'createUser', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.info('success creating user in ODEP', { from: 'createUserResilink', tokenUsed: token.replace(/^Bearer\s+/i, '')});
       if (phoneNumber != undefined) {
         data['phoneNumber'] = phoneNumber;
       }
-      await User.newUser(data, newUserRequest["password"]);
+      await User.newUser(data);
     }
+    data['password'] = newUserRequest['password'];
     return [data, response.status];
   } catch (e) {
-    updateDataODEP.error('error creating user in ODEP or local Resilink DB', { from: 'createUser', error: e, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('error creating user in ODEP or local Resilink DB', { from: 'createUserResilink', error: e, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     throw(e)
   }
 };
@@ -264,26 +270,28 @@ const getUserByUsername = async (url, username, token) => {
   }
 }
 
-//ODEP actually broken, don't know if the url is the same - have to check later
 //Updates user profile in ODEP
 const updateUser = async (url, id, body, token) => {
   try {
     getDataLogger.warn('username to send to ODEP', { from: 'updateUser', data: {body: body, id: id}, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
-      "GET",
-      url + " api-docs/#/signin/signinUser/" + id, 
-      headers = {'accept': 'application/json',
+      "PUT",
+      url + id, 
+      headers = {
+       'accept': 'application/json',
        'Authorization': token,
        'Content-Type': 'application/json'},
        body
     );
     const data = await Utils.streamToJSON(response.body);
+    console.log("dans updateUser et response.status = " + response.status);
+    console.log("data: " + data);
     if(response.status == 401) {
       getDataLogger.error('error: Unauthorize', { from: 'updateUser', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
     } else if(response.status != 200) {
-      getDataLogger.error('error accessing one user by username ' + username, { from: 'updateUser', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error('error updating one user' + username, { from: 'updateUser', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     } else {
-      getDataLogger.info('success accessing one user by username', { from: 'updateUser', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.info('success updating one user', { from: 'updateUser', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     }
     return [data, response.status];
   } catch (e) {
@@ -299,20 +307,24 @@ const updateUserCustom = async (url, id, body, token) => {
 
     //Deletes data not relevant to ODEP to update a user in ODEP
     var phoneNumber;
+    var job;
+
     if (body['phoneNumber'] != null) {
       phoneNumber = body['phoneNumber'];
       delete body['phoneNumber'];
     }
+    job = body['job'];
+    delete body['job'];
 
     const userODEP = await updateUser(url, id, body, token);
     if(userODEP[1] == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'updateUser', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      updateDataODEP.error('error: Unauthorize', { from: 'updateUser', dataReceived: userODEP[0], tokenUsed: token == null ? "Token not given" : token});
       return userODEP;
     } else if(userODEP[1] != 200) {
-      getDataLogger.error('error accessing one user by username ' + username, { from: 'updateUser', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error accessing one user by username ' + username, { from: 'updateUser', dataReceived: userODEP[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return userODEP;
     } else {
-      getDataLogger.info('success accessing one user by username', { from: 'updateUser', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.info('success accessing one user by username', { from: 'updateUser', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     }
 
     //Returns RESILINK data to map and calls function to update user in RESILINK db
@@ -320,7 +332,9 @@ const updateUserCustom = async (url, id, body, token) => {
       body['phoneNumber'] = phoneNumber;
     }
     await User.updateUser(id, body);
-    return [body, response.status];
+    await Prosumer.updateJob(body['userName'], job);
+    body['job'] = job;
+    return [body, userODEP[1]];
   } catch (e) {
     getDataLogger.error("error accessing ODEP", {from: 'updateUser', dataReceiver: e.message});
     throw e;

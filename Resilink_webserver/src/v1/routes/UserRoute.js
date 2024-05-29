@@ -114,7 +114,7 @@ router.post('/users/auth/sign_in/', userController.getTokenUser);
 
 /**
  * @swagger
- * /v1/users/:
+ * /v1/ODEP/users/:
  *   post: 
  *     summary: Create a new User (from ODEP)
  *     tags: [users]
@@ -188,11 +188,11 @@ router.post('/users/auth/sign_in/', userController.getTokenUser);
  *                        type: string
  */
 
-router.post('/users/', userController.createUser);
+router.post('/ODEP/users/', userController.createUser);
 
 /**
  * @swagger
- * /v1/users/custom:
+ * /v1/users:
  *   post: 
  *     summary: Create a new User (from ODEP & RESILINK)
  *     tags: [users]
@@ -270,11 +270,11 @@ router.post('/users/', userController.createUser);
  *                        type: string
  */
 
-router.post('/users/custom', userController.createUserCustom);
+router.post('/users/', userController.createUserCustom);
 
 /**
  * @swagger
- * /v1/users/:
+ * /v1/ODEP/users/:
  *   get:
  *     summary: Return list of users (from ODEP)
  *     tags: [users]
@@ -323,11 +323,11 @@ router.post('/users/custom', userController.createUserCustom);
  *                        type: string
  */
 
-router.get('/users/', userController.getAllUser);
+router.get('/ODEP/users/', userController.getAllUser);
 
 /**
  * @swagger
- * /v1/users/all/custom:
+ * /v1/users/:
  *   get:
  *     summary: Return list of users (from ODEP & RESILINK)
  *     tags: [users]
@@ -378,11 +378,11 @@ router.get('/users/', userController.getAllUser);
  *                        type: string
  */
 
-router.get('/users/all/custom', userController.getAllUserCustom);
+router.get('/users/', userController.getAllUserCustom);
 
 /**
  * @swagger
- * /v1/users/{userId}/:
+ * /v1/ODEP/users/{userId}/:
  *   get: 
  *     summary: Find user by ID (from ODEP)
  *     tags: [users]
@@ -436,7 +436,7 @@ router.get('/users/all/custom', userController.getAllUserCustom);
  *                        type: string
  */
 
-router.get('/users/:userId', userController.getUserById);
+router.get('/ODEP/users/:userId', userController.getUserById);
 
 /**
  * @swagger
@@ -556,7 +556,7 @@ router.get('/users/getUserByUserName/:userName', userController.getUserByUsernam
 
 /**
  * @swagger
- * /v1/users/{userId}/:
+ * /v1/ODEP/users/{userId}/:
  *   delete: 
  *     summary: Delete user (from ODEP)
  *     tags: [users]
@@ -581,11 +581,11 @@ router.get('/users/getUserByUserName/:userName', userController.getUserByUsernam
  *                        type: string
  */
 
-router.delete('/users/:userId', userController.deleteUser);
+router.delete('/ODEP/users/:userId', userController.deleteUser);
 
 /**
  * @swagger
- * /v1/users/custom/{userId}/:
+ * /v1/users/{userId}/:
  *   delete: 
  *     summary: Delete user profil in ODEP and RESILINK DB (from ODEP & RESILINK)
  *     tags: [users]
@@ -610,11 +610,11 @@ router.delete('/users/:userId', userController.deleteUser);
  *                        type: string
  */
 
-router.delete('/users/custom/:userId', userController.deleteUserODEPRESILINK);
+router.delete('/users/:userId', userController.deleteUserODEPRESILINK);
 
 /**
  * @swagger
- * /v1/users/{userId}/:
+ * /v1/ODEP/users/{userId}/:
  *   put: 
  *     summary: Update an existing user (from ODEP)
  *     tags: [users]
@@ -659,11 +659,11 @@ router.delete('/users/custom/:userId', userController.deleteUserODEPRESILINK);
  *                        type: string
  */
 
-router.post('/users/:userId', userController.updateUser);
+router.put('/ODEP/users/:userId', userController.updateUser);
 
 /**
  * @swagger
- * /v1/users/custom/{userId}/:
+ * /v1/users/{userId}:
  *   put: 
  *     summary: Update an existing user in ODEP and RESILINK (from ODEP & RESILINK)
  *     tags: [users]
@@ -710,11 +710,11 @@ router.post('/users/:userId', userController.updateUser);
  *                        type: string
  */
 
-router.post('/users/custom/:userId', userController.updateUserCustom);
+router.put('/users/:userId/', userController.updateUserCustom);
 
 /**
  * @swagger
- * /v1/users/custom/{userId}/:
+ * /v1/users/{userId}/:
  *   get: 
  *     summary: Find user by ID in ODEP and RESILINK (from ODEP & RESILINK)
  *     tags: [users]
@@ -770,6 +770,6 @@ router.post('/users/custom/:userId', userController.updateUserCustom);
  *                        type: string
  */
 
-router.get('/users/custom/:userId', userController.getUserbyIdCustom);
+router.get('/users/:userId/', userController.getUserbyIdCustom);
 
 module.exports = router;

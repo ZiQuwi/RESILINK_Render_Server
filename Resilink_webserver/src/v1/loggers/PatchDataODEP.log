@@ -1166,3 +1166,376 @@
   message: "success patching prosummer's bookmark list",
   timestamp: '2024-04-17T07:54:33.911Z'
 }
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'testunit',
+    firstName: 'test',
+    lastName: 'unit',
+    roleOfUser: 'prosumer',
+    email: 'testunit@grg.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDEyODMsImV4cCI6MTcxMzkwODQ4M30.kto-bbrZyv0PqLeCryR6HIJgryNOJmdWp0g0tMyPP-c',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-04-23T19:41:23.211Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'testunit',
+    firstName: 'test',
+    lastName: 'unit',
+    roleOfUser: 'prosumer',
+    email: 'testunit@grg.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDEzODIsImV4cCI6MTcxMzkwODU4Mn0.0jGnM0NGljc_1Q0YK883Dl6DhkJN9KDOsRTYXO4wMtk',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-04-23T19:43:02.743Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'testunit',
+    firstName: 'test',
+    lastName: 'unit',
+    roleOfUser: 'prosumer',
+    email: 'testunit@grg.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDE0OTYsImV4cCI6MTcxMzkwODY5Nn0.M_0172IAZxYj-r7qxA6yWN1pY36MHlKrngk0_LaDUDE',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-04-23T19:44:57.026Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'testU',
+    firstName: 'test',
+    lastName: 'User',
+    roleOfUser: 'prosumer',
+    email: 'testU@gkg.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDY3MjYsImV4cCI6MTcxMzkxMzkyNn0.XvwKf9pAVsP7S3ih_s4p8zfq1GEtCbsj16bAc2rCuvs',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-04-23T21:12:06.740Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'testU',
+    firstName: 'test',
+    lastName: 'User',
+    roleOfUser: 'prosumer',
+    email: 'testU@gkg.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGNiYjU3Yzc4ZTcxYTQzNzFlMDdlMWMiLCJpYXQiOjE3MTM5MDY4NjAsImV4cCI6MTcxMzkxNDA2MH0.uNh7MezeCMBwO-BmHzXTOASjGo1akjca8m1ITziXriw',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-04-23T21:14:20.634Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'patchOneRegulator',
+  dataToSend: {},
+  id: '7',
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTQ0ODUzOTksImV4cCI6MTcxNDQ5MjU5OX0.D7sbuvQbIySSA7jBnGDd-npz-XXp3llL3_TA03G7mkA',
+  level: 'warn',
+  message: 'data & id to send to ODEP',
+  timestamp: '2024-04-30T14:13:11.124Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'patchContractCancel',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFjMTNmNmRmZTQ1OTkxNTljNzY1OWIiLCJpYXQiOjE3MTQ0ODUzOTksImV4cCI6MTcxNDQ5MjU5OX0.D7sbuvQbIySSA7jBnGDd-npz-XXp3llL3_TA03G7mkA',
+  level: 'info',
+  message: 'success patching/cancel contract',
+  timestamp: '2024-04-30T14:13:14.147Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'resilink-test',
+    firstName: 'resilink',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'resilink.test@gmail.com',
+    password: '123456',
+    phoneNumber: '000000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTQ3NzYsImV4cCI6MTcxNjU2MTk3Nn0.iOvPdOrAs0gdE92hrti3BR2Pv3zF5J1UAN4XenB_K48',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T12:46:16.598Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'resilink-test',
+    firstName: 'resilink',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'resilink.test@gmail.com',
+    password: '123456',
+    phoneNumber: '000000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTcyMjAsImV4cCI6MTcxNjU2NDQyMH0.EKthjcafBZj6BdeY368_NGn4c4dHf_L6aNp6-xniHNA',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T13:27:01.044Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'resilinkTes',
+    firstName: 'resilink',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'resilink.test@gmail.com',
+    password: '123456',
+    phoneNumber: '000000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTcyNTUsImV4cCI6MTcxNjU2NDQ1NX0.sUdduDuj2a9wcVOFKBbzequqwgESlmkkSSlg1-TAJzc',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T13:27:36.299Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'ac',
+    firstName: 'a',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'rand@efs.de',
+    password: '123456',
+    phoneNumber: '00000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTc1MzIsImV4cCI6MTcxNjU2NDczMn0.-k9DIBCZuNLuouLNt5KeErn0Qri9igOG7n8LVQJBcTI',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T13:32:13.011Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'a',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'rand@efs.de',
+    password: '123456',
+    phoneNumber: '00000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTk2NTksImV4cCI6MTcxNjU2Njg1OX0.VlEIVj4KFd8OdlwUbYLcSpW2K0ecjIO27QCTN9vRAw4',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T14:07:40.599Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'a',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'sefs@sefs.fe',
+    password: '123456',
+    phoneNumber: '00000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NTk3NzIsImV4cCI6MTcxNjU2Njk3Mn0.iJqEqhWQEr2T3ij7ZTgWUf1mSX9v_4ZnMrHPisMHifM',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T14:09:32.966Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'a',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'sefs@sefs.fe',
+    password: '123456',
+    phoneNumber: '00000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjAxNzAsImV4cCI6MTcxNjU2NzM3MH0.QYxpKbm9sEFqtFqkSHzhRDHxa_jO6Gyra7NrVDIFbBY',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T14:16:10.627Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'a',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'sefs@sefs.fe',
+    password: '123456',
+    phoneNumber: '00000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjA0NjIsImV4cCI6MTcxNjU2NzY2Mn0.W3WaeTNw2PJULZ-N9Znu99YBi4qHF-3F6sOTvvX-6UM',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T14:21:03.325Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'a',
+    lastName: 'c',
+    roleOfUser: 'prosumer',
+    email: 'sefs@sefs.fe',
+    password: '123456',
+    phoneNumber: '00000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjIwNjgsImV4cCI6MTcxNjU2OTI2OH0.LjeZUxqm4l8uiLWD9PUrGwbPpq_kaqf-XQOWlAq4zkA',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T14:47:49.317Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'ac',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'dsef@sefs.fr',
+    password: '123456',
+    phoneNumber: '0000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjI0ODUsImV4cCI6MTcxNjU2OTY4NX0.R98bo1-dtJalzqwsnaihDksmJ7KKiE6ja7ptpLE5S3Y',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T14:54:46.304Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'ac',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'sefs@sef.fr',
+    password: '123456',
+    phoneNumber: '00000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjM4NjYsImV4cCI6MTcxNjU3MTA2Nn0.MJ_QH20PEEoFQtTluW8DWkGIkfl0P0oBXFY_rJTx8js',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T15:17:47.501Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'ac',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'sefs@sef.fr',
+    password: '123456',
+    phoneNumber: '00000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQwNDAsImV4cCI6MTcxNjU3MTI0MH0.pGssoxsHDf3mqEVGyRNrqlj1EUUx-Aryh0JE6evoRP0',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T15:20:40.770Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'ac',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'qefsef@esf.fr',
+    password: '123456',
+    phoneNumber: '0000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQzNTMsImV4cCI6MTcxNjU3MTU1M30.8CT1fIjlCpR5gIm2ZmzuoKWc8a85FzgL7PV03zsbIk4',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T15:25:54.114Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'ac',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'qzdq@gdrg.fr',
+    password: '123456',
+    phoneNumber: '0000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQ3NzgsImV4cCI6MTcxNjU3MTk3OH0.9ewUm3D81fy_1FMdgcnHGH-3Fo50i32Oje6itmgMKf0',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T15:32:58.542Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'actest',
+    firstName: 'ac',
+    lastName: 'test',
+    roleOfUser: 'prosumer',
+    email: 'qzdq@gdrg.fr',
+    password: '123456',
+    phoneNumber: '0000000',
+    job: 'farmer'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTY1NjQ4NjAsImV4cCI6MTcxNjU3MjA2MH0.mzViWQ4tCnFFvj4zerZ66RD-j3CBcbnH1KthJY46n3E',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-05-24T15:34:20.847Z'
+}

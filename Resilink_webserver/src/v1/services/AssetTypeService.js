@@ -12,7 +12,7 @@ const AssetTypeDB = require("../database/AssetTypeDB.js");
 // Same result as the function getAllAssetTypes except its not a list of object but juste an object with key and an asset type associeted
 const getAllAssetTypesResilink = async (token) => {
   try {
-    const urlGetALlAssetTypes = "http://90.84.194.104:10010/assetTypes/all";
+    const urlGetALlAssetTypes = "http://90.84.174.128:10010/assetTypes/all";
     const allAssetTypes = await Utils.fetchJSONData(
         'GET',
         urlGetALlAssetTypes, 
@@ -69,9 +69,8 @@ const createAssetTypes = async (url, body, token) => {
 */
 const createAssetTypesCustom = async (assetType, token) => {
   try {
-
     //Checks if the asset type exists and increments the asset type counter in RESILINK
-    const resultassetType = await getOneAssetTypes("http://90.84.194.104:10010/assetTypes/", assetType, token);
+    const resultassetType = await getOneAssetTypes("http://90.84.174.128:10010/assetTypes/", assetType, token);
     if (resultassetType[1] == 401) {
       getDataLogger.error('error: Unauthorize', { from: 'createAssetTypesCustom', dataReceived: resultassetType[0], tokenUsed: token == null ? "Token not given" : token});
       return [resultassetType[0], resultassetType[1]];
@@ -80,7 +79,8 @@ const createAssetTypesCustom = async (assetType, token) => {
       return [resultassetType[0], resultassetType[1]];
     } else {
       const resultDB = await AssetTypeDB.newAssetTypeDB(assetType);
-
+      console.log("pass2");
+      console.log("name assetType to create: " + resultDB);
       //Change the name of the asset type to the new name, which is the counter at the end of the asset type and creates the new asset type 
       resultassetType[0]["name"] = resultDB;
       const adminToken = await User.functionGetTokenUser({
@@ -90,12 +90,13 @@ const createAssetTypesCustom = async (assetType, token) => {
       updateDataODEP.warn('data to send to ODEP', { from: 'createAssetTypesCustom', dataToSend: resultassetType[0], tokenUsed: token == null ? "Token not given" : token});
       const response = await Utils.fetchJSONData(
         'POST',
-        "http://90.84.194.104:10010/assetTypes/", 
+        "http://90.84.174.128:10010/assetTypes/", 
         headers = {'accept': 'application/json',
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + adminToken[0]["accessToken"]},
         resultassetType[0]
       );
+      console.log("pass3");
       const data = await Utils.streamToJSON(response.body);
       if (response.status == 401) {
         updateDataODEP.error('error: Unauthorize', { from: 'createAssetTypesCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
@@ -114,7 +115,7 @@ const createAssetTypesCustom = async (assetType, token) => {
   }
 };
 
-//Retrieves all asset types in ODEP
+//Retrieves all asset types with Resilink in their description in ODEP
 const getAllAssetTypes = async (url, token) => {
   const response = await Utils.fetchJSONData(
       'GET',
@@ -130,9 +131,35 @@ const getAllAssetTypes = async (url, token) => {
     getDataLogger.error('error retrieving/processing all assetTypes', { from: 'getAllAssetTypes', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [data, response.status];
   } else {
-    getDataLogger.info('success retrieving/processing all assetTypes', { from: 'getAllAssetTypes', tokenUsed: token.replace(/^Bearer\s+/i, '')});
-    return [data, response.status];
+
+    //Push all assetTypes containing RESILINK in their description into a list
+    var allAssetTypesResilink = [];
+    for (const element in data) {
+      if (data[element].description.toUpperCase() === "RESILINK") {
+        allAssetTypesResilink.push(data[element]);
+      }
+    }
+    return [allAssetTypesResilink, response.status];
   }  
+};
+
+//Retrieves all asset types in ODEP
+const getAllAssetTypesDev = async (url, token) => {
+  const response = await Utils.fetchJSONData(
+      'GET',
+      url + "all", 
+      headers = {'accept': 'application/json',
+      'Authorization': token},
+  );
+  const data = await Utils.streamToJSON(response.body);
+  if (response.status == 401) {
+    getDataLogger.error('error: Unauthorize', { from: 'getAllAssetTypes', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+  } else if (response.status != 200) {
+    getDataLogger.error('error retrieving/processing all assetTypes', { from: 'getAllAssetTypes', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  } else {
+    getDataLogger.info('success retrieving/processing all assetTypes', { from: 'getAllAssetTypes', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  }  
+  return [data, response.status];
 };
 
 //Retrieves an asset type by id in ODEP
@@ -203,6 +230,7 @@ module.exports = {
     createAssetTypesCustom,
     getAllAssetTypesResilink,
     getAllAssetTypes,
+    getAllAssetTypesDev,
     getOneAssetTypes,
     putAssetTypes,
     deleteAssetTypes,

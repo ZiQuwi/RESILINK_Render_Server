@@ -64,7 +64,7 @@ const v1NewsRoute = require("./v1/routes/NewsRoute.js");
 app.use("/v1/", v1NewsRoute);
 
 //start application Express.js (pour notre les requêtes)
-app.listen(PORT, '0.0.0.0', () => { 
+app.listen(PORT, '10.1.22.202', () => { 
     console.log(`API is listening on port ${PORT}`);
     V1SwaggerDocs(app, PORT); 
 });

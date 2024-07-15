@@ -23,7 +23,7 @@ const createUser = async (req, res) => {
     const response = await userService.createUser(_pathUserODEP, req.body, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -33,7 +33,7 @@ const createUserCustom = async (req, res) => {
     const response = await userService.createUserResilink(_pathUserODEP, req.body, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createUserCustom', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createUserCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -44,7 +44,7 @@ const deleteUser = async (req, res) => {
     const response = await userService.deleteUser(_pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -54,7 +54,7 @@ const deleteUserODEPRESILINK = async (req, res) => {
     const response = await userService.deleteUserODEPRESILINK(_pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -64,7 +64,7 @@ const getUserById = async (req, res) => {
     const response = await userService.getUserById(_pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -74,7 +74,7 @@ const getAllUser = async (req, res) => {
     const response = await userService.getAllUser(_pathUserODEP, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -84,7 +84,7 @@ const getAllUserCustom = async (req, res) => {
     const response = await userService.getAllUserCustom(_pathUserODEP, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'getAllUserCustom', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'getAllUserCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -95,7 +95,7 @@ const getUserByEmail = async (req, res) => {
     const response = await userService.getUserByEmail(_pathUserODEP, req.params.userEmail, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -106,7 +106,7 @@ const getUserByUsername = async (req, res) => {
     const response = await userService.getUserByUsername(_pathUserODEP, req.params.userName, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -116,7 +116,7 @@ const updateUser = async (req, res) => {
     const response = await userService.updateUser(_pathUserODEP, req.params.userId, req.body, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -126,7 +126,7 @@ const updateUserCustom = async (req, res) => {
     const response = await userService.updateUserCustom(_pathUserODEP, req.params.userId, req.body, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -136,7 +136,7 @@ const getUserbyIdCustom = async (req, res) => {
     const response = await userService.getUserByIdCustom(_pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }

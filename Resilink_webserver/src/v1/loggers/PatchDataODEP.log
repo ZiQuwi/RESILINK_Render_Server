@@ -1539,3 +1539,141 @@
   message: 'data to send to Resilink DB & ODEP',
   timestamp: '2024-05-24T15:34:20.847Z'
 }
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'resilinkT',
+    firstName: 'resilink',
+    lastName: 't',
+    roleOfUser: 'prosumer',
+    email: 'qzdqd@efsfs.fr',
+    password: '123456',
+    phoneNumber: '22222222222',
+    job: 'worker'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTkzMzA4MzUsImV4cCI6MTcxOTMzODAzNX0.H7seKVodJjn0_b9HF1rBNexuP7AWYCkNrkpFPjYek2o',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-06-25T15:53:56.382Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'aze',
+    firstName: 'ee',
+    lastName: 'ee',
+    roleOfUser: 'prosumer',
+    email: 'qzdq@yjg.fr',
+    password: '123456',
+    phoneNumber: '',
+    job: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgzNzksImV4cCI6MTcxOTQxNTU3OX0.KVuWt7MP85JLA-nAvN3oA1lJEPrJymIOpjSslVEUqHM',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-06-26T13:26:20.529Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'aze',
+    firstName: 'ee',
+    lastName: 'ee',
+    roleOfUser: 'prosumer',
+    email: 'qzdq@yjg.fr',
+    password: '123456',
+    phoneNumber: '',
+    job: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDk4NzAsImV4cCI6MTcxOTQxNzA3MH0.txH_9ZJrX0SwlKLovbSQd_cE1wYAr1i4V_DR_hlHJeU',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-06-26T13:51:11.314Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'createProsumerCustom',
+  dataToSend: {
+    userName: 'aze',
+    firstName: 'aze',
+    lastName: 'aze',
+    roleOfUser: 'prosumer',
+    email: 'aze@thj.fr',
+    password: '123456',
+    phoneNumber: '',
+    job: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MTA1MjksImV4cCI6MTcxOTQxNzcyOX0.jZNMU6Z7yxkOaoSU2RMNsnmQxmb2wM0ogryQeHV_uxQ',
+  level: 'warn',
+  message: 'data to send to Resilink DB & ODEP',
+  timestamp: '2024-06-26T14:02:12.951Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'patchBookmarkProsummer',
+  dataToSend: { bookmarkId: '5' },
+  id: 'acazaux',
+  level: 'warn',
+  message: 'data & id to send to local DB',
+  timestamp: '2024-07-08T13:56:45.788Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'patchBookmarkProsummer',
+  level: 'info',
+  message: "success patching prosummer's bookmark list",
+  timestamp: '2024-07-08T13:56:46.097Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'patchBookmarkProsummer',
+  dataToSend: { bookmarkId: '2' },
+  id: 'acazaux',
+  level: 'warn',
+  message: 'data & id to send to local DB',
+  timestamp: '2024-07-08T14:58:37.865Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'patchBookmarkProsummer',
+  level: 'info',
+  message: "success patching prosummer's bookmark list",
+  timestamp: '2024-07-08T14:58:38.163Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'patchBookmarkProsummer',
+  dataToSend: { bookmarkId: '3' },
+  id: 'acazaux',
+  level: 'warn',
+  message: 'data & id to send to local DB',
+  timestamp: '2024-07-08T14:58:38.782Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'patchBookmarkProsummer',
+  level: 'info',
+  message: "success patching prosummer's bookmark list",
+  timestamp: '2024-07-08T14:58:39.077Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'patchOneRegulator',
+  dataToSend: { quantity: 0 },
+  id: '14',
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MjE4ODksImV4cCI6MTcyMDUyOTA4OX0.LlzL0nxK-pkIohzZ281g5KS4_MMwGDSk-7AkCHYlNbI',
+  level: 'warn',
+  message: 'data & id to send to ODEP',
+  timestamp: '2024-07-09T10:45:24.984Z'
+}
+{
+  service: 'PatchDataODEPService',
+  from: 'patchContractCancel',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MjE4ODksImV4cCI6MTcyMDUyOTA4OX0.LlzL0nxK-pkIohzZ281g5KS4_MMwGDSk-7AkCHYlNbI',
+  level: 'info',
+  message: 'success patching/cancel contract',
+  timestamp: '2024-07-09T10:45:27.034Z'
+}

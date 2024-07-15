@@ -116,6 +116,8 @@ const getAllAssetResilink = async (token) => {
       return [data, allAsset.status];
     } 
     const dataFinal = await AssetDB.getAndCompleteAssetWithImgByAssets(data);
+    console.log("apres dataFinal");
+    console.log(dataFinal);
     for (const key in dataFinal) {
         if (dataFinal.hasOwnProperty(key)) {
           const element = dataFinal[key];
@@ -312,6 +314,9 @@ const putAssetCustom = async (url, body, id, token) => {
   const imgBase64 = body['image'];
   delete body['image'];
   updateDataODEP.warn('data to send to ODEP', { from: 'putAssetCustom', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
+  console.log("body: " + body);
+  console.log("token: " + token);
+  console.log(url + id);
   const response = await Utils.fetchJSONData(
       'PUT',
       url + id, 

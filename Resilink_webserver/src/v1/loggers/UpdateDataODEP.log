@@ -8245,3 +8245,4309 @@
   message: 'success creating an offer',
   timestamp: '2024-05-27T15:26:10.944Z'
 }
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: 'http://90.84.174.128:4000/oauth/api/v1.0.0/users/',
+  tokenUsed: {
+    userName: 'resilinkT',
+    firstName: 'resilink',
+    lastName: 't',
+    roleOfUser: 'prosumer',
+    email: 'qzdqd@efsfs.fr',
+    password: '123456',
+    phoneNumber: '22222222222',
+    job: 'worker'
+  },
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-06-25T15:42:33.815Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserCustom',
+  data: TypeError: token.replace is not a function
+      at Object.createUserResilink (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:75:135)
+      at createUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:33:40)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:144:13)
+      at Route.dispatch (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:114:3)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:346:12)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:175:3),
+  tokenUsed: '',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-06-25T15:42:33.818Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: 'http://90.84.174.128:4000/oauth/api/v1.0.0/users/',
+  tokenUsed: {
+    userName: 'resilinkT',
+    firstName: 'resilink',
+    lastName: 't',
+    roleOfUser: 'prosumer',
+    email: 'qzdqd@efsfs.fr',
+    password: '123456',
+    phoneNumber: '22222222222',
+    job: 'worker'
+  },
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-06-25T15:49:03.308Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserCustom',
+  data: TypeError: token.replace is not a function
+      at Object.createUserResilink (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:75:135)
+      at createUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:33:40)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:144:13)
+      at Route.dispatch (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/route.js:114:3)
+      at Layer.handle [as handle_request] (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/layer.js:95:5)
+      at /home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:346:12)
+      at next (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/node_modules/express/lib/router/index.js:175:3),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwOGE0MGMyYzM4NTFlMmY5M2U2ZGYiLCJpYXQiOjE3MTkzMjk3NjEsImV4cCI6MTcxOTMzNjk2MX0.BX8s1wq_dzWqZD2KwiNcsBBdpwxk2rkPR9v6IwFMrUQ',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-06-25T15:49:03.314Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'resilinkT',
+    firstName: 'resilink',
+    lastName: 't',
+    roleOfUser: 'prosumer',
+    email: 'qzdqd@efsfs.fr',
+    password: '123456',
+    phoneNumber: '22222222222'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTkzMzA4MzUsImV4cCI6MTcxOTMzODAzNX0.H7seKVodJjn0_b9HF1rBNexuP7AWYCkNrkpFPjYek2o',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-06-25T15:53:56.383Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTkzMzA4MzUsImV4cCI6MTcxOTMzODAzNX0.H7seKVodJjn0_b9HF1rBNexuP7AWYCkNrkpFPjYek2o',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-06-25T15:53:56.525Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTkzMzA4MzUsImV4cCI6MTcxOTMzODAzNX0.H7seKVodJjn0_b9HF1rBNexuP7AWYCkNrkpFPjYek2o',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-06-25T15:53:56.832Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTkzMzA4MzUsImV4cCI6MTcxOTMzODAzNX0.H7seKVodJjn0_b9HF1rBNexuP7AWYCkNrkpFPjYek2o',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-06-25T15:53:58.914Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTkzMzA4MzUsImV4cCI6MTcxOTMzODAzNX0.H7seKVodJjn0_b9HF1rBNexuP7AWYCkNrkpFPjYek2o',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-06-25T15:53:58.914Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: ReferenceError: data is not defined
+      at deleteUser (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:117:91)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.deleteUserODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:133:25)
+      at async deleteUserODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:54:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgwNzcsImV4cCI6MTcxOTQxNTI3N30.OpK9qAXNX0OU2VDVLyvV2eHcd3LMXEqjui34rtrcSwQ',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-06-26T13:23:02.098Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: ReferenceError: owner is not defined
+      at Object.deleteUserODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:142:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async deleteUserODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:54:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgwNzcsImV4cCI6MTcxOTQxNTI3N30.OpK9qAXNX0OU2VDVLyvV2eHcd3LMXEqjui34rtrcSwQ',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-06-26T13:23:16.729Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'aze',
+    firstName: 'ee',
+    lastName: 'ee',
+    roleOfUser: 'prosumer',
+    email: 'qzdq@yjg.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgzNzksImV4cCI6MTcxOTQxNTU3OX0.KVuWt7MP85JLA-nAvN3oA1lJEPrJymIOpjSslVEUqHM',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-06-26T13:26:20.529Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgzNzksImV4cCI6MTcxOTQxNTU3OX0.KVuWt7MP85JLA-nAvN3oA1lJEPrJymIOpjSslVEUqHM',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-06-26T13:26:20.669Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgzNzksImV4cCI6MTcxOTQxNTU3OX0.KVuWt7MP85JLA-nAvN3oA1lJEPrJymIOpjSslVEUqHM',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-06-26T13:26:20.967Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgzNzksImV4cCI6MTcxOTQxNTU3OX0.KVuWt7MP85JLA-nAvN3oA1lJEPrJymIOpjSslVEUqHM',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-06-26T13:26:24.089Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgzNzksImV4cCI6MTcxOTQxNTU3OX0.KVuWt7MP85JLA-nAvN3oA1lJEPrJymIOpjSslVEUqHM',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-06-26T13:26:24.090Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: ReferenceError: owner is not defined
+      at Object.deleteUserODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:142:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async deleteUserODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:54:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgyOTYsImV4cCI6MTcxOTQxNTQ5Nn0.ER1PCpY2bpRlvzTbRzAuB9X0zWonu8XjjYPnFYtW_fc',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-06-26T13:46:53.391Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'aze',
+    firstName: 'ee',
+    lastName: 'ee',
+    roleOfUser: 'prosumer',
+    email: 'qzdq@yjg.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDk4NzAsImV4cCI6MTcxOTQxNzA3MH0.txH_9ZJrX0SwlKLovbSQd_cE1wYAr1i4V_DR_hlHJeU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-06-26T13:51:11.315Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDk4NzAsImV4cCI6MTcxOTQxNzA3MH0.txH_9ZJrX0SwlKLovbSQd_cE1wYAr1i4V_DR_hlHJeU',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-06-26T13:51:11.449Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDk4NzAsImV4cCI6MTcxOTQxNzA3MH0.txH_9ZJrX0SwlKLovbSQd_cE1wYAr1i4V_DR_hlHJeU',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-06-26T13:51:11.750Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDk4NzAsImV4cCI6MTcxOTQxNzA3MH0.txH_9ZJrX0SwlKLovbSQd_cE1wYAr1i4V_DR_hlHJeU',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-06-26T13:51:14.900Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDk4NzAsImV4cCI6MTcxOTQxNzA3MH0.txH_9ZJrX0SwlKLovbSQd_cE1wYAr1i4V_DR_hlHJeU',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-06-26T13:51:14.900Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: ReferenceError: owner is not defined
+      at Object.deleteUserODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:142:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async deleteUserODEPRESILINK (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:54:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgyOTYsImV4cCI6MTcxOTQxNTQ5Nn0.ER1PCpY2bpRlvzTbRzAuB9X0zWonu8XjjYPnFYtW_fc',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-06-26T13:56:15.098Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  dataToSend: {
+    userName: 'aze',
+    firstName: 'aze',
+    lastName: 'aze',
+    roleOfUser: 'prosumer',
+    email: 'aze@thj.fr',
+    password: '123456',
+    phoneNumber: ''
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MTA1MjksImV4cCI6MTcxOTQxNzcyOX0.jZNMU6Z7yxkOaoSU2RMNsnmQxmb2wM0ogryQeHV_uxQ',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-06-26T14:02:12.951Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUserResilink',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MTA1MjksImV4cCI6MTcxOTQxNzcyOX0.jZNMU6Z7yxkOaoSU2RMNsnmQxmb2wM0ogryQeHV_uxQ',
+  level: 'info',
+  message: 'success creating user in ODEP',
+  timestamp: '2024-06-26T14:02:13.082Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MTA1MjksImV4cCI6MTcxOTQxNzcyOX0.jZNMU6Z7yxkOaoSU2RMNsnmQxmb2wM0ogryQeHV_uxQ',
+  level: 'info',
+  message: 'success creating user in ODEP and Resilink DB',
+  timestamp: '2024-06-26T14:02:13.396Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MTA1MjksImV4cCI6MTcxOTQxNzcyOX0.jZNMU6Z7yxkOaoSU2RMNsnmQxmb2wM0ogryQeHV_uxQ',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP',
+  timestamp: '2024-06-26T14:02:17.461Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createProsumerCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MTA1MjksImV4cCI6MTcxOTQxNzcyOX0.jZNMU6Z7yxkOaoSU2RMNsnmQxmb2wM0ogryQeHV_uxQ',
+  level: 'info',
+  message: 'success creating one user and his prosummer status in ODEP and Resilink DB',
+  timestamp: '2024-06-26T14:02:17.461Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk4NTAyNTksImV4cCI6MTcxOTg1NzQ1OX0.26wR1_uQZwDF5Q8SlbRFJ42ukC_wf1me_-ECMfnsMa8',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:12:38.508Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: UpdateDBError: Failed to update prosumer's job field
+      at Object.updateJob (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:197:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:335:5)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk4NTAyNTksImV4cCI6MTcxOTg1NzQ1OX0.26wR1_uQZwDF5Q8SlbRFJ42ukC_wf1me_-ECMfnsMa8',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-07-01T16:12:39.273Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: ReferenceError: response is not defined
+      at Object.getUserByIdCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:359:26)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async getUserbyIdCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:136:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk4NTAyNTksImV4cCI6MTcxOTg1NzQ1OX0.26wR1_uQZwDF5Q8SlbRFJ42ukC_wf1me_-ECMfnsMa8',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-07-01T16:13:18.577Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk4NTA1NTcsImV4cCI6MTcxOTg1Nzc1N30.pmLc5sSAavPSFizaddU80lEpkh01GHcOIwHaLOeGk2Y',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:16:16.202Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: UpdateDBError: Failed to update prosumer's job field
+      at Object.updateJob (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:197:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:335:5)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk4NTA1NTcsImV4cCI6MTcxOTg1Nzc1N30.pmLc5sSAavPSFizaddU80lEpkh01GHcOIwHaLOeGk2Y',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-07-01T16:16:17.033Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk4NTA1NTcsImV4cCI6MTcxOTg1Nzc1N30.pmLc5sSAavPSFizaddU80lEpkh01GHcOIwHaLOeGk2Y',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:17:33.304Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: UpdateDBError: Failed to update prosumer's job field
+      at Object.updateJob (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:197:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:335:5)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk4NTA1NTcsImV4cCI6MTcxOTg1Nzc1N30.pmLc5sSAavPSFizaddU80lEpkh01GHcOIwHaLOeGk2Y',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-07-01T16:17:34.096Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk4NTA1NTcsImV4cCI6MTcxOTg1Nzc1N30.pmLc5sSAavPSFizaddU80lEpkh01GHcOIwHaLOeGk2Y',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:20:32.416Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk4NTA1NTcsImV4cCI6MTcxOTg1Nzc1N30.pmLc5sSAavPSFizaddU80lEpkh01GHcOIwHaLOeGk2Y',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:21:03.288Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk4NTA1NTcsImV4cCI6MTcxOTg1Nzc1N30.pmLc5sSAavPSFizaddU80lEpkh01GHcOIwHaLOeGk2Y',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:26:09.330Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: UpdateDBError: Failed to update prosumer's job field
+      at Object.updateJob (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:205:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:334:5)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk4NTA1NTcsImV4cCI6MTcxOTg1Nzc1N30.pmLc5sSAavPSFizaddU80lEpkh01GHcOIwHaLOeGk2Y',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-07-01T16:26:10.131Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk4NTA1NTcsImV4cCI6MTcxOTg1Nzc1N30.pmLc5sSAavPSFizaddU80lEpkh01GHcOIwHaLOeGk2Y',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:26:45.305Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: UpdateDBError: Failed to update prosumer's job field
+      at Object.updateJob (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:206:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:334:5)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk4NTA1NTcsImV4cCI6MTcxOTg1Nzc1N30.pmLc5sSAavPSFizaddU80lEpkh01GHcOIwHaLOeGk2Y',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-07-01T16:26:45.944Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk4NTEyMjgsImV4cCI6MTcxOTg1ODQyOH0.3Morczg8FPf5OJmLCE1KZvqqAe-0lkuLzCCvZXarUlo',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:28:14.234Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk4NTEyMjgsImV4cCI6MTcxOTg1ODQyOH0.3Morczg8FPf5OJmLCE1KZvqqAe-0lkuLzCCvZXarUlo',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:28:17.955Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: UpdateDBError: Failed to update prosumer's job field
+      at Object.updateJob (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:206:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:334:5)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk4NTEyMjgsImV4cCI6MTcxOTg1ODQyOH0.3Morczg8FPf5OJmLCE1KZvqqAe-0lkuLzCCvZXarUlo',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-07-01T16:28:18.524Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk4NTEyMjgsImV4cCI6MTcxOTg1ODQyOH0.3Morczg8FPf5OJmLCE1KZvqqAe-0lkuLzCCvZXarUlo',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:28:24.659Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createUser',
+  data: UpdateDBError: Failed to update prosumer's job field
+      at Object.updateJob (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/database/ProsummerDB.js:206:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Object.updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/services/UserService.js:334:5)
+      at async updateUserCustom (/home/acazaux007/Bureau/Resilink/Mid_Plateforme/Resilink_webserver/src/v1/controllers/UserController.js:126:22),
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk4NTEyMjgsImV4cCI6MTcxOTg1ODQyOH0.3Morczg8FPf5OJmLCE1KZvqqAe-0lkuLzCCvZXarUlo',
+  level: 'error',
+  message: 'Catched error',
+  timestamp: '2024-07-01T16:28:25.218Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk4NTEyMjgsImV4cCI6MTcxOTg1ODQyOH0.3Morczg8FPf5OJmLCE1KZvqqAe-0lkuLzCCvZXarUlo',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:28:59.902Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk4NTEyMjgsImV4cCI6MTcxOTg1ODQyOH0.3Morczg8FPf5OJmLCE1KZvqqAe-0lkuLzCCvZXarUlo',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:31:55.245Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk4NTEyMjgsImV4cCI6MTcxOTg1ODQyOH0.3Morczg8FPf5OJmLCE1KZvqqAe-0lkuLzCCvZXarUlo',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:33:35.163Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk4NTEyMjgsImV4cCI6MTcxOTg1ODQyOH0.3Morczg8FPf5OJmLCE1KZvqqAe-0lkuLzCCvZXarUlo',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-01T16:33:40.472Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk5MTAzMjksImV4cCI6MTcxOTkxNzUyOX0.Tak6CghlbB8nd4Hnsna31tyRHucpNvEyKJ9JxX0xE6Y',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-02T08:53:06.018Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'updateUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MTk5MTQzMTIsImV4cCI6MTcxOTkyMTUxMn0.W7uzYhpx-kb2NHHwJJdomkwGzg9GdBBDxYnpRCyrDB4',
+  level: 'info',
+  message: 'success accessing one user by username',
+  timestamp: '2024-07-02T09:58:53.287Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T09:59:16.565Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataReceived: {
+    code: 400,
+    message: 'this AssetType is instance of other asset(s) and could not be updated'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'error',
+  message: 'error updating one assetType',
+  timestamp: '2024-07-03T09:59:19.687Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T10:03:24.335Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-03T10:03:28.399Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T10:04:00.774Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-03T10:04:04.891Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T10:04:18.060Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-03T10:04:20.072Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'U',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Brand',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Model',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Year',
+        type: 'numeric',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Usage',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Condition',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'true',
+        valueList: 'new,very good,good,fair,old'
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T10:04:53.986Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-03T10:04:56.054Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'material',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'From',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'To',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T10:05:36.252Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-03T10:05:38.335Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'U',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Brand',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T10:06:06.501Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-03T10:06:10.607Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'material',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Usage',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T10:06:50.816Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-03T10:06:52.812Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'material',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Remark',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T10:07:32.789Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-03T10:07:34.887Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'material',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T10:07:41.362Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-03T10:07:44.377Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'material',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T10:08:30.929Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-03T10:08:34.957Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'U',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Brand',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Model',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Year',
+        type: 'numeric',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Usage',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Condition',
+        type: 'listAsset',
+        mandatory: 'false',
+        hasValueList: 'true',
+        valueList: '[new,very good,good,fair,old]'
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T13:08:49.474Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataReceived: { code: 401, message: 'Invalid token' },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMDA2MTgsImV4cCI6MTcyMDAwNzgxOH0.VB8YBKpj4LqkhV_h5gBYXuPP0DY7FeXPBgHBSU45E8E',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-07-03T13:08:49.517Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'U',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Brand',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Model',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Year',
+        type: 'numeric',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Usage',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Condition',
+        type: 'listAsset',
+        mandatory: 'false',
+        hasValueList: 'true',
+        valueList: '[new,very good,good,fair,old]'
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMTIyMzgsImV4cCI6MTcyMDAxOTQzOH0.CklW21rgpQx6KesEELBy_vXdHcD0-vueTmKvG7_MvMw',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T13:10:52.763Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMTIyMzgsImV4cCI6MTcyMDAxOTQzOH0.CklW21rgpQx6KesEELBy_vXdHcD0-vueTmKvG7_MvMw',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-03T13:10:56.958Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'U',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Brand',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Model',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Year',
+        type: 'numeric',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Usage',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Condition',
+        type: 'listAsset',
+        mandatory: 'false',
+        hasValueList: 'true',
+        valueList: 'new,very good,good,fair,old'
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMTIyMzgsImV4cCI6MTcyMDAxOTQzOH0.CklW21rgpQx6KesEELBy_vXdHcD0-vueTmKvG7_MvMw',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T13:13:29.533Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAwMTIyMzgsImV4cCI6MTcyMDAxOTQzOH0.CklW21rgpQx6KesEELBy_vXdHcD0-vueTmKvG7_MvMw',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-03T13:13:32.573Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    offer: {
+      offerer: 'acazaux',
+      assetId: 0,
+      beginTimeSlot: '2024-07-03T17:48:59.048Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      rentInformation: {
+        delayMargin: 0,
+        lateRestitutionPenalty: 0,
+        deteriorationPenalty: 0,
+        nonRestitutionPenalty: 0
+      },
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10,
+      remainingQuantity: 10
+    },
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [
+        { attributeName: 'City/Village', value: '' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' }
+      ]
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T15:48:59.804Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    name: 'apple',
+    description: '',
+    assetType: 'Fruit',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 11,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'City/Village', value: '' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T15:48:59.805Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-07-03T15:49:03.874Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 34,
+    beginTimeSlot: '2024-07-03T17:48:59.048Z',
+    validityLimit: '2024-08-03T00:00:00.000Z',
+    price: 0,
+    deposit: 0,
+    cancellationFee: 0,
+    rentInformation: {
+      delayMargin: 0,
+      lateRestitutionPenalty: 0,
+      deteriorationPenalty: 0,
+      nonRestitutionPenalty: 0
+    },
+    endTimeSlot: '2024-08-03T00:00:00.000Z',
+    offeredQuantity: 10,
+    remainingQuantity: 10
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T15:49:04.378Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'nonRestitutionPenality' ],
+          message: 'Missing required property: nonRestitutionPenality',
+          path: '#/rentInformation',
+          description: 'required information in case of rent'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'deteriorationPenality' ],
+          message: 'Missing required property: deteriorationPenality',
+          path: '#/rentInformation',
+          description: 'required information in case of rent'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'lateRestitutionPenality' ],
+          message: 'Missing required property: lateRestitutionPenality',
+          path: '#/rentInformation',
+          description: 'required information in case of rent'
+        }
+      ],
+      content: {
+        offerer: 'acazaux',
+        assetId: 34,
+        beginTimeSlot: '2024-07-03T17:48:59.048Z',
+        validityLimit: '2024-08-03T00:00:00.000Z',
+        price: 0,
+        deposit: 0,
+        cancellationFee: 0,
+        rentInformation: {
+          delayMargin: 0,
+          lateRestitutionPenalty: 0,
+          deteriorationPenalty: 0,
+          nonRestitutionPenalty: 0
+        },
+        endTimeSlot: '2024-08-03T00:00:00.000Z',
+        offeredQuantity: 10,
+        remainingQuantity: 10
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'error',
+  message: 'error creating an offer',
+  timestamp: '2024-07-03T15:49:04.407Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-07-03T15:49:04.407Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    offer: {
+      offerer: 'acazaux',
+      assetId: 0,
+      beginTimeSlot: '2024-07-03T17:52:24.180Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      rentInformation: {
+        delayMargin: 0,
+        lateRestitutionPenalty: 0,
+        deteriorationPenalty: 0,
+        nonRestitutionPenalty: 0
+      },
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10,
+      remainingQuantity: 10
+    },
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '' },
+        { attributeName: 'City/Village', value: '' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' }
+      ]
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T15:52:24.922Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    name: 'apple',
+    description: '',
+    assetType: 'Fruit',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 11,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: 'golden' },
+      { attributeName: 'GPS', value: '' },
+      { attributeName: 'City/Village', value: '' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T15:52:24.922Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataReceived: {
+    code: 400,
+    message: 'You have already an immaterial asset with this assetType'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'error',
+  message: 'error creating one asset',
+  timestamp: '2024-07-03T15:52:27.991Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-07-03T15:52:27.991Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    offer: {
+      offerer: 'acazaux',
+      assetId: 0,
+      beginTimeSlot: '2024-07-03T17:59:03.956Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      rentInformation: {
+        delayMargin: 0,
+        lateRestitutionPenalty: 0,
+        deteriorationPenalty: 0,
+        nonRestitutionPenalty: 0
+      },
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10,
+      remainingQuantity: 10
+    },
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '' },
+        { attributeName: 'City/Village', value: '' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' }
+      ]
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T15:59:04.808Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    name: 'apple',
+    description: '',
+    assetType: 'Fruit',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 11,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: 'golden' },
+      { attributeName: 'GPS', value: '' },
+      { attributeName: 'City/Village', value: '' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T15:59:04.812Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-07-03T15:59:06.873Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 35,
+    beginTimeSlot: '2024-07-03T17:59:03.956Z',
+    validityLimit: '2024-08-03T00:00:00.000Z',
+    price: 0,
+    deposit: 0,
+    cancellationFee: 0,
+    rentInformation: {
+      delayMargin: 0,
+      lateRestitutionPenalty: 0,
+      deteriorationPenalty: 0,
+      nonRestitutionPenalty: 0
+    },
+    endTimeSlot: '2024-08-03T00:00:00.000Z',
+    offeredQuantity: 10,
+    remainingQuantity: 10
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T15:59:07.352Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'nonRestitutionPenality' ],
+          message: 'Missing required property: nonRestitutionPenality',
+          path: '#/rentInformation',
+          description: 'required information in case of rent'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'deteriorationPenality' ],
+          message: 'Missing required property: deteriorationPenality',
+          path: '#/rentInformation',
+          description: 'required information in case of rent'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'lateRestitutionPenality' ],
+          message: 'Missing required property: lateRestitutionPenality',
+          path: '#/rentInformation',
+          description: 'required information in case of rent'
+        }
+      ],
+      content: {
+        offerer: 'acazaux',
+        assetId: 35,
+        beginTimeSlot: '2024-07-03T17:59:03.956Z',
+        validityLimit: '2024-08-03T00:00:00.000Z',
+        price: 0,
+        deposit: 0,
+        cancellationFee: 0,
+        rentInformation: {
+          delayMargin: 0,
+          lateRestitutionPenalty: 0,
+          deteriorationPenalty: 0,
+          nonRestitutionPenalty: 0
+        },
+        endTimeSlot: '2024-08-03T00:00:00.000Z',
+        offeredQuantity: 10,
+        remainingQuantity: 10
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'error',
+  message: 'error creating an offer',
+  timestamp: '2024-07-03T15:59:07.382Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-07-03T15:59:07.382Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    offer: {
+      offerer: 'acazaux',
+      assetId: 0,
+      beginTimeSlot: '2024-07-03T18:04:03.117Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10,
+      remainingQuantity: 10
+    },
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '' },
+        { attributeName: 'City/Village', value: '' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' }
+      ]
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:04:03.879Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    name: 'apple',
+    description: '',
+    assetType: 'Fruit',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 11,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: 'golden' },
+      { attributeName: 'GPS', value: '' },
+      { attributeName: 'City/Village', value: '' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:04:03.880Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-07-03T16:04:06.898Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 36,
+    beginTimeSlot: '2024-07-03T18:04:03.117Z',
+    validityLimit: '2024-08-03T00:00:00.000Z',
+    price: 0,
+    deposit: 0,
+    cancellationFee: 0,
+    endTimeSlot: '2024-08-03T00:00:00.000Z',
+    offeredQuantity: 10,
+    remainingQuantity: 10
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:04:07.257Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating an offer',
+  timestamp: '2024-07-03T16:04:11.450Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    offer: {
+      offerer: 'acazaux',
+      assetId: 0,
+      beginTimeSlot: '2024-07-03T18:05:30.822Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10,
+      remainingQuantity: 10
+    },
+    asset: {
+      name: 'strawberry',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: '' },
+        { attributeName: 'GPS', value: '' },
+        { attributeName: 'City/Village', value: '' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' }
+      ]
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:05:31.643Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    name: 'strawberry',
+    description: '',
+    assetType: 'Fruit',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 11,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: '' },
+      { attributeName: 'GPS', value: '' },
+      { attributeName: 'City/Village', value: '' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:05:31.645Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataReceived: {
+    code: 400,
+    message: 'You have already an immaterial asset with this assetType'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'error',
+  message: 'error creating one asset',
+  timestamp: '2024-07-03T16:05:35.739Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-07-03T16:05:35.739Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    offer: {
+      offerer: 'acazaux',
+      assetId: 0,
+      beginTimeSlot: '2024-07-03T18:07:17.304Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10,
+      remainingQuantity: 10
+    },
+    asset: {
+      name: 'grape',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [ { attributeName: 'GPS', value: '<37.4219983,-122.084>' } ]
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:07:18.047Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    name: 'grape',
+    description: '',
+    assetType: 'Fruit',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 11,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [ { attributeName: 'GPS', value: '<37.4219983,-122.084>' } ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:07:18.049Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataReceived: {
+    code: 400,
+    message: 'You have already an immaterial asset with this assetType'
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'error',
+  message: 'error creating one asset',
+  timestamp: '2024-07-03T16:07:20.059Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-07-03T16:07:20.060Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    offer: {
+      offerer: 'acazaux',
+      assetId: 0,
+      beginTimeSlot: '2024-07-03T18:10:34.549Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10,
+      remainingQuantity: 10
+    },
+    asset: {
+      name: 'grape',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [ { attributeName: 'GPS', value: '<37.4219983,-122.084>' } ]
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:10:35.276Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: 'Fruit2',
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:10:36.757Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: { message: 'AssetType successfully created' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating one assetType in ODEP or localDB',
+  timestamp: '2024-07-03T16:10:38.832Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-07-03T16:10:38.832Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    name: 'grape',
+    description: '',
+    assetType: 'Fruit2',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 11,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [ { attributeName: 'GPS', value: '<37.4219983,-122.084>' } ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:10:38.833Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-07-03T16:10:43.952Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-07-03T16:10:44.235Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: undefined,
+    beginTimeSlot: '2024-07-03T18:10:34.549Z',
+    validityLimit: '2024-08-03T00:00:00.000Z',
+    price: 0,
+    deposit: 0,
+    cancellationFee: 0,
+    endTimeSlot: '2024-08-03T00:00:00.000Z',
+    offeredQuantity: 10,
+    remainingQuantity: 10
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:10:44.235Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'assetId' ],
+          message: 'Missing required property: assetId',
+          path: '#/'
+        }
+      ],
+      content: {
+        offerer: 'acazaux',
+        beginTimeSlot: '2024-07-03T18:10:34.549Z',
+        validityLimit: '2024-08-03T00:00:00.000Z',
+        price: 0,
+        deposit: 0,
+        cancellationFee: 0,
+        endTimeSlot: '2024-08-03T00:00:00.000Z',
+        offeredQuantity: 10,
+        remainingQuantity: 10
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'error',
+  message: 'error creating an offer',
+  timestamp: '2024-07-03T16:10:44.282Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'error',
+  message: 'error creating one assetType',
+  timestamp: '2024-07-03T16:10:44.282Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    offer: {
+      offerer: 'acazaux',
+      assetId: 0,
+      beginTimeSlot: '2024-07-03T18:16:37.157Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10,
+      remainingQuantity: 10
+    },
+    asset: {
+      name: 'grape',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [ { attributeName: 'GPS', value: '<37.4219983,-122.084>' } ]
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:16:37.849Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: 'Fruit3',
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:16:39.003Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: { message: 'AssetType successfully created' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating one assetType in ODEP or localDB',
+  timestamp: '2024-07-03T16:16:41.010Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-07-03T16:16:41.010Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    name: 'grape',
+    description: '',
+    assetType: 'Fruit3',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 11,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [ { attributeName: 'GPS', value: '<37.4219983,-122.084>' } ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:16:41.011Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-07-03T16:16:45.128Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-07-03T16:16:45.413Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 38,
+    beginTimeSlot: '2024-07-03T18:16:37.157Z',
+    validityLimit: '2024-08-03T00:00:00.000Z',
+    price: 0,
+    deposit: 0,
+    cancellationFee: 0,
+    endTimeSlot: '2024-08-03T00:00:00.000Z',
+    offeredQuantity: 10,
+    remainingQuantity: 10
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-03T16:16:45.413Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE2NzAsImV4cCI6MTcyMDAyODg3MH0.rOe4WCQ3pnD7q4cGwdYM9D9cYRSaATCEkF71YiTfPNE',
+  level: 'info',
+  message: 'success creating an offer',
+  timestamp: '2024-07-03T16:16:50.441Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataToSend: {
+    requestor: 'acazaux',
+    beginTimeSlot: '2024-07-04T16:47:43.839Z',
+    endTimeSlot: '2024-08-03T00:00:00.000Z',
+    validityLimit: '2024-08-03T00:00:00.000Z',
+    transactionType: 'sale/purchase',
+    offerIds: 28
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwOTk3MTksImV4cCI6MTcyMDEwNjkxOX0.5hpMUs-BRvZtQz0QvwZvpRjobgbCxZOq6fK93kfXUJU',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-04T14:47:43.725Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'array', 'integer' ],
+          message: 'Expected type array but found type integer',
+          path: '#/offerIds',
+          description: 'required in case of requesting specific offers'
+        }
+      ],
+      content: {
+        requestor: 'acazaux',
+        beginTimeSlot: '2024-07-04T16:47:43.839Z',
+        endTimeSlot: '2024-08-03T00:00:00.000Z',
+        validityLimit: '2024-08-03T00:00:00.000Z',
+        transactionType: 'sale/purchase',
+        offerIds: 28
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwOTk3MTksImV4cCI6MTcyMDEwNjkxOX0.5hpMUs-BRvZtQz0QvwZvpRjobgbCxZOq6fK93kfXUJU',
+  level: 'error',
+  message: 'error creating one request',
+  timestamp: '2024-07-04T14:47:43.754Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 36,
+      beginTimeSlot: '2024-07-03T18:04:03.000Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T14:30:21.139Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'cancellationFee' ],
+          message: 'Missing required property: cancellationFee',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'deposit' ],
+          message: 'Missing required property: deposit',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'price' ],
+          message: 'Missing required property: price',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'validityLimit' ],
+          message: 'Missing required property: validityLimit',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'beginTimeSlot' ],
+          message: 'Missing required property: beginTimeSlot',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'assetId' ],
+          message: 'Missing required property: assetId',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'offerer' ],
+          message: 'Missing required property: offerer',
+          path: '#/'
+        }
+      ],
+      content: {
+        asset: {
+          name: 'apple',
+          description: '',
+          assetType: 'Fruit',
+          unit: '',
+          owner: 'acazaux',
+          transactionType: 'sale/purchase',
+          totalQuantity: 11,
+          regulatedId: '',
+          regulator: 'false',
+          image: '',
+          specificAttributes: [
+            { attributeName: 'Type', value: '' },
+            { attributeName: 'Variety', value: 'golden' },
+            { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+            { attributeName: 'City/Village', value: '' }
+          ]
+        },
+        offer: {
+          offerer: 'acazaux',
+          assetId: 36,
+          beginTimeSlot: '2024-07-03T18:04:03.000Z',
+          validityLimit: '2024-08-03T00:00:00.000Z',
+          price: 0,
+          deposit: 0,
+          cancellationFee: 0,
+          endTimeSlot: '2024-08-03T00:00:00.000Z',
+          offeredQuantity: 10
+        }
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'error',
+  message: 'error updating an offer',
+  timestamp: '2024-07-05T14:30:21.211Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 36,
+      beginTimeSlot: '2024-07-03T18:04:03.000Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T14:32:00.493Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'cancellationFee' ],
+          message: 'Missing required property: cancellationFee',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'deposit' ],
+          message: 'Missing required property: deposit',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'price' ],
+          message: 'Missing required property: price',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'validityLimit' ],
+          message: 'Missing required property: validityLimit',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'beginTimeSlot' ],
+          message: 'Missing required property: beginTimeSlot',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'assetId' ],
+          message: 'Missing required property: assetId',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'offerer' ],
+          message: 'Missing required property: offerer',
+          path: '#/'
+        }
+      ],
+      content: {
+        asset: {
+          name: 'apple',
+          description: '',
+          assetType: 'Fruit',
+          unit: '',
+          owner: 'acazaux',
+          transactionType: 'sale/purchase',
+          totalQuantity: 11,
+          regulatedId: '',
+          regulator: 'false',
+          image: '',
+          specificAttributes: [
+            { attributeName: 'Type', value: '' },
+            { attributeName: 'Variety', value: 'golden' },
+            { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+            { attributeName: 'City/Village', value: '' }
+          ]
+        },
+        offer: {
+          offerer: 'acazaux',
+          assetId: 36,
+          beginTimeSlot: '2024-07-03T18:04:03.000Z',
+          validityLimit: '2024-08-03T00:00:00.000Z',
+          price: 0,
+          deposit: 0,
+          cancellationFee: 0,
+          endTimeSlot: '2024-08-03T00:00:00.000Z',
+          offeredQuantity: 10
+        }
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'error',
+  message: 'error updating an offer',
+  timestamp: '2024-07-05T14:32:00.563Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 16,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 36,
+      beginTimeSlot: '2024-07-03T18:04:03.000Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 15
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T14:34:04.489Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'cancellationFee' ],
+          message: 'Missing required property: cancellationFee',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'deposit' ],
+          message: 'Missing required property: deposit',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'price' ],
+          message: 'Missing required property: price',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'validityLimit' ],
+          message: 'Missing required property: validityLimit',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'beginTimeSlot' ],
+          message: 'Missing required property: beginTimeSlot',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'assetId' ],
+          message: 'Missing required property: assetId',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'offerer' ],
+          message: 'Missing required property: offerer',
+          path: '#/'
+        }
+      ],
+      content: {
+        asset: {
+          name: 'apple',
+          description: '',
+          assetType: 'Fruit',
+          unit: '',
+          owner: 'acazaux',
+          transactionType: 'sale/purchase',
+          totalQuantity: 16,
+          regulatedId: '',
+          regulator: 'false',
+          image: '',
+          specificAttributes: [
+            { attributeName: 'Type', value: '' },
+            { attributeName: 'Variety', value: 'golden' },
+            { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+            { attributeName: 'City/Village', value: '' }
+          ]
+        },
+        offer: {
+          offerer: 'acazaux',
+          assetId: 36,
+          beginTimeSlot: '2024-07-03T18:04:03.000Z',
+          validityLimit: '2024-08-03T00:00:00.000Z',
+          price: 0,
+          deposit: 0,
+          cancellationFee: 0,
+          endTimeSlot: '2024-08-03T00:00:00.000Z',
+          offeredQuantity: 15
+        }
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'error',
+  message: 'error updating an offer',
+  timestamp: '2024-07-05T14:34:04.558Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 16,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 36,
+      beginTimeSlot: '2024-07-03T18:04:03.000Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 15
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T14:36:53.177Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'cancellationFee' ],
+          message: 'Missing required property: cancellationFee',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'deposit' ],
+          message: 'Missing required property: deposit',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'price' ],
+          message: 'Missing required property: price',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'validityLimit' ],
+          message: 'Missing required property: validityLimit',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'beginTimeSlot' ],
+          message: 'Missing required property: beginTimeSlot',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'assetId' ],
+          message: 'Missing required property: assetId',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'offerer' ],
+          message: 'Missing required property: offerer',
+          path: '#/'
+        }
+      ],
+      content: {
+        asset: {
+          name: 'apple',
+          description: '',
+          assetType: 'Fruit',
+          unit: '',
+          owner: 'acazaux',
+          transactionType: 'sale/purchase',
+          totalQuantity: 16,
+          regulatedId: '',
+          regulator: 'false',
+          image: '',
+          specificAttributes: [
+            { attributeName: 'Type', value: '' },
+            { attributeName: 'Variety', value: 'golden' },
+            { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+            { attributeName: 'City/Village', value: '' }
+          ]
+        },
+        offer: {
+          offerer: 'acazaux',
+          assetId: 36,
+          beginTimeSlot: '2024-07-03T18:04:03.000Z',
+          validityLimit: '2024-08-03T00:00:00.000Z',
+          price: 0,
+          deposit: 0,
+          cancellationFee: 0,
+          endTimeSlot: '2024-08-03T00:00:00.000Z',
+          offeredQuantity: 15
+        }
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'error',
+  message: 'error updating an offer',
+  timestamp: '2024-07-05T14:36:53.246Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataToSend: {
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 16,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 36,
+      beginTimeSlot: '2024-07-03T18:04:03.000Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 15
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T14:37:02.920Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOffer',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'cancellationFee' ],
+          message: 'Missing required property: cancellationFee',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'deposit' ],
+          message: 'Missing required property: deposit',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'price' ],
+          message: 'Missing required property: price',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'validityLimit' ],
+          message: 'Missing required property: validityLimit',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'beginTimeSlot' ],
+          message: 'Missing required property: beginTimeSlot',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'assetId' ],
+          message: 'Missing required property: assetId',
+          path: '#/'
+        },
+        {
+          code: 'OBJECT_MISSING_REQUIRED_PROPERTY',
+          params: [ 'offerer' ],
+          message: 'Missing required property: offerer',
+          path: '#/'
+        }
+      ],
+      content: {
+        asset: {
+          name: 'apple',
+          description: '',
+          assetType: 'Fruit',
+          unit: '',
+          owner: 'acazaux',
+          transactionType: 'sale/purchase',
+          totalQuantity: 16,
+          regulatedId: '',
+          regulator: 'false',
+          image: '',
+          specificAttributes: [
+            { attributeName: 'Type', value: '' },
+            { attributeName: 'Variety', value: 'golden' },
+            { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+            { attributeName: 'City/Village', value: '' }
+          ]
+        },
+        offer: {
+          offerer: 'acazaux',
+          assetId: 36,
+          beginTimeSlot: '2024-07-03T18:04:03.000Z',
+          validityLimit: '2024-08-03T00:00:00.000Z',
+          price: 0,
+          deposit: 0,
+          cancellationFee: 0,
+          endTimeSlot: '2024-08-03T00:00:00.000Z',
+          offeredQuantity: 15
+        }
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'error',
+  message: 'error updating an offer',
+  timestamp: '2024-07-05T14:37:03.009Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataToSend: {
+    name: 'apple',
+    description: '',
+    assetType: 'Fruit',
+    unit: '',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 16,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: 'golden' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+      { attributeName: 'City/Village', value: '' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T14:39:46.301Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataReceived: { message: 'Asset successfully updated' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'info',
+  message: 'success updating one asset',
+  timestamp: '2024-07-05T14:39:49.516Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  dataToSend: {
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 16,
+      regulatedId: '',
+      regulator: 'false',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 36,
+      beginTimeSlot: '2024-07-03T18:04:03.000Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 15
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T14:39:50.035Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-07-05T14:39:54.157Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataToSend: {
+    name: 'apple',
+    description: '',
+    assetType: 'Fruit',
+    unit: '',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 16,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: 'golden' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+      { attributeName: 'City/Village', value: '' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T15:09:37.019Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataReceived: { message: 'Asset successfully updated' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'info',
+  message: 'success updating one asset',
+  timestamp: '2024-07-05T15:09:39.254Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  dataToSend: {
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 16,
+      regulatedId: '',
+      regulator: 'false',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 36,
+      beginTimeSlot: '2024-07-03T18:04:03.000Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 15
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T15:09:39.787Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-07-05T15:09:44.983Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataToSend: {
+    name: 'apple',
+    description: '',
+    assetType: 'Fruit',
+    unit: '',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 11,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: 'golden' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+      { attributeName: 'City/Village', value: '' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T15:10:08.890Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataReceived: { message: 'Asset successfully updated' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'info',
+  message: 'success updating one asset',
+  timestamp: '2024-07-05T15:10:12.025Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  dataToSend: {
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 36,
+      beginTimeSlot: '2024-07-03T18:04:03.000Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T15:10:12.429Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-07-05T15:10:16.584Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataToSend: {
+    name: 'apple',
+    description: '',
+    assetType: 'Fruit',
+    unit: '',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 11,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: 'golden' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+      { attributeName: 'City/Village', value: '' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T15:11:09.715Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataReceived: { message: 'Asset successfully updated' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'info',
+  message: 'success updating one asset',
+  timestamp: '2024-07-05T15:11:13.985Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  dataToSend: {
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 36,
+      beginTimeSlot: '2024-07-03T18:04:03.000Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T15:11:14.493Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-07-05T15:11:18.514Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataToSend: {
+    name: 'apple',
+    description: '',
+    assetType: 'Fruit',
+    unit: '',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 11,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: 'golden' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+      { attributeName: 'City/Village', value: '' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T15:13:49.343Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataReceived: { message: 'Asset successfully updated' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'info',
+  message: 'success updating one asset',
+  timestamp: '2024-07-05T15:13:51.471Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  dataToSend: {
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 11,
+      regulatedId: '',
+      regulator: 'false',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 36,
+      beginTimeSlot: '2024-07-03T18:04:03.000Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 10
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T15:13:51.979Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxODcyNjksImV4cCI6MTcyMDE5NDQ2OX0.JhDTLDRf5JFAtqiA5AihJU2MgofqFYt7nwZ37Whsw80',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-07-05T15:13:56.177Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataToSend: {
+    name: 'apple',
+    description: '',
+    assetType: 'Fruit',
+    unit: '',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 16,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: 'golden' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+      { attributeName: 'City/Village', value: '' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxOTI2NjgsImV4cCI6MTcyMDE5OTg2OH0.CZHABq_7l_eoHX-QNOHYGxBZx8wgXbyXCqjVUFbQOYs',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T15:18:06.126Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataReceived: { message: 'Asset successfully updated' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxOTI2NjgsImV4cCI6MTcyMDE5OTg2OH0.CZHABq_7l_eoHX-QNOHYGxBZx8wgXbyXCqjVUFbQOYs',
+  level: 'info',
+  message: 'success updating one asset',
+  timestamp: '2024-07-05T15:18:08.290Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  dataToSend: {
+    asset: {
+      name: 'apple',
+      description: '',
+      assetType: 'Fruit',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 16,
+      regulatedId: '',
+      regulator: 'false',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: 'golden' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 36,
+      beginTimeSlot: '2024-07-03T18:04:03.000Z',
+      validityLimit: '2024-08-03T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-03T00:00:00.000Z',
+      offeredQuantity: 15
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxOTI2NjgsImV4cCI6MTcyMDE5OTg2OH0.CZHABq_7l_eoHX-QNOHYGxBZx8wgXbyXCqjVUFbQOYs',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T15:18:08.665Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAxOTI2NjgsImV4cCI6MTcyMDE5OTg2OH0.CZHABq_7l_eoHX-QNOHYGxBZx8wgXbyXCqjVUFbQOYs',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-07-05T15:18:13.819Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'Resilink',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAxOTQ1NDAsImV4cCI6MTcyMDIwMTc0MH0.x1JM_JyjaLwOvNcGzDsH2x3qmfuLj4timUTN7wqatQ8',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T15:52:09.840Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAxOTQ1NDAsImV4cCI6MTcyMDIwMTc0MH0.x1JM_JyjaLwOvNcGzDsH2x3qmfuLj4timUTN7wqatQ8',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-05T15:52:12.027Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  dataToSend: {
+    description: 'ResilinkDev',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAxOTQ1NDAsImV4cCI6MTcyMDIwMTc0MH0.x1JM_JyjaLwOvNcGzDsH2x3qmfuLj4timUTN7wqatQ8',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-05T15:52:18.679Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetTypes',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MjAxOTQ1NDAsImV4cCI6MTcyMDIwMTc0MH0.x1JM_JyjaLwOvNcGzDsH2x3qmfuLj4timUTN7wqatQ8',
+  level: 'info',
+  message: 'success updating one assetType',
+  timestamp: '2024-07-05T15:52:20.824Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataToSend: {
+    requestor: 'acazaux',
+    beginTimeSlot: '2024-07-08T10:03:21.266Z',
+    endTimeSlot: '2024-08-03T00:00:00.000Z',
+    validityLimit: '2024-08-03T00:00:00.000Z',
+    transactionType: 'sale/purchase',
+    offerIds: 28
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0MjU3NDIsImV4cCI6MTcyMDQzMjk0Mn0.59JjvbSzARALln2kSJXVILbFMt7hf1JXD7q66rdmjag',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-08T08:03:22.694Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'array', 'integer' ],
+          message: 'Expected type array but found type integer',
+          path: '#/offerIds',
+          description: 'required in case of requesting specific offers'
+        }
+      ],
+      content: {
+        requestor: 'acazaux',
+        beginTimeSlot: '2024-07-08T10:03:21.266Z',
+        endTimeSlot: '2024-08-03T00:00:00.000Z',
+        validityLimit: '2024-08-03T00:00:00.000Z',
+        transactionType: 'sale/purchase',
+        offerIds: 28
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0MjU3NDIsImV4cCI6MTcyMDQzMjk0Mn0.59JjvbSzARALln2kSJXVILbFMt7hf1JXD7q66rdmjag',
+  level: 'error',
+  message: 'error creating one request',
+  timestamp: '2024-07-08T08:03:22.744Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    offer: {
+      offerer: 'acazaux',
+      assetId: 0,
+      beginTimeSlot: '2024-07-08T17:33:17.803Z',
+      validityLimit: '2024-08-08T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-08T00:00:00.000Z',
+      offeredQuantity: 20,
+      remainingQuantity: 20
+    },
+    asset: {
+      name: 'carrot',
+      description: '',
+      assetType: 'Vegetable',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 21,
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [ { attributeName: 'GPS', value: '<37.4219983,-122.084>' } ]
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-08T15:33:18.152Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: 'Vegetable2',
+    description: 'RESILINK',
+    nature: 'immaterial',
+    unit: 'kg',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Variety',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-08T15:33:19.240Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: { message: 'AssetType successfully created' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'info',
+  message: 'success creating one assetType in ODEP or localDB',
+  timestamp: '2024-07-08T15:33:21.303Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-07-08T15:33:21.304Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    name: 'carrot',
+    description: '',
+    assetType: 'Vegetable2',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 21,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [ { attributeName: 'GPS', value: '<37.4219983,-122.084>' } ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-08T15:33:21.304Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-07-08T15:33:26.372Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-07-08T15:33:26.665Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 39,
+    beginTimeSlot: '2024-07-08T17:33:17.803Z',
+    validityLimit: '2024-08-08T00:00:00.000Z',
+    price: 0,
+    deposit: 0,
+    cancellationFee: 0,
+    endTimeSlot: '2024-08-08T00:00:00.000Z',
+    offeredQuantity: 20,
+    remainingQuantity: 20
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-08T15:33:26.665Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'info',
+  message: 'success creating an offer',
+  timestamp: '2024-07-08T15:33:31.786Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOfferAsset',
+  dataToSend: {
+    offer: {
+      offerer: 'acazaux',
+      assetId: 0,
+      beginTimeSlot: '2024-07-08T17:50:18.851Z',
+      validityLimit: '2024-08-08T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0
+    },
+    asset: {
+      name: 'silo',
+      description: '',
+      assetType: 'Storage',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      regulatedId: '',
+      regulator: 'false',
+      image: '',
+      specificAttributes: [ { attributeName: 'GPS', value: '<37.4219983,-122.084>' } ]
+    }
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-08T15:50:19.174Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataToSend: {
+    name: 'Storage2',
+    description: 'RESILINK',
+    nature: 'material',
+    regulated: false,
+    regulator: '',
+    sharingIncentive: false,
+    specificAttributesModel: [
+      {
+        name: 'Type',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'Usage',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'GPS',
+        type: 'geographicPoint',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      },
+      {
+        name: 'City/Village',
+        type: 'string',
+        mandatory: 'false',
+        hasValueList: 'false',
+        valueList: ''
+      }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-08T15:50:20.466Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypesCustom',
+  dataReceived: { message: 'AssetType successfully created' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'info',
+  message: 'success creating one assetType in ODEP or localDB',
+  timestamp: '2024-07-08T15:50:22.550Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'info',
+  message: 'success creating one assetType',
+  timestamp: '2024-07-08T15:50:22.550Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  dataToSend: {
+    name: 'silo',
+    description: '',
+    assetType: 'Storage2',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [ { attributeName: 'GPS', value: '<37.4219983,-122.084>' } ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-08T15:50:22.551Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-07-08T15:50:27.681Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetWithAssetTypeCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'info',
+  message: 'success creating one asset',
+  timestamp: '2024-07-08T15:50:27.972Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  dataToSend: {
+    offerer: 'acazaux',
+    assetId: 40,
+    beginTimeSlot: '2024-07-08T17:50:18.851Z',
+    validityLimit: '2024-08-08T00:00:00.000Z',
+    price: 0,
+    deposit: 0,
+    cancellationFee: 0
+  },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-08T15:50:27.972Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTE1NDcsImV4cCI6MTcyMDQ1ODc0N30.oPPElehcOhK3yrdnGj8v8PURn5o_qJ5_LXHuh4N88Bk',
+  level: 'info',
+  message: 'success creating an offer',
+  timestamp: '2024-07-08T15:50:32.199Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataToSend: {
+    requestor: 'acazaux',
+    beginTimeSlot: '2024-07-08T18:05:58.236Z',
+    endTimeSlot: '2024-08-08T00:00:00.000Z',
+    validityLimit: '2024-08-08T00:00:00.000Z',
+    transactionType: 'sale/purchase',
+    offerIds: 32
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTQ2MDcsImV4cCI6MTcyMDQ2MTgwN30.7TRHo0V7tZ4-VKs43Oi2TIsAKCIv8kc6YVO2Sek5ufI',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-08T16:05:58.565Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'array', 'integer' ],
+          message: 'Expected type array but found type integer',
+          path: '#/offerIds',
+          description: 'required in case of requesting specific offers'
+        }
+      ],
+      content: {
+        requestor: 'acazaux',
+        beginTimeSlot: '2024-07-08T18:05:58.236Z',
+        endTimeSlot: '2024-08-08T00:00:00.000Z',
+        validityLimit: '2024-08-08T00:00:00.000Z',
+        transactionType: 'sale/purchase',
+        offerIds: 32
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA0NTQ2MDcsImV4cCI6MTcyMDQ2MTgwN30.7TRHo0V7tZ4-VKs43Oi2TIsAKCIv8kc6YVO2Sek5ufI',
+  level: 'error',
+  message: 'error creating one request',
+  timestamp: '2024-07-08T16:05:58.616Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataToSend: {
+    name: 'carrot',
+    description: '',
+    assetType: 'Vegetable2',
+    unit: '',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 22,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: '' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+      { attributeName: 'City/Village', value: '' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MTE4NTUsImV4cCI6MTcyMDUxOTA1NX0.XyP9gHUTG5a-6pXXr-D_64eur8GG48MDRtNufucrdEs',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-09T08:39:28.207Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataReceived: { message: 'Asset successfully updated' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MTE4NTUsImV4cCI6MTcyMDUxOTA1NX0.XyP9gHUTG5a-6pXXr-D_64eur8GG48MDRtNufucrdEs',
+  level: 'info',
+  message: 'success updating one asset',
+  timestamp: '2024-07-09T08:39:32.270Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  dataToSend: {
+    asset: {
+      name: 'carrot',
+      description: '',
+      assetType: 'Vegetable2',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 22,
+      regulatedId: '',
+      regulator: 'false',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: '' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 39,
+      beginTimeSlot: '2024-07-08T17:33:17.000Z',
+      validityLimit: '2024-08-08T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-08T00:00:00.000Z',
+      offeredQuantity: 21
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MTE4NTUsImV4cCI6MTcyMDUxOTA1NX0.XyP9gHUTG5a-6pXXr-D_64eur8GG48MDRtNufucrdEs',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-09T08:39:32.708Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MTE4NTUsImV4cCI6MTcyMDUxOTA1NX0.XyP9gHUTG5a-6pXXr-D_64eur8GG48MDRtNufucrdEs',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-07-09T08:39:37.882Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataToSend: {
+    name: 'carrot',
+    description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n',
+    assetType: 'Vegetable2',
+    unit: '',
+    owner: 'acazaux',
+    transactionType: 'sale/purchase',
+    totalQuantity: 23,
+    regulatedId: '',
+    regulator: 'false',
+    specificAttributes: [
+      { attributeName: 'Type', value: '' },
+      { attributeName: 'Variety', value: '' },
+      { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+      { attributeName: 'City/Village', value: '' }
+    ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MTE4NTUsImV4cCI6MTcyMDUxOTA1NX0.XyP9gHUTG5a-6pXXr-D_64eur8GG48MDRtNufucrdEs',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-09T08:40:45.146Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putAssetCustom',
+  dataReceived: { message: 'Asset successfully updated' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MTE4NTUsImV4cCI6MTcyMDUxOTA1NX0.XyP9gHUTG5a-6pXXr-D_64eur8GG48MDRtNufucrdEs',
+  level: 'info',
+  message: 'success updating one asset',
+  timestamp: '2024-07-09T08:40:49.149Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  dataToSend: {
+    asset: {
+      name: 'carrot',
+      description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n',
+      assetType: 'Vegetable2',
+      unit: '',
+      owner: 'acazaux',
+      transactionType: 'sale/purchase',
+      totalQuantity: 23,
+      regulatedId: '',
+      regulator: 'false',
+      specificAttributes: [
+        { attributeName: 'Type', value: '' },
+        { attributeName: 'Variety', value: '' },
+        { attributeName: 'GPS', value: '<37.4219983,-122.084>' },
+        { attributeName: 'City/Village', value: '' }
+      ]
+    },
+    offer: {
+      offerer: 'acazaux',
+      assetId: 39,
+      beginTimeSlot: '2024-07-08T17:33:17.000Z',
+      validityLimit: '2024-08-08T00:00:00.000Z',
+      price: 0,
+      deposit: 0,
+      cancellationFee: 0,
+      endTimeSlot: '2024-08-08T00:00:00.000Z',
+      offeredQuantity: 22
+    }
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MTE4NTUsImV4cCI6MTcyMDUxOTA1NX0.XyP9gHUTG5a-6pXXr-D_64eur8GG48MDRtNufucrdEs',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-09T08:40:49.538Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'putOfferAsset',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MTE4NTUsImV4cCI6MTcyMDUxOTA1NX0.XyP9gHUTG5a-6pXXr-D_64eur8GG48MDRtNufucrdEs',
+  level: 'info',
+  message: 'success updating an offer',
+  timestamp: '2024-07-09T08:40:54.660Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataToSend: {
+    requestor: 'acazaux',
+    beginTimeSlot: '2024-07-09T10:56:10.885Z',
+    endTimeSlot: '2024-08-08T00:00:00.000Z',
+    validityLimit: '2024-08-08T00:00:00.000Z',
+    transactionType: 'sale/purchase',
+    offerIds: 31
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MTE4NTUsImV4cCI6MTcyMDUxOTA1NX0.XyP9gHUTG5a-6pXXr-D_64eur8GG48MDRtNufucrdEs',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-09T08:56:10.949Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataReceived: [
+    {
+      message: 'Wrong data in the body of the request. ',
+      error: [
+        {
+          code: 'INVALID_TYPE',
+          params: [ 'array', 'integer' ],
+          message: 'Expected type array but found type integer',
+          path: '#/offerIds',
+          description: 'required in case of requesting specific offers'
+        }
+      ],
+      content: {
+        requestor: 'acazaux',
+        beginTimeSlot: '2024-07-09T10:56:10.885Z',
+        endTimeSlot: '2024-08-08T00:00:00.000Z',
+        validityLimit: '2024-08-08T00:00:00.000Z',
+        transactionType: 'sale/purchase',
+        offerIds: 31
+      }
+    }
+  ],
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MTE4NTUsImV4cCI6MTcyMDUxOTA1NX0.XyP9gHUTG5a-6pXXr-D_64eur8GG48MDRtNufucrdEs',
+  level: 'error',
+  message: 'error creating one request',
+  timestamp: '2024-07-09T08:56:10.997Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataToSend: {
+    requestor: 'acazaux',
+    beginTimeSlot: '2024-07-09T11:06:45.725Z',
+    endTimeSlot: '2024-08-03T00:00:00.000Z',
+    validityLimit: '2024-08-03T00:00:00.000Z',
+    transactionType: 'sale/purchase',
+    offerIds: [ 28 ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MTU5NzQsImV4cCI6MTcyMDUyMzE3NH0.iP9jZDRu0AhQWAjSnZ0Ew7fs98JhZv0zwSy9dRIGJf0',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-09T09:06:45.749Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MTU5NzQsImV4cCI6MTcyMDUyMzE3NH0.iP9jZDRu0AhQWAjSnZ0Ew7fs98JhZv0zwSy9dRIGJf0',
+  level: 'info',
+  message: 'success creating one request',
+  timestamp: '2024-07-09T09:06:48.820Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  dataToSend: {
+    requestor: 'acazaux',
+    beginTimeSlot: '2024-07-09T12:35:47.148Z',
+    endTimeSlot: '2024-08-03T00:00:00.000Z',
+    validityLimit: '2024-08-03T00:00:00.000Z',
+    transactionType: 'sale/purchase',
+    offerIds: [ 28 ]
+  },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MjEzMzEsImV4cCI6MTcyMDUyODUzMX0.eMK5-4gpB_WHZlbD1XnI4rGrgYlH0x0MmqGZYpAxvuw',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-09T10:35:46.981Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createRequest',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MjEzMzEsImV4cCI6MTcyMDUyODUzMX0.eMK5-4gpB_WHZlbD1XnI4rGrgYlH0x0MmqGZYpAxvuw',
+  level: 'info',
+  message: 'success creating one request',
+  timestamp: '2024-07-09T10:35:51.002Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: { offerId: 28, requestId: 17 },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MjE4ODksImV4cCI6MTcyMDUyOTA4OX0.LlzL0nxK-pkIohzZ281g5KS4_MMwGDSk-7AkCHYlNbI',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-09T10:45:09.130Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createContract',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1MjE4ODksImV4cCI6MTcyMDUyOTA4OX0.LlzL0nxK-pkIohzZ281g5KS4_MMwGDSk-7AkCHYlNbI',
+  level: 'info',
+  message: 'success creationg a contract',
+  timestamp: '2024-07-09T10:45:11.220Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createAssetTypes',
+  dataToSend: { offerId: 28, requestId: 17 },
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1NDEwNzIsImV4cCI6MTcyMDU0ODI3Mn0.Q8ux-Ko3Iw0AGgZfTzjeQn3EHOCJDFiiTbF5Xb07XHk',
+  level: 'warn',
+  message: 'data to send to ODEP',
+  timestamp: '2024-07-09T16:12:11.374Z'
+}
+{
+  service: 'UpdateDataODEPService',
+  from: 'createContract',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjA1NDEwNzIsImV4cCI6MTcyMDU0ODI3Mn0.Q8ux-Ko3Iw0AGgZfTzjeQn3EHOCJDFiiTbF5Xb07XHk',
+  level: 'info',
+  message: 'success creationg a contract',
+  timestamp: '2024-07-09T16:12:14.420Z'
+}

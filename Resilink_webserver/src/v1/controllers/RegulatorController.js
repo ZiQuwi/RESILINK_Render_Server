@@ -16,7 +16,7 @@ const createRegulator = async (req, res) => {
       const response = await RegulatorService.createRegulator(_pathRegulatorODEP, req.body, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      updateDataODEP.error('Catched error', { from: 'createRegulator', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('Catched error', { from: 'createRegulator', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
       res.status(500).send({message: error.message})
     }
 }
@@ -26,7 +26,7 @@ const getAllRegulator = async (req, res) => {
       const response = await RegulatorService.getAllRegulator(_pathRegulatorODEP, req.header('Authorization')); 
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      getDataLogger.error('Catched error', { from: 'getAllRegulator', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      getDataLogger.error('Catched error', { from: 'getAllRegulator', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
       res.status(500).send({message: error.message})
     }
 }
@@ -36,7 +36,7 @@ const getOneRegulator = async (req, res) => {
       const response = await RegulatorService.getOneRegulator(_pathRegulatorODEP, req.body, req.params.id, req.header('Authorization')); 
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      getDataLogger.error('Catched error', { from: 'getOneRegulator', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      getDataLogger.error('Catched error', { from: 'getOneRegulator', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
       res.status(500).send({message: error.message})
     }
 }
@@ -46,7 +46,7 @@ const patchOneRegulator = async (req, res) => {
       const response = await RegulatorService.patchOneRegulator(_pathRegulatorODEP, req.body, req.params.id, req.header('Authorization')); 
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      patchDataODEP.error('Catched error', { from: 'patchOneRegulator', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      patchDataODEP.error('Catched error', { from: 'patchOneRegulator', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
       res.status(500).send({message: error.message})
     }
 }
@@ -56,7 +56,7 @@ const deleteRegulator = async (req, res) => {
       const response = await RegulatorService.deleteRegulator(_pathRegulatorODEP, req.params.id, req.header('Authorization')); 
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      deleteDataODEP.error('Catched error', { from: 'deleteRegulator', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      deleteDataODEP.error('Catched error', { from: 'deleteRegulator', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
       res.status(500).send({message: error.message})
     }
 }

@@ -132,7 +132,7 @@ const getUser = async (id, body) => {
 
     var user = await _collection.findOne({ _id: id });
     if (user != null) {
-      body[i].phoneNumber = user.phoneNumber;
+      body['phoneNumber'] = user.phoneNumber;
     } else {
       throw new getDBError();
     }

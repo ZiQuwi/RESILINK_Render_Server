@@ -674,3 +674,298 @@
   message: 'success deleting one asset',
   timestamp: '2024-05-27T15:15:30.637Z'
 }
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOneProsummer',
+  id: 'resilinkt',
+  tokenUsed: 'Token not given',
+  level: 'warn',
+  message: 'id to send to ODEP',
+  timestamp: '2024-06-26T13:22:20.721Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOneProsummer',
+  dataReceived: { code: 401, message: 'Token is not given' },
+  tokenUsed: 'Token not given',
+  level: 'error',
+  message: 'error: Unauthorize',
+  timestamp: '2024-06-26T13:22:20.761Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteProsumerODEPRESILINK',
+  dataReceiver: { code: 401, message: 'Token is not given' },
+  level: 'error',
+  message: 'error deleting a prosumer account in RESILINK DB',
+  timestamp: '2024-06-26T13:22:20.761Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOneProsummer',
+  id: 'resilinkt',
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgwNzcsImV4cCI6MTcxOTQxNTI3N30.OpK9qAXNX0OU2VDVLyvV2eHcd3LMXEqjui34rtrcSwQ',
+  level: 'warn',
+  message: 'id to send to ODEP',
+  timestamp: '2024-06-26T13:22:31.038Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOneProsummer',
+  dataReceived: { code: 404, message: 'Prosumer does not exist' },
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgwNzcsImV4cCI6MTcxOTQxNTI3N30.OpK9qAXNX0OU2VDVLyvV2eHcd3LMXEqjui34rtrcSwQ',
+  level: 'error',
+  message: 'error deleting one prosummer',
+  timestamp: '2024-06-26T13:22:33.137Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteProsumerODEPRESILINK',
+  dataReceiver: { code: 404, message: 'Prosumer does not exist' },
+  level: 'error',
+  message: 'error deleting a prosumer account in RESILINK DB',
+  timestamp: '2024-06-26T13:22:33.137Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOneProsummer',
+  id: 'resilinkT',
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgwNzcsImV4cCI6MTcxOTQxNTI3N30.OpK9qAXNX0OU2VDVLyvV2eHcd3LMXEqjui34rtrcSwQ',
+  level: 'warn',
+  message: 'id to send to ODEP',
+  timestamp: '2024-06-26T13:22:42.914Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOneProsummer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgwNzcsImV4cCI6MTcxOTQxNTI3N30.OpK9qAXNX0OU2VDVLyvV2eHcd3LMXEqjui34rtrcSwQ',
+  level: 'info',
+  message: 'success deleting one prosummer',
+  timestamp: '2024-06-26T13:22:46.004Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteUser',
+  id: 'resilinkT',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgwNzcsImV4cCI6MTcxOTQxNTI3N30.OpK9qAXNX0OU2VDVLyvV2eHcd3LMXEqjui34rtrcSwQ',
+  level: 'warn',
+  message: 'id to send to ODEP',
+  timestamp: '2024-06-26T13:23:02.053Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteUser',
+  dataReceiver: 'data is not defined',
+  level: 'error',
+  message: 'error deleting a user account in ODEP DB',
+  timestamp: '2024-06-26T13:23:02.097Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteUser',
+  id: '667ae814c2c3851e2f93e6f0',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgwNzcsImV4cCI6MTcxOTQxNTI3N30.OpK9qAXNX0OU2VDVLyvV2eHcd3LMXEqjui34rtrcSwQ',
+  level: 'warn',
+  message: 'id to send to ODEP',
+  timestamp: '2024-06-26T13:23:16.392Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgwNzcsImV4cCI6MTcxOTQxNTI3N30.OpK9qAXNX0OU2VDVLyvV2eHcd3LMXEqjui34rtrcSwQ',
+  level: 'info',
+  message: 'success deleting one user',
+  timestamp: '2024-06-26T13:23:16.436Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOneProsummer',
+  id: 'aze',
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgyOTYsImV4cCI6MTcxOTQxNTQ5Nn0.ER1PCpY2bpRlvzTbRzAuB9X0zWonu8XjjYPnFYtW_fc',
+  level: 'warn',
+  message: 'id to send to ODEP',
+  timestamp: '2024-06-26T13:46:35.694Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOneProsummer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgyOTYsImV4cCI6MTcxOTQxNTQ5Nn0.ER1PCpY2bpRlvzTbRzAuB9X0zWonu8XjjYPnFYtW_fc',
+  level: 'info',
+  message: 'success deleting one prosummer',
+  timestamp: '2024-06-26T13:46:38.804Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteUser',
+  id: '667c16fcc2c3851e2f93e6f1',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgyOTYsImV4cCI6MTcxOTQxNTQ5Nn0.ER1PCpY2bpRlvzTbRzAuB9X0zWonu8XjjYPnFYtW_fc',
+  level: 'warn',
+  message: 'id to send to ODEP',
+  timestamp: '2024-06-26T13:46:53.072Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgyOTYsImV4cCI6MTcxOTQxNTQ5Nn0.ER1PCpY2bpRlvzTbRzAuB9X0zWonu8XjjYPnFYtW_fc',
+  level: 'info',
+  message: 'success deleting one user',
+  timestamp: '2024-06-26T13:46:53.116Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOneProsummer',
+  id: 'aze',
+  tokenUsed: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgyOTYsImV4cCI6MTcxOTQxNTQ5Nn0.ER1PCpY2bpRlvzTbRzAuB9X0zWonu8XjjYPnFYtW_fc',
+  level: 'warn',
+  message: 'id to send to ODEP',
+  timestamp: '2024-06-26T13:55:59.478Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOneProsummer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgyOTYsImV4cCI6MTcxOTQxNTQ5Nn0.ER1PCpY2bpRlvzTbRzAuB9X0zWonu8XjjYPnFYtW_fc',
+  level: 'info',
+  message: 'success deleting one prosummer',
+  timestamp: '2024-06-26T13:56:02.559Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteUser',
+  id: '667c1ccfc2c3851e2f93e6f2',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgyOTYsImV4cCI6MTcxOTQxNTQ5Nn0.ER1PCpY2bpRlvzTbRzAuB9X0zWonu8XjjYPnFYtW_fc',
+  level: 'warn',
+  message: 'id to send to ODEP',
+  timestamp: '2024-06-26T13:56:14.784Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteUser',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzYjVlNmNmYTNlZjFkY2VhMmRhNzUiLCJpYXQiOjE3MTk0MDgyOTYsImV4cCI6MTcxOTQxNTQ5Nn0.ER1PCpY2bpRlvzTbRzAuB9X0zWonu8XjjYPnFYtW_fc',
+  level: 'info',
+  message: 'success deleting one user',
+  timestamp: '2024-06-26T13:56:14.826Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  offerId: '23',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMDA4MzIsImV4cCI6MTcyMDAwODAzMn0.hVTd1KA0ODxndeUa0agbtsqJao27-JtNm5u8lLBkIik',
+  level: 'warn',
+  message: 'id to used in ODEP',
+  timestamp: '2024-07-03T10:01:51.930Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMDA4MzIsImV4cCI6MTcyMDAwODAzMn0.hVTd1KA0ODxndeUa0agbtsqJao27-JtNm5u8lLBkIik',
+  level: 'info',
+  message: 'success deleting an offer',
+  timestamp: '2024-07-03T10:01:56.003Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  offerId: '22',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMDA4MzIsImV4cCI6MTcyMDAwODAzMn0.hVTd1KA0ODxndeUa0agbtsqJao27-JtNm5u8lLBkIik',
+  level: 'warn',
+  message: 'id to used in ODEP',
+  timestamp: '2024-07-03T10:01:58.946Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMDA4MzIsImV4cCI6MTcyMDAwODAzMn0.hVTd1KA0ODxndeUa0agbtsqJao27-JtNm5u8lLBkIik',
+  level: 'info',
+  message: 'success deleting an offer',
+  timestamp: '2024-07-03T10:02:01.966Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  offerId: '21',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMDA4MzIsImV4cCI6MTcyMDAwODAzMn0.hVTd1KA0ODxndeUa0agbtsqJao27-JtNm5u8lLBkIik',
+  level: 'warn',
+  message: 'id to used in ODEP',
+  timestamp: '2024-07-03T10:02:03.667Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMDA4MzIsImV4cCI6MTcyMDAwODAzMn0.hVTd1KA0ODxndeUa0agbtsqJao27-JtNm5u8lLBkIik',
+  level: 'info',
+  message: 'success deleting an offer',
+  timestamp: '2024-07-03T10:02:07.813Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMDA4MzIsImV4cCI6MTcyMDAwODAzMn0.hVTd1KA0ODxndeUa0agbtsqJao27-JtNm5u8lLBkIik',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-07-03T10:02:32.079Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMDA4MzIsImV4cCI6MTcyMDAwODAzMn0.hVTd1KA0ODxndeUa0agbtsqJao27-JtNm5u8lLBkIik',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-07-03T10:02:37.668Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMDA4MzIsImV4cCI6MTcyMDAwODAzMn0.hVTd1KA0ODxndeUa0agbtsqJao27-JtNm5u8lLBkIik',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-07-03T10:02:43.784Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE5OTMsImV4cCI6MTcyMDAyOTE5M30.bG6c_2X8H9Zp2DjfDN81ecanijKarkqyx5I466WkowQ',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-07-03T15:57:33.803Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE5OTMsImV4cCI6MTcyMDAyOTE5M30.bG6c_2X8H9Zp2DjfDN81ecanijKarkqyx5I466WkowQ',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-07-03T16:03:39.101Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwMjE5OTMsImV4cCI6MTcyMDAyOTE5M30.bG6c_2X8H9Zp2DjfDN81ecanijKarkqyx5I466WkowQ',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-07-03T16:16:01.970Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  offerId: '29',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwOTk3MTksImV4cCI6MTcyMDEwNjkxOX0.5hpMUs-BRvZtQz0QvwZvpRjobgbCxZOq6fK93kfXUJU',
+  level: 'warn',
+  message: 'id to used in ODEP',
+  timestamp: '2024-07-04T14:40:23.407Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteOffer',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwOTk3MTksImV4cCI6MTcyMDEwNjkxOX0.5hpMUs-BRvZtQz0QvwZvpRjobgbCxZOq6fK93kfXUJU',
+  level: 'info',
+  message: 'success deleting an offer',
+  timestamp: '2024-07-04T14:40:26.465Z'
+}
+{
+  service: 'DeleteDataODEPService',
+  from: 'deleteAssetCustom',
+  tokenUsed: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwODlhZGMyYzM4NTFlMmY5M2U2ZGQiLCJpYXQiOjE3MjAwOTk3MTksImV4cCI6MTcyMDEwNjkxOX0.5hpMUs-BRvZtQz0QvwZvpRjobgbCxZOq6fK93kfXUJU',
+  level: 'info',
+  message: 'success deleting one asset',
+  timestamp: '2024-07-04T14:40:31.539Z'
+}

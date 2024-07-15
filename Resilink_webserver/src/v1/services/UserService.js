@@ -31,8 +31,9 @@ const functionGetTokenUser = async (body) => {
     } else {
       getDataLogger.info('success retrieving user\'s token', { from: 'functionGetTokenUser'});
     }
-    await User.getUser(data._id, data);
+    await User.getUser(data['_id'], data);
     data['job'] = await Prosumer.getJobProsummer(data.userName);
+    console.log(data);
     return [data, response.status];
 };
 
@@ -284,8 +285,6 @@ const updateUser = async (url, id, body, token) => {
        body
     );
     const data = await Utils.streamToJSON(response.body);
-    console.log("dans updateUser et response.status = " + response.status);
-    console.log("data: " + data);
     if(response.status == 401) {
       getDataLogger.error('error: Unauthorize', { from: 'updateUser', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
     } else if(response.status != 200) {
@@ -315,7 +314,6 @@ const updateUserCustom = async (url, id, body, token) => {
     }
     job = body['job'];
     delete body['job'];
-
     const userODEP = await updateUser(url, id, body, token);
     if(userODEP[1] == 401) {
       updateDataODEP.error('error: Unauthorize', { from: 'updateUser', dataReceived: userODEP[0], tokenUsed: token == null ? "Token not given" : token});
@@ -333,7 +331,10 @@ const updateUserCustom = async (url, id, body, token) => {
     }
     await User.updateUser(id, body);
     await Prosumer.updateJob(body['userName'], job);
+    console.log(body)
     body['job'] = job;
+    console.log("apres changmeent de job");
+    console.log(body)
     return [body, userODEP[1]];
   } catch (e) {
     getDataLogger.error("error accessing ODEP", {from: 'updateUser', dataReceiver: e.message});

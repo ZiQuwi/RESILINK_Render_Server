@@ -193,11 +193,13 @@ const updateJob  = async (prosumerId, job) => {
       { $set: { "job": job } }
     );
 
-    if (result.modifiedCount !== 1) {
-      throw new UpdateDBError("Failed to update prosumer's job field");
+    if (result.matchedCount === 0) {
+      throw new UpdateDBError("Prosumer not found");
+    } else if (result.modifiedCount === 0) {
+      updateData.info('The job value was the same, no update performed.', { from: 'updateJob' });
+    } else {
+      updateData.info('Success updating prosumer\'s job field', { from: 'updateJob' });
     }
-
-    updateData.info('Success updating prosumer\'s job field', { from: 'updateJob' });
 
   } catch (e){
     if (e instanceof UpdateDBError) {

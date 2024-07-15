@@ -8,6 +8,7 @@ const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 const Utils = require("./Utils.js");
 const AssetTypes = require("./AssetTypeService.js");
 const Asset = require("./AssetService.js");
+const Contract = require("./ContractService.js");
 
 
 //Retrieves all valid offers for sale or lease in ODEP for RESILINK
@@ -50,6 +51,62 @@ const getAllOfferForResilinkCustom = async (url, token) => {
         }
     }
     getDataLogger.info("successful data retrieval", { from: 'getAllOfferFilteredCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    return [allOfferResilink, allOffer.status];
+};
+
+//Retrieves 3 last valid offers for sale or lease in ODEP for RESILINK
+const getLastThreeOfferForResilinkCustom = async (url, token) => {
+
+  //Retrieves all data needed to confirm the offers validity
+    const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
+    const allAssetResilink = await Asset.getAllAssetResilink(token);
+    const allOffer = await Utils.fetchJSONData(
+        'GET',
+        url + "all", 
+        headers = {'accept': 'application/json',
+        'Authorization': token});
+    var allOfferResilink = {};
+    const data = await Utils.streamToJSON(allOffer.body);
+
+    //Checks that none of the functions are error returns by ODEP
+    if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
+      getDataLogger.error('error: Unauthorize', { from: 'getLastThreeOfferForResilinkCustom', tokenUsed: token == null ? "Token not given" : token});
+      return [allAssetType[1] == 401 ? allAssetType[0] : allAssetResilink[1] == 401 ? allAssetResilink[0] : data, 401];
+    } else if(allOffer.status != 200 || allAssetType[1] != 200 || allAssetResilink[1] != 200) {
+      getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getLastThreeOfferForResilinkCustom', dataOffer: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
+    };
+
+    const validOffers = [];
+    const validMapAssets = {};
+    //For each offer, checks if its validity date has not passed and if there is a quantity above 0 if it is an immaterial offer.
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          const element = data[key];
+          if (
+            new Date(element['validityLimit']) > new Date() && 
+            ( allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] !== null ?  
+              (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
+              (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true) : true) : false
+            ) 
+          ) 
+          {
+            validOffers.push(element);
+          }
+        }
+    }
+
+    // Get the last 3 valid offers
+    const lastThreeOffers = validOffers.slice(-3);
+
+    // Add the last 3 valid offers to allOfferResilink
+    for (const offer of lastThreeOffers) {
+      validMapAssets[offer['assetId'].toString()] = (allAssetResilink[0][offer['assetId'].toString()])
+    }
+    allOfferResilink['offers'] = lastThreeOffers;
+    allOfferResilink['assets'] = validMapAssets;
+        
+    getDataLogger.info("successful data retrieval", { from: 'getLastThreeOfferForResilinkCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [allOfferResilink, allOffer.status];
 };
 
@@ -236,6 +293,48 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
   }
 };
 
+const getOwnerOfferPurchase = async (url, Username, token) => {
+  var allOfferPurchase = [];
+  var allAssetPurchase = [];
+
+  const allContractOwner = await Contract.getContractFromOwner('http://90.84.174.128:10010/contracts/', Username, token);
+  if (allContractOwner[1] != 200) {
+    getDataLogger.error('error: retrieving all owner\'s contracts', { from: 'getOwnerOfferPurchase', dataReceived: allContractOwner[0], tokenUsed: token == null ? "Token not given" : token});
+    return [allContractOwner[0], allContractOwner[1]];
+  }
+  if (allContractOwner[0].length > 0 ) {
+    const allOffer = await getAllOfferMapped(url, token);
+    if (allOffer[1] != 200) {
+      getDataLogger.error('error: retrieving all offers', { from: 'getOwnerOfferPurchase', dataReceived: allOffer[0], tokenUsed: token == null ? "Token not given" : token});
+      return [allOffer[0], allOffer[1]];
+    }
+    const allAsset = await Asset.getAllAssetResilink(token);
+    if (allAsset[1] != 200) {
+      getDataLogger.error('error: retrieving all assets', { from: 'getOwnerOfferPurchase', dataReceived: allAsset[0], tokenUsed: token == null ? "Token not given" : token});
+      return [allAsset[0], allAsset[1]];
+    } 
+
+    const allContractPurchased = allContractOwner[0].reduce((acc, contract) => {
+      const nameValue = contract["state"];
+      if (nameValue !== "cancelled" && /* contract cancelled before ending of the deal */ //Need yo be deleted after, just needed for the account acazaux in RESILINK 
+          nameValue !== 'endOfConsumption' && /* end states of an immaterial purchase contract */
+          nameValue !== "assetReceivedByTheRequestor" && nameValue !== "assetNotReceivedByTheRequestor" && /* end states of an material purchase contract */
+          nameValue !== "assetNotReturnedToTheOfferer" && nameValue !== "assetReceivedByTheRequestor" && nameValue !== "assetReceivedByTheRequestor" &&/* end states of an material rent contract */
+          !acc.some(item => item.idContract === contract.idContract)) {
+        acc.push(contract);
+      } 
+      return acc;
+    }, []);
+    allContractPurchased.forEach(data => {
+      allOfferPurchase.push(allOffer[0][parseInt(data['offer'])]);
+      allAssetPurchase.push(allAsset[0][data['asset']]);
+    });
+    return [{'contracts': allContractPurchased, 'offers': allOfferPurchase, 'assets': allAssetPurchase}, 200];
+  } else {
+    return [{'contracts': [], 'offers': [], 'assets': []}, allContractOwner[1]];
+  }
+}
+
 //Retrieves all offers from a user in ODEP.
 const getAllOfferOwnerCustom = async (url, Username, token) => {
   var allOfferOwner = {};
@@ -272,6 +371,7 @@ const getAllOfferOwnerCustom = async (url, Username, token) => {
 
 //Creates an offer in ODEP
 const createOffer = async (url, body, token) => {
+  console.log("in createOffer");
   updateDataODEP.warn('data to send to ODEP', { from: 'createOffer', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
   const response = await Utils.fetchJSONData(
       'POST',
@@ -281,6 +381,7 @@ const createOffer = async (url, body, token) => {
       'Authorization': token},
       body);
   const data = await Utils.streamToJSON(response.body);
+  console.log(data)
   if(response.status == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createOffer', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
   } else if(response.status != 200) {
@@ -296,7 +397,7 @@ const createOfferAsset = async (url, body, token) => {
 
   //Calls the function to create an asset and his asset type
   updateDataODEP.warn('data to send to ODEP', { from: 'createOfferAsset', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
-  const newsAsset = await Asset.createAssetCustom("http://90.84.174.128:10010/assets/", body['asset'], token);
+  const newsAsset = await Asset.createAssetWithAssetTypeCustom("http://90.84.174.128:10010/assets/", body['asset'], token);
   if (newsAsset[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createOfferAsset', dataReceived: newsAsset[0], tokenUsed: token == null ? "Token not given" : token});
     return [newsAsset[0], newsAsset[1]];
@@ -306,7 +407,7 @@ const createOfferAsset = async (url, body, token) => {
   } else {
 
     //Associates the assetId just created with the map containing the offer data 
-    body['offer']['assetId'] = newsAsset[0]['assetId']; 
+    body['offer']['assetId'] = newsAsset[0]['asset']['assetId']; 
     const newOffer = await createOffer(url, body['offer'], token);
     if (newOffer[1] == 401) {
       updateDataODEP.error('error: Unauthorize', { from: 'createOfferAsset', dataReceived: newOffer[0], tokenUsed: token == null ? "Token not given" : token});
@@ -337,6 +438,37 @@ const getAllOffer = async (url, token) => {
     getDataLogger.info('success retrieving all offers', { from: 'getAllOffer', tokenUsed: token.replace(/^Bearer\s+/i, '')});
   }
   return [data, response.status];
+};
+
+//Retrieves all offer in ODEP
+const getAllOfferMapped = async (url, token) => {
+  var allOfferOwner = {};
+
+  const response = await Utils.fetchJSONData(
+      'GET',
+      url + "all", 
+      headers = {'accept': 'application/json',
+      'Authorization': token}
+  );
+  const data = await Utils.streamToJSON(response.body);
+  if(response.status == 401) {
+    getDataLogger.error('error: Unauthorize', { from: 'getAllOfferMapped', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+    return [data, response.status];
+  } else if(response.status != 200) {
+    getDataLogger.error('error retrieving all offers', { from: 'getAllOfferMapped' , data: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    return [data, response.status];
+  } else {
+    getDataLogger.info('success retrieving all offers', { from: 'getAllOfferMapped', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+
+    for (const key in data) {
+      if (data.hasOwnProperty(key)) {
+        const offer = data[key];
+        allOfferOwner[offer["offerId"].toString()] = offer;
+      }
+    }
+    return [allOfferOwner, response.status];
+  }
+
 };
 
 //Retrieves an offer by id in ODEP
@@ -380,6 +512,38 @@ const putOffer = async (url, body, id, token) => {
   return [data, response.status];
 };
 
+//Updates the offer and its asset by id in ODEP
+const putOfferAsset = async (url, body, id, token) => {
+  console.log("dans putofferAssetService");
+  const putAsset = await Asset.putAssetCustom("http://90.84.174.128:10010/assets/", body['asset'], body['offer']['assetId'], token);
+  if (putAsset[1] == 401) {
+    updateDataODEP.error('error: Unauthorize', { from: 'putOfferAsset', dataReceived: newsAsset[0], tokenUsed: token == null ? "Token not given" : token});
+    return [putAsset[0], putAsset[1]];
+  } else if(putAsset[1] != 200) {
+    updateDataODEP.error('error updating one asset', { from: 'putOfferAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    return [putAsset[0], putAsset[1]];
+  } else {
+    updateDataODEP.warn('data to send to ODEP', { from: 'putOfferAsset', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
+    const response = await Utils.fetchJSONData(
+        'PUT',
+        url + id, 
+        headers = {'accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': token},
+        body['offer']
+    );
+    const data = await Utils.streamToJSON(response.body);
+    if(response.status == 401) {
+      updateDataODEP.error('error: Unauthorize', { from: 'putOfferAsset', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+    } else if(response.status != 200) {
+      updateDataODEP.error('error updating an offer', { from: 'putOfferAsset', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    } else {
+      updateDataODEP.info('success updating an offer', { from: 'putOfferAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    }
+    return [data, response.status];
+  }
+};
+
 //Deletes an offer by id in ODEP
 const deleteOffer = async (url, id, token) => {
   deleteDataODEP.warn('id to used in ODEP', { from: 'deleteOffer', offerId: id, tokenUsed: token.replace(/^Bearer\s+/i, '')});
@@ -402,12 +566,15 @@ const deleteOffer = async (url, id, token) => {
 
 module.exports = {
     getAllOfferForResilinkCustom,
+    getLastThreeOfferForResilinkCustom,
     getAllOfferFilteredCustom,
     getAllOfferOwnerCustom,
+    getOwnerOfferPurchase,
     createOffer,
     createOfferAsset,
     getAllOffer,
     getOneOffer,
     putOffer,
+    putOfferAsset,
     deleteOffer
 }

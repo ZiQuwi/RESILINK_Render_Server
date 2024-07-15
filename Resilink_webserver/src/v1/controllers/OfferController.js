@@ -13,9 +13,19 @@ const getAllOfferResilinkCustom = async (req, res) => {
       const response = await OfferService.getAllOfferForResilinkCustom(_pathofferODEP, req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {
-      getDataLogger.error('Catched error', { from: 'getAllOfferResilinkCustom', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+      getDataLogger.error('Catched error', { from: 'getAllOfferResilinkCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
       res.status(500).send({message: error.message})
     }
+};
+
+const getLastThreeOfferForResilinkCustom = async (req, res) => { 
+  try {
+    const response = await OfferService.getLastThreeOfferForResilinkCustom(_pathofferODEP, req.header('Authorization'));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    getDataLogger.error('Catched error', { from: 'getLastThreeOfferForResilinkCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({message: error.message})
+  }
 };
 
 //Not added on the API for now (need to see how to handle the no price offer)
@@ -24,7 +34,7 @@ const createOfferNoPrice = async (req, res) => {
     const response = await OfferService.getAllOfferForResilinkCustom(_pathofferODEP, req.body, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createOfferNoPrice', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createOfferNoPrice', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 };
@@ -34,7 +44,7 @@ const getOfferFiltered = async (req, res) => {
     const response = await OfferService.getAllOfferFilteredCustom(_pathofferODEP, req.body, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    getDataLogger.error('Catched error', { from: 'getOfferFiltered', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    getDataLogger.error('Catched error', { from: 'getOfferFiltered', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 };
@@ -44,7 +54,7 @@ const getOfferOwner = async (req, res) => {
     const response = await OfferService.getAllOfferOwnerCustom(_pathofferODEP, req.params.id, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    getDataLogger.error('Catched error', { from: 'getOfferOwner', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    getDataLogger.error('Catched error', { from: 'getOfferOwner', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 };
@@ -54,7 +64,7 @@ const createOffer = async (req, res) => {
     const response = await OfferService.createOffer(_pathofferODEP, req.body, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createOffer', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createOffer', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -64,7 +74,7 @@ const createOfferAsset = async (req, res) => {
     const response = await OfferService.createOfferAsset(_pathofferODEP, req.body, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createOffer', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'createOffer', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -74,7 +84,17 @@ const getAllOffer = async (req, res) => {
     const response = await OfferService.getAllOffer(_pathofferODEP, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    getDataLogger.error('Catched error', { from: 'getAllOffer', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    getDataLogger.error('Catched error', { from: 'getAllOffer', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({message: error.message})
+  }
+}
+
+const getOwnerOfferPurchase = async (req, res) => {
+  try {
+    const response = await OfferService.getOwnerOfferPurchase(_pathofferODEP, req.params.id, req.header('Authorization'));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    getDataLogger.error('Catched error', { from: 'getOwnerOfferPurchase', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -84,7 +104,7 @@ const getOneOffer = async (req, res) => {
     const response = await OfferService.getOneOffer(_pathofferODEP, req.params.id, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    getDataLogger.error('Catched error', { from: 'getOneOffer', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    getDataLogger.error('Catched error', { from: 'getOneOffer', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -94,7 +114,7 @@ const putOffer = async (req, res) => {
     const response = await OfferService.putOffer(_pathofferODEP, req.body, req.params.id, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'putOffer', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('Catched error', { from: 'putOffer', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
@@ -104,20 +124,33 @@ const deleteOffer = async (req, res) => {
     const response = await OfferService.deleteOffer(_pathofferODEP, req.params.id, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    deleteDataODEP.error('Catched error', { from: 'deleteOffer', data: error, tokenUsed: req.header('Authorization').replace(/^Bearer\s+/i, '')});
+    deleteDataODEP.error('Catched error', { from: 'deleteOffer', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({message: error.message})
+  }
+}
+
+const putOfferAsset = async (req, res) => {
+  try {
+    const response = await OfferService.putOfferAsset(_pathofferODEP, req.body, req.params.id, req.header('Authorization'));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    updateDataODEP.error('Catched error', { from: 'putOfferAsset', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 }
 
 module.exports = {
     getAllOfferResilinkCustom,
+    getLastThreeOfferForResilinkCustom,
     getOfferFiltered,
     getOfferOwner,
+    getOwnerOfferPurchase,
     createOfferNoPrice,
     createOfferAsset,
     createOffer,
     getAllOffer,
     getOneOffer,
     putOffer,
+    putOfferAsset,
     deleteOffer,
 }

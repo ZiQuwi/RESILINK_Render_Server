@@ -57,7 +57,7 @@ const getAllProsummer = async (url, token) => {
  * Calls the function to create a user in ODEP and RESILINK
  * Then creates a prosumer profile in ODEP and RESILINK 
  */
-const createProsumerCustom = async(url, body) => {
+const createProsumerCustom = async(url, body, token) => {
 
   //Calls the functions to get admin token then calls the function to create a user in ODEP & RESILINK
   const admin = await userService.functionGetTokenUser({userName: "admin", password: "admin123"});

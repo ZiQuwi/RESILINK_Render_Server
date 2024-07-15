@@ -179,3 +179,168 @@
   message: 'Document with ID 23 successfully deleted',
   timestamp: '2024-05-27T15:15:30.929Z'
 }
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: 'Document with ID resilinkT successfully deleted',
+  timestamp: '2024-06-26T13:22:46.466Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: "success deleting a news from an owner's bookmarked list",
+  timestamp: '2024-06-26T13:22:46.467Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteUserODEPRESILINK',
+  dataReceiver: 'data is not defined',
+  level: 'error',
+  message: 'error deleting a user account in RESILINK and ODEP DB',
+  timestamp: '2024-06-26T13:23:02.098Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteUser',
+  level: 'info',
+  message: 'Document with ID 667ae814c2c3851e2f93e6f0 successfully deleted',
+  timestamp: '2024-06-26T13:23:16.728Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteUserODEPRESILINK',
+  level: 'info',
+  message: 'success deleting a user in RESILINK and ODEP DB',
+  timestamp: '2024-06-26T13:23:16.729Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteUserODEPRESILINK',
+  dataReceiver: 'owner is not defined',
+  level: 'error',
+  message: 'error deleting a user account in RESILINK and ODEP DB',
+  timestamp: '2024-06-26T13:23:16.729Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: 'Document with ID aze successfully deleted',
+  timestamp: '2024-06-26T13:46:39.083Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: "success deleting a news from an owner's bookmarked list",
+  timestamp: '2024-06-26T13:46:39.085Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteUser',
+  level: 'info',
+  message: 'Document with ID 667c16fcc2c3851e2f93e6f1 successfully deleted',
+  timestamp: '2024-06-26T13:46:53.390Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteUserODEPRESILINK',
+  level: 'info',
+  message: 'success deleting a user in RESILINK and ODEP DB',
+  timestamp: '2024-06-26T13:46:53.391Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteUserODEPRESILINK',
+  dataReceiver: 'owner is not defined',
+  level: 'error',
+  message: 'error deleting a user account in RESILINK and ODEP DB',
+  timestamp: '2024-06-26T13:46:53.391Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: 'Document with ID aze successfully deleted',
+  timestamp: '2024-06-26T13:56:03.285Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteProsumerODEPRESILINK',
+  level: 'info',
+  message: "success deleting a news from an owner's bookmarked list",
+  timestamp: '2024-06-26T13:56:03.286Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteUser',
+  level: 'info',
+  message: 'Document with ID 667c1ccfc2c3851e2f93e6f2 successfully deleted',
+  timestamp: '2024-06-26T13:56:15.097Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteUserODEPRESILINK',
+  level: 'info',
+  message: 'success deleting a user in RESILINK and ODEP DB',
+  timestamp: '2024-06-26T13:56:15.098Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteUserODEPRESILINK',
+  dataReceiver: 'owner is not defined',
+  level: 'error',
+  message: 'error deleting a user account in RESILINK and ODEP DB',
+  timestamp: '2024-06-26T13:56:15.098Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetById',
+  level: 'info',
+  message: 'Document with ID 25 successfully deleted',
+  timestamp: '2024-07-03T10:02:32.533Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetById',
+  level: 'info',
+  message: 'Document with ID 24 successfully deleted',
+  timestamp: '2024-07-03T10:02:37.963Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetById',
+  level: 'info',
+  message: 'Document with ID 22 successfully deleted',
+  timestamp: '2024-07-03T10:02:44.059Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetById',
+  level: 'info',
+  message: 'Document with ID 34 successfully deleted',
+  timestamp: '2024-07-03T15:57:34.123Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetById',
+  level: 'info',
+  message: 'Document with ID 35 successfully deleted',
+  timestamp: '2024-07-03T16:03:39.396Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetById',
+  level: 'info',
+  message: 'Document with ID 37 successfully deleted',
+  timestamp: '2024-07-03T16:16:02.259Z'
+}
+{
+  service: 'DeleteDataResilinkService',
+  from: 'deleteAssetById',
+  level: 'info',
+  message: 'Document with ID 38 successfully deleted',
+  timestamp: '2024-07-04T14:40:32.057Z'
+}

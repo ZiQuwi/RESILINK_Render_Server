@@ -85,7 +85,7 @@ const getContractFromOwner = async (url, id, token) => {
     return [data, response.status];
 }
 
-//Recovers all a user's contracts and keeps only those that are not finished witj adding theirs asset types
+//Recovers all a user's contracts and keeps only those that are not finished with adding theirs asset types
 const getOwnerContractOngoing = async (url, id, token) => {
     const response = await Utils.fetchJSONData(
         'GET',
@@ -101,10 +101,11 @@ const getOwnerContractOngoing = async (url, id, token) => {
         getDataLogger.error('error retrieving owner\'scontracts', { from: 'getOwnerContractOngoing', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
         return [data, response.status];
     } else {
-
+      
       //Retrieves all assets and asset types to obtain the nature of the asset type linked to the contract
       const allAsset = await Assets.getAllAssetResilink(token);
       const allAssetTypes = await AssetTypes.getAllAssetTypesResilink(token);
+      console.log(allAsset);
       if (allAsset[1] != 200) {
         getDataLogger.warn('error retrieving all assets', { from: 'getOwnerContractOngoing', dataReceived: allAsset[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
         return[{contracts: {code: response.status, message: "Successful retrieval"}, assets: allAsset[0], AssetTypes: {code: "", message: "not started"}}, allAsset[1]];

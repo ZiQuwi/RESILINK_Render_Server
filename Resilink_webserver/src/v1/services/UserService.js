@@ -56,7 +56,6 @@ const createUserResilink = async (newUserRequest, token) => {
       newUserRequest
     );
     
-    console.log("dans createUserResilink, APRES requete CURL")
     //Calls the function to create a user in RESILINK DB if no errors caught
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {

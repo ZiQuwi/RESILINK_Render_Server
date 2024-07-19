@@ -68,8 +68,3 @@ app.listen(PORT, '0.0.0.0', () => {
     console.log(`API is listening on port ${PORT}`);
     V1SwaggerDocs(app, PORT); 
 });
-
-//start serveur pour une écoute sur nos sockets
-/*server.listen(3000, () => {
-    console.log(`Server is running on port 3000`);
-});*/

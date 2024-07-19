@@ -1,5 +1,22 @@
-const winston = require('winston')
-const {combine, timestamp, json, prettyPrint, errors} = winston.format
+const winston = require('winston');
+require('winston-mongodb');
+
+const { combine, timestamp, json, prettyPrint } = winston.format;
+
+
+//account and key to mongodb 
+const _username = "axelcazaux1";
+const _password = "ysf72odys0D340w6";
+
+// MongoDB Atlas cluster connection URL
+const url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/Logs?retryWrites=true&w=majority&appName=AtlasApp';
+
+const mongoOptions = (collectionName) => ({
+    db: url,
+    collection: collectionName,
+    level: 'info',
+    options: { useNewUrlParser: true, useUnifiedTopology: true },
+});
 
 winston.loggers.add('GetDataLogger', {
     format: combine(
@@ -8,24 +25,22 @@ winston.loggers.add('GetDataLogger', {
         prettyPrint()
     ),
     transports: [
-        //new winston.transports.Console(),
-        new winston.transports.File({filename: 'src/v1/loggers/getDataODEP.log'})
+        new winston.transports.MongoDB(mongoOptions('GetLogs'))
     ],
-    defaultMeta: {service: 'getDataODEPService'}
-})
+    defaultMeta: { service: 'getDataODEPService' }
+});
 
 winston.loggers.add('UpdateDataODEPLogger', {
     format: combine(
         json(),
         timestamp(),
         prettyPrint()
-    ),    
+    ),
     transports: [
-        //new winston.transports.Console(),
-        new winston.transports.File({filename: 'src/v1/loggers/UpdateDataODEP.log'})
+        new winston.transports.MongoDB(mongoOptions('PutLogs'))
     ],
-    defaultMeta: {service: 'UpdateDataODEPService'}
-})
+    defaultMeta: { service: 'UpdateDataODEPService' }
+});
 
 winston.loggers.add('UpdateDataResilinkLogger', {
     format: combine(
@@ -34,11 +49,10 @@ winston.loggers.add('UpdateDataResilinkLogger', {
         prettyPrint()
     ),
     transports: [
-        //new winston.transports.Console(),
-        new winston.transports.File({filename: 'src/v1/loggers/UpdateDataResilink.log'})
+        new winston.transports.MongoDB(mongoOptions('PutLogs'))
     ],
-    defaultMeta: {service: 'UpdateDataResilinkService'}
-})
+    defaultMeta: { service: 'UpdateDataResilinkService' }
+});
 
 winston.loggers.add('DeleteDataODEPLogger', {
     format: combine(
@@ -47,11 +61,10 @@ winston.loggers.add('DeleteDataODEPLogger', {
         prettyPrint()
     ),
     transports: [
-        //new winston.transports.Console(),
-        new winston.transports.File({filename: 'src/v1/loggers/DeleteDataODEP.log'})
+        new winston.transports.MongoDB(mongoOptions('DeleteLogs'))
     ],
-    defaultMeta: {service: 'DeleteDataODEPService'}
-})
+    defaultMeta: { service: 'DeleteDataODEPService' }
+});
 
 winston.loggers.add('DeleteDataResilinkLogger', {
     format: combine(
@@ -60,11 +73,10 @@ winston.loggers.add('DeleteDataResilinkLogger', {
         prettyPrint()
     ),
     transports: [
-        //new winston.transports.Console(),
-        new winston.transports.File({filename: 'src/v1/loggers/DeleteDataResilink.log'})
+        new winston.transports.MongoDB(mongoOptions('DeleteLogs'))
     ],
-    defaultMeta: {service: 'DeleteDataResilinkService'}
-})
+    defaultMeta: { service: 'DeleteDataResilinkService' }
+});
 
 winston.loggers.add('ConnectDBResilinkLogger', {
     format: combine(
@@ -73,11 +85,10 @@ winston.loggers.add('ConnectDBResilinkLogger', {
         prettyPrint()
     ),
     transports: [
-        //new winston.transports.Console(),
-        new winston.transports.File({filename: 'src/v1/loggers/ConnectDBResilink.log'})
+        new winston.transports.MongoDB(mongoOptions('ConnectionLogs'))
     ],
-    defaultMeta: {service: 'ConnectDBResilinkService'}
-})
+    defaultMeta: { service: 'ConnectDBResilinkService' }
+});
 
 winston.loggers.add('PatchDataODEPLogger', {
     format: combine(
@@ -86,8 +97,7 @@ winston.loggers.add('PatchDataODEPLogger', {
         prettyPrint()
     ),
     transports: [
-        //new winston.transports.Console(),
-        new winston.transports.File({filename: 'src/v1/loggers/PatchDataODEP.log'})
+        new winston.transports.MongoDB(mongoOptions('PatchLogs'))
     ],
-    defaultMeta: {service: 'PatchDataODEPService'}
-})
+    defaultMeta: { service: 'PatchDataODEPService' }
+});

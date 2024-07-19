@@ -522,7 +522,7 @@ router.get('/contracts/:id/', contractController.getOneContract);
  *           schema:
  *             type: object
  *             properties:
- *                offerId:
+ *                state:
  *                  type: string
  *                quantity:
  *                  type: number

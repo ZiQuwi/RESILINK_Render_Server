@@ -62,10 +62,13 @@ const createProsumerCustom = async(url, body, token) => {
   //Calls the functions to get admin token then calls the function to create a user in ODEP & RESILINK
   const admin = await userService.functionGetTokenUser({userName: "admin", password: "admin123"});
   patchDataODEP.warn('data to send to Resilink DB & ODEP', { from: 'createProsumerCustom', dataToSend: body, tokenUsed: admin[0]["accessToken"]});
-
+  
+  console.log(body)
   const job = body["job"];
   delete body["job"];
   const user = await userService.createUserResilink(body, admin[0]["accessToken"]);
+  console.log(user[1]);
+  console.log(user[0]);
   if(user[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createProsumerCustom', dataReceived: user[0], tokenUsed: admin[0]["accessToken"].replace(/^Bearer\s+/i, '')});
     return user;

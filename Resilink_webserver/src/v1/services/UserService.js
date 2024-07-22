@@ -10,10 +10,10 @@ const User = require("../database/UserDB.js");
 const Prosumer = require("../database/ProsummerDB.js");
 const Utils = require("./Utils.js");
 
-const _ipAdress = 'http://90.84.174.128:4000/oauth/api/v1.0.0/';
+const _ipAdress = 'http://90.84.194.104:4000/oauth/api/v1.0.0/';
 const _urlSignIn = 'auth/sign_in';
 const _urlCreateUser = 'users?provider=http%3A%2F%2Flocalhost%3A';
-const _localhost = "22004";
+const _localhost = "22005";
 
 //Retrieves user data (token is associated with "accesToken" key)
 const functionGetTokenUser = async (body) => {

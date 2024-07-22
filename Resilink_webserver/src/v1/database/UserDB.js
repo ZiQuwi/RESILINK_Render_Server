@@ -1,6 +1,5 @@
-const { MongoClient, ObjectId } = require('mongodb');
 const { getDBError, InsertDBError, DeleteDBError, UpdateDBError } = require('../errors.js'); 
-
+const connectToDatabase = require('./ConnectDB.js');
 
 require('../loggers.js');
 const winston = require('winston');
@@ -10,21 +9,10 @@ const updateData = winston.loggers.get('UpdateDataResilinkLogger');
 const connectDB = winston.loggers.get('ConnectDBResilinkLogger');
 const deleteData = winston.loggers.get('DeleteDataResilinkLogger');
 
-//account and key to mongodb 
-const _username = "axelcazaux1";
-const _password = "ysf72odys0D340w6";
-
-// MongoDB Atlas cluster connection URL
-const url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
-const client = new MongoClient(url);
-
 // Creates a user in RESILINK DB
 const newUser = async (user) => {
     try {
-      await client.connect();
-      connectDB.info('succes connecting to DB', { from: 'newUser'});
-  
-      const _database = client.db('Resilink');
+      const _database = await connectToDatabase();
       const _collection = _database.collection('user');
   
       updateData.warn('before inserting data', { from: 'newUser', data: {user: user, phoneNumber: user["phoneNumber"] ?? ""}});
@@ -56,18 +44,13 @@ const newUser = async (user) => {
         connectDB.error('error connecting to DB', { from: 'newAssetDB', error: e.message});
       }
       throw (e);
-    } finally {
-      await client.close();
     }
   };
 
 // Deletes a user by id in RESILINK DB
 const deleteUser = async (userId) => {
   try {
-    await client.connect();
-    connectDB.info('succes connecting to DB', { from: 'deleteUser'});
-
-    const _database = client.db('Resilink');
+    const _database = await connectToDatabase();
     const _collection = _database.collection('user');
 
     const result = await _collection.deleteOne({ _id: userId });
@@ -83,18 +66,13 @@ const deleteUser = async (userId) => {
     } else {
       connectDB.error('error connecting to DB', { from: 'deleteUser', error: e.message});
     }
-  } finally {
-    await client.close();
   }
 }
 
 // Updates a user by id in RESILINK DB
 const updateUser = async (id, body) => {
   try {
-    await client.connect();
-    connectDB.info('succes connecting to DB', { from: 'updateUser'});
-
-    const _database = client.db('Resilink');
+    const _database = await connectToDatabase();
     const _collection = _database.collection('user');
 
     updateData.warn('before updating data', { from: 'updateUser', data: {phoneNumber: body.phoneNumber ?? ""}});
@@ -116,18 +94,13 @@ const updateUser = async (id, body) => {
     } else {
       connectDB.error('error connecting to DB', { from: 'updateUser', error: e.message});
     }
-  } finally {
-    await client.close();
   }
 }
 
 // Retrieves a user by id in RESILINK DB
 const getUser = async (id, body) => {
   try {
-    await client.connect();
-    connectDB.info('succes connecting to DB', { from: 'getUser'});
-
-    const _database = client.db('Resilink');
+    const _database = await connectToDatabase();
     const _collection = _database.collection('user');
 
     var user = await _collection.findOne({ _id: id });
@@ -145,18 +118,13 @@ const getUser = async (id, body) => {
     } else {
       connectDB.error('error connecting to DB', { from: 'getUser', error: e.message});
     }
-  } finally {
-    await client.close();
   }
 }
 
 // Retrieves all users in RESILINK DB
 const getAllUser = async (userList) => {
   try {
-    await client.connect();
-    connectDB.info('succes connecting to DB', { from: 'getAllUser'});
-
-    const _database = client.db('Resilink');
+    const _database = await connectToDatabase();
     const _collection = _database.collection('user');
 
     for (var i = 0; i < userList.length; i++) {
@@ -176,8 +144,6 @@ const getAllUser = async (userList) => {
     } else {
       connectDB.error('error connecting to DB', { from: 'getAllUser', error: e.message});
     }
-  } finally {
-    await client.close();
   }
 }
 

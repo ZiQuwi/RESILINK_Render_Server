@@ -1,5 +1,5 @@
-const { MongoClient, ObjectId } = require('mongodb');
 const { getDBError, UpdateDBError, InsertDBError, IDNotFoundError, DeleteDBError } = require('../errors.js'); 
+const connectToDatabase = require('./ConnectDB.js');
 
 require('../loggers.js');
 const winston = require('winston');
@@ -9,21 +9,10 @@ const updateData = winston.loggers.get('UpdateDataResilinkLogger');
 const connectDB = winston.loggers.get('ConnectDBResilinkLogger');
 const deleteData = winston.loggers.get('DeleteDataResilinkLogger')
 
-//account and key to mongodb 
-const _username = "axelcazaux1";
-const _password = "ysf72odys0D340w6";
-
-// MongoDB Atlas cluster connection URL
-const url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
-const client = new MongoClient(url);
-
 //Retrieves all prosumers in RESILINK DB
 const getAllProsummer = async (prosumerList) => {
     try {
-        await client.connect();
-        connectDB.info('succes connecting to DB', { from: 'getAllProsummer'});
-    
-        const _database = client.db('Resilink');
+        const _database = await connectToDatabase();
         const _collection = _database.collection('prosumer');
     
         for (var i = 0; i < prosumerList.length; i++) {
@@ -39,18 +28,13 @@ const getAllProsummer = async (prosumerList) => {
     } catch (e) {
       connectDB.error('error connecting to DB', { from: 'getAllProsummer',  error: e});
       throw(e);
-    } finally {
-        await client.close();
     }
 };
 
 //Retrieves one prosumer by the entity prosummer
 const getOneProsummer = async (prosumer) => {
     try {
-        await client.connect();
-        connectDB.info('succes connecting to DB', { from: 'getOneProsummer'});
-    
-        const _database = client.db('Resilink');
+        const _database = await connectToDatabase();
         const _collection = _database.collection('prosumer');
     
         const prosumers = await _collection.findOne({ _id: prosumer.id });
@@ -74,18 +58,13 @@ const getOneProsummer = async (prosumer) => {
         connectDB.error('error connecting to DB', { from: 'getOneProsummer',  error: e});
       }
       throw(e);
-    }finally {
-        await client.close();
     }
 }
 
 //Retrieves one prosumer by its username (id)
 const getOneProsummerWithUsername = async (prosumerName) => {
   try {
-      await client.connect();
-      connectDB.info('succes connecting to DB', { from: 'getBookmarkedProsumer'});
-  
-      const _database = client.db('Resilink');
+      const _database = await connectToDatabase();
       const _collection = _database.collection('prosumer');
   
       const prosumers = await _collection.findOne({ _id: prosumerName });
@@ -108,18 +87,13 @@ const getOneProsummerWithUsername = async (prosumerName) => {
       connectDB.error('error connecting to DB', { from: 'getBookmarkedProsumer',  error: e});
     }
     throw(e);
-  }finally {
-      await client.close();
   }
 }
 
 // Retrieves a user by id in RESILINK DB
 const getJobProsummer = async (id) => {
   try {
-    await client.connect();
-    connectDB.info('succes connecting to DB', { from: 'getJobProsummer'});
-
-    const _database = client.db('Resilink');
+    const _database = await connectToDatabase();
     const _collection = _database.collection('prosumer');
 
     var job;
@@ -139,18 +113,13 @@ const getJobProsummer = async (id) => {
     } else {
       connectDB.error('error connecting to DB', { from: 'getJobProsummer', error: e.message});
     }
-  } finally {
-    await client.close();
   }
 }
 
 // Creates a prosumer in RESILINK DB
 const newProsumer = async (id, job) => {
   try {
-    await client.connect();
-    connectDB.info('succes connecting to DB', { from: 'newProsumer'});
-
-    const _database = client.db('Resilink');
+    const _database = await connectToDatabase();
     const _collection = _database.collection('prosumer');
 
     updateData.info('data to insert', { from: 'newProsumer', _id: id, job: job});
@@ -173,18 +142,13 @@ const newProsumer = async (id, job) => {
       connectDB.error('error connecting to DB ', { from: 'newProsumer',  error: e});
     }
     throw(e);
-  } finally {
-    await client.close();
   }
 };
 
 // Update the job from a prosumer
 const updateJob  = async (prosumerId, job) => {
   try {
-    await client.connect();
-    connectDB.info('succes connecting to DB', { from: 'updateJob'});
-
-    const _database = client.db('Resilink');
+    const _database = await connectToDatabase();
     const _collection = _database.collection('prosumer');
 
     // Update the document to update the job
@@ -208,18 +172,13 @@ const updateJob  = async (prosumerId, job) => {
       connectDB.error('error connecting to DB ', { from: 'updateJob',  error: e});
     }
     throw(e);
-  } finally {
-    await client.close();
   }
 };
 
 // Update the bookMarked list from a prosumer to add a news id
 const addbookmarked  = async (prosumerId, newId) => {
   try {
-    await client.connect();
-    connectDB.info('succes connecting to DB', { from: 'addbookmarked'});
-
-    const _database = client.db('Resilink');
+    const _database = await connectToDatabase();
     const _collection = _database.collection('prosumer');
 
     // Check if the ID exists in the bookMarked list
@@ -249,18 +208,13 @@ const addbookmarked  = async (prosumerId, newId) => {
       connectDB.error('error connecting to DB ', { from: 'addbookmarked',  error: e});
     }
     throw(e);
-  } finally {
-    await client.close();
   }
 };
 
 // Update the bookMarked list from a prosumer to delete a news id
 const deleteBookmarkedId  = async (id, owner) => {
   try {
-    await client.connect();
-    connectDB.info('succes connecting to DB', { from: 'deleteBookmarkedId'});
-
-    const _database = client.db('Resilink');
+    const _database = await connectToDatabase();
     const _collection = _database.collection('prosumer');
 
     // Check if the ID exists in the bookMarked list
@@ -290,18 +244,13 @@ const deleteBookmarkedId  = async (id, owner) => {
       connectDB.error('error connecting to DB ', { from: 'deleteBookmarkedId',  error: e});
     }
     throw(e);
-  } finally {
-    await client.close();
   }
 };
 
 // Delete a prosumer in RESILINK DB
 const deleteProsumerODEPRESILINK  = async (owner) => {
   try {
-    await client.connect();
-    connectDB.info('succes connecting to DB', { from: 'deleteProsumerODEPRESILINK'});
-
-    const _database = client.db('Resilink');
+    const _database = await connectToDatabase();
     const _collection = _database.collection('prosumer');
 
     const prosumer = await _collection.deleteOne({ "_id": owner});
@@ -319,8 +268,6 @@ const deleteProsumerODEPRESILINK  = async (owner) => {
       deleteData.error('error connecting to DB ', { from: 'deleteProsumerODEPRESILINK',  error: e});
     }
     throw(e);
-  } finally {
-    await client.close();
   }
 };
 

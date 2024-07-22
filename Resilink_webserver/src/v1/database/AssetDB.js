@@ -9,9 +9,7 @@ const connectDB = winston.loggers.get('ConnectDBResilinkLogger');
 
 // Creates an asset in RESILINK DB 
 const newAsset = async (assetId, imgBase64, owner, unit) => {
-  let client;
   try {
-    console.log("in new Asset DB");
     const db = await connectToDatabase();
     const _collection = db.collection('Asset');
     updateData.warn('before inserting data', { from: 'newAsset', data: {assetId, imgBase64, owner}});

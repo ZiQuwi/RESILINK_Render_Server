@@ -338,7 +338,8 @@ const getOwnerOfferPurchase = async (url, Username, token) => {
 //Retrieves all offers from a user in ODEP.
 const getAllOfferOwnerCustom = async (url, Username, token) => {
   var allOfferOwner = {};
-
+  const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
+  const allAssetResilink = await Asset.getAllAssetResilink(token);
   //Retrives all offer in ODEP
   const allOffer = await Utils.fetchJSONData(
     'GET',
@@ -347,24 +348,28 @@ const getAllOfferOwnerCustom = async (url, Username, token) => {
     'Authorization': token}
   );
   const data = await Utils.streamToJSON(allOffer.body)
-  if (allOffer.status == 401) {
-    getDataLogger.error('error: Unauthorize', { from: 'getAllOfferOwnerCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
-    return [data, allOffer.status];
+
+  if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
+    getDataLogger.error('error: Unauthorize', { from: 'getAllOfferOwnerCustom', tokenUsed: token == null ? "Token not given" : token});
+    return [allAssetType[1] == 401 ? allAssetType[0] : allAssetResilink[1] == 401 ? allAssetResilink[0] : data, 401];
+  } else if(allOffer.status != 200 || allAssetType[1] != 200 || allAssetResilink[1] != 200) {
+    getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getAllOfferOwnerCustom', dataOffer: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
   };
-  if(allOffer.status != 200) {
-    getDataLogger.error("error retrieving data", { from: 'getAllOfferOwnerCustom', data: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
-    return [data, allOffer.status];
-  }; 
 
   //Checks if the creator is the user in parameter
   for (const key in data) {
     if (data.hasOwnProperty(key)) {
       const offer = data[key];
-      if (offer["offerer"] === Username) {
+      if (offer["offerer"] === Username &&
+        (allAssetType[0][allAssetResilink[0][offer['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
+              (offer['remainingQuantity'] !== null ? offer['remainingQuantity'] > 0 : true) : true)
+      ) {
         allOfferOwner[offer["offerId"].toString()] = offer;
       }
     }
   }
+  console.log(allOfferOwner);
   getDataLogger.info('success retrieving offers & keep the owner\'s', { from: 'getAllOfferOwnerCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
   return [allOfferOwner, allOffer.status];
 };

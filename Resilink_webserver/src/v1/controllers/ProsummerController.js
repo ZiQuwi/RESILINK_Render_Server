@@ -31,7 +31,6 @@ const getAllProsummer = async (req, res) => {
 
 const createProsumerCustom = async (req, res) => {
   try {
-    console.log("dans createProsumerCustomController");
     const response = await prosummerService.createProsumerCustom(_pathProsumerODEP, req.body, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {

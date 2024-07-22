@@ -1,27 +1,16 @@
-const { MongoClient} = require('mongodb');
 const { InsertDBError } = require('../errors.js'); 
+const winston = require('winston');
+const connectToDatabase = require('./ConnectDB.js');
 
 require('../loggers.js');
-const winston = require('winston');
 
 const updateData = winston.loggers.get('UpdateDataResilinkLogger');
 const connectDB = winston.loggers.get('ConnectDBResilinkLogger');
 
-//account and key to mongodb 
-const _username = "axelcazaux1";
-const _password = "ysf72odys0D340w6";
-
-// MongoDB Atlas cluster connection URL
-const url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
-const client = new MongoClient(url);
-
 // If the assetType does not exist, creates its entity in the database, otherwise updates the assetType counter.
 const newAssetTypeDB = async (assetType) => {
     try {
-      await client.connect();
-      connectDB.info('succes connecting to DB', { from: 'newAssetTypeDB'});
-  
-      const _database = client.db('Resilink');
+      const _database = await connectToDatabase();
       const _collection = _database.collection('AssetTypeCounter');
 
       const existingDocument = await _collection.findOne({ assetType: assetType });
@@ -56,11 +45,10 @@ const newAssetTypeDB = async (assetType) => {
     } catch (e) {
         if (e instanceof InsertDBError) {
             updateData.error('error creating/incrementing an assetType in Resilink DB', { from: 'newAssetTypeDB'});
-          } else {
+        } else {
             connectDB.error('error connecting to DB', { from: 'newAssetTypeDB', error: e});
-          }
-    } finally {
-      await client.close();
+        }
+        throw(e);
     }
 };
 

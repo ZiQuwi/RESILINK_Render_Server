@@ -10,6 +10,65 @@ const newsController = require("../controllers/NewsController.js");
 
 /**
  * @swagger
+ * /v1/news:
+ *   post: 
+ *     summary: create a news sources (from RESILINK).
+ *     tags: [News]
+ *     requestBody:
+ *       description: offer's data.
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *                url: 
+ *                    type: string
+ *                country: 
+ *                    type: string
+ *                institute: 
+ *                    type: string
+ *                img:
+ *                    type: string
+ *                platform:
+ *                    type: string
+ *     responses:
+ *       200:
+ *         description: News from a country.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                      _id:
+ *                          type: string
+ *                      url: 
+ *                          type: string
+ *                      country: 
+ *                          type: string
+ *                      institute: 
+ *                          type: string
+ *                      img:
+ *                          type: string
+ *                      platform:
+ *                          type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.post('/news/', newsController.createNews);
+
+/**
+ * @swagger
  * /v1/news/country:
  *   get: 
  *     summary: Get all the news from a country (from RESILINK).
@@ -188,5 +247,43 @@ router.get('/news/owner/:id/', newsController.getNewsfromOwner);
  */
 
 router.get('/news/countryOwner', newsController.getNewsfromCountryWithoutUserNews);
+
+/**
+ * @swagger
+ * /v1/news/{id}/:
+ *   delete: 
+ *     summary: delete a News (from RESILINK)
+ *     tags: [News]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: News successfully deleted
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: object
+ *                   properties:
+ *                      message:
+ *                          type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.delete('/news/:id/', newsController.deleteNews);
 
 module.exports = router;

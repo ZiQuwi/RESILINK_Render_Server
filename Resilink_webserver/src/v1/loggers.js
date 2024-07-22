@@ -1,7 +1,7 @@
 const winston = require('winston');
 require('winston-mongodb');
 
-const { combine, timestamp, json, prettyPrint } = winston.format;
+const { combine, timestamp, json, prettyPrint, metadata } = winston.format;
 
 
 //account and key to mongodb 
@@ -22,7 +22,8 @@ winston.loggers.add('GetDataLogger', {
     format: combine(
         json(),
         timestamp(),
-        prettyPrint()
+        prettyPrint(),
+        metadata({ fillExcept: ['message', 'level', 'timestamp'] })
     ),
     transports: [
         new winston.transports.MongoDB(mongoOptions('GetLogs'))
@@ -34,7 +35,8 @@ winston.loggers.add('UpdateDataODEPLogger', {
     format: combine(
         json(),
         timestamp(),
-        prettyPrint()
+        prettyPrint(),
+        metadata({ fillExcept: ['message', 'level', 'timestamp'] })
     ),
     transports: [
         new winston.transports.MongoDB(mongoOptions('PutLogs'))
@@ -46,7 +48,8 @@ winston.loggers.add('UpdateDataResilinkLogger', {
     format: combine(
         json(),
         timestamp(),
-        prettyPrint()
+        prettyPrint(),
+        metadata({ fillExcept: ['message', 'level', 'timestamp'] })
     ),
     transports: [
         new winston.transports.MongoDB(mongoOptions('PutLogs'))
@@ -58,7 +61,8 @@ winston.loggers.add('DeleteDataODEPLogger', {
     format: combine(
         json(),
         timestamp(),
-        prettyPrint()
+        prettyPrint(),
+        metadata({ fillExcept: ['message', 'level', 'timestamp'] })
     ),
     transports: [
         new winston.transports.MongoDB(mongoOptions('DeleteLogs'))
@@ -70,7 +74,8 @@ winston.loggers.add('DeleteDataResilinkLogger', {
     format: combine(
         json(),
         timestamp(),
-        prettyPrint()
+        prettyPrint(),
+        metadata({ fillExcept: ['message', 'level', 'timestamp'] })
     ),
     transports: [
         new winston.transports.MongoDB(mongoOptions('DeleteLogs'))
@@ -82,7 +87,8 @@ winston.loggers.add('ConnectDBResilinkLogger', {
     format: combine(
         json(),
         timestamp(),
-        prettyPrint()
+        prettyPrint(),
+        metadata({ fillExcept: ['message', 'level', 'timestamp'] })
     ),
     transports: [
         new winston.transports.MongoDB(mongoOptions('ConnectionLogs'))
@@ -94,7 +100,8 @@ winston.loggers.add('PatchDataODEPLogger', {
     format: combine(
         json(),
         timestamp(),
-        prettyPrint()
+        prettyPrint(),
+        metadata({ fillExcept: ['message', 'level', 'timestamp'] })
     ),
     transports: [
         new winston.transports.MongoDB(mongoOptions('PatchLogs'))

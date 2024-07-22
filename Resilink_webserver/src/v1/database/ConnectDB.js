@@ -17,14 +17,12 @@ const connectToDatabase = async () => {
       client = new MongoClient(_url);
       await client.connect();
       db = client.db('Resilink');
-      console.log("bien connecté");
       connectDB.info('Connected to MongoDB');
     } catch (error) {
       connectDB.error('Failed to connect to MongoDB', { error });
       throw error;
     }
   } else {
-    console.log('Reusing existing MongoDB connection');
     connectDB.info('Reusing existing MongoDB connection');
   }
   return db;

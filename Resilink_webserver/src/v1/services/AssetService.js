@@ -103,7 +103,7 @@ const getAllAssetVue = async (token) => {
 const getAllAssetResilink = async (token) => {
     const allAsset = await Utils.fetchJSONData(
         'GET',
-        "http://90.84.194.104:10010/assets/all", 
+        "http://90.84.174.128:10010/assets/all", 
         headers = {'accept': 'application/json',
         'Authorization': token});
     var assetMapResilink = {};

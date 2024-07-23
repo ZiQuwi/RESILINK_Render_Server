@@ -6,7 +6,7 @@ const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
 
 const userService = require("../services/UserService.js");
 
-const _pathUserODEP = 'http://90.84.194.104:4000/oauth/api/v1.0.0/users/';
+const _pathUserODEP = 'http://90.84.174.128:4000/oauth/api/v1.0.0/users/';
 
 const getTokenUser = async (req, res) => {
     try {

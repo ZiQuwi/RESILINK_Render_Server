@@ -7,7 +7,7 @@ const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const prosummerService = require("../services/ProsummerService.js");
-const _pathProsumerODEP = 'http://90.84.194.104:10010/prosumers/';
+const _pathProsumerODEP = 'http://90.84.174.128:10010/prosumers/';
 
 const createProsumer = async (req, res) => { 
   try {

@@ -82,7 +82,7 @@ const getNewsfromCountry = async (country) => {
 const getNewsfromCountryWithoutUserNews = async (country, IdList) => {
   try {
       const db = await connectToDatabase();
-      const _collection = _database.collection('News');
+      const _collection = db.collection('News');
 
       const result = await _collection.find({ 
         country: country.charAt(0).toUpperCase() + country.slice(1).toLowerCase(),

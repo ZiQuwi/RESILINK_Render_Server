@@ -12,7 +12,7 @@ const AssetTypeDB = require("../database/AssetTypeDB.js");
 // Same result as the function getAllAssetTypes except its not a list of object but juste an object with key and an asset type associeted
 const getAllAssetTypesResilink = async (token) => {
   try {
-    const urlGetALlAssetTypes = "http://90.84.174.128:10010/assetTypes/all";
+    const urlGetALlAssetTypes = "http://90.84.194.104:10010/assetTypes/all";
     const allAssetTypes = await Utils.fetchJSONData(
         'GET',
         urlGetALlAssetTypes, 
@@ -70,7 +70,7 @@ const createAssetTypes = async (url, body, token) => {
 const createAssetTypesCustom = async (assetType, token) => {
   try {
     //Checks if the asset type exists and increments the asset type counter in RESILINK
-    const resultassetType = await getOneAssetTypes("http://90.84.174.128:10010/assetTypes/", assetType, token);
+    const resultassetType = await getOneAssetTypes("http://90.84.194.104:10010/assetTypes/", assetType, token);
     if (resultassetType[1] == 401) {
       getDataLogger.error('error: Unauthorize', { from: 'createAssetTypesCustom', dataReceived: resultassetType[0], tokenUsed: token == null ? "Token not given" : token});
       return [resultassetType[0], resultassetType[1]];
@@ -90,7 +90,7 @@ const createAssetTypesCustom = async (assetType, token) => {
       updateDataODEP.warn('data to send to ODEP', { from: 'createAssetTypesCustom', dataToSend: resultassetType[0], tokenUsed: token == null ? "Token not given" : token});
       const response = await Utils.fetchJSONData(
         'POST',
-        "http://90.84.174.128:10010/assetTypes/", 
+        "http://90.84.194.104:10010/assetTypes/", 
         headers = {'accept': 'application/json',
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + adminToken[0]["accessToken"]},

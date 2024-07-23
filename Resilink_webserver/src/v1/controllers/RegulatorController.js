@@ -8,7 +8,7 @@ const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const RegulatorService = require("../services/RegulatorService.js");
 
-const _pathRegulatorODEP = 'http://90.84.174.128:10010/regulators/';
+const _pathRegulatorODEP = 'http://90.84.194.104:10010/regulators/';
 
 
 const createRegulator = async (req, res) => {

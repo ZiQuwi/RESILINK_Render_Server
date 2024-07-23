@@ -7,7 +7,7 @@ const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const assetService = require("../services/AssetService.js");
-const _pathAssetODEP = 'http://90.84.174.128:10010/assets/'; 
+const _pathAssetODEP = 'http://90.84.194.104:10010/assets/'; 
 
 const getAllAssetResilink = async (req, res) => { 
   try {

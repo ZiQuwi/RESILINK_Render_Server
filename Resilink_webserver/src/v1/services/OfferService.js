@@ -297,7 +297,7 @@ const getOwnerOfferPurchase = async (url, Username, token) => {
   var allOfferPurchase = [];
   var allAssetPurchase = [];
 
-  const allContractOwner = await Contract.getContractFromOwner('http://90.84.174.128:10010/contracts/', Username, token);
+  const allContractOwner = await Contract.getContractFromOwner('http://90.84.194.104:10010/contracts/', Username, token);
   if (allContractOwner[1] != 200) {
     getDataLogger.error('error: retrieving all owner\'s contracts', { from: 'getOwnerOfferPurchase', dataReceived: allContractOwner[0], tokenUsed: token == null ? "Token not given" : token});
     return [allContractOwner[0], allContractOwner[1]];
@@ -402,7 +402,7 @@ const createOfferAsset = async (url, body, token) => {
 
   //Calls the function to create an asset and his asset type
   updateDataODEP.warn('data to send to ODEP', { from: 'createOfferAsset', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
-  const newsAsset = await Asset.createAssetWithAssetTypeCustom("http://90.84.174.128:10010/assets/", body['asset'], token);
+  const newsAsset = await Asset.createAssetWithAssetTypeCustom("http://90.84.194.104:10010/assets/", body['asset'], token);
   if (newsAsset[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createOfferAsset', dataReceived: newsAsset[0], tokenUsed: token == null ? "Token not given" : token});
     return [newsAsset[0], newsAsset[1]];
@@ -520,7 +520,7 @@ const putOffer = async (url, body, id, token) => {
 //Updates the offer and its asset by id in ODEP
 const putOfferAsset = async (url, body, id, token) => {
   console.log("dans putofferAssetService");
-  const putAsset = await Asset.putAssetCustom("http://90.84.174.128:10010/assets/", body['asset'], body['offer']['assetId'], token);
+  const putAsset = await Asset.putAssetCustom("http://90.84.194.104:10010/assets/", body['asset'], body['offer']['assetId'], token);
   if (putAsset[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'putOfferAsset', dataReceived: newsAsset[0], tokenUsed: token == null ? "Token not given" : token});
     return [putAsset[0], putAsset[1]];

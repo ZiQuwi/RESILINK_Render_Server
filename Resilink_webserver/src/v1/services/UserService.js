@@ -32,20 +32,36 @@ const functionGetTokenUser = async (body) => {
       getDataLogger.info('success retrieving user\'s token', { from: 'functionGetTokenUser'});
     }
     await User.getUser(data['_id'], data);
-    data['job'] = await Prosumer.getJobProsummer(data.userName);
     return [data, response.status];
 };
 
 //Creates an ODEP user and a Resilink user with the id of the ODEP user
-const createUserResilink = async (newUserRequest, token) => {
+const createUserResilink = async (pathUserODEP, newUserRequest, token) => {
   try {
     updateDataODEP.warn('data to send to ODEP', { from: 'createUserResilink', dataToSend: newUserRequest, tokenUsed: token == null ? "Token not given" : token});
-
     //Deletes data not relevant to ODEP to create a user in ODEP
     var phoneNumber;
     if (newUserRequest['phoneNumber'] != null) {
       phoneNumber = newUserRequest['phoneNumber'];
       delete newUserRequest['phoneNumber'];
+    }
+    
+    const findUserUserName = await getUserByUsername(pathUserODEP, newUserRequest['userName'], token);
+    if(findUserUserName[1] == 401) {
+      updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: findUserUserName[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      return findUserUserName;
+    } else if(findUserUserName[1] == 200) {
+      updateDataODEP.error('error email already token in ODEP', { from: 'createUserResilink', dataReceived: findUserUserName[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      return [{'message': 'userName already token'}, 404]
+    }
+
+    const findUserMail = await getUserByEmail(pathUserODEP, newUserRequest['email'], token);
+    if(findUserMail[1] == 401) {
+      updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: findUserMail[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      return findUserMail;
+    } else if(findUserMail[1] == 200) {
+      updateDataODEP.error('error email already token in ODEP', { from: 'createUserResilink', dataReceived: findUserMail[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      return [{'message': 'email already token'}, 404]
     }
 
     const response = await Utils.fetchJSONData(
@@ -57,6 +73,7 @@ const createUserResilink = async (newUserRequest, token) => {
     
     //Calls the function to create a user in RESILINK DB if no errors caught
     const data = await Utils.streamToJSON(response.body);
+    console.log(data);
     if(response.status == 401) {
       updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     } else if(response.status != 200 && response.status != 201) {
@@ -110,6 +127,7 @@ const deleteUser = async (url, id, token) => {
       headers = {'accept': 'application/json',
        'Authorization': token},
     );
+    const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
       deleteDataODEP.error('error: Unauthorize', { from: 'deleteUser', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
     } else if(response.status != 202) {
@@ -225,7 +243,7 @@ const getUserByEmail = async (url, email, token) => {
     getDataLogger.warn('email to send to ODEP', { from: 'getUserByEmail', email: email, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
       "GET",
-      url + email, 
+      url + "getUserByEmail/" + email, 
       headers = {'accept': 'application/json',
        'Authorization': token},
     );
@@ -250,9 +268,11 @@ const getUserByUsername = async (url, username, token) => {
     getDataLogger.warn('username to send to ODEP', { from: 'getUserByUsername', username: username, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
       "GET",
-      url + username, 
-      headers = {'accept': 'application/json',
-       'Authorization': token},
+      url + "getUserByUserName/" + username, 
+      headers = {
+        'accept': 'application/json',
+        'Authorization': token
+      },
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
@@ -278,7 +298,7 @@ const updateUser = async (url, id, body, token) => {
       url + id, 
       headers = {
        'accept': 'application/json',
-       'Authorization': token,
+       'Authorization': token.replace(/^Bearer\s+/i, ''),
        'Content-Type': 'application/json'},
        body
     );
@@ -304,14 +324,10 @@ const updateUserCustom = async (url, id, body, token) => {
 
     //Deletes data not relevant to ODEP to update a user in ODEP
     var phoneNumber;
-    var job;
-
     if (body['phoneNumber'] != null) {
       phoneNumber = body['phoneNumber'];
       delete body['phoneNumber'];
     }
-    job = body['job'];
-    delete body['job'];
     const userODEP = await updateUser(url, id, body, token);
     if(userODEP[1] == 401) {
       updateDataODEP.error('error: Unauthorize', { from: 'updateUser', dataReceived: userODEP[0], tokenUsed: token == null ? "Token not given" : token});
@@ -328,11 +344,6 @@ const updateUserCustom = async (url, id, body, token) => {
       body['phoneNumber'] = phoneNumber;
     }
     await User.updateUser(id, body);
-    await Prosumer.updateJob(body['userName'], job);
-    console.log(body)
-    body['job'] = job;
-    console.log("apres changmeent de job");
-    console.log(body)
     return [body, userODEP[1]];
   } catch (e) {
     getDataLogger.error("error accessing ODEP", {from: 'updateUser', dataReceiver: e.message});

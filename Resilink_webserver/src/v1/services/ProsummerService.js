@@ -62,17 +62,25 @@ const createProsumerCustom = async(url, body, token) => {
   //Calls the functions to get admin token then calls the function to create a user in ODEP & RESILINK
   const admin = await userService.functionGetTokenUser({userName: "admin", password: "admin123"});
   patchDataODEP.warn('data to send to Resilink DB & ODEP', { from: 'createProsumerCustom', dataToSend: body, tokenUsed: admin[0]["accessToken"]});
-  
-  console.log(body)
+
   const job = body["job"];
+  const location = body["location"];
   delete body["job"];
+  delete body["location"];
+
+  if (!Utils.containsNonRomanCharacters(body['userName']) || !Utils.containsNonRomanCharacters(body['password'])) {
+    return [{"message": "userName or password are not in roman caracters"}, 405]
+  } else if (!Utils.isNumeric(body['phoneNumber'])) {
+    return [{"message": "phone number is not in digits caracters"}, 405]
+  }
+
   const user = await userService.createUserResilink(body, admin[0]["accessToken"]);
-  console.log(user[1]);
-  console.log(user[0]);
+  
   if(user[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createProsumerCustom', dataReceived: user[0], tokenUsed: admin[0]["accessToken"].replace(/^Bearer\s+/i, '')});
     return user;
-  } else if(user[1] != 201) {
+  } else if(user[1] != 201) { 
+    console.log(user[0]);
     updateDataODEP.error('error creating user in ODEP', { from: 'createProsumerCustom', dataReceived: user[0], tokenUsed: admin[0]["accessToken"].replace(/^Bearer\s+/i, '')});
     return user;
   } else {
@@ -103,9 +111,10 @@ const createProsumerCustom = async(url, body, token) => {
     updateDataODEP.info('success creating one user and his prosummer status in ODEP', { from: 'createProsumerCustom', tokenUsed: admin[0]["accessToken"].replace(/^Bearer\s+/i, '')});
   }
 
-  ProsummerDB.newProsumer(user[0].userName, job);
+  ProsummerDB.newProsumer(user[0].userName, job, location);
   updateDataODEP.info('success creating one user and his prosummer status in ODEP and Resilink DB', { from: 'createProsumerCustom', tokenUsed: admin[0]["accessToken"].replace(/^Bearer\s+/i, '')});
   data['job'] = job;
+  data['location'] = location;
 
   return [{user: user[0], prosumer: data}, response.status];
 };
@@ -135,6 +144,31 @@ const getAllProsummerCustom = async (url, token) => {
 
   return [data, response.status];
 };
+
+//ODEP actually broken, don't know if the url is the same - have to check later
+//Updates user profile in ODEP & RESILINK
+const updateUserProsumerCustom = async (url, body, id, token) => {
+  try {
+    const userODEP = await userService.updateUserCustom(url, id, body['user'], token);
+    if(userODEP[1] == 401) {
+      updateDataODEP.error('error: Unauthorize', { from: 'updateUserProsumerCustom', dataReceived: userODEP[0], tokenUsed: token == null ? "Token not given" : token});
+      return userODEP;
+    } else if(userODEP[1] != 200) {
+      updateDataODEP.error('error accessing one user by username ' + username, { from: 'updateUserProsumerCustom', dataReceived: userODEP[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      return userODEP;
+    } else {
+      updateDataODEP.info('success accessing one user by username', { from: 'updateUserProsumerCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    }
+
+    await ProsummerDB.updateJob(body['user']['userName'], body['prosumer']['job']);
+    await ProsummerDB.updateLocation(body['user']['userName'], body['prosumer']['location']);
+    
+    return [{'user': userODEP[0], 'prosumer': body['prosumer']}, userODEP[1]];
+  } catch (e) {
+    getDataLogger.error("error accessing ODEP", {from: 'updateUserProsumerCustom', dataReceiver: e.message});
+    throw e;
+  }
+}
 
 //Retrieves a prosumer by id in ODEP 
 const getOneProsummer = async (url, id, token) => {
@@ -329,6 +363,7 @@ module.exports = {
     getOneProsummer,
     getOneProsummerCustom,
     createProsumerCustom,
+    updateUserProsumerCustom,
     deleteOneProsummer,
     patchBalanceProsummer,
     patchSharingProsummer,

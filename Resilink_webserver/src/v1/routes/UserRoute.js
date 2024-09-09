@@ -696,8 +696,6 @@ router.put('/ODEP/users/:userId', userController.updateUser);
  *                 type: string 
  *               phoneNumber:
  *                 type: string
- *               job: 
- *                 type: string
  *     responses:
  *       401:
  *         description: Unauthorized.

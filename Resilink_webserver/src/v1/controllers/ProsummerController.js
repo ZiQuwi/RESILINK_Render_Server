@@ -7,6 +7,7 @@ const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const prosummerService = require("../services/ProsummerService.js");
+const {pathUserODEP} = require("./UserController.js");
 const _pathProsumerODEP = 'http://90.84.194.104:10010/prosumers/';
 
 const createProsumer = async (req, res) => { 
@@ -80,6 +81,16 @@ const deleteOneProsummer = async (req, res) => {
   }
 };
 
+const putUserProsumerPersonnalData = async (req, res) => {
+  try {
+    const response = await prosummerService.updateUserProsumerCustom(pathUserODEP ,req.body, req.params.prosumerId, req.header('Authorization'));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    patchDataODEP.error('Catched error', { from: 'putUserProsumerPersonnalData', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({message: error.message});
+  }
+};
+
 const patchBalanceProsumer = async (req, res) => {
   try {
     const response = await prosummerService.patchBalanceProsummer(_pathProsumerODEP, req.body, req.params.id, req.header('Authorization'));
@@ -146,6 +157,7 @@ module.exports = {
     getOneProsummerCustom,
     createProsumer,
     deleteOneProsummer,
+    putUserProsumerPersonnalData,
     patchBalanceProsumer,
     patchSharingProsumer,
     patchJobProsummer,

@@ -10,6 +10,7 @@ const connectDB = winston.loggers.get('ConnectDBResilinkLogger');
 // Creates an asset in RESILINK DB 
 const newAsset = async (assetId, imgBase64, owner, unit) => {
   try {
+    console.log("image: " + imgBase64);
     const db = await connectToDatabase();
     const _collection = db.collection('Asset');
     updateData.warn('before inserting data', { from: 'newAsset', data: {assetId, imgBase64, owner}});
@@ -17,8 +18,8 @@ const newAsset = async (assetId, imgBase64, owner, unit) => {
     // Insert an asset with its imgpath. Can be empty if default image from mobile app selected
     const asset = await _collection.insertOne({
       "id": assetId,
-      "owner": owner,
-      "img": imgBase64,
+      "owner": owner, 
+      "images": imgBase64,
       "unit": unit ?? ""
     });
 
@@ -52,7 +53,7 @@ const getAndCompleteOneAssetByAsset = async (asset) => {
       getDataLogger.info('success retrieving an asset in Resilink DB', { from: 'getAndCompleteOneAssetByAsset' });
     }
 
-    asset["img"] = result["img"];
+    asset["images"] = result["images"];
   } catch (e) {
     if (e instanceof getDBError) {
       getDataLogger.error('error retrieving an asset in Resilink DB', { from: 'getAndCompleteOneAssetByAsset' });
@@ -78,7 +79,7 @@ const getOneAssetImageById = async (id) => {
       getDataLogger.info('success retrieving an asset in Resilink DB', { from: 'getOneAssetImageById' });
     }
 
-    return result["img"];
+    return result["images"];
   } catch (e) {
     if (e instanceof getDBError) {
       getDataLogger.error('error retrieving an asset in Resilink DB', { from: 'getOneAssetImageById' });
@@ -123,7 +124,7 @@ const getAndCompleteAssetWithImgByAssets = async (ListAsset) => {
     for (const asset of ListAsset) {
       const numericAssetId = parseInt(asset.id);
       const result = await _collection.findOne({ id: numericAssetId });
-      asset['image'] = result ? result.img : "";
+      asset['images'] = result ? result.images : [];
     }
 
     if (!ListAsset) {
@@ -178,7 +179,7 @@ const updateAssetById = async (assetId, assetImg, asset) => {
 
     const result = await _collection.updateOne(
       { id: numericAssetId },
-      { $set: { img: assetImg } }
+      { $set: { images: assetImg } }
     );
 
     if (result.matchedCount === 1) {
@@ -187,7 +188,7 @@ const updateAssetById = async (assetId, assetImg, asset) => {
       } else {
         updateData.info(`Document with ID ${assetId} found but value unchanged`, { from: 'updateAssetById' });
       }
-      asset.image = result.img;
+      asset.images = result.images;
     } else {
       throw new UpdateDBError(`Failed to find document with ID ${assetId}`);
     }

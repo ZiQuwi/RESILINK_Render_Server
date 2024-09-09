@@ -20,6 +20,7 @@ const getAllProsummer = async (prosumerList) => {
           if (prosumers != null) {
             prosumerList[i].bookMarked = prosumers.bookMarked;
             prosumerList[i].job = prosumers.job;
+            prosumerList[i].location = prosumers.location;
           }
         }
 
@@ -48,6 +49,7 @@ const getOneProsummer = async (prosumer) => {
         } else {
           prosumer.bookMarked = prosumers.bookMarked;
           prosumer.job = prosumers.job;
+          prosumer.location = prosumers.location;
         }
         getDataLogger.info('succes retrieving one prosummer in Resilink DB', { from: 'getOneProsummer'});
         return prosumers;
@@ -117,7 +119,7 @@ const getJobProsummer = async (id) => {
 }
 
 // Creates a prosumer in RESILINK DB
-const newProsumer = async (id, job) => {
+const newProsumer = async (id, job, location) => {
   try {
     const _database = await connectToDatabase();
     const _collection = _database.collection('prosumer');
@@ -126,7 +128,8 @@ const newProsumer = async (id, job) => {
     const prosumer = await _collection.insertOne({
       "_id": id,
       "bookMarked": [],
-      "job": job
+      "job": job,
+      "location": location
     });
 
     if (prosumer == null) {
@@ -170,6 +173,36 @@ const updateJob  = async (prosumerId, job) => {
       updateData.error('error updating job field in Resilink DB', { from: 'updateJob'});
     } else {
       connectDB.error('error connecting to DB ', { from: 'updateJob',  error: e});
+    }
+    throw(e);
+  }
+};
+
+// Update the job from a prosumer
+const updateLocation  = async (prosumerId, location) => {
+  try {
+    const _database = await connectToDatabase();
+    const _collection = _database.collection('prosumer');
+
+    // Update the document to update the job
+    const result = await _collection.updateOne(
+      { "_id": prosumerId },
+      { $set: { "location": location } }
+    );
+
+    if (result.matchedCount === 0) {
+      throw new UpdateDBError("Prosumer not found");
+    } else if (result.modifiedCount === 0) {
+      updateData.info('The location value was the same, no update performed.', { from: 'updateLocation' });
+    } else {
+      updateData.info('Success updating prosumer\'s location field', { from: 'updateLocation' });
+    }
+
+  } catch (e){
+    if (e instanceof UpdateDBError) {
+      updateData.error('error updating location field in Resilink DB', { from: 'updateLocation'});
+    } else {
+      connectDB.error('error connecting to DB ', { from: 'updateLocation',  error: e});
     }
     throw(e);
   }
@@ -279,6 +312,7 @@ module.exports = {
     getOneProsummer,
     getOneProsummerWithUsername,
     updateJob,
+    updateLocation,
     getJobProsummer,
     addbookmarked,
     deleteBookmarkedId,

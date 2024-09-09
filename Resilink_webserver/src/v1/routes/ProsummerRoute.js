@@ -373,6 +373,10 @@ router.post('/ODEP/prosumers/new/', prosumerController.createProsumer);
  *                 type: string 
  *               phoneNumber:
  *                 type: string
+ *               job:
+ *                 type: string
+ *               location:
+ *                 type: string
  *     responses:
  *       200:
  *         description: Token of the user.
@@ -552,6 +556,68 @@ router.delete('/ODEP/prosumers/:id', prosumerController.deleteOneProsummer);
  */
 
 router.patch('/ODEP/prosumers/:id/balance', prosumerController.patchBalanceProsumer);
+
+
+/**
+ * @swagger
+ * /v1/prosumers/{prosumerId}:
+ *   put: 
+ *     summary: Update an existing user in ODEP and RESILINK (from ODEP & RESILINK)
+ *     tags: [Prosumer]
+ *     parameters:
+ *       - in: path
+ *         name: prosumerId
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: ID of user/prosumer to update
+ *     requestBody:
+ *       description: User and Prosumer data that need to be updated
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               user:
+ *                 type: object
+ *                 properties:
+ *                   userName:
+ *                     type: string
+ *                   firstName:
+ *                     type: string
+ *                   lastName:
+ *                     type: string
+ *                   roleOfUser:
+ *                     type: string
+ *                   email:
+ *                     type: string
+ *                   password:
+ *                     type: string 
+ *                   phoneNumber:
+ *                     type: string
+ *               prosumer:
+ *                 type: object
+ *                 properties:
+ *                   job:
+ *                     type: string
+ *                   location:
+ *                     type: string
+ *     responses:
+ *       401:
+ *         description: Unauthorized.
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    message:
+ *                        type: string
+ */
+
+router.put('/prosumers/:prosumerId/', prosumerController.putUserProsumerPersonnalData);
 
 /**
  * @swagger

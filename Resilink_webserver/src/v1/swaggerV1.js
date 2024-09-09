@@ -54,7 +54,7 @@ const swaggerDocs = (app, port) => {
 
     // Route-Handler to visit our docs
     app.use(
-        "/v1/api-docs",
+        "/v1/api-docs", 
         swaggerUi.serve,
         swaggerUi.setup(swaggerSpec)
         );

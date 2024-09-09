@@ -53,7 +53,7 @@ const deleteUser = async (userId) => {
     const _database = await connectToDatabase();
     const _collection = _database.collection('user');
 
-    const result = await _collection.deleteOne({ _id: userId });
+    const result = await _collection.deleteOne({ userName: userId });
 
     if (result.deletedCount === 1) {
       deleteData.info(`Document with ID ${userId} successfully deleted`, { from: 'deleteUser'});

@@ -24,7 +24,7 @@ app.use(express.json());
 const morgan = require('morgan');
 app.use(morgan('dev'));
 
-// Ajoutez le middleware CORS à votre application Express
+// Add CORS middleware
 app.use(cors());
 
 // Permit certbot brom Letsencrypt to read a-string file and start challenging the server
@@ -32,7 +32,7 @@ app.use(cors());
 
 // --------------------------------------------------
 
-// 
+// all Routes
 const v1ProsummerRouter = require("./v1/routes/ProsummerRoute.js");
 app.use("/v1/", v1ProsummerRouter);
 
@@ -63,7 +63,7 @@ app.use("/v1/", v1ArticleRoute);
 const v1NewsRoute = require("./v1/routes/NewsRoute.js");
 app.use("/v1/", v1NewsRoute);
 
-//start application Express.js (pour notre les requêtes)
+//start application Express.js
 app.listen(PORT, '0.0.0.0', () => { 
     console.log(`API is listening on port ${PORT}`);
     V1SwaggerDocs(app, PORT); 

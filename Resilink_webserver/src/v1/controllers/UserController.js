@@ -6,7 +6,7 @@ const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
 
 const userService = require("../services/UserService.js");
 
-const _pathUserODEP = 'http://90.84.194.104:4000/oauth/api/v1.0.0/users/';
+const pathUserODEP = 'http://90.84.194.104:4000/oauth/api/v1.0.0/users/';
 
 const getTokenUser = async (req, res) => {
     try {
@@ -20,7 +20,7 @@ const getTokenUser = async (req, res) => {
 
 const createUser = async (req, res) => {
   try {
-    const response = await userService.createUser(_pathUserODEP, req.body, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    const response = await userService.createUser(pathUserODEP, req.body, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -30,7 +30,7 @@ const createUser = async (req, res) => {
 
 const createUserCustom = async (req, res) => {
   try {
-    const response = await userService.createUserResilink(_pathUserODEP, req.body, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    const response = await userService.createUserResilink(pathUserODEP, req.body, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUserCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -41,7 +41,7 @@ const createUserCustom = async (req, res) => {
 const deleteUser = async (req, res) => {
   try {
     console.log(req.params.userId);
-    const response = await userService.deleteUser(_pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    const response = await userService.deleteUser(pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -51,7 +51,7 @@ const deleteUser = async (req, res) => {
 
 const deleteUserODEPRESILINK = async (req, res) => {
   try {
-    const response = await userService.deleteUserODEPRESILINK(_pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    const response = await userService.deleteUserODEPRESILINK(pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -61,7 +61,7 @@ const deleteUserODEPRESILINK = async (req, res) => {
 
 const getUserById = async (req, res) => {
   try {
-    const response = await userService.getUserById(_pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    const response = await userService.getUserById(pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -71,7 +71,7 @@ const getUserById = async (req, res) => {
 
 const getAllUser = async (req, res) => {
   try {
-    const response = await userService.getAllUser(_pathUserODEP, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    const response = await userService.getAllUser(pathUserODEP, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -81,7 +81,7 @@ const getAllUser = async (req, res) => {
 
 const getAllUserCustom = async (req, res) => {
   try {
-    const response = await userService.getAllUserCustom(_pathUserODEP, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    const response = await userService.getAllUserCustom(pathUserODEP, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'getAllUserCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -92,7 +92,7 @@ const getAllUserCustom = async (req, res) => {
 
 const getUserByEmail = async (req, res) => {
   try {
-    const response = await userService.getUserByEmail(_pathUserODEP, req.params.userEmail, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    const response = await userService.getUserByEmail(pathUserODEP, req.params.userEmail, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -103,7 +103,7 @@ const getUserByEmail = async (req, res) => {
 
 const getUserByUsername = async (req, res) => {
   try {
-    const response = await userService.getUserByUsername(_pathUserODEP, req.params.userName, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    const response = await userService.getUserByUsername(pathUserODEP, req.params.userName, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -113,7 +113,7 @@ const getUserByUsername = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-    const response = await userService.updateUser(_pathUserODEP, req.params.userId, req.body, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    const response = await userService.updateUser(pathUserODEP, req.params.userId, req.body, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -123,7 +123,7 @@ const updateUser = async (req, res) => {
 
 const updateUserCustom = async (req, res) => {
   try {
-    const response = await userService.updateUserCustom(_pathUserODEP, req.params.userId, req.body, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    const response = await userService.updateUserCustom(pathUserODEP, req.params.userId, req.body, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -133,7 +133,7 @@ const updateUserCustom = async (req, res) => {
 
 const getUserbyIdCustom = async (req, res) => {
   try {
-    const response = await userService.getUserByIdCustom(_pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    const response = await userService.getUserByIdCustom(pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -142,6 +142,7 @@ const getUserbyIdCustom = async (req, res) => {
 }
 
   module.exports = {
+    pathUserODEP,
     getTokenUser,
     createUser,
     createUserCustom,

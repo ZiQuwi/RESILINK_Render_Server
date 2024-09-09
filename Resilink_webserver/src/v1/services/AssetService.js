@@ -116,8 +116,6 @@ const getAllAssetResilink = async (token) => {
       return [data, allAsset.status];
     } 
     const dataFinal = await AssetDB.getAndCompleteAssetWithImgByAssets(data);
-    console.log("apres dataFinal");
-    console.log(dataFinal);
     for (const key in dataFinal) {
         if (dataFinal.hasOwnProperty(key)) {
           const element = dataFinal[key];
@@ -212,10 +210,15 @@ const createAsset = async (url, body, token) => {
 //Creates an asset in ODEP and RESILINK
 const createAssetCustom = async (url, body, token) => {
 
+  if (body['images'].length > 2) {
+    updateDataODEP.error('error creating one asset', {from: 'createAssetCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    return [{message: "images contains more than 2 elements"}, (500)];
+  }
+
   console.log("in createAssetCustom")
-  const imgBase64 = body['image'];
+  const imgBase64 = body['images'];
   const unit = body['unit'];
-  delete body['image'];
+  delete body['images'];
   delete body['unit'];
 
   console.log('pass1');
@@ -233,7 +236,6 @@ const createAssetCustom = async (url, body, token) => {
   console.log('pass3');
   if (response.status == 401) {
     getDataLogger.error('error: Unauthorize', {from: 'createAssetCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
-    return [data, response.status];
   } else if (response.status != 200) {
     updateDataODEP.error('error creating one asset', {from: 'createAssetCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
   } else {
@@ -311,12 +313,9 @@ const putAsset = async (url, body, id, token) => {
 
 //Update en asset by id in ODEP and RESILINK
 const putAssetCustom = async (url, body, id, token) => {
-  const imgBase64 = body['image'];
-  delete body['image'];
+  const imgBase64 = body['images'];
+  delete body['images'];
   updateDataODEP.warn('data to send to ODEP', { from: 'putAssetCustom', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
-  console.log("body: " + body);
-  console.log("token: " + token);
-  console.log(url + id);
   const response = await Utils.fetchJSONData(
       'PUT',
       url + id, 

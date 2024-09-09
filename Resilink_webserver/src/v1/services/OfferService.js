@@ -369,7 +369,6 @@ const getAllOfferOwnerCustom = async (url, Username, token) => {
       }
     }
   }
-  console.log(allOfferOwner);
   getDataLogger.info('success retrieving offers & keep the owner\'s', { from: 'getAllOfferOwnerCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
   return [allOfferOwner, allOffer.status];
 };
@@ -386,7 +385,6 @@ const createOffer = async (url, body, token) => {
       'Authorization': token},
       body);
   const data = await Utils.streamToJSON(response.body);
-  console.log(data)
   if(response.status == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createOffer', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
   } else if(response.status != 200) {

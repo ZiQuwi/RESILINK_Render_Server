@@ -86,9 +86,7 @@ const haversine = (lat1, lon1, lat2, lon2) => {
   return distance;
 }
 
-/*
-  checks whether the distance between 2 geographical points is too far apart
-*/
+//Checks whether the distance between 2 geographical points is too far apart
 const isInPerimeter = (lat1, lon1, lat2, lon2, perimeterRadius) => {
   console.log("IN");
   const distance = haversine(lat1, lon1, lat2, lon2);
@@ -96,11 +94,26 @@ const isInPerimeter = (lat1, lon1, lat2, lon2, perimeterRadius) => {
   return (distance <= perimeterRadius);
 }
 
+//Checks if a string is a string containing only Roman characters 
+function containsNonRomanCharacters(str) {
+  // Regex to detect basic non-Latin characters (including Arabic, Chinese, Japanese, etc.)  
+  const nonRomanRegex = /[^\u0000-\u007F]/;
+
+  return nonRomanRegex.test(str);
+}
+
+//Checks if a string is a string containing only digits characters 
+function isNumeric(str) {
+  // Use a regex to check if the string contains only digits
+  return /^\d+$/.test(str);
+}
 
 module.exports = {
   executeCurl,
   streamToJSON,
   fetchJSONData,
   isInPerimeter,
+  containsNonRomanCharacters,
+  isNumeric
 }
 

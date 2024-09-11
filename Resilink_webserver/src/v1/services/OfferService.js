@@ -9,6 +9,7 @@ const Utils = require("./Utils.js");
 const AssetTypes = require("./AssetTypeService.js");
 const Asset = require("./AssetService.js");
 const Contract = require("./ContractService.js");
+const UserDB = require("../database/UserDB.js");
 
 
 //Retrieves all valid offers for sale or lease in ODEP for RESILINK
@@ -46,6 +47,7 @@ const getAllOfferForResilinkCustom = async (url, token) => {
             ) 
           ) 
           {
+            await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
             allOfferResilink[element['offerId'].toString()] = element;
           }
         }
@@ -91,6 +93,7 @@ const getLastThreeOfferForResilinkCustom = async (url, token) => {
             ) 
           ) 
           {
+            await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
             validOffers.push(element);
           }
         }
@@ -113,7 +116,6 @@ const getLastThreeOfferForResilinkCustom = async (url, token) => {
 //Filters valid ODEP offers with filter parameters set
 const getAllOfferFilteredCustom = async (url, filter, token) => {    
   try {
-
     //Retrieves all data required to check values.
     const offerResilink = await getAllOfferForResilinkCustom(url, token);
     const allOffer = offerResilink[0];
@@ -131,7 +133,6 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
     //Checks for each offer whether it does not meet one of the conditions expressed in the filter map.
     const allOfferFiltered = [];
     var isCompatible = true;
-    console.log(filter);
 
     for (const key in allOffer) {
       isCompatible = true;
@@ -143,10 +144,13 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
           if (typeof filter["assetType"] !== "string") {
             var i = 0;
             var notFound = true;
-
+            
             while ( i <= filter["assetType"].length && notFound) {
               if (allOffer[key]["assetType"] == filter["assetType"][i]) {
+                console.log(allOffer[key]["assetType"]);
+                console.log(filter["assetType"][i]);
                 notFound = false;
+                console.log(notFound);
               }
               i++;
             };
@@ -155,7 +159,7 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
               continue;
             };
           } else {
-            if (allAsset[allOffer[key]["assetId"]]["assetType"] != filter["assetType"]) {
+            if (allAsset[allOffer[key]["assetId"]]["assetType"].replaceAll(/\d+/g, '') != filter["assetType"]) {
               isCompatible = false;
               continue;
             }
@@ -325,10 +329,15 @@ const getOwnerOfferPurchase = async (url, Username, token) => {
       } 
       return acc;
     }, []);
-    allContractPurchased.forEach(data => {
+    // Instead of a for... usage of Promise to make all afffectation at the same time
+    await Promise.all(allContractPurchased.map(async (data) => {
+      await UserDB.insertUserPhoneNumber(
+        allOffer[0][parseInt(data['offer'])]['offerer'].toString(),
+        allOffer[0][parseInt(data['offer'])]
+      );
       allOfferPurchase.push(allOffer[0][parseInt(data['offer'])]);
       allAssetPurchase.push(allAsset[0][data['asset']]);
-    });
+    }));
     return [{'contracts': allContractPurchased, 'offers': allOfferPurchase, 'assets': allAssetPurchase}, 200];
   } else {
     return [{'contracts': [], 'offers': [], 'assets': []}, allContractOwner[1]];
@@ -375,7 +384,6 @@ const getAllOfferOwnerCustom = async (url, Username, token) => {
 
 //Creates an offer in ODEP
 const createOffer = async (url, body, token) => {
-  console.log("in createOffer");
   updateDataODEP.warn('data to send to ODEP', { from: 'createOffer', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
   const response = await Utils.fetchJSONData(
       'POST',
@@ -517,7 +525,6 @@ const putOffer = async (url, body, id, token) => {
 
 //Updates the offer and its asset by id in ODEP
 const putOfferAsset = async (url, body, id, token) => {
-  console.log("dans putofferAssetService");
   const putAsset = await Asset.putAssetCustom("http://90.84.194.104:10010/assets/", body['asset'], body['offer']['assetId'], token);
   if (putAsset[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'putOfferAsset', dataReceived: newsAsset[0], tokenUsed: token == null ? "Token not given" : token});

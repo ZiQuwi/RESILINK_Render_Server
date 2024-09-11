@@ -147,10 +147,35 @@ const getAllUser = async (userList) => {
   }
 }
 
+// Retrieves a user phone number by id in RESILINK DB
+const insertUserPhoneNumber = async (userName, body) => {
+  try {
+    const _database = await connectToDatabase();
+    const _collection = _database.collection('user');
+
+    var user = await _collection.findOne({ userName: userName });
+    if (user != null) {
+      body['phoneNumber'] = user.phoneNumber;
+    } else {
+      throw new getDBError();
+    }
+
+    getDataLogger.info('succes retrieving an user phoneNumber in Resilink DB', { from: 'insertuserPhoneNumber'});
+
+  } catch (e) {
+    if (e instanceof getDBError) {
+      updateData.error('error retrieving user phoneNumber in Resilink DB', { from: 'insertuserPhoneNumber', error: e.message});
+    } else {
+      connectDB.error('error connecting to DB', { from: 'insertuserPhoneNumber', error: e.message});
+    }
+  }
+}
+
 module.exports = {
   newUser,
   deleteUser,
   updateUser,
   getUser,
-  getAllUser
+  getAllUser,
+  insertUserPhoneNumber
 }

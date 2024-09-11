@@ -73,7 +73,6 @@ const createUserResilink = async (pathUserODEP, newUserRequest, token) => {
     
     //Calls the function to create a user in RESILINK DB if no errors caught
     const data = await Utils.streamToJSON(response.body);
-    console.log(data);
     if(response.status == 401) {
       updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     } else if(response.status != 200 && response.status != 201) {

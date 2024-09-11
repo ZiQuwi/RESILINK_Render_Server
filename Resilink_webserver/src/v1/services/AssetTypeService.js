@@ -79,8 +79,6 @@ const createAssetTypesCustom = async (assetType, token) => {
       return [resultassetType[0], resultassetType[1]];
     } else {
       const resultDB = await AssetTypeDB.newAssetTypeDB(assetType);
-      console.log("pass2");
-      console.log("name assetType to create: " + resultDB);
       //Change the name of the asset type to the new name, which is the counter at the end of the asset type and creates the new asset type 
       resultassetType[0]["name"] = resultDB;
       const adminToken = await User.functionGetTokenUser({
@@ -96,7 +94,6 @@ const createAssetTypesCustom = async (assetType, token) => {
         'Authorization': 'Bearer ' + adminToken[0]["accessToken"]},
         resultassetType[0]
       );
-      console.log("pass3");
       const data = await Utils.streamToJSON(response.body);
       if (response.status == 401) {
         updateDataODEP.error('error: Unauthorize', { from: 'createAssetTypesCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});

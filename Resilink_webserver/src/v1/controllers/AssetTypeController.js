@@ -71,7 +71,6 @@ const deleteAssetTypes = async (req, res) => {
 
 const getAllAssetTypesResilink = async (req, res) => { 
   try {
-    console.log('2')
       const response = await assettypeService.getAllAssetTypesResilink(req.header('Authorization'));
       res.status(response[1]).send(response[0]);
     } catch (error) {

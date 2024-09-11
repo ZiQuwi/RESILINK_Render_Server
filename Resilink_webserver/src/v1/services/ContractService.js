@@ -105,7 +105,6 @@ const getOwnerContractOngoing = async (url, id, token) => {
       //Retrieves all assets and asset types to obtain the nature of the asset type linked to the contract
       const allAsset = await Assets.getAllAssetResilink(token);
       const allAssetTypes = await AssetTypes.getAllAssetTypesResilink(token);
-      console.log(allAsset);
       if (allAsset[1] != 200) {
         getDataLogger.warn('error retrieving all assets', { from: 'getOwnerContractOngoing', dataReceived: allAsset[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
         return[{contracts: {code: response.status, message: "Successful retrieval"}, assets: allAsset[0], AssetTypes: {code: "", message: "not started"}}, allAsset[1]];

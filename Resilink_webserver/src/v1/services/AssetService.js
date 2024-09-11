@@ -215,13 +215,11 @@ const createAssetCustom = async (url, body, token) => {
     return [{message: "images contains more than 2 elements"}, (500)];
   }
 
-  console.log("in createAssetCustom")
   const imgBase64 = body['images'];
   const unit = body['unit'];
   delete body['images'];
   delete body['unit'];
 
-  console.log('pass1');
   updateDataODEP.warn('data to send to ODEP', { from: 'createAssetCustom', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
   const response = await Utils.fetchJSONData(
     'POST',
@@ -231,9 +229,7 @@ const createAssetCustom = async (url, body, token) => {
     'Authorization': token},
     body
   );
-  console.log('pass2');
   const data = await Utils.streamToJSON(response.body);
-  console.log('pass3');
   if (response.status == 401) {
     getDataLogger.error('error: Unauthorize', {from: 'createAssetCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
   } else if (response.status != 200) {
@@ -241,7 +237,6 @@ const createAssetCustom = async (url, body, token) => {
   } else {
     updateDataODEP.info('success creating one asset', {from: 'createAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     await AssetDB.newAsset(data['assetId'], imgBase64, body['owner'], unit);
-    console.log('pass4');
   };
   return [data, response.status];
 };
@@ -260,7 +255,6 @@ const createAssetWithAssetTypeCustom = async (url, body, token) => {
    * Checks the value of the response status code 
    */
   const resultCreateAssetType = await AssetTypes.createAssetTypesCustom(body['assetType'], token);
-  console.log("dans createAssetWithAssetTypeCustom");
   if (resultCreateAssetType[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createAssetWithAssetTypeCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
     return [{assetType: resultCreateAssetType[0], asset: "no attempt executed"}, resultCreateAssetType[1]];
@@ -273,7 +267,6 @@ const createAssetWithAssetTypeCustom = async (url, body, token) => {
      * If the status code is valid, calls the createAssetTypesCustom function to create and/or update assetType counter in ODEP and RESILINK
      * Checks the value of the response status code 
    */
-  console.log("création assetType ODEP et RES fini, continuation");
     updateDataODEP.info('success creating one assetType', { from: 'createAssetWithAssetTypeCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     body["assetType"] = resultCreateAssetType[0]["assetType"];
     const resultCreateAsset = await createAssetCustom(url, body, token);
@@ -282,7 +275,6 @@ const createAssetWithAssetTypeCustom = async (url, body, token) => {
     } else if(resultCreateAsset[1] != 200) {
       updateDataODEP.info('error creating one asset', { from: 'createAssetWithAssetTypeCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     } else {
-      console.log("création asset fini ODEP et RES, continuation");
       updateDataODEP.info('success creating one asset', { from: 'createAssetWithAssetTypeCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     }
     return [{assetType: resultCreateAssetType[0], asset: resultCreateAsset[0]}, resultCreateAsset[1]];

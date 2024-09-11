@@ -62,7 +62,6 @@ const getOneProsumer = async (req, res) => {
 
 const getOneProsummerCustom = async (req, res) => {
   try {
-    console.log(req.header('Authorization'));
     const response = await prosummerService.getOneProsummerCustom(_pathProsumerODEP, req.params.id, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {

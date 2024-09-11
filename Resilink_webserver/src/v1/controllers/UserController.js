@@ -40,7 +40,6 @@ const createUserCustom = async (req, res) => {
 
 const deleteUser = async (req, res) => {
   try {
-    console.log(req.params.userId);
     const response = await userService.deleteUser(pathUserODEP, req.params.userId, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {

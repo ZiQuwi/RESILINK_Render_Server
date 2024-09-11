@@ -88,7 +88,6 @@ const haversine = (lat1, lon1, lat2, lon2) => {
 
 //Checks whether the distance between 2 geographical points is too far apart
 const isInPerimeter = (lat1, lon1, lat2, lon2, perimeterRadius) => {
-  console.log("IN");
   const distance = haversine(lat1, lon1, lat2, lon2);
 
   return (distance <= perimeterRadius);

@@ -220,6 +220,19 @@ const createAssetCustom = async (url, body, token) => {
   delete body['images'];
   delete body['unit'];
 
+  // A enlever après les phase de test, cache misère car sur l'app, il peut y avoir la création d'un asset avec deux attribue GPS.
+  const geoRegex = /^<[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)>$/;
+  // Filtrer pour obtenir tous les attributs qui ont le même attributeName
+  body['specificAttributes'] = body['specificAttributes'].filter(attr => {
+    // Si l'attribut est "GPS" et que la valeur n'est ni vide ni valide, on le supprime
+    if (attr.attributeName === "GPS" && !(geoRegex.test(attr.value))) {
+      console.log(`Removing invalid GPS attribute: ${attr.value}`);
+      return false; // Le filtre exclut cet attribut
+    }
+    return true; // Garde les autres attributs
+  })
+  console.log(body);
+
   updateDataODEP.warn('data to send to ODEP', { from: 'createAssetCustom', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
   const response = await Utils.fetchJSONData(
     'POST',

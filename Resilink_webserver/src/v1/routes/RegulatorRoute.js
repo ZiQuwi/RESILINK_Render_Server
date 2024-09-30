@@ -12,32 +12,33 @@ const router = express.Router();
 /**
  * @swagger
  * components:
- *  schemas:
- *    Regulator:
- *      type: object
- *      required: 
- *          - id
- *      properties:
- *        id: 
- *          type: string
- *        account:
- *          type: string
- *        assetTypes : 
- *          type: array
- *          items:
- *            type: string
- *      example:
- *          id: mKGJSI2
- *          email: usernamehotmail.com
- *          phoneNumber: 1023456789    
+ *   schemas:
+ *     Regulator:
+ *       type: object
+ *       required:
+ *         - id
+ *         - account
+ *         - assetTypes
+ *       properties:
+ *         id:
+ *           type: string
+ *           description: "The unique identifier of the regulator"
+ *         account:
+ *           type: string
+ *           description: "The assigned Quorum account"
+ *         assetTypes:
+ *           type: array
+ *           description: "The asset types that the regulator can regulate"
+ *           items:
+ *             type: string
+ *           example: ["material", "immaterial"]
  */
-
 
 /**
  * @swagger
- * /v1/regulators:
+ * /v1/ODEP/regulators:
  *   post: 
- *     summary: Create a new Regulator (from ODEP)
+ *     summary: Create a new Regulator
  *     tags: [Regulator]
  *     requestBody:
  *       required: true
@@ -96,13 +97,13 @@ const router = express.Router();
  *                   message:
  *                       type: string
  */
-router.post('/regulators', regulatorController.createRegulator);
+router.post('/ODEP/regulators', regulatorController.createRegulator);
 
 /**
  * @swagger
- * /v1/regulators/all:
+ * /v1/ODEP/regulators/all:
  *   get:
- *     summary: get all regulators (from ODEP)
+ *     summary: get all regulators
  *     tags: [Regulator]
  *     responses:
  *       200:
@@ -154,13 +155,13 @@ router.post('/regulators', regulatorController.createRegulator);
  *                   message:
  *                       type: string
  */
-router.get('/regulators/all', regulatorController.getAllRegulator);
+router.get('/ODEP/regulators/all', regulatorController.getAllRegulator);
 
 /**
  * @swagger
- * /v1/regulators/{id}:
+ * /v1/ODEP/regulators/{id}:
  *   get:
- *     summary: Get a regulator by id (from ODEP)
+ *     summary: Get a regulator by id
  *     tags: [Regulator]
  *     parameters:
  *       - in: path
@@ -216,13 +217,13 @@ router.get('/regulators/all', regulatorController.getAllRegulator);
  *                   message:
  *                       type: string
  */
-router.get('/regulators/:id', regulatorController.getOneRegulator);
+router.get('/ODEP/regulators/:id', regulatorController.getOneRegulator);
 
 /**
  * @swagger
- * /v1/regulators/{id}:
+ * /v1/ODEP/regulators/{id}:
  *   patch: 
- *     summary: update regulator liste of asset types he is accountable on (from ODEP)
+ *     summary: update regulator liste of asset types he is accountable on
  *     tags: [Regulator]
  *     parameters:
  *       - in: path
@@ -283,13 +284,13 @@ router.get('/regulators/:id', regulatorController.getOneRegulator);
  *                   message:
  *                       type: string
  */
-router.patch('/regulators/:id', regulatorController.patchOneRegulator);
+router.patch('/ODEP/regulators/:id', regulatorController.patchOneRegulator);
 
 /**
  * @swagger
- * /v1/regulators/{id}/:
+ * /v1/ODEP/regulators/{id}/:
  *   delete: 
- *     summary: delete a regulator (from ODEP)
+ *     summary: delete a regulator
  *     tags: [Regulator]
  *     parameters:
  *       - in: path
@@ -339,7 +340,7 @@ router.patch('/regulators/:id', regulatorController.patchOneRegulator);
  *                   message:
  *                       type: string
  */
-router.delete('/regulators/:id', regulatorController.deleteRegulator);
+router.delete('/ODEP/regulators/:id', regulatorController.deleteRegulator);
 
 module.exports = router;
 

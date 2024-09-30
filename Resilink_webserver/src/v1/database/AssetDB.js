@@ -54,6 +54,7 @@ const getAndCompleteOneAssetByAsset = async (asset) => {
     }
 
     asset["images"] = result["images"];
+    asset["unit"] = result["unit"];
   } catch (e) {
     if (e instanceof getDBError) {
       getDataLogger.error('error retrieving an asset in Resilink DB', { from: 'getAndCompleteOneAssetByAsset' });
@@ -116,7 +117,7 @@ const getAllAsset = async () => {
 };
 
 // Retrieves and completes assets with images by assets
-const getAndCompleteAssetWithImgByAssets = async (ListAsset) => {
+const getAndCompleteAssetByAssets = async (ListAsset) => {
   try {
     const db = await connectToDatabase();
     const _collection = db.collection('Asset');
@@ -125,6 +126,7 @@ const getAndCompleteAssetWithImgByAssets = async (ListAsset) => {
       const numericAssetId = parseInt(asset.id);
       const result = await _collection.findOne({ id: numericAssetId });
       asset['images'] = result ? result.images : [];
+      asset['unit'] = result['unit'];
     }
 
     if (!ListAsset) {
@@ -170,7 +172,7 @@ const deleteAssetById = async (assetId) => {
 };
 
 // Updates an asset by id in RESILINK DB
-const updateAssetById = async (assetId, assetImg, asset) => {
+const updateAssetById = async (assetId, assetImg, asset, unit) => {
   try {
     const db = await connectToDatabase();
     const _collection = db.collection('Asset');
@@ -179,7 +181,7 @@ const updateAssetById = async (assetId, assetImg, asset) => {
 
     const result = await _collection.updateOne(
       { id: numericAssetId },
-      { $set: { images: assetImg } }
+      { $set: { images: assetImg, unit: unit} }
     );
 
     if (result.matchedCount === 1) {
@@ -207,7 +209,7 @@ module.exports = {
   getAndCompleteOneAssetByAsset,
   getOneAssetImageById,
   getAllAsset,
-  getAndCompleteAssetWithImgByAssets,
+  getAndCompleteAssetByAssets,
   deleteAssetById,
   updateAssetById
 };

@@ -99,10 +99,29 @@ const getUserByEmail = async (req, res) => {
   }
 }
 
+const getUserByEmailCustom = async (req, res) => {
+  try {
+    const response = await userService.getUserByEmailCustom(pathUserODEP, req.params.userEmail, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({message: error.message})
+  }
+}
 
 const getUserByUsername = async (req, res) => {
   try {
     const response = await userService.getUserByUsername(pathUserODEP, req.params.userName, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({message: error.message})
+  }
+}
+
+const getUserByUsernameCustom = async (req, res) => {
+  try {
+    const response = await userService.getUserByUsernameCustom(pathUserODEP, req.params.userName, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -151,7 +170,9 @@ const getUserbyIdCustom = async (req, res) => {
     getAllUser,
     getAllUserCustom,
     getUserByEmail,
+    getUserByEmailCustom,
     getUserByUsername,
+    getUserByUsernameCustom,
     updateUser,
     updateUserCustom,
     getUserbyIdCustom

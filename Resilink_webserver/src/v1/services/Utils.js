@@ -96,7 +96,7 @@ const isInPerimeter = (lat1, lon1, lat2, lon2, perimeterRadius) => {
 //Checks if a string is a string containing only Roman characters 
 function containsNonRomanCharacters(str) {
   // Regex to detect basic non-Latin characters (including Arabic, Chinese, Japanese, etc.)  
-  const nonRomanRegex = /[^\u0000-\u007F]/;
+  const nonRomanRegex = /^[a-zA-Z0-9?!%]+$/;
 
   return nonRomanRegex.test(str);
 }
@@ -107,12 +107,33 @@ function isNumeric(str) {
   return /^\d+$/.test(str);
 }
 
+// Fonction de tri personnalisée
+const customSorter = (a, b) => {
+  // Sort by HTTP method (order: GET, POST, PUT, DELETE) first
+  const methodsOrder = ['get', 'post', 'put', 'delete'];
+  
+  const methodA = a.get('method');
+  const methodB = b.get('method');
+
+  // If the methods are different, sort by method
+  if (methodA !== methodB) {
+    return methodsOrder.indexOf(methodA) - methodsOrder.indexOf(methodB);
+  }
+
+  // If the methods are the same, the paths are sorted alphabetically.
+  const pathA = a.get('path');
+  const pathB = b.get('path');
+  
+  return pathA.localeCompare(pathB);
+};
+
 module.exports = {
   executeCurl,
   streamToJSON,
   fetchJSONData,
   isInPerimeter,
   containsNonRomanCharacters,
-  isNumeric
+  isNumeric,
+  customSorter
 }
 

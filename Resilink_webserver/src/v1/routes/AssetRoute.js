@@ -8,41 +8,75 @@ const router = express.Router();
  *   name: Asset
  */
 
+
 /**
  * @swagger
  * components:
  *   schemas:
  *     Asset:
  *       type: object
+ *       required:
+ *         - name
+ *         - description
+ *         - assetType
+ *         - owner
+ *         - transactionType
  *       properties:
+ *         id:
+ *           type: integer
+ *           description: The id of the asset
  *         name:
  *           type: string
+ *           description: The name of the asset
  *         description:
  *           type: string
+ *           description: The description of the asset
  *         assetType:
  *           type: string
+ *           description: The type of the asset
  *         owner:
  *           type: string
+ *           description: The owner id
+ *         unit:
+ *           type: string
+ *           description: The unit of the asset (can be different from his assetType unit) 
  *         transactionType:
  *           type: string
  *           enum:
  *             - sale/purchase
  *             - rent
- *           description: "La description de votre transactionType"
+ *           description: The type of transaction (two possible values)
  *         totalQuantity:
  *           type: number
+ *           description: Required in case of immaterial and measurable asset
+ *         availableQuantity:
+ *           type: number
+ *           description: Quantity still available for the asset 
  *         regulatedId:
  *           type: string
+ *           description: The regulated ID of the asset
  *         regulator:
  *           type: string
+ *           description: Boolean if a regulator is associated to the offer ("false" / "true")
+ *         images:
+ *           type: array
+ *           description: The images associated to the asset
+ *           items:
+ *             type: string
+ *             description: "Can store data such as base64, http link, etc..."
  *         specificAttributes:
- *           type: object
- *           properties:
- *              attributeName:
- *                  type: string
- *              value:
- *                  type: string
+ *           type: array
+ *           description: Additional specific attributes for the asset
+ *           items:
+ *             type: object
+ *             properties:
+ *               attributeName:
+ *                 type: string
+ *               value:
+ *                 type: string
+ *                 description: "-{v1;V2;...;Vn}: in case of listAsset"
  */
+
 
 /**
  * @swagger
@@ -137,7 +171,7 @@ router.post('/ODEP/assets/', assetController.createAsset);
  * @swagger
  * /v1/assets:
  *   post: 
- *     summary: Create a new asset with image in RESILINK & ODEP (from RESILINK & ODEP)
+ *     summary: Create a new asset
  *     tags: [Asset]
  *     requestBody:
  *       required: true
@@ -166,7 +200,9 @@ router.post('/ODEP/assets/', assetController.createAsset);
  *                  type: string
  *                regulator:
  *                  type: string
- *                image:
+ *                images:
+ *                  type: string
+ *                unit: 
  *                  type: string
  *                specificAttributes:
  *                  type: array
@@ -228,7 +264,7 @@ router.post('/assets/', assetController.createAssetCustom);
  * @swagger
  * /v1/assets/withAssetType:
  *   post: 
- *     summary: Create a new asset and a new assetTypes (from ODEP & RESILINK)
+ *     summary: Create a new asset and a new assetTypes
  *     tags: [Asset]
  *     requestBody:
  *       required: true
@@ -257,7 +293,9 @@ router.post('/assets/', assetController.createAssetCustom);
  *                  type: string
  *                regulator:
  *                  type: string
- *                image:
+ *                images:
+ *                  type: string
+ *                unit:
  *                  type: string
  *                specificAttributes:
  *                  type: array
@@ -351,9 +389,9 @@ router.post('/assets/withAssetType', assetController.createAssetWithAssetTypeCus
  *                     type: string
  *                   transactionType:
  *                     type: string
- *                   enum:
- *                     - sale/purchase
- *                     - rent
+ *                     enum:
+ *                       - sale/purchase
+ *                       - rent
  *                   totalQuantity:
  *                     type: number
  *                   regulatedId:
@@ -408,7 +446,7 @@ router.get('/ODEP/assets/owner', assetController.getOwnerAsset);
  * @swagger
  * /v1/assets/owner:
  *   get:
- *     summary: Get assets with image by owner (from ODEP & RESILINK)
+ *     summary: Get assets by owner
  *     tags: [Asset]
  *     parameters:
  *       - in: query
@@ -440,16 +478,18 @@ router.get('/ODEP/assets/owner', assetController.getOwnerAsset);
  *                     type: string
  *                   transactionType:
  *                     type: string
- *                   enum:
- *                     - sale/purchase
- *                     - rent
+ *                     enum:
+ *                       - sale/purchase
+ *                       - rent
  *                   totalQuantity:
  *                     type: number
  *                   regulatedId:
  *                     type: string
  *                   regulator:
  *                     type: string
- *                   image:
+ *                   images:
+ *                     type: string
+ *                   unit:
  *                     type: string
  *                   specificAttributes:
  *                     type: array
@@ -525,9 +565,9 @@ router.get('/assets/owner', assetController.getOwnerAssetCustom);
  *                     type: string
  *                   transactionType:
  *                     type: string
- *                   enum:
- *                     - sale/purchase
- *                     - rent
+ *                     enum:
+ *                       - sale/purchase
+ *                       - rent
  *                   totalQuantity:
  *                     type: number
  *                   regulatedId:
@@ -582,7 +622,7 @@ router.get('/ODEP/assets/all/', assetController.getAllAsset);
  * @swagger
  * /v1/assets/all:
  *   get:
- *     summary: get all assets with image (from ODEP & RESILINK)
+ *     summary: get all assets
  *     tags: [Asset]
  *     responses:
  *       200:
@@ -608,16 +648,18 @@ router.get('/ODEP/assets/all/', assetController.getAllAsset);
  *                     type: string
  *                   transactionType:
  *                     type: string
- *                   enum:
- *                     - sale/purchase
- *                     - rent
+ *                     enum:
+ *                       - sale/purchase
+ *                       - rent
  *                   totalQuantity:
  *                     type: number
  *                   regulatedId:
  *                     type: string
  *                   regulator:
  *                     type: string
- *                   image:
+ *                   images:
+ *                     type: string
+ *                   unit:
  *                     type: string
  *                   specificAttributes:
  *                     type: array
@@ -697,9 +739,9 @@ router.get('/assets/all', assetController.getAllAssetCustom);
  *                   type: string
  *                 transactionType:
  *                   type: string
- *                 enum:
- *                   - sale/purchase
- *                   - rent
+ *                   enum:
+ *                     - sale/purchase
+ *                     - rent
  *                 totalQuantity:
  *                   type: number
  *                 regulatedId:
@@ -754,7 +796,7 @@ router.get('/ODEP/assets/:id/', assetController.getOneAsset);
  * @swagger
  * /v1/assets/{id}:
  *   get:
- *     summary: Get an asset with image by id (from ODEP & RESILINK)
+ *     summary: Get an asset by id
  *     tags: [Asset]
  *     parameters:
  *       - in: path
@@ -784,16 +826,18 @@ router.get('/ODEP/assets/:id/', assetController.getOneAsset);
  *                   type: string
  *                 transactionType:
  *                   type: string
- *                 enum:
- *                   - sale/purchase
- *                   - rent
+ *                   enum:
+ *                     - sale/purchase
+ *                     - rent
  *                 totalQuantity:
  *                   type: number
  *                 regulatedId:
  *                   type: string
  *                 regulator:
  *                   type: string
- *                 image:
+ *                 images:
+ *                   type: string
+ *                 unit:
  *                   type: string
  *                 specificAttributes:
  *                   type: array
@@ -843,7 +887,7 @@ router.get('/assets/:id/', assetController.getOneAssetCustom);
  * @swagger
  * /v1/asset/allAssetMapped:
  *   get:
- *     summary: get all assets with image in map form(from RESILINK & ODEP)
+ *     summary: get all assets with image in map form
  *     tags: [Asset]
  *     responses:
  *       200:
@@ -879,7 +923,9 @@ router.get('/assets/:id/', assetController.getOneAssetCustom);
  *                       type: string
  *                     regulator:
  *                       type: string
- *                     image:
+ *                     images:
+ *                       type: string
+ *                     unit:
  *                       type: string
  *                     specificAttributes:
  *                       type: array
@@ -923,13 +969,13 @@ router.get('/assets/:id/', assetController.getOneAssetCustom);
  *                       type: string
  */
 
-router.get('/asset/allAssetMapped/', assetController.getAllAssetResilink);
+router.get('/asset/allAssetMapped/', assetController.getAllAssetMapped);
 
 /**
  * @swagger
  * /v1/assets/assetImg/{id}:
  *   get: 
- *     summary: get the image of an asset by id (from RESILINK)
+ *     summary: get the images of an asset by id
  *     tags: [Asset]
  *     parameters:
  *       - in: path
@@ -947,7 +993,9 @@ router.get('/asset/allAssetMapped/', assetController.getAllAssetResilink);
  *               type: object
  *               properties:
  *                   img:
- *                      type: string
+ *                      type: array
+ *                      items:
+ *                          type: string
  *       500:
  *         description: Error from RESILINK server.
  *         content:
@@ -1058,7 +1106,7 @@ router.put('/ODEP/assets/:id/', assetController.putAsset);
  * @swagger
  * /v1/assets/{id}:
  *   put: 
- *     summary: update an asset attributes (from ODEP & RESILINK)
+ *     summary: update an asset attributes
  *     tags: [Asset]
  *     parameters:
  *       - in: path
@@ -1093,7 +1141,9 @@ router.put('/ODEP/assets/:id/', assetController.putAsset);
  *                  type: string
  *                regulator:
  *                  type: string
- *                image:
+ *                images:
+ *                  type: string
+ *                unit:
  *                  type: string
  *                specificAttributes:
  *                  type: object
@@ -1209,7 +1259,7 @@ router.delete('/ODEP/assets/:id/', assetController.deleteAsset);
  * @swagger
  * /v1/assets/{id}/:
  *   delete: 
- *     summary: delete an asset (from ODEP & RESILINK)
+ *     summary: delete an asset
  *     tags: [Asset]
  *     parameters:
  *       - in: path

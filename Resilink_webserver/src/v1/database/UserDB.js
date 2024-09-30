@@ -1,5 +1,6 @@
 const { getDBError, InsertDBError, DeleteDBError, UpdateDBError } = require('../errors.js'); 
 const connectToDatabase = require('./ConnectDB.js');
+const cryptData = require("./CryptoDB.js");
 
 require('../loggers.js');
 const winston = require('winston');
@@ -26,7 +27,7 @@ const newUser = async (user) => {
       // Inserts a document with a unique identifier and a telephone number
       const userCtreated = await _collection.insertOne({
         "_id": user["_id"],
-        "phoneNumber": user["phoneNumber"] ?? "",
+        "phoneNumber": user["phoneNumber"] != null ? cryptData.encryptAES(user["phoneNumber"]) : "",
         "userName": user["userName"]
       });
 
@@ -45,14 +46,16 @@ const newUser = async (user) => {
       }
       throw (e);
     }
-  };
+};
 
 // Deletes a user by id in RESILINK DB
 const deleteUser = async (userId) => {
   try {
+    console.log("dans deleteUser");
     const _database = await connectToDatabase();
     const _collection = _database.collection('user');
 
+    console.log(userId);
     const result = await _collection.deleteOne({ userName: userId });
 
     if (result.deletedCount === 1) {
@@ -75,16 +78,17 @@ const updateUser = async (id, body) => {
     const _database = await connectToDatabase();
     const _collection = _database.collection('user');
 
+    console.log("dans updateUserDB");
     updateData.warn('before updating data', { from: 'updateUser', data: {phoneNumber: body.phoneNumber ?? ""}});
 
     const result = await _collection.updateOne(
-      { _id: id },
-      { $set: {phoneNumber: body.phoneNumber ?? "" } }
+      { userName: id },
+      { $set: {phoneNumber: body.phoneNumber != null ? cryptData.encryptAES(body.phoneNumber).toString() : "" } }
     );
 
     if (result.modifiedCount === 1) {
 
-      updateData.info(`Document with ID ${id} successfully updated`, { from: 'updateUser'});
+      updateData.info(`Document with username ${id} successfully updated`, { from: 'updateUser'});
     } else {
       throw new UpdateDBError();
     }
@@ -105,7 +109,7 @@ const getUser = async (id, body) => {
 
     var user = await _collection.findOne({ _id: id });
     if (user != null) {
-      body['phoneNumber'] = user.phoneNumber;
+      body['phoneNumber'] = user.phoneNumber.length > 15 ? cryptData.decryptAES(user.phoneNumber) : user.phoneNumber;
     } else {
       throw new getDBError();
     }
@@ -130,7 +134,7 @@ const getAllUser = async (userList) => {
     for (var i = 0; i < userList.length; i++) {
       var user = await _collection.findOne({ _id : userList[i]._id });
       if (user != null) {
-        userList[i].phoneNumber = user.phoneNumber;
+        userList[i].phoneNumber = user.phoneNumber.length > 15 ? cryptData.decryptAES(user.phoneNumber) : user.phoneNumber;
       } else {
         userList[i].phoneNumber = "";
       }
@@ -155,7 +159,7 @@ const insertUserPhoneNumber = async (userName, body) => {
 
     var user = await _collection.findOne({ userName: userName });
     if (user != null) {
-      body['phoneNumber'] = user.phoneNumber;
+      body['phoneNumber'] = user.phoneNumber.length > 15 ? cryptData.decryptAES(user.phoneNumber) : user.phoneNumber;
     } else {
       throw new getDBError();
     }

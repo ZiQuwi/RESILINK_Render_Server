@@ -147,10 +147,7 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
             
             while ( i <= filter["assetType"].length && notFound) {
               if (allOffer[key]["assetType"] == filter["assetType"][i]) {
-                console.log(allOffer[key]["assetType"]);
-                console.log(filter["assetType"][i]);
                 notFound = false;
-                console.log(notFound);
               }
               i++;
             };

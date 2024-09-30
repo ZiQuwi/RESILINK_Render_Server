@@ -8,43 +8,162 @@ const router = express.Router();
  *   name: Offer
  */
 
+/****************************************************************************************************************
+ * 
+ * The offer and his filter are defined below for detailed documentation
+ * 
+ ****************************************************************************************************************/
+
 /**
  * @swagger
  * components:
- *  schemas:
- *    Offer:
- *      type: object
- *      properties:
- *        assetId:
- *          type: integer
- *        beginTimeSlot: 
- *          type: string
- *          format: date-time
- *        endTimeSlot: 
- *          type: string
- *          format: date-time
- *        validityLimit: 
- *          type: string
- *          format: date-time
- *        offeredQuantity:
- *          type: number
- *        price:
- *          type: number
- *        deposit:
- *          type: number
- *        cancellationFee:
- *          type: number
- *        rentInformation:
- *          type: object
- *          properties:
- *            delayMargin:
- *              type: number
- *            lateRestitutionPenalty:
- *              type: number
- *            deteriorationPenalty:
- *              type: number
- *            nonRestitutionPenalty:
- *              type: number
+ *   schemas:
+ *     OfferData:
+ *       type: object
+ *       required:
+ *         - offerer
+ *         - assetId
+ *         - beginTimeSlot
+ *         - endTimeSlot
+ *         - validityLimit
+ *         - price
+ *         - cancellationFee
+ *       properties:
+ *         offerId:
+ *           type: integer
+ *           description: ID of the offer
+ *         offerer:
+ *           type: string
+ *           description: The offerer id
+ *         assetId:
+ *           type: integer
+ *           description: ID of the asset
+ *         beginTimeSlot:
+ *           type: string
+ *           format: date-time
+ *           description: Start date/time of the offer
+ *         endTimeSlot:
+ *           type: string
+ *           format: date-time
+ *           description: |
+ *             Required in case of:
+ *               - immaterial asset
+ *               - material asset with rent transaction, represents the restitution date
+ *         validityLimit:
+ *           type: string
+ *           format: date-time
+ *           description: The expiration date of the offer
+ *         publicationDate:
+ *           type: string
+ *           format: date-time
+ *           description: The date/time when the offer was published
+ *         offeredQuantity:
+ *           type: number
+ *           format: float
+ *           description: Required in case of immaterial asset
+ *         remainingQuantity:
+ *           type: number
+ *           format: float
+ *           description: Required in case of immaterial asset. The remaining quantity of the asset available in the offer
+ *         price:
+ *           type: number
+ *           format: float
+ *           description: |
+ *             In case of immaterial asset, it is expressed in Account Units per measuring unit.
+ *             In case of immaterial and not measurable asset or for rent of material asset, it is expressed in Account Units per hour.
+ *         deposit:
+ *           type: number
+ *           format: float
+ *           description: Deposit for the offer, ranges between 0 and 100% of the asset price
+ *         phoneNumber:
+ *           type: string
+ *           description: Offer owner phone number (data provided by GET method only)
+ *         cancellationFee:
+ *           type: number
+ *           format: float
+ *           description: Fee to be paid in case of offer cancellation
+ *         rentInformation:
+ *           type: object
+ *           description: Required information in case of rent
+ *           properties:
+ *             delayMargin:
+ *               type: number
+ *               format: float
+ *               description: A percentage of the rental period
+ *             lateRestitutionPenality:
+ *               type: number
+ *               format: float
+ *               description: A percentage of the asset price
+ *             deteriorationPenality:
+ *               type: number
+ *               format: float
+ *               description: A percentage of the asset price
+ *             nonRestitutionPenality:
+ *               type: number
+ *               format: float
+ *               description: A percentage of the asset price
+ */
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Filter:
+ *       type: object
+ *       properties:
+ *         name:
+ *           type: string
+ *           description: "The name or description of the offer being filtered"
+ *         assetType:
+ *           type: string
+ *           description: "The assetType of the offer being filtered"
+ *         transactionType:
+ *           type: string
+ *           enum:
+ *             - sale/purchase
+ *             - rent
+ *           description: "The type of transaction"
+ *         latitude:
+ *           type: string
+ *           description: "Geographical point representing latitude of the search location"
+ *         longitude:
+ *           type: string
+ *           description: "Geographical point representing longitude of the search location; mandatory if latitude is provided"
+ *         distance:
+ *           type: integer
+ *           description: "Maximum distance between the geographical point given by latitude and longitude and the user. If the user is farther than the specified distance, the offer is not considered"
+ *         minPrice:
+ *           type: number
+ *           description: "The minimum price  of the offer being filtered"
+ *         maxPrice:
+ *           type: number
+ *           description: "The maximum price  of the offer being filtered"
+ *         minQuantity:
+ *           type: number
+ *           description: "The minimum quantity  of the offer being filtered"
+ *         maxQuantity:
+ *           type: number
+ *           description: "The maximum quantity  of the offer being filtered"
+ *         minDate:
+ *           type: string
+ *           format: date-time
+ *           description: "The earliest date/time of the offer being filtered (format: YYYY-MM-DDTHH:MM:SS.sssZ)"
+ *         maxDate:
+ *           type: string
+ *           format: date-time
+ *           description: "The latest date/time  of the offer being filtered (format: YYYY-MM-DDTHH:MM:SS.sssZ)"
+ *         properties:
+ *           type: array
+ *           description: "A list of additional properties for filtering, where each entry contains an attribute name and its corresponding value"
+ *           items:
+ *             type: object
+ *             properties:
+ *               attributeName:
+ *                 type: string
+ *                 description: "The name of the specific attribute"
+ *               value:
+ *                 type: string
+ *                 description: "The value corresponding to the attribute name"
  */
 
 /**
@@ -147,51 +266,60 @@ router.post('/offers/', offerController.createOffer);
  * @swagger
  * /v1/offers/all:
  *   get:
- *     summary: Get valid offers in RESILINK perspective (from ODEP & RESILINK)
+ *     summary: Get valid offers in RESILINK perspective
  *     description: 
  *     tags: [Offer]
  *     responses:
  *       200:
- *         description: successful transaction
+ *         description: Successful transaction
  *         content:
  *           application/json:
  *             schema:
- *             type: array
- *             items:
  *               type: object
- *               properties:
- *                 offerer:
- *                    type: string
- *                 assetId:
- *                   type: integer
- *                 beginTimeSlot: 
- *                   type: string
- *                   format: date-time
- *                 endTimeSlot: 
- *                   type: string
- *                   format: date-time
- *                 validityLimit: 
- *                   type: string
- *                   format: date-time
- *                 offeredQuantity:
- *                   type: number
- *                 price:
- *                   type: number
- *                 deposit:
- *                   type: number
- *                 cancellationFee:
- *                   type: number
- *                 rentInformation:
- *                   type: object
- *                   properties:
- *                     delayMargin:
- *                       type: number
- *                     lateRestitutionPenalty:
- *                       type: number
- *                     deteriorationPenalty:
- *                       type: number
- *                     nonRestitutionPenalty:
- *                       type: number
+ *               additionalProperties:
+ *                 type: object
+ *                 properties:
+ *                   offerId:
+ *                     type: integer
+ *                   offerer:
+ *                     type: string
+ *                   assetId:
+ *                     type: integer
+ *                   beginTimeSlot: 
+ *                     type: string
+ *                     format: date-time
+ *                   endTimeSlot: 
+ *                     type: string
+ *                     format: date-time
+ *                   validityLimit: 
+ *                     type: string
+ *                     format: date-time
+ *                   publicationDate: 
+ *                     type: string
+ *                     format: date-time
+ *                   offeredQuantity:
+ *                     type: number
+ *                   remainingQuantity:
+ *                     type: number
+ *                   price:
+ *                     type: number
+ *                   deposit:
+ *                     type: number
+ *                   cancellationFee:
+ *                     type: number
+ *                   phoneNumber:
+ *                     type: string
+ *                   rentInformation:
+ *                     type: object
+ *                     properties:
+ *                       delayMargin:
+ *                         type: number
+ *                       lateRestitutionPenalty:
+ *                         type: number
+ *                       deteriorationPenalty:
+ *                         type: number
+ *                       nonRestitutionPenalty:
+ *                         type: number
  *       400:
  *         description: Bad request.
  *         content:
@@ -231,51 +359,129 @@ router.get('/offers/all/', offerController.getAllOfferResilinkCustom);
  * @swagger
  * /v1/offers/lastThree:
  *   get:
- *     summary: Get last 3 valid offers in RESILINK perspective (from ODEP & RESILINK)
- *     description: 
+ *     summary: Get last 3 valid offers in RESILINK perspective
  *     tags: [Offer]
  *     responses:
  *       200:
- *         description: successful transaction
+ *         description: Successful transaction
  *         content:
  *           application/json:
  *             schema:
- *             type: array
- *             items:
  *               type: object
  *               properties:
- *                 offerer:
- *                    type: string
- *                 assetId:
- *                   type: integer
- *                 beginTimeSlot: 
- *                   type: string
- *                   format: date-time
- *                 endTimeSlot: 
- *                   type: string
- *                   format: date-time
- *                 validityLimit: 
- *                   type: string
- *                   format: date-time
- *                 offeredQuantity:
- *                   type: number
- *                 price:
- *                   type: number
- *                 deposit:
- *                   type: number
- *                 cancellationFee:
- *                   type: number
- *                 rentInformation:
+ *                 offers:
+ *                   type: array
+ *                   description: List of offers
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       offerer:
+ *                         type: string
+ *                         description: Offerer ID
+ *                       assetId:
+ *                         type: integer
+ *                         description: Asset ID
+ *                       beginTimeSlot: 
+ *                         type: string
+ *                         format: date-time
+ *                         description: Offer start time
+ *                       endTimeSlot: 
+ *                         type: string
+ *                         format: date-time
+ *                         description: Offer end time
+ *                       validityLimit: 
+ *                         type: string
+ *                         format: date-time
+ *                         description: Offer expiration date
+ *                       publicationDate: 
+ *                         type: string
+ *                         format: date-time
+ *                         description: Date of publication
+ *                       offeredQuantity:
+ *                         type: number
+ *                         description: Quantity offered
+ *                       remainingQuantity:
+ *                         type: number
+ *                         format: float
+ *                         description: Quantity remaining
+ *                       price:
+ *                         type: number
+ *                         description: Offer price
+ *                       deposit:
+ *                         type: number
+ *                         description: Offer deposit
+ *                       cancellationFee:
+ *                         type: number
+ *                         description: Fee for cancellation
+ *                       phoneNumber:
+ *                         type: string
+ *                         description: Offerer's phone number
+ *                       rentInformation:
+ *                         type: object
+ *                         description: Information related to renting
+ *                         properties:
+ *                           delayMargin:
+ *                             type: number
+ *                             description: Delay margin in percentage
+ *                           lateRestitutionPenalty:
+ *                             type: number
+ *                             description: Penalty for late return
+ *                           deteriorationPenalty:
+ *                             type: number
+ *                             description: Penalty for asset deterioration
+ *                           nonRestitutionPenalty:
+ *                             type: number
+ *                             description: Penalty for asset non-restitution
+ *                 assets:
  *                   type: object
- *                   properties:
- *                     delayMargin:
- *                       type: number
- *                     lateRestitutionPenalty:
- *                       type: number
- *                     deteriorationPenalty:
- *                       type: number
- *                     nonRestitutionPenalty:
- *                       type: number
+ *                   description: Map of assets where each key is an asset ID
+ *                   additionalProperties:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                         description: Asset ID
+ *                       name:
+ *                         type: string
+ *                         description: Asset name
+ *                       description:
+ *                         type: string
+ *                         description: Asset description
+ *                       assetType:
+ *                         type: string
+ *                         description: Type of asset (e.g. Inputs1)
+ *                       owner:
+ *                         type: string
+ *                         description: Asset owner ID
+ *                       transactionType:
+ *                         type: string
+ *                         description: Type of transaction (e.g. sale/purchase)
+ *                       totalQuantity:
+ *                         type: number
+ *                         description: Total quantity available
+ *                       availableQuantity:
+ *                         type: number
+ *                         description: Quantity currently available
+ *                       specificAttributes:
+ *                         type: array
+ *                         description: List of specific attributes
+ *                         items:
+ *                           type: object
+ *                           properties:
+ *                             attributeName:
+ *                               type: string
+ *                               description: Name of the attribute
+ *                             value:
+ *                               type: string
+ *                               description: Value of the attribute
+ *                       images:
+ *                         type: array
+ *                         description: List of asset images
+ *                         items:
+ *                           type: string
+ *                       unit:
+ *                         type: string
+ *                         description: Unit of measurement for the asset
  *       400:
  *         description: Bad request.
  *         content:
@@ -308,13 +514,14 @@ router.get('/offers/all/', offerController.getAllOfferResilinkCustom);
  *                 message:
  *                   type: string
  */
+
 router.get('/offers/lastThree/', offerController.getLastThreeOfferForResilinkCustom);
 
 /**
  * @swagger
  * /v1/offers/all/resilink/filtered:
  *   post: 
- *     summary: Returns the list of offers after custom sorting (from ODEP & RESILINK)
+ *     summary: Returns the list of offers after custom sorting
  *     tags: [Offer]
  *     requestBody:
  *       description: prerequisites for the offer.
@@ -324,21 +531,31 @@ router.get('/offers/lastThree/', offerController.getLastThreeOfferForResilinkCus
  *           schema:
  *             type: object
  *             properties:
+ *               name:
+ *                 type: string
  *               assetType:
  *                 type: string
- *               asset:
+ *               transactionType:
  *                 type: string
- *               price:
+ *               latitude:
+ *                 type: string
+ *               longitude:
+ *                 type: string
+ *               distance:
+ *                 type: integer
+ *               minPrice:
  *                 type: number
- *               priceSymbol: 
+ *               maxPrice:
+ *                 type: number
+ *               minQuantity:
+ *                 type: number
+ *               maxQuantity:
+ *                 type: number
+ *               minDate:
  *                 type: string
- *               date:
+ *               maxDate:
  *                 type: string
- *               dateSymbol:
- *                 type: string
- *               phrase:
- *                 type: string
- *               Properties:
+ *               properties:
  *                 type: array
  *                 items:
  *                   type: object
@@ -349,53 +566,53 @@ router.get('/offers/lastThree/', offerController.getLastThreeOfferForResilinkCus
  *                       type: string
  *     responses:
  *       200:
- *         description: successful transaction
+ *         description: Successful transaction
  *         content:
  *           application/json:
  *             schema:
- *             type: array
- *             items:
- *               type: object
- *               properties:
- *                 offerId:
- *                   type: number
- *                 publicationDate:
- *                   type: string
- *                   format: date-time
- *                 remainingQuantity:
- *                   type: number
- *                 offerer:
- *                   type: string
- *                 assetId:
- *                   type: integer
- *                 beginTimeSlot: 
- *                   type: string
- *                   format: date-time
- *                 endTimeSlot: 
- *                   type: string
- *                   format: date-time
- *                 validityLimit: 
- *                   type: string
- *                   format: date-time
- *                 offeredQuantity:
- *                   type: number
- *                 price:
- *                   type: number
- *                 deposit:
- *                   type: number
- *                 cancellationFee:
- *                   type: number
- *                 rentInformation:
- *                   type: object
- *                   properties:
- *                     delayMargin:
- *                       type: number
- *                     lateRestitutionPenalty:
- *                       type: number
- *                     deteriorationPenalty:
- *                       type: number
- *                     nonRestitutionPenalty:
- *                       type: number
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   offerId:
+ *                     type: number
+ *                   publicationDate:
+ *                     type: string
+ *                     format: date-time
+ *                   remainingQuantity:
+ *                     type: number
+ *                   offerer:
+ *                     type: string
+ *                   assetId:
+ *                     type: integer
+ *                   beginTimeSlot: 
+ *                     type: string
+ *                     format: date-time
+ *                   endTimeSlot: 
+ *                     type: string
+ *                     format: date-time
+ *                   validityLimit: 
+ *                     type: string
+ *                     format: date-time
+ *                   offeredQuantity:
+ *                     type: number
+ *                   price:
+ *                     type: number
+ *                   deposit:
+ *                     type: number
+ *                   cancellationFee:
+ *                     type: number
+ *                   rentInformation:
+ *                     type: object
+ *                     properties:
+ *                       delayMargin:
+ *                         type: number
+ *                       lateRestitutionPenalty:
+ *                         type: number
+ *                       deteriorationPenalty:
+ *                         type: number
+ *                       nonRestitutionPenalty:
+ *                         type: number
  *       400:
  *         description: Bad request.
  *         content:
@@ -435,7 +652,7 @@ router.post('/offers/all/resilink/filtered/', offerController.getOfferFiltered);
  * @swagger
  * /v1/offers/owner/{id}:
  *   get:
- *     summary: Get all offers from a prosumer (from ODEP & RESILINK)
+ *     summary: Get all offers from a prosumer
  *     tags: [Offer]
  *     parameters:
  *       - in: path
@@ -446,53 +663,53 @@ router.post('/offers/all/resilink/filtered/', offerController.getOfferFiltered);
  *         description: the prosummer id
  *     responses:
  *       200:
- *         description: Ok
+ *         description: Successful transaction
  *         content:
  *           application/json:
  *             schema:
- *             type: array
- *             items:
  *               type: object
- *               properties:
- *                 offerId:
- *                   type: number
- *                 publicationDate:
- *                   type: string
- *                   format: date-time
- *                 remainingQuantity:
- *                   type: number
- *                 offerer:
- *                   type: string
- *                 assetId:
- *                   type: integer
- *                 beginTimeSlot: 
- *                   type: string
- *                   format: date-time
- *                 endTimeSlot: 
- *                   type: string
- *                   format: date-time
- *                 validityLimit: 
- *                   type: string
- *                   format: date-time
- *                 offeredQuantity:
- *                   type: number
- *                 price:
- *                   type: number
- *                 deposit:
- *                   type: number
- *                 cancellationFee:
- *                   type: number
- *                 rentInformation:
- *                   type: object
- *                   properties:
- *                     delayMargin:
- *                       type: number
- *                     lateRestitutionPenalty:
- *                       type: number
- *                     deteriorationPenalty:
- *                       type: number
- *                     nonRestitutionPenalty:
- *                       type: number
+ *               additionalProperties:
+ *                 type: object
+ *                 properties:
+ *                   offerId:
+ *                     type: integer
+ *                   offerer:
+ *                     type: string
+ *                   assetId:
+ *                     type: integer
+ *                   beginTimeSlot:
+ *                     type: string
+ *                     format: date-time
+ *                   endTimeSlot:
+ *                     type: string
+ *                     format: date-time
+ *                   validityLimit:
+ *                     type: string
+ *                     format: date-time
+ *                   publicationDate:
+ *                     type: string
+ *                     format: date-time
+ *                   offeredQuantity:
+ *                     type: number
+ *                   remainingQuantity:
+ *                     type: number
+ *                   price:
+ *                     type: number
+ *                   deposit:
+ *                     type: number
+ *                   cancellationFee:
+ *                     type: number
+ *                   rentInformation:
+ *                     type: object
+ *                     properties:
+ *                       delayMargin:
+ *                         type: number
+ *                       lateRestitutionPenality:
+ *                         type: number
+ *                       deteriorationPenality:
+ *                         type: number
+ *                       nonRestitutionPenality:
+ *                         type: number
  *       400:
  *         description: Bad request.
  *         content:
@@ -532,7 +749,7 @@ router.get('/offers/owner/:id/', offerController.getOfferOwner);
  * @swagger
  * /v1/offers/owner/{id}/purchase:
  *   get:
- *     summary: Get all offers purchased from a prosumer (from ODEP & RESILINK)
+ *     summary: Get all offers purchased from a prosumer
  *     tags: [Offer]
  *     parameters:
  *       - in: path
@@ -543,53 +760,117 @@ router.get('/offers/owner/:id/', offerController.getOfferOwner);
  *         description: the prosummer id
  *     responses:
  *       200:
- *         description: Ok
+ *         description: Successful transaction
  *         content:
  *           application/json:
  *             schema:
- *             type: array
- *             items:
  *               type: object
  *               properties:
- *                 offerId:
- *                   type: number
- *                 publicationDate:
- *                   type: string
- *                   format: date-time
- *                 remainingQuantity:
- *                   type: number
- *                 offerer:
- *                   type: string
- *                 assetId:
- *                   type: integer
- *                 beginTimeSlot: 
- *                   type: string
- *                   format: date-time
- *                 endTimeSlot: 
- *                   type: string
- *                   format: date-time
- *                 validityLimit: 
- *                   type: string
- *                   format: date-time
- *                 offeredQuantity:
- *                   type: number
- *                 price:
- *                   type: number
- *                 deposit:
- *                   type: number
- *                 cancellationFee:
- *                   type: number
- *                 rentInformation:
- *                   type: object
- *                   properties:
- *                     delayMargin:
- *                       type: number
- *                     lateRestitutionPenalty:
- *                       type: number
- *                     deteriorationPenalty:
- *                       type: number
- *                     nonRestitutionPenalty:
- *                       type: number
+ *                 contracts:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       idContract:
+ *                         type: integer
+ *                       state:
+ *                         type: string
+ *                       creationDate:
+ *                         type: string
+ *                         format: date-time
+ *                       transactionType:
+ *                         type: string
+ *                       offerer:
+ *                         type: string
+ *                       offer:
+ *                         type: string
+ *                       asset:
+ *                         type: string
+ *                       requester:
+ *                         type: string
+ *                       Request:
+ *                         type: string
+ *                       price:
+ *                         type: number
+ *                       deposit:
+ *                         type: number
+ *                       cancellationFee:
+ *                         type: number
+ *                       quantityToDeliver:
+ *                         type: number
+ *                       deliveredQuantity:
+ *                         type: number
+ *                       consumedQuantity:
+ *                         type: number
+ *                       beginTimeSlot:
+ *                         type: string
+ *                         format: date-time
+ *                       endTimeSlot:
+ *                         type: string
+ *                         format: date-time
+ *                       effectiveBeginTimeSlot:
+ *                         type: string
+ *                         format: date-time
+ *                       effectiveEndTimeSlot:
+ *                         type: string
+ *                         format: date-time
+ *                       rentInformation:
+ *                         type: object
+ *                         properties:
+ *                           delayMargin:
+ *                             type: number
+ *                           lateRestitutionPenality:
+ *                             type: number
+ *                           deteriorationPenality:
+ *                             type: number
+ *                           nonRestitutionPenality:
+ *                             type: number
+ *                 offers:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       offerId:
+ *                         type: integer
+ *                       offerer:
+ *                         type: string
+ *                       assetId:
+ *                         type: integer
+ *                       beginTimeSlot:
+ *                         type: string
+ *                         format: date-time
+ *                       endTimeSlot:
+ *                         type: string
+ *                         format: date-time
+ *                       validityLimit:
+ *                         type: string
+ *                         format: date-time
+ *                       publicationDate:
+ *                         type: string
+ *                         format: date-time
+ *                       offeredQuantity:
+ *                         type: number
+ *                       remainingQuantity:
+ *                         type: number
+ *                       price:
+ *                         type: number
+ *                       deposit:
+ *                         type: number
+ *                       cancellationFee:
+ *                         type: number
+ *                       rentInformation:
+ *                         type: object
+ *                         properties:
+ *                           delayMargin:
+ *                             type: number
+ *                           lateRestitutionPenality:
+ *                             type: number
+ *                           deteriorationPenality:
+ *                             type: number
+ *                           nonRestitutionPenality:
+ *                             type: number
+ *                       phoneNumber:
+ *                         type: string
  *       400:
  *         description: Bad request.
  *         content:
@@ -633,53 +914,53 @@ router.get('/offers/owner/:id/purchase/', offerController.getOwnerOfferPurchase)
  *     tags: [Offer]
  *     responses:
  *       200:
- *         description: Ok
+ *         description: Successful transaction
  *         content:
  *           application/json:
  *             schema:
- *             type: array
- *             items:
- *               type: object
- *               properties:
- *                 offerId:
- *                   type: number
- *                 publicationDate:
- *                   type: string
- *                   format: date-time
- *                 remainingQuantity:
- *                   type: number
- *                 offerer:
- *                   type: string
- *                 assetId:
- *                   type: integer
- *                 beginTimeSlot: 
- *                   type: string
- *                   format: date-time
- *                 endTimeSlot: 
- *                   type: string
- *                   format: date-time
- *                 validityLimit: 
- *                   type: string
- *                   format: date-time
- *                 offeredQuantity:
- *                   type: number
- *                 price:
- *                   type: number
- *                 deposit:
- *                   type: number
- *                 cancellationFee:
- *                   type: number
- *                 rentInformation:
- *                   type: object
- *                   properties:
- *                     delayMargin:
- *                       type: number
- *                     lateRestitutionPenalty:
- *                       type: number
- *                     deteriorationPenalty:
- *                       type: number
- *                     nonRestitutionPenalty:
- *                       type: number
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   offerId:
+ *                     type: number
+ *                   publicationDate:
+ *                     type: string
+ *                     format: date-time
+ *                   remainingQuantity:
+ *                     type: number
+ *                   offerer:
+ *                     type: string
+ *                   assetId:
+ *                     type: integer
+ *                   beginTimeSlot: 
+ *                     type: string
+ *                     format: date-time
+ *                   endTimeSlot: 
+ *                     type: string
+ *                     format: date-time
+ *                   validityLimit: 
+ *                     type: string
+ *                     format: date-time
+ *                   offeredQuantity:
+ *                     type: number
+ *                   price:
+ *                     type: number
+ *                   deposit:
+ *                     type: number
+ *                   cancellationFee:
+ *                     type: number
+ *                   rentInformation:
+ *                     type: object
+ *                     properties:
+ *                       delayMargin:
+ *                         type: number
+ *                       lateRestitutionPenalty:
+ *                         type: number
+ *                       deteriorationPenalty:
+ *                         type: number
+ *                       nonRestitutionPenalty:
+ *                         type: number
  *       400:
  *         description: Bad request.
  *         content:
@@ -717,7 +998,7 @@ router.get('/ODEP/offers/all/', offerController.getAllOffer);
 
 /**
  * @swagger
- * /v1/offers/{id}:
+ * /v1/ODEP/offers/{id}:
  *   get:
  *     summary: Get an offers by id (from ODEP)
  *     tags: [Offer]
@@ -764,6 +1045,8 @@ router.get('/ODEP/offers/all/', offerController.getAllOffer);
  *                   type: number
  *                 cancellationFee:
  *                   type: number
+ *                 phoneNumber:
+ *                   type: string
  *                 rentInformation:
  *                   type: object
  *                   properties:
@@ -808,7 +1091,7 @@ router.get('/ODEP/offers/all/', offerController.getAllOffer);
  *                   type: string
  */
 
-router.get('/offers/:id/', offerController.getOneOffer);
+router.get('/ODEP/offers/:id/', offerController.getOneOffer);
 
 /**
  * @swagger
@@ -954,7 +1237,9 @@ router.put('/offers/:id/', offerController.putOffer);
  *                     type: string
  *                   regulator:
  *                     type: string
- *                   image:
+ *                   images:
+ *                     type: string
+ *                   unit:
  *                     type: string
  *                   specificAttributes:
  *                     type: array
@@ -1052,7 +1337,7 @@ router.put('/offers/:id/updateOfferAsset/', offerController.putOfferAsset);
  * @swagger
  * /v1/offers/createOfferAsset:
  *   post: 
- *     summary: Create a new offer, its asset, and its asset type needed (from ODEP & RESILINK)
+ *     summary: Create a new offer, its asset, and its asset type needed
  *     tags: [Offer]
  *     requestBody:
  *       required: true
@@ -1083,7 +1368,9 @@ router.put('/offers/:id/updateOfferAsset/', offerController.putOfferAsset);
  *                     type: string
  *                   regulator:
  *                     type: string
- *                   image:
+ *                   images:
+ *                     type: string
+ *                   unit: 
  *                     type: string
  *                   specificAttributes:
  *                     type: array

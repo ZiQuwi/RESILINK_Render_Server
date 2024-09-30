@@ -3,14 +3,14 @@ const router = express.Router();
 const articleController = require("../controllers/ArticleController.js");
 
 /**
- * @swagger
+ * swagger
  * tags:
  *   name: Article
- *   description: Temporary (can be removed at any time)
+ *   description: Temporary (can be removed)
  */
 
 /**
- * @swagger
+ * swagger
  * /v1/articles/all:
  *   get: 
  *     summary: Get all articles from (RESILINK).
@@ -49,7 +49,7 @@ const articleController = require("../controllers/ArticleController.js");
 router.get('/articles/all', articleController.getAllArticles);
 
 /**
- * @swagger
+ * swagger
  * /v1/articles/LastFour:
  *   get: 
  *     summary: Get last 4 articles (from RESILINK).

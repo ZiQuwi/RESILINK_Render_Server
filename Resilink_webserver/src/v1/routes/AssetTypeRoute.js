@@ -14,24 +14,72 @@ const router = express.Router();
  *   schemas:
  *     AssetType:
  *       type: object
+ *       required:
+ *         - description
+ *         - nature
+ *         - regulated
  *       properties:
  *         description:
  *           type: string
+ *           description: "Description of the asset type"
  *         nature:
  *           type: string
  *           enum:
  *             - material
  *             - immaterial
  *             - immaterialNotQuantified
- *           description: "The description of your nature"
+ *           description: "The nature of the asset."
  *         unit:
  *           type: string
+ *           description: |
+ *             "Required if the nature is immaterial.
+ *             Set to 'not measurable' in the case of an immaterial asset that cannot be measured."
  *         regulated:
  *           type: boolean
+ *           description: "Indicates if the asset is regulated (true/false)"
  *         regulator:
  *           type: string
+ *           description: "The regulator associated with the asset, if applicable"
  *         sharingIncentive:
  *           type: boolean
+ *           description: "Indicates if there is a sharing incentive for the asset (true/false)"
+ *         specificAttributesModel:
+ *           type: array
+ *           description: "A list of specific attributes for the asset"
+ *           items:
+ *             type: object
+ *             required:
+ *               - name
+ *               - type
+ *               - mandatory
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 description: "The name of the specific attribute"
+ *               type:
+ *                 type: string
+ *                 enum:
+ *                   - string
+ *                   - numeric
+ *                   - boolean
+ *                   - listAsset
+ *                   - geographicPoint
+ *                 description: "The type of the specific attribute. Enum values: 'string', 'numeric', 'boolean', 'listAsset', 'geographicPoint'"
+ *               mandatory:
+ *                 type: string
+ *                 enum:
+ *                   - true
+ *                   - false
+ *                 description: "Indicates if this attribute is mandatory (Enum: 'true', 'false')"
+ *               hasValueList:
+ *                 type: string
+ *                 enum:
+ *                   - true
+ *                   - false
+ *                 description: "Indicates if this attribute has a value list (Enum: 'true', 'false')"
+ *               valueList:
+ *                 type: string
+ *                 description: "The list of values if hasValueList is true. Example: 'value1,value2,value3'"
  */
 
 /**
@@ -552,7 +600,7 @@ router.delete('/assetTypes/:id/', assetTypeController.deleteAssetTypes);
  * @swagger
  * /v1/assetTypes/all/mapped/:
  *   get:
- *     summary: Get all asset types but with the asset type as a key with his value associate (from ODEP & RESILINK)
+ *     summary: Get all asset types but with the asset type as a key with his value associate
  *     tags: [AssetType]
  *     responses:
  *       200:
@@ -639,7 +687,7 @@ router.get('/assetTypes/all/mapFormat', assetTypeController.getAllAssetTypesResi
  * @swagger
  * /v1/assetTypes/{assetType}:
  *   post: 
- *     summary: Create an assetType or a clone of an existing assetType (from ODEP & RESILINK)
+ *     summary: Create an assetType or a clone of an existing assetType
  *     tags: [AssetType]
  *     parameters:
  *       - in: path

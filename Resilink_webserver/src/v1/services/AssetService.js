@@ -45,7 +45,7 @@ const getOwnerAssetCustom = async (url, id, token) => {
     getDataLogger.error('error retrieving assets owner', { from: 'getOwnerAssetCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [data, response.status];
   };
-  const dataFinal = await AssetDB.getAndCompleteAssetWithImgByAssets(data);
+  const dataFinal = await AssetDB.getAndCompleteAssetByAssets(data);
   getDataLogger.info('success retrieving assets owner & image for each assets', { from: 'getOwnerAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '') });
   return [dataFinal, response.status];
 };
@@ -85,20 +85,14 @@ const getAllAssetCustom = async (url, token) => {
     getDataLogger.error('error retrieving all assets', { from: 'getAllAssetCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [data, response.status];
   };
-  const dataFinal = await AssetDB.getAndCompleteAssetWithImgByAssets(data);
+  const dataFinal = await AssetDB.getAndCompleteAssetByAssets(data);
   getDataLogger.info('success retrieving all assets & image for each assets', { from: 'getAllAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '') });
   return [dataFinal, response.status];
 };
 
-//TODO SEUL FONCTION DE ASSET PAS ENCRE MIS A JOUR AVEC FETCHDATA ET FAIRE TOUS LE RESTE SEUL ASSET FAIT DÉBILE
-const getAllAssetVue = async (token) => {
-    //const allAssetTypesResilink = await AssetTypes.getAllAssetTypesResilink(token);
-    const allAsset = await getAllAssetResilink(/*allAssetTypesResilink,*/ token);
-    return allAsset;
-}
-
 /* Retrieves all asset in ODEP and RESILINK 
  * Do the same as the getAllAssetCustom function but return a  a map of object asset instead of a list of object asset
+ * No PATH in parameters since it's a function used in few other files
  */
 const getAllAssetResilink = async (token) => {
     const allAsset = await Utils.fetchJSONData(
@@ -115,7 +109,7 @@ const getAllAssetResilink = async (token) => {
       getDataLogger.error('error retrieving all assets', { from: 'getAllAssetResilink', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return [data, allAsset.status];
     } 
-    const dataFinal = await AssetDB.getAndCompleteAssetWithImgByAssets(data);
+    const dataFinal = await AssetDB.getAndCompleteAssetByAssets(data);
     for (const key in dataFinal) {
         if (dataFinal.hasOwnProperty(key)) {
           const element = dataFinal[key];
@@ -220,19 +214,6 @@ const createAssetCustom = async (url, body, token) => {
   delete body['images'];
   delete body['unit'];
 
-  // A enlever après les phase de test, cache misère car sur l'app, il peut y avoir la création d'un asset avec deux attribue GPS.
-  const geoRegex = /^<[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)>$/;
-  // Filtrer pour obtenir tous les attributs qui ont le même attributeName
-  body['specificAttributes'] = body['specificAttributes'].filter(attr => {
-    // Si l'attribut est "GPS" et que la valeur n'est ni vide ni valide, on le supprime
-    if (attr.attributeName === "GPS" && !(geoRegex.test(attr.value))) {
-      console.log(`Removing invalid GPS attribute: ${attr.value}`);
-      return false; // Le filtre exclut cet attribut
-    }
-    return true; // Garde les autres attributs
-  })
-  console.log(body);
-
   updateDataODEP.warn('data to send to ODEP', { from: 'createAssetCustom', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
   const response = await Utils.fetchJSONData(
     'POST',
@@ -319,7 +300,9 @@ const putAsset = async (url, body, id, token) => {
 //Update en asset by id in ODEP and RESILINK
 const putAssetCustom = async (url, body, id, token) => {
   const imgBase64 = body['images'];
+  const unit = body['unit'];
   delete body['images'];
+  delete body['unit'];
   updateDataODEP.warn('data to send to ODEP', { from: 'putAssetCustom', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
   const response = await Utils.fetchJSONData(
       'PUT',
@@ -337,7 +320,7 @@ const putAssetCustom = async (url, body, id, token) => {
     updateDataODEP.error('error updating one asset', { from: 'putAssetCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
   } else {
     updateDataODEP.info('success updating one asset', { from: 'putAssetCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
-    await AssetDB.updateAssetById(id, imgBase64, data);
+    await AssetDB.updateAssetById(id, imgBase64, data, unit);
   }
   return [data, response.status];
 };
@@ -413,7 +396,6 @@ const patchAsset = async (url, body, id, token) => {
 
 module.exports = {
     getAllAssetResilink,
-    getAllAssetVue,
     getAllAsset,
     getAllAssetCustom,
     getOneAssetImg,

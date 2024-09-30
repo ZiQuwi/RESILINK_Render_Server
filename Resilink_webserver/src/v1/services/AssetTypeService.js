@@ -203,7 +203,7 @@ const putAssetTypes = async (url, body, id, token) => {
 
 //Delete an asset type by id in ODEP
 const deleteAssetTypes = async (url, id, token) => {
-  updateDataODEP.warn('data to send to ODEP', { from: 'deleteAssetTypes', id: id, tokenUsed: token == null ? "Token not given" : token});
+  updateDataODEP.warn('data to send to ODEP', { from: 'deleteAssetTypes', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
   const response = await Utils.fetchJSONData(
       'DELETE',
       url + id, 

@@ -12,7 +12,7 @@ const createNews = async (body, token) => {
         if (token === null || token === "") {
             return [{message: "token is empty"}, 401];
         }
-        const dataFinal = await NewsDB.createNews(body['url'], body['country'], body['institute'], body['img'], body['platform']);
+        const dataFinal = await NewsDB.createNews(body['url'] ?? "", body['country'], body['institute'] ?? "", body['img'] ?? "", body['platform'] ?? "");
         getDataLogger.info("success creating a news", {from: 'createNews'});
         return [dataFinal, 200];
     } catch (e) {

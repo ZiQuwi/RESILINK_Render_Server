@@ -32,7 +32,7 @@ const getAllProsummer = async (req, res) => {
 
 const createProsumerCustom = async (req, res) => {
   try {
-    const response = await prosummerService.createProsumerCustom(_pathProsumerODEP, req.body, req.header('Authorization'));
+    const response = await prosummerService.createProsumerCustom(_pathProsumerODEP, pathUserODEP, req.body, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createProsumerCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -82,6 +82,7 @@ const deleteOneProsummer = async (req, res) => {
 
 const putUserProsumerPersonnalData = async (req, res) => {
   try {
+    console.log('dans la bonne fonction')
     const response = await prosummerService.updateUserProsumerCustom(pathUserODEP ,req.body, req.params.prosumerId, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {

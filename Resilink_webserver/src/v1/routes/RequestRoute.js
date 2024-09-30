@@ -11,76 +11,111 @@ const RequestController = require("../controllers/RequestController.js");
 /**
  * @swagger
  * components:
- *  schemas:
- *    Requests:
- *      type: object
- *      properties:
- *        _id:
- *          type: string
- *        requestor:
- *          type: string
- *        beginTimeSlot:
- *          type: string
- *          format: date-time
- *        endTimeSlot:
- *          type: string
- *          format: date-time
- *        validityLimit:
- *          type: string
- *          format: date-time
- *        transactionType:
- *          type: string
- *          enum:
- *            - sale/purchase
- *            - rent
- *        offerIds:
- *          type: array
- *          items:
- *            type: number
- *        assetTypes:
- *          type: array
- *          items:
- *            type: object
- *            properties:
- *              assetTypeName:
- *                type: string
- *              maximumPrice:
- *                type: number
- *              maximumDeposit:
- *                type: number
- *              requestedQuantity:
- *                type: number
- *              requestedSpecificAttributes:
- *                type: array
- *                items:
- *                  type: object
- *                  properties:
- *                    attributeName:
- *                      type: string
- *                    value:
- *                      type: string
- *                    comparisonType:
- *                      type: string
- *                      enum:
- *                        - contains
- *                        - ==
- *                        - <
- *                        - <=
- *                        - >
- *                        - >=
- *                        - between
- *                        - in
- *                        - conj
- *                        - disj
- *                        - in(circle)
- *                        - in(rectangle)
+ *   schemas:
+ *     Request:
+ *       type: object
+ *       description: "The prosumer should provide either the requested offer IDs or the requested asset types."
+ *       required:
+ *         - requestor
+ *         - beginTimeSlot
+ *         - validityLimit
+ *         - transactionType
+ *       properties:
+ *         requestor:
+ *           type: string
+ *           description: "The ID of the requestor"
+ *         beginTimeSlot:
+ *           type: string
+ *           format: date-time
+ *           description: "The start time slot for the request"
+ *         endTimeSlot:
+ *           type: string
+ *           format: date-time
+ *           description: |
+ *             "Required in case of:
+ *              - immaterial asset
+ *              - material asset with rent transaction, representing the restitution date in this case"
+ *         validityLimit:
+ *           type: string
+ *           format: date-time
+ *           description: "The expiration date of the request"
+ *         transactionType:
+ *           type: string
+ *           enum:
+ *             - sale/purchase
+ *             - rent
+ *           description: "The type of transaction. Enum values: 'sale/purchase', 'rent'"
+ *         offerIds:
+ *           type: array
+ *           description: "List of requested offer IDs. Required if requesting specific offers"
+ *           items:
+ *             type: integer
+ *             format: int32
+ *         assetTypes:
+ *           type: array
+ *           description: "List of requested asset types. Required if requesting specific asset types"
+ *           items:
+ *             type: object
+ *             properties:
+ *               assetTypeName:
+ *                 type: string
+ *                 description: "The name of the asset type"
+ *               maximumPrice:
+ *                 type: number
+ *                 format: float
+ *                 description: |
+ *                   "In case of immaterial asset, expressed in Account Units per measuring unit.
+ *                    In case of immaterial and not measurable asset or rent of material asset, expressed in Account Units per hour"
+ *               maximumDeposit:
+ *                 type: number
+ *                 format: float
+ *                 description: "Deposit ranges between 0 and 100% of the asset price"
+ *               requestedQuantity:
+ *                 type: number
+ *                 format: float
+ *                 description: "Required in case of immaterial asset"
+ *               requestedSpecificAttributes:
+ *                 type: array
+ *                 description: "List of requested specific attributes for the asset"
+ *                 items:
+ *                   type: object
+ *                   properties:
+ *                     attributeName:
+ *                       type: string
+ *                       description: "The name of the specific attribute"
+ *                     value:
+ *                       type: string
+ *                       description: |
+ *                         "The value format depends on comparisonType:
+ *                          - between: [v1;v2]
+ *                          - in: {v1;v2;..;vn}
+ *                          - conj: {v1;v2;...;vn}
+ *                          - disj: {v1;v2;...;vn}
+ *                          - in(circle): (<x,y>;R) where <x,y> is the GPS coordinate of the circle center and R is the radius
+ *                          - in(rectangle): <x1,y1>;<x2,y2>;<x3,y3> where the vertices are given in this order: top-left, top-right, bottom-right"
+ *                     comparisonType:
+ *                       type: string
+ *                       enum:
+ *                         - contains
+ *                         - ==
+ *                         - <
+ *                         - <=
+ *                         - >
+ *                         - >=
+ *                         - between
+ *                         - in
+ *                         - conj
+ *                         - disj
+ *                         - in(circle)
+ *                         - in(rectangle)
+ *                       description: "The type of comparison for the attribute value"
  */
 
 /**
  * @swagger
- * /v1/requests:
+ * /v1/ODEP/requests:
  *   post:
- *     summary: post a new request (from ODEP)
+ *     summary: post a new request
  *     tags: [Requests]
  *     requestBody:
  *       description: offer's data.
@@ -198,13 +233,13 @@ const RequestController = require("../controllers/RequestController.js");
  *                        type: string
  */
 
-router.post('/requests/', RequestController.createRequest);
+router.post('/ODEP/requests/', RequestController.createRequest);
 
 /**
  * @swagger
- * /v1/requests/all:
+ * /v1/ODEP/requests/all:
  *   get:
- *     summary: Get all requests (from ODEP)
+ *     summary: Get all requests
  *     tags: [Requests]
  *     responses:
  *       200:
@@ -309,13 +344,13 @@ router.post('/requests/', RequestController.createRequest);
  */
 
 
-router.get('/requests/all', RequestController.getAllRequest);
+router.get('/ODEP/requests/all', RequestController.getAllRequest);
 
 /**
  * @swagger
- * /v1/requests/{id}:
+ * /v1/ODEP/requests/{id}:
  *   get:
- *     summary: Get a request by id (from ODEP)
+ *     summary: Get a request by id
  *     tags: [Requests]
  *     parameters:
  *       - in: path
@@ -424,13 +459,13 @@ router.get('/requests/all', RequestController.getAllRequest);
  *                   type: string
  */
 
-router.get('/requests/:id/', RequestController.getOneRequest);
+router.get('/ODEP/requests/:id/', RequestController.getOneRequest);
 
 /**
  * @swagger
- * /v1/requests/{id}:
+ * /v1/ODEP/requests/{id}:
  *   put:
- *     summary: update a request attributes (from ODEP)
+ *     summary: update a request attributes
  *     tags: [Requests]
  *     parameters:
  *       - in: path
@@ -547,13 +582,13 @@ router.get('/requests/:id/', RequestController.getOneRequest);
  *                   type: string
  */
 
-router.put('/requests/:id/', RequestController.putRequest);
+router.put('/ODEP/requests/:id/', RequestController.putRequest);
 
 /**
  * @swagger
- * /v1/requests/{id}/:
+ * /v1/ODEP/requests/{id}/:
  *   delete: 
- *     summary: delete a request (from ODEP)
+ *     summary: delete a request
  *     tags: [Requests]
  *     parameters:
  *       - in: path
@@ -606,6 +641,6 @@ router.put('/requests/:id/', RequestController.putRequest);
  */
 
 
-router.delete('/requests/:id/', RequestController.deleteRequest);
+router.delete('/ODEP/requests/:id/', RequestController.deleteRequest);
 
 module.exports = router;

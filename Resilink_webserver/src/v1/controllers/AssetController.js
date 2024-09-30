@@ -9,9 +9,9 @@ const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 const assetService = require("../services/AssetService.js");
 const _pathAssetODEP = 'http://90.84.194.104:10010/assets/'; 
 
-const getAllAssetResilink = async (req, res) => { 
+const getAllAssetMapped = async (req, res) => { 
   try {
-    const response = await assetService.getAllAssetVue(req.header('Authorization'));
+    const response = await assetService.getAllAssetResilink(req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     getDataLogger.error('Catched error', { from: 'createRequest', data: error.message});
@@ -170,7 +170,7 @@ const patchAsset = async (req, res) => {
 };
 
 module.exports = {
-  getAllAssetResilink,
+  getAllAssetMapped,
   createAsset,
   createAssetCustom,
   createAssetWithAssetTypeCustom,

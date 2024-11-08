@@ -2,14 +2,17 @@
 
 const bodyParser = require("body-parser");
 const cors = require('cors');
-require('dotenv').config({ path: './RESILINK_Server.env' }); //Change the name for your .env file
+//require('dotenv').config({ path: './Resilink_webserver/RESILINK_Server.env' }); //Change the name for your .env file
 const config = require('./v1/config.js');
+
 const express = require("express"); 
 
 const { swaggerDocs: V1SwaggerDocs } = require("./v1/swaggerV1.js");
 
 // .env variable
 const PORT = config.PORT;
+const IP_ADDRESS = config.IP_ADDRESS;
+console.log(IP_ADDRESS);
 
 // ---------------------------------------------------
 
@@ -60,7 +63,7 @@ const v1NewsRoute = require("./v1/routes/NewsRoute.js");
 app.use("/v1/", v1NewsRoute);
 
 //start application Express.js
-app.listen(PORT, '0.0.0.0', () => { 
-    console.log(`API is listening on port ${PORT}`);
+app.listen(PORT, IP_ADDRESS, () => { 
+    console.log(`API is listening on port ${PORT} and using ip ${IP_ADDRESS}`);
     V1SwaggerDocs(app, PORT); 
 });

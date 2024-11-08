@@ -1,3 +1,5 @@
+const IP_ADDRESS = process.env.IP_ADDRESS;
+
 const PORT = process.env.PORT;
 
 const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY;
@@ -21,6 +23,7 @@ const PATH_ODEP_REQUEST = process.env.PATH_ODEP_REQUEST;
 const PATH_ODEP_CONTRACT = process.env.PATH_ODEP_CONTRACT;
 
 module.exports = {
+    IP_ADDRESS,
     PORT,
     ENCRYPTION_KEY,
     DB_URL,

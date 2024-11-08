@@ -46,7 +46,7 @@ const swaggerDocs = (app, port) => {
     options.definition.servers = [
         {
           //TODO NE PAS OUBLIER DE LA CHANGER EN PERMANENCE POUR LA RENDRE ACCESSIBLE SUR INTERNET 
-            url: `http://10.0.13.38:9990`, //10.0.13.38 FAC 192.168.1.28 HOME 193.55.218.15 Reinder
+            url: `http://192.168.1.28:9990`, //10.0.13.38 FAC 192.168.1.28 HOME 193.55.218.15 Reinder
         },
     ];
 

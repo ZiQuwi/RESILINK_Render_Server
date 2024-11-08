@@ -1,5 +1,6 @@
 require('../loggers.js');
 const winston = require('winston');
+const config = require('../config.js');
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
@@ -10,7 +11,10 @@ const AssetTypes = require("./AssetTypeService.js");
 const Asset = require("./AssetService.js");
 const Contract = require("./ContractService.js");
 const UserDB = require("../database/UserDB.js");
+const PosumerDB = require("../database/ProsummerDB.js");
 
+const pathODEPAsset = config.PATH_ODEP_ASSET;
+const pathODEPContract = config.PATH_ODEP_CONTRACT;
 
 //Retrieves all valid offers for sale or lease in ODEP for RESILINK
 const getAllOfferForResilinkCustom = async (url, token) => {
@@ -37,31 +41,88 @@ const getAllOfferForResilinkCustom = async (url, token) => {
 
     //For each offer, checks if its validity date has not passed and if there is a quantity above 0 if it is an immaterial offer.
     for (const key in data) {
-        if (data.hasOwnProperty(key)) {
-          const element = data[key];
-          if (
-            new Date(element['validityLimit']) > new Date() && 
-            ( allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] !== null ?  
-              (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
-              (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true) : true) : false
-            ) 
-          ) 
-          {
-            await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
-            allOfferResilink[element['offerId'].toString()] = element;
-          }
-        }
+      const element = data[key];
+      if (
+        new Date(element['validityLimit']) > new Date() && 
+        ( allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] !== null ?  
+          (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
+          (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true) : true) : false
+        ) 
+      ) 
+      {
+        await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
+        allOfferResilink[element['offerId'].toString()] = element;
+      }
     }
     getDataLogger.info("successful data retrieval", { from: 'getAllOfferFilteredCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    return [allOfferResilink, allOffer.status];
+};
+
+//Retrieves all valid and suggested offers for sale or lease in ODEP for RESILINK
+const getSuggestedOfferForResilinkCustom = async (url, owner, token) => {
+
+  //Retrieves all data needed to confirm the offerœs validity
+    const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
+    const allAssetResilink = await Asset.getAllAssetResilink(token);
+    const allOffer = await Utils.fetchJSONData(
+        'GET',
+        url + "all", 
+        headers = {'accept': 'application/json',
+        'Authorization': token});
+    var allOfferResilink = {};
+    const data = await Utils.streamToJSON(allOffer.body);
+
+    //Checks that none of the functions are error returns by ODEP
+    if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
+      getDataLogger.error('error: Unauthorize', { from: 'getSuggestedOfferForResilinkCustom', tokenUsed: token == null ? "Token not given" : token});
+      return [allAssetType[1] == 401 ? allAssetType[0] : allAssetResilink[1] == 401 ? allAssetResilink[0] : data, 401];
+    } else if(allOffer.status != 200 || allAssetType[1] != 200 || allAssetResilink[1] != 200) {
+      getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getSuggestedOfferForResilinkCustom', dataOffer: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
+    };
+
+    const validOffers = [];
+    const validMapAssets = {};
+    //For each offer, checks if its validity date has not passed and if there is a quantity above 0 if it is an immaterial offer.
+    for (const key in data) {
+      const element = data[key];
+      if (
+        new Date(element['validityLimit']) > new Date() && 
+        ( allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] !== null ?  
+          (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
+          (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true) : true) : false
+        ) && 
+        element['offerer'].toString() !== owner
+      ) 
+      {
+        let idBlock = await PosumerDB.checkIdInBlockedOffers(element['offerId'].toString(), owner)
+        if (!idBlock) {
+          await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
+          validOffers.push(element);
+        }
+      }
+    }
+
+     // Add the last 3 valid offers to allOfferResilink
+     for (const offer of validOffers) {
+      validMapAssets[offer['assetId'].toString()] = (allAssetResilink[0][offer['assetId'].toString()])
+    }
+    allOfferResilink['offers'] = validOffers;
+    allOfferResilink['assets'] = validMapAssets;
+
+    getDataLogger.info("successful data retrieval", { from: 'getSuggestedOfferForResilinkCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [allOfferResilink, allOffer.status];
 };
 
 //Retrieves 3 last valid offers for sale or lease in ODEP for RESILINK
 const getLastThreeOfferForResilinkCustom = async (url, token) => {
 
+  console.log("entrer dans lastThree");
   //Retrieves all data needed to confirm the offers validity
     const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
+    console.log("passé la récupération assetTYpe");
     const allAssetResilink = await Asset.getAllAssetResilink(token);
+    console.log("passé la récupération asset");
     const allOffer = await Utils.fetchJSONData(
         'GET',
         url + "all", 
@@ -79,24 +140,24 @@ const getLastThreeOfferForResilinkCustom = async (url, token) => {
       return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
     };
 
+    console.log("passé la récupération asset assettype et offer");
+
     const validOffers = [];
     const validMapAssets = {};
     //For each offer, checks if its validity date has not passed and if there is a quantity above 0 if it is an immaterial offer.
     for (const key in data) {
-        if (data.hasOwnProperty(key)) {
-          const element = data[key];
-          if (
-            new Date(element['validityLimit']) > new Date() && 
-            ( allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] !== null ?  
-              (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
-              (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true) : true) : false
-            ) 
-          ) 
-          {
-            await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
-            validOffers.push(element);
-          }
-        }
+      const element = data[key];
+      if (
+        new Date(element['validityLimit']) > new Date() && 
+        ( allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] !== null ?  
+          (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
+          (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true) : true) : false
+        ) 
+      ) 
+      {
+        await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
+        validOffers.push(element);
+      }
     }
 
     // Get the last 3 valid offers
@@ -110,6 +171,59 @@ const getLastThreeOfferForResilinkCustom = async (url, token) => {
     allOfferResilink['assets'] = validMapAssets;
         
     getDataLogger.info("successful data retrieval", { from: 'getLastThreeOfferForResilinkCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    return [allOfferResilink, allOffer.status];
+};
+
+//Retrieves all valid and suggested offers for sale or lease in ODEP for RESILINK
+const getBlockedOfferForResilinkCustom = async (url, owner, token) => {
+
+  //Retrieves all data needed to confirm the offers validity
+    const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
+    const allAssetResilink = await Asset.getAllAssetResilink(token);
+    const allOffer = await Utils.fetchJSONData(
+        'GET',
+        url + "all", 
+        headers = {'accept': 'application/json',
+        'Authorization': token});
+    var allOfferResilink = {};
+    const data = await Utils.streamToJSON(allOffer.body);
+
+    //Checks that none of the functions are error returns by ODEP
+    if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
+      getDataLogger.error('error: Unauthorize', { from: 'getBlockedOfferForResilinkCustom', tokenUsed: token == null ? "Token not given" : token});
+      return [allAssetType[1] == 401 ? allAssetType[0] : allAssetResilink[1] == 401 ? allAssetResilink[0] : data, 401];
+    } else if(allOffer.status != 200 || allAssetType[1] != 200 || allAssetResilink[1] != 200) {
+      getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getBlockedOfferForResilinkCustom', dataOffer: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
+    };
+
+    let ListidBlock = await PosumerDB.getProsumerBlockedOffers(owner)
+    
+    const validOffers = [];
+    const validMapAssets = {};
+    //For each offer, checks if its validity date has not passed and if there is a quantity above 0 if it is an immaterial offer.
+    for (const key in data) {
+      const element = data[key];
+      let found = false;
+      let i = 0;
+      while (i <= ListidBlock.length && !found) {
+        if(element['offerId'] == ListidBlock[i]) {
+          await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
+          validOffers.push(element);
+          found = true;
+        }
+        i++
+      }
+    }
+
+     // Add the last 3 valid offers to allOfferResilink
+     for (const offer of validOffers) {
+      validMapAssets[offer['assetId'].toString()] = (allAssetResilink[0][offer['assetId'].toString()])
+    }
+    allOfferResilink['offers'] = validOffers;
+    allOfferResilink['assets'] = validMapAssets;
+
+    getDataLogger.info("successful data retrieval", { from: 'getBlockedOfferForResilinkCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [allOfferResilink, allOffer.status];
 };
 
@@ -138,7 +252,6 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
       isCompatible = true;
       //If filter is is not existant then all offers are pushed
       if (filter !== null) {
-
         //Checks if the filter has an “assetType” property and if so, checks if the offer's asset is identical 
         if(filter.hasOwnProperty("assetType")){
           if (typeof filter["assetType"] !== "string") {
@@ -185,10 +298,12 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
         };
 
         /*
-         * Checks if the Filter map has the key latitude, if so, then it is associated with longitude and distance and 
+         * Checks if the Filter map has the key latitude and no key cityVillag 
+         * If their is a key cityVillage, it takes priority over latitude
+         * if the conditions are met, then it is associated with longitude and distance and 
          * Checks whether offers are within the perimeter given by the filter.
          */
-        if(filter.hasOwnProperty("latitude")){
+        if(filter.hasOwnProperty("latitude") && !filter.hasOwnProperty("cityVillage")){
             if(allAsset[allOffer[key]["assetId"]]["specificAttributes"] !== undefined) {
               const gpsAttribute = allAsset[allOffer[key]["assetId"]]["specificAttributes"].find(attribute => attribute.attributeName === "GPS");
               if (gpsAttribute !== undefined) {
@@ -214,9 +329,25 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
             }
         }
 
+        if (filter.hasOwnProperty("cityVillage")) {
+          if (allAsset[allOffer[key]["assetId"]].hasOwnProperty("specificAttributes")) {
+            if (allAsset[allOffer[key]["assetId"]]["specificAttributes"].some(
+            attr1 => attr1.attributeName === "City/Village" && 
+            attr1.value.toLowerCase().includes(filter["cityVillage"].toLowerCase()) === false)) {
+              isCompatible = false;
+              continue;
+            } else {
+            }
+          } else {
+            isCompatible = false;
+            continue;
+          }
+        }
+
         //Checks if the filter has a “name” property, if so checks if its value is included in the asset name or description
         if(filter.hasOwnProperty("name")){
-          if (!(allAsset[allOffer[key]["assetId"]]["name"].includes(filter["name"]) || allAsset[allOffer[key]["assetId"]]["description"].includes(filter["name"]))) {
+          if (!(allAsset[allOffer[key]["assetId"]]["name"].toLowerCase().includes(filter["name"].toLowerCase()) 
+          || allAsset[allOffer[key]["assetId"]]["description"].toLowerCase().includes(filter["name"].toLowerCase()))) {
             isCompatible = false;
             continue;
           }
@@ -298,7 +429,7 @@ const getOwnerOfferPurchase = async (url, Username, token) => {
   var allOfferPurchase = [];
   var allAssetPurchase = [];
 
-  const allContractOwner = await Contract.getContractFromOwner('http://90.84.194.104:10010/contracts/', Username, token);
+  const allContractOwner = await Contract.getContractFromOwner(pathODEPContract, Username, token);
   if (allContractOwner[1] != 200) {
     getDataLogger.error('error: retrieving all owner\'s contracts', { from: 'getOwnerOfferPurchase', dataReceived: allContractOwner[0], tokenUsed: token == null ? "Token not given" : token});
     return [allContractOwner[0], allContractOwner[1]];
@@ -326,7 +457,7 @@ const getOwnerOfferPurchase = async (url, Username, token) => {
       } 
       return acc;
     }, []);
-    // Instead of a for... usage of Promise to make all afffectation at the same time
+    // Instead of a for... usage of Promise to make all affectation at the same time
     await Promise.all(allContractPurchased.map(async (data) => {
       await UserDB.insertUserPhoneNumber(
         allOffer[0][parseInt(data['offer'])]['offerer'].toString(),
@@ -365,14 +496,12 @@ const getAllOfferOwnerCustom = async (url, Username, token) => {
 
   //Checks if the creator is the user in parameter
   for (const key in data) {
-    if (data.hasOwnProperty(key)) {
-      const offer = data[key];
-      if (offer["offerer"] === Username &&
-        (allAssetType[0][allAssetResilink[0][offer['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
-              (offer['remainingQuantity'] !== null ? offer['remainingQuantity'] > 0 : true) : true)
-      ) {
-        allOfferOwner[offer["offerId"].toString()] = offer;
-      }
+    const offer = data[key];
+    if (offer["offerer"] === Username &&
+      (allAssetType[0][allAssetResilink[0][offer['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
+            (offer['remainingQuantity'] !== null ? offer['remainingQuantity'] > 0 : true) : true)
+    ) {
+      allOfferOwner[offer["offerId"].toString()] = offer;
     }
   }
   getDataLogger.info('success retrieving offers & keep the owner\'s', { from: 'getAllOfferOwnerCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
@@ -405,7 +534,7 @@ const createOfferAsset = async (url, body, token) => {
 
   //Calls the function to create an asset and his asset type
   updateDataODEP.warn('data to send to ODEP', { from: 'createOfferAsset', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
-  const newsAsset = await Asset.createAssetWithAssetTypeCustom("http://90.84.194.104:10010/assets/", body['asset'], token);
+  const newsAsset = await Asset.createAssetWithAssetTypeCustom(pathODEPAsset, body['asset'], token);
   if (newsAsset[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createOfferAsset', dataReceived: newsAsset[0], tokenUsed: token == null ? "Token not given" : token});
     return [newsAsset[0], newsAsset[1]];
@@ -469,10 +598,8 @@ const getAllOfferMapped = async (url, token) => {
     getDataLogger.info('success retrieving all offers', { from: 'getAllOfferMapped', tokenUsed: token.replace(/^Bearer\s+/i, '')});
 
     for (const key in data) {
-      if (data.hasOwnProperty(key)) {
-        const offer = data[key];
-        allOfferOwner[offer["offerId"].toString()] = offer;
-      }
+      const offer = data[key];
+      allOfferOwner[offer["offerId"].toString()] = offer;
     }
     return [allOfferOwner, response.status];
   }
@@ -522,7 +649,7 @@ const putOffer = async (url, body, id, token) => {
 
 //Updates the offer and its asset by id in ODEP
 const putOfferAsset = async (url, body, id, token) => {
-  const putAsset = await Asset.putAssetCustom("http://90.84.194.104:10010/assets/", body['asset'], body['offer']['assetId'], token);
+  const putAsset = await Asset.putAssetCustom(pathODEPAsset, body['asset'], body['offer']['assetId'], token);
   if (putAsset[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'putOfferAsset', dataReceived: newsAsset[0], tokenUsed: token == null ? "Token not given" : token});
     return [putAsset[0], putAsset[1]];
@@ -574,6 +701,8 @@ const deleteOffer = async (url, id, token) => {
 module.exports = {
     getAllOfferForResilinkCustom,
     getLastThreeOfferForResilinkCustom,
+    getSuggestedOfferForResilinkCustom,
+    getBlockedOfferForResilinkCustom,
     getAllOfferFilteredCustom,
     getAllOfferOwnerCustom,
     getOwnerOfferPurchase,
@@ -583,5 +712,5 @@ module.exports = {
     getOneOffer,
     putOffer,
     putOfferAsset,
-    deleteOffer
+    deleteOffer,
 }

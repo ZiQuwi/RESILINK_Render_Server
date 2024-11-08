@@ -293,11 +293,11 @@ const patchSharingProsummer = async (url, body, id, token) => {
 };
 
 //Patches a prosumer book marked list in RESILINK
-//Need to fin a way to check the token wihtout the user username and password
+//Need to find a way to check the token wihtout the user username and password
 const patchBookmarkProsummer = async (body, id) => {
   try {
     if (isNaN(body['bookmarkId'])) {
-      throw notValidBody("it's not a number in a string");
+      throw new notValidBody("it's not a number in a string");
     }
     patchDataODEP.warn('data & id to send to local DB', { from: 'patchBookmarkProsummer', dataToSend: body, id: id});
     const data = await ProsummerDB.addbookmarked(id, body['bookmarkId']);
@@ -318,7 +318,7 @@ const patchBookmarkProsummer = async (body, id) => {
 const deleteIdBookmarkedList = async (owner, id, token) => {
   try {
     if (isNaN(id)) {
-      throw notValidBody("it's not a number in a string");
+      throw new notValidBody("it's not a number in a string");
     }
     await ProsummerDB.deleteBookmarkedId(id, owner);
     getDataLogger.info("success deleting a news from an owner's bookmarked list", {from: 'deleteIdBookmarkedList'});
@@ -330,7 +330,47 @@ const deleteIdBookmarkedList = async (owner, id, token) => {
     getDataLogger.error("error deleting a news from an owner's bookmarked list", {from: 'deleteIdBookmarkedList', dataReceiver: e});
     throw e;
   }
-}
+};
+
+//Patches a prosumer book marked list in RESILINK
+//Need to find a way to check the token wihtout the user username and password
+const patchAddblockedOffersProsummer = async (body, id) => {
+  try {
+    if (isNaN(body['offerId'])) {
+      throw new notValidBody("it's not a number in a string");
+    }
+    patchDataODEP.warn('data & id to send to local DB', { from: 'patchAddblockedOffersProsummer', dataToSend: body, id: id});
+    const data = await ProsummerDB.addIdToBlockedOffers(id, body['offerId']);
+    patchDataODEP.info('success patching prosummer\'s blocked offers list', { from: 'patchAddblockedOffersProsummer', /*tokenUsed: token.replace(/^Bearer\s+/i, '')*/});
+    return [{message: "Prosumer blocked offers list successfully changed"}, 200];
+  } catch (e) {
+    if (e instanceof notValidBody) {
+      patchDataODEP.error('body is not valid', { from: 'patchAddblockedOffersProsummer', dataReceived: body, /*tokenUsed: token.replace(/^Bearer\s+/i, '')*/});
+    } else {
+      patchDataODEP.error('error patching prosummer\'s blocked offers list', { from: 'patchAddblockedOffersProsummer', dataReceived: body, /*tokenUsed: token.replace(/^Bearer\s+/i, '')*/});
+    }
+    throw(e);
+  }
+};
+
+//Deletes a news id in prosumer book marked list in RESILINK
+//Need to fin a way to check the token without the user username and password
+const deleteIdBlockedOffersList = async (owner, id, token) => {
+  try {
+    if (isNaN(id)) {
+      throw new notValidBody("it's not a number in a string");
+    }
+    await ProsummerDB.deleteBlockedOffersId(id, owner);
+    getDataLogger.info("success deleting a news from an owner's blocked offers list", {from: 'deleteIdBlockedOffersList'});
+    return [{message: "news " + id + " correctly removed in " + owner + " prosumer account"}, 200];
+  } catch (e) {
+    if (e instanceof notValidBody) {
+      patchDataODEP.error('id is not valid', { from: 'deleteIdBlockedOffersList', dataReceived: id, /*tokenUsed: token.replace(/^Bearer\s+/i, '')*/});
+    }
+    getDataLogger.error("error deleting an offer from an owner's blocked offers list", {from: 'deleteIdBlockedOffersList', dataReceiver: e});
+    throw e;
+  }
+};
 
 //Deletes a prosumer by id in ODEP & RESILINK
 const deleteProsumerODEPRESILINK = async (url, owner, token) => {
@@ -366,6 +406,8 @@ module.exports = {
     patchSharingProsummer,
     patchBookmarkProsummer,
     patchJobProsummer,
+    patchAddblockedOffersProsummer,
     deleteIdBookmarkedList,
+    deleteIdBlockedOffersList,
     deleteProsumerODEPRESILINK
 }

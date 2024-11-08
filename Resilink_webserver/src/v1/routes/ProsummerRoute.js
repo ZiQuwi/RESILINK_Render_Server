@@ -806,6 +806,93 @@ router.patch('/prosumers/:id/addBookmark', prosumerController.patchBookmarkProsu
 
 /**
  * @swagger
+ * /v1/prosumers/{id}/addBlockedOffer:
+ *   patch: 
+ *     summary: add an id to the blocked offers list of the prosumer
+ *     tags: [Prosumer]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: username
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               offerId:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Prosumer blocked offers list succesfully updated.
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    message:
+ *                        type: string
+ *       500:
+ *         description: Server error.
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    message:
+ *                        type: string
+ */
+
+router.patch('/prosumers/:id/addBlockedOffer', prosumerController.patchBlockedOfferProsumer);
+
+/**
+ * @swagger
+ * /v1/prosumers/delBlockedOffer/id:
+ *   delete: 
+ *     summary: delete an id in blocked offers list
+ *     tags: [Prosumer]
+  *     parameters:
+ *       - in: query
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: The offer id
+ *       - in: query
+ *         name: owner
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: The owner username
+ *     responses:
+ *       200:
+ *         description: id correctly removed from prosumer blocked offers list.
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    message:
+ *                        type: string
+ *       500:
+ *         description: Server error.
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    message:
+ *                        type: string
+ */
+
+router.delete('/prosumers/delBlockedOffer/id/', prosumerController.deleteIdBlockedOfferList);
+
+/**
+ * @swagger
  * /v1/prosumers/delBookmark/id:
  *   delete: 
  *     summary: delete an id in bookmarked list

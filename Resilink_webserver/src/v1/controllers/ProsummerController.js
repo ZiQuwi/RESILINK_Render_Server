@@ -1,5 +1,6 @@
 require('../loggers.js');
 const winston = require('winston');
+const config = require('../config.js');
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
@@ -7,8 +8,8 @@ const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const prosummerService = require("../services/ProsummerService.js");
-const {pathUserODEP} = require("./UserController.js");
-const _pathProsumerODEP = 'http://90.84.194.104:10010/prosumers/';
+const pathUserODEP = config.PATH_ODEP_USER + 'users/';
+const _pathProsumerODEP = config.PATH_ODEP_PROSUMER;
 
 const createProsumer = async (req, res) => { 
   try {
@@ -133,10 +134,30 @@ const patchBookmarkProsumer = async (req, res) => {
 
 const deleteIdBookmarkedList = async (req, res) => { 
   try {
-    const response = await prosummerService.deleteIdBookmarkedList(req.query.owner, req.query.id, req.header('Authorization'));
+    const response = await prosummerService.deleteIdBookmarkedList(req.query.owner, req.query.id, req.header('Authorization') ?? ""); // send empty string since no token used in the service function (no use of ODEP)
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    getDataLogger.error('Error accessing Resilink Database', { from: 'getNewsfromIdList', data: error});
+    getDataLogger.error('Error accessing Resilink Database', { from: 'deleteIdBookmarkedList', data: error});
+    res.status(500).send({message: error.message});
+  }
+};
+
+const patchBlockedOfferProsumer = async (req, res) => {
+  try {
+    const response = await prosummerService.patchAddblockedOffersProsummer(req.body, req.params.id);
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    patchDataODEP.error('Catched error', { from: 'patchBlockedOfferProsumer', data: error});
+    res.status(500).send({message: error.message});
+  }
+};
+
+const deleteIdBlockedOfferList = async (req, res) => { 
+  try {
+    const response = await prosummerService.deleteIdBlockedOffersList(req.query.owner, req.query.id, req.header('Authorization') ?? ""); // send empty string since no token used in the service function (no use of ODEP)
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    getDataLogger.error('Error accessing Resilink Database', { from: 'deleteIdBlockedOfferList', data: error});
     res.status(500).send({message: error.message});
   }
 };
@@ -165,6 +186,8 @@ module.exports = {
     getAllProsummerCustom,
     patchBookmarkProsumer,
     deleteIdBookmarkedList,
+    patchBlockedOfferProsumer,
+    deleteIdBlockedOfferList,
     deleteProsumerODEPRESILINK
 };
   

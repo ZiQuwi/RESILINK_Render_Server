@@ -1,7 +1,7 @@
 const crypto = require('crypto');
-require('dotenv').config();
+const config = require('../config.js');
 
-const _encryptionKey = Buffer.from(process.env.ENCRYPTION_KEY, 'hex');
+const _encryptionKey = Buffer.from(config.ENCRYPTION_KEY, 'hex');
 
 if (!_encryptionKey) {
   throw new Error('Encryption key is missing');

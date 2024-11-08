@@ -1,5 +1,6 @@
 require('../loggers.js');
 const winston = require('winston');
+const config = require('../config.js');
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
@@ -7,12 +8,15 @@ const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 const deleteDataResilink = winston.loggers.get('DeleteDataResilinkLogger');
 
 const User = require("../database/UserDB.js");
-const Prosumer = require("../database/ProsummerDB.js");
 const Utils = require("./Utils.js");
 
-const _ipAdress = 'http://90.84.194.104:4000/oauth/api/v1.0.0/';
+const _ipAdress = config.PATH_ODEP_USER;
 const _urlSignIn = 'auth/sign_in';
 const _urlCreateUser = 'users?provider=http%3A%2F%2Flocalhost%3A';
+/*
+ * localhost indicates the machine address on which to save a user (place limited on each machine)
+ * can have the value 22000 to 22004
+ */
 const _localhost = "22003";
 
 //Retrieves user data (token is associated with "accesToken" key)
@@ -52,8 +56,8 @@ const createUserResilink = async (pathUserODEP, newUserRequest, token) => {
       updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: findUserUserName[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return findUserUserName;
     } else if(findUserUserName[1] == 200) {
-      updateDataODEP.error('error email already token in ODEP', { from: 'createUserResilink', dataReceived: findUserUserName[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
-      return [{'message': 'userName already token'}, 404]
+      updateDataODEP.error('error email already taken in ODEP', { from: 'createUserResilink', dataReceived: findUserUserName[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      return [{'message': 'userName already taken'}, 404]
     }
 
     const findUserMail = await getUserByEmail(pathUserODEP, newUserRequest['email'], token);
@@ -61,8 +65,8 @@ const createUserResilink = async (pathUserODEP, newUserRequest, token) => {
       updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: findUserMail[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return findUserMail;
     } else if(findUserMail[1] == 200) {
-      updateDataODEP.error('error email already token in ODEP', { from: 'createUserResilink', dataReceived: findUserMail[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
-      return [{'message': 'email already token'}, 404]
+      updateDataODEP.error('error email already taken in ODEP', { from: 'createUserResilink', dataReceived: findUserMail[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      return [{'message': 'email already taken'}, 404]
     }
 
     const response = await Utils.fetchJSONData(
@@ -213,6 +217,7 @@ const getAllUser = async (url, token) => {
 //Retrieves all user in ODEP & RESILINK
 const getAllUserCustom = async (url, token) => {
   try {
+    console.log(url)
     const response = await Utils.fetchJSONData(
       "GET",
       url, 

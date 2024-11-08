@@ -267,7 +267,6 @@ router.post('/offers/', offerController.createOffer);
  * /v1/offers/all:
  *   get:
  *     summary: Get valid offers in RESILINK perspective
- *     description: 
  *     tags: [Offer]
  *     responses:
  *       200:
@@ -354,6 +353,104 @@ router.post('/offers/', offerController.createOffer);
  */
 
 router.get('/offers/all/', offerController.getAllOfferResilinkCustom);
+
+/**
+ * @swagger
+ * /v1/offers/suggested/{id}:
+ *   get:
+ *     summary: Get valid and suggested offers for a user 
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true 
+ *     tags: [Offer]
+ *     responses:
+ *       200:
+ *         description: Successful transaction
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               additionalProperties:
+ *                 type: object
+ *                 properties:
+ *                   offerId:
+ *                     type: integer
+ *                   offerer:
+ *                     type: string
+ *                   assetId:
+ *                     type: integer
+ *                   beginTimeSlot: 
+ *                     type: string
+ *                     format: date-time
+ *                   endTimeSlot: 
+ *                     type: string
+ *                     format: date-time
+ *                   validityLimit: 
+ *                     type: string
+ *                     format: date-time
+ *                   publicationDate: 
+ *                     type: string
+ *                     format: date-time
+ *                   offeredQuantity:
+ *                     type: number
+ *                   remainingQuantity:
+ *                     type: number
+ *                   price:
+ *                     type: number
+ *                   deposit:
+ *                     type: number
+ *                   cancellationFee:
+ *                     type: number
+ *                   phoneNumber:
+ *                     type: string
+ *                   rentInformation:
+ *                     type: object
+ *                     properties:
+ *                       delayMargin:
+ *                         type: number
+ *                       lateRestitutionPenalty:
+ *                         type: number
+ *                       deteriorationPenalty:
+ *                         type: number
+ *                       nonRestitutionPenalty:
+ *                         type: number
+ *       400:
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.get('/offers/suggested/:id', offerController.getSuggestedOfferForResilinkCustom);
 
 /**
  * @swagger
@@ -516,6 +613,175 @@ router.get('/offers/all/', offerController.getAllOfferResilinkCustom);
  */
 
 router.get('/offers/lastThree/', offerController.getLastThreeOfferForResilinkCustom);
+
+/**
+ * @swagger
+ * /v1/offers/owner/blockedOffer/{id}:
+ *   get:
+ *     summary: Get a prosumer blocked offers with assets data in RESILINK perspective
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: the prosummer id
+ *     tags: [Offer]
+ *     responses:
+ *       200:
+ *         description: Successful transaction
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 offers:
+ *                   type: array
+ *                   description: List of offers
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       offerer:
+ *                         type: string
+ *                         description: Offerer ID
+ *                       assetId:
+ *                         type: integer
+ *                         description: Asset ID
+ *                       beginTimeSlot: 
+ *                         type: string
+ *                         format: date-time
+ *                         description: Offer start time
+ *                       endTimeSlot: 
+ *                         type: string
+ *                         format: date-time
+ *                         description: Offer end time
+ *                       validityLimit: 
+ *                         type: string
+ *                         format: date-time
+ *                         description: Offer expiration date
+ *                       publicationDate: 
+ *                         type: string
+ *                         format: date-time
+ *                         description: Date of publication
+ *                       offeredQuantity:
+ *                         type: number
+ *                         description: Quantity offered
+ *                       remainingQuantity:
+ *                         type: number
+ *                         format: float
+ *                         description: Quantity remaining
+ *                       price:
+ *                         type: number
+ *                         description: Offer price
+ *                       deposit:
+ *                         type: number
+ *                         description: Offer deposit
+ *                       cancellationFee:
+ *                         type: number
+ *                         description: Fee for cancellation
+ *                       phoneNumber:
+ *                         type: string
+ *                         description: Offerer's phone number
+ *                       rentInformation:
+ *                         type: object
+ *                         description: Information related to renting
+ *                         properties:
+ *                           delayMargin:
+ *                             type: number
+ *                             description: Delay margin in percentage
+ *                           lateRestitutionPenalty:
+ *                             type: number
+ *                             description: Penalty for late return
+ *                           deteriorationPenalty:
+ *                             type: number
+ *                             description: Penalty for asset deterioration
+ *                           nonRestitutionPenalty:
+ *                             type: number
+ *                             description: Penalty for asset non-restitution
+ *                 assets:
+ *                   type: object
+ *                   description: Map of assets where each key is an asset ID
+ *                   additionalProperties:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                         description: Asset ID
+ *                       name:
+ *                         type: string
+ *                         description: Asset name
+ *                       description:
+ *                         type: string
+ *                         description: Asset description
+ *                       assetType:
+ *                         type: string
+ *                         description: Type of asset (e.g. Inputs1)
+ *                       owner:
+ *                         type: string
+ *                         description: Asset owner ID
+ *                       transactionType:
+ *                         type: string
+ *                         description: Type of transaction (e.g. sale/purchase)
+ *                       totalQuantity:
+ *                         type: number
+ *                         description: Total quantity available
+ *                       availableQuantity:
+ *                         type: number
+ *                         description: Quantity currently available
+ *                       specificAttributes:
+ *                         type: array
+ *                         description: List of specific attributes
+ *                         items:
+ *                           type: object
+ *                           properties:
+ *                             attributeName:
+ *                               type: string
+ *                               description: Name of the attribute
+ *                             value:
+ *                               type: string
+ *                               description: Value of the attribute
+ *                       images:
+ *                         type: array
+ *                         description: List of asset images
+ *                         items:
+ *                           type: string
+ *                       unit:
+ *                         type: string
+ *                         description: Unit of measurement for the asset
+ *       400:
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.get('/offers/owner/blockedOffer/:id/', offerController.getBlockedOfferForResilinkCustom);
 
 /**
  * @swagger
@@ -1502,6 +1768,5 @@ router.post('/offers/createOfferAsset/', offerController.createOfferAsset);
  */
 
 router.delete('/offers/:id/', offerController.deleteOffer);
-
 
 module.exports = router;

@@ -1,12 +1,12 @@
 require('../loggers.js');
+const config = require('../config.js');
 const winston = require('winston');
+const userService = require("../services/UserService.js");
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
 
-const userService = require("../services/UserService.js");
-
-const pathUserODEP = 'http://90.84.194.104:4000/oauth/api/v1.0.0/users/';
+const pathUserODEP = config.PATH_ODEP_USER + 'users/';
 
 const getTokenUser = async (req, res) => {
     try {
@@ -160,7 +160,6 @@ const getUserbyIdCustom = async (req, res) => {
 }
 
   module.exports = {
-    pathUserODEP,
     getTokenUser,
     createUser,
     createUserCustom,

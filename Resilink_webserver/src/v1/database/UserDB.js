@@ -28,7 +28,8 @@ const newUser = async (user) => {
       const userCtreated = await _collection.insertOne({
         "_id": user["_id"],
         "phoneNumber": user["phoneNumber"] != null ? cryptData.encryptAES(user["phoneNumber"]) : "",
-        "userName": user["userName"]
+        "userName": user["userName"],
+        "gps": user["gps"]
       });
 
       if (userCtreated == null) {
@@ -78,12 +79,14 @@ const updateUser = async (id, body) => {
     const _database = await connectToDatabase();
     const _collection = _database.collection('user');
 
-    console.log("dans updateUserDB");
     updateData.warn('before updating data', { from: 'updateUser', data: {phoneNumber: body.phoneNumber ?? ""}});
 
     const result = await _collection.updateOne(
       { userName: id },
-      { $set: {phoneNumber: body.phoneNumber != null ? cryptData.encryptAES(body.phoneNumber).toString() : "" } }
+      { $set: {
+        phoneNumber: body.phoneNumber != null ? cryptData.encryptAES(body.phoneNumber).toString() : "",
+        gps: body.gps
+      }}
     );
 
     if (result.modifiedCount === 1) {
@@ -110,6 +113,7 @@ const getUser = async (id, body) => {
     var user = await _collection.findOne({ _id: id });
     if (user != null) {
       body['phoneNumber'] = user.phoneNumber.length > 15 ? cryptData.decryptAES(user.phoneNumber) : user.phoneNumber;
+      body['gps'] = user.gps;
     } else {
       throw new getDBError();
     }
@@ -135,8 +139,10 @@ const getAllUser = async (userList) => {
       var user = await _collection.findOne({ _id : userList[i]._id });
       if (user != null) {
         userList[i].phoneNumber = user.phoneNumber.length > 15 ? cryptData.decryptAES(user.phoneNumber) : user.phoneNumber;
+        userList[i].gps = user.gps
       } else {
         userList[i].phoneNumber = "";
+        userList[i].gps = "";
       }
     }
 

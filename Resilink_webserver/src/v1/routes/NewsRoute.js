@@ -94,6 +94,101 @@ router.post('/news/', newsController.createNews);
 
 /**
  * @swagger
+ * /v1/news/{id}:
+ *   put: 
+ *     summary: update a news sources.
+ *     tags: [News]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: the news id
+ *     requestBody:
+ *       description: offer's data.
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *                url: 
+ *                    type: string
+ *                country: 
+ *                    type: string
+ *                institute: 
+ *                    type: string
+ *                img:
+ *                    type: string
+ *                platform:
+ *                    type: string
+ *     responses:
+ *       200:
+ *         description: News from a country.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.put('/news/:id/', newsController.updateNews);
+
+/**
+ * @swagger
+ * /v1/news/all:
+ *   get: 
+ *     summary: Get all the news.
+ *     tags: [News]
+ *     responses:
+ *       200:
+ *         description: All News.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                    _id:
+ *                      type: string
+ *                    url: 
+ *                      type: string
+ *                    country: 
+ *                      type: string
+ *                    institute: 
+ *                      type: string
+ *                    img:
+ *                      type: string
+ *                    platform:
+ *                      type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.get('/news/all', newsController.getAllNews);
+
+/**
+ * @swagger
  * /v1/news/country:
  *   get: 
  *     summary: Get all the news from a country.
@@ -122,6 +217,8 @@ router.post('/news/', newsController.createNews);
  *                      type: string
  *                    institute: 
  *                      type: string
+ *                    img:
+ *                      type: string
  *                    platform:
  *                      type: string
  *       500:
@@ -141,17 +238,17 @@ router.get('/news/country', newsController.getNewsfromCountry);
  * @swagger
  * /v1/news/ids:
  *   get: 
- *     summary: Get news from id list
+ *     summary: Get news from an id list
  *     tags: [News]
  *     parameters:
  *       - in: query
  *         name: ids
- *         description: List of news id.
- *         required: true
  *         schema:
  *           type: array
  *           items:
- *             type: integer
+ *             type: string
+ *         required: true
+ *         description: A list of news IDs
  *     responses:
  *       200:
  *         description: Ok.
@@ -162,8 +259,6 @@ router.get('/news/country', newsController.getNewsfromCountry);
  *               items:
  *                 type: object
  *                 properties:
- *                   _id:
- *                     type: string
  *                   url: 
  *                     type: string
  *                   country: 
@@ -171,6 +266,8 @@ router.get('/news/country', newsController.getNewsfromCountry);
  *                   institute: 
  *                     type: string
  *                   platform:
+ *                     type: string
+ *                   img:
  *                     type: string
  *       500:
  *         description: Error from RESILINK server.
@@ -213,6 +310,8 @@ router.get('/news/ids', newsController.getNewsfromIdList);
  *                 country:
  *                   type: string
  *                 institute:
+ *                   type: string
+ *                 img:
  *                   type: string
  *                 platform:
  *                   type: string
@@ -265,6 +364,8 @@ router.get('/news/owner/:id/', newsController.getNewsfromOwner);
  *                   country: 
  *                     type: string
  *                   institute: 
+ *                     type: string
+ *                   img:
  *                     type: string
  *                   platform:
  *                     type: string

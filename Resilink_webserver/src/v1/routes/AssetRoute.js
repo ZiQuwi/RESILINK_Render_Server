@@ -1380,4 +1380,138 @@ router.delete('/assets/:id/', assetController.deleteAssetCustom);
  */
 router.patch('/ODEP/assets/:id/regulatedId', assetController.patchAsset);
 
+/**
+ * @swagger
+ * /v1/assets/img/:
+ *   post: 
+ *     summary: register image in DNS reislink-dp.org
+ *     tags: [Asset]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               assetId:
+ *                 type: string
+ *               owner:
+ *                 type: string
+ *               images:
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *                  
+ *     responses:
+ *       200:
+ *         description: images successfully registered
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: object
+ *                   properties:
+ *                      assetId:
+ *                          type: string
+ *                      owner:
+ *                          type: string
+ *                      images:
+ *                          type: array
+ *                          items:
+ *                            type: string
+ *       400:
+ *         description: Bad request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:
+ *                   type: number
+ *                 message:
+ *                   type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.post('/assets/img/', assetController.postImagesAsset);
+
+/**
+ * @swagger
+ * /v1/assets/img/{id}/:
+ *   delete: 
+ *     summary: delete the images associated to an asset 
+ *     tags: [Asset]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: the asset id
+ *     responses:
+ *       200:
+ *         description: Images successfully deleted in ODEP & RESILINK
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
+ *       400:
+ *         description: Bad Request.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string 
+ *       404:
+ *         description: Not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   code:
+ *                       type: number
+ *                   message:
+ *                       type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                   message:
+ *                       type: string
+ */
+
+router.delete('/assets/img/:id/', assetController.deleteImagesAsset);
+
 module.exports = router;

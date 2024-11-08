@@ -34,7 +34,7 @@ const createContract = async (url, body, token) => {
 const getAllContract = async (url, token) => {
     const response = await Utils.fetchJSONData(
         'GET',
-        url + "all/", 
+        url + "all", 
         headers = {'accept': 'application/json',
         'Authorization': token}
     );
@@ -53,7 +53,7 @@ const getAllContract = async (url, token) => {
 const getOneContract = async (url, id, token) => {
     const response = await Utils.fetchJSONData(
         'GET',
-        url + id + "/", 
+        url + id, 
         headers = {'accept': 'application/json',
         'Authorization': token});
     const data = await Utils.streamToJSON(response.body);
@@ -71,7 +71,7 @@ const getOneContract = async (url, id, token) => {
 const getContractFromOwner = async (url, id, token) => {
     const response = await Utils.fetchJSONData(
         'GET',
-        url + "owner/" + id + "/", 
+        url + "owner/" + id, 
         headers = {'accept': 'application/json',
         'Authorization': token});
     const data = await Utils.streamToJSON(response.body);
@@ -89,7 +89,7 @@ const getContractFromOwner = async (url, id, token) => {
 const getOwnerContractOngoing = async (url, id, token) => {
     const response = await Utils.fetchJSONData(
         'GET',
-        url + "owner/" + id + "/", 
+        url + "owner/" + id, 
         headers = {'accept': 'application/json',
         'Authorization': token}
     );
@@ -136,7 +136,7 @@ const patchContractImmaterial = async (url, body, id, token) => {
   patchDataODEP.warn('data & id to send to ODEP', { from: 'patchOneRegulator', dataToSend: body, id: id, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
         'PATCH',
-        url + "immaterialContract/" + id + "/", 
+        url + "immaterialContract/" + id, 
         headers = {'accept': 'application/json',
         'Content-Type': 'application/json',
         'Authorization': token},
@@ -157,7 +157,7 @@ const patchContractMaterialPurchase = async (url, body, id, token) => {
   patchDataODEP.warn('data & id to send to ODEP', { from: 'patchOneRegulator', dataToSend: body, id: id, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
         'PATCH',
-        url + "purchaseMaterialContract/" + id + "/", 
+        url + "purchaseMaterialContract/" + id, 
         headers = {'accept': 'application/json',
         'Content-Type': 'application/json',
         'Authorization': token},
@@ -178,7 +178,7 @@ const patchContractMaterialRent = async (url, body, id, token) => {
   patchDataODEP.warn('data & id to send to ODEP', { from: 'patchOneRegulator', dataToSend: body, id: id, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.executeCurl(
         'PATCH',
-        url + "rentMaterialContract/" + id + "/", 
+        url + "rentMaterialContract/" + id, 
         headers = {'accept': 'application/json',
         'Content-Type': 'application/json',
         'Authorization': token},
@@ -199,7 +199,7 @@ const patchContractCancel = async (url, body, id, token) => {
   patchDataODEP.warn('data & id to send to ODEP', { from: 'patchOneRegulator', dataToSend: body, id: id, tokenUsed: token == null ? "Token not given" : token});
     const response = await Utils.fetchJSONData(
         'PATCH',
-        url + "cancelContract/" + id + "/", 
+        url + "cancelContract/" + id, 
         headers = {'accept': 'application/json',
         'Content-Type': 'application/json',
         'Authorization': token},

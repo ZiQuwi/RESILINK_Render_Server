@@ -1,13 +1,13 @@
 require('../loggers.js');
 const winston = require('winston');
+const config = require('../config.js');
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
 const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 
 const assettypeService = require("../services/AssetTypeService.js");
-const _pathassetTypesODEP = 'http://90.84.194.104:10010/assetTypes/'; 
-const userService = require("../services/UserService.js");
+const _pathassetTypesODEP = config.PATH_ODEP_ASSETTYPE; 
 
 const createAssetTypes = async (req, res) => { 
   try {

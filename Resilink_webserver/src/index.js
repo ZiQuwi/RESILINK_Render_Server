@@ -3,11 +3,13 @@
 const bodyParser = require("body-parser");
 const cors = require('cors');
 require('dotenv').config({ path: './RESILINK_Server.env' }); //Change the name for your .env file
+const config = require('./v1/config.js');
 const express = require("express"); 
 
 const { swaggerDocs: V1SwaggerDocs } = require("./v1/swaggerV1.js");
 
-const PORT = 9990; //process.env.PORT 
+// .env variable
+const PORT = config.PORT;
 
 // ---------------------------------------------------
 
@@ -54,15 +56,11 @@ app.use("/v1/", v1RequestRouter);
 const v1ContractRoute = require("./v1/routes/ContractRoute.js");
 app.use("/v1/", v1ContractRoute);       
 
-// Disable for the moment and not deleted as these requests may be reused at a later date.
-//const v1ArticleRoute = require("./v1/routes/ArticleRoute.js");
-//app.use("/v1/", v1ArticleRoute);
-
 const v1NewsRoute = require("./v1/routes/NewsRoute.js");
 app.use("/v1/", v1NewsRoute);
 
 //start application Express.js
-app.listen(PORT, '10.0.13.38', () => { 
+app.listen(PORT, '192.168.1.28', () => { 
     console.log(`API is listening on port ${PORT}`);
     V1SwaggerDocs(app, PORT); 
 });

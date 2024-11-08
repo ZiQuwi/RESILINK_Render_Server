@@ -1,5 +1,6 @@
 require('../loggers.js');
 const winston = require('winston');
+const config = require('../config.js');
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
@@ -9,10 +10,12 @@ const Utils = require("./Utils.js");
 const User = require("./UserService.js");
 const AssetTypeDB = require("../database/AssetTypeDB.js");
 
+const pathOdepAssetType = config.PATH_ODEP_ASSETTYPE
+
 // Same result as the function getAllAssetTypes except its not a list of object but juste an object with key and an asset type associeted
 const getAllAssetTypesResilink = async (token) => {
   try {
-    const urlGetALlAssetTypes = "http://90.84.194.104:10010/assetTypes/all";
+    const urlGetALlAssetTypes = pathOdepAssetType + "all";
     const allAssetTypes = await Utils.fetchJSONData(
         'GET',
         urlGetALlAssetTypes, 
@@ -66,11 +69,12 @@ const createAssetTypes = async (url, body, token) => {
 * Look in ODEP to see if the assetType exists, 
 * If not, returns the error given by ODEP, 
 * If yes, creates the child assetType in the local Resilink DB.
+* URL of assetTypes not in parameters to not import it in all functiosn calling createAssetTypesCustom
 */
 const createAssetTypesCustom = async (assetType, token) => {
   try {
     //Checks if the asset type exists and increments the asset type counter in RESILINK
-    const resultassetType = await getOneAssetTypes("http://90.84.194.104:10010/assetTypes/", assetType, token);
+    const resultassetType = await getOneAssetTypes(pathOdepAssetType, assetType, token);
     if (resultassetType[1] == 401) {
       getDataLogger.error('error: Unauthorize', { from: 'createAssetTypesCustom', dataReceived: resultassetType[0], tokenUsed: token == null ? "Token not given" : token});
       return [resultassetType[0], resultassetType[1]];
@@ -78,6 +82,7 @@ const createAssetTypesCustom = async (assetType, token) => {
       getDataLogger.error('error retrieving an assetType', { from: 'createAssetTypesCustom', dataReceived: resultassetType[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return [resultassetType[0], resultassetType[1]];
     } else {
+
       const resultDB = await AssetTypeDB.newAssetTypeDB(assetType);
       //Change the name of the asset type to the new name, which is the counter at the end of the asset type and creates the new asset type 
       resultassetType[0]["name"] = resultDB;
@@ -88,13 +93,14 @@ const createAssetTypesCustom = async (assetType, token) => {
       updateDataODEP.warn('data to send to ODEP', { from: 'createAssetTypesCustom', dataToSend: resultassetType[0], tokenUsed: token == null ? "Token not given" : token});
       const response = await Utils.fetchJSONData(
         'POST',
-        "http://90.84.194.104:10010/assetTypes/", 
+        pathOdepAssetType, 
         headers = {'accept': 'application/json',
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + adminToken[0]["accessToken"]},
         resultassetType[0]
       );
       const data = await Utils.streamToJSON(response.body);
+
       if (response.status == 401) {
         updateDataODEP.error('error: Unauthorize', { from: 'createAssetTypesCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
         return [data, response.status];

@@ -2,11 +2,13 @@ require('../loggers.js');
 const winston = require('winston');
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
+const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
+const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 
 const NewsDB = require("../database/NewsDB.js");
 const ProsumerDB = require("../database/ProsummerDB.js");
 
-//Create a news in RESILINK
+//Create a news 
 const createNews = async (body, token) => {
     try {
         if (token === null || token === "") {
@@ -21,22 +23,54 @@ const createNews = async (body, token) => {
     }
 };
 
-//Delete a news in RESILINK
+//Update a news 
+const updateNews = async (id, body, token) => {
+    try {
+        if (token === null || token === "") {
+            return [{message: "token is empty"}, 401];
+        } else if (Object.keys(body).length !== 5 && (body['url'] === null || body['img'] === null || body['country'] === null || body['institute'] === null || body['platform'] === null)) {
+            return [{message: "body is not conform"}, 404]
+        };
+        await NewsDB.updateNews(id, body);
+        updateDataODEP.info("success updating a news", {from: 'updateNews'});
+        return [{'message': 'successfull in updating the news ' + id}, 200];
+    } catch (e) {
+        updateDataODEP.error("error updating a news", {from: 'updateNews', dataReceiver: e});
+        throw e;
+    }
+};
+
+//Delete a news 
 const deleteNews = async (newsId, token) => {
     try {
         if (token === null || token === "") {
             return [{message: "token is empty"}, 401];
         }
         const dataFinal = await NewsDB.deleteNewsById(newsId);
-        getDataLogger.info("success creating a news", {from: 'deleteNews'});
+        deleteDataODEP.info("success creating a news", {from: 'deleteNews'});
         return [dataFinal, 200];
     } catch (e) {
-        getDataLogger.error("error creating a news", {from: 'deleteNews', dataReceiver: e});
+        deleteDataODEP.error("error creating a news", {from: 'deleteNews', dataReceiver: e});
         throw e;
     }
 };
 
-//Retrieves all news by country in RESILINK
+//Retrieves all news 
+const getAllNews = async (Country, token) => {
+    try {
+        if (token === null || token === "") {
+            return [{message: "token is empty"}, 401];
+        }
+        const dataFinal = await NewsDB.getAllNews(Country);
+        getDataLogger.info("success retrieving all news from a country", {from: 'getNewsfromCountry'});
+        return [{NewsList: dataFinal}, 200];
+    } catch (e) {
+        getDataLogger.error("error retrieving all news from a country", {from: 'getNewsfromCountry', dataReceiver: e});
+        throw e;
+    }
+};
+
+//Retrieves all news by country 
 const getNewsfromCountry = async (Country, token) => {
     try {
         if (token === null || token === "") {
@@ -51,7 +85,7 @@ const getNewsfromCountry = async (Country, token) => {
     }
 };
 
-//Retrieves the news associated with the id list in parameter in RESILINK
+//Retrieves the news associated with the id list in parameter 
 const getNewsfromIdList = async (ids, token) => {
     try {
         if (token === null || token === "") {
@@ -110,6 +144,8 @@ const getNewsfromCountryWithoutUserNews = async (owner, country, token) => {
 
 module.exports = {
     createNews,
+    updateNews,
+    getAllNews,
     getNewsfromCountry,
     getNewsfromIdList,
     getNewsfromOwner,

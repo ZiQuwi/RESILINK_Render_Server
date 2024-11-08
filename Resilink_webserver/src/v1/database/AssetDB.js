@@ -10,7 +10,6 @@ const connectDB = winston.loggers.get('ConnectDBResilinkLogger');
 // Creates an asset in RESILINK DB 
 const newAsset = async (assetId, imgBase64, owner, unit) => {
   try {
-    console.log("image: " + imgBase64);
     const db = await connectToDatabase();
     const _collection = db.collection('Asset');
     updateData.warn('before inserting data', { from: 'newAsset', data: {assetId, imgBase64, owner}});
@@ -125,8 +124,10 @@ const getAndCompleteAssetByAssets = async (ListAsset) => {
     for (const asset of ListAsset) {
       const numericAssetId = parseInt(asset.id);
       const result = await _collection.findOne({ id: numericAssetId });
-      asset['images'] = result ? result.images : [];
-      asset['unit'] = result['unit'];
+      if (result != null) {
+        asset['images'] = result.images != null ? result.images : [];
+        asset['unit'] = result['unit'];
+      }
     }
 
     if (!ListAsset) {

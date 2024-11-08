@@ -1,5 +1,6 @@
 require('../loggers.js');
 const winston = require('winston');
+const config = require('../config.js');
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
@@ -7,12 +8,15 @@ const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 const deleteDataResilink = winston.loggers.get('DeleteDataResilinkLogger');
 
 const User = require("../database/UserDB.js");
-const Prosumer = require("../database/ProsummerDB.js");
 const Utils = require("./Utils.js");
 
-const _ipAdress = 'http://90.84.194.104:4000/oauth/api/v1.0.0/';
+const _ipAdress = config.PATH_ODEP_USER;
 const _urlSignIn = 'auth/sign_in';
 const _urlCreateUser = 'users?provider=http%3A%2F%2Flocalhost%3A';
+/*
+ * localhost indicates the machine address on which to save a user (place limited on each machine)
+ * can have the value 22000 to 22004
+ */
 const _localhost = "22003";
 
 //Retrieves user data (token is associated with "accesToken" key)
@@ -47,12 +51,13 @@ const createUserResilink = async (pathUserODEP, newUserRequest, token) => {
     }
     
     const findUserUserName = await getUserByUsername(pathUserODEP, newUserRequest['userName'], token);
+
     if(findUserUserName[1] == 401) {
       updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: findUserUserName[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return findUserUserName;
     } else if(findUserUserName[1] == 200) {
-      updateDataODEP.error('error email already token in ODEP', { from: 'createUserResilink', dataReceived: findUserUserName[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
-      return [{'message': 'userName already token'}, 404]
+      updateDataODEP.error('error email already taken in ODEP', { from: 'createUserResilink', dataReceived: findUserUserName[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      return [{'message': 'userName already taken'}, 404]
     }
 
     const findUserMail = await getUserByEmail(pathUserODEP, newUserRequest['email'], token);
@@ -60,8 +65,8 @@ const createUserResilink = async (pathUserODEP, newUserRequest, token) => {
       updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: findUserMail[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return findUserMail;
     } else if(findUserMail[1] == 200) {
-      updateDataODEP.error('error email already token in ODEP', { from: 'createUserResilink', dataReceived: findUserMail[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
-      return [{'message': 'email already token'}, 404]
+      updateDataODEP.error('error email already taken in ODEP', { from: 'createUserResilink', dataReceived: findUserMail[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      return [{'message': 'email already taken'}, 404]
     }
 
     const response = await Utils.fetchJSONData(
@@ -123,14 +128,14 @@ const deleteUser = async (url, id, token) => {
     const response = await Utils.fetchJSONData(
       "DELETE",
       url + id, 
-      headers = {'accept': 'application/json',
+      headers = {
+       'accept': 'application/json',
        'Authorization': token},
     );
-    const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      deleteDataODEP.error('error: Unauthorize', { from: 'deleteUser', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      deleteDataODEP.error('error: Unauthorize', { from: 'deleteUser', tokenUsed: token == null ? "Token not given" : token});
     } else if(response.status != 202) {
-      deleteDataODEP.error('error deleting one user', { from: 'deleteUser', dataReceived: data, tokenUsed: token});
+      deleteDataODEP.error('error deleting one user', { from: 'deleteUser', tokenUsed: token});
     } else {
       deleteDataODEP.info('success deleting one user', { from: 'deleteUser', tokenUsed: token});
     }
@@ -144,18 +149,16 @@ const deleteUser = async (url, id, token) => {
 //Deletes an ODEP user & RESILINK user
 const deleteUserODEPRESILINK = async (url, id, token) => {
   try {
-
     //Calls the function to delete a user in ODEP 
     const delProsODEP = await deleteUser(url, id, token);
     if (delProsODEP[1] != 202) {
       deleteDataODEP.error("error deleting a user account in ODEP", {from: 'deleteUserODEPRESILINK', dataReceiver: delProsODEP[0]});
       return delProsODEP;
     }
-
     //Creates a user in RESILINK DB
     await User.deleteUser(id);
     deleteDataResilink.info("success deleting a user in RESILINK and ODEP DB", {from: 'deleteUserODEPRESILINK'});
-    return [{message: owner + " user account correctly removed in RESILINK and ODEP DB"}, 200];
+    return [{message: id + " user account correctly removed in RESILINK and ODEP DB"}, 200];
   } catch (e) {
     deleteDataResilink.error("error deleting a user account in RESILINK and ODEP DB", {from: 'deleteUserODEPRESILINK', dataReceiver: e.message});
     throw e;
@@ -214,6 +217,7 @@ const getAllUser = async (url, token) => {
 //Retrieves all user in ODEP & RESILINK
 const getAllUserCustom = async (url, token) => {
   try {
+    console.log(url)
     const response = await Utils.fetchJSONData(
       "GET",
       url, 
@@ -261,6 +265,32 @@ const getUserByEmail = async (url, email, token) => {
   }
 }
 
+//Retrieves a user by email
+const getUserByEmailCustom = async (url, email, token) => {
+  try {
+    getDataLogger.warn('email to send to ODEP', { from: 'getUserByEmailCustom', email: email, tokenUsed: token == null ? "Token not given" : token});
+    const response = await Utils.fetchJSONData(
+      "GET",
+      url + "getUserByEmail/" + email, 
+      headers = {'accept': 'application/json',
+       'Authorization': token},
+    );
+    const data = await Utils.streamToJSON(response.body);
+    if(response.status == 401) {
+      getDataLogger.error('error: Unauthorize', { from: 'getUserByEmailCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+    } else if(response.status != 200) {
+      getDataLogger.error('error accessing one user by email ' + email, { from: 'getUserByEmailCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    } else {
+      getDataLogger.info('success accessing one user by email', { from: 'getUserByEmailCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    }
+    await User.getUser(data["id"], data);
+    return [data, response.status];
+  } catch (e) {
+    getDataLogger.error("error accessing ODEP", {from: 'getUserByEmailCustom', dataReceiver: e.message});
+    throw e;
+  }
+}
+
 //Retrieves a user by username
 const getUserByUsername = async (url, username, token) => {
   try {
@@ -284,6 +314,35 @@ const getUserByUsername = async (url, username, token) => {
     return [data, response.status];
   } catch (e) {
     getDataLogger.error("error accessing ODEP", {from: 'getUserByUsername', dataReceiver: e.message});
+    throw e;
+  }
+}
+
+//Retrieves a user by username
+const getUserByUsernameCustom = async (url, username, token) => {
+  try {
+    getDataLogger.warn('username to send to ODEP', { from: 'getUserByUsernameCustom', username: username, tokenUsed: token == null ? "Token not given" : token});
+    const response = await Utils.fetchJSONData(
+      "GET",
+      url + "getUserByUserName/" + username, 
+      headers = {
+        'accept': 'application/json',
+        'Authorization': token
+      },
+    );
+    const data = await Utils.streamToJSON(response.body);
+    if(response.status == 401) {
+      getDataLogger.error('error: Unauthorize', { from: 'getUserByUsernameCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+    } else if(response.status != 200) {
+      getDataLogger.error('error accessing one user by username ' + username, { from: 'getUserByUsernameCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    } else {
+      getDataLogger.info('success accessing one user by username', { from: 'getUserByUsernameCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    }
+    await User.getUser(data["id"], data);
+
+    return [data, response.status];
+  } catch (e) {
+    getDataLogger.error("error accessing ODEP", {from: 'getUserByUsernameCustom', dataReceiver: e.message});
     throw e;
   }
 }
@@ -327,15 +386,16 @@ const updateUserCustom = async (url, id, body, token) => {
       phoneNumber = body['phoneNumber'];
       delete body['phoneNumber'];
     }
+
     const userODEP = await updateUser(url, id, body, token);
     if(userODEP[1] == 401) {
-      updateDataODEP.error('error: Unauthorize', { from: 'updateUser', dataReceived: userODEP[0], tokenUsed: token == null ? "Token not given" : token});
+      updateDataODEP.error('error: Unauthorize', { from: 'updateUserCustom', dataReceived: userODEP[0], tokenUsed: token == null ? "Token not given" : token});
       return userODEP;
     } else if(userODEP[1] != 200) {
-      updateDataODEP.error('error accessing one user by username ' + username, { from: 'updateUser', dataReceived: userODEP[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error accessing one user by username ' + username, { from: 'updateUserCustom', dataReceived: userODEP[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return userODEP;
     } else {
-      updateDataODEP.info('success accessing one user by username', { from: 'updateUser', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.info('success accessing one user by username', { from: 'updateUserCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     }
 
     //Returns RESILINK data to map and calls function to update user in RESILINK db
@@ -345,7 +405,7 @@ const updateUserCustom = async (url, id, body, token) => {
     await User.updateUser(id, body);
     return [body, userODEP[1]];
   } catch (e) {
-    getDataLogger.error("error accessing ODEP", {from: 'updateUser', dataReceiver: e.message});
+    getDataLogger.error("error accessing ODEP", {from: 'updateUserCustom', dataReceiver: e.message});
     throw e;
   }
 }
@@ -381,8 +441,10 @@ module.exports = {
     getAllUser,
     getAllUserCustom,
     getUserByEmail,
+    getUserByEmailCustom,
     getUserById,
     getUserByUsername,
+    getUserByUsernameCustom,
     updateUser,
     getUserByIdCustom,
     updateUserCustom

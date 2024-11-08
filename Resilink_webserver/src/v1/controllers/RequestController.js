@@ -1,5 +1,6 @@
 require('../loggers.js');
 const winston = require('winston');
+const config = require('../config.js');
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
@@ -7,7 +8,7 @@ const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 
 const RequestService = require("../services/RequestService.js");
 
-const _pathRequestODEP = 'http://90.84.194.104:10010/requests/';
+const _pathRequestODEP = config.PATH_ODEP_REQUEST;
 
 const createRequest = async (req, res) => {
     try {

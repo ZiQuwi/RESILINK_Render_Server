@@ -57,7 +57,7 @@ const getAllProsummer = async (url, token) => {
  * Calls the function to create a user in ODEP and RESILINK
  * Then creates a prosumer profile in ODEP and RESILINK 
  */
-const createProsumerCustom = async(url, body, token) => {
+const createProsumerCustom = async(url, urlUser, body, token) => {
 
   //Calls the functions to get admin token then calls the function to create a user in ODEP & RESILINK
   const admin = await userService.functionGetTokenUser({userName: "admin", password: "admin123"});
@@ -70,12 +70,11 @@ const createProsumerCustom = async(url, body, token) => {
 
   if (!Utils.containsNonRomanCharacters(body['userName']) || !Utils.containsNonRomanCharacters(body['password'])) {
     return [{"message": "userName or password are not in roman caracters"}, 405]
-  } else if (!Utils.isNumeric(body['phoneNumber'])) {
+  } else if (!Utils.isNumeric(body['phoneNumber'] ?? "1" )) {
     return [{"message": "phone number is not in digits caracters"}, 405]
   }
 
-  const user = await userService.createUserResilink(body, admin[0]["accessToken"]);
-  
+  const user = await userService.createUserResilink(urlUser, body, admin[0]["accessToken"]);
   if(user[1] == 401) {
     updateDataODEP.error('error: Unauthorize', { from: 'createProsumerCustom', dataReceived: user[0], tokenUsed: admin[0]["accessToken"].replace(/^Bearer\s+/i, '')});
     return user;
@@ -112,10 +111,10 @@ const createProsumerCustom = async(url, body, token) => {
 
   ProsummerDB.newProsumer(user[0].userName, job, location);
   updateDataODEP.info('success creating one user and his prosummer status in ODEP and Resilink DB', { from: 'createProsumerCustom', tokenUsed: admin[0]["accessToken"].replace(/^Bearer\s+/i, '')});
-  data['job'] = job;
-  data['location'] = location;
-
-  return [{user: user[0], prosumer: data}, response.status];
+  body['job'] = job ?? "";
+  body['location'] = location ?? "";
+  body['bookMarked'] = [];
+  return [{user: user[0], prosumer: body}, response.status];
 };
 
 //Retrieves all prosumers in ODEP and RESILINK
@@ -161,7 +160,6 @@ const updateUserProsumerCustom = async (url, body, id, token) => {
 
     await ProsummerDB.updateJob(body['user']['userName'], body['prosumer']['job']);
     await ProsummerDB.updateLocation(body['user']['userName'], body['prosumer']['location']);
-    
     return [{'user': userODEP[0], 'prosumer': body['prosumer']}, userODEP[1]];
   } catch (e) {
     getDataLogger.error("error accessing ODEP", {from: 'updateUserProsumerCustom', dataReceiver: e.message});
@@ -295,11 +293,11 @@ const patchSharingProsummer = async (url, body, id, token) => {
 };
 
 //Patches a prosumer book marked list in RESILINK
-//Need to fin a way to check the token wihtout the user username and password
+//Need to find a way to check the token wihtout the user username and password
 const patchBookmarkProsummer = async (body, id) => {
   try {
     if (isNaN(body['bookmarkId'])) {
-      throw notValidBody("it's not a number in a string");
+      throw new notValidBody("it's not a number in a string");
     }
     patchDataODEP.warn('data & id to send to local DB', { from: 'patchBookmarkProsummer', dataToSend: body, id: id});
     const data = await ProsummerDB.addbookmarked(id, body['bookmarkId']);
@@ -320,7 +318,7 @@ const patchBookmarkProsummer = async (body, id) => {
 const deleteIdBookmarkedList = async (owner, id, token) => {
   try {
     if (isNaN(id)) {
-      throw notValidBody("it's not a number in a string");
+      throw new notValidBody("it's not a number in a string");
     }
     await ProsummerDB.deleteBookmarkedId(id, owner);
     getDataLogger.info("success deleting a news from an owner's bookmarked list", {from: 'deleteIdBookmarkedList'});
@@ -332,7 +330,47 @@ const deleteIdBookmarkedList = async (owner, id, token) => {
     getDataLogger.error("error deleting a news from an owner's bookmarked list", {from: 'deleteIdBookmarkedList', dataReceiver: e});
     throw e;
   }
-}
+};
+
+//Patches a prosumer book marked list in RESILINK
+//Need to find a way to check the token wihtout the user username and password
+const patchAddblockedOffersProsummer = async (body, id) => {
+  try {
+    if (isNaN(body['offerId'])) {
+      throw new notValidBody("it's not a number in a string");
+    }
+    patchDataODEP.warn('data & id to send to local DB', { from: 'patchAddblockedOffersProsummer', dataToSend: body, id: id});
+    const data = await ProsummerDB.addIdToBlockedOffers(id, body['offerId']);
+    patchDataODEP.info('success patching prosummer\'s blocked offers list', { from: 'patchAddblockedOffersProsummer', /*tokenUsed: token.replace(/^Bearer\s+/i, '')*/});
+    return [{message: "Prosumer blocked offers list successfully changed"}, 200];
+  } catch (e) {
+    if (e instanceof notValidBody) {
+      patchDataODEP.error('body is not valid', { from: 'patchAddblockedOffersProsummer', dataReceived: body, /*tokenUsed: token.replace(/^Bearer\s+/i, '')*/});
+    } else {
+      patchDataODEP.error('error patching prosummer\'s blocked offers list', { from: 'patchAddblockedOffersProsummer', dataReceived: body, /*tokenUsed: token.replace(/^Bearer\s+/i, '')*/});
+    }
+    throw(e);
+  }
+};
+
+//Deletes a news id in prosumer book marked list in RESILINK
+//Need to fin a way to check the token without the user username and password
+const deleteIdBlockedOffersList = async (owner, id, token) => {
+  try {
+    if (isNaN(id)) {
+      throw new notValidBody("it's not a number in a string");
+    }
+    await ProsummerDB.deleteBlockedOffersId(id, owner);
+    getDataLogger.info("success deleting a news from an owner's blocked offers list", {from: 'deleteIdBlockedOffersList'});
+    return [{message: "news " + id + " correctly removed in " + owner + " prosumer account"}, 200];
+  } catch (e) {
+    if (e instanceof notValidBody) {
+      patchDataODEP.error('id is not valid', { from: 'deleteIdBlockedOffersList', dataReceived: id, /*tokenUsed: token.replace(/^Bearer\s+/i, '')*/});
+    }
+    getDataLogger.error("error deleting an offer from an owner's blocked offers list", {from: 'deleteIdBlockedOffersList', dataReceiver: e});
+    throw e;
+  }
+};
 
 //Deletes a prosumer by id in ODEP & RESILINK
 const deleteProsumerODEPRESILINK = async (url, owner, token) => {
@@ -368,6 +406,8 @@ module.exports = {
     patchSharingProsummer,
     patchBookmarkProsummer,
     patchJobProsummer,
+    patchAddblockedOffersProsummer,
     deleteIdBookmarkedList,
+    deleteIdBlockedOffersList,
     deleteProsumerODEPRESILINK
 }

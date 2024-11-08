@@ -1,13 +1,15 @@
 // In src/index.js 
 
-const express = require("express"); 
 const bodyParser = require("body-parser");
 const cors = require('cors');
+require('dotenv').config({ path: './RESILINK_Server.env' }); //Change the name for your .env file
+const config = require('./v1/config.js');
+const express = require("express"); 
 
 const { swaggerDocs: V1SwaggerDocs } = require("./v1/swaggerV1.js");
 
-const PORT = 9990; //process.env.PORT || 
-
+// .env variable
+const PORT = config.PORT;
 
 // ---------------------------------------------------
 
@@ -26,9 +28,6 @@ app.use(morgan('dev'));
 
 // Add CORS middleware
 app.use(cors());
-
-// Permit certbot brom Letsencrypt to read a-string file and start challenging the server
-//app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 
 // --------------------------------------------------
 
@@ -55,10 +54,7 @@ const v1RequestRouter = require("./v1/routes/RequestRoute.js");
 app.use("/v1/", v1RequestRouter);
 
 const v1ContractRoute = require("./v1/routes/ContractRoute.js");
-app.use("/v1/", v1ContractRoute);
-
-const v1ArticleRoute = require("./v1/routes/ArticleRoute.js");
-app.use("/v1/", v1ArticleRoute);
+app.use("/v1/", v1ContractRoute);       
 
 const v1NewsRoute = require("./v1/routes/NewsRoute.js");
 app.use("/v1/", v1NewsRoute);

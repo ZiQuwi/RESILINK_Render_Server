@@ -1,12 +1,13 @@
 require('../loggers.js');
 const winston = require('winston');
+const config = require('../config.js');
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
 const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 
 const OfferService = require("../services/OfferService.js");
-const _pathofferODEP = 'http://90.84.194.104:10010/offers/'; 
+const _pathofferODEP = config.PATH_ODEP_OFFER; 
 
 const getAllOfferResilinkCustom = async (req, res) => { 
     try {
@@ -16,6 +17,16 @@ const getAllOfferResilinkCustom = async (req, res) => {
       getDataLogger.error('Catched error', { from: 'getAllOfferResilinkCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
       res.status(500).send({message: error.message})
     }
+};
+
+const getSuggestedOfferForResilinkCustom = async (req, res) => { 
+  try {
+    const response = await OfferService.getSuggestedOfferForResilinkCustom(_pathofferODEP, req.params.id, req.header('Authorization'));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    getDataLogger.error('Catched error', { from: 'getSuggestedOfferForResilinkCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({message: error.message})
+  }
 };
 
 const getLastThreeOfferForResilinkCustom = async (req, res) => { 
@@ -28,13 +39,12 @@ const getLastThreeOfferForResilinkCustom = async (req, res) => {
   }
 };
 
-//Not added on the API for now (need to see how to handle the no price offer)
-const createOfferNoPrice = async (req, res) => {
+const getBlockedOfferForResilinkCustom = async (req, res) => { 
   try {
-    const response = await OfferService.getAllOfferForResilinkCustom(_pathofferODEP, req.body, req.header('Authorization'));
+    const response = await OfferService.getBlockedOfferForResilinkCustom(_pathofferODEP, req.params.id, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    updateDataODEP.error('Catched error', { from: 'createOfferNoPrice', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    getDataLogger.error('Catched error', { from: 'getBlockedOfferForResilinkCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 };
@@ -142,10 +152,11 @@ const putOfferAsset = async (req, res) => {
 module.exports = {
     getAllOfferResilinkCustom,
     getLastThreeOfferForResilinkCustom,
+    getSuggestedOfferForResilinkCustom,
+    getBlockedOfferForResilinkCustom,
     getOfferFiltered,
     getOfferOwner,
     getOwnerOfferPurchase,
-    createOfferNoPrice,
     createOfferAsset,
     createOffer,
     getAllOffer,

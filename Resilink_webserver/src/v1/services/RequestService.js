@@ -4,7 +4,6 @@ const winston = require('winston');
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
 const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
-const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const Utils = require("./Utils.js");
 

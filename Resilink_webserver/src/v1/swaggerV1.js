@@ -3,6 +3,7 @@
 
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const {customSorter} = require("./services/Utils.js");
 
 // Basic Meta Informations about our API
 let options = {
@@ -12,7 +13,7 @@ let options = {
         title: "Resilink Mid-plateform",
         version: "1.0.0",
         description:
-          "API to perform calculations or add information between the Orange API and the mobile application.",
+          "API to perform calculations or add information between the Orange API and the mobile application. [More documentation](https://resilink-dp.org/RESILINKMid-platformAPIDocumentation.pdf)",
         license: {
           name: "",
         },
@@ -34,7 +35,7 @@ let options = {
         bearerAuth: []
       }]
     },
-    apis: ["./src/v1/routes/*.js"],
+    apis: ["./src/v1/routes/*.js"]
 };
 
 // ---------------------------------------------------
@@ -44,19 +45,31 @@ const swaggerDocs = (app, port) => {
     // Add servers to options
     options.definition.servers = [
         {
-          //TODO NE PAS OUBLIER DE LA CHANGER EN PERMANENCE POUR LA RENDRE ACCESSIBLE SUR INTERNET 
-            url: 'https://resilink-api.onrender.com', //10.0.13.38 FAC 192.168.1.28 HOME 193.55.218.15 Reinder
+            url: `https://resilink-api.onrender.com`, 
         },
     ];
 
     // Docs in JSON format
     const swaggerSpec = swaggerJSDoc(options);  
 
+    // Swagger UI options
+    const swaggerUiOpts = {
+      swaggerOptions: {
+        filter: true, // Enables filtering/searching through API endpoints
+        docExpansion: "list", // Expands the documentation into a list format by default
+        defaultModelsExpandDepth: 2, // Controls the depth of models expansion
+        defaultModelExpandDepth: 3, // Controls the depth of the default model expansion 
+        operationsSorter: customSorter // Sort operations with custom sorting (by HTTP method, then alphabetically)
+      },
+      explorer: false // set to true if you need a search Bar in case of numerous method.
+    };
+
     // Route-Handler to visit our docs
+    // Add Swagger UI options
     app.use(
         "/v1/api-docs", 
         swaggerUi.serve,
-        swaggerUi.setup(swaggerSpec)
+        swaggerUi.setup(swaggerSpec, swaggerUiOpts)
         );
       
     // Make our docs in JSON format available
@@ -69,13 +82,6 @@ const swaggerDocs = (app, port) => {
         );
         console.log(swaggerSpec);
       
-    // Add a search bar to the UI just in case the API has too many operations
-    app.use(
-        "/v1/api-docs",
-        swaggerUi.serve,
-        swaggerUi.setup(swaggerSpec, { explorer: true })
-        );
-
     console.log(`Docs are available on https://resilink-api.onrender.com/v1/api-docs [Version 1]`);
 };  
 

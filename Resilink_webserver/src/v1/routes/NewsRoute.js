@@ -10,9 +10,36 @@ const newsController = require("../controllers/NewsController.js");
 
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     News:
+ *       type: object
+ *       properties:
+ *         _id:
+ *           type: string
+ *           description: "Unique identifier for the news article"
+ *         url:
+ *           type: string
+ *           description: "The URL of the news article"
+ *         country:
+ *           type: string
+ *           description: "The country from which the news article originates"
+ *         institute:
+ *           type: string
+ *           description: "The news institute or source publishing the article"
+ *         img:
+ *           type: string
+ *           description: "URL or data (as base64) representing the image associated with the news article"
+ *         platform:
+ *           type: string
+ *           description: "The platform where the news is published, such as a website or app"
+ */
+
+/**
+ * @swagger
  * /v1/news:
  *   post: 
- *     summary: create a news sources (from RESILINK).
+ *     summary: create a news sources.
  *     tags: [News]
  *     requestBody:
  *       description: offer's data.
@@ -38,22 +65,20 @@ const newsController = require("../controllers/NewsController.js");
  *         content:
  *           application/json:
  *             schema:
- *               type: array
- *               items:
- *                  type: object
- *                  properties:
- *                      _id:
- *                          type: string
- *                      url: 
- *                          type: string
- *                      country: 
- *                          type: string
- *                      institute: 
- *                          type: string
- *                      img:
- *                          type: string
- *                      platform:
- *                          type: string
+ *               type: object
+ *               properties:
+ *                 _id:
+ *                   type: string
+ *                 url: 
+ *                   type: string
+ *                 country: 
+ *                   type: string
+ *                 institute: 
+ *                   type: string
+ *                 img:
+ *                   type: string
+ *                 platform:
+ *                   type: string
  *       500:
  *         description: Error from RESILINK server.
  *         content:
@@ -69,9 +94,104 @@ router.post('/news/', newsController.createNews);
 
 /**
  * @swagger
+ * /v1/news/{id}:
+ *   put: 
+ *     summary: update a news sources.
+ *     tags: [News]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: the news id
+ *     requestBody:
+ *       description: offer's data.
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *                url: 
+ *                    type: string
+ *                country: 
+ *                    type: string
+ *                institute: 
+ *                    type: string
+ *                img:
+ *                    type: string
+ *                platform:
+ *                    type: string
+ *     responses:
+ *       200:
+ *         description: News from a country.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.put('/news/:id/', newsController.updateNews);
+
+/**
+ * @swagger
+ * /v1/news/all:
+ *   get: 
+ *     summary: Get all the news.
+ *     tags: [News]
+ *     responses:
+ *       200:
+ *         description: All News.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  type: object
+ *                  properties:
+ *                    _id:
+ *                      type: string
+ *                    url: 
+ *                      type: string
+ *                    country: 
+ *                      type: string
+ *                    institute: 
+ *                      type: string
+ *                    img:
+ *                      type: string
+ *                    platform:
+ *                      type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.get('/news/all', newsController.getAllNews);
+
+/**
+ * @swagger
  * /v1/news/country:
  *   get: 
- *     summary: Get all the news from a country (from RESILINK).
+ *     summary: Get all the news from a country.
  *     tags: [News]
  *     parameters:
  *       - in: query
@@ -89,14 +209,18 @@ router.post('/news/', newsController.createNews);
  *               items:
  *                  type: object
  *                  properties:
- *                      _id:
- *                          type: string
- *                      url: 
- *                          type: string
- *                      country: 
- *                          type: string
- *                      institute: 
- *                          type: string
+ *                    _id:
+ *                      type: string
+ *                    url: 
+ *                      type: string
+ *                    country: 
+ *                      type: string
+ *                    institute: 
+ *                      type: string
+ *                    img:
+ *                      type: string
+ *                    platform:
+ *                      type: string
  *       500:
  *         description: Error from RESILINK server.
  *         content:
@@ -114,17 +238,17 @@ router.get('/news/country', newsController.getNewsfromCountry);
  * @swagger
  * /v1/news/ids:
  *   get: 
- *     summary: Get news from id list (from RESILINK)
+ *     summary: Get news from an id list
  *     tags: [News]
  *     parameters:
  *       - in: query
  *         name: ids
- *         description: List of news id.
- *         required: true
  *         schema:
  *           type: array
  *           items:
- *             type: integer
+ *             type: string
+ *         required: true
+ *         description: A list of news IDs
  *     responses:
  *       200:
  *         description: Ok.
@@ -133,16 +257,18 @@ router.get('/news/country', newsController.getNewsfromCountry);
  *             schema:
  *               type: array
  *               items:
- *                  type: object
- *                  properties:
- *                      _id:
- *                          type: string
- *                      url: 
- *                          type: string
- *                      country: 
- *                          type: string
- *                      institute: 
- *                          type: string
+ *                 type: object
+ *                 properties:
+ *                   url: 
+ *                     type: string
+ *                   country: 
+ *                     type: string
+ *                   institute: 
+ *                     type: string
+ *                   platform:
+ *                     type: string
+ *                   img:
+ *                     type: string
  *       500:
  *         description: Error from RESILINK server.
  *         content:
@@ -160,7 +286,7 @@ router.get('/news/ids', newsController.getNewsfromIdList);
  * @swagger
  * /v1/news/owner/{id}:
  *   get:
- *     summary: Get all news from a prosumer (from RESILINK)
+ *     summary: Get all news from a prosumer
  *     tags: [News]
  *     parameters:
  *       - in: path
@@ -177,14 +303,18 @@ router.get('/news/ids', newsController.getNewsfromIdList);
  *             schema:
  *               type: object
  *               properties:
- *                  _id:
- *                      type: string
- *                  url:
- *                      type: string
- *                  country:
- *                      type: string
- *                  institute:
- *                      type: string
+ *                 _id:
+ *                   type: string
+ *                 url:
+ *                   type: string
+ *                 country:
+ *                   type: string
+ *                 institute:
+ *                   type: string
+ *                 img:
+ *                   type: string
+ *                 platform:
+ *                   type: string
  *       500:
  *         description: Error from RESILINK server.
  *         content:
@@ -202,7 +332,7 @@ router.get('/news/owner/:id/', newsController.getNewsfromOwner);
  * @swagger
  * /v1/news/countryOwner:
  *   get:
- *     summary: Get all news within a country without user's subcribed news (from RESILINK)
+ *     summary: Get all news within a country without user's subcribed news
  *     tags: [News]
  *     parameters:
  *       - in: query
@@ -225,16 +355,20 @@ router.get('/news/owner/:id/', newsController.getNewsfromOwner);
  *             schema:
  *               type: array
  *               items:
- *                  type: object
- *                  properties:
- *                      _id:
- *                          type: string
- *                      url: 
- *                          type: string
- *                      country: 
- *                          type: string
- *                      institute: 
- *                          type: string
+ *                 type: object
+ *                 properties:
+ *                   _id:
+ *                     type: string
+ *                   url: 
+ *                     type: string
+ *                   country: 
+ *                     type: string
+ *                   institute: 
+ *                     type: string
+ *                   img:
+ *                     type: string
+ *                   platform:
+ *                     type: string
  *       500:
  *         description: Error from RESILINK server.
  *         content:
@@ -252,7 +386,7 @@ router.get('/news/countryOwner', newsController.getNewsfromCountryWithoutUserNew
  * @swagger
  * /v1/news/{id}/:
  *   delete: 
- *     summary: delete a News (from RESILINK)
+ *     summary: delete a News
  *     tags: [News]
  *     parameters:
  *       - in: path
@@ -271,8 +405,8 @@ router.get('/news/countryOwner', newsController.getNewsfromCountryWithoutUserNew
  *                 message:
  *                   type: object
  *                   properties:
- *                      message:
- *                          type: string
+ *                     message:
+ *                       type: string
  *       500:
  *         description: Error from RESILINK server.
  *         content:

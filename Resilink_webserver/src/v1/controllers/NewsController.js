@@ -15,6 +15,26 @@ const createNews = async (req, res) => {
   }
 };
 
+const updateNews = async (req, res) => { 
+  try {
+    const response = await NewsService.updateNews(req.params.id, req.body, req.header('Authorization'));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    getDataLogger.error('Error accessing Resilink server', { from: 'updateNews', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({message: error.message});
+  }
+};
+
+const getAllNews = async (req, res) => { 
+  try {
+    const response = await NewsService.getAllNews(req.query.country, req.header('Authorization'));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    getDataLogger.error('Error accessing Resilink server', { from: 'getAllNews', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({error: error});
+  }
+};
+
 const getNewsfromCountry = async (req, res) => { 
     try {
       const response = await NewsService.getNewsfromCountry(req.query.country, req.header('Authorization'));
@@ -67,6 +87,8 @@ const deleteNews = async (req, res) => {
 
 module.exports = {
     createNews,
+    updateNews,
+    getAllNews,
     getNewsfromCountry,
     getNewsfromIdList,
     getNewsfromOwner,

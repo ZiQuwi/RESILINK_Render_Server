@@ -1,15 +1,11 @@
 const winston = require('winston');
+const config = require('./config.js');
 require('winston-mongodb');
 
 const { combine, timestamp, json, prettyPrint, metadata } = winston.format;
 
-
-//account and key to mongodb 
-const _username = "axelcazaux1";
-const _password = "ysf72odys0D340w6";
-
 // MongoDB Atlas cluster connection URL
-const url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/Logs?retryWrites=true&w=majority&appName=AtlasApp';
+const url = config.DB_URL; //'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/Logs?retryWrites=true&w=majority&appName=AtlasApp';
 
 const mongoOptions = (collectionName) => ({
     db: url,

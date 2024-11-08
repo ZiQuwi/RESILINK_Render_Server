@@ -1,5 +1,6 @@
 require('../loggers.js');
 const winston = require('winston');
+const config = require('../config.js');
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
@@ -7,7 +8,7 @@ const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const ContractService = require("../services/ContractService.js");
 
-const _pathContractODEP = 'http://90.84.194.104:10010/contracts/';
+const _pathContractODEP = config.PATH_ODEP_CONTRACT;
 
 const createContract = async (req, res) => {
     try {

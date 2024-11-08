@@ -1,5 +1,6 @@
 require('../loggers.js');
 const winston = require('winston');
+const config = require('../config.js');
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
@@ -7,11 +8,11 @@ const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 const patchDataODEP = winston.loggers.get('PatchDataODEPLogger');
 
 const assetService = require("../services/AssetService.js");
-const _pathAssetODEP = 'http://90.84.194.104:10010/assets/'; 
+const _pathAssetODEP = config.PATH_ODEP_ASSET; 
 
-const getAllAssetResilink = async (req, res) => { 
+const getAllAssetMapped = async (req, res) => { 
   try {
-    const response = await assetService.getAllAssetVue(req.header('Authorization'));
+    const response = await assetService.getAllAssetResilink(req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     getDataLogger.error('Catched error', { from: 'createRequest', data: error.message});
@@ -169,8 +170,28 @@ const patchAsset = async (req, res) => {
     }
 };
 
+const postImagesAsset = async (req, res) => {
+  try {
+    const response = await assetService.postImagesAsset("https://resilink-dp.org/v1/assets/img", req.body, req.header('Authorization'));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    updateDataODEP.error('Catched error', { from: 'postImg', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({message: error.message})
+  }
+}
+
+const deleteImagesAsset = async (req, res) => {
+  try {
+    const response = await assetService.deleteImages("https://resilink-dp.org/v1/assets/img", req.params.id, req.header('Authorization'));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    updateDataODEP.error('Catched error', { from: 'deleteImagesAsset', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({message: error.message})
+  }
+}
+
 module.exports = {
-  getAllAssetResilink,
+  getAllAssetMapped,
   createAsset,
   createAssetCustom,
   createAssetWithAssetTypeCustom,
@@ -185,5 +206,7 @@ module.exports = {
   putAssetCustom,
   deleteAsset,
   deleteAssetCustom,
-  patchAsset
+  patchAsset,
+  postImagesAsset,
+  deleteImagesAsset
 }

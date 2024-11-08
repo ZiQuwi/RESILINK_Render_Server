@@ -21,6 +21,7 @@ const getAllProsummer = async (prosumerList) => {
             prosumerList[i].bookMarked = prosumers.bookMarked;
             prosumerList[i].job = prosumers.job;
             prosumerList[i].location = prosumers.location;
+            prosumerList[i].blockedOffers = prosumers.blockedOffers ?? []
           }
         }
 
@@ -50,6 +51,7 @@ const getOneProsummer = async (prosumer) => {
           prosumer.bookMarked = prosumers.bookMarked;
           prosumer.job = prosumers.job;
           prosumer.location = prosumers.location;
+          prosumer.blockedOffers = prosumers.blockedOffers ?? []
         }
         getDataLogger.info('succes retrieving one prosummer in Resilink DB', { from: 'getOneProsummer'});
         return prosumers;
@@ -78,7 +80,7 @@ const getOneProsummerWithUsername = async (prosumerName) => {
         */
         //throw new getDBError("prosummer not found in DB")
       } else {
-        bookMarkedList = [...prosumers.bookMarked];
+        bookMarkedList = [...prosumers.bookMarked];      
       }
       getDataLogger.info('succes retrieving one prosummer in Resilink DB', { from: 'getBookmarkedProsumer'});
       return prosumers;
@@ -128,6 +130,7 @@ const newProsumer = async (id, job, location) => {
     const prosumer = await _collection.insertOne({
       "_id": id,
       "bookMarked": [],
+      "blockedOffers": [],
       "job": job,
       "location": location
     });
@@ -280,6 +283,133 @@ const deleteBookmarkedId  = async (id, owner) => {
   }
 };
 
+// Update the blockedOffers list from a prosumer to add an offer id
+const addIdToBlockedOffers  = async (prosumerId, offerId) => {
+  try {
+    const _database = await connectToDatabase();
+    const _collection = _database.collection('prosumer');
+
+    // Check if the ID exists in the blockedOffers list
+    const prosumer = await _collection.findOne({ "_id": prosumerId, "blockedOffers": { $in: [offerId] } });
+    if (prosumer) {
+      throw new IDNotFoundError(`ID ${offerId} already does exist in prosumer's bookMarked field`);
+    }
+
+    // Update the document to add the offer ID to the 'blockedOffers' field
+    const result = await _collection.updateOne(
+      { "_id": prosumerId },
+      { $push: { "blockedOffers": offerId } }
+    );
+
+    if (result.modifiedCount !== 1) {
+      throw new UpdateDBError("Failed to update prosumer's blockedOffers field");
+    }
+
+    updateData.info('Success adding new ID to prosumer\'s blockedOffers field', { from: 'addIdToBlockedOffers' });
+
+  } catch (e){
+    if (e instanceof UpdateDBError) {
+      updateData.error('error creating one prosummer in Resilink DB', { from: 'addIdToBlockedOffers'});
+    } else if (e instanceof IDNotFoundError) {
+      updateData.error('id already exist in blockedOffers', { from: 'addIdToBlockedOffers'});
+    } else {
+      connectDB.error('error connecting to DB ', { from: 'addIdToBlockedOffers',  error: e});
+    }
+    throw(e);
+  }
+};
+
+// Update the blockedOffers list from a prosumer to add an offer id
+const getProsumerBlockedOffers  = async (prosumerId,) => {
+  try {
+    const _database = await connectToDatabase();
+    const _collection = _database.collection('prosumer');
+
+    // Check if the ID exists in the blockedOffers list
+    const prosumer = await _collection.findOne({ "_id": prosumerId});
+    if (!prosumer) {
+      throw new IDNotFoundError(`Prosumer with ID ${offerId} does not exist`);
+    }
+
+    getDataLogger.info('Success retrievieng', { from: 'getProsumerBlockedOffers' });
+    console.log(prosumer.blockedOffers);
+    return prosumer.blockedOffers;
+
+  } catch (e){
+    if (e instanceof IDNotFoundError) {
+      getDataLogger.error(e.message, { from: 'getProsumerBlockedOffers'});
+    } else {
+      connectDB.error('error connecting to DB ', { from: 'getProsumerBlockedOffers',  error: e});
+    }
+    throw(e);
+  }
+};
+
+// Update the blockedOffers list from a prosumer to delete an offer id
+const deleteBlockedOffersId  = async (id, owner) => {
+  try {
+    const _database = await connectToDatabase();
+    const _collection = _database.collection('prosumer');
+
+    // Check if the ID exists in the blockedOffers list
+    const prosumer = await _collection.findOne({ "_id": owner, "blockedOffers": { $in: [id] } });
+    if (!prosumer) {
+      throw new IDNotFoundError(`ID ${id} does not exist in prosumer's bookMarked field`);
+    }
+
+    // Update the document to remove the specified ID from the 'blockOffers' field
+    const result = await _collection.updateOne(
+      { "_id": owner },
+      { $pull: { "blockedOffers": id } }
+    );
+
+    if (result.modifiedCount !== 1) {
+      throw new UpdateDBError("Failed to update prosumer's bookMarked field");
+    }
+
+    updateData.info('Success adding new ID to prosumer\'s bookMarked field', { from: 'deleteBookmarkedId' });
+
+  } catch (e){
+    if (e instanceof UpdateDBError) {
+      updateData.error('error creating one prosummer in Resilink DB', { from: 'deleteBookmarkedId'});
+    } else if (e instanceof IDNotFoundError) {
+      updateData.error('id does\' not exist in bookmarklist', { from: 'deleteBookmarkedId'});
+    } else {
+      connectDB.error('error connecting to DB ', { from: 'deleteBookmarkedId',  error: e});
+    }
+    throw(e);
+  }
+};
+
+// Check in prosumer blocked offers list if offer id is in
+const checkIdInBlockedOffers  = async (id, owner) => {
+  try {
+    const _database = await connectToDatabase();
+    const _collection = _database.collection('prosumer');
+
+    // Check if the ID exists in the blockedOffers list
+    const prosumer = await _collection.findOne({ "_id": owner, "blockedOffers": { $in: [id] } });
+    
+    console.log(prosumer);
+    console.log(prosumer === null);
+    if (prosumer === null) {
+      return false;
+    } else {
+      return true;
+    }
+
+  } catch (e){
+    if (e instanceof UpdateDBError) {
+      updateData.error('error creating one prosummer in Resilink DB', { from: 'deleteBookmarkedId'});
+    } else if (e instanceof IDNotFoundError) {
+      updateData.error('id does\' not exist in bookmarklist', { from: 'deleteBookmarkedId'});
+    } else {
+      connectDB.error('error connecting to DB ', { from: 'deleteBookmarkedId',  error: e});
+    }
+    throw(e);
+  }
+};
+
 // Delete a prosumer in RESILINK DB
 const deleteProsumerODEPRESILINK  = async (owner) => {
   try {
@@ -316,5 +446,9 @@ module.exports = {
     getJobProsummer,
     addbookmarked,
     deleteBookmarkedId,
-    deleteProsumerODEPRESILINK
+    addIdToBlockedOffers,
+    deleteBlockedOffersId,
+    getProsumerBlockedOffers,
+    deleteProsumerODEPRESILINK,
+    checkIdInBlockedOffers
 }

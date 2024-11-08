@@ -1,19 +1,46 @@
-const CryptoDB = require('crypto.js');
+const crypto = require('crypto');
+const config = require('../config.js');
 
-const _encryptionKey = 'b32c32aac9c6afd06ab3554415de5edbafc14ef97cc6d0e4ffa678220a57b39f';
+const _encryptionKey = Buffer.from(config.ENCRYPTION_KEY, 'hex');
 
-// Fonction pour crypter le mot de passe
-function encrypt(entity) {
-    const cipher = crypto.createCipher('aes-256-cbc', _encryptionKey);
+if (!_encryptionKey) {
+  throw new Error('Encryption key is missing');
+}
+
+// Function to encrypt
+function encryptAES(entity) {
+
+  // Generate a 16-byte initialization vector (IV)
+    const iv = crypto.randomBytes(16);
+
+    // Create a cipher with aes-256-cbc, the key must be in Buffer and the IV must be passed.
+    const cipher = crypto.createCipheriv('aes-256-cbc', _encryptionKey, iv);
+
     let encrypted = cipher.update(entity, 'utf8', 'hex');
     encrypted += cipher.final('hex');
-    return encrypted;
+
+    // Return the IV and encrypted data (the IV is required for decryption)
+    return iv.toString('hex') + ':' + encrypted;
 }
 
-// Fonction pour décrypter le mot de passe
-function decrypt(encryptedEntity) {
-    const decipher = crypto.createDecipher('aes-256-cbc', _encryptionKey);
-    let decrypted = decipher.update(encryptedEntity, 'hex', 'utf8');
+// Fonction to decrypt
+function decryptAES(encryptedEntity) {
+  
+    // Separate IV and encrypted content
+    const parts = encryptedEntity.split(':');
+    const iv = Buffer.from(parts[0], 'hex');
+    const encryptedText = parts[1];
+
+    // Create a decipher with aes-256-cbc, use key and IV
+    const decipher = crypto.createDecipheriv('aes-256-cbc', _encryptionKey, iv);
+
+    let decrypted = decipher.update(encryptedText, 'hex', 'utf8');
     decrypted += decipher.final('utf8');
+
     return decrypted;
 }
+
+module.exports = {
+    encryptAES,
+    decryptAES
+  }

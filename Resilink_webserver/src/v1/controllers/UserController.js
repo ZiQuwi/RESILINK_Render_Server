@@ -1,12 +1,12 @@
 require('../loggers.js');
+const config = require('../config.js');
 const winston = require('winston');
+const userService = require("../services/UserService.js");
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
 
-const userService = require("../services/UserService.js");
-
-const pathUserODEP = 'http://90.84.194.104:4000/oauth/api/v1.0.0/users/';
+const pathUserODEP = config.PATH_ODEP_USER + 'users/';
 
 const getTokenUser = async (req, res) => {
     try {
@@ -99,10 +99,29 @@ const getUserByEmail = async (req, res) => {
   }
 }
 
+const getUserByEmailCustom = async (req, res) => {
+  try {
+    const response = await userService.getUserByEmailCustom(pathUserODEP, req.params.userEmail, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({message: error.message})
+  }
+}
 
 const getUserByUsername = async (req, res) => {
   try {
     const response = await userService.getUserByUsername(pathUserODEP, req.params.userName, req.header('Authorization').replace(/^Bearer\s+/i, ''));
+    res.status(response[1]).send(response[0]);
+  } catch (error) {
+    updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    res.status(500).send({message: error.message})
+  }
+}
+
+const getUserByUsernameCustom = async (req, res) => {
+  try {
+    const response = await userService.getUserByUsernameCustom(pathUserODEP, req.params.userName, req.header('Authorization').replace(/^Bearer\s+/i, ''));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     updateDataODEP.error('Catched error', { from: 'createUser', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -141,7 +160,6 @@ const getUserbyIdCustom = async (req, res) => {
 }
 
   module.exports = {
-    pathUserODEP,
     getTokenUser,
     createUser,
     createUserCustom,
@@ -151,7 +169,9 @@ const getUserbyIdCustom = async (req, res) => {
     getAllUser,
     getAllUserCustom,
     getUserByEmail,
+    getUserByEmailCustom,
     getUserByUsername,
+    getUserByUsernameCustom,
     updateUser,
     updateUserCustom,
     getUserbyIdCustom

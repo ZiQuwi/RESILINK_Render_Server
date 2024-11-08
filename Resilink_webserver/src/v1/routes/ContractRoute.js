@@ -8,6 +8,189 @@ const contractController = require("../controllers/ContractController.js");
  *   name: Contracts
  */
 
+/****************************************************************************************************************
+ * 
+ * All contract cases are defined below for detailed documentation
+ * - Contract
+ * - ImmaterialContract
+ * - PurchaseMaterialContract
+ * - RentMaterialContract
+ * 
+ ****************************************************************************************************************/
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Contract:
+ *       type: object
+ *       description: "Data for a created contract"
+ *       properties:
+ *         idContract:
+ *           type: integer
+ *           format: int32
+ *           description: "The ID of the contract"
+ *         offer:
+ *           type: string
+ *           description: "The offer associated with the contract"
+ *         Request:
+ *           type: string
+ *           description: "The request associated with the contract"
+ *         asset:
+ *           type: string
+ *           description: "The asset associated with the contract"
+ *         state:
+ *           type: string
+ *           description: "The current state of the contract"
+ *         quantityToDeliver:
+ *           type: number
+ *           description: "The quantity to be delivered"
+ *         deliveredQuantity:
+ *           type: number
+ *           format: float
+ *           description: "The quantity that has been delivered"
+ *         consumedQuantity:
+ *           type: number
+ *           description: "The quantity that has been consumed"
+ *         creationDate:
+ *           type: string
+ *           format: date-time
+ *           description: "The date the contract was created"
+ *         transactionType:
+ *           type: string
+ *           description: "The type of transaction for the contract"
+ *         offerer:
+ *           type: string
+ *           description: "The ID of the offerer"
+ *         requester:
+ *           type: string
+ *           description: "The ID of the requester"
+ *         assetType:
+ *           type: string
+ *           description: "The type of asset involved in the contract"
+ *         price:
+ *           type: number
+ *           format: float
+ *           description: "The price associated with the contract"
+ *         deposit:
+ *           type: number
+ *           format: float
+ *           description: "The deposit required for the contract"
+ *         cancellationFee:
+ *           type: number
+ *           format: float
+ *           description: "The fee for canceling the contract"
+ *         beginTimeSlot:
+ *           type: string
+ *           format: date-time
+ *           description: "The start time of the scheduled time slot"
+ *         endTimeSlot:
+ *           type: string
+ *           format: date-time
+ *           description: "The end time of the scheduled time slot"
+ *         effectiveBeginTimeSlot:
+ *           type: string
+ *           format: date-time
+ *           description: "The actual start time of the time slot"
+ *         effectiveEndTimeSlot:
+ *           type: string
+ *           format: date-time
+ *           description: "The actual end time of the time slot"
+ *         rentInformation:
+ *           type: object
+ *           description: "Required information in case of rent"
+ *           properties:
+ *             delayMargin:
+ *               type: number
+ *               format: float
+ *               description: "A percentage of the rental period"
+ *             lateRestitutionPenality:
+ *               type: number
+ *               format: float
+ *               description: "A percentage of the asset price for late restitution"
+ *             deteriorationPenality:
+ *               type: number
+ *               format: float
+ *               description: "A percentage of the asset price for deterioration"
+ *             nonRestitutionPenality:
+ *               type: number
+ *               format: float
+ *               description: "A percentage of the asset price for non-restitution"
+ */
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     RentContractMaterialCase:
+ *       type: object
+ *       required:
+ *         - state
+ *         - delayPeriod
+ *         - deterioration
+ *       properties:
+ *         state:
+ *           type: string
+ *           description: "The new state of the contract"
+ *           enum:
+ *             - assetDeliveredByTheOfferer
+ *             - assetReceivedByTheRequestor
+ *             - assetNotReceivedByTheRequestor
+ *             - assetReturnedByTheRequestor
+ *             - assetReturnedToTheOfferer
+ *             - assetNotReturnedToTheOfferer
+ *           example: assetReturnedToTheOfferer
+ *         delayPeriod:
+ *           type: integer
+ *           format: int32
+ *           description: "Indicates the period of delay, required if the state is 'assetReturnedToTheOfferer'"
+ *         deterioration:
+ *           type: boolean
+ *           description: "Indicates whether the asset is deteriorated or not, required if the state is 'assetReturnedToTheOfferer'"
+ */
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     PurchaseContractMaterialCase:
+ *       type: object
+ *       required:
+ *         - state
+ *       properties:
+ *         state:
+ *           type: string
+ *           description: "The new state of the contract"
+ *           enum:
+ *             - assetDeliveredByTheOfferer
+ *             - assetReceivedByTheRequestor
+ *             - assetNotReceivedByTheRequestor
+ *           example: assetDeliveredByTheOfferer
+ */
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     ContractImmaterialCase:
+ *       type: object
+ *       required:
+ *         - state
+ *       properties:
+ *         state:
+ *           type: string
+ *           description: "The new state of the contract"
+ *           enum:
+ *             - beginDelivery
+ *             - endDelivery
+ *             - endOfConsumption
+ *           example: endDelivery
+ *         quantity:
+ *           type: number
+ *           format: float
+ *           description: "Required in measurable cases if the state is 'endDelivery' or 'endOfConsumption'"
+ */
+
 /**
  * @swagger
  * /v1/contracts:
@@ -178,7 +361,7 @@ router.get('/contracts/all', contractController.getAllContract);
  * @swagger
  * /v1/contracts/owner/ongoing/{id}:
  *   get: 
- *     summary: Get ongoing contracts by owner (from ODEP & RESILINK)
+ *     summary: Get ongoing contracts by owner
  *     tags: [Contracts]
  *     parameters:
  *       - in: path

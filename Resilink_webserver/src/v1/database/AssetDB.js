@@ -10,7 +10,6 @@ const connectDB = winston.loggers.get('ConnectDBResilinkLogger');
 // Creates an asset in RESILINK DB 
 const newAsset = async (assetId, imgBase64, owner, unit) => {
   try {
-    console.log("image: " + imgBase64);
     const db = await connectToDatabase();
     const _collection = db.collection('Asset');
     updateData.warn('before inserting data', { from: 'newAsset', data: {assetId, imgBase64, owner}});
@@ -54,6 +53,7 @@ const getAndCompleteOneAssetByAsset = async (asset) => {
     }
 
     asset["images"] = result["images"];
+    asset["unit"] = result["unit"];
   } catch (e) {
     if (e instanceof getDBError) {
       getDataLogger.error('error retrieving an asset in Resilink DB', { from: 'getAndCompleteOneAssetByAsset' });
@@ -116,7 +116,7 @@ const getAllAsset = async () => {
 };
 
 // Retrieves and completes assets with images by assets
-const getAndCompleteAssetWithImgByAssets = async (ListAsset) => {
+const getAndCompleteAssetByAssets = async (ListAsset) => {
   try {
     const db = await connectToDatabase();
     const _collection = db.collection('Asset');
@@ -124,7 +124,10 @@ const getAndCompleteAssetWithImgByAssets = async (ListAsset) => {
     for (const asset of ListAsset) {
       const numericAssetId = parseInt(asset.id);
       const result = await _collection.findOne({ id: numericAssetId });
-      asset['images'] = result ? result.images : [];
+      if (result != null) {
+        asset['images'] = result.images != null ? result.images : [];
+        asset['unit'] = result['unit'];
+      }
     }
 
     if (!ListAsset) {
@@ -170,7 +173,7 @@ const deleteAssetById = async (assetId) => {
 };
 
 // Updates an asset by id in RESILINK DB
-const updateAssetById = async (assetId, assetImg, asset) => {
+const updateAssetById = async (assetId, assetImg, asset, unit) => {
   try {
     const db = await connectToDatabase();
     const _collection = db.collection('Asset');
@@ -179,7 +182,7 @@ const updateAssetById = async (assetId, assetImg, asset) => {
 
     const result = await _collection.updateOne(
       { id: numericAssetId },
-      { $set: { images: assetImg } }
+      { $set: { images: assetImg, unit: unit} }
     );
 
     if (result.matchedCount === 1) {
@@ -207,7 +210,7 @@ module.exports = {
   getAndCompleteOneAssetByAsset,
   getOneAssetImageById,
   getAllAsset,
-  getAndCompleteAssetWithImgByAssets,
+  getAndCompleteAssetByAssets,
   deleteAssetById,
   updateAssetById
 };

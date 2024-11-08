@@ -96,7 +96,7 @@ const isInPerimeter = (lat1, lon1, lat2, lon2, perimeterRadius) => {
 //Checks if a string is a string containing only Roman characters 
 function containsNonRomanCharacters(str) {
   // Regex to detect basic non-Latin characters (including Arabic, Chinese, Japanese, etc.)  
-  const nonRomanRegex = /[^\u0000-\u007F]/;
+  const nonRomanRegex = /^[a-zA-Z0-9?!%-_]+$/;
 
   return nonRomanRegex.test(str);
 }
@@ -107,12 +107,46 @@ function isNumeric(str) {
   return /^\d+$/.test(str);
 }
 
+// Fonction de tri personnalisée
+const customSorter = (a, b) => {
+  // Sort by HTTP method (order: GET, POST, PUT, PATCH, DELETE) first
+  const methodsOrder = ['get', 'post', 'put', 'patch', 'delete'];
+  
+  const methodA = a.get('method');
+  const methodB = b.get('method');
+
+  // If the methods are different, sort by method
+  if (methodA !== methodB) {
+    return methodsOrder.indexOf(methodA) - methodsOrder.indexOf(methodB);
+  }
+
+  // If the methods are the same, the paths are sorted alphabetically.
+  const pathA = a.get('path');
+  const pathB = b.get('path');
+  
+  return pathA.localeCompare(pathB);
+};
+
+const isBase64 = (str) => {
+  // Regex to check if a string is base64 encoded
+  const base64Regex = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/;
+  return base64Regex.test(str);
+};
+
+const areAllBase64 = (list) => {
+  // Check that all list elements are strings and comply with Base64 format
+  return list.every(item => typeof item === 'string' && isBase64(item));
+};
+
 module.exports = {
   executeCurl,
   streamToJSON,
   fetchJSONData,
   isInPerimeter,
   containsNonRomanCharacters,
-  isNumeric
+  isNumeric,
+  customSorter,
+  isBase64,
+  areAllBase64
 }
 

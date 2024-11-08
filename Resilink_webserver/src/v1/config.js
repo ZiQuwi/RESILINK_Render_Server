@@ -2,6 +2,8 @@ const IP_ADDRESS = process.env.IP_ADDRESS;
 
 const PORT = process.env.PORT;
 
+const SWAGGER_URL = process.env.SWAGGER_URL;
+
 const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY;
 
 const DB_URL = process.env.DB_URL;
@@ -25,6 +27,7 @@ const PATH_ODEP_CONTRACT = process.env.PATH_ODEP_CONTRACT;
 module.exports = {
     IP_ADDRESS,
     PORT,
+    SWAGGER_URL,
     ENCRYPTION_KEY,
     DB_URL,
     PATH_ODEP_USER,

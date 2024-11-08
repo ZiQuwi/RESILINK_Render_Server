@@ -4,6 +4,7 @@
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const {customSorter} = require("./services/Utils.js");
+const config = require('./config.js');
 
 // Basic Meta Informations about our API
 let options = {
@@ -45,7 +46,7 @@ const swaggerDocs = (app, port) => {
     // Add servers to options
     options.definition.servers = [
         {
-            url: `https://resilink-api.onrender.com`, 
+            url: config.SWAGGER_URL, 
         },
     ];
 

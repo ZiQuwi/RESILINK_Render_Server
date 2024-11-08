@@ -2,7 +2,7 @@
 
 const bodyParser = require("body-parser");
 const cors = require('cors');
-//require('dotenv').config({ path: './Resilink_webserver/RESILINK_Server.env' }); //Change the name for your .env file
+require('dotenv').config({ path: './Resilink_webserver/RESILINK_Server.env' }); //Change the name for your .env file
 const config = require('./v1/config.js');
 
 const express = require("express"); 
@@ -12,7 +12,6 @@ const { swaggerDocs: V1SwaggerDocs } = require("./v1/swaggerV1.js");
 // .env variable
 const PORT = config.PORT;
 const IP_ADDRESS = config.IP_ADDRESS;
-console.log(IP_ADDRESS);
 
 // ---------------------------------------------------
 

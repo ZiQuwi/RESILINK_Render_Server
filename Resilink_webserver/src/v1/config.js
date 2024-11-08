@@ -1,3 +1,5 @@
+console.log(process.env.PATH_ODEP_USER);
+
 const PORT = process.env.PORT;
 
 const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY;

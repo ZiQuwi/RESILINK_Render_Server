@@ -2,7 +2,6 @@
 
 const bodyParser = require("body-parser");
 const cors = require('cors');
-require('dotenv').config({ path: './RESILINK_Server.env' }); //Change the name for your .env file
 const config = require('./v1/config.js');
 const express = require("express"); 
 

@@ -36,7 +36,7 @@ let options = {
         bearerAuth: []
       }]
     },
-    apis: ["./src/v1/routes/*.js"]
+    apis: ["./Resilink_webserver/src/v1/routes/*.js"]
 };
 
 // ---------------------------------------------------

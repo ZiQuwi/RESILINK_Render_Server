@@ -36,7 +36,6 @@ const newUser = async (user) => {
         throw new InsertDBError(`user with _id: ${user["_id"]}not created in local DB`)
       }  
 
-      console.log("bonne création de l'utilisateur");
       updateData.info('succes creating a user in Resilink DB', { from: 'newUser'});
 
     } catch (e) {
@@ -52,11 +51,9 @@ const newUser = async (user) => {
 // Deletes a user by id in RESILINK DB
 const deleteUser = async (userId) => {
   try {
-    console.log("dans deleteUser");
     const _database = await connectToDatabase();
     const _collection = _database.collection('user');
 
-    console.log(userId);
     const result = await _collection.deleteOne({ userName: userId });
 
     if (result.deletedCount === 1) {

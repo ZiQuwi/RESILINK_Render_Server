@@ -8,6 +8,8 @@ const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY;
 
 const DB_URL = process.env.DB_URL;
 
+const DB_LOGS_URL = process.env.DB_LOGS_URL;
+
 const PATH_ODEP_USER = process.env.PATH_ODEP_USER;
 
 const PATH_ODEP_PROSUMER = process.env.PATH_ODEP_PROSUMER;
@@ -30,6 +32,7 @@ module.exports = {
     SWAGGER_URL,
     ENCRYPTION_KEY,
     DB_URL,
+    DB_LOGS_URL,
     PATH_ODEP_USER,
     PATH_ODEP_PROSUMER,
     PATH_ODEP_REGULATOR,

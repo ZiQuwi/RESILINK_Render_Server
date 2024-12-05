@@ -9,34 +9,33 @@ const connectDB = winston.loggers.get('ConnectDBResilinkLogger');
 const updateData = winston.loggers.get('UpdateDataResilinkLogger');
 const deleteData = winston.loggers.get('DeleteDataResilinkLogger');
 
-const createNewRating = async (userId, Rating) => {
+const createNewRating = async (userId, rating) => {
     try {
       const db = await connectToDatabase();
       const _collection = db.collection('Rating');
   
-      updateData.warn('before inserting data', { from: 'createNewRating', data: {url, country, institute, imgBase64, platform}});
-      const existingDocument = await _collection.findOne({ assetType: assetType });
+      updateData.warn('before inserting data', { from: 'createNewRating', data: {userId, rating}});
+      const existingDocument = await _collection.findOne({ userId: userId });
 
       if (existingDocument === null) {
-        throw new InsertDBError("user already had ratingd");
-      }
+        const newRating = await _collection.insertOne({
+          "userId": userId,
+          "rating": rating
+        });
 
-      // Insert an News with its imgpath. Can be empty if default image from mobile app selected
-      const newRating = await _collection.insertOne({
-        "userId": userId,
-        "Rating": Rating
-      });
-  
-      if (!newRating) {
-        throw new InsertDBError("Rating not created in local DB");
-      }  
-  
-      updateData.info('success adding a Rating', { from: 'createNewRating' });
-  
-      return news;
+        if (newRating == null) {
+          throw new InsertDBError("create rating failed");
+        }
+
+        updateData.info('success adding a Rating', { from: 'createNewRating' });
+
+        return newRating;
+      } else {
+        throw new InsertDBError("user already had a rating");
+      }      
     } catch (e) {
       if (e instanceof InsertDBError) {
-        updateData.error('error adding a Rating', { from: 'createNewRating' });
+        updateData.error('error adding a Rating', { from: 'createNewRating', error: e });
       } else {
         connectDB.error('error connecting to DB', { from: 'createNewRating', error: e });
       }
@@ -49,23 +48,22 @@ const updateRating = async (userId, Rating) => {
       const db = await connectToDatabase();
       const _collection = db.collection('Rating');
   
-      updateData.warn('before updating news', { from: 'updateRating', data: body });
+      updateData.warn('before updating rating', { from: 'updateRating', data: {userId, Rating} });
   
-      // Update fields in the 'News' collection
       const result = await _collection.updateOne(
         { "userId": userId },
-        { $set: {"Rating": Rating} } 
+        { $set: {"rating": Rating} } 
       );
   
       if (result.matchedCount === 0) {
-        throw new Error(`No Rating found with userID ${id}`);
+        throw new Error(`No Rating found with userID ${userId}`);
       }
   
       if (result.modifiedCount === 0) {
-        throw new Error(`no update made with usrId ${id}`);
+        throw new Error(`no update made with userId ${userId}`);
       }
   
-      updateData.info('success updating Rating', { from: 'updateRating', updatedData: body });
+      updateData.info('success updating Rating', { from: 'updateRating', updatedData: Rating });
   
     } catch (e) {
       updateData.error('error updating Rating', { from: 'updateRating', error: e.message });
@@ -85,18 +83,42 @@ const getAllRating = async () => {
           throw new getDBError("no rating in DB")
         }
         
-        getDataLogger.info('succes retrieving all rating', { from: 'getAllRating'});
+        getDataLogger.info('succes retrieving all ratings', { from: 'getAllRating'});
   
         return result;
       } catch (e) {
         if (e instanceof getDBError) {
-          getDataLogger.error('error retrieving all rating', { from: 'getAllRating'});
+          getDataLogger.error('error retrieving all ratings', { from: 'getAllRating'});
         } else {
           connectDB.error('error connecting to DB', { from: 'getAllRating',  error: e});
         }
         throw(e);
       }
   };
+
+  // Retrieves a user rating
+const getRatingByUserId = async (userId) => {
+  try {
+      const _database = await connectToDatabase();
+      const _collection = _database.collection('Rating');
+
+      const result = await _collection.findOne({ userId: userId });
+      if (result == null) {
+        return {"message": "no rating found for this user"};
+      }
+      
+      getDataLogger.info('succes retrieving user rating', { from: 'getRatingByUserId'});
+
+      return result;
+    } catch (e) {
+      if (e instanceof getDBError) {
+        getDataLogger.error('error retrieving user rating', { from: 'getRatingByUserId'});
+      } else {
+        connectDB.error('error connecting to DB', { from: 'getRatingByUserId',  error: e});
+      }
+      throw(e);
+    }
+};
 
 // Deletes a Rating by userId 
 const deleteRatingByUserId = async (userId) => {
@@ -124,3 +146,11 @@ const deleteRatingByUserId = async (userId) => {
       throw e.message;
     }
 };
+
+module.exports = {
+  createNewRating,
+  getRatingByUserId,
+  getAllRating,
+  updateRating,
+  deleteRatingByUserId
+}

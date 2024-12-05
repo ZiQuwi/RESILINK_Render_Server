@@ -61,6 +61,9 @@ app.use("/v1/", v1ContractRoute);
 const v1NewsRoute = require("./v1/routes/NewsRoute.js");
 app.use("/v1/", v1NewsRoute);
 
+const v1RatingRoute = require("./v1/routes/RatingRoute.js");
+app.use("/v1/", v1RatingRoute);
+
 //start application Express.js
 app.listen(PORT, IP_ADDRESS, () => { 
     console.log(`API is listening on port ${PORT} and using ip ${IP_ADDRESS}`);

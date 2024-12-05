@@ -526,7 +526,6 @@ const createOffer = async (url, body, token) => {
 
 //Creates an offer, his asset and asset type associated 
 const createOfferAsset = async (url, body, token) => {
-
   //Calls the function to create an asset and his asset type
   updateDataODEP.warn('data to send to ODEP', { from: 'createOfferAsset', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
   const newsAsset = await Asset.createAssetWithAssetTypeCustom(pathODEPAsset, body['asset'], token);

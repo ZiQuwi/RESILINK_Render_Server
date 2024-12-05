@@ -217,7 +217,6 @@ const getAllUser = async (url, token) => {
 //Retrieves all user in ODEP & RESILINK
 const getAllUserCustom = async (url, token) => {
   try {
-    console.log(url)
     const response = await Utils.fetchJSONData(
       "GET",
       url, 

@@ -17,7 +17,7 @@ const _urlCreateUser = 'users?provider=http%3A%2F%2Flocalhost%3A';
  * localhost indicates the machine address on which to save a user (place limited on each machine)
  * can have the value 22000 to 22004
  */
-const _localhost = "22003";
+const _localhost = "22004";
 
 //Retrieves user data (token is associated with "accesToken" key)
 const functionGetTokenUser = async (body) => {

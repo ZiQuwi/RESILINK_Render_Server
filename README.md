@@ -18,7 +18,7 @@ RESILINK is an API built with **Node.js** and **Express**, using **Swagger** for
 
 ## Installation
 
-At the root of the project folder
+At the root of the project folder:
 
 1. **Clone the project**:
 
@@ -34,7 +34,7 @@ npm install
 
 3. **Configure environment variables**:
 
-Create a `.env` file at the root of the project with the following variables:
+Create a file named **`RESILINK_Server.env`** at the root of the project with the following variables:
 
 ```
 ENCRYPTION_KEY=your_encryption_key_here
@@ -52,7 +52,9 @@ PATH_ODEP_REQUEST=https://api.orange.com/odep/request
 PATH_ODEP_CONTRACT=https://api.orange.com/odep/contract
 ```
 
-> **Note**: Replace the values with your own keys and URLs.
+> **Note**: Replace the placeholder values with your actual keys and URLs.
+
+The API automatically imports the `RESILINK_Server.env` file. Ensure that the file is named correctly to avoid manual updates in the code.
 
 4. **Start the server**:
 
@@ -66,10 +68,9 @@ By default, the server will start on the port defined in the `.env` file (or por
 http://localhost:3000/api-docs
 ```
 
-
 ## Usage
 
-The **RESILINK** API allows interaction between users on the platform through various routes, following the structure of the **ODEP API** to organize exchanges. 
+The **RESILINK** API allows interaction between users on the platform through various routes, following the structure of the **ODEP API** to organize exchanges.
 
 The main routes manage:
 - **Users** (USER)
@@ -111,12 +112,10 @@ https://resilink-api.onrender.com/v1/api-docs
 
 This documentation provides details about the HTTP methods, expected parameters, and responses for each route.
 
-### Deployment
+## Deployment
 
 To deploy this API in a production environment, ensure that all environment variables are correctly configured, including the MongoDB cluster URL and the ODEP API URLs.
 
 ## License
 
 Add license.
-
----

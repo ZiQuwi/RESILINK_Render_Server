@@ -1,6 +1,10 @@
 const { exec } = require('child_process');
 const { Readable } = require('stream');
 const http = require('http');
+const jwt = require('jsonwebtoken');
+const config = require('../config.js');
+
+const Token_key = config.TOKEN_KEY;
 
 /*
   Function to run a Curl command directly in the server
@@ -138,6 +142,20 @@ const areAllBase64 = (list) => {
   return list.every(item => typeof item === 'string' && isBase64(item));
 };
 
+const createJWSToken = (userId) => {
+  return jwt.sign({ userId: userId }, secretKey, { expiresIn: '2h' });
+}
+
+const validityToken = (token) => {
+  try {
+    const decoded = jwt.verify(token, secretKey);
+    console.log('Données décodées:', decoded);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 module.exports = {
   executeCurl,
   streamToJSON,
@@ -147,6 +165,8 @@ module.exports = {
   isNumeric,
   customSorter,
   isBase64,
-  areAllBase64
+  areAllBase64,
+  createJWSToken,
+  validityToken
 }
 

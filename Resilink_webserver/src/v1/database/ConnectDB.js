@@ -2,11 +2,10 @@ const { MongoClient } = require('mongodb');
 const winston = require('winston');
 
 const connectDB = winston.loggers.get('ConnectDBResilinkLogger');
+const config = require('../config.js');
 
 // MongoDB Atlas cluster connection _url
-const _username = "axelcazaux1";
-const _password = "ysf72odys0D340w6";
-const _url = 'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
+const _url = config.DB_URL;
 
 let client;
 let db;

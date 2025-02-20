@@ -332,7 +332,6 @@ const getProsumerBlockedOffers  = async (prosumerId,) => {
     }
 
     getDataLogger.info('Success retrievieng', { from: 'getProsumerBlockedOffers' });
-    console.log(prosumer.blockedOffers);
     return prosumer.blockedOffers;
 
   } catch (e){
@@ -390,8 +389,6 @@ const checkIdInBlockedOffers  = async (id, owner) => {
     // Check if the ID exists in the blockedOffers list
     const prosumer = await _collection.findOne({ "_id": owner, "blockedOffers": { $in: [id] } });
     
-    console.log(prosumer);
-    console.log(prosumer === null);
     if (prosumer === null) {
       return false;
     } else {

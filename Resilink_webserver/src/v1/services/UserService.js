@@ -17,7 +17,7 @@ const _urlCreateUser = 'users?provider=http%3A%2F%2Flocalhost%3A';
  * localhost indicates the machine address on which to save a user (place limited on each machine)
  * can have the value 22000 to 22004
  */
-const _localhost = "22003";
+const _localhost = ["22000","22001","22002","22003","22004","22005","22006"];
 
 //Retrieves user data (token is associated with "accesToken" key)
 const functionGetTokenUser = async (body) => {
@@ -71,14 +71,32 @@ const createUserResilink = async (pathUserODEP, newUserRequest, token) => {
 
     const response = await Utils.fetchJSONData(
       "POST",
-      _ipAdress + _urlCreateUser + _localhost,  
+      _ipAdress + _urlCreateUser + _localhost[0],  
       headers = {'Content-Type': 'application/json', 'Authorization': token.replace(/^Bearer /, ''), 'accept': 'application/json'},
       newUserRequest
     );
     
     //Calls the function to create a user in RESILINK DB if no errors caught
     const data = await Utils.streamToJSON(response.body);
-    if(response.status == 401) {
+    let currentIndex = 0;
+    if(response.status == 401 && data === "string") {
+      updateDataODEP.error('No available accounts, trying next localhost', {from: 'createUser', errorMessage: data, tokenUsed: token.replace(/^Bearer\s+/i, ''), triedLocalhost: currentLocalhost});
+      let isProviderGood = false;
+      while (currentIndex < 8 && isProviderGood == false) {
+        const response = await Utils.fetchJSONData(
+          "POST",
+          _ipAdress + _urlCreateUser + _localhost[currentIndex],  
+          headers = {'Content-Type': 'application/json', 'Authorization': token.replace(/^Bearer /, ''), 'accept': 'application/json'},
+          newUserRequest
+        );
+        const data = await Utils.streamToJSON(response.body);
+        if(response.status == 401 && data === "string") {
+          updateDataODEP.error('No available accounts, trying next localhost', {from: 'createUser', errorMessage: data, tokenUsed: token.replace(/^Bearer\s+/i, ''), triedLocalhost: currentLocalhost});
+        } else {
+          isProviderGood = true;
+        }
+      }
+    } else if (response.status == 401) {
       updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     } else if(response.status != 200 && response.status != 201) {
       updateDataODEP.error('error creating user in ODEP', { from: 'createUserResilink', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
@@ -100,14 +118,32 @@ const createUserResilink = async (pathUserODEP, newUserRequest, token) => {
 //Creates a ODEP user
 const createUser = async (url, newUserRequest, token) => {
   try {
+    let currentIndex = 0;
     const response = await Utils.fetchJSONData(
       "POST",
-      _ipAdress + _urlCreateUser + _localhost,  
+      _ipAdress + _urlCreateUser + _localhost[currentIndex],  
       headers = {'Content-Type': 'application/json', 'Authorization': token.replace(/^Bearer /, ''), 'accept': 'application/json'},
       newUserRequest
     );
     const data = await Utils.streamToJSON(response.body);
-    if(response.status == 401) {
+    if(response.status == 401 && data === "string") {
+      updateDataODEP.error('No available accounts, trying next localhost', {from: 'createUser', errorMessage: data, tokenUsed: token.replace(/^Bearer\s+/i, ''), triedLocalhost: currentLocalhost});
+      let isProviderGood = false;
+      while (currentIndex < 8 && isProviderGood == false) {
+        const response = await Utils.fetchJSONData(
+          "POST",
+          _ipAdress + _urlCreateUser + _localhost[currentIndex],  
+          headers = {'Content-Type': 'application/json', 'Authorization': token.replace(/^Bearer /, ''), 'accept': 'application/json'},
+          newUserRequest
+        );
+        const data = await Utils.streamToJSON(response.body);
+        if(response.status == 401 && data === "string") {
+          updateDataODEP.error('No available accounts, trying next localhost', {from: 'createUser', errorMessage: data, tokenUsed: token.replace(/^Bearer\s+/i, ''), triedLocalhost: currentLocalhost});
+        } else {
+          isProviderGood = true;
+        }
+      }
+    } else if (response.status == 401 && "message" in data){
       updateDataODEP.error('error: Unauthorize', { from: 'createUser', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
     } else if(response.status != 200) {
       updateDataODEP.error('error creating user in ODEP', { from: 'createUser', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
@@ -217,7 +253,6 @@ const getAllUser = async (url, token) => {
 //Retrieves all user in ODEP & RESILINK
 const getAllUserCustom = async (url, token) => {
   try {
-    console.log(url)
     const response = await Utils.fetchJSONData(
       "GET",
       url, 

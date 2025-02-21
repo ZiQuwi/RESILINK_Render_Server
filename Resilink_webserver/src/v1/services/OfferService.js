@@ -160,6 +160,7 @@ const getLastThreeOfferForResilinkCustom = async (url, token) => {
 
     // Add the last 3 valid offers to allOfferResilink
     for (const offer of lastThreeOffers) {
+      console.log(allAssetResilink[0][offer['assetId'].toString()]);
       validMapAssets[offer['assetId'].toString()] = (allAssetResilink[0][offer['assetId'].toString()])
     }
     allOfferResilink['offers'] = lastThreeOffers;

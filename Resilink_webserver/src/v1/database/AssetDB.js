@@ -14,12 +14,14 @@ const newAsset = async (assetId, imgBase64, owner, unit) => {
     const _collection = db.collection('Asset');
     updateData.warn('before inserting data', { from: 'newAsset', data: {assetId, imgBase64, owner}});
 
+    const numericAssetId = parseInt(assetId);
+
     // Insert an asset with its imgpath. Can be empty if default image from mobile app selected
     const asset = await _collection.insertOne({
-      "id": assetId,
-      "owner": owner, 
-      "images": imgBase64,
-      "unit": unit ?? ""
+      id: numericAssetId,
+      owner: owner, 
+      images: [...imgBase64],
+      unit: unit ?? ""
     });
 
     if (!asset) {

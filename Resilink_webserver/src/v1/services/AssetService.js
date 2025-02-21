@@ -240,6 +240,7 @@ const createAssetCustom = async (url, body, token) => {
 
     //Register images in o2switch server
     const img = await postImages(pathResilinkWebServer, {'assetId': data['assetId'].toString(), 'images': imgBase64}, token);
+
     //Register link to images in mongoDB
     await AssetDB.newAsset(data['assetId'], img[0]['images'], body['owner'], unit);
   };
@@ -457,27 +458,10 @@ const postImages = async (url, body, token) => {
       body
   );
   const data = await Utils.streamToJSON(response.body);
-
   if (response.status != 200) {
     updateDataODEP.error('error posting images of asset', { from: 'postImg', tokenUsed: token.replace(/^Bearer\s+/i, '')});
   }
   return [data, response.status];
-};
-
-//Call RESILINK on o2switch to post images on webserver
-const getImages = async (url, token) => {
-
-  try {
-      if (token === null || token === "") {
-          return [{message: "token is empty"}, 401];
-      }
-      const dataFinal = await NewsDB.getAllNews(Country);
-      getDataLogger.info("success retrieving all news from a country", {from: 'getNewsfromCountry'});
-      return [dataFinal, 200];
-  } catch (e) {
-      getDataLogger.error("error retrieving all news from a country", {from: 'getNewsfromCountry', dataReceiver: e});
-      throw e;
-  }
 };
 
 //Call RESILINK on o2switch to delete images associated to an asset on webserver
@@ -507,7 +491,6 @@ module.exports = {
     getOneAssetCustom,
     getOwnerAsset,
     getOwnerAssetCustom,
-    getImages,
     createAsset,
     createAssetCustom,
     createAssetWithAssetTypeCustom,

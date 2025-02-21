@@ -3,6 +3,7 @@
 const bodyParser = require("body-parser");
 const cors = require('cors');
 const config = require('./v1/config.js');
+
 const express = require("express"); 
 
 const { swaggerDocs: V1SwaggerDocs } = require("./v1/swaggerV1.js");
@@ -58,8 +59,11 @@ app.use("/v1/", v1ContractRoute);
 const v1NewsRoute = require("./v1/routes/NewsRoute.js");
 app.use("/v1/", v1NewsRoute);
 
+const v1RatingRoute = require("./v1/routes/RatingRoute.js");
+app.use("/v1/", v1RatingRoute);
+
 //start application Express.js
-app.listen(PORT, '0.0.0.0', () => { 
-    console.log(`API is listening on port ${PORT}`);
+app.listen(PORT, 0.0.0.0, () => { 
+    console.log(`API is listening on port ${PORT} and using ip ${IP_ADDRESS}`);
     V1SwaggerDocs(app, PORT); 
 });

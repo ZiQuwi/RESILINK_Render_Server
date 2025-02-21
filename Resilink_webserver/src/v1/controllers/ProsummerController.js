@@ -83,7 +83,6 @@ const deleteOneProsummer = async (req, res) => {
 
 const putUserProsumerPersonnalData = async (req, res) => {
   try {
-    console.log('dans la bonne fonction')
     const response = await prosummerService.updateUserProsumerCustom(pathUserODEP ,req.body, req.params.prosumerId, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {

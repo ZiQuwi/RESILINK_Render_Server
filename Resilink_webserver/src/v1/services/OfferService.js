@@ -117,12 +117,9 @@ const getSuggestedOfferForResilinkCustom = async (url, owner, token) => {
 //Retrieves 3 last valid offers for sale or lease in ODEP for RESILINK
 const getLastThreeOfferForResilinkCustom = async (url, token) => {
 
-  console.log("entrer dans lastThree");
   //Retrieves all data needed to confirm the offers validity
     const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
-    console.log("passé la récupération assetTYpe");
     const allAssetResilink = await Asset.getAllAssetResilink(token);
-    console.log("passé la récupération asset");
     const allOffer = await Utils.fetchJSONData(
         'GET',
         url + "all", 
@@ -139,8 +136,6 @@ const getLastThreeOfferForResilinkCustom = async (url, token) => {
       getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getLastThreeOfferForResilinkCustom', dataOffer: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
     };
-
-    console.log("passé la récupération asset assettype et offer");
 
     const validOffers = [];
     const validMapAssets = {};
@@ -165,6 +160,7 @@ const getLastThreeOfferForResilinkCustom = async (url, token) => {
 
     // Add the last 3 valid offers to allOfferResilink
     for (const offer of lastThreeOffers) {
+      console.log(allAssetResilink[0][offer['assetId'].toString()]);
       validMapAssets[offer['assetId'].toString()] = (allAssetResilink[0][offer['assetId'].toString()])
     }
     allOfferResilink['offers'] = lastThreeOffers;
@@ -531,7 +527,6 @@ const createOffer = async (url, body, token) => {
 
 //Creates an offer, his asset and asset type associated 
 const createOfferAsset = async (url, body, token) => {
-
   //Calls the function to create an asset and his asset type
   updateDataODEP.warn('data to send to ODEP', { from: 'createOfferAsset', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
   const newsAsset = await Asset.createAssetWithAssetTypeCustom(pathODEPAsset, body['asset'], token);

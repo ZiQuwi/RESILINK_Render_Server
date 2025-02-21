@@ -5,7 +5,7 @@ require('winston-mongodb');
 const { combine, timestamp, json, prettyPrint, metadata } = winston.format;
 
 // MongoDB Atlas cluster connection URL
-const url = config.DB_URL; //'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/Logs?retryWrites=true&w=majority&appName=AtlasApp';
+const url = config.DB_LOGS_URL; //'mongodb+srv://' + _username + ':' + _password + '@clusterinit.pvcejia.mongodb.net/Logs?retryWrites=true&w=majority&appName=AtlasApp';
 
 const mongoOptions = (collectionName) => ({
     db: url,

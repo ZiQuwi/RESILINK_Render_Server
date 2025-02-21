@@ -64,6 +64,6 @@ app.use("/v1/", v1RatingRoute);
 
 //start application Express.js
 app.listen(PORT, '0.0.0.0', () => { 
-    console.log(`API is listening on port ${PORT} and using ip ${IP_ADDRESS}`);
+    console.log(`API is listening on port ${PORT}`);
     V1SwaggerDocs(app, PORT); 
 });

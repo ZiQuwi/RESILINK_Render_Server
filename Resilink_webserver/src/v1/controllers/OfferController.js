@@ -29,12 +29,12 @@ const getSuggestedOfferForResilinkCustom = async (req, res) => {
   }
 };
 
-const getLastThreeOfferForResilinkCustom = async (req, res) => { 
+const getLimitedOfferForResilinkCustom = async (req, res) => { 
   try {
-    const response = await OfferService.getLastThreeOfferForResilinkCustom(_pathofferODEP, req.header('Authorization'));
+    const response = await OfferService.getLimitedOfferForResilinkCustom(_pathofferODEP, req.params.offerNbr, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    getDataLogger.error('Catched error', { from: 'getLastThreeOfferForResilinkCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    getDataLogger.error('Catched error', { from: 'getLimitedOfferForResilinkCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({message: error.message})
   }
 };
@@ -151,7 +151,7 @@ const putOfferAsset = async (req, res) => {
 
 module.exports = {
     getAllOfferResilinkCustom,
-    getLastThreeOfferForResilinkCustom,
+    getLimitedOfferForResilinkCustom,
     getSuggestedOfferForResilinkCustom,
     getBlockedOfferForResilinkCustom,
     getOfferFiltered,

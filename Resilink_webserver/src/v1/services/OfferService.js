@@ -115,7 +115,7 @@ const getSuggestedOfferForResilinkCustom = async (url, owner, token) => {
 };
 
 //Retrieves 3 last valid offers for sale or lease in ODEP for RESILINK
-const getLastThreeOfferForResilinkCustom = async (url, token) => {
+const getLimitedOfferForResilinkCustom = async (url, offerNbr, token) => {
 
   //Retrieves all data needed to confirm the offers validity
     const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
@@ -130,10 +130,10 @@ const getLastThreeOfferForResilinkCustom = async (url, token) => {
 
     //Checks that none of the functions are error returns by ODEP
     if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getLastThreeOfferForResilinkCustom', tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getLimitedOfferForResilinkCustom', tokenUsed: token == null ? "Token not given" : token});
       return [allAssetType[1] == 401 ? allAssetType[0] : allAssetResilink[1] == 401 ? allAssetResilink[0] : data, 401];
     } else if(allOffer.status != 200 || allAssetType[1] != 200 || allAssetResilink[1] != 200) {
-      getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getLastThreeOfferForResilinkCustom', dataOffer: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getLimitedOfferForResilinkCustom', dataOffer: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
       return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
     };
 
@@ -156,7 +156,7 @@ const getLastThreeOfferForResilinkCustom = async (url, token) => {
     }
 
     // Get the last 3 valid offers
-    const lastThreeOffers = validOffers.slice(-3);
+    const lastThreeOffers = validOffers.slice(-offerNbr);
 
     // Add the last 3 valid offers to allOfferResilink
     for (const offer of lastThreeOffers) {
@@ -166,7 +166,7 @@ const getLastThreeOfferForResilinkCustom = async (url, token) => {
     allOfferResilink['offers'] = lastThreeOffers;
     allOfferResilink['assets'] = validMapAssets;
         
-    getDataLogger.info("successful data retrieval", { from: 'getLastThreeOfferForResilinkCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    getDataLogger.info("successful data retrieval", { from: 'getLimitedOfferForResilinkCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
     return [allOfferResilink, allOffer.status];
 };
 
@@ -695,7 +695,7 @@ const deleteOffer = async (url, id, token) => {
 
 module.exports = {
     getAllOfferForResilinkCustom,
-    getLastThreeOfferForResilinkCustom,
+    getLimitedOfferForResilinkCustom,
     getSuggestedOfferForResilinkCustom,
     getBlockedOfferForResilinkCustom,
     getAllOfferFilteredCustom,

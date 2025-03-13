@@ -162,12 +162,15 @@ const getLimitedOfferForResilinkCustom = async (url, offerNbr, iteration, token)
       }
   }
 
+  // Reverse the order of valid offers
+  const reversedValidOffers = validOffers.reverse();
+
   // Calculation of start and end indices
   const startIndex = iteration * offerNbr;
   const endIndex = startIndex + offerNbr;
 
   // Bid selection based on iteration and number of bids
-  const selectedOffers = validOffers.slice(startIndex, endIndex);
+  const selectedOffers = reversedValidOffers.slice(startIndex, endIndex);
 
   // Add the assets of valid offers
   for (const offer of selectedOffers) {

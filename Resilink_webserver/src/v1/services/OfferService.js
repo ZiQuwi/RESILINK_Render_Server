@@ -166,8 +166,8 @@ const getLimitedOfferForResilinkCustom = async (url, offerNbr, iteration, token)
   const reversedValidOffers = validOffers.reverse();
   
   // Calculation of start and end indices
-  const startIndex = iteration * offerNbr;
-  const endIndex = startIndex + offerNbr;
+  const startIndex = parseInt(iteration) * parseInt(offerNbr);
+  const endIndex = startIndex + parseInt(offerNbr);
 
   // Bid selection based on iteration and number of bids
   const selectedOffers = reversedValidOffers.slice(startIndex, endIndex);

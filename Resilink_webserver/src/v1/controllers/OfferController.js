@@ -31,7 +31,9 @@ const getSuggestedOfferForResilinkCustom = async (req, res) => {
 
 const getLimitedOfferForResilinkCustom = async (req, res) => { 
   try {
-    const response = await OfferService.getLimitedOfferForResilinkCustom(_pathofferODEP, req.params.offerNbr, req.header('Authorization'));
+    console.log("in");
+    console.log(req.query.offerNbr);
+    const response = await OfferService.getLimitedOfferForResilinkCustom(_pathofferODEP, req.query.offerNbr, req.query.iteration, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
     getDataLogger.error('Catched error', { from: 'getLimitedOfferForResilinkCustom', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});

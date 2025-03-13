@@ -115,60 +115,77 @@ const getSuggestedOfferForResilinkCustom = async (url, owner, token) => {
 };
 
 //Retrieves 3 last valid offers for sale or lease in ODEP for RESILINK
-const getLimitedOfferForResilinkCustom = async (url, offerNbr, token) => {
+const getLimitedOfferForResilinkCustom = async (url, offerNbr, iteration, token) => {
+  // Récupération des données nécessaires
+  const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
+  const allAssetResilink = await Asset.getAllAssetResilink(token);
+  const allOffer = await Utils.fetchJSONData(
+      'GET',
+      url + "all",
+      headers = { 'accept': 'application/json', 'Authorization': token }
+  );
+  
+  var allOfferResilink = {};
+  const data = await Utils.streamToJSON(allOffer.body);
 
-  //Retrieves all data needed to confirm the offers validity
-    const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
-    const allAssetResilink = await Asset.getAllAssetResilink(token);
-    const allOffer = await Utils.fetchJSONData(
-        'GET',
-        url + "all", 
-        headers = {'accept': 'application/json',
-        'Authorization': token});
-    var allOfferResilink = {};
-    const data = await Utils.streamToJSON(allOffer.body);
-
-    //Checks that none of the functions are error returns by ODEP
-    if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getLimitedOfferForResilinkCustom', tokenUsed: token == null ? "Token not given" : token});
+  // Vérifications des erreurs
+  if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
+      getDataLogger.error('error: Unauthorized', {
+          from: 'getLimitedOfferForResilinkCustom',
+          tokenUsed: token ? token : "Token not given"
+      });
       return [allAssetType[1] == 401 ? allAssetType[0] : allAssetResilink[1] == 401 ? allAssetResilink[0] : data, 401];
-    } else if(allOffer.status != 200 || allAssetType[1] != 200 || allAssetResilink[1] != 200) {
-      getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getLimitedOfferForResilinkCustom', dataOffer: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  } else if (allOffer.status != 200 || allAssetType[1] != 200 || allAssetResilink[1] != 200) {
+      getDataLogger.error("Error fetching Offer or Asset or AssetType from ODEP", {
+          from: 'getLimitedOfferForResilinkCustom',
+          dataOffer: data,
+          tokenUsed: token.replace(/^Bearer\s+/i, '')
+      });
       return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
-    };
+  }
 
-    const validOffers = [];
-    const validMapAssets = {};
-    //For each offer, checks if its validity date has not passed and if there is a quantity above 0 if it is an immaterial offer.
-    for (const key in data) {
+  const validOffers = [];
+  const validMapAssets = {};
+
+  // Filtrage des offres valides
+  for (const key in data) {
       const element = data[key];
       if (
-        new Date(element['validityLimit']) > new Date() && 
-        ( allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] !== null ?  
-          (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
-          (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true) : true) : false
-        ) 
-      ) 
-      {
-        await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
-        validOffers.push(element);
+          new Date(element['validityLimit']) > new Date() &&
+          (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] !== null ?
+              (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "immaterial" ?
+                  (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true) : true) : false
+          )
+      ) {
+          await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
+          validOffers.push(element);
       }
-    }
+  }
 
-    // Get the last 3 valid offers
-    const lastThreeOffers = validOffers.slice(-offerNbr);
+  // Calcul des indices de début et de fin
+  const startIndex = iteration * offerNbr;
+  const endIndex = startIndex + offerNbr;
 
-    // Add the last 3 valid offers to allOfferResilink
-    for (const offer of lastThreeOffers) {
+  // Sélection des offres en fonction de l'itération et du nombre d'offres
+  const selectedOffers = validOffers.slice(startIndex, endIndex);
+
+  // Ajout des offres sélectionnées à la liste
+  for (const offer of selectedOffers) {
       console.log(allAssetResilink[0][offer['assetId'].toString()]);
-      validMapAssets[offer['assetId'].toString()] = (allAssetResilink[0][offer['assetId'].toString()])
-    }
-    allOfferResilink['offers'] = lastThreeOffers;
-    allOfferResilink['assets'] = validMapAssets;
-        
-    getDataLogger.info("successful data retrieval", { from: 'getLimitedOfferForResilinkCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
-    return [allOfferResilink, allOffer.status];
+      validMapAssets[offer['assetId'].toString()] = allAssetResilink[0][offer['assetId'].toString()];
+  }
+
+  allOfferResilink['offers'] = selectedOffers;
+  allOfferResilink['assets'] = validMapAssets;
+
+  getDataLogger.info("Successful data retrieval", {
+      from: 'getLimitedOfferForResilinkCustom',
+      tokenUsed: token.replace(/^Bearer\s+/i, '')
+  });
+
+  return [allOfferResilink, allOffer.status];
 };
+
 
 //Retrieves all valid and suggested offers for sale or lease in ODEP for RESILINK
 const getBlockedOfferForResilinkCustom = async (url, owner, token) => {

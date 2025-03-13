@@ -116,7 +116,7 @@ const getSuggestedOfferForResilinkCustom = async (url, owner, token) => {
 
 //Retrieves 3 last valid offers for sale or lease in ODEP for RESILINK
 const getLimitedOfferForResilinkCustom = async (url, offerNbr, iteration, token) => {
-  // Récupération des données nécessaires
+  // Recovery of necessary data
   const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
   const allAssetResilink = await Asset.getAllAssetResilink(token);
   const allOffer = await Utils.fetchJSONData(
@@ -128,7 +128,7 @@ const getLimitedOfferForResilinkCustom = async (url, offerNbr, iteration, token)
   var allOfferResilink = {};
   const data = await Utils.streamToJSON(allOffer.body);
 
-  // Vérifications des erreurs
+  // error checking
   if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
       getDataLogger.error('error: Unauthorized', {
           from: 'getLimitedOfferForResilinkCustom',
@@ -147,7 +147,7 @@ const getLimitedOfferForResilinkCustom = async (url, offerNbr, iteration, token)
   const validOffers = [];
   const validMapAssets = {};
 
-  // Filtrage des offres valides
+  // Filter valid offers
   for (const key in data) {
       const element = data[key];
       if (
@@ -162,14 +162,17 @@ const getLimitedOfferForResilinkCustom = async (url, offerNbr, iteration, token)
       }
   }
 
-  // Calcul des indices de début et de fin
+  // Reverse the order of valid offers
+  const reversedValidOffers = validOffers.reverse();
+  
+  // Calculation of start and end indices
   const startIndex = iteration * offerNbr;
   const endIndex = startIndex + offerNbr;
 
-  // Sélection des offres en fonction de l'itération et du nombre d'offres
-  const selectedOffers = validOffers.slice(startIndex, endIndex);
+  // Bid selection based on iteration and number of bids
+  const selectedOffers = reversedValidOffers.slice(startIndex, endIndex);
 
-  // Ajout des offres sélectionnées à la liste
+  // Add the assets of valid offers
   for (const offer of selectedOffers) {
       console.log(allAssetResilink[0][offer['assetId'].toString()]);
       validMapAssets[offer['assetId'].toString()] = allAssetResilink[0][offer['assetId'].toString()];

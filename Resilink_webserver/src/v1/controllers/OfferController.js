@@ -31,8 +31,6 @@ const getSuggestedOfferForResilinkCustom = async (req, res) => {
 
 const getLimitedOfferForResilinkCustom = async (req, res) => { 
   try {
-    console.log("in");
-    console.log(req.query.offerNbr);
     const response = await OfferService.getLimitedOfferForResilinkCustom(_pathofferODEP, req.query.offerNbr, req.query.iteration, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {

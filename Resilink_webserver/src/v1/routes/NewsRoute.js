@@ -33,6 +33,9 @@ const newsController = require("../controllers/NewsController.js");
  *         platform:
  *           type: string
  *           description: "The platform where the news is published, such as a website or app"
+ *         public:
+ *           type: string
+ *           description: "'false' or 'true'. Define if its a personnal news (unique to a user)"
  */
 
 /**
@@ -59,6 +62,8 @@ const newsController = require("../controllers/NewsController.js");
  *                    type: string
  *                platform:
  *                    type: string
+ *                public:
+ *                    type: string
  *     responses:
  *       200:
  *         description: News from a country.
@@ -79,6 +84,8 @@ const newsController = require("../controllers/NewsController.js");
  *                   type: string
  *                 platform:
  *                   type: string
+ *                 public:
+ *                   type: string
  *       500:
  *         description: Error from RESILINK server.
  *         content:
@@ -91,6 +98,74 @@ const newsController = require("../controllers/NewsController.js");
  */
 
 router.post('/news/', newsController.createNews);
+
+/**
+ * @swagger
+ * /v1/news/{id}:
+ *   post: 
+ *     summary: creates a news source and adds it to the list of favorites of the user who created the news.
+ *     tags: [News]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string 
+ *         required: true
+ *         description: the username
+ *     requestBody:
+ *       description: offer's data.
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *                url: 
+ *                    type: string
+ *                country: 
+ *                    type: string
+ *                institute: 
+ *                    type: string
+ *                img:
+ *                    type: string
+ *                platform:
+ *                    type: string
+ *                public:
+ *                    type: string
+ *     responses:
+ *       200:
+ *         description: News from a country.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 _id:
+ *                   type: string
+ *                 url: 
+ *                   type: string
+ *                 country: 
+ *                   type: string
+ *                 institute: 
+ *                   type: string
+ *                 img:
+ *                   type: string
+ *                 platform:
+ *                   type: string
+ *                 public:
+ *                   type: string
+ *       500:
+ *         description: Error from RESILINK server.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
+router.post('/news/:id/', newsController.createPersonnalNews);
 
 /**
  * @swagger

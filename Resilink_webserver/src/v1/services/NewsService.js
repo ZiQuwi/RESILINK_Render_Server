@@ -14,11 +14,28 @@ const createNews = async (body, token) => {
         if (token === null || token === "") {
             return [{message: "token is empty"}, 401];
         }
-        const dataFinal = await NewsDB.createNews(body['url'] ?? "", body['country'], body['institute'] ?? "", body['img'] ?? "", body['platform'] ?? "");
+        const dataFinal = await NewsDB.createNews(body['url'] ?? "", body['country'], body['institute'] ?? "", body['img'] ?? "", body['platform'] ?? "", body['public'] ?? "true");
         getDataLogger.info("success creating a news", {from: 'createNews'});
         return [dataFinal, 200];
     } catch (e) {
         getDataLogger.error("error creating a news", {from: 'createNews', dataReceiver: e});
+        throw e;
+    }
+};
+
+const createPersonnalNews = async (username, body, token) => {
+    try {
+        if (token === null || token === "") {
+            return [{message: "token is empty"}, 401];
+        } else if (body["public"] != "true" || body["public"] != "false") {
+            return [{message: "the “public” key does not have the value “true” or “false”."}, 404];
+        }
+        const dataFinal = await NewsDB.createNews(body['url'] ?? "", body['country'] ?? "", body['institute'] ?? "", body['img'] ?? "", body['platform'] ?? "", body['public'] ?? "true");
+        await ProsumerDB.addbookmarked(username, dataFinal["_id"]);
+        getDataLogger.info("News created and successfully added to user's favorites.", {from: 'createPersonnalNews', userName: username});
+        return [{message: "News created and successfully added to user's favorites."}, 200];
+    } catch (e) {
+        getDataLogger.error("error creating a news", {from: 'createPersonnalNews', dataReceiver: e});
         throw e;
     }
 };
@@ -144,6 +161,7 @@ const getNewsfromCountryWithoutUserNews = async (owner, country, token) => {
 
 module.exports = {
     createNews,
+    createPersonnalNews,
     updateNews,
     getAllNews,
     getNewsfromCountry,

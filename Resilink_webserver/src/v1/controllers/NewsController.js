@@ -20,7 +20,7 @@ const createPersonnalNews = async (req, res) => {
     const response = await NewsService.createPersonnalNews(req.params.id, req.body, req.header('Authorization'));
     res.status(response[1]).send(response[0]);
   } catch (error) {
-    getDataLogger.error('Error accessing Resilink server', { from: 'createNews', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
+    getDataLogger.error('Error accessing Resilink server', { from: 'createPersonnalNews', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
     res.status(500).send({error: error});
   }
 };

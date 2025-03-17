@@ -9,17 +9,21 @@ const connectDB = winston.loggers.get('ConnectDBResilinkLogger');
 const updateData = winston.loggers.get('UpdateDataResilinkLogger');
 const deleteData = winston.loggers.get('DeleteDataResilinkLogger');
 
-const createNews = async (url, country, institute, imgBase64, platform) => {
+const createNews = async (url, country, institute, imgBase64, platform, public) => {
   try {
     const db = await connectToDatabase();
     const _collection = db.collection('News');
 
-    const lastNews = await _collection.find().sort({ _id: -1 }).limit(1).toArray();
+    const lastNews = await _collection.find().toArray();
+
+    lastNews.sort((a, b) => parseInt(b._id) - parseInt(a._id));
+    
+    const latestNews = lastNews[0];
 
     var nextId = 1;
 
         if (lastNews.length !== 0) {
-          const lastId = parseInt(lastNews[0]._id, 10);
+          const lastId = parseInt(lastNews[0]._id);
           nextId += lastId
         }
 
@@ -27,12 +31,13 @@ const createNews = async (url, country, institute, imgBase64, platform) => {
 
     // Insert an News with its imgpath. Can be empty if default image from mobile app selected
     const news = await _collection.insertOne({
-      "_id": nextId,
+      "_id": nextId.toString(),
       "url": url,
       "country": country,
       "institute": institute,
       "img": imgBase64,
-      "platform": platform
+      "platform": platform,
+      "public": public
     });
 
     if (!news) {
@@ -41,7 +46,15 @@ const createNews = async (url, country, institute, imgBase64, platform) => {
 
     updateData.info('success creating a news', { from: 'createNews' });
 
-    return news;
+    return {
+      "_id": nextId.toString(),
+      "url": url,
+      "country": country,
+      "institute": institute,
+      "img": imgBase64,
+      "platform": platform,
+      "public": public
+    };
   } catch (e) {
     if (e instanceof InsertDBError) {
       updateData.error('error creating a news', { from: 'createNews' });

@@ -174,7 +174,6 @@ const getLimitedOfferForResilinkCustom = async (url, offerNbr, iteration, token)
 
   // Add the assets of valid offers
   for (const offer of selectedOffers) {
-      console.log(allAssetResilink[0][offer['assetId'].toString()]);
       validMapAssets[offer['assetId'].toString()] = allAssetResilink[0][offer['assetId'].toString()];
   }
 

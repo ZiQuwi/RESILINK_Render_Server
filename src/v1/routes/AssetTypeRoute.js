@@ -84,103 +84,9 @@ const router = express.Router();
 
 /**
  * @swagger
- * /v1/ODEP/assetTypes:
- *   post: 
- *     summary: Create a new assetType (from ODEP)
- *     tags: [AssetType]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               name: 
- *                  type: string
- *               description:
- *                  type: string
- *               nature : 
- *                  type: string
- *                  enum:
- *                   - material
- *                   - immaterial
- *               unit:
- *                  type: string
- *               regulated:
- *                  type: boolean
- *               regulator:
- *                  type: string
- *               sharingIncentive:
- *                  type: boolean
- *               specificAttributesModel: 
- *                  type: array
- *                  items:
- *                      type: object
- *                      properties:
- *                          name:
- *                              type: string
- *                          type:
- *                              type: string
- *                          mandatory:
- *                              type: string
- *                              enum:
- *                                  - true
- *                                  - false
- *                          hasValueList:
- *                              type: string
- *                              enum:
- *                                  - true
- *                                  - false
- *                          valueList:
- *                              type: string
- *     responses:
- *       200:
- *         description: AssetType successfully created.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                  message:
- *                      type: string
- *       400:
- *         description: Bad Request.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                  message:
- *                      type: string
- *       404:
- *         description: Not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.post('/ODEP/assetTypes/', assetTypeController.createAssetTypes);
-
-/**
- * @swagger
  * /v1/assetTypes/all:
  *   get:
- *     summary: Get all asset types from RESILINK (from ODEP)
+ *     summary: Get all asset types 
  *     tags: [AssetType]
  *     responses:
  *       200:
@@ -265,96 +171,9 @@ router.get('/assetTypes/all', assetTypeController.getAllAssetTypes);
 
 /**
  * @swagger
- * /v1/ODEP/assetTypes/all/:
- *   get:
- *     summary: Get all asset types (from ODEP)
- *     tags: [AssetType]
- *     responses:
- *       200:
- *         description: Transaction successfully executed
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                  type: object
- *                  properties:
- *                      name:
- *                        type: string
- *                      description:
- *                        type: string
- *                      nature:
- *                        type: string
- *                        enum:
- *                          - material
- *                          - immaterial
- *                      unit:
- *                        type: string
- *                      regulated:
- *                        type: boolean
- *                      regulator:
- *                        type: string
- *                      sharingIncentive:
- *                        type: boolean
- *                      specificAttributesModel:
- *                        type: array
- *                        items:
- *                            type: object
- *                            properties:
- *                                name:
- *                                    type: string
- *                                type:
- *                                    type: string
- *                                mandatory:
- *                                    type: string
- *                                    enum:
- *                                      - true
- *                                      - false
- *                                hasValueList:
- *                                    type: string
- *                                    enum:
- *                                      - true
- *                                      - false
- *                                valueList:
- *                                    type: string
- *       400:
- *         description: Bad Request.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                  message:
- *                      type: string
- *       404:
- *         description: Not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.get('/ODEP/assetTypes/all/', assetTypeController.getAllAssetTypesDev);
-
-/**
- * @swagger
  * /v1/assetTypes/{id}:
  *   get:
- *     summary: Get an asset type by id (from ODEP)
+ *     summary: Get an asset type by id
  *     tags: [AssetType]
  *     parameters:
  *       - in: path
@@ -446,7 +265,7 @@ router.get('/assetTypes/:id/', assetTypeController.getOneAssetTypes);
  * @swagger
  * /v1/assetTypes/{id}:
  *   put:
- *     summary: update asset type attributes (from ODEP)
+ *     summary: update asset type attributes
  *     tags: [AssetType]
  *     parameters:
  *       - in: path
@@ -545,7 +364,7 @@ router.put('/assetTypes/:id/', assetTypeController.putAssetTypes);
  * @swagger
  * /v1/assetTypes/{id}/:
  *   delete: 
- *     summary: delete an asset type (from ODEP)
+ *     summary: delete an asset type
  *     tags: [AssetType]
  *     parameters:
  *       - in: path
@@ -598,7 +417,7 @@ router.delete('/assetTypes/:id/', assetTypeController.deleteAssetTypes);
 
 /**
  * @swagger
- * /v1/assetTypes/all/mapped/:
+ * /v1/assetTypes/all/mapFormat/:
  *   get:
  *     summary: Get all asset types but with the asset type as a key with his value associate
  *     tags: [AssetType]
@@ -687,7 +506,7 @@ router.get('/assetTypes/all/mapFormat', assetTypeController.getAllAssetTypesResi
  * @swagger
  * /v1/assetTypes/{assetType}:
  *   post: 
- *     summary: Create an assetType or a clone of an existing assetType
+ *     summary: Create an assetType or a clone of an existing assetType (assetType names are uniques!)
  *     tags: [AssetType]
  *     parameters:
  *       - in: path
@@ -736,6 +555,6 @@ router.get('/assetTypes/all/mapFormat', assetTypeController.getAllAssetTypesResi
  *                       type: string
  */
 
-router.post('/assetTypes/:assetType', assetTypeController.createAssetTypesCustom);
+router.post('/assetTypes/:assetType', assetTypeController.createAssetTypes);
 
 module.exports = router;

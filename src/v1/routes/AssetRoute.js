@@ -77,96 +77,6 @@ const router = express.Router();
  *                 description: "-{v1;V2;...;Vn}: in case of listAsset"
  */
 
-
-/**
- * @swagger
- * /v1/ODEP/assets:
- *   post: 
- *     summary: Create a new asset (from ODEP)
- *     tags: [Asset]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *                name:
- *                  type: string
- *                description:
- *                  type: string
- *                assetType:
- *                  type: string
- *                owner:
- *                  type: string
- *                transactionType:
- *                  type: string
- *                  enum:
- *                    - sale/purchase
- *                    - rent
- *                  description: "La description de votre transactionType"
- *                totalQuantity:
- *                  type: number
- *                regulatedId:
- *                  type: string
- *                regulator:
- *                  type: string
- *                specificAttributes:
- *                  type: array
- *                  items:
- *                     type: object
- *                     properties:
- *                        attributeName:
- *                           type: string
- *                        value:
- *                           type: string
- *     responses:
- *       200:
- *         description: Asset successfully created
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- *                   assetId: 
- *                       type: number
- *       401:
- *         description: Bad Request.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string 
- *       404:
- *         description: Not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.post('/ODEP/assets/', assetController.createAsset);
-
 /**
  * @swagger
  * /v1/assets:
@@ -258,13 +168,13 @@ router.post('/ODEP/assets/', assetController.createAsset);
  *                       type: string
  */
 
-router.post('/assets/', assetController.createAssetCustom);
+router.post('/assets/', assetController.createAsset);
 
 /**
  * @swagger
  * /v1/assets/withAssetType:
  *   post: 
- *     summary: Create a new asset and a new assetTypes
+ *     summary: Create a new asset and duplicate an assetTypes
  *     tags: [Asset]
  *     requestBody:
  *       required: true
@@ -352,95 +262,6 @@ router.post('/assets/', assetController.createAssetCustom);
  */
 
 router.post('/assets/withAssetType', assetController.createAssetWithAssetTypeCustom);
-
-/**
- * @swagger
- * /v1/ODEP/assets/owner:
- *   get:
- *     summary: Get assets by owner (from ODEP)
- *     tags: [Asset]
- *     parameters:
- *       - in: query
- *         name: idOwner
- *         schema:
- *           type: string 
- *         required: true
- *     responses:
- *       200:
- *         description: Ok
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 type: object
- *                 properties:
- *                   id:
- *                     type: number
- *                   availableQuantity:
- *                     type: number
- *                   name:
- *                     type: string
- *                   description:
- *                     type: string
- *                   assetType:
- *                     type: string
- *                   owner:
- *                     type: string
- *                   transactionType:
- *                     type: string
- *                     enum:
- *                       - sale/purchase
- *                       - rent
- *                   totalQuantity:
- *                     type: number
- *                   regulatedId:
- *                     type: string
- *                   regulator:
- *                     type: string
- *                   specificAttributes:
- *                     type: array
- *                     items:
- *                       type: object
- *                       properties:
- *                          attributeName:
- *                            type: string
- *                          value:
- *                            type: string
- *       400:
- *         description: Bad Request.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string 
- *       404:
- *         description: Not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.get('/ODEP/assets/owner', assetController.getOwnerAsset);
 
 /**
  * @swagger
@@ -533,90 +354,7 @@ router.get('/ODEP/assets/owner', assetController.getOwnerAsset);
  *                       type: string
  */
 
-router.get('/assets/owner', assetController.getOwnerAssetCustom);
-
-/**
- * @swagger
- * /v1/ODEP/assets/all:
- *   get:
- *     summary: Get accessible assets in the exchange place (from ODEP)
- *     tags: [Asset]
- *     responses:
- *       200:
- *         description: Ok
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 type: object
- *                 properties:
- *                   id:
- *                     type: number
- *                   availableQuantity:
- *                     type: number
- *                   name:
- *                     type: string
- *                   description:
- *                     type: string
- *                   assetType:
- *                     type: string
- *                   owner:
- *                     type: string
- *                   transactionType:
- *                     type: string
- *                     enum:
- *                       - sale/purchase
- *                       - rent
- *                   totalQuantity:
- *                     type: number
- *                   regulatedId:
- *                     type: string
- *                   regulator:
- *                     type: string
- *                   specificAttributes:
- *                     type: array
- *                     items:
- *                       type: object
- *                       properties:
- *                          attributeName:
- *                            type: string
- *                          value:
- *                            type: string
- *       400:
- *         description: Bad Request.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string 
- *       404:
- *         description: Not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.get('/ODEP/assets/all/', assetController.getAllAsset);
+router.get('/assets/owner', assetController.getOwnerAsset);
 
 /**
  * @swagger
@@ -703,94 +441,7 @@ router.get('/ODEP/assets/all/', assetController.getAllAsset);
  *                       type: string
  */
 
-router.get('/assets/all', assetController.getAllAssetCustom);
-
-/**
- * @swagger
- * /v1/ODEP/assets/{id}:
- *   get:
- *     summary: Get an asset by id (from ODEP)
- *     tags: [Asset]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: string 
- *         required: true
- *     responses:
- *       200:
- *         description: Ok
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 id:
- *                   type: number
- *                 availableQuantity:
- *                   type: number
- *                 name:
- *                   type: string
- *                 description:
- *                   type: string
- *                 assetType:
- *                   type: string
- *                 owner:
- *                   type: string
- *                 transactionType:
- *                   type: string
- *                   enum:
- *                     - sale/purchase
- *                     - rent
- *                 totalQuantity:
- *                   type: number
- *                 regulatedId:
- *                   type: string
- *                 regulator:
- *                   type: string
- *                 specificAttributes:
- *                   type: array
- *                   items:
- *                     type: object
- *                     properties:
- *                        attributeName:
- *                          type: string
- *                        value:
- *                          type: string
- *       400:
- *         description: Bad Request.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string 
- *       404:
- *         description: Not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.get('/ODEP/assets/:id/', assetController.getOneAsset);
+router.get('/assets/all', assetController.getAllAsset);
 
 /**
  * @swagger
@@ -881,7 +532,7 @@ router.get('/ODEP/assets/:id/', assetController.getOneAsset);
  *                       type: string
  */
 
-router.get('/assets/:id/', assetController.getOneAssetCustom);
+router.get('/assets/:id/', assetController.getOneAsset);
 
 /**
  * @swagger
@@ -970,137 +621,6 @@ router.get('/assets/:id/', assetController.getOneAssetCustom);
  */
 
 router.get('/asset/allAssetMapped/', assetController.getAllAssetMapped);
-
-/**
- * @swagger
- * /v1/assets/assetImg/{id}:
- *   get: 
- *     summary: get the images of an asset by id
- *     tags: [Asset]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: string 
- *         required: true
- *         description: the asset id
- *     responses:
- *       200:
- *         description: Ok
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   img:
- *                      type: array
- *                      items:
- *                          type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.get('/assets/assetImg/:id/', assetController.getOneAssetIdimage);
-
-/**
- * @swagger
- * /v1/ODEP/assets/{id}:
- *   put: 
- *     summary: update an asset attributes (from ODEP)
- *     tags: [Asset]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: string 
- *         required: true
- *         description: the asset id
- *     requestBody:
- *       description: The assetType's data.
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *                name:
- *                  type: string
- *                description:
- *                  type: string
- *                assetType:
- *                  type: string
- *                owner:
- *                  type: string
- *                transactionType:
- *                  type: string
- *                  enum:
- *                    - sale/purchase
- *                    - rent
- *                  description: "La description de votre transactionType"
- *                totalQuantity:
- *                  type: number
- *                regulatedId:
- *                  type: string
- *                regulator:
- *                  type: string
- *                specificAttributes:
- *                  type: object
- *                  properties:
- *                     attributeName:
- *                         type: string
- *                     value:
- *                         type: string
- *     responses:
- *       200:
- *         description: Asset successfully updated
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- *       400:
- *         description: Bad Request.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string 
- *       404:
- *         description: Not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.put('/ODEP/assets/:id/', assetController.putAsset);
 
 /**
  * @swagger
@@ -1195,65 +715,7 @@ router.put('/ODEP/assets/:id/', assetController.putAsset);
  *                       type: string
  */
 
-router.put('/assets/:id/', assetController.putAssetCustom);
-
-/**
- * @swagger
- * /v1/ODEP/assets/{id}/:
- *   delete: 
- *     summary: delete an asset (from ODEP)
- *     tags: [Asset]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: string 
- *         required: true
- *         description: the asset id
- *     responses:
- *       200:
- *         description: Asset successfully deleted
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- *       400:
- *         description: Bad Request.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string 
- *       404:
- *         description: Not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.delete('/ODEP/assets/:id/', assetController.deleteAsset);
+router.put('/assets/:id/', assetController.putAsset);
 
 /**
  * @swagger
@@ -1311,74 +773,7 @@ router.delete('/ODEP/assets/:id/', assetController.deleteAsset);
  *                       type: string
  */
 
-router.delete('/assets/:id/', assetController.deleteAssetCustom);
-
-/**
- * @swagger
- * /v1/ODEP/assets/{id}/regulatedId:
- *   patch: 
- *     summary: Regulate an Asset (from ODEP)
- *     tags: [Asset]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: string 
- *         required: true
- *         description: the asset id
- *     requestBody:
- *       description: The regulator id.
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *                 regulatedId:
- *                     type: string
- *     responses:
- *       200:
- *         description: Asset successfully regulated
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- *       400:
- *         description: Bad Request.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string 
- *       404:
- *         description: Not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-router.patch('/ODEP/assets/:id/regulatedId', assetController.patchAsset);
+router.delete('/assets/:id/', assetController.deleteAsset);
 
 /**
  * @swagger

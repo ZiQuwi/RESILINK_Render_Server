@@ -454,9 +454,22 @@ router.get('/offers/suggested/:id', offerController.getSuggestedOfferForResilink
 
 /**
  * @swagger
- * /v1/offers/lastThree:
+ * /v1/offers/LimitedOffer:
  *   get:
- *     summary: Get last 3 valid offers in RESILINK perspective
+ *     summary: Get a number of valid offers in RESILINK perspective
+ *     parameters:  
+ *       - in: query
+ *         name: offerNbr
+ *         schema:
+ *           type: number 
+ *         required: true 
+ *         description: number of offers
+ *       - in: query
+ *         name: iteration
+ *         schema:
+ *           type: number 
+ *         required: true
+ *         description: iteration of the list of offers to be retrieved from all available offers
  *     tags: [Offer]
  *     responses:
  *       200:
@@ -612,7 +625,7 @@ router.get('/offers/suggested/:id', offerController.getSuggestedOfferForResilink
  *                   type: string
  */
 
-router.get('/offers/lastThree/', offerController.getLastThreeOfferForResilinkCustom);
+router.get('/offers/LimitedOffer', offerController.getLimitedOfferForResilinkCustom);
 
 /**
  * @swagger

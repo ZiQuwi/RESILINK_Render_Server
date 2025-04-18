@@ -4,7 +4,7 @@
   "description": "mid-platform intermediary between the Resilink mobile application and the Orange ODEP API",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "test": "mocha test/main.test.js"
   },
   "keywords": [],
   "author": "Axel Cazaux",

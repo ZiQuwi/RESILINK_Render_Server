@@ -6,12 +6,15 @@ const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
 const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 
 const RatingDB = require("../database/RatingDB.js");
+const Utils = require("./Utils.js");
+const UserDB = require("../database/UserDB.js");
 
 // Create a rating 
 const createRating = async (body, token) => {
     try {
-        if (token === null || token === "") {
-            return [{message: "token is empty"}, 401];
+        if(!Utils.validityToken(token)) {
+            getDataLogger.error('error: Unauthorize', { from: 'createRating', tokenUsed: token == null ? "Token not given" : token});
+            return [{"message" : "Unauthorize"}, 401];
         }
         const dataFinal = await RatingDB.createNewRating(body['userId'], body['rating']);
         getDataLogger.info("success creating a rating for user " + body['userId'], {from: 'createRating'});
@@ -25,10 +28,16 @@ const createRating = async (body, token) => {
 // Retrieve all ratings 
 const getAllRating = async (token) => {
     try {
-        if (token === null || token === "") {
-            return [{message: "token is empty"}, 401];
+        console.log("1");
+        if(!Utils.validityToken(token)) {
+              getDataLogger.error('error: Unauthorize', { from: 'getAllRating', tokenUsed: token == null ? "Token not given" : token});
+              return [{"message" : "Unauthorize"}, 401];
         }
+        console.log("2");
+
         const dataFinal = await RatingDB.getAllRating();
+        console.log("3");
+
         getDataLogger.info("success retrieving all ratings", {from: 'getAllRating'});
         return [dataFinal, 200];
     } catch (e) {
@@ -39,9 +48,11 @@ const getAllRating = async (token) => {
 
 // Retrieve a rating by its user id  
 const getIdRating = async (userId, token) => {
+    console.log("in");
     try {
-        if (token === null || token === "") {
-            return [{message: "token is empty"}, 401];
+        if(!Utils.validityToken(token)) {
+            getDataLogger.error('error: Unauthorize', { from: 'getIdRating', tokenUsed: token == null ? "Token not given" : token});
+            return [{"message" : "Unauthorize"}, 401];
         }
         const dataFinal = await RatingDB.getRatingByUserId(userId);
         getDataLogger.info("success retrieving a user rating", {from: 'getIdRating'});
@@ -55,8 +66,9 @@ const getIdRating = async (userId, token) => {
 // Retrieve the average of all ratings  
 const getAverageRating = async (token) => {
     try {
-        if (token === null || token === "") {
-            return [{message: "token is empty"}, 401];
+        if(!Utils.validityToken(token)) {
+            getDataLogger.error('error: Unauthorize', { from: 'getAverageRating', tokenUsed: token == null ? "Token not given" : token});
+            return [{"message" : "Unauthorize"}, 401];
         }
         const data = await RatingDB.getAllRating();
 
@@ -82,10 +94,17 @@ const getAverageRating = async (token) => {
 // Update a rating 
 const putRating = async (userId, body, token) => {
     try {
-        if (token === null || token === "") {
-            return [{message: "token is empty"}, 401];
+        if(!Utils.validityToken(token)) {
+            getDataLogger.error('error: Unauthorize', { from: 'putRating', tokenUsed: token == null ? "Token not given" : token});
+            return [{"message" : "Unauthorize"}, 401];
         }
-    
+
+        const userProfil = await UserDB.getUserByToken(token.replace(/^Bearer\s+/i, ''));
+        if (userProfil['userName'] != "admin" && userProfil['userName'] != userId ) {
+            getDataLogger.error('error: not the owner or administrator', { from: 'deleteOffer', dataReceived: "Unauthorize", tokenUsed: token == null ? "Token not given" : token});
+            return [{"message" : "not the owner or administrator"}, 401];
+        }
+
         await RatingDB.updateRating(userId, body['rating'])
 
         updateDataODEP.info("success retrieving the average of all rating", {from: 'putRating'});
@@ -99,10 +118,17 @@ const putRating = async (userId, body, token) => {
 // Update a rating 
 const deleteRating = async (userID, token) => {
     try {
-        if (token === null || token === "") {
-            return [{message: "token is empty"}, 401];
+        if(!Utils.validityToken(token)) {
+            getDataLogger.error('error: Unauthorize', { from: 'deleteRating', tokenUsed: token == null ? "Token not given" : token});
+            return [{"message" : "Unauthorize"}, 401];
         }
-        
+
+        const userProfil = await UserDB.getUserByToken(token.replace(/^Bearer\s+/i, ''));
+        if (userProfil['userName'] != "admin" && userProfil['userName'] != userID ) {
+            getDataLogger.error('error: not the owner or administrator', { from: 'deleteOffer', dataReceived: "Unauthorize", tokenUsed: token == null ? "Token not given" : token});
+            return [{"message" : "not the owner or administrator"}, 401];
+        }
+
         await RatingDB.deleteRatingByUserId(userID);
 
         deleteDataODEP.info("success deleting rating from user " + userID, {from: 'getAverageRating'});

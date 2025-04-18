@@ -1,11 +1,12 @@
-# RESILINK v2 - Node.js API for a User Exchange Platform
+# RESILINK - Node.js API for a User Exchange Platform
 
-RESILINK v2 is an API built with **Node.js** and **Express**, using **Swagger** for documentation. This API allows you to develop a platform for exchanges between users, with data stored in a **MongoDB** database. The API is free, accessible to everyone, and can be deployed locally by developers.
+RESILINK is an API built with **Node.js** and **Express**, using **Swagger** for documentation. This API allows you to develop a platform for exchanges between users, with data stored in a **MongoDB** database. It integrates with **ODEP**, an API provided by **ORANGE** to structure interactions between users. The API is free, accessible to everyone, and can be deployed locally by developers.
 
 ## Main Features
 
 - RESTful API built with **Express** and documented with **Swagger**.
 - Connection to a **MongoDB** database for managing users and exchanges.
+- Integration with the **ODEP API** by ORANGE to structure interactions.
 - Encryption of sensitive data using AES-256.
 - Easy local or server deployment with configuration via an `.env` file.
 
@@ -13,6 +14,7 @@ RESILINK v2 is an API built with **Node.js** and **Express**, using **Swagger** 
 
 - **Node.js** (v18 or later)
 - **MongoDB** (Cloud MongoDB cluster or local instance)
+- **ODEP API** (URLs to be requested from ORANGE)
 
 ## Installation
 
@@ -35,13 +37,20 @@ npm install
 Create a file named **`RESILINK_Server.env`** at the root of the project with the following variables:
 
 ```
-IP_ADDRESS=resilink-dp.org
-PORT=9990
-SWAGGER_URL=https://resilink-dp.org
-ENCRYPTION_KEY=b32c32aac9c6afd06ab3554415de5edbafc14ef97cc6d0e4ffa678220a57b39f
-TOKEN_KEY=f0d8cd085ada735ac45c30e3368b5b4c87a8e7fb9828a2289af5065bad05b015
-DB_URL=mongodb+srv://<username>:<password>@<cluster-url>/Resilink
-DB_LOGS_URL=mongodb+srv://<username>:<password>@<cluster-url>/Logs
+ENCRYPTION_KEY=your_encryption_key_here
+PORT=your_server_port_here
+DB_URL= e.g. mongodb+srv://username:password@cluster.mongodb.net/db_name
+
+# URLs to access the ODEP API (must be requested from the following address: axel.cazaux@univ-pau.fr or from the github administrator)
+PATH_ODEP_USER=https://api.orange.com/odep/user
+PATH_ODEP_PROSUMER=https://api.orange.com/odep/prosumer
+PATH_ODEP_REGULATOR=https://api.orange.com/odep/regulator
+PATH_ODEP_ASSET=https://api.orange.com/odep/asset
+PATH_ODEP_ASSETTYPE=https://api.orange.com/odep/assettype
+PATH_ODEP_OFFER=https://api.orange.com/odep/offer
+PATH_ODEP_REQUEST=https://api.orange.com/odep/request
+PATH_ODEP_CONTRACT=https://api.orange.com/odep/contract
+```
 
 > **Note**: Replace the placeholder values with your actual keys and URLs.
 
@@ -70,6 +79,8 @@ The main routes manage:
 - **Assets** (ASSET)
 - **Asset Types** (ASSETTYPE)
 - **Offers** (OFFER)
+- **Requests** (REQUEST)
+- **Contracts** (CONTRACT)
 - **News** (NEWS)
 
 ## Project Structure
@@ -91,8 +102,23 @@ config.js         	# Global configuration file
 server.js         	# Main entry point of the API
 ```
 
+## API Documentation
+
+The complete documentation for the API is available through **Swagger**. You can view the RESILINK documentation at the following URL:
+
+```
+https://resilink-api.onrender.com/v1/api-docs
+```
+
+This documentation provides details about the HTTP methods, expected parameters, and responses for each route.
+
 ## Deployment
 
-To deploy this API in a production environment, ensure that all environment variables are correctly configured, including the MongoDB cluster URL and the keys.
+To deploy this API in a production environment, ensure that all environment variables are correctly configured, including the MongoDB cluster URL and the ODEP API URLs.
+
+## License
+
+Add license.
+
 
 

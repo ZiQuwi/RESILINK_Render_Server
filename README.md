@@ -41,7 +41,7 @@ ENCRYPTION_KEY=your_encryption_key_here
 PORT=your_server_port_here
 DB_URL= e.g. mongodb+srv://username:password@cluster.mongodb.net/db_name
 
-# URLs to access the ODEP API (must be requested from ORANGE)
+# URLs to access the ODEP API (must be requested from the following address: axel.cazaux@univ-pau.fr or from the github administrator)
 PATH_ODEP_USER=https://api.orange.com/odep/user
 PATH_ODEP_PROSUMER=https://api.orange.com/odep/prosumer
 PATH_ODEP_REGULATOR=https://api.orange.com/odep/regulator

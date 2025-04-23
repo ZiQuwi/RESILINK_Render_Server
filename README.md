@@ -2,6 +2,8 @@
 
 RESILINK is an API built with **Node.js** and **Express**, using **Swagger** for documentation. This API allows you to develop a platform for exchanges between users, with data stored in a **MongoDB** database. It integrates with **ODEP**, an API provided by **ORANGE** to structure interactions between users. The API is free, accessible to everyone, and can be deployed locally by developers.
 
+**Note**: A variant of this platform is available in the `MainWithoutODEP` branch. It is a self-contained v2 version that does **not** rely on the **ODEP API**, making it fully **self-deployed** without external dependencies.
+
 ## Main Features
 
 - RESTful API built with **Express** and documented with **Swagger**.

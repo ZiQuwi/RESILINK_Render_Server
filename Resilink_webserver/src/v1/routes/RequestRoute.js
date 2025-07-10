@@ -16,14 +16,9 @@ const RequestController = require("../controllers/RequestController.js");
  *       type: object
  *       description: "The prosumer should provide either the requested offer IDs or the requested asset types."
  *       required:
- *         - requestor
  *         - beginTimeSlot
  *         - validityLimit
- *         - transactionType
  *       properties:
- *         requestor:
- *           type: string
- *           description: "The ID of the requestor"
  *         beginTimeSlot:
  *           type: string
  *           format: date-time
@@ -39,12 +34,15 @@ const RequestController = require("../controllers/RequestController.js");
  *           type: string
  *           format: date-time
  *           description: "The expiration date of the request"
- *         transactionType:
+ *         paymentMethod:
  *           type: string
  *           enum:
- *             - sale/purchase
- *             - rent
- *           description: "The type of transaction. Enum values: 'sale/purchase', 'rent'"
+ *             - total
+ *             - periodic
+ *           description: "Type of payment"
+ *         paymentFrequency:
+ *           type: number
+ *           description: "Payment frequency for periodic payments"
  *         offerIds:
  *           type: array
  *           description: "List of requested offer IDs. Required if requesting specific offers"
@@ -109,7 +107,17 @@ const RequestController = require("../controllers/RequestController.js");
  *                         - in(circle)
  *                         - in(rectangle)
  *                       description: "The type of comparison for the attribute value"
- */
+ *         requestId:
+ *           type: number
+ *           description: "The ID of the request"
+ *         requester:
+ *           type: string
+ *           description: "The ID of the requester"
+ *         publicationDate:
+ *           type: string
+ *           format: date-time
+ *           description: The date/time when the request was published
+*/
 
 /**
  * @swagger
@@ -125,8 +133,6 @@ const RequestController = require("../controllers/RequestController.js");
  *           schema:
  *             type: object
  *             properties:
- *               requestor:
- *                 type: string
  *               beginTimeSlot:
  *                 type: string
  *                 format: date-time
@@ -136,11 +142,13 @@ const RequestController = require("../controllers/RequestController.js");
  *               validityLimit:
  *                 type: string
  *                 format: date-time
- *               transactionType:
+ *               paymentMethod:
  *                 type: string
  *                 enum:
- *                   - sale/purchase
- *                   - rent
+ *                   - total
+ *                   - periodic
+ *               paymentFrequency:
+ *                 type: number
  *               offerIds:
  *                 type: array
  *                 items:
@@ -251,8 +259,6 @@ router.post('/ODEP/requests/', RequestController.createRequest);
  *               items:
  *                 type: object
  *                 properties:
- *                   requestor:
- *                     type: string
  *                   beginTimeSlot:
  *                     type: string
  *                     format: date-time
@@ -262,11 +268,13 @@ router.post('/ODEP/requests/', RequestController.createRequest);
  *                   validityLimit:
  *                     type: string
  *                     format: date-time
- *                   transactionType:
+ *                   paymentMethod:
  *                     type: string
  *                     enum:
- *                       - sale/purchase
- *                       - rent
+ *                       - total
+ *                       - periodic
+ *                   paymentFrequency:
+ *                     type: number
  *                   offerIds:
  *                     type: array
  *                     items:
@@ -310,6 +318,11 @@ router.post('/ODEP/requests/', RequestController.createRequest);
  *                                   - in(rectangle)
  *                   requestId:
  *                     type: number
+ *                   requester:
+ *                     type: string
+ *                   publicationDate:
+ *                     type: string
+ *                     format: date-time
  *       400:
  *         description: Bad request.
  *         content:
@@ -367,8 +380,6 @@ router.get('/ODEP/requests/all', RequestController.getAllRequest);
  *             schema:
  *               type: object
  *               properties:
- *                 requestor:
- *                   type: string
  *                 beginTimeSlot:
  *                   type: string
  *                   format: date-time
@@ -378,11 +389,13 @@ router.get('/ODEP/requests/all', RequestController.getAllRequest);
  *                 validityLimit:
  *                   type: string
  *                   format: date-time
- *                 transactionType:
+ *                 paymentMethod:
  *                   type: string
  *                   enum:
- *                     - sale/purchase
- *                     - rent
+ *                     - total
+ *                     - periodic
+ *                 paymentFrequency:
+ *                   type: number
  *                 offerIds:
  *                   type: array
  *                   items:
@@ -426,6 +439,11 @@ router.get('/ODEP/requests/all', RequestController.getAllRequest);
  *                                 - in(rectangle)
  *                 requestId:
  *                   type: number
+ *                 requester:
+ *                   type: string
+ *                 publicationDate:
+ *                   type: string
+ *                   format: date-time
  *       400:
  *         description: Bad request.
  *         content:
@@ -482,8 +500,6 @@ router.get('/ODEP/requests/:id/', RequestController.getOneRequest);
  *           schema:
  *             type: object
  *             properties:
- *               requestor:
- *                 type: string
  *               beginTimeSlot:
  *                 type: string
  *                 format: date-time
@@ -493,11 +509,13 @@ router.get('/ODEP/requests/:id/', RequestController.getOneRequest);
  *               validityLimit:
  *                 type: string
  *                 format: date-time
- *               transactionType:
+ *               paymentMethod:
  *                 type: string
  *                 enum:
- *                   - sale/purchase
- *                   - rent
+ *                   - total
+ *                   - periodic
+ *               paymentFrequency:
+ *                 type: number
  *               offerIds:
  *                 type: array
  *                 items:

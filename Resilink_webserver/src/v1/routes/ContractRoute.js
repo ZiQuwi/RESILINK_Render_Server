@@ -56,9 +56,6 @@ const contractController = require("../controllers/ContractController.js");
  *           type: string
  *           format: date-time
  *           description: "The date the contract was created"
- *         transactionType:
- *           type: string
- *           description: "The type of transaction for the contract"
  *         offerer:
  *           type: string
  *           description: "The ID of the offerer"
@@ -116,6 +113,48 @@ const contractController = require("../controllers/ContractController.js");
  *               type: number
  *               format: float
  *               description: "A percentage of the asset price for non-restitution"
+ */
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     ContractmeasurableByQuantityCase:
+ *       type: object
+ *       required:
+ *         - state
+ *       properties:
+ *         state:
+ *           type: string
+ *           description: "The new state of the contract"
+ *           enum:
+ *             - beginDelivery
+ *             - beginConsumption
+ *             - endDelivery
+ *             - endConsumption
+ *           example: endDelivery
+ *         quantity:
+ *           type: number
+ */
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     ContractmeasurableByTimeCase:
+ *       type: object
+ *       required:
+ *         - state
+ *       properties:
+ *         state:
+ *           type: string
+ *           description: "The new state of the contract"
+ *           enum:
+ *             - beginDelivery
+ *             - beginConsumption
+ *             - endDelivery
+ *             - endConsumption
+ *           example: endDelivery
  */
 
 /**
@@ -209,6 +248,8 @@ const contractController = require("../controllers/ContractController.js");
  *                  type: integer
  *                requestId:
  *                  type: integer
+ *                receivingAssetID:
+ *                  type: integer
  *     responses:
  *       200:
  *         description: Contract created and pre-payment executed successfully
@@ -285,8 +326,6 @@ router.post('/contracts/', contractController.createContract);
  *                   creationDate:
  *                     type: string
  *                     format: date-time
- *                   transactionType:
- *                     type: string
  *                   offerer:
  *                     type: string
  *                   requester:
@@ -398,8 +437,6 @@ router.get('/contracts/all', contractController.getAllContract);
  *                   creationDate:
  *                     type: string
  *                     format: date-time
- *                   transactionType:
- *                     type: string
  *                   offerer:
  *                     type: string
  *                   requester:
@@ -472,7 +509,7 @@ router.get('/contracts/owner/ongoing/:id/', contractController.getOwnerContractO
 
 /**
  * @swagger
- * /v1/contracts/owner/{id}:
+ * /v1/contracts/owner:
  *   get: 
  *     summary: Get contracts by owner (from ODEP)
  *     tags: [Contracts]
@@ -511,8 +548,6 @@ router.get('/contracts/owner/ongoing/:id/', contractController.getOwnerContractO
  *                   creationDate:
  *                     type: string
  *                     format: date-time
- *                   transactionType:
- *                     type: string
  *                   offerer:
  *                     type: string
  *                   requester:
@@ -581,7 +616,7 @@ router.get('/contracts/owner/ongoing/:id/', contractController.getOwnerContractO
  *                       type: string
  */
 
-router.get('/contracts/owner/:id/', contractController.getContractFromOwner);
+router.get('/contracts/owner', contractController.getContractFromOwner);
 
 /**
  * @swagger
@@ -622,8 +657,6 @@ router.get('/contracts/owner/:id/', contractController.getContractFromOwner);
  *                   creationDate:
  *                     type: string
  *                     format: date-time
- *                   transactionType:
- *                     type: string
  *                   offerer:
  *                     type: string
  *                   requester:
@@ -685,73 +718,13 @@ router.get('/contracts/:id/', contractController.getOneContract);
 
 /**
  * @swagger
- * /v1/contracts/immaterialContract/{id}:
- *   patch: 
- *     summary: update the state of a contract in case of immaterial asset and adjust the payment accordingly
- *     description: |
- *        In case of immaterial asset, this method allows the offerer to update the state of the contract to "beginDelivery". 
- *        Also, it allows him to update the state to "endDelivery" and giving the delivered quantity. It allows also the requestor to update the state to "endOfConsumption" and giving the consumed quantity. According to the min (delivered,consumed, matched) quantity, this method will adjust the payment by crediting the offerer balance and debiting the requestor balance.
- *     tags: [Contracts]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: string 
- *         required: true
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *                state:
- *                  type: string
- *                quantity:
- *                  type: number
- *     responses:
- *       200:
- *         description: Contract successfully updated
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- *       404:
- *         description: Contract not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.patch('/contracts/immaterialContract/:id/', contractController.patchContractImmaterial);
-
-/**
- * @swagger
- * /v1/contracts/purchaseMaterialContract/{id}:
+ * /v1/contracts/measurableByQuantityContract/{id}:
  *   patch: 
  *     summary: update the state of a purchase contract in case of material asset and adjust the payment accordingly (from ODEP)
  *     description: |
- *        In case of purchasing a material asset, this method allows the offerer to update the contract state to "assetDeliveredByTheOfferer".
- *        Furthermore, it allows the requestor to update the contract state to "assetReceivedByTheRequestor" or "assetNotReceivedByTheRequestor" in order to adjust the payment accordingly.
- *        If the asset is received, this method will proceed the payment. Otherwise, the requestor balance will be credited by the payed deposit.
+ *        In case of measurableByQuantity asset, this method allows the offerer to update the state of the contract to "beginDelivery".
+ *        Also, it allows him to update the state to "endDelivery" and giving the delivered quantity. It allows also the requestor to update the state to "beginConsumption" or "endConsumption" and giving 
+ *        the consumed quantity. According to the min (delivered,consumed, matched) quantity, this method will adjust the payment by crediting the offerer balance and debiting the requestor balance.
  *     tags: [Contracts]
  *     parameters:
  *       - in: path
@@ -800,17 +773,17 @@ router.patch('/contracts/immaterialContract/:id/', contractController.patchContr
  *                       type: string
  */
 
-router.patch('/contracts/purchaseMaterialContract/:id/', contractController.patchContractMaterialPurchase);
+router.patch('/contracts/measurableByQuantityContract/:id/', contractController.patchMeasurableByQuantityContract);
 
 /**
  * @swagger
- * /v1/contracts/rentMaterialContract/{id}:
+ * /v1/contracts/measurableByTimeContract/{id}:
  *   patch: 
  *     summary: update the state of a rent contract in case of material asset and adjust the payment accordingly (from ODEP)
  *     description: |
- *        In case of renting a material asset, this method allows, at first, the offerer to update the contract state to "assetDeliveredByTheOfferer".
- *        Also, it allows the requestor to update the state to "assetReceivedByTheRequestor" as well as to "assetReturnedByTheRequestor", when returning the asset.
- *        Finally, this method allows the offerer to update the state to "assetReturnedToTheOfferer" and giving the period of delay (if there is) and indicating if the asset is deteriored or not in order to adjust the payment according to these information.
+ *        In case of measurableByTime asset, this method allows the offerer to update the state of the contract to "beginDelivery".
+ *        Also, it allows him to update the state to "endDelivery" and giving the delivered quantity. It allows also the requestor to update the state to "endConsumption" and giving the consumed quantity. 
+ *        According to the min (delivered,consumed, matched) quantity, this method will adjust the payment by crediting the offerer balance and debiting the requestor balance.
  *     tags: [Contracts]
  *     parameters:
  *       - in: path
@@ -863,7 +836,7 @@ router.patch('/contracts/purchaseMaterialContract/:id/', contractController.patc
  *                       type: string
  */
 
-router.patch('/contracts/rentMaterialContract/:id/', contractController.patchContractMaterialRent);
+router.patch('/contracts/measurableByTimeContract/:id/', contractController.patchMeasurableByTimeContract);
 
 /**
  * @swagger

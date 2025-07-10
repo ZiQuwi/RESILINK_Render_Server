@@ -17,21 +17,16 @@ const router = express.Router();
  *       type: object
  *       required:
  *         - id
- *         - account
  *         - assetTypes
  *       properties:
  *         id:
  *           type: string
  *           description: "The unique identifier of the regulator"
- *         account:
- *           type: string
- *           description: "The assigned Quorum account"
  *         assetTypes:
  *           type: array
  *           description: "The asset types that the regulator can regulate"
  *           items:
  *             type: string
- *           example: ["material", "immaterial"]
  */
 
 /**
@@ -48,8 +43,6 @@ const router = express.Router();
  *             type: object
  *             properties:
  *               id: 
- *                  type: string
- *               account:
  *                  type: string
  *               assetTypes : 
  *                  type: array
@@ -117,8 +110,6 @@ router.post('/ODEP/regulators', regulatorController.createRegulator);
  *                  properties:
  *                     id: 
  *                       type: string
- *                     account:
- *                       type: string
  *                     assetTypes : 
  *                       type: array
  *                       items:
@@ -178,8 +169,6 @@ router.get('/ODEP/regulators/all', regulatorController.getAllRegulator);
  *               type: object
  *               properties:
  *                  id: 
- *                    type: string
- *                  account:
  *                    type: string
  *                  assetTypes : 
  *                    type: array

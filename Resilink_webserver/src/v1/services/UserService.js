@@ -1,6 +1,7 @@
 require('../loggers.js');
 const winston = require('winston');
 const config = require('../config.js');
+const { getDBError } = require('../errors.js'); 
 
 const getDataLogger = winston.loggers.get('GetDataLogger');
 const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
@@ -12,10 +13,10 @@ const Utils = require("./Utils.js");
 
 const _ipAdress = config.PATH_ODEP_USER;
 const _urlSignIn = 'auth/sign_in';
-const _urlCreateUser = 'users?provider=http%3A%2F%2Flocalhost%3A';
+const _urlCreateUser = 'users?provider=http%3A%2F%2F127.0.0.1%3A';
 /*
  * localhost indicates the machine address on which to save a user (place limited on each machine)
- * can have the value 22000 to 22004
+ * can have the value 22000 to 22006
  */
 const _localhost = ["22000","22001","22002","22003","22004","22005","22006"];
 
@@ -29,43 +30,62 @@ const functionGetTokenUser = async (body) => {
         );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'functionGetTokenUser', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error('error: Unauthorize', { from: 'functionGetTokenUser', dataReceived: data});
     } else if(response.status != 200) {
       getDataLogger.error('error retrieving user\'s token', { from: 'functionGetTokenUser', dataReceived: data, bodyUsed: body});
     } else {
       getDataLogger.info('success retrieving user\'s token', { from: 'functionGetTokenUser'});
     }
-    await User.getUser(data['_id'], data);
+    Utils.saveUserToken(data['userName'], data['accessToken']);
+    if (data['userName'] != "admin") {
+      await User.getUser(data['_id'], data);
+    }
     return [data, response.status];
 };
 
 //Creates an ODEP user and a Resilink user with the id of the ODEP user
-const createUserResilink = async (pathUserODEP, newUserRequest, token) => {
+const createUserResilink = async (pathUserODEP, body, token) => {
   try {
-    updateDataODEP.warn('data to send to ODEP', { from: 'createUserResilink', dataToSend: newUserRequest, tokenUsed: token == null ? "Token not given" : token});
-    //Deletes data not relevant to ODEP to create a user in ODEP
-    var phoneNumber;
-    if (newUserRequest['phoneNumber'] != null) {
-      phoneNumber = newUserRequest['phoneNumber'];
-      delete newUserRequest['phoneNumber'];
+    updateDataODEP.warn('data to send to ODEP', { from: 'createUserResilink', dataToSend: body, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
+
+    //Deletes data not relevant to ODEP to create a user and check validity of key's values
+    let phoneNumber;
+    let gps;
+
+    if (!Utils.containsNonRomanCharacters(body['userName']) || !Utils.containsNonRomanCharacters(body['password'])) {
+      return [{"message": "userName or password are not in roman caracters"}, 405]
     }
+
+    if (body['phoneNumber'] != null && body['phoneNumber'] != "" && !Utils.isNumeric(body['phoneNumber'])) {
+      return [{message: "phoneNumber is not null and is invalid. Set it to null or use numbers"}, 402]
+    } else {
+      phoneNumber = body['phoneNumber'] ?? "";
+      delete body['phoneNumber'];
+    }
+    if (body['gps'] != null && body['gps'] != "" && !Utils.isValidGeographicalPoint(body['gps'])) {
+      return [{message: "gps is not null and is invalid. Set it to null or a geographicalpoint"}, 402]
+    } else {
+      gps = body['gps'] ?? "";
+      delete body['gps'];
+    }
+
     
-    const findUserUserName = await getUserByUsername(pathUserODEP, newUserRequest['userName'], token);
+    const findUserUserName = await getUserByUsername(pathUserODEP, body['userName'], token);
 
     if(findUserUserName[1] == 401) {
-      updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: findUserUserName[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: findUserUserName[0],username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
       return findUserUserName;
     } else if(findUserUserName[1] == 200) {
-      updateDataODEP.error('error email already taken in ODEP', { from: 'createUserResilink', dataReceived: findUserUserName[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error email already taken in ODEP', { from: 'createUserResilink', dataReceived: findUserUserName[0], username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
       return [{'message': 'userName already taken'}, 404]
     }
 
-    const findUserMail = await getUserByEmail(pathUserODEP, newUserRequest['email'], token);
+    const findUserMail = await getUserByEmail(pathUserODEP, body['email'], token);
     if(findUserMail[1] == 401) {
-      updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: findUserMail[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: findUserMail[0], username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
       return findUserMail;
     } else if(findUserMail[1] == 200) {
-      updateDataODEP.error('error email already taken in ODEP', { from: 'createUserResilink', dataReceived: findUserMail[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error email already taken in ODEP', { from: 'createUserResilink', dataReceived: findUserMail[0], username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
       return [{'message': 'email already taken'}, 404]
     }
 
@@ -73,86 +93,90 @@ const createUserResilink = async (pathUserODEP, newUserRequest, token) => {
       "POST",
       _ipAdress + _urlCreateUser + _localhost[0],  
       headers = {'Content-Type': 'application/json', 'Authorization': token.replace(/^Bearer /, ''), 'accept': 'application/json'},
-      newUserRequest
+      body
     );
     
-    //Calls the function to create a user in RESILINK DB if no errors caught
+    /*
+     * Create a user in ODEP DB
+     * Call this function again with a different localhost until you find one, or run through them all.
+     */
     const data = await Utils.streamToJSON(response.body);
     let currentIndex = 0;
     if(response.status == 401 && data === "string") {
-      updateDataODEP.error('No available accounts, trying next localhost', {from: 'createUser', errorMessage: data, tokenUsed: token.replace(/^Bearer\s+/i, ''), triedLocalhost: currentLocalhost});
+      updateDataODEP.error('No available accounts, trying next localhost', {from: 'createUser', errorMessage: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token", triedLocalhost: currentLocalhost});
       let isProviderGood = false;
       while (currentIndex < 8 && isProviderGood == false) {
         const response = await Utils.fetchJSONData(
           "POST",
           _ipAdress + _urlCreateUser + _localhost[currentIndex],  
           headers = {'Content-Type': 'application/json', 'Authorization': token.replace(/^Bearer /, ''), 'accept': 'application/json'},
-          newUserRequest
+          body
         );
         const data = await Utils.streamToJSON(response.body);
         if(response.status == 401 && data === "string") {
-          updateDataODEP.error('No available accounts, trying next localhost', {from: 'createUser', errorMessage: data, tokenUsed: token.replace(/^Bearer\s+/i, ''), triedLocalhost: currentLocalhost});
+          updateDataODEP.error('No available accounts, trying next localhost', {from: 'createUser', errorMessage: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token", triedLocalhost: currentLocalhost});
         } else {
           isProviderGood = true;
         }
       }
     } else if (response.status == 401) {
-      updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error: Unauthorize', { from: 'createUserResilink', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else if(response.status != 200 && response.status != 201) {
-      updateDataODEP.error('error creating user in ODEP', { from: 'createUserResilink', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error creating user in ODEP', { from: 'createUserResilink', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else {
-      updateDataODEP.info('success creating user in ODEP', { from: 'createUserResilink', tokenUsed: token.replace(/^Bearer\s+/i, '')});
-      if (phoneNumber != undefined) {
-        data['phoneNumber'] = phoneNumber;
-      }
+      updateDataODEP.info('success creating user in ODEP', { from: 'createUserResilink', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
+      data['phoneNumber'] = phoneNumber;
+      data['gps'] = gps;
       await User.newUser(data);
     }
-    data['password'] = newUserRequest['password'];
+    data['password'] = body['password'];
     return [data, response.status];
   } catch (e) {
-    updateDataODEP.error('error creating user in ODEP or local Resilink DB', { from: 'createUserResilink', error: e, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('error creating user in ODEP or local Resilink DB', { from: 'createUserResilink', error: e, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw(e)
   }
 };
 
 //Creates a ODEP user
-const createUser = async (url, newUserRequest, token) => {
+const createUser = async (url, body, token) => {
   try {
     let currentIndex = 0;
     const response = await Utils.fetchJSONData(
       "POST",
       _ipAdress + _urlCreateUser + _localhost[currentIndex],  
       headers = {'Content-Type': 'application/json', 'Authorization': token.replace(/^Bearer /, ''), 'accept': 'application/json'},
-      newUserRequest
+      body
     );
     const data = await Utils.streamToJSON(response.body);
+
+
     if(response.status == 401 && data === "string") {
-      updateDataODEP.error('No available accounts, trying next localhost', {from: 'createUser', errorMessage: data, tokenUsed: token.replace(/^Bearer\s+/i, ''), triedLocalhost: currentLocalhost});
+      updateDataODEP.error('No available accounts, trying next localhost', {from: 'createUser', errorMessage: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token", triedLocalhost: currentLocalhost});
       let isProviderGood = false;
       while (currentIndex < 8 && isProviderGood == false) {
         const response = await Utils.fetchJSONData(
           "POST",
           _ipAdress + _urlCreateUser + _localhost[currentIndex],  
           headers = {'Content-Type': 'application/json', 'Authorization': token.replace(/^Bearer /, ''), 'accept': 'application/json'},
-          newUserRequest
+          body
         );
         const data = await Utils.streamToJSON(response.body);
         if(response.status == 401 && data === "string") {
-          updateDataODEP.error('No available accounts, trying next localhost', {from: 'createUser', errorMessage: data, tokenUsed: token.replace(/^Bearer\s+/i, ''), triedLocalhost: currentLocalhost});
+          updateDataODEP.error('No available accounts, trying next localhost', {from: 'createUser', errorMessage: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token", triedLocalhost: currentLocalhost});
         } else {
           isProviderGood = true;
         }
       }
     } else if (response.status == 401 && "message" in data){
-      updateDataODEP.error('error: Unauthorize', { from: 'createUser', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error: Unauthorize', { from: 'createUser', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else if(response.status != 200) {
-      updateDataODEP.error('error creating user in ODEP', { from: 'createUser', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error creating user in ODEP', { from: 'createUser', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else {
-      updateDataODEP.info('success creating user in ODEP', { from: 'createUser', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.info('success creating user in ODEP', { from: 'createUser', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     }
     return [data, response.status];
   } catch (e) {
-    updateDataODEP.error('error creating user in ODEP or local Resilink DB', { from: 'createUser', error: e, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('error creating user in ODEP or local Resilink DB', { from: 'createUser', error: e, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw(e)
   }
 };
@@ -160,7 +184,7 @@ const createUser = async (url, newUserRequest, token) => {
 //Deletes an ODEP user
 const deleteUser = async (url, id, token) => {
   try {
-    deleteDataODEP.warn('id to send to ODEP', { from: 'deleteUser', id: id, tokenUsed: token == null ? "Token not given" : token});
+    deleteDataODEP.warn('id to send to ODEP', { from: 'deleteUser', id: id, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     const response = await Utils.fetchJSONData(
       "DELETE",
       url + id, 
@@ -169,15 +193,15 @@ const deleteUser = async (url, id, token) => {
        'Authorization': token},
     );
     if(response.status == 401) {
-      deleteDataODEP.error('error: Unauthorize', { from: 'deleteUser', tokenUsed: token == null ? "Token not given" : token});
+      deleteDataODEP.error('error: Unauthorize', { from: 'deleteUser', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else if(response.status != 202) {
-      deleteDataODEP.error('error deleting one user', { from: 'deleteUser', tokenUsed: token});
+      deleteDataODEP.error('error deleting one user', { from: 'deleteUser', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else {
-      deleteDataODEP.info('success deleting one user', { from: 'deleteUser', tokenUsed: token});
+      deleteDataODEP.info('success deleting one user', { from: 'deleteUser', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     }
     return [{message: "user correctly deleted"}, response.status];
   } catch (e) {
-    deleteDataODEP.error("error deleting a user account in ODEP DB", {from: 'deleteUser', dataReceiver: e.message});
+    deleteDataODEP.error("error deleting a user account in ODEP DB", {from: 'deleteUser', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw e;
   }
 }
@@ -186,17 +210,17 @@ const deleteUser = async (url, id, token) => {
 const deleteUserODEPRESILINK = async (url, id, token) => {
   try {
     //Calls the function to delete a user in ODEP 
-    const delProsODEP = await deleteUser(url, id, token);
-    if (delProsODEP[1] != 202) {
-      deleteDataODEP.error("error deleting a user account in ODEP", {from: 'deleteUserODEPRESILINK', dataReceiver: delProsODEP[0]});
-      return delProsODEP;
+    const delUserODEP = await deleteUser(url, id, token);
+    if (delUserODEP[1] != 202) {
+      deleteDataODEP.error("error deleting a user account in ODEP", {from: 'deleteUserODEPRESILINK', dataReceiver: delUserODEP[0]});
+      return delUserODEP;
     }
     //Creates a user in RESILINK DB
     await User.deleteUser(id);
     deleteDataResilink.info("success deleting a user in RESILINK and ODEP DB", {from: 'deleteUserODEPRESILINK'});
     return [{message: id + " user account correctly removed in RESILINK and ODEP DB"}, 200];
   } catch (e) {
-    deleteDataResilink.error("error deleting a user account in RESILINK and ODEP DB", {from: 'deleteUserODEPRESILINK', dataReceiver: e.message});
+    deleteDataResilink.error("error deleting a user account in RESILINK and ODEP DB", {from: 'deleteUserODEPRESILINK', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw e;
   }
 }
@@ -204,24 +228,24 @@ const deleteUserODEPRESILINK = async (url, id, token) => {
 //Retrieves a user by id in ODEP
 const getUserById = async (url, id, token) => {
   try {
-    getDataLogger.warn('id to send to ODEP', { from: 'getUserById', id: id, tokenUsed: token == null ? "Token not given" : token});
+    getDataLogger.warn('id to send to ODEP', { from: 'getUserById', id: id, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     const response = await Utils.fetchJSONData(
       "GET",
       url + id, 
       headers = {'accept': 'application/json',
-       'Authorization': token.replace(/^Bearer\s+/i, '')},
+       'Authorization': token},
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getUserById', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getUserById', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else if(response.status != 200) {
-      getDataLogger.error('error accessing one user by ID ' + id, { from: 'getUserById', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error('error accessing one user by ID ' + id, { from: 'getUserById', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else {
-      getDataLogger.info('success accessing one user by ID', { from: 'getUserById', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.info('success accessing one user by ID', { from: 'getUserById', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     }
     return [data, response.status];
   } catch (e) {
-    getDataLogger.error("error accessing ODEP", {from: 'getUserById', dataReceiver: e.message});
+    getDataLogger.error("error accessing ODEP", {from: 'getUserById', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw e;
   }
 }
@@ -237,15 +261,15 @@ const getAllUser = async (url, token) => {
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getAllUser', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getAllUser', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else if(response.status != 200) {
-      getDataLogger.error('error accessing all user' + id, { from: 'getAllUser', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error('error accessing all user', { from: 'getAllUser', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else {
-      getDataLogger.info('success accessing all user', { from: 'getAllUser', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.info('success accessing all user', { from: 'getAllUser', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     }
     return [data, response.status];
   } catch (e) {
-    getDataLogger.error("error accessing ODEP", {from: 'getAllUser', dataReceiver: e.message});
+    getDataLogger.error("error accessing ODEP", {from: 'getAllUser', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw e;
   }
 }
@@ -261,16 +285,17 @@ const getAllUserCustom = async (url, token) => {
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getAllUserCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getAllUserCustom', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else if(response.status != 200) {
-      getDataLogger.error('error accessing all user' + id, { from: 'getAllUserCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+          console.log("aaa");
+      getDataLogger.error('error accessing all user', { from: 'getAllUserCustom', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else {
-      getDataLogger.info('success accessing all user', { from: 'getAllUserCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.info('success accessing all user', { from: 'getAllUserCustom', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
       await User.getAllUser(data);
     }
     return [data, response.status];
   } catch (e) {
-    getDataLogger.error("error accessing ODEP", {from: 'getAllUserCustom', dataReceiver: e.message});
+    getDataLogger.error("error accessing ODEP", {from: 'getAllUserCustom', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw e;
   }
 }
@@ -278,7 +303,7 @@ const getAllUserCustom = async (url, token) => {
 //Retrieves a user by email
 const getUserByEmail = async (url, email, token) => {
   try {
-    getDataLogger.warn('email to send to ODEP', { from: 'getUserByEmail', email: email, tokenUsed: token == null ? "Token not given" : token});
+    getDataLogger.warn('email to send to ODEP', { from: 'getUserByEmail', email: email, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     const response = await Utils.fetchJSONData(
       "GET",
       url + "getUserByEmail/" + email, 
@@ -287,15 +312,15 @@ const getUserByEmail = async (url, email, token) => {
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getUserByEmail', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getUserByEmail', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else if(response.status != 200) {
-      getDataLogger.error('error accessing one user by email ' + email, { from: 'getUserByEmail', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error('error accessing one user by email ' + email, { from: 'getUserByEmail', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else {
-      getDataLogger.info('success accessing one user by email', { from: 'getUserByEmail', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.info('success accessing one user by email', { from: 'getUserByEmail', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     }
     return [data, response.status];
   } catch (e) {
-    getDataLogger.error("error accessing ODEP", {from: 'getUserByEmail', dataReceiver: e.message});
+    getDataLogger.error("error accessing ODEP", {from: 'getUserByEmail', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw e;
   }
 }
@@ -303,7 +328,7 @@ const getUserByEmail = async (url, email, token) => {
 //Retrieves a user by email
 const getUserByEmailCustom = async (url, email, token) => {
   try {
-    getDataLogger.warn('email to send to ODEP', { from: 'getUserByEmailCustom', email: email, tokenUsed: token == null ? "Token not given" : token});
+    getDataLogger.warn('email to send to ODEP', { from: 'getUserByEmailCustom', email: email, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     const response = await Utils.fetchJSONData(
       "GET",
       url + "getUserByEmail/" + email, 
@@ -312,16 +337,16 @@ const getUserByEmailCustom = async (url, email, token) => {
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getUserByEmailCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getUserByEmailCustom', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else if(response.status != 200) {
-      getDataLogger.error('error accessing one user by email ' + email, { from: 'getUserByEmailCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error('error accessing one user by email ' + email, { from: 'getUserByEmailCustom', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else {
-      getDataLogger.info('success accessing one user by email', { from: 'getUserByEmailCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.info('success accessing one user by email', { from: 'getUserByEmailCustom', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     }
-    await User.getUser(data["id"], data);
+    await User.getUser(data["_id"], data);
     return [data, response.status];
   } catch (e) {
-    getDataLogger.error("error accessing ODEP", {from: 'getUserByEmailCustom', dataReceiver: e.message});
+    getDataLogger.error("error accessing ODEP", {from: 'getUserByEmailCustom', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw e;
   }
 }
@@ -329,7 +354,7 @@ const getUserByEmailCustom = async (url, email, token) => {
 //Retrieves a user by username
 const getUserByUsername = async (url, username, token) => {
   try {
-    getDataLogger.warn('username to send to ODEP', { from: 'getUserByUsername', username: username, tokenUsed: token == null ? "Token not given" : token});
+    getDataLogger.warn('username to send to ODEP', { from: 'getUserByUsername', username: username, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     const response = await Utils.fetchJSONData(
       "GET",
       url + "getUserByUserName/" + username, 
@@ -340,15 +365,15 @@ const getUserByUsername = async (url, username, token) => {
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getUserByUsername', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getUserByUsername', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else if(response.status != 200) {
-      getDataLogger.error('error accessing one user by username ' + username, { from: 'getUserByUsername', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error('error accessing one user by username ' + username, { from: 'getUserByUsername', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else {
-      getDataLogger.info('success accessing one user by username', { from: 'getUserByUsername', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.info('success accessing one user by username', { from: 'getUserByUsername', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     }
     return [data, response.status];
   } catch (e) {
-    getDataLogger.error("error accessing ODEP", {from: 'getUserByUsername', dataReceiver: e.message});
+    getDataLogger.error("error accessing ODEP", {from: 'getUserByUsername', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw e;
   }
 }
@@ -356,7 +381,7 @@ const getUserByUsername = async (url, username, token) => {
 //Retrieves a user by username
 const getUserByUsernameCustom = async (url, username, token) => {
   try {
-    getDataLogger.warn('username to send to ODEP', { from: 'getUserByUsernameCustom', username: username, tokenUsed: token == null ? "Token not given" : token});
+    getDataLogger.warn('username to send to ODEP', { from: 'getUserByUsernameCustom', username: username, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     const response = await Utils.fetchJSONData(
       "GET",
       url + "getUserByUserName/" + username, 
@@ -367,17 +392,21 @@ const getUserByUsernameCustom = async (url, username, token) => {
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getUserByUsernameCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getUserByUsernameCustom', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else if(response.status != 200) {
-      getDataLogger.error('error accessing one user by username ' + username, { from: 'getUserByUsernameCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error('error accessing one user by username ' + username, { from: 'getUserByUsernameCustom', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else {
-      getDataLogger.info('success accessing one user by username', { from: 'getUserByUsernameCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.info('success accessing one user by username', { from: 'getUserByUsernameCustom', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
+      await User.getUser(data["_id"], data);
     }
-    await User.getUser(data["id"], data);
-
     return [data, response.status];
   } catch (e) {
-    getDataLogger.error("error accessing ODEP", {from: 'getUserByUsernameCustom', dataReceiver: e.message});
+    if (e instanceof getDBError) {
+      e.message = "user does not exist in RESILINK database but exist in ODEP"
+      getDataLogger.error("error finding user", {from: 'getUserByUsernameCustom', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
+    } else {
+      getDataLogger.error("error accessing ODEP", {from: 'getUserByUsernameCustom', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
+    }
     throw e;
   }
 }
@@ -385,27 +414,27 @@ const getUserByUsernameCustom = async (url, username, token) => {
 //Updates user profile in ODEP
 const updateUser = async (url, id, body, token) => {
   try {
-    getDataLogger.warn('username to send to ODEP', { from: 'updateUser', data: {body: body, id: id}, tokenUsed: token == null ? "Token not given" : token});
+    getDataLogger.warn('username to send to ODEP', { from: 'updateUser', data: {body: body, id: id}, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     const response = await Utils.fetchJSONData(
       "PUT",
       url + id, 
       headers = {
        'accept': 'application/json',
-       'Authorization': token.replace(/^Bearer\s+/i, ''),
+       'Authorization': token,
        'Content-Type': 'application/json'},
        body
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'updateUser', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'updateUser', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else if(response.status != 200) {
-      getDataLogger.error('error updating one user' + username, { from: 'updateUser', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error('error updating one user' + username, { from: 'updateUser', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else {
-      getDataLogger.info('success updating one user', { from: 'updateUser', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.info('success updating one user', { from: 'updateUser', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     }
     return [data, response.status];
   } catch (e) {
-    getDataLogger.error("error accessing ODEP", {from: 'updateUser', dataReceiver: e.message});
+    getDataLogger.error("error accessing ODEP", {from: 'updateUser', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw e;
   }
 }
@@ -416,31 +445,48 @@ const updateUserCustom = async (url, id, body, token) => {
   try {
 
     //Deletes data not relevant to ODEP to update a user in ODEP
-    var phoneNumber;
-    if (body['phoneNumber'] != null) {
-      phoneNumber = body['phoneNumber'];
+    let phoneNumber;
+    let gps;
+
+    if (!Utils.containsNonRomanCharacters(body['userName']) || !Utils.containsNonRomanCharacters(body['password'])) {
+      updateDataODEP.error('userName or password are not in roman caracters ' + username, { from: 'updateUserCustom', dataReceived: userODEP[0], username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
+      return [{"message": "userName or password are not in roman caracters"}, 405]
+    }
+
+    if (body['phoneNumber'] != null && body['phoneNumber'] != "" && !Utils.isNumeric(body['phoneNumber'])) {
+      updateDataODEP.error('phoneNumber is not null and is invalid. Set it to null or use numbers', { from: 'updateUserCustom', dataReceived: userODEP[0], username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
+      return [{message: "phoneNumber is not null and is invalid. Set it to null or use numbers"}, 402]
+    } else {
+      phoneNumber = body['phoneNumber'] ?? "";
       delete body['phoneNumber'];
+    }
+    if (body['gps'] != null && body['gps'] != "" && !Utils.isValidGeographicalPoint(body['gps'])) {
+      updateDataODEP.error('gps is not null and is invalid. Set it to null or a geographicalpoint', { from: 'updateUserCustom', dataReceived: userODEP[0], username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
+      return [{message: "gps is not null and is invalid. Set it to null or a geographicalpoint"}, 402]
+    } else {
+      gps = body['gps'] ?? "";
+      delete body['gps'];
     }
 
     const userODEP = await updateUser(url, id, body, token);
     if(userODEP[1] == 401) {
-      updateDataODEP.error('error: Unauthorize', { from: 'updateUserCustom', dataReceived: userODEP[0], tokenUsed: token == null ? "Token not given" : token});
+      updateDataODEP.error('error: Unauthorize', { from: 'updateUserCustom', dataReceived: userODEP[0], username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
       return userODEP;
     } else if(userODEP[1] != 200) {
-      updateDataODEP.error('error accessing one user by username ' + username, { from: 'updateUserCustom', dataReceived: userODEP[0], tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error accessing one user by username ' + username, { from: 'updateUserCustom', dataReceived: userODEP[0], username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
       return userODEP;
     } else {
-      updateDataODEP.info('success accessing one user by username', { from: 'updateUserCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.info('success accessing one user by username', { from: 'updateUserCustom', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     }
 
     //Returns RESILINK data to map and calls function to update user in RESILINK db
-    if (phoneNumber != undefined) {
-      body['phoneNumber'] = phoneNumber;
-    }
+    body['phoneNumber'] = phoneNumber;
+    body['gps'] = gps;
+
     await User.updateUser(id, body);
     return [body, userODEP[1]];
   } catch (e) {
-    getDataLogger.error("error accessing ODEP", {from: 'updateUserCustom', dataReceiver: e.message});
+    getDataLogger.error("error accessing ODEP", {from: 'updateUserCustom', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw e;
   }
 }
@@ -450,19 +496,17 @@ const getUserByIdCustom = async (url, id, token) => {
   try {
     const userODEP = await getUserById(url, id, token);
     if(userODEP[1] == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getUSerByIdCustom', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
-      return userODEP;
+      getDataLogger.error('error: Unauthorize', { from: 'getUSerByIdCustom', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else if(userODEP[1] != 200) {
-      getDataLogger.error('error accessing one user by username ' + username, { from: 'getUSerByIdCustom', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
-      return userODEP;
+      getDataLogger.error('error accessing one user by username ' + username, { from: 'getUSerByIdCustom', dataReceived: data, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     } else {
-      getDataLogger.info('success accessing one user by username', { from: 'getUSerByIdCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.info('success accessing one user by username', { from: 'getUSerByIdCustom', username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     }
 
     await User.getUser(id, userODEP[0]);
-    return [userODEP[0], response.status];
+    return userODEP;
   } catch (e) {
-    getDataLogger.error("error accessing ODEP", {from: 'getUSerByIdCustom', dataReceiver: e.message});
+    getDataLogger.error("error accessing ODEP", {from: 'getUSerByIdCustom', dataReceiver: e.message, username: Utils.getUserIdFromToken(token) ?? "no user associated with the token"});
     throw e;
   }
 }

@@ -1,6 +1,7 @@
 // In src/index.js 
 
 const bodyParser = require("body-parser");
+const path = require("path");
 const cors = require('cors');
 require('dotenv').config({ path: './Resilink_webserver/RESILINK_Server.env' }); //Change the name for your .env file
 const config = require('./v1/config.js');
@@ -30,6 +31,8 @@ app.use(morgan('dev'));
 
 // Add CORS middleware
 app.use(cors());
+
+app.use('/public', express.static(path.join(__dirname, '..', 'public')));
 
 // --------------------------------------------------
 

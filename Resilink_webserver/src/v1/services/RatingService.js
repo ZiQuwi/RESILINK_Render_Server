@@ -6,18 +6,21 @@ const updateDataODEP = winston.loggers.get('UpdateDataODEPLogger');
 const deleteDataODEP = winston.loggers.get('DeleteDataODEPLogger');
 
 const RatingDB = require("../database/RatingDB.js");
+const Utils = require("./Utils.js");
 
 // Create a rating 
 const createRating = async (body, token) => {
     try {
-        if (token === null || token === "") {
-            return [{message: "token is empty"}, 401];
+        const username = Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, ''))
+        if (username == null) {
+            getDataLogger.error("token is not registered", {from: 'createRating', dataReceiver: e, username: username ?? "no user associated with the token"});
+            return [{message: "token is not registered"}, 401];
         }
         const dataFinal = await RatingDB.createNewRating(body['userId'], body['rating']);
-        getDataLogger.info("success creating a rating for user " + body['userId'], {from: 'createRating'});
+        getDataLogger.info("success creating a rating for user " + body['userId'], {from: 'createRating', username: username ?? "no user associated with the token"});
         return [dataFinal, 200];
     } catch (e) {
-        getDataLogger.error("error creating a rating", {from: 'createRating', dataReceiver: e});
+        getDataLogger.error("error creating a rating", {from: 'createRating', dataReceiver: e, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
         throw e;
     }
 };
@@ -25,14 +28,16 @@ const createRating = async (body, token) => {
 // Retrieve all ratings 
 const getAllRating = async (token) => {
     try {
-        if (token === null || token === "") {
-            return [{message: "token is empty"}, 401];
+        const username = Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, ''))
+        if (username == null) {
+            getDataLogger.error("token is not registered", {from: 'createRating', dataReceiver: e, username: username ?? "no user associated with the token"});
+            return [{message: "token is not registered"}, 401];
         }
         const dataFinal = await RatingDB.getAllRating();
-        getDataLogger.info("success retrieving all ratings", {from: 'getAllRating'});
+        getDataLogger.info("success retrieving all ratings", {from: 'getAllRating', username: username ?? "no user associated with the token"});
         return [dataFinal, 200];
     } catch (e) {
-        getDataLogger.error("error retrieving all ratings", {from: 'getAllRating', dataReceiver: e});
+        getDataLogger.error("error retrieving all ratings", {from: 'getAllRating', dataReceiver: e, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
         throw e;
     }
 };
@@ -40,14 +45,16 @@ const getAllRating = async (token) => {
 // Retrieve a rating by its user id  
 const getIdRating = async (userId, token) => {
     try {
-        if (token === null || token === "") {
-            return [{message: "token is empty"}, 401];
+        const username = Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, ''))
+        if (username == null) {
+            getDataLogger.error("token is not registered", {from: 'createRating', dataReceiver: e, username: username ?? "no user associated with the token"});
+            return [{message: "token is not registered"}, 401];
         }
         const dataFinal = await RatingDB.getRatingByUserId(userId);
-        getDataLogger.info("success retrieving a user rating", {from: 'getIdRating'});
+        getDataLogger.info("success retrieving a user rating", {from: 'getIdRating', username: username ?? "no user associated with the token"});
         return [dataFinal, 200];
     } catch (e) {
-        getDataLogger.error("error retrieving a user rating", {from: 'getIdRating', dataReceiver: e});
+        getDataLogger.error("error retrieving a user rating", {from: 'getIdRating', dataReceiver: e, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
         throw e;
     }
 };
@@ -55,8 +62,10 @@ const getIdRating = async (userId, token) => {
 // Retrieve the average of all ratings  
 const getAverageRating = async (token) => {
     try {
-        if (token === null || token === "") {
-            return [{message: "token is empty"}, 401];
+        const username = Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, ''))
+        if (username == null) {
+            getDataLogger.error("token is not registered", {from: 'createRating', dataReceiver: e, username: username ?? "no user associated with the token"});
+            return [{message: "token is not registered"}, 401];
         }
         const data = await RatingDB.getAllRating();
 
@@ -71,10 +80,10 @@ const getAverageRating = async (token) => {
         }
         const averageRating = count > 0 ? totalRating / count : 0;
 
-        getDataLogger.info("success retrieving the average of all rating", {from: 'getAverageRating'});
+        getDataLogger.info("success retrieving the average of all rating", {from: 'getAverageRating', username: username ?? "no user associated with the token"});
         return [{"averageRating": averageRating}, 200];
     } catch (e) {
-        getDataLogger.error("error retrieving the average of all rating", {from: 'getAverageRating', dataReceiver: e});
+        getDataLogger.error("error retrieving the average of all rating", {from: 'getAverageRating', dataReceiver: e, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
         throw e;
     }
 };
@@ -82,16 +91,18 @@ const getAverageRating = async (token) => {
 // Update a rating 
 const putRating = async (userId, body, token) => {
     try {
-        if (token === null || token === "") {
-            return [{message: "token is empty"}, 401];
+        const username = Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, ''))
+        if (username != "admin" && username!= userId) {
+            getDataLogger.error("not admin or owner of rating", {from: 'createRating', dataReceiver: e, username: username ?? "no user associated with the token"});
+            return [{message: "not admin or owner of rating"}, 401];
         }
-    
+        
         await RatingDB.updateRating(userId, body['rating'])
 
-        updateDataODEP.info("success retrieving the average of all rating", {from: 'putRating'});
+        updateDataODEP.info("success retrieving the average of all rating", {from: 'putRating', username: username ?? "no user associated with the token"});
         return [{"message": "update successfull"}, 200];
     } catch (e) {
-        updateDataODEP.error("error updating a rating", {from: 'putRating', dataReceiver: e});
+        updateDataODEP.error("error updating a rating", {from: 'putRating', dataReceiver: e, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
         throw e;
     }
 };
@@ -99,16 +110,18 @@ const putRating = async (userId, body, token) => {
 // Update a rating 
 const deleteRating = async (userID, token) => {
     try {
-        if (token === null || token === "") {
-            return [{message: "token is empty"}, 401];
+        const username = Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, ''))
+        if (username != "admin" && username != userID) {
+            getDataLogger.error("not admin or owner of rating", {from: 'createRating', dataReceiver: e, username: username ?? "no user associated with the token"});
+            return [{message: "not admin or owner of rating"}, 401];
         }
         
         await RatingDB.deleteRatingByUserId(userID);
 
-        deleteDataODEP.info("success deleting rating from user " + userID, {from: 'getAverageRating'});
+        deleteDataODEP.info("success deleting rating from user " + userID, {from: 'deleteRating', username: username ?? "no user associated with the token"});
         return [{"message": "delete successfull"}, 200];
     } catch (e) {
-        deleteDataODEP.error("error retrieving the average of all rating", {from: 'getAverageRating', dataReceiver: e});
+        deleteDataODEP.error("error retrieving the average of all rating", {from: 'deleteRating', dataReceiver: e, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
         throw e;
     }
 };

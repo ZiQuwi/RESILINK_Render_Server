@@ -12,7 +12,7 @@ const _pathRequestODEP = config.PATH_ODEP_REQUEST;
 
 const createRequest = async (req, res) => {
     try {
-      const response = await RequestService.createRequest(_pathRequestODEP, req.body, req.header('Authorization'));
+      const response = await RequestService.createRequest(_pathRequestODEP, req.body, req.header('Authorization') ?? "");
       res.status(response[1]).send(response[0]);
     } catch (error) {
       updateDataODEP.error('Catched error', { from: 'createRequest', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -22,7 +22,7 @@ const createRequest = async (req, res) => {
 
 const getOneRequest = async (req, res) => {
     try {
-      const response = await RequestService.getOneRequest(_pathRequestODEP, req.params.id, req.header('Authorization'));
+      const response = await RequestService.getOneRequest(_pathRequestODEP, req.params.id, req.header('Authorization') ?? "");
       res.status(response[1]).send(response[0]);
     } catch (error) {
       getDataLogger.error('Catched error', { from: 'getOneRequest', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -32,7 +32,7 @@ const getOneRequest = async (req, res) => {
 
 const getAllRequest = async (req, res) => {
     try {
-      const response = await RequestService.getAllRequest(_pathRequestODEP, req.header('Authorization'));
+      const response = await RequestService.getAllRequest(_pathRequestODEP, req.header('Authorization') ?? "");
       res.status(response[1]).send(response[0]);
     } catch (error) {
       getDataLogger.error('Catched error', { from: 'getAllRequest', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -42,7 +42,7 @@ const getAllRequest = async (req, res) => {
 
 const putRequest = async (req, res) => {
     try {
-      const response = await RequestService.putRequest(_pathRequestODEP, req.body, req.params.id, req.header('Authorization'));
+      const response = await RequestService.putRequest(_pathRequestODEP, req.body, req.params.id, req.header('Authorization') ?? "");
       res.status(response[1]).send(response[0]);
     } catch (error) {
       updateDataODEP.error('Catched error', { from: 'putRequest', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});
@@ -52,7 +52,7 @@ const putRequest = async (req, res) => {
 
 const deleteRequest = async (req, res) => {
     try {
-      const response = await RequestService.deleteRequest(_pathRequestODEP, req.params.id,req.header('Authorization'));
+      const response = await RequestService.deleteRequest(_pathRequestODEP, req.params.id,req.header('Authorization') ?? "");
       res.status(response[1]).send(response[0]);
     } catch (error) {
       deleteDataODEP.error('Catched error', { from: 'deleteRequest', data: error, tokenUsed: req.header('Authorization') != null ? req.header('Authorization').replace(/^Bearer\s+/i, '') : "token not found"});

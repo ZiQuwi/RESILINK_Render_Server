@@ -32,10 +32,10 @@ const getAllOfferForResilinkCustom = async (url, token) => {
 
     //Checks that none of the functions are error returns by ODEP
     if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getAllOfferForResilinkCustom', tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getAllOfferForResilinkCustom', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [allAssetType[1] == 401 ? allAssetType[0] : allAssetResilink[1] == 401 ? allAssetResilink[0] : data, 401];
     } else if(allOffer.status != 200 || allAssetType[1] != 200 || allAssetResilink[1] != 200) {
-      getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getAllOfferFilteredCustom', dataOffer: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getAllOfferFilteredCustom', dataOffer: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
     };
 
@@ -45,20 +45,23 @@ const getAllOfferForResilinkCustom = async (url, token) => {
       if (
         new Date(element['validityLimit']) > new Date() && 
         ( allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] !== null ?  
-          (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
+          (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "measurableByQuantity" ? 
           (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true) : true) : false
         ) 
       ) 
       {
         await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
-        allOfferResilink[element['offerId'].toString()] = element;
+        allOfferResilink[element['id'].toString()] = element;
       }
     }
-    getDataLogger.info("successful data retrieval", { from: 'getAllOfferFilteredCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    getDataLogger.info("successful data retrieval", { from: 'getAllOfferFilteredCustom', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     return [allOfferResilink, allOffer.status];
 };
 
-//Retrieves all valid and suggested offers for sale or lease in ODEP for RESILINK
+/*Retrieves all valid and suggested offers for sale or lease in ODEP for RESILINK
+ *Suggestions are only classic offers randomly selected from the valid ones.
+ *A recommendation system is to be implemented instead.
+ */
 const getSuggestedOfferForResilinkCustom = async (url, owner, token) => {
 
   //Retrieves all data needed to confirm the offerœs validity
@@ -74,10 +77,10 @@ const getSuggestedOfferForResilinkCustom = async (url, owner, token) => {
 
     //Checks that none of the functions are error returns by ODEP
     if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getSuggestedOfferForResilinkCustom', tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getSuggestedOfferForResilinkCustom', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [allAssetType[1] == 401 ? allAssetType[0] : allAssetResilink[1] == 401 ? allAssetResilink[0] : data, 401];
     } else if(allOffer.status != 200 || allAssetType[1] != 200 || allAssetResilink[1] != 200) {
-      getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getSuggestedOfferForResilinkCustom', dataOffer: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getSuggestedOfferForResilinkCustom', dataOffer: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
     };
 
@@ -95,7 +98,7 @@ const getSuggestedOfferForResilinkCustom = async (url, owner, token) => {
         element['offerer'].toString() !== owner
       ) 
       {
-        let idBlock = await PosumerDB.checkIdInBlockedOffers(element['offerId'].toString(), owner)
+        let idBlock = await PosumerDB.checkIdInBlockedOffers(element['id'].toString(), owner)
         if (!idBlock) {
           await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
           validOffers.push(element);
@@ -103,14 +106,16 @@ const getSuggestedOfferForResilinkCustom = async (url, owner, token) => {
       }
     }
 
-     // Add the last 3 valid offers to allOfferResilink
-     for (const offer of validOffers) {
-      validMapAssets[offer['assetId'].toString()] = (allAssetResilink[0][offer['assetId'].toString()])
+    //Takes 3 random valid offers
+    const shuffledOffers = validOffers.sort(() => 0.5 - Math.random());
+    const selectedOffers = shuffledOffers.slice(0, 3);
+    for (const offer of selectedOffers) {
+      validMapAssets[offer['assetId'].toString()] = allAssetResilink[0][offer['assetId'].toString()];
     }
     allOfferResilink['offers'] = validOffers;
     allOfferResilink['assets'] = validMapAssets;
 
-    getDataLogger.info("successful data retrieval", { from: 'getSuggestedOfferForResilinkCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    getDataLogger.info("successful data retrieval", { from: 'getSuggestedOfferForResilinkCustom', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     return [allOfferResilink, allOffer.status];
 };
 
@@ -130,17 +135,10 @@ const getLimitedOfferForResilinkCustom = async (url, offerNbr, iteration, token)
 
   // error checking
   if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
-      getDataLogger.error('error: Unauthorized', {
-          from: 'getLimitedOfferForResilinkCustom',
-          tokenUsed: token ? token : "Token not given"
-      });
+      getDataLogger.error('error: Unauthorized', {from: 'getLimitedOfferForResilinkCustom',username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [allAssetType[1] == 401 ? allAssetType[0] : allAssetResilink[1] == 401 ? allAssetResilink[0] : data, 401];
   } else if (allOffer.status != 200 || allAssetType[1] != 200 || allAssetResilink[1] != 200) {
-      getDataLogger.error("Error fetching Offer or Asset or AssetType from ODEP", {
-          from: 'getLimitedOfferForResilinkCustom',
-          dataOffer: data,
-          tokenUsed: token.replace(/^Bearer\s+/i, '')
-      });
+      getDataLogger.error("Error fetching Offer or Asset or AssetType from ODEP", {from: 'getLimitedOfferForResilinkCustom',dataOffer: data,username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
   }
 
@@ -153,7 +151,7 @@ const getLimitedOfferForResilinkCustom = async (url, offerNbr, iteration, token)
       if (
           new Date(element['validityLimit']) > new Date() &&
           (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] !== null ?
-              (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "immaterial" ?
+              (allAssetType[0][allAssetResilink[0][element['assetId'].toString()]['assetType']]['nature'] == "measurableByQuantity" ?
                   (element['remainingQuantity'] !== null ? element['remainingQuantity'] > 0 : true) : true) : false
           )
       ) {
@@ -162,14 +160,10 @@ const getLimitedOfferForResilinkCustom = async (url, offerNbr, iteration, token)
       }
   }
 
-  // Reverse the order of valid offers
+  //Retrieve last 3 offers created
   const reversedValidOffers = validOffers.reverse();
-  
-  // Calculation of start and end indices
   const startIndex = parseInt(iteration) * parseInt(offerNbr);
   const endIndex = startIndex + parseInt(offerNbr);
-
-  // Bid selection based on iteration and number of bids
   const selectedOffers = reversedValidOffers.slice(startIndex, endIndex);
 
   // Add the assets of valid offers
@@ -180,10 +174,7 @@ const getLimitedOfferForResilinkCustom = async (url, offerNbr, iteration, token)
   allOfferResilink['offers'] = selectedOffers;
   allOfferResilink['assets'] = validMapAssets;
 
-  getDataLogger.info("Successful data retrieval", {
-      from: 'getLimitedOfferForResilinkCustom',
-      tokenUsed: token.replace(/^Bearer\s+/i, '')
-  });
+  getDataLogger.info("Successful data retrieval", {from: 'getLimitedOfferForResilinkCustom',username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
 
   return [allOfferResilink, allOffer.status];
 };
@@ -205,10 +196,10 @@ const getBlockedOfferForResilinkCustom = async (url, owner, token) => {
 
     //Checks that none of the functions are error returns by ODEP
     if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getBlockedOfferForResilinkCustom', tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getBlockedOfferForResilinkCustom', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [allAssetType[1] == 401 ? allAssetType[0] : allAssetResilink[1] == 401 ? allAssetResilink[0] : data, 401];
     } else if(allOffer.status != 200 || allAssetType[1] != 200 || allAssetResilink[1] != 200) {
-      getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getBlockedOfferForResilinkCustom', dataOffer: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getBlockedOfferForResilinkCustom', dataOffer: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
     };
 
@@ -216,13 +207,13 @@ const getBlockedOfferForResilinkCustom = async (url, owner, token) => {
     
     const validOffers = [];
     const validMapAssets = {};
-    //For each offer, checks if its validity date has not passed and if there is a quantity above 0 if it is an immaterial offer.
+    //For each offer, checks if the offer's id is in the blocked offers list
     for (const key in data) {
       const element = data[key];
       let found = false;
       let i = 0;
       while (i <= ListidBlock.length && !found) {
-        if(element['offerId'] == ListidBlock[i]) {
+        if(element['id'] == ListidBlock[i]) {
           await UserDB.insertUserPhoneNumber(element['offerer'].toString(), element);
           validOffers.push(element);
           found = true;
@@ -231,14 +222,14 @@ const getBlockedOfferForResilinkCustom = async (url, owner, token) => {
       }
     }
 
-     // Add the last 3 valid offers to allOfferResilink
+     // Add the offers and assets in a map
      for (const offer of validOffers) {
       validMapAssets[offer['assetId'].toString()] = (allAssetResilink[0][offer['assetId'].toString()])
     }
     allOfferResilink['offers'] = validOffers;
     allOfferResilink['assets'] = validMapAssets;
 
-    getDataLogger.info("successful data retrieval", { from: 'getBlockedOfferForResilinkCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    getDataLogger.info("successful data retrieval", { from: 'getBlockedOfferForResilinkCustom', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     return [allOfferResilink, allOffer.status];
 };
 
@@ -249,13 +240,13 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
     const offerResilink = await getAllOfferForResilinkCustom(url, token);
     const allOffer = offerResilink[0];
     if (offerResilink[1] == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getAllOfferFilteredCustom', dataReceived: allOffer, tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getAllOfferFilteredCustom', dataReceived: allOffer, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [allOffer, offerResilink[1]];
     }
     const assetResilink = await Asset.getAllAssetResilink(token);
     const allAsset = assetResilink[0];
     if (assetResilink[1] == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getAllOfferFilteredCustom', dataReceived: allAsset, tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getAllOfferFilteredCustom', dataReceived: allAsset, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [allAsset, assetResilink[1]];
     }
 
@@ -432,44 +423,45 @@ const getAllOfferFilteredCustom = async (url, filter, token) => {
         allOfferFiltered.push(allOffer[key]); 
       }
     };
-    getDataLogger.info('success filtering data', { from: 'getAllOfferFilteredCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    getDataLogger.info('success filtering data', { from: 'getAllOfferFilteredCustom', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     return [JSON.stringify(allOfferFiltered), 200];
   } catch (e) {
-    getDataLogger.error("filter had a problem", { from: 'getAllOfferFilteredCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    getDataLogger.error("filter had a problem", { from: 'getAllOfferFilteredCustom', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     return[{error : e}, 500];
   }
 };
 
-const getOwnerOfferPurchase = async (url, Username, token) => {
+const getOwnerOfferPurchase = async (url, token) => {
   var allOfferPurchase = [];
   var allAssetPurchase = [];
 
-  const allContractOwner = await Contract.getContractFromOwner(pathODEPContract, Username, token);
+  const owner = Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, ''));
+  const allContractOwner = await Contract.getContractFromOwner(pathODEPContract, owner, token);
   if (allContractOwner[1] != 200) {
-    getDataLogger.error('error: retrieving all owner\'s contracts', { from: 'getOwnerOfferPurchase', dataReceived: allContractOwner[0], tokenUsed: token == null ? "Token not given" : token});
+    getDataLogger.error('error: retrieving all owner\'s contracts', { from: 'getOwnerOfferPurchase', dataReceived: allContractOwner[0], username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     return [allContractOwner[0], allContractOwner[1]];
   }
   if (allContractOwner[0].length > 0 ) {
     const allOffer = await getAllOfferMapped(url, token);
     if (allOffer[1] != 200) {
-      getDataLogger.error('error: retrieving all offers', { from: 'getOwnerOfferPurchase', dataReceived: allOffer[0], tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: retrieving all offers', { from: 'getOwnerOfferPurchase', dataReceived: allOffer[0], username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [allOffer[0], allOffer[1]];
     }
     const allAsset = await Asset.getAllAssetResilink(token);
     if (allAsset[1] != 200) {
-      getDataLogger.error('error: retrieving all assets', { from: 'getOwnerOfferPurchase', dataReceived: allAsset[0], tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: retrieving all assets', { from: 'getOwnerOfferPurchase', dataReceived: allAsset[0], username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [allAsset[0], allAsset[1]];
     } 
 
     const allContractPurchased = allContractOwner[0].reduce((acc, contract) => {
       const nameValue = contract["state"];
-      if (nameValue !== "cancelled" && /* contract cancelled before ending of the deal */ //Need yo be deleted after, just needed for the account acazaux in RESILINK 
-          nameValue !== 'endOfConsumption' && /* end states of an immaterial purchase contract */
-          nameValue !== "assetReceivedByTheRequestor" && nameValue !== "assetNotReceivedByTheRequestor" && /* end states of an material purchase contract */
-          nameValue !== "assetNotReturnedToTheOfferer" && nameValue !== "assetReceivedByTheRequestor" && nameValue !== "assetReceivedByTheRequestor" &&/* end states of an material rent contract */
+      if (nameValue !== "cancelled" && /* contract cancelled before ending of the deal */
+          nameValue !== 'endOfConsumption' && /* end states of an measurableByQuantity purchase contract */
+          nameValue !== "assetReceivedByTheRequestor" && nameValue !== "assetNotReceivedByTheRequestor" && /* end states of an measurableByTime purchase contract */
+          nameValue !== "assetNotReturnedToTheOfferer" && nameValue !== "assetReceivedByTheRequestor" && nameValue !== "assetReceivedByTheRequestor" &&/* end states of an measurableByTime rent contract */
           !acc.some(item => item.idContract === contract.idContract)) {
         acc.push(contract);
-      } 
+      }
       return acc;
     }, []);
     // Instead of a for... usage of Promise to make all affectation at the same time
@@ -487,45 +479,28 @@ const getOwnerOfferPurchase = async (url, Username, token) => {
   }
 }
 
-//Retrieves all offers from a user in ODEP.
-const getAllOfferOwnerCustom = async (url, Username, token) => {
-  var allOfferOwner = {};
-  const allAssetType = await AssetTypes.getAllAssetTypesResilink(token);
-  const allAssetResilink = await Asset.getAllAssetResilink(token);
-  //Retrives all offer in ODEP
-  const allOffer = await Utils.fetchJSONData(
-    'GET',
-    url + "all", 
-    headers = {'accept': 'application/json',
-    'Authorization': token}
+//Retrieves all offer in ODEP
+const getAllOwnerOffer = async (url, token) => {
+  const response = await Utils.fetchJSONData(
+      'GET',
+      url + "owner", 
+      headers = {'accept': 'application/json',
+      'Authorization': token}
   );
-  const data = await Utils.streamToJSON(allOffer.body)
-
-  if (allOffer.status == 401 || allAssetType[1] == 401 || allAssetResilink[1] == 401) {
-    getDataLogger.error('error: Unauthorize', { from: 'getAllOfferOwnerCustom', tokenUsed: token == null ? "Token not given" : token});
-    return [allAssetType[1] == 401 ? allAssetType[0] : allAssetResilink[1] == 401 ? allAssetResilink[0] : data, 401];
-  } else if(allOffer.status != 200 || allAssetType[1] != 200 || allAssetResilink[1] != 200) {
-    getDataLogger.error("error trying to fetch Offer or Asset or AssetType from ODEP", { from: 'getAllOfferOwnerCustom', dataOffer: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
-    return [allAssetType[1] != 200 ? allAssetType[0] : allAssetResilink[1] != 200 ? allAssetResilink[0] : data, allOffer.status];
-  };
-
-  //Checks if the creator is the user in parameter
-  for (const key in data) {
-    const offer = data[key];
-    if (offer["offerer"] === Username &&
-      (allAssetType[0][allAssetResilink[0][offer['assetId'].toString()]['assetType']]['nature'] == "immaterial" ? 
-            (offer['remainingQuantity'] !== null ? offer['remainingQuantity'] > 0 : true) : true)
-    ) {
-      allOfferOwner[offer["offerId"].toString()] = offer;
-    }
+  const data = await Utils.streamToJSON(response.body);
+  if(response.status == 401) {
+    getDataLogger.error('error: Unauthorize', { from: 'getAllOwnerOffer', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
+  } else if(response.status != 200) {
+    getDataLogger.error('error retrieving all offers', { from: 'getAllOwnerOffer' , data: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
+  } else {
+    getDataLogger.info('success retrieving all offers', { from: 'getAllOwnerOffer', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   }
-  getDataLogger.info('success retrieving offers & keep the owner\'s', { from: 'getAllOfferOwnerCustom', tokenUsed: token.replace(/^Bearer\s+/i, '')});
-  return [allOfferOwner, allOffer.status];
+  return [data, response.status];
 };
 
 //Creates an offer in ODEP
 const createOffer = async (url, body, token) => {
-  updateDataODEP.warn('data to send to ODEP', { from: 'createOffer', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  updateDataODEP.warn('data to send to ODEP', { from: 'createOffer', dataToSend: body, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   const response = await Utils.fetchJSONData(
       'POST',
       url, 
@@ -535,36 +510,35 @@ const createOffer = async (url, body, token) => {
       body);
   const data = await Utils.streamToJSON(response.body);
   if(response.status == 401) {
-    updateDataODEP.error('error: Unauthorize', { from: 'createOffer', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+    updateDataODEP.error('error: Unauthorize', { from: 'createOffer', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   } else if(response.status != 200) {
-    updateDataODEP.error('error creating an offer', { from: 'createOffer', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('error creating an offer', { from: 'createOffer', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   } else {
-    updateDataODEP.info('success creating an offer', { from: 'createOffer', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    updateDataODEP.info('success creating an offer', { from: 'createOffer', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   }
   return [data, response.status];
 };
 
-//Creates an offer, his asset and asset type associated 
+//Creates an offer and his asset
 const createOfferAsset = async (url, body, token) => {
-  //Calls the function to create an asset and his asset type
-  updateDataODEP.warn('data to send to ODEP', { from: 'createOfferAsset', dataToSend: body, tokenUsed: token.replace(/^Bearer\s+/i, '')});
-  const newsAsset = await Asset.createAssetWithAssetTypeCustom(pathODEPAsset, body['asset'], token);
+  //Calls the function to create an asset
+  updateDataODEP.warn('data to send to ODEP', { from: 'createOfferAsset', dataToSend: body, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
+  const newsAsset = await Asset.createAssetCustom(pathODEPAsset, body['asset'], token);
   if (newsAsset[1] == 401) {
-    updateDataODEP.error('error: Unauthorize', { from: 'createOfferAsset', dataReceived: newsAsset[0], tokenUsed: token == null ? "Token not given" : token});
+    updateDataODEP.error('error: Unauthorize', { from: 'createOfferAsset', dataReceived: newsAsset[0], username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     return [newsAsset[0], newsAsset[1]];
   } else if(newsAsset[1] != 200) {
-    updateDataODEP.error('error creating one assetType', { from: 'createOfferAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('error creating one assetType', { from: 'createOfferAsset', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     return [newsAsset[0], newsAsset[1]];
   } else {
-
     //Associates the assetId just created with the map containing the offer data 
-    body['offer']['assetId'] = newsAsset[0]['asset']['assetId']; 
+    body['offer']['assetId'] = newsAsset[0]['assetId']; 
     const newOffer = await createOffer(url, body['offer'], token);
     if (newOffer[1] == 401) {
-      updateDataODEP.error('error: Unauthorize', { from: 'createOfferAsset', dataReceived: newOffer[0], tokenUsed: token == null ? "Token not given" : token});
+      updateDataODEP.error('error: Unauthorize', { from: 'createOfferAsset', dataReceived: newOffer[0], username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [newOffer[0], newOffer[1]];
     } else if(newOffer[1] != 200) {
-      updateDataODEP.error('error creating one assetType', { from: 'createOfferAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error creating one assetType', { from: 'createOfferAsset', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       return [newOffer[0], newOffer[1]];
     } else {
       return [{'asset': newsAsset[0], 'offer': newOffer[0]}, 200];
@@ -582,18 +556,18 @@ const getAllOffer = async (url, token) => {
   );
   const data = await Utils.streamToJSON(response.body);
   if(response.status == 401) {
-    getDataLogger.error('error: Unauthorize', { from: 'getAllOffer', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+    getDataLogger.error('error: Unauthorize', { from: 'getAllOffer', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   } else if(response.status != 200) {
-    getDataLogger.error('error retrieving all offers', { from: 'getAllOffer' , data: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    getDataLogger.error('error retrieving all offers', { from: 'getAllOffer' , data: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   } else {
-    getDataLogger.info('success retrieving all offers', { from: 'getAllOffer', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    getDataLogger.info('success retrieving all offers', { from: 'getAllOffer', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   }
   return [data, response.status];
 };
 
 //Retrieves all offer in ODEP
 const getAllOfferMapped = async (url, token) => {
-  var allOfferOwner = {};
+  var allOffer = {};
 
   const response = await Utils.fetchJSONData(
       'GET',
@@ -603,19 +577,19 @@ const getAllOfferMapped = async (url, token) => {
   );
   const data = await Utils.streamToJSON(response.body);
   if(response.status == 401) {
-    getDataLogger.error('error: Unauthorize', { from: 'getAllOfferMapped', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+    getDataLogger.error('error: Unauthorize', { from: 'getAllOfferMapped', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     return [data, response.status];
   } else if(response.status != 200) {
-    getDataLogger.error('error retrieving all offers', { from: 'getAllOfferMapped' , data: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    getDataLogger.error('error retrieving all offers', { from: 'getAllOfferMapped' , data: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     return [data, response.status];
   } else {
-    getDataLogger.info('success retrieving all offers', { from: 'getAllOfferMapped', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    getDataLogger.info('success retrieving all offers', { from: 'getAllOfferMapped', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
 
     for (const key in data) {
       const offer = data[key];
-      allOfferOwner[offer["offerId"].toString()] = offer;
+      allOffer[offer["id"].toString()] = offer;
     }
-    return [allOfferOwner, response.status];
+    return [allOffer, response.status];
   }
 
 };
@@ -630,18 +604,18 @@ const getOneOffer = async (url, id, token) => {
   );
   const data = await Utils.streamToJSON(response.body);
   if(response.status == 401) {
-    getDataLogger.error('error: Unauthorize', { from: 'getOneOffer', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+    getDataLogger.error('error: Unauthorize', { from: 'getOneOffer', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   } else if(response.status != 200) {
-    getDataLogger.error('error retrieving an offer', { from: 'getOneOffer' , data: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    getDataLogger.error('error retrieving an offer', { from: 'getOneOffer' , data: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   } else {
-    getDataLogger.info('success retrieving an offer', { from: 'getOneOffer', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    getDataLogger.info('success retrieving an offer', { from: 'getOneOffer', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   }
   return [data, response.status];
 };
 
 //Updates the offer by id in ODEP
 const putOffer = async (url, body, id, token) => {
-  updateDataODEP.warn('data to send to ODEP', { from: 'putOffer', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
+  updateDataODEP.warn('data to send to ODEP', { from: 'putOffer', dataToSend: body, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   const response = await Utils.fetchJSONData(
       'PUT',
       url + id, 
@@ -652,11 +626,11 @@ const putOffer = async (url, body, id, token) => {
   );
   const data = await Utils.streamToJSON(response.body);
   if(response.status == 401) {
-    updateDataODEP.error('error: Unauthorize', { from: 'putOffer', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+    updateDataODEP.error('error: Unauthorize', { from: 'putOffer', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   } else if(response.status != 200) {
-    updateDataODEP.error('error updating an offer', { from: 'putOffer', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('error updating an offer', { from: 'putOffer', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   } else {
-    updateDataODEP.info('success updating an offer', { from: 'putOffer', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    updateDataODEP.info('success updating an offer', { from: 'putOffer', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   }
   return [data, response.status];
 };
@@ -665,13 +639,13 @@ const putOffer = async (url, body, id, token) => {
 const putOfferAsset = async (url, body, id, token) => {
   const putAsset = await Asset.putAssetCustom(pathODEPAsset, body['asset'], body['offer']['assetId'], token);
   if (putAsset[1] == 401) {
-    updateDataODEP.error('error: Unauthorize', { from: 'putOfferAsset', dataReceived: newsAsset[0], tokenUsed: token == null ? "Token not given" : token});
+    updateDataODEP.error('error: Unauthorize', { from: 'putOfferAsset', dataReceived: newsAsset[0], username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     return [putAsset[0], putAsset[1]];
   } else if(putAsset[1] != 200) {
-    updateDataODEP.error('error updating one asset', { from: 'putOfferAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    updateDataODEP.error('error updating one asset', { from: 'putOfferAsset', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     return [putAsset[0], putAsset[1]];
   } else {
-    updateDataODEP.warn('data to send to ODEP', { from: 'putOfferAsset', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
+    updateDataODEP.warn('data to send to ODEP', { from: 'putOfferAsset', dataToSend: body, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     const response = await Utils.fetchJSONData(
         'PUT',
         url + id, 
@@ -682,11 +656,11 @@ const putOfferAsset = async (url, body, id, token) => {
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      updateDataODEP.error('error: Unauthorize', { from: 'putOfferAsset', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      updateDataODEP.error('error: Unauthorize', { from: 'putOfferAsset', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     } else if(response.status != 200) {
-      updateDataODEP.error('error updating an offer', { from: 'putOfferAsset', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.error('error updating an offer', { from: 'putOfferAsset', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     } else {
-      updateDataODEP.info('success updating an offer', { from: 'putOfferAsset', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+      updateDataODEP.info('success updating an offer', { from: 'putOfferAsset', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     }
     return [data, response.status];
   }
@@ -694,7 +668,7 @@ const putOfferAsset = async (url, body, id, token) => {
 
 //Deletes an offer by id in ODEP
 const deleteOffer = async (url, id, token) => {
-  deleteDataODEP.warn('id to used in ODEP', { from: 'deleteOffer', offerId: id, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+  deleteDataODEP.warn('id to used in ODEP', { from: 'deleteOffer', offerId: id, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   const response = await Utils.fetchJSONData(
       'DELETE',
       url + id, 
@@ -703,11 +677,11 @@ const deleteOffer = async (url, id, token) => {
   );
   const data = await Utils.streamToJSON(response.body);
   if(response.status == 401) {
-    deleteDataODEP.error('error: Unauthorize', { from: 'deleteOffer', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+    deleteDataODEP.error('error: Unauthorize', { from: 'deleteOffer', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   } else if(response.status != 200) {
-    deleteDataODEP.error('error deleting an offer', { from: 'deleteOffer', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    deleteDataODEP.error('error deleting an offer', { from: 'deleteOffer', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   } else {
-    deleteDataODEP.info('success deleting an offer', { from: 'deleteOffer', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+    deleteDataODEP.info('success deleting an offer', { from: 'deleteOffer', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
   }
   return [data, response.status];
 };
@@ -718,7 +692,7 @@ module.exports = {
     getSuggestedOfferForResilinkCustom,
     getBlockedOfferForResilinkCustom,
     getAllOfferFilteredCustom,
-    getAllOfferOwnerCustom,
+    getAllOwnerOffer,
     getOwnerOfferPurchase,
     createOffer,
     createOfferAsset,

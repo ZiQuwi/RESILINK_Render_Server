@@ -17,33 +17,31 @@ const router = express.Router();
  *       required:
  *         - description
  *         - nature
- *         - regulated
+ *         - subjectOfQuantity
  *       properties:
+ *         name:
+ *           type: string
  *         description:
  *           type: string
  *           description: "Description of the asset type"
  *         nature:
  *           type: string
  *           enum:
- *             - material
- *             - immaterial
- *             - immaterialNotQuantified
+ *             - measurableByQuantity
+ *             - measurableByTime
  *           description: "The nature of the asset."
  *         unit:
  *           type: string
- *           description: |
- *             "Required if the nature is immaterial.
- *             Set to 'not measurable' in the case of an immaterial asset that cannot be measured."
- *         regulated:
+ *         subjectOfQuantity:
  *           type: boolean
- *           description: "Indicates if the asset is regulated (true/false)"
+ *           description: "Indicates if the asset is subjectOfQuantity (true/false)"
  *         regulator:
  *           type: string
  *           description: "The regulator associated with the asset, if applicable"
  *         sharingIncentive:
  *           type: boolean
  *           description: "Indicates if there is a sharing incentive for the asset (true/false)"
- *         specificAttributesModel:
+ *         assetDataModel:
  *           type: array
  *           description: "A list of specific attributes for the asset"
  *           items:
@@ -71,12 +69,6 @@ const router = express.Router();
  *                   - true
  *                   - false
  *                 description: "Indicates if this attribute is mandatory (Enum: 'true', 'false')"
- *               hasValueList:
- *                 type: string
- *                 enum:
- *                   - true
- *                   - false
- *                 description: "Indicates if this attribute has a value list (Enum: 'true', 'false')"
  *               valueList:
  *                 type: string
  *                 description: "The list of values if hasValueList is true. Example: 'value1,value2,value3'"
@@ -102,17 +94,17 @@ const router = express.Router();
  *               nature : 
  *                  type: string
  *                  enum:
- *                   - material
- *                   - immaterial
+ *                   - measurableByQuantity
+ *                   - measurableByTime
  *               unit:
  *                  type: string
- *               regulated:
+ *               subjectOfQuantity:
  *                  type: boolean
  *               regulator:
  *                  type: string
  *               sharingIncentive:
  *                  type: boolean
- *               specificAttributesModel: 
+ *               assetDataModel: 
  *                  type: array
  *                  items:
  *                      type: object
@@ -126,13 +118,9 @@ const router = express.Router();
  *                              enum:
  *                                  - true
  *                                  - false
- *                          hasValueList:
- *                              type: string
- *                              enum:
- *                                  - true
- *                                  - false
  *                          valueList:
  *                              type: string
+ *                              example: "Value1,Value2,Value3"
  *     responses:
  *       200:
  *         description: AssetType successfully created.
@@ -180,7 +168,7 @@ router.post('/ODEP/assetTypes/', assetTypeController.createAssetTypes);
  * @swagger
  * /v1/assetTypes/all:
  *   get:
- *     summary: Get all asset types from RESILINK (from ODEP)
+ *     summary: Get all asset types with RESILINK in description
  *     tags: [AssetType]
  *     responses:
  *       200:
@@ -199,17 +187,17 @@ router.post('/ODEP/assetTypes/', assetTypeController.createAssetTypes);
  *                      nature:
  *                        type: string
  *                        enum:
- *                          - material
- *                          - immaterial
+ *                          - measurableByQuantity
+ *                          - measurableByTime
  *                      unit:
  *                        type: string
- *                      regulated:
+ *                      subjectOfQuantity:
  *                        type: boolean
  *                      regulator:
  *                        type: string
  *                      sharingIncentive:
  *                        type: boolean
- *                      specificAttributesModel:
+ *                      assetDataModel:
  *                        type: array
  *                        items:
  *                            type: object
@@ -223,13 +211,9 @@ router.post('/ODEP/assetTypes/', assetTypeController.createAssetTypes);
  *                                    enum:
  *                                      - true
  *                                      - false
- *                                hasValueList:
- *                                    type: string
- *                                    enum:
- *                                      - true
- *                                      - false
  *                                valueList:
  *                                    type: string
+ *                                    example: "Value1,Value2,Value3"
  *       400:
  *         description: Bad Request.
  *         content:
@@ -286,17 +270,17 @@ router.get('/assetTypes/all', assetTypeController.getAllAssetTypes);
  *                      nature:
  *                        type: string
  *                        enum:
- *                          - material
- *                          - immaterial
+ *                          - measurableByQuantity
+ *                          - measurableByTime
  *                      unit:
  *                        type: string
- *                      regulated:
+ *                      subjectOfQuantity:
  *                        type: boolean
  *                      regulator:
  *                        type: string
  *                      sharingIncentive:
  *                        type: boolean
- *                      specificAttributesModel:
+ *                      assetDataModel:
  *                        type: array
  *                        items:
  *                            type: object
@@ -310,13 +294,9 @@ router.get('/assetTypes/all', assetTypeController.getAllAssetTypes);
  *                                    enum:
  *                                      - true
  *                                      - false
- *                                hasValueList:
- *                                    type: string
- *                                    enum:
- *                                      - true
- *                                      - false
  *                                valueList:
  *                                    type: string
+ *                                    example: "Value1,Value2,Value3"
  *       400:
  *         description: Bad Request.
  *         content:
@@ -378,17 +358,17 @@ router.get('/ODEP/assetTypes/all/', assetTypeController.getAllAssetTypesDev);
  *                 nature : 
  *                    type: string
  *                    enum:
- *                     - material
- *                     - immaterial
+ *                     - measurableByQuantity
+ *                     - measurableByTime
  *                 unit:
  *                    type: string
- *                 regulated:
+ *                 subjectOfQuantity:
  *                    type: boolean
  *                 regulator:
  *                    type: string
  *                 sharingIncentive:
  *                    type: boolean
- *                 specificAttributesModel: 
+ *                 assetDataModel: 
  *                    type: array
  *                    items:
  *                        type: object
@@ -401,14 +381,9 @@ router.get('/ODEP/assetTypes/all/', assetTypeController.getAllAssetTypesDev);
  *                                type: string
  *                                enum:
  *                                    - true
- *                                    - false
- *                            hasValueList:
- *                                type: string
- *                                enum:
- *                                    - true
- *                                    - false
  *                            valueList:
  *                                type: string
+ *                                example: "Value1,Value2,Value3"
  *       400:
  *         description: Bad Request.
  *         content:
@@ -467,17 +442,17 @@ router.get('/assetTypes/:id/', assetTypeController.getOneAssetTypes);
  *               nature : 
  *                  type: string
  *                  enum:
- *                   - material
- *                   - immaterial
+ *                   - measurableByQuantity
+ *                   - measurableByTime
  *               unit:
  *                  type: string
- *               regulated:
+ *               subjectOfQuantity:
  *                  type: boolean
  *               regulator:
  *                  type: string
  *               sharingIncentive:
  *                  type: boolean
- *               specificAttributesModel: 
+ *               assetDataModel: 
  *                  type: array
  *                  items:
  *                      type: object
@@ -491,13 +466,9 @@ router.get('/assetTypes/:id/', assetTypeController.getOneAssetTypes);
  *                              enum:
  *                                  - true
  *                                  - false
- *                          hasValueList:
- *                              type: string
- *                              enum:
- *                                  - true
- *                                  - false
  *                          valueList:
  *                              type: string
+ *                              example: "Value1,Value2,Value3"
  *     responses:
  *       200:
  *         description: AssetType successfully updated.
@@ -598,7 +569,7 @@ router.delete('/assetTypes/:id/', assetTypeController.deleteAssetTypes);
 
 /**
  * @swagger
- * /v1/assetTypes/all/mapped/:
+ * /v1/assetTypes/all/mapFormat/:
  *   get:
  *     summary: Get all asset types but with the asset type as a key with his value associate
  *     tags: [AssetType]
@@ -619,17 +590,17 @@ router.delete('/assetTypes/:id/', assetTypeController.deleteAssetTypes);
  *                      nature:
  *                        type: string
  *                        enum:
- *                          - material
- *                          - immaterial
+ *                          - measurableByQuantity
+ *                          - measurableByTime
  *                      unit:
  *                        type: string
- *                      regulated:
+ *                      subjectOfQuantity:
  *                        type: boolean
  *                      regulator:
  *                        type: string
  *                      sharingIncentive:
  *                        type: boolean
- *                      specificAttributesModel:
+ *                      assetDataModel:
  *                        type: array
  *                        items:
  *                            type: object
@@ -643,13 +614,9 @@ router.delete('/assetTypes/:id/', assetTypeController.deleteAssetTypes);
  *                                    enum:
  *                                      - true
  *                                      - false
- *                                hasValueList:
- *                                    type: string
- *                                    enum:
- *                                      - true
- *                                      - false
  *                                valueList:
  *                                    type: string
+ *                                    example: "Value1,Value2,Value3"
  *       400:
  *         description: Bad Request.
  *         content:
@@ -682,60 +649,5 @@ router.delete('/assetTypes/:id/', assetTypeController.deleteAssetTypes);
  */
 
 router.get('/assetTypes/all/mapFormat', assetTypeController.getAllAssetTypesResilink)
-
-/**
- * @swagger
- * /v1/assetTypes/{assetType}:
- *   post: 
- *     summary: Create an assetType or a clone of an existing assetType
- *     tags: [AssetType]
- *     parameters:
- *       - in: path
- *         name: assetType
- *         schema:
- *           type: string 
- *         required: true
- *     responses:
- *       200:
- *         description: AssetType successfully created.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                  message:
- *                      type: string
- *       400:
- *         description: Bad Request.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                  message:
- *                      type: string
- *       404:
- *         description: Not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.post('/assetTypes/:assetType', assetTypeController.createAssetTypesCustom);
 
 module.exports = router;

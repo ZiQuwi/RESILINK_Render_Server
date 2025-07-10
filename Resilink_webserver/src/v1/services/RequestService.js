@@ -9,7 +9,8 @@ const Utils = require("./Utils.js");
 
 //Creates a request in ODEP
 const createRequest = async (url, body, token) => {
-  updateDataODEP.warn('data to send to ODEP', { from: 'createRequest', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
+  const username = Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, ''));
+  updateDataODEP.warn('data to send to ODEP', { from: 'createRequest', dataToSend: body, username: username ?? "no user associated with the token"});
     const response = await Utils.fetchJSONData(
         'POST',
         url, 
@@ -20,11 +21,11 @@ const createRequest = async (url, body, token) => {
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      updateDataODEP.error('error: Unauthorize', { from: 'createRequest', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      updateDataODEP.error('error: Unauthorize', { from: 'createRequest', dataReceived: data, username: username ?? "no user associated with the token"});
     } else if(response.status != 200) {
-        updateDataODEP.error('error creating one request', { from: 'createRequest', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+        updateDataODEP.error('error creating one request', { from: 'createRequest', dataReceived: data, username: username ?? "no user associated with the token"});
       } else {
-        updateDataODEP.info('success creating one request', { from: 'createRequest', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+        updateDataODEP.info('success creating one request', { from: 'createRequest', username: username ?? "no user associated with the token"});
       }
     return [data, response.status];
 };
@@ -38,11 +39,11 @@ const getOneRequest = async (url, id, token) => {
         'Authorization': token});
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getOneRequest', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getOneRequest', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     } else if(response.status != 200) {
-        getDataLogger.error('error retrieving one regulator', { from: 'getOneRequest', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+        getDataLogger.error('error retrieving one regulator', { from: 'getOneRequest', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       } else {
-        getDataLogger.info('success retrieving one regulator', { from: 'getOneRequest', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+        getDataLogger.info('success retrieving one regulator', { from: 'getOneRequest', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       }
     return [data, response.status];
 };
@@ -56,18 +57,19 @@ const getAllRequest = async (url, token) => {
         'Authorization': token});
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      getDataLogger.error('error: Unauthorize', { from: 'getAllRequest', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      getDataLogger.error('error: Unauthorize', { from: 'getAllRequest', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
     } else if(response.status != 200) {
-        getDataLogger.error('error retrieving all regulators', { from: 'getAllRequest', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+        getDataLogger.error('error retrieving all regulators', { from: 'getAllRequest', dataReceived: data, username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       } else {
-        getDataLogger.info('success retrieving all regulators', { from: 'getAllRequest', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+        getDataLogger.info('success retrieving all regulators', { from: 'getAllRequest', username: Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, '')) ?? "no user associated with the token"});
       }
     return [data, response.status];
 };
 
 //Updates a request by id in ODEP
 const putRequest = async (url, body, id, token) => {
-  updateDataODEP.warn('data to send to ODEP', { from: 'putRequest', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
+  const username = Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, ''));
+  updateDataODEP.warn('data to send to ODEP', { from: 'putRequest', dataToSend: body, username: username ?? "no user associated with the token"});
     const response = await Utils.fetchJSONData(
         'PUT',
         url + id, 
@@ -78,18 +80,19 @@ const putRequest = async (url, body, id, token) => {
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      updateDataODEP.error('error: Unauthorize', { from: 'putRequest', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      updateDataODEP.error('error: Unauthorize', { from: 'putRequest', dataReceived: data, username: username ?? "no user associated with the token"});
     } else if(response.status != 200) {
-        updateDataODEP.error('error updating one regulator', { from: 'putRequest', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+        updateDataODEP.error('error updating one regulator', { from: 'putRequest', dataReceived: data, username: username ?? "no user associated with the token"});
       } else {
-        updateDataODEP.info('success updating one regulator', { from: 'putRequest', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+        updateDataODEP.info('success updating one regulator', { from: 'putRequest', username: username ?? "no user associated with the token"});
       }
     return [data, response.status];
 };
 
 //Deletes a request by id in ODEP
 const deleteRequest = async (url, id, token) => {
-  deleteDataODEP.warn('id to send to ODEP', { from: 'deleteRequest', dataToSend: body, tokenUsed: token == null ? "Token not given" : token});
+  const username = Utils.getUserIdFromToken(token.replace(/^Bearer\s+/i, ''));
+  deleteDataODEP.warn('id to send to ODEP', { from: 'deleteRequest', dataToSend: body, username: username ?? "no user associated with the token"});
     const response = await Utils.fetchJSONData(
         'DELETE',
         url + id, 
@@ -98,11 +101,11 @@ const deleteRequest = async (url, id, token) => {
     );
     const data = await Utils.streamToJSON(response.body);
     if(response.status == 401) {
-      deleteDataODEP.error('error: Unauthorize', { from: 'deleteRequest', dataReceived: data, tokenUsed: token == null ? "Token not given" : token});
+      deleteDataODEP.error('error: Unauthorize', { from: 'deleteRequest', dataReceived: data, username: username ?? "no user associated with the token"});
     } else if(response.status != 200) {
-        deleteDataODEP.error('error deleting one regulator', { from: 'deleteRequest', dataReceived: data, tokenUsed: token.replace(/^Bearer\s+/i, '')});
+        deleteDataODEP.error('error deleting one regulator', { from: 'deleteRequest', dataReceived: data, username: username ?? "no user associated with the token"});
       } else {
-        deleteDataODEP.info('success deleting one regulator', { from: 'deleteRequest', tokenUsed: token.replace(/^Bearer\s+/i, '')});
+        deleteDataODEP.info('success deleting one regulator', { from: 'deleteRequest', username: username ?? "no user associated with the token"});
       }
     return [data, response.status];
 };

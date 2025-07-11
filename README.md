@@ -14,7 +14,7 @@ RESILINK is an API built with **Node.js** and **Express**, using **Swagger** for
 
 ## Prerequisites
 
-- **Node.js** (v18 or later)
+- **Node.js** (v18.20 or later)
 - **MongoDB** (Cloud MongoDB cluster or local instance)
 - **ODEP API** (URLs to be requested from ORANGE)
 
@@ -42,8 +42,7 @@ Create a file named **`RESILINK_Server.env`** at the root of the project with th
 ENCRYPTION_KEY=your_encryption_key_here
 PORT=your_server_port_here
 DB_URL= e.g. mongodb+srv://username:password@cluster.mongodb.net/db_name
-
-# URLs to access the ODEP API (must be requested from the following address: axel.cazaux@univ-pau.fr or from the github administrator)
+# URLs to access the ODEP API (must be requested from ORANGE or the following address: axel.cazaux@univ-pau.fr)
 PATH_ODEP_USER=https://api.orange.com/odep/user
 PATH_ODEP_PROSUMER=https://api.orange.com/odep/prosumer
 PATH_ODEP_REGULATOR=https://api.orange.com/odep/regulator
@@ -89,19 +88,19 @@ The main routes manage:
 
 ```
 /v1
-	/src
-    	/controllers  	# Handles HTTP requests and responses, interacts with services
-    	/services     	# Business logic for the API
-    	/database     	# Manage data in MongoDB
-    	/models       	# Entity models
-    	/routes       	# API route definitions with swagger annotations
-	config.js       	# Configuration variable
-	errors.js       	# Definitions of the various errors
-	loggers.js      	# Log management
-	swaggersV1.js   	# Definition of the swagger page
-.env              	# Environment variables configuration file
-config.js         	# Global configuration file
-server.js         	# Main entry point of the API
+    /src
+        /controllers      # Handles HTTP requests and responses, interacts with services
+        /services         # Business logic for the API
+        /database         # Manage data in MongoDB
+        /models           # Entity models
+        /routes           # API route definitions with swagger annotations
+    config.js           # Configuration variable
+    errors.js           # Definitions of the various errors
+    loggers.js          # Log management
+    swaggersV1.js       # Definition of the swagger page 
+.env                  # Environment variables configuration file
+config.js             # Global configuration file
+server.js             # Main entry point of the API
 ```
 
 ## API Documentation
@@ -121,6 +120,3 @@ To deploy this API in a production environment, ensure that all environment vari
 ## License
 
 Add license.
-
-
-

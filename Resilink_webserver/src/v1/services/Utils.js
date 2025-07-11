@@ -6,6 +6,9 @@ const config = require('../config.js');
 
 const Token_key = config.TOKEN_KEY;
 
+// ODEP token associated with its user (unique)
+const userTokenStore = new Map();
+
 /*
   Function to run a Curl command directly in the server
   If the headers and body variables are not defined, they will take the value of an empty object and null respectively.
@@ -142,19 +145,53 @@ const areAllBase64 = (list) => {
   return list.every(item => typeof item === 'string' && isBase64(item));
 };
 
+// Checks if a string is a valid GeographicalPoint in format "<lat,lon>"
+const isValidGeographicalPoint = (str) => {
+  const regex = /^<\s*(-?\d{1,2}(?:\.\d+)?)\s*,\s*(-?\d{1,3}(?:\.\d+)?)\s*>$/;
+
+  const match = str.match(regex);
+  if (!match) return false;
+
+  const lat = parseFloat(match[1]);
+  const lon = parseFloat(match[2]);
+
+  // Validate latitude and longitude ranges
+  const isLatValid = lat >= -90 && lat <= 90;
+  const isLonValid = lon >= -180 && lon <= 180;
+
+  return isLatValid && isLonValid;
+};
+
 const createJWSToken = (userId) => {
   return jwt.sign({ userId: userId }, secretKey, { expiresIn: '2h' });
-}
+};
 
 const validityToken = (token) => {
-  try {
+  try { 
     const decoded = jwt.verify(token, secretKey);
-    console.log('Données décodées:', decoded);
     return true;
   } catch (e) {
     return false;
   }
-}
+};
+
+const saveUserToken = (userId, token) => {
+  if (!userId || !token) {
+    throw new Error("userId and token are required");
+  }
+  userTokenStore.set(userId, token);
+};
+
+const getUserIdFromToken = (token) => {
+  for (const [userId, storedToken] of userTokenStore.entries()) {
+    if (storedToken === token) {
+      return userId;
+    }
+  }
+  return null;
+};
+
+
 
 module.exports = {
   executeCurl,
@@ -166,7 +203,10 @@ module.exports = {
   customSorter,
   isBase64,
   areAllBase64,
+  isValidGeographicalPoint,
   createJWSToken,
-  validityToken
+  validityToken,
+  saveUserToken,
+  getUserIdFromToken
 }
 

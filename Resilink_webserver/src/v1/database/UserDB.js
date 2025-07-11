@@ -29,7 +29,7 @@ const newUser = async (user) => {
         "_id": user["_id"],
         "phoneNumber": user["phoneNumber"] != null ? cryptData.encryptAES(user["phoneNumber"]) : "",
         "userName": user["userName"],
-        "gps": user["gps"]
+        "gps": user["gps"] ?? ""
       });
 
       if (userCtreated == null) {
@@ -44,7 +44,7 @@ const newUser = async (user) => {
       } else {
         connectDB.error('error connecting to DB', { from: 'newAssetDB', error: e.message});
       }
-      throw (e);
+      throw e;
     }
 };
 
@@ -54,7 +54,7 @@ const deleteUser = async (userId) => {
     const _database = await connectToDatabase();
     const _collection = _database.collection('user');
 
-    const result = await _collection.deleteOne({ userName: userId });
+    const result = await _collection.deleteOne({ _id: userId });
 
     if (result.deletedCount === 1) {
       deleteData.info(`Document with ID ${userId} successfully deleted`, { from: 'deleteUser'});
@@ -67,6 +67,7 @@ const deleteUser = async (userId) => {
     } else {
       connectDB.error('error connecting to DB', { from: 'deleteUser', error: e.message});
     }
+    throw e;
   }
 }
 
@@ -79,15 +80,14 @@ const updateUser = async (id, body) => {
     updateData.warn('before updating data', { from: 'updateUser', data: {phoneNumber: body.phoneNumber ?? ""}});
 
     const result = await _collection.updateOne(
-      { userName: id },
+      { _id: id },
       { $set: {
-        phoneNumber: body.phoneNumber != null ? cryptData.encryptAES(body.phoneNumber).toString() : "",
+        phoneNumber: body.phoneNumber == "" ? "" : cryptData.encryptAES(body.phoneNumber).toString(),
         gps: body.gps
       }}
     );
 
     if (result.modifiedCount === 1) {
-
       updateData.info(`Document with username ${id} successfully updated`, { from: 'updateUser'});
     } else {
       throw new UpdateDBError();
@@ -112,17 +112,20 @@ const getUser = async (id, body) => {
       body['phoneNumber'] = user.phoneNumber.length > 15 ? cryptData.decryptAES(user.phoneNumber) : user.phoneNumber;
       body['gps'] = user.gps;
     } else {
-      throw new getDBError();
+      body['phoneNumber'] = "";
+      body['gps'] = "";
     }
 
     getDataLogger.info('succes retrieving an user in Resilink DB', { from: 'getUser'});
 
   } catch (e) {
     if (e instanceof getDBError) {
+      e.message = "User not found in the database"
       updateData.error('error retrieving user in Resilink DB', { from: 'getUser', error: e.message});
     } else {
       connectDB.error('error connecting to DB', { from: 'getUser', error: e.message});
     }
+    throw e;
   }
 }
 
@@ -151,6 +154,7 @@ const getAllUser = async (userList) => {
     } else {
       connectDB.error('error connecting to DB', { from: 'getAllUser', error: e.message});
     }
+    throw e;
   }
 }
 
@@ -175,6 +179,7 @@ const insertUserPhoneNumber = async (userName, body) => {
     } else {
       connectDB.error('error connecting to DB', { from: 'insertuserPhoneNumber', error: e.message});
     }
+    throw e;
   }
 }
 

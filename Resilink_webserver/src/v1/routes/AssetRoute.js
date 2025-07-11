@@ -19,8 +19,6 @@ const router = express.Router();
  *         - name
  *         - description
  *         - assetType
- *         - owner
- *         - transactionType
  *       properties:
  *         id:
  *           type: integer
@@ -40,24 +38,18 @@ const router = express.Router();
  *         unit:
  *           type: string
  *           description: The unit of the asset (can be different from his assetType unit) 
- *         transactionType:
- *           type: string
- *           enum:
- *             - sale/purchase
- *             - rent
- *           description: The type of transaction (two possible values)
+ *         multiAccess:
+ *           type: boolean
+ *           description: Asset capable of accepting multiple requests
  *         totalQuantity:
  *           type: number
- *           description: Required in case of immaterial and measurable asset
- *         availableQuantity:
+ *           description: Required in case of measurableByQuantity
+ *         remainingQuantity:
  *           type: number
  *           description: Quantity still available for the asset 
  *         regulatedId:
  *           type: string
  *           description: The regulated ID of the asset
- *         regulator:
- *           type: string
- *           description: Boolean if a regulator is associated to the offer ("false" / "true")
  *         images:
  *           type: array
  *           description: The images associated to the asset
@@ -97,20 +89,10 @@ const router = express.Router();
  *                  type: string
  *                assetType:
  *                  type: string
- *                owner:
- *                  type: string
- *                transactionType:
- *                  type: string
- *                  enum:
- *                    - sale/purchase
- *                    - rent
- *                  description: "La description de votre transactionType"
  *                totalQuantity:
  *                  type: number
- *                regulatedId:
- *                  type: string
- *                regulator:
- *                  type: string
+ *                multiAccess:
+ *                  type: boolean
  *                specificAttributes:
  *                  type: array
  *                  items:
@@ -186,22 +168,16 @@ router.post('/ODEP/assets/', assetController.createAsset);
  *                  type: string
  *                assetType:
  *                  type: string
- *                owner:
- *                  type: string
- *                transactionType:
- *                  type: string
- *                  enum:
- *                    - sale/purchase
- *                    - rent
- *                  description: "La description de votre transactionType"
  *                totalQuantity:
  *                  type: number
  *                regulatedId:
  *                  type: string
- *                regulator:
- *                  type: string
+ *                multiAccess:
+ *                  type: boolean
  *                images:
- *                  type: string
+ *                  type: array
+ *                  items:
+ *                    type: string
  *                unit: 
  *                  type: string
  *                specificAttributes:
@@ -262,109 +238,10 @@ router.post('/assets/', assetController.createAssetCustom);
 
 /**
  * @swagger
- * /v1/assets/withAssetType:
- *   post: 
- *     summary: Create a new asset and a new assetTypes
- *     tags: [Asset]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *                name:
- *                  type: string
- *                description:
- *                  type: string
- *                assetType:
- *                  type: string
- *                owner:
- *                  type: string
- *                transactionType:
- *                  type: string
- *                  enum:
- *                    - sale/purchase
- *                    - rent
- *                  description: "La description de votre transactionType"
- *                totalQuantity:
- *                  type: number
- *                regulatedId:
- *                  type: string
- *                regulator:
- *                  type: string
- *                images:
- *                  type: string
- *                unit:
- *                  type: string
- *                specificAttributes:
- *                  type: array
- *                  items:
- *                     type: object
- *                     properties:
- *                       attributeName:
- *                         type: string
- *                       value:
- *                         type: string
- *     responses:
- *       200:
- *         description: Asset successfully created
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- *                   assetId: 
- *                       type: number
- *       401:
- *         description: Bad Request.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string 
- *       404:
- *         description: Not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.post('/assets/withAssetType', assetController.createAssetWithAssetTypeCustom);
-
-/**
- * @swagger
  * /v1/ODEP/assets/owner:
  *   get:
  *     summary: Get assets by owner (from ODEP)
  *     tags: [Asset]
- *     parameters:
- *       - in: query
- *         name: idOwner
- *         schema:
- *           type: string 
- *         required: true
  *     responses:
  *       200:
  *         description: Ok
@@ -377,7 +254,7 @@ router.post('/assets/withAssetType', assetController.createAssetWithAssetTypeCus
  *                 properties:
  *                   id:
  *                     type: number
- *                   availableQuantity:
+ *                   remainingQuantity:
  *                     type: number
  *                   name:
  *                     type: string
@@ -385,19 +262,12 @@ router.post('/assets/withAssetType', assetController.createAssetWithAssetTypeCus
  *                     type: string
  *                   assetType:
  *                     type: string
- *                   owner:
- *                     type: string
- *                   transactionType:
- *                     type: string
- *                     enum:
- *                       - sale/purchase
- *                       - rent
  *                   totalQuantity:
  *                     type: number
  *                   regulatedId:
  *                     type: string
- *                   regulator:
- *                     type: string
+ *                   multiAccess:
+ *                     type: boolean
  *                   specificAttributes:
  *                     type: array
  *                     items:
@@ -448,12 +318,6 @@ router.get('/ODEP/assets/owner', assetController.getOwnerAsset);
  *   get:
  *     summary: Get assets by owner
  *     tags: [Asset]
- *     parameters:
- *       - in: query
- *         name: idOwner
- *         schema:
- *           type: string 
- *         required: true
  *     responses:
  *       200:
  *         description: Ok
@@ -466,7 +330,7 @@ router.get('/ODEP/assets/owner', assetController.getOwnerAsset);
  *                 properties:
  *                   id:
  *                     type: number
- *                   availableQuantity:
+ *                   remainingQuantity:
  *                     type: number
  *                   name:
  *                     type: string
@@ -476,19 +340,16 @@ router.get('/ODEP/assets/owner', assetController.getOwnerAsset);
  *                     type: string
  *                   owner:
  *                     type: string
- *                   transactionType:
- *                     type: string
- *                     enum:
- *                       - sale/purchase
- *                       - rent
  *                   totalQuantity:
  *                     type: number
  *                   regulatedId:
  *                     type: string
- *                   regulator:
- *                     type: string
+ *                   multiAccess:
+ *                     type: boolean
  *                   images:
- *                     type: string
+ *                     type: array
+ *                     items:
+ *                       type: string
  *                   unit:
  *                     type: string
  *                   specificAttributes:
@@ -553,7 +414,7 @@ router.get('/assets/owner', assetController.getOwnerAssetCustom);
  *                 properties:
  *                   id:
  *                     type: number
- *                   availableQuantity:
+ *                   remainingQuantity:
  *                     type: number
  *                   name:
  *                     type: string
@@ -563,17 +424,12 @@ router.get('/assets/owner', assetController.getOwnerAssetCustom);
  *                     type: string
  *                   owner:
  *                     type: string
- *                   transactionType:
- *                     type: string
- *                     enum:
- *                       - sale/purchase
- *                       - rent
  *                   totalQuantity:
  *                     type: number
  *                   regulatedId:
  *                     type: string
- *                   regulator:
- *                     type: string
+ *                   multiAccess:
+ *                     type: boolean
  *                   specificAttributes:
  *                     type: array
  *                     items:
@@ -636,7 +492,7 @@ router.get('/ODEP/assets/all/', assetController.getAllAsset);
  *                 properties:
  *                   id:
  *                     type: number
- *                   availableQuantity:
+ *                   remainingQuantity:
  *                     type: number
  *                   name:
  *                     type: string
@@ -646,19 +502,16 @@ router.get('/ODEP/assets/all/', assetController.getAllAsset);
  *                     type: string
  *                   owner:
  *                     type: string
- *                   transactionType:
- *                     type: string
- *                     enum:
- *                       - sale/purchase
- *                       - rent
  *                   totalQuantity:
  *                     type: number
  *                   regulatedId:
  *                     type: string
- *                   regulator:
- *                     type: string
+ *                   multiAccess:
+ *                     type: boolean
  *                   images:
- *                     type: string
+ *                     type: array
+ *                     items:
+ *                       type: string
  *                   unit:
  *                     type: string
  *                   specificAttributes:
@@ -727,7 +580,7 @@ router.get('/assets/all', assetController.getAllAssetCustom);
  *               properties:
  *                 id:
  *                   type: number
- *                 availableQuantity:
+ *                 remainingQuantity:
  *                   type: number
  *                 name:
  *                   type: string
@@ -737,17 +590,12 @@ router.get('/assets/all', assetController.getAllAssetCustom);
  *                   type: string
  *                 owner:
  *                   type: string
- *                 transactionType:
- *                   type: string
- *                   enum:
- *                     - sale/purchase
- *                     - rent
  *                 totalQuantity:
  *                   type: number
  *                 regulatedId:
  *                   type: string
- *                 regulator:
- *                   type: string
+ *                 multiAccess:
+ *                   type: boolean
  *                 specificAttributes:
  *                   type: array
  *                   items:
@@ -814,7 +662,7 @@ router.get('/ODEP/assets/:id/', assetController.getOneAsset);
  *               properties:
  *                 id:
  *                   type: number
- *                 availableQuantity:
+ *                 remainingQuantity:
  *                   type: number
  *                 name:
  *                   type: string
@@ -824,19 +672,16 @@ router.get('/ODEP/assets/:id/', assetController.getOneAsset);
  *                   type: string
  *                 owner:
  *                   type: string
- *                 transactionType:
- *                   type: string
- *                   enum:
- *                     - sale/purchase
- *                     - rent
  *                 totalQuantity:
  *                   type: number
  *                 regulatedId:
  *                   type: string
- *                 regulator:
- *                   type: string
+ *                 multiAccess:
+ *                   type: boolean
  *                 images:
- *                   type: string
+ *                   type: array
+ *                   items:
+ *                     type: string
  *                 unit:
  *                   type: string
  *                 specificAttributes:
@@ -902,7 +747,7 @@ router.get('/assets/:id/', assetController.getOneAssetCustom);
  *                   properties:
  *                     id:
  *                       type: number
- *                     availableQuantity:
+ *                     remainingQuantity:
  *                       type: number
  *                     name:
  *                       type: string
@@ -912,19 +757,16 @@ router.get('/assets/:id/', assetController.getOneAssetCustom);
  *                       type: string
  *                     owner:
  *                       type: string
- *                     transactionType:
- *                       type: string
- *                     enum:
- *                       - sale/purchase
- *                       - rent
  *                     totalQuantity:
  *                       type: number
  *                     regulatedId:
  *                       type: string
- *                     regulator:
- *                       type: string
+ *                     multiAccess:
+ *                       type: boolean
  *                     images:
- *                       type: string
+ *                       type: array
+ *                       items:
+ *                         type: string
  *                     unit:
  *                       type: string
  *                     specificAttributes:
@@ -1036,20 +878,12 @@ router.get('/assets/assetImg/:id/', assetController.getOneAssetIdimage);
  *                  type: string
  *                assetType:
  *                  type: string
- *                owner:
- *                  type: string
- *                transactionType:
- *                  type: string
- *                  enum:
- *                    - sale/purchase
- *                    - rent
- *                  description: "La description de votre transactionType"
  *                totalQuantity:
  *                  type: number
  *                regulatedId:
  *                  type: string
- *                regulator:
- *                  type: string
+ *                multiAccess:
+ *                  type: boolean
  *                specificAttributes:
  *                  type: object
  *                  properties:
@@ -1127,22 +961,16 @@ router.put('/ODEP/assets/:id/', assetController.putAsset);
  *                  type: string
  *                assetType:
  *                  type: string
- *                owner:
- *                  type: string
- *                transactionType:
- *                  type: string
- *                  enum:
- *                    - sale/purchase
- *                    - rent
- *                  description: "La description de votre transactionType"
  *                totalQuantity:
  *                  type: number
  *                regulatedId:
  *                  type: string
- *                regulator:
- *                  type: string
+ *                multiAccess:
+ *                  type: boolean
  *                images:
- *                  type: string
+ *                  type: array
+ *                  items:
+ *                    type: string
  *                unit:
  *                  type: string
  *                specificAttributes:
@@ -1384,7 +1212,7 @@ router.patch('/ODEP/assets/:id/regulatedId', assetController.patchAsset);
  * @swagger
  * /v1/assets/img/:
  *   post: 
- *     summary: register image in DNS reislink-dp.org
+ *     summary: register image in DNS resilink-dp.org
  *     tags: [Asset]
  *     requestBody:
  *       required: true
@@ -1455,63 +1283,5 @@ router.patch('/ODEP/assets/:id/regulatedId', assetController.patchAsset);
  */
 
 router.post('/assets/img/', assetController.postImagesAsset);
-
-/**
- * @swagger
- * /v1/assets/img/{id}/:
- *   delete: 
- *     summary: delete the images associated to an asset 
- *     tags: [Asset]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: string 
- *         required: true
- *         description: the asset id
- *     responses:
- *       200:
- *         description: Images successfully deleted in ODEP & RESILINK
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- *       400:
- *         description: Bad Request.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string 
- *       404:
- *         description: Not found.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   code:
- *                       type: number
- *                   message:
- *                       type: string
- *       500:
- *         description: Error from RESILINK server.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                   message:
- *                       type: string
- */
-
-router.delete('/assets/img/:id/', assetController.deleteImagesAsset);
 
 module.exports = router;

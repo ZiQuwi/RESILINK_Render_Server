@@ -46,6 +46,10 @@ const router = express.Router();
  *           type: string
  *           description: "The password for the user account, must have a minimum length of 6 characters."
  *           minLength: 6
+ *         gps:
+ *           type: string
+ *           pattern: "^<[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?),[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)>$"
+ *           description: "The geographic location of the user formatted as '<latitude,longitude>'. Example: '<43.3253085,-0.391577>'"
  */
 
 /**
@@ -91,6 +95,10 @@ const router = express.Router();
  *         phoneNumber: 
  *           type: string
  *           description: "The phone number of the user"
+ *         gps:
+ *           type: string
+ *           pattern: "^<[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?),[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)>$"
+ *           description: "The geographic location of the user formatted as '<latitude,longitude>'. Example: '<43.3253085,-0.391577>'"
  */
 
 /**
@@ -146,6 +154,8 @@ const router = express.Router();
  *                 accessToken:
  *                   type: string
  *                 phoneNumber:
+ *                   type: string
+ *                 gps:
  *                   type: string
  *       401:
  *         description: Unauthorized.
@@ -276,6 +286,8 @@ router.post('/ODEP/users/', userController.createUser);
  *                 type: string 
  *               phoneNumber:
  *                 type: string
+ *               gps:
+ *                 type: string
  *     responses:
  *       200:
  *         description: successful operation
@@ -307,6 +319,8 @@ router.post('/ODEP/users/', userController.createUser);
  *                 updatedAt:
  *                   type: string
  *                 phoneNumber:
+ *                   type: string
+ *                 gps:
  *                   type: string
  *       401:
  *         description: Unauthorized.
@@ -415,6 +429,8 @@ router.get('/ODEP/users/', userController.getAllUser);
  *                   updatedAt:
  *                     type: string
  *                   phoneNumber:
+ *                     type: string
+ *                   gps:
  *                     type: string
  *       401:
  *         description: Unauthorized
@@ -592,6 +608,8 @@ router.get('/ODEP/users/getUserByEmail/:userEmail', userController.getUserByEmai
  *                   type: string
  *                 phoneNumber:
  *                   type: string
+ *                 gps:
+ *                   type: string
  *       401:
  *         description: Unauthorized.
  *       500:
@@ -709,6 +727,8 @@ router.get('/ODEP/users/getUserByUserName/:userName', userController.getUserByUs
  *                 updatedAt:
  *                   type: string
  *                 phoneNumber:
+ *                   type: string
+ *                 gps:
  *                   type: string
  *       401:
  *         description: Unauthorized.
@@ -867,6 +887,8 @@ router.put('/ODEP/users/:userId', userController.updateUser);
  *                 type: string 
  *               phoneNumber:
  *                 type: string
+ *               gps:
+ *                 type: string
  *     responses:
  *       401:
  *         description: Unauthorized.
@@ -927,6 +949,8 @@ router.put('/users/:userId/', userController.updateUserCustom);
  *                 updatedAt:
  *                   type: string
  *                 phoneNumber:
+ *                   type: string
+ *                 gps:
  *                   type: string
  *       401:
  *         description: Unauthorized.

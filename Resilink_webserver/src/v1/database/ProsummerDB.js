@@ -228,7 +228,7 @@ const addbookmarked  = async (prosumerId, newId) => {
       { "_id": prosumerId },
       { $push: { "bookMarked": newId } }
     );
-
+    
     if (result.modifiedCount !== 1) {
       throw new UpdateDBError("Failed to update prosumer's bookMarked field");
     }

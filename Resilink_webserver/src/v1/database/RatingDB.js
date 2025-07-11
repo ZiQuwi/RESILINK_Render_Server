@@ -126,12 +126,11 @@ const deleteRatingByUserId = async (userId) => {
       const db = await connectToDatabase();
       const _collection = db.collection('Rating');
   
-      const numericUserId = parseInt(userId);
-      const result = await _collection.deleteOne({ userId: numericUserId });
+      const result = await _collection.deleteOne({ userId: userId });
   
       if (result.deletedCount === 1) {
-        deleteData.info(`Document by userID ${NewsId} successfully deleted`, { from: 'deleteRatingByUserId' });
-        return {message: `Rating by userID ${NewsId} successfully deleted`};
+        deleteData.info(`Document by userID ${userId} successfully deleted`, { from: 'deleteRatingByUserId' });
+        return {message: `Rating by userID ${userId} successfully deleted`};
       } else {
         deleteData.error('error deleting Rating', { from: 'deleteRatingByUserId' });
         throw new DeleteDBError('error deleting Rating');

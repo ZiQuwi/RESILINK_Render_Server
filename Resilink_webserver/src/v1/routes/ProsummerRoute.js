@@ -657,7 +657,7 @@ router.put('/prosumers/:prosumerId/', prosumerController.putUserProsumerPersonna
  * @swagger
  * /v1/prosumers/{id}/job:
  *   patch: 
- *     summary: upte a prosumer job
+ *     summary: update a prosumer job
  *     tags: [Prosumer]
  *     parameters:
  *       - in: path

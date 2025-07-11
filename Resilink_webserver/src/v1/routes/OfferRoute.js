@@ -29,7 +29,7 @@ const router = express.Router();
  *         - price
  *         - cancellationFee
  *       properties:
- *         offerId:
+ *         id:
  *           type: integer
  *           description: ID of the offer
  *         offerer:
@@ -82,6 +82,15 @@ const router = express.Router();
  *           type: number
  *           format: float
  *           description: Fee to be paid in case of offer cancellation
+ *         paymentMethod:
+ *           type: string
+ *           enum:
+ *             - total
+ *             - periodic
+ *           description: "Type of payment"
+ *         paymentFrequency:
+ *           type: number
+ *           description: "Payment frequency for periodic payments"
  *         rentInformation:
  *           type: object
  *           description: Required information in case of rent
@@ -180,8 +189,6 @@ const router = express.Router();
  *           schema:
  *             type: object
  *             properties:
- *               offerer:
- *                  type: string
  *               assetId:
  *                 type: integer
  *               beginTimeSlot: 
@@ -200,6 +207,13 @@ const router = express.Router();
  *               deposit:
  *                 type: number
  *               cancellationFee:
+ *                 type: number
+ *               paymentMethod:
+ *                 type: string
+ *                 enum:
+ *                   - total
+ *                   - periodic
+ *               paymentFrequency:
  *                 type: number
  *               rentInformation:
  *                 type: object
@@ -223,7 +237,7 @@ const router = express.Router();
  *                 message:
  *                   type: object
  *                   properties:
- *                      offerId:
+ *                      id:
  *                          type: number
  *                      message:
  *                          type: string
@@ -278,7 +292,7 @@ router.post('/offers/', offerController.createOffer);
  *               additionalProperties:
  *                 type: object
  *                 properties:
- *                   offerId:
+ *                   id:
  *                     type: integer
  *                   offerer:
  *                     type: string
@@ -305,6 +319,13 @@ router.post('/offers/', offerController.createOffer);
  *                   deposit:
  *                     type: number
  *                   cancellationFee:
+ *                     type: number
+ *                   paymentMethod:
+ *                     type: string
+ *                     enum:
+ *                       - total
+ *                       - periodic
+ *                   paymentFrequency:
  *                     type: number
  *                   phoneNumber:
  *                     type: string
@@ -376,7 +397,7 @@ router.get('/offers/all/', offerController.getAllOfferResilinkCustom);
  *               additionalProperties:
  *                 type: object
  *                 properties:
- *                   offerId:
+ *                   id:
  *                     type: integer
  *                   offerer:
  *                     type: string
@@ -403,6 +424,13 @@ router.get('/offers/all/', offerController.getAllOfferResilinkCustom);
  *                   deposit:
  *                     type: number
  *                   cancellationFee:
+ *                     type: number
+ *                   paymentMethod:
+ *                     type: string
+ *                     enum:
+ *                       - total
+ *                       - periodic
+ *                   paymentFrequency:
  *                     type: number
  *                   phoneNumber:
  *                     type: string
@@ -454,15 +482,22 @@ router.get('/offers/suggested/:id', offerController.getSuggestedOfferForResilink
 
 /**
  * @swagger
- * /v1/offers/LimitedOffer/{offerNbr}:
+ * /v1/offers/LimitedOffer:
  *   get:
  *     summary: Get a number of valid offers in RESILINK perspective
- *     parameters:
- *       - in: path
+ *     parameters:  
+ *       - in: query
  *         name: offerNbr
  *         schema:
- *           type: integer 
+ *           type: number 
  *         required: true 
+ *         description: number of offers
+ *       - in: query
+ *         name: iteration
+ *         schema:
+ *           type: number 
+ *         required: true
+ *         description: iteration of the list of offers to be retrieved from all available offers
  *     tags: [Offer]
  *     responses:
  *       200:
@@ -516,6 +551,13 @@ router.get('/offers/suggested/:id', offerController.getSuggestedOfferForResilink
  *                       cancellationFee:
  *                         type: number
  *                         description: Fee for cancellation
+ *                       paymentMethod:
+ *                         type: string
+ *                         enum:
+ *                           - total
+ *                           - periodic
+ *                       paymentFrequency:
+ *                         type: number
  *                       phoneNumber:
  *                         type: string
  *                         description: Offerer's phone number
@@ -555,14 +597,14 @@ router.get('/offers/suggested/:id', offerController.getSuggestedOfferForResilink
  *                         description: Type of asset (e.g. Inputs1)
  *                       owner:
  *                         type: string
- *                         description: Asset owner ID
- *                       transactionType:
+ *                       multiAccess:
+ *                         type: boolean
+ *                       regulatedId:
  *                         type: string
- *                         description: Type of transaction (e.g. sale/purchase)
  *                       totalQuantity:
  *                         type: number
  *                         description: Total quantity available
- *                       availableQuantity:
+ *                       remainingQuantity:
  *                         type: number
  *                         description: Quantity currently available
  *                       specificAttributes:
@@ -618,7 +660,7 @@ router.get('/offers/suggested/:id', offerController.getSuggestedOfferForResilink
  *                   type: string
  */
 
-router.get('/offers/LimitedOffer/:offerNbr', offerController.getLimitedOfferForResilinkCustom);
+router.get('/offers/LimitedOffer', offerController.getLimitedOfferForResilinkCustom);
 
 /**
  * @swagger
@@ -685,6 +727,13 @@ router.get('/offers/LimitedOffer/:offerNbr', offerController.getLimitedOfferForR
  *                       cancellationFee:
  *                         type: number
  *                         description: Fee for cancellation
+ *                       paymentMethod:
+ *                         type: string
+ *                         enum:
+ *                           - total
+ *                           - periodic
+ *                       paymentFrequency:
+ *                         type: number
  *                       phoneNumber:
  *                         type: string
  *                         description: Offerer's phone number
@@ -724,14 +773,14 @@ router.get('/offers/LimitedOffer/:offerNbr', offerController.getLimitedOfferForR
  *                         description: Type of asset (e.g. Inputs1)
  *                       owner:
  *                         type: string
- *                         description: Asset owner ID
- *                       transactionType:
+ *                       multiAccess:
+ *                         type: boolean
+ *                       regulatedId:
  *                         type: string
- *                         description: Type of transaction (e.g. sale/purchase)
  *                       totalQuantity:
  *                         type: number
  *                         description: Total quantity available
- *                       availableQuantity:
+ *                       remainingQuantity:
  *                         type: number
  *                         description: Quantity currently available
  *                       specificAttributes:
@@ -846,7 +895,7 @@ router.get('/offers/owner/blockedOffer/:id/', offerController.getBlockedOfferFor
  *               items:
  *                 type: object
  *                 properties:
- *                   offerId:
+ *                   id:
  *                     type: number
  *                   publicationDate:
  *                     type: string
@@ -873,6 +922,13 @@ router.get('/offers/owner/blockedOffer/:id/', offerController.getBlockedOfferFor
  *                   deposit:
  *                     type: number
  *                   cancellationFee:
+ *                     type: number
+ *                   paymentMethod:
+ *                     type: string
+ *                     enum:
+ *                       - total
+ *                       - periodic
+ *                   paymentFrequency:
  *                     type: number
  *                   rentInformation:
  *                     type: object
@@ -922,17 +978,10 @@ router.post('/offers/all/resilink/filtered/', offerController.getOfferFiltered);
 
 /**
  * @swagger
- * /v1/offers/owner/{id}:
+ * /v1/offers/owner:
  *   get:
  *     summary: Get all offers from a prosumer
  *     tags: [Offer]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: string 
- *         required: true
- *         description: the prosummer id
  *     responses:
  *       200:
  *         description: Successful transaction
@@ -943,7 +992,7 @@ router.post('/offers/all/resilink/filtered/', offerController.getOfferFiltered);
  *               additionalProperties:
  *                 type: object
  *                 properties:
- *                   offerId:
+ *                   id:
  *                     type: integer
  *                   offerer:
  *                     type: string
@@ -970,6 +1019,13 @@ router.post('/offers/all/resilink/filtered/', offerController.getOfferFiltered);
  *                   deposit:
  *                     type: number
  *                   cancellationFee:
+ *                     type: number
+ *                   paymentMethod:
+ *                     type: string
+ *                     enum:
+ *                       - total
+ *                       - periodic
+ *                   paymentFrequency:
  *                     type: number
  *                   rentInformation:
  *                     type: object
@@ -1015,21 +1071,14 @@ router.post('/offers/all/resilink/filtered/', offerController.getOfferFiltered);
  *                   type: string
  */
 
-router.get('/offers/owner/:id/', offerController.getOfferOwner);
+router.get('/offers/owner/', offerController.getAllOwnerOffer);
 
 /**
  * @swagger
- * /v1/offers/owner/{id}/purchase:
+ * /v1/offers/owner/purchase:
  *   get:
  *     summary: Get all offers purchased from a prosumer
  *     tags: [Offer]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: string 
- *         required: true
- *         description: the prosummer id
  *     responses:
  *       200:
  *         description: Successful transaction
@@ -1102,7 +1151,7 @@ router.get('/offers/owner/:id/', offerController.getOfferOwner);
  *                   items:
  *                     type: object
  *                     properties:
- *                       offerId:
+ *                       id:
  *                         type: integer
  *                       offerer:
  *                         type: string
@@ -1129,6 +1178,13 @@ router.get('/offers/owner/:id/', offerController.getOfferOwner);
  *                       deposit:
  *                         type: number
  *                       cancellationFee:
+ *                         type: number
+ *                       paymentMethod:
+ *                         type: string
+ *                         enum:
+ *                           - total
+ *                           - periodic
+ *                       paymentFrequency:
  *                         type: number
  *                       rentInformation:
  *                         type: object
@@ -1176,7 +1232,7 @@ router.get('/offers/owner/:id/', offerController.getOfferOwner);
  *                   type: string
  */
 
-router.get('/offers/owner/:id/purchase/', offerController.getOwnerOfferPurchase);
+router.get('/offers/owner/purchase/', offerController.getOwnerOfferPurchase);
 
 /**
  * @swagger
@@ -1194,7 +1250,7 @@ router.get('/offers/owner/:id/purchase/', offerController.getOwnerOfferPurchase)
  *               items:
  *                 type: object
  *                 properties:
- *                   offerId:
+ *                   id:
  *                     type: number
  *                   publicationDate:
  *                     type: string
@@ -1221,6 +1277,13 @@ router.get('/offers/owner/:id/purchase/', offerController.getOwnerOfferPurchase)
  *                   deposit:
  *                     type: number
  *                   cancellationFee:
+ *                     type: number
+ *                   paymentMethod:
+ *                     type: string
+ *                     enum:
+ *                       - total
+ *                       - periodic
+ *                   paymentFrequency:
  *                     type: number
  *                   rentInformation:
  *                     type: object
@@ -1289,7 +1352,7 @@ router.get('/ODEP/offers/all/', offerController.getAllOffer);
  *             schema:
  *               type: object
  *               properties:
- *                 offerId:
+ *                 id:
  *                   type: number
  *                 publicationDate:
  *                   type: string
@@ -1316,6 +1379,13 @@ router.get('/ODEP/offers/all/', offerController.getAllOffer);
  *                 deposit:
  *                   type: number
  *                 cancellationFee:
+ *                   type: number
+ *                 paymentMethod:
+ *                   type: string
+ *                   enum:
+ *                     - total
+ *                     - periodic
+ *                 paymentFrequency:
  *                   type: number
  *                 phoneNumber:
  *                   type: string
@@ -1407,6 +1477,13 @@ router.get('/ODEP/offers/:id/', offerController.getOneOffer);
  *                 type: number
  *               cancellationFee:
  *                 type: number
+ *               paymentMethod:
+ *                 type: string
+ *                 enum:
+ *                   - total
+ *                   - periodic
+ *               paymentFrequency:
+ *                 type: number
  *               rentInformation:
  *                 type: object
  *                 properties:
@@ -1496,19 +1573,10 @@ router.put('/offers/:id/', offerController.putOffer);
  *                     type: string
  *                   assetType:
  *                     type: string
- *                   owner:
- *                     type: string
- *                   transactionType:
- *                     type: string
- *                     enum:
- *                       - sale/purchase
- *                       - rent
+ *                   multiAccess:
+ *                     type: boolean
  *                   totalQuantity:
  *                     type: number
- *                   regulatedId:
- *                     type: string
- *                   regulator:
- *                     type: string
  *                   images:
  *                     type: string
  *                   unit:
@@ -1545,6 +1613,13 @@ router.put('/offers/:id/', offerController.putOffer);
  *                   deposit:
  *                     type: number
  *                   cancellationFee:
+ *                     type: number
+ *                   paymentMethod:
+ *                     type: string
+ *                     enum:
+ *                       - total
+ *                       - periodic
+ *                   paymentFrequency:
  *                     type: number
  *                   rentInformation:
  *                     type: object
@@ -1609,7 +1684,7 @@ router.put('/offers/:id/updateOfferAsset/', offerController.putOfferAsset);
  * @swagger
  * /v1/offers/createOfferAsset:
  *   post: 
- *     summary: Create a new offer, its asset, and its asset type needed
+ *     summary: Create a new offer and its asset
  *     tags: [Offer]
  *     requestBody:
  *       required: true
@@ -1627,19 +1702,10 @@ router.put('/offers/:id/updateOfferAsset/', offerController.putOfferAsset);
  *                     type: string
  *                   assetType:
  *                     type: string
- *                   owner:
- *                     type: string
- *                   transactionType:
- *                     type: string
- *                     enum:
- *                       - sale/purchase
- *                       - rent
  *                   totalQuantity:
  *                     type: number
- *                   regulatedId:
- *                     type: string
- *                   regulator:
- *                     type: string
+ *                   multiAccess:
+ *                     type: boolean
  *                   images:
  *                     type: string
  *                   unit: 
@@ -1658,8 +1724,6 @@ router.put('/offers/:id/updateOfferAsset/', offerController.putOfferAsset);
  *                 properties:
  *                   offerer:
  *                     type: string
- *                   assetId:
- *                     type: integer
  *                   beginTimeSlot: 
  *                     type: string
  *                     format: date-time
@@ -1676,6 +1740,13 @@ router.put('/offers/:id/updateOfferAsset/', offerController.putOfferAsset);
  *                   deposit:
  *                     type: number
  *                   cancellationFee:
+ *                     type: number
+ *                   paymentMethod:
+ *                     type: string
+ *                     enum:
+ *                       - total
+ *                       - periodic
+ *                   paymentFrequency:
  *                     type: number
  *                   rentInformation:
  *                     type: object
